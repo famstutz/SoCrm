@@ -11,7 +11,7 @@
         [DataMember]
         public string Message { get; set; }
         [DataMember]
-        public Severity Severity { get; set; }
+        public Severity Serverity { get; set; }
         [DataMember]
         public DateTime TimeStamp { get; set; }
     }

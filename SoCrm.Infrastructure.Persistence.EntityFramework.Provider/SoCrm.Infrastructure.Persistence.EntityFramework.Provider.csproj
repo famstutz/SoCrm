@@ -39,21 +39,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SoCrm.sdf" />
     <Content Include="LogEventPersistenceService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -67,16 +67,9 @@
     <Compile Include="LogEventPersistenceService.svc.cs">
       <DependentUpon>LogEventPersistenceService.svc</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201303131918356_CreateLogEvents.cs" />
-    <Compile Include="Migrations\201303131918356_CreateLogEvents.Designer.cs">
-      <DependentUpon>201303131918356_CreateLogEvents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -99,11 +92,6 @@
       <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>
       <Name>SoCrm.Services.Logging.Contracts</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201303131918356_CreateLogEvents.resx">
-      <DependentUpon>201303131918356_CreateLogEvents.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

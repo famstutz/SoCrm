@@ -6,7 +6,7 @@
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" base="q1:ObjectBase">
         <xs:sequence>
           <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Severity" type="tns:Severity" />
+          <xs:element minOccurs="0" name="Serverity" type="tns:Severity" />
           <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>

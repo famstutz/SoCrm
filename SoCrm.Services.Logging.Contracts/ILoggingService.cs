@@ -14,6 +14,6 @@
         [OperationContract]
         LogEvent GetByObjectId(Guid objectId);
         [OperationContract]
-        void Log(string message, Severity severity, DateTime timeStamp);
+        void Log(string message, Severity severity);
     }
  }

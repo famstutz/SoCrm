@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3c00d1dd-fc5a-4928-aa1c-33eb0775d933" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="98676924-f657-419b-b835-3384f4b74a05" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:1048/LogEventPersistenceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LogEventPersistenceService.xsd" MetadataType="Schema" ID="06ff521c-8aaa-4690-920f-06e2e9eee3f8" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd2" />
-    <MetadataFile FileName="LogEventPersistenceService1.xsd" MetadataType="Schema" ID="2a4c22c7-b33a-4d86-b5cc-187cda724152" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd3" />
-    <MetadataFile FileName="LogEventPersistenceService2.xsd" MetadataType="Schema" ID="86cbc6e7-febb-437a-9892-50fe16e933cd" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="LogEventPersistenceService3.xsd" MetadataType="Schema" ID="b3c828d8-96a0-4816-86ec-8c36f7248897" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="LogEventPersistenceService.disco" MetadataType="Disco" ID="8228a36b-0013-423a-8d87-738fde59924e" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?disco" />
-    <MetadataFile FileName="LogEventPersistenceService.wsdl" MetadataType="Wsdl" ID="8cf14787-84e2-4d6e-ab59-2cac87a4206c" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="LogEventPersistenceService.xsd" MetadataType="Schema" ID="874943b8-38c8-45d8-a695-a85320b79131" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LogEventPersistenceService1.xsd" MetadataType="Schema" ID="1f8ddbfe-db61-4bed-8fc7-6aedcf28b263" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LogEventPersistenceService2.xsd" MetadataType="Schema" ID="1d5515fa-726d-4cc8-a9a4-7db592852b52" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LogEventPersistenceService3.xsd" MetadataType="Schema" ID="69eebe22-0fbb-40cd-8270-1ccd310bac35" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LogEventPersistenceService.disco" MetadataType="Disco" ID="620b7937-c1e2-4768-8e6b-f95ead5a5642" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?disco" />
+    <MetadataFile FileName="LogEventPersistenceService.wsdl" MetadataType="Wsdl" ID="f092c28f-6c2a-499a-974c-78e5474599f9" SourceId="1" SourceUrl="http://localhost:1048/LogEventPersistenceService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -61,7 +61,7 @@
             {
                 var readLogEvent = db.LogEvents.Single(le => le.ObjectId.Equals(logEvent.ObjectId));
                 readLogEvent.Message = logEvent.Message;
-                readLogEvent.Severity = logEvent.Severity;
+                readLogEvent.Serverity = logEvent.Serverity;
                 readLogEvent.TimeStamp = logEvent.TimeStamp;
                 readLogEvent.LastUpdateTimeStamp = DateTime.Now;
                 db.SaveChanges();
