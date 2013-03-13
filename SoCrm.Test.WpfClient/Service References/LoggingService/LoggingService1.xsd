@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1065/LoggingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ObjectBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationTimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastUpdateTimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ObjectId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectBase" nillable="true" type="tns:ObjectBase" />
+</xs:schema>
