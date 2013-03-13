@@ -112,15 +112,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoCrm.Contracts\SoCrm.Contracts.csproj">
+    <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{f8479afc-cbff-4564-b587-6f47826d846d}</Project>
-      <Name>SoCrm.Contracts</Name>
+      <Name>SoCrm.Core.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
       <Project>{10282890-8f76-4ac9-a361-214535c47f0d}</Project>

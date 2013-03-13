@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LoggingService.svc" />
-    <Content Include="Properties\DataSources\SoCrm.Services.Logging.Contracts.LogEvent.datasource" />
+    <Content Include="Properties\DataSources\SoCrm.Services.Logging.Contracts.LogEvent.datasource">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Service References\LogEventPersistence\LogEventPersistenceService.disco" />
     <Content Include="Service References\LogEventPersistence\configuration91.svcinfo" />
     <Content Include="Service References\LogEventPersistence\configuration.svcinfo" />
@@ -108,9 +110,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoCrm.Contracts\SoCrm.Contracts.csproj">
+    <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
-      <Name>SoCrm.Contracts</Name>
+      <Name>SoCrm.Core.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
       <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>

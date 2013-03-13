@@ -6,12 +6,12 @@
     using SoCrm.Contracts;
     
     [DataContract]
-    public class LogEvent : ObjectBase
+    public class LogEvent : DomainObject
     {
         [DataMember]
         public string Message { get; set; }
         [DataMember]
-        public Severity Serverity { get; set; }
+        public Severity Severity { get; set; }
         [DataMember]
         public DateTime TimeStamp { get; set; }
     }

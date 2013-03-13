@@ -7,5 +7,7 @@
     public class LoggingContext : DbContext
     {
        public DbSet<LogEvent> LogEvents { get; set; }
+
+        public LoggingContext():base("Name=SoCrm") {}
     }
 }

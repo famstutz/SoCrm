@@ -5,7 +5,7 @@
     using System.Runtime.Serialization;
 
     [DataContract]
-    public class ObjectBase : IDomainObject
+    public class DomainObject : IDomainObject
     {
         [DataMember]
         [Key]

@@ -47,9 +47,9 @@
     <Compile Include="Severity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoCrm.Contracts\SoCrm.Contracts.csproj">
+    <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
-      <Name>SoCrm.Contracts</Name>
+      <Name>SoCrm.Core.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

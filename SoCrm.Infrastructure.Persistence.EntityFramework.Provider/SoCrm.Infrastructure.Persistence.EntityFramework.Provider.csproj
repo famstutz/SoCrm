@@ -67,9 +67,18 @@
     <Compile Include="LogEventPersistenceService.svc.cs">
       <DependentUpon>LogEventPersistenceService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201303132001381_LogEvent.cs" />
+    <Compile Include="Migrations\201303132001381_LogEvent.Designer.cs">
+      <DependentUpon>201303132001381_LogEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201303132001381_LogEvent.resx">
+      <DependentUpon>201303132001381_LogEvent.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -80,9 +89,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoCrm.Contracts\SoCrm.Contracts.csproj">
+    <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
-      <Name>SoCrm.Contracts</Name>
+      <Name>SoCrm.Core.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoCrm.Infrastructure.Persistence.Contracts\SoCrm.Infrastructure.Persistence.Contracts.csproj">
       <Project>{4CC4504B-15B7-4BB0-9744-87A2D429D451}</Project>
