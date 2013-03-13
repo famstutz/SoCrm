@@ -22,7 +22,7 @@
 
         public IEnumerable<LogEvent> GetBySeverity(Severity severity)
         {
-            return this.client.GetAll().Where(le => le.Serverity == severity);
+            return this.client.GetAll().Where(le => le.Severity == severity);
         }
 
         public LogEvent GetByObjectId(Guid objectId)
@@ -30,9 +30,9 @@
             return this.client.Get(objectId);
         }
 
-        public void Log(string message, Severity severity)
+        public void Log(string message, Severity severity, DateTime timeStamp)
         {
-            var logEvent = new LogEvent() { Message = message, Serverity = severity };
+            var logEvent = new LogEvent() { Message = message, Severity = severity, TimeStamp = timeStamp};
             this.client.Save(logEvent);
         }
     }
