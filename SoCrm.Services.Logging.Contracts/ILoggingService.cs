@@ -12,9 +12,8 @@
         [OperationContract]
         IEnumerable<LogEvent> GetBySeverity(Severity severity);
         [OperationContract]
-        IEnumerable<LogEvent> GetByObjectId(Guid objectId);
+        LogEvent GetByObjectId(Guid objectId);
         [OperationContract]
         void Log(string message, Severity severity);
-
     }
  }

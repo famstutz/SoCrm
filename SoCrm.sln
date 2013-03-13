@@ -10,12 +10,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Logging.Contracts", "SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj", "{10282890-8F76-4AC9-A361-214535C47F0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Logging.Provider", "SoCrm.Services.Logging.Provider\SoCrm.Services.Logging.Provider.csproj", "{9E05D837-AB23-44D9-8F89-631F2C2BBBD2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89} = {BDDA109D-0222-45BD-87C3-BB9B939AED89}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Contracts", "SoCrm.Contracts\SoCrm.Contracts.csproj", "{F8479AFC-CBFF-4564-B587-6F47826D846D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{63997FB7-AFB6-4C51-9C52-B215DDB48196}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{B46926A9-E86C-41E6-B488-F117261E2BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.Contracts", "SoCrm.Infrastructure.Persistence.Contracts\SoCrm.Infrastructure.Persistence.Contracts.csproj", "{4CC4504B-15B7-4BB0-9744-87A2D429D451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.EntityFramework.Provider", "SoCrm.Infrastructure.Persistence.EntityFramework.Provider\SoCrm.Infrastructure.Persistence.EntityFramework.Provider.csproj", "{BDDA109D-0222-45BD-87C3-BB9B939AED89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +42,14 @@ Global
 		{F8479AFC-CBFF-4564-B587-6F47826D846D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8479AFC-CBFF-4564-B587-6F47826D846D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8479AFC-CBFF-4564-B587-6F47826D846D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC4504B-15B7-4BB0-9744-87A2D429D451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC4504B-15B7-4BB0-9744-87A2D429D451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC4504B-15B7-4BB0-9744-87A2D429D451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC4504B-15B7-4BB0-9744-87A2D429D451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,5 +60,7 @@ Global
 		{10282890-8F76-4AC9-A361-214535C47F0D} = {838374C4-B789-4D11-A034-3D4CBC134F7D}
 		{9E05D837-AB23-44D9-8F89-631F2C2BBBD2} = {838374C4-B789-4D11-A034-3D4CBC134F7D}
 		{B46926A9-E86C-41E6-B488-F117261E2BE9} = {63997FB7-AFB6-4C51-9C52-B215DDB48196}
+		{4CC4504B-15B7-4BB0-9744-87A2D429D451} = {B46926A9-E86C-41E6-B488-F117261E2BE9}
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89} = {B46926A9-E86C-41E6-B488-F117261E2BE9}
 	EndGlobalSection
 EndGlobal

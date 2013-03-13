@@ -2,35 +2,38 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using SoCrm.Services.Logging.Contracts;
+    using SoCrm.Services.Logging.Provider.LogEventPersistence;
 
     public class LoggingService : ILoggingService
     {
+        private PersistenceServiceOf_LogEventClient client;
 
-        public IEnumerable<LogEvent> Get()
+        public LoggingService()
         {
-            throw new NotImplementedException();
+            this.client = new LogEventPersistence.PersistenceServiceOf_LogEventClient();
+        }
+        public IEnumerable<LogEvent> GetAll()
+        {
+            return this.client.GetAll();
         }
 
-        public IEnumerable<LogEvent> Get(Severity severity)
+        public IEnumerable<LogEvent> GetBySeverity(Severity severity)
         {
-            throw new NotImplementedException();
+            return this.client.GetAll().Where(le => le.Serverity == severity);
         }
 
-        public IEnumerable<LogEvent> Get(Guid objectId)
+        public LogEvent GetByObjectId(Guid objectId)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Log(LogEvent logEvent)
-        {
-            throw new NotImplementedException();
+            return this.client.Get(objectId);
         }
 
         public void Log(string message, Severity severity)
         {
-            throw new NotImplementedException();
+            var logEvent = new LogEvent() { Message = message, Serverity = severity };
+            this.client.Save(logEvent);
         }
     }
 }

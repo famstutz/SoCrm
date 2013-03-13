@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9E05D837-AB23-44D9-8F89-631F2C2BBBD2}</ProjectGuid>
+    <ProjectGuid>{BDDA109D-0222-45BD-87C3-BB9B939AED89}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SoCrm.Services.Logging.Provider</RootNamespace>
-    <AssemblyName>SoCrm.Services.Logging.Provider</AssemblyName>
+    <RootNamespace>SoCrm.Infrastructure.Persistence.EntityFramework.Provider</RootNamespace>
+    <AssemblyName>SoCrm.Infrastructure.Persistence.EntityFramework.Provider</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
@@ -39,67 +39,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LoggingService.svc" />
-    <Content Include="Properties\DataSources\SoCrm.Services.Logging.Contracts.LogEvent.datasource" />
-    <Content Include="Service References\LogEventPersistence\LogEventPersistenceService.disco" />
-    <Content Include="Service References\LogEventPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\LogEventPersistence\configuration.svcinfo" />
-    <Content Include="Service References\LogEventPersistence\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    <Content Include="App_Data\SoCrm.sdf" />
+    <Content Include="LogEventPersistenceService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoggingService.svc.cs">
-      <DependentUpon>LoggingService.svc</DependentUpon>
+    <Compile Include="DataServiceFactory.cs" />
+    <Compile Include="DataServices\IDataService.cs" />
+    <Compile Include="DataServices\LogEventDataService.cs" />
+    <Compile Include="Contexts\LoggingContext.cs" />
+    <Compile Include="LogEventPersistenceService.svc.cs">
+      <DependentUpon>LogEventPersistenceService.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\LogEventPersistence\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Service References\LogEventPersistence\LogEventPersistenceService.wsdl" />
-    <None Include="Service References\LogEventPersistence\LogEventPersistenceService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LogEventPersistence\LogEventPersistenceService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LogEventPersistence\LogEventPersistenceService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LogEventPersistence\LogEventPersistenceService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,16 +84,14 @@
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Infrastructure.Persistence.Contracts\SoCrm.Infrastructure.Persistence.Contracts.csproj">
+      <Project>{4CC4504B-15B7-4BB0-9744-87A2D429D451}</Project>
+      <Name>SoCrm.Infrastructure.Persistence.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
       <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>
       <Name>SoCrm.Services.Logging.Contracts</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\LogEventPersistence\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -138,7 +108,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1065/</IISUrl>
+          <IISUrl>http://localhost:1048/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
