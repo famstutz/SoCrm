@@ -14,6 +14,12 @@
   <wsdl:message name="ILoggingService_GetAllLogEvents_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllLogEventsResponse" />
   </wsdl:message>
+  <wsdl:message name="ILoggingService_GetAllSeverities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeverities" />
+  </wsdl:message>
+  <wsdl:message name="ILoggingService_GetAllSeverities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeveritiesResponse" />
+  </wsdl:message>
   <wsdl:message name="ILoggingService_GetLogEventsBySeverity_InputMessage">
     <wsdl:part name="parameters" element="tns:GetLogEventsBySeverity" />
   </wsdl:message>
@@ -37,6 +43,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILoggingService/GetAllLogEvents" message="tns:ILoggingService_GetAllLogEvents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILoggingService/GetAllLogEventsResponse" message="tns:ILoggingService_GetAllLogEvents_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllSeverities">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoggingService/GetAllSeverities" message="tns:ILoggingService_GetAllSeverities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoggingService/GetAllSeveritiesResponse" message="tns:ILoggingService_GetAllSeverities_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetLogEventsBySeverity">
       <wsdl:input wsaw:Action="http://tempuri.org/ILoggingService/GetLogEventsBySeverity" message="tns:ILoggingService_GetLogEventsBySeverity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILoggingService/GetLogEventsBySeverityResponse" message="tns:ILoggingService_GetLogEventsBySeverity_OutputMessage" />
@@ -54,6 +64,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllLogEvents">
       <soap:operation soapAction="http://tempuri.org/ILoggingService/GetAllLogEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeverities">
+      <soap:operation soapAction="http://tempuri.org/ILoggingService/GetAllSeverities" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -20,6 +20,11 @@
             return this.client.GetAll();
         }
 
+        public IEnumerable<Severity> GetAllSeverities()
+        {
+            return Enum.GetValues(typeof(Severity)).Cast<Severity>();
+        }
+
         public IEnumerable<LogEvent> GetLogEventsBySeverity(Severity severity)
         {
             return this.client.GetAll().Where(le => le.Severity == severity);

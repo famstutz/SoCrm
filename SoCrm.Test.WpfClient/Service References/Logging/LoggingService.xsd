@@ -27,4 +27,10 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Severity" nillable="true" type="tns:Severity" />
+  <xs:complexType name="ArrayOfSeverity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Severity" type="tns:Severity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeverity" nillable="true" type="tns:ArrayOfSeverity" />
 </xs:schema>

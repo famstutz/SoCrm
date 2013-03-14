@@ -21,11 +21,7 @@
                     <TextBlock Grid.Column="0" Grid.Row="0" Text="Message" />
                     <TextBox Grid.Column="1" Grid.Row="0" x:Name="MessageTextBox" />
                     <TextBlock Grid.Column="0" Grid.Row="1"  Text="Severity" />
-                    <ComboBox Grid.Column="1" Grid.Row="1" x:Name="SeverityComboBox">
-                        <ComboBoxItem Content="Error"/>
-                        <ComboBoxItem Content="Warning"/>
-                        <ComboBoxItem Content="Info"/>
-                    </ComboBox>
+                    <ComboBox Grid.Column="1" Grid.Row="1" x:Name="SeverityComboBox" />
                     <TextBlock Grid.Column="0" Grid.Row="2" Text="Timestamp" />
                     <TextBox Grid.Column="1" Grid.Row="2" x:Name="TimestampTextBox"/>
                     <Button Grid.Column="1" Grid.Row="3" x:Name="NewLogEventButton" Content="Save New Log Event" Click="NewLogEventButton_Click"/>

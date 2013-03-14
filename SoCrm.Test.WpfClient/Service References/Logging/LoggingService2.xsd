@@ -14,31 +14,43 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllSeverities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSeveritiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="GetAllSeveritiesResult" nillable="true" type="q2:ArrayOfSeverity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetLogEventsBySeverity">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="severity" type="q2:Severity" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="severity" type="q3:Severity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetLogEventsBySeverityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="GetLogEventsBySeverityResult" nillable="true" type="q3:ArrayOfLogEvent" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="GetLogEventsBySeverityResult" nillable="true" type="q4:ArrayOfLogEvent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetLogEventByObjectId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="objectId" type="q4:guid" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="objectId" type="q5:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetLogEventByObjectIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="GetLogEventByObjectIdResult" nillable="true" type="q5:LogEvent" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="GetLogEventByObjectIdResult" nillable="true" type="q6:LogEvent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,7 +58,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="severity" type="q6:Severity" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" minOccurs="0" name="severity" type="q7:Severity" />
         <xs:element minOccurs="0" name="timeStamp" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>

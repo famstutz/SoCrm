@@ -21,6 +21,12 @@ namespace SoCrm.Test.WpfClient.Logging {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoggingService/GetAllLogEvents", ReplyAction="http://tempuri.org/ILoggingService/GetAllLogEventsResponse")]
         System.Threading.Tasks.Task<SoCrm.Services.Logging.Contracts.LogEvent[]> GetAllLogEventsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoggingService/GetAllSeverities", ReplyAction="http://tempuri.org/ILoggingService/GetAllSeveritiesResponse")]
+        SoCrm.Services.Logging.Contracts.Severity[] GetAllSeverities();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoggingService/GetAllSeverities", ReplyAction="http://tempuri.org/ILoggingService/GetAllSeveritiesResponse")]
+        System.Threading.Tasks.Task<SoCrm.Services.Logging.Contracts.Severity[]> GetAllSeveritiesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoggingService/GetLogEventsBySeverity", ReplyAction="http://tempuri.org/ILoggingService/GetLogEventsBySeverityResponse")]
         SoCrm.Services.Logging.Contracts.LogEvent[] GetLogEventsBySeverity(SoCrm.Services.Logging.Contracts.Severity severity);
         
@@ -73,6 +79,14 @@ namespace SoCrm.Test.WpfClient.Logging {
         
         public System.Threading.Tasks.Task<SoCrm.Services.Logging.Contracts.LogEvent[]> GetAllLogEventsAsync() {
             return base.Channel.GetAllLogEventsAsync();
+        }
+        
+        public SoCrm.Services.Logging.Contracts.Severity[] GetAllSeverities() {
+            return base.Channel.GetAllSeverities();
+        }
+        
+        public System.Threading.Tasks.Task<SoCrm.Services.Logging.Contracts.Severity[]> GetAllSeveritiesAsync() {
+            return base.Channel.GetAllSeveritiesAsync();
         }
         
         public SoCrm.Services.Logging.Contracts.LogEvent[] GetLogEventsBySeverity(SoCrm.Services.Logging.Contracts.Severity severity) {

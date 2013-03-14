@@ -10,6 +10,8 @@
         [OperationContract]
         IEnumerable<LogEvent> GetAllLogEvents();
         [OperationContract]
+        IEnumerable<Severity> GetAllSeverities();
+        [OperationContract]
         IEnumerable<LogEvent> GetLogEventsBySeverity(Severity severity);
         [OperationContract]
         LogEvent GetLogEventByObjectId(Guid objectId);

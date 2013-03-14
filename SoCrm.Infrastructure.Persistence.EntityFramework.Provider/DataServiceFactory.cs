@@ -5,6 +5,7 @@
     using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices;
     using SoCrm.Services.Customers.Contracts;
     using SoCrm.Services.Logging.Contracts;
+    using SoCrm.Services.Security.Contracts;
 
     public static class DataServiceFactory
     {
@@ -33,6 +34,10 @@
             if (type == typeof(Person))
             {
                 return new PersonDataService();
+            }
+            if (type == typeof(User))
+            {
+                return new UserDataService();
             }
             throw new NotSupportedException(string.Format("Type <{0}> is not supported.", type));
         }

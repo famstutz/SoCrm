@@ -25,12 +25,13 @@ namespace SoCrm.Test.WpfClient
     {
          private LoggingServiceClient client;
 
-         public LogEventControl()
+        public LogEventControl()
         {
             InitializeComponent();
 
             this.client = new LoggingServiceClient();
 
+            this.SeverityComboBox.ItemsSource = this.client.GetAllSeverities();
             this.TimestampTextBox.Text = DateTime.Now.ToString();
         }
 
