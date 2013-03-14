@@ -55,6 +55,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Contracts", "SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj", "{4E381201-4B81-4BC3-A553-318017C21622}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Provider", "SoCrm.Services.Contacts.Provider\SoCrm.Services.Contacts.Provider.csproj", "{379D8CD9-6AD5-46B4-842B-02ABB5172B23}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89} = {BDDA109D-0222-45BD-87C3-BB9B939AED89}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
