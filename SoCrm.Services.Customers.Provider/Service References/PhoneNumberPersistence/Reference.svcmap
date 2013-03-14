@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ec668550-b3de-43d6-82ec-6304bdf45735" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1048/PhoneNumberPersistenceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PhoneNumberPersistenceService.disco" MetadataType="Disco" ID="8b50c50c-84de-4235-9fe8-0e6525886020" SourceId="1" SourceUrl="http://localhost:1048/PhoneNumberPersistenceService.svc?disco" />
+    <MetadataFile FileName="PhoneNumberPersistenceService.xsd" MetadataType="Schema" ID="64dbcd27-5f2d-421c-b7e9-a763e40a1b85" SourceId="1" SourceUrl="http://localhost:1048/PhoneNumberPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PhoneNumberPersistenceService1.xsd" MetadataType="Schema" ID="e119cfb0-2698-4730-be7b-10f375ce796e" SourceId="1" SourceUrl="http://localhost:1048/PhoneNumberPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PhoneNumberPersistenceService2.xsd" MetadataType="Schema" ID="c3f4f2fd-2c00-43a7-bf96-51af06d6ebfb" SourceId="1" SourceUrl="http://localhost:1048/PhoneNumberPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PhoneNumberPersistenceService.wsdl" MetadataType="Wsdl" ID="fde8246a-5a3f-4d14-ad6e-b34195657520" SourceId="1" SourceUrl="http://localhost:1048/PhoneNumberPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="PhoneNumberPersistenceService3.xsd" MetadataType="Schema" ID="1575b3ce-4143-448d-9b9e-49c458471866" SourceId="1" SourceUrl="http://localhost:1048/PhoneNumberPersistenceService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

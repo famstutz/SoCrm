@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Logging.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1065/LoggingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" />
+  <xs:complexType name="ArrayOfLogEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogEvent" nillable="true" type="tns:LogEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogEvent" nillable="true" type="tns:ArrayOfLogEvent" />
+  <xs:complexType name="LogEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" base="q1:DomainObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Severity" type="tns:Severity" />
+          <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogEvent" nillable="true" type="tns:LogEvent" />
+  <xs:simpleType name="Severity">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Info" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Severity" nillable="true" type="tns:Severity" />
+</xs:schema>

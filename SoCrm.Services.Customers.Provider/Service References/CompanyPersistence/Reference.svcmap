@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4c2ba45a-301c-4682-8a21-a96f79fc6b3f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1048/CompanyPersistenceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CompanyPersistenceService.xsd" MetadataType="Schema" ID="9acd4e3e-bf84-4f38-9599-926efcfd7f44" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CompanyPersistenceService.wsdl" MetadataType="Wsdl" ID="8160aeb4-d46b-4b76-8479-ff3beb7c0f27" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="CompanyPersistenceService1.xsd" MetadataType="Schema" ID="5667b6a0-6124-4611-98f5-768f44d901ca" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CompanyPersistenceService.disco" MetadataType="Disco" ID="87af02ba-471e-4790-8396-deded43034b5" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?disco" />
+    <MetadataFile FileName="CompanyPersistenceService2.xsd" MetadataType="Schema" ID="565ef0c4-bd40-466a-aacd-59b41672c006" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CompanyPersistenceService3.xsd" MetadataType="Schema" ID="7e4ffced-dd44-4a8b-9463-117a5e63899d" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

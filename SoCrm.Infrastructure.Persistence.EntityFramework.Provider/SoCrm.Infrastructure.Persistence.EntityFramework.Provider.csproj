@@ -53,17 +53,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddressPersistenceService.svc" />
     <Content Include="App_Data\SoCrm.sdf" />
+    <Content Include="CompanyPersistenceService.svc" />
+    <Content Include="EMailAddressPersistenceService.svc" />
     <Content Include="LogEventPersistenceService.svc" />
+    <Content Include="PersonPersistenceService.svc" />
+    <Content Include="PhoneNumberPersistenceService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressPersistenceService.svc.cs">
+      <DependentUpon>AddressPersistenceService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyPersistenceService.svc.cs">
+      <DependentUpon>CompanyPersistenceService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="EMailAddressPersistenceService.svc.cs">
+      <DependentUpon>EMailAddressPersistenceService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303141227536_InitalSetUp.cs" />
+    <Compile Include="Migrations\201303141227536_InitalSetUp.Designer.cs">
+      <DependentUpon>201303141227536_InitalSetUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\CustomerConfiguration.cs" />
+    <Compile Include="PersistenceServiceBase.cs" />
+    <Compile Include="Contexts\CustomerContext.cs" />
     <Compile Include="DataServiceFactory.cs" />
+    <Compile Include="DataServices\AddressDataService.cs" />
+    <Compile Include="DataServices\CompanyDataService.cs" />
+    <Compile Include="DataServices\PersonDataService.cs" />
+    <Compile Include="DataServices\EMailAddressDataService.cs" />
     <Compile Include="DataServices\IDataService.cs" />
     <Compile Include="DataServices\LogEventDataService.cs" />
     <Compile Include="Contexts\LoggingContext.cs" />
+    <Compile Include="DataServices\PhoneNumberDataService.cs" />
     <Compile Include="LogEventPersistenceService.svc.cs">
       <DependentUpon>LogEventPersistenceService.svc</DependentUpon>
     </Compile>
@@ -71,12 +97,21 @@
     <Compile Include="Migrations\201303132001381_LogEvent.Designer.cs">
       <DependentUpon>201303132001381_LogEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\LoggingConfiguration.cs" />
+    <Compile Include="PersonPersistenceService.svc.cs">
+      <DependentUpon>PersonPersistenceService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneNumberPersistenceService.svc.cs">
+      <DependentUpon>PhoneNumberPersistenceService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201303132001381_LogEvent.resx">
       <DependentUpon>201303132001381_LogEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303141227536_InitalSetUp.resx">
+      <DependentUpon>201303141227536_InitalSetUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +132,10 @@
       <Project>{4CC4504B-15B7-4BB0-9744-87A2D429D451}</Project>
       <Name>SoCrm.Infrastructure.Persistence.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
+      <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>
+      <Name>SoCrm.Services.Customers.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
       <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>
       <Name>SoCrm.Services.Logging.Contracts</Name>
@@ -115,7 +154,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>12604</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:1048/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

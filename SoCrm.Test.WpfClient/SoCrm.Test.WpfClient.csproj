@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -55,11 +56,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service References\LoggingService\Reference.cs">
+    <Compile Include="LogEventControl.xaml.cs">
+      <DependentUpon>LogEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Logging\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Page Include="LogEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,17 +105,17 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\LoggingService\LoggingService.wsdl" />
-    <None Include="Service References\LoggingService\LoggingService.xsd">
+    <None Include="Service References\Logging\LoggingService.wsdl" />
+    <None Include="Service References\Logging\LoggingService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LoggingService\LoggingService1.xsd">
+    <None Include="Service References\Logging\LoggingService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LoggingService\LoggingService2.xsd">
+    <None Include="Service References\Logging\LoggingService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LoggingService\LoggingService3.xsd">
+    <None Include="Service References\Logging\LoggingService3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -130,19 +138,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\LoggingService\" />
+    <WCFMetadataStorage Include="Service References\Logging\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\LoggingService\LoggingService.disco" />
+    <None Include="Service References\Logging\LoggingService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\LoggingService\configuration91.svcinfo" />
+    <None Include="Service References\Logging\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\LoggingService\configuration.svcinfo" />
+    <None Include="Service References\Logging\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\LoggingService\Reference.svcmap">
+    <None Include="Service References\Logging\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

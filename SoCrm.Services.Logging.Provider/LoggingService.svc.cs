@@ -13,24 +13,24 @@
 
         public LoggingService()
         {
-            this.client = new LogEventPersistence.PersistenceServiceOf_LogEventClient();
+            this.client = new PersistenceServiceOf_LogEventClient();
         }
-        public IEnumerable<LogEvent> GetAll()
+        public IEnumerable<LogEvent> GetAllLogEvents()
         {
             return this.client.GetAll();
         }
 
-        public IEnumerable<LogEvent> GetBySeverity(Severity severity)
+        public IEnumerable<LogEvent> GetLogEventsBySeverity(Severity severity)
         {
             return this.client.GetAll().Where(le => le.Severity == severity);
         }
 
-        public LogEvent GetByObjectId(Guid objectId)
+        public LogEvent GetLogEventByObjectId(Guid objectId)
         {
             return this.client.Get(objectId);
         }
 
-        public void Log(string message, Severity severity, DateTime timeStamp)
+        public void LogEvent(string message, Severity severity, DateTime timeStamp)
         {
             var logEvent = new LogEvent() { Message = message, Severity = severity, TimeStamp = timeStamp };
             this.client.Save(logEvent);

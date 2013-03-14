@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="33cb2e6a-7e31-46fe-8d65-04c62e7eff6b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1048/EMailAddressPersistenceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EMailAddressPersistenceService.xsd" MetadataType="Schema" ID="85505e0f-c91c-451a-95ca-79588edd523a" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EMailAddressPersistenceService1.xsd" MetadataType="Schema" ID="fdb9ed4f-39bf-41dc-a230-670307cac3d0" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="EMailAddressPersistenceService2.xsd" MetadataType="Schema" ID="f699e677-9596-4c0f-9417-0906bef81c93" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EMailAddressPersistenceService3.xsd" MetadataType="Schema" ID="49118e05-c8b0-453c-b0bb-d19575c866c6" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EMailAddressPersistenceService.disco" MetadataType="Disco" ID="16af8588-d2ac-42bf-96f1-25e15a80ee46" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?disco" />
+    <MetadataFile FileName="EMailAddressPersistenceService.wsdl" MetadataType="Wsdl" ID="031c4dbf-5add-46dd-843a-3d720ed6d0c1" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
