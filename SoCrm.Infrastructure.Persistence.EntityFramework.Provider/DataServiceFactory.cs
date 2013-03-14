@@ -3,6 +3,7 @@
     using System;
 
     using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices;
+    using SoCrm.Services.Contacts.Contracts;
     using SoCrm.Services.Customers.Contracts;
     using SoCrm.Services.Logging.Contracts;
     using SoCrm.Services.Security.Contracts;
@@ -38,6 +39,10 @@
             if (type == typeof(User))
             {
                 return new UserDataService();
+            }
+            if (type == typeof(Contact))
+            {
+                return new ContactDataService();
             }
             throw new NotSupportedException(string.Format("Type <{0}> is not supported.", type));
         }

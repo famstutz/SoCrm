@@ -54,10 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddressPersistenceService.svc" />
+    <Content Include="App_Data\Contact.sdf" />
     <Content Include="App_Data\Customer.sdf" />
     <Content Include="App_Data\Logging.sdf" />
     <Content Include="App_Data\Security.sdf" />
     <Content Include="CompanyPersistenceService.svc" />
+    <Content Include="ContactPersistenceService.svc" />
     <Content Include="EMailAddressPersistenceService.svc" />
     <Content Include="LogEventPersistenceService.svc" />
     <Content Include="PersonPersistenceService.svc" />
@@ -74,11 +76,21 @@
     <Compile Include="CompanyPersistenceService.svc.cs">
       <DependentUpon>CompanyPersistenceService.svc</DependentUpon>
     </Compile>
+    <Compile Include="ContactPersistenceService.svc.cs">
+      <DependentUpon>ContactPersistenceService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\ContactContext.cs" />
     <Compile Include="Contexts\SecurityContext.cs" />
+    <Compile Include="DataServices\ContactDataService.cs" />
     <Compile Include="DataServices\UserDataService.cs" />
     <Compile Include="EMailAddressPersistenceService.svc.cs">
       <DependentUpon>EMailAddressPersistenceService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Contact\201303141815106_InitialContactModel.cs" />
+    <Compile Include="Migrations\Contact\201303141815106_InitialContactModel.Designer.cs">
+      <DependentUpon>201303141815106_InitialContactModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Contact\ContactConfiguration.cs" />
     <Compile Include="Migrations\Security\201303141526567_InitialSecurityModel.cs" />
     <Compile Include="Migrations\Security\201303141526567_InitialSecurityModel.Designer.cs">
       <DependentUpon>201303141526567_InitialSecurityModel.cs</DependentUpon>
@@ -137,6 +149,10 @@
       <Project>{4CC4504B-15B7-4BB0-9744-87A2D429D451}</Project>
       <Name>SoCrm.Infrastructure.Persistence.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj">
+      <Project>{4E381201-4B81-4BC3-A553-318017C21622}</Project>
+      <Name>SoCrm.Services.Contacts.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
       <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>
       <Name>SoCrm.Services.Customers.Contracts</Name>
@@ -151,6 +167,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\Contact\201303141815106_InitialContactModel.resx">
+      <DependentUpon>201303141815106_InitialContactModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Security\201303141526567_InitialSecurityModel.resx">
       <DependentUpon>201303141526567_InitialSecurityModel.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +180,7 @@
       <DependentUpon>201303141427102_InitialLoggingModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -54,6 +54,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contacts", "Contacts", "{22
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Contracts", "SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj", "{4E381201-4B81-4BC3-A553-318017C21622}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Provider", "SoCrm.Services.Contacts.Provider\SoCrm.Services.Contacts.Provider.csproj", "{379D8CD9-6AD5-46B4-842B-02ABB5172B23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{4E381201-4B81-4BC3-A553-318017C21622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E381201-4B81-4BC3-A553-318017C21622}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E381201-4B81-4BC3-A553-318017C21622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379D8CD9-6AD5-46B4-842B-02ABB5172B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379D8CD9-6AD5-46B4-842B-02ABB5172B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379D8CD9-6AD5-46B4-842B-02ABB5172B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379D8CD9-6AD5-46B4-842B-02ABB5172B23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,5 +131,6 @@ Global
 		{E13A6892-4D57-4A2A-8670-7B0D105018DC} = {BB8A883F-2E7A-42BB-99BE-D7DABA30552F}
 		{882E2721-F229-46E9-8EFD-B4ADA83B6D3B} = {BB8A883F-2E7A-42BB-99BE-D7DABA30552F}
 		{4E381201-4B81-4BC3-A553-318017C21622} = {22A2F250-2689-4648-B629-FB5DCD36AC53}
+		{379D8CD9-6AD5-46B4-842B-02ABB5172B23} = {22A2F250-2689-4648-B629-FB5DCD36AC53}
 	EndGlobalSection
 EndGlobal
