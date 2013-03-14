@@ -1,28 +1,29 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="LoggingConfiguration.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The logging configuration.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Logging
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class LoggingConfiguration : DbMigrationsConfiguration<SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.LoggingContext>
+    using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts;
+
+    /// <summary>
+    /// The logging configuration.
+    /// </summary>
+    internal sealed class LoggingConfiguration : DbMigrationsConfiguration<LoggingContext>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoggingConfiguration"/> class.
+        /// </summary>
         public LoggingConfiguration()
         {
             this.AutomaticMigrationsEnabled = true;
-        }
-
-        protected override void Seed(SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.LoggingContext context)
-        {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
         }
     }
 }

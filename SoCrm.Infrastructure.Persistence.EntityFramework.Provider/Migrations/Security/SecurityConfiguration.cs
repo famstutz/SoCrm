@@ -1,28 +1,29 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="SecurityConfiguration.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The security configuration.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Security
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class SecurityConfiguration : DbMigrationsConfiguration<SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.SecurityContext>
+    using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts;
+
+    /// <summary>
+    /// The security configuration.
+    /// </summary>
+    internal sealed class SecurityConfiguration : DbMigrationsConfiguration<SecurityContext>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityConfiguration"/> class.
+        /// </summary>
         public SecurityConfiguration()
         {
             this.AutomaticMigrationsEnabled = true;
-        }
-
-        protected override void Seed(SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.SecurityContext context)
-        {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
         }
     }
 }

@@ -7,7 +7,7 @@
     using SoCrm.Services.Logging.Contracts;
     using SoCrm.Services.Logging.Provider.LogEventPersistence;
 
-    public class LoggingService : ILoggingService
+    public sealed class LoggingService : ILoggingService, IDisposable
     {
         private PersistenceServiceOf_LogEventClient client;
 
@@ -39,6 +39,11 @@
         {
             var logEvent = new LogEvent() { Message = message, Severity = severity, TimeStamp = timeStamp };
             this.client.Save(logEvent);
+        }
+
+        public void Dispose()
+        {
+            this.client.Close();
         }
     }
 }

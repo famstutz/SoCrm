@@ -1,27 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ContactDataService.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The contact data service.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     using SoCrm.Contracts;
     using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts;
     using SoCrm.Services.Contacts.Contracts;
     using SoCrm.Services.Customers.Contracts;
     using SoCrm.Services.Security.Contracts;
 
+    /// <summary>
+    /// The contact data service.
+    /// </summary>
     public class ContactDataService : IDataService
     {
+        /// <summary>
+        /// The person data service.
+        /// </summary>
         private IDataService personDataService;
 
+        /// <summary>
+        /// The user data service.
+        /// </summary>
         private IDataService userDataService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContactDataService"/> class.
+        /// </summary>
         public ContactDataService()
         {
             this.userDataService = DataServiceFactory.Create(typeof(User));
             this.personDataService = DataServiceFactory.Create(typeof(Person));
         }
 
+        /// <summary>
+        /// Creates the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
         public void Create(IDomainObject obj)
         {
             var contact = obj as Contact;
@@ -45,6 +71,10 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             }
         }
 
+        /// <summary>
+        /// Reads this instance.
+        /// </summary>
+        /// <returns>The contacts.</returns>
         public IEnumerable<IDomainObject> Read()
         {
             using (var db = new ContactContext())
@@ -55,10 +85,16 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
                     contact.Person = (Person)this.personDataService.Read(contact.PersonId);
                     contact.User = (User)this.userDataService.Read(contact.UserId);
                 }
+
                 return contacts;
             }
         }
 
+        /// <summary>
+        /// Reads the specified object id.
+        /// </summary>
+        /// <param name="objectId">The object id.</param>
+        /// <returns>The contact.</returns>
         public IDomainObject Read(Guid objectId)
         {
             using (var db = new ContactContext())
@@ -70,6 +106,11 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             }
         }
 
+        /// <summary>
+        /// Updates the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
         public void Update(IDomainObject obj)
         {
             var contact = obj as Contact;
@@ -91,6 +132,10 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             }
         }
 
+        /// <summary>
+        /// Deletes the specified object id.
+        /// </summary>
+        /// <param name="objectId">The object id.</param>
         public void Delete(Guid objectId)
         {
             using (var db = new ContactContext())

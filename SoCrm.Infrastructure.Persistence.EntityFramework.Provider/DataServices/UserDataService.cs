@@ -1,4 +1,13 @@
-﻿namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserDataService.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The user data service.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
 {
     using System;
     using System.Collections.Generic;
@@ -8,8 +17,16 @@
     using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts;
     using SoCrm.Services.Security.Contracts;
 
+    /// <summary>
+    /// The user data service.
+    /// </summary>
     public class UserDataService : IDataService
     {
+        /// <summary>
+        /// Creates the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
         public void Create(IDomainObject obj)
         {
             var user = obj as User;
@@ -33,6 +50,12 @@
             }
         }
 
+        /// <summary>
+        /// Reads this instance.
+        /// </summary>
+        /// <returns>
+        /// The users.
+        /// </returns>
         public IEnumerable<IDomainObject> Read()
         {
             using (var db = new SecurityContext())
@@ -41,6 +64,13 @@
             }
         }
 
+        /// <summary>
+        /// Reads the specified object id.
+        /// </summary>
+        /// <param name="objectId">The object id.</param>
+        /// <returns>
+        /// The user.
+        /// </returns>
         public IDomainObject Read(Guid objectId)
         {
             using (var db = new SecurityContext())
@@ -49,6 +79,11 @@
             }
         }
 
+        /// <summary>
+        /// Updates the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
         public void Update(IDomainObject obj)
         {
             var user = obj as User;
@@ -68,6 +103,10 @@
             }
         }
 
+        /// <summary>
+        /// Deletes the specified object id.
+        /// </summary>
+        /// <param name="objectId">The object id.</param>
         public void Delete(Guid objectId)
         {
             using (var db = new SecurityContext())

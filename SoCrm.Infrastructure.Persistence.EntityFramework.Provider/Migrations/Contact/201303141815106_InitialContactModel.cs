@@ -1,10 +1,24 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="201303141815106_InitialContactModel.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The initial contact model.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Contact
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
+    /// <summary>
+    /// The initial contact model.
+    /// </summary>
     public partial class InitialContactModel : DbMigration
     {
+        /// <summary>
+        /// Operations to be performed during the upgrade process.
+        /// </summary>
         public override void Up()
         {
             CreateTable(
@@ -22,10 +36,13 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.C
                     })
                 .PrimaryKey(t => t.ObjectId);         
         }
-        
+
+        /// <summary>
+        /// Operations to be performed during the downgrade process.
+        /// </summary>
         public override void Down()
         {
-            DropTable("dbo.Contacts");
+            this.DropTable("dbo.Contacts");
         }
     }
 }

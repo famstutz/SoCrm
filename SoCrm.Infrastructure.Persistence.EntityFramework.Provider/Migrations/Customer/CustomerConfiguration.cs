@@ -1,28 +1,29 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CustomerConfiguration.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The customer configuration.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Customer
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class CustomerConfiguration : DbMigrationsConfiguration<SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.CustomerContext>
+    using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts;
+
+    /// <summary>
+    /// The customer configuration.
+    /// </summary>
+    internal sealed class CustomerConfiguration : DbMigrationsConfiguration<CustomerContext>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerConfiguration"/> class.
+        /// </summary>
         public CustomerConfiguration()
         {
             this.AutomaticMigrationsEnabled = true;
-        }
-
-        protected override void Seed(SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.CustomerContext context)
-        {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
         }
     }
 }

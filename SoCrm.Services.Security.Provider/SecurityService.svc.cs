@@ -10,7 +10,7 @@
     using SoCrm.Services.Security.Contracts;
     using SoCrm.Services.Security.Provider.UserPersistence;
 
-    public class SecurityService : ISecurityService
+    public sealed class SecurityService : ISecurityService, IDisposable
     {
         private PersistenceServiceOf_UserClient client;
 
@@ -81,6 +81,9 @@
             return Convert.ToBase64String(arrbyte);
         }
 
-
+        public void Dispose()
+        {
+            this.client.Close();
+        }
     }
 }

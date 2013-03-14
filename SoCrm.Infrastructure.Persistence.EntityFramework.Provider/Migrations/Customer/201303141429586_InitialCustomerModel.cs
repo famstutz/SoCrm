@@ -1,10 +1,24 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="201303141429586_InitialCustomerModel.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The inital customer model.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Customer
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
+    /// <summary>
+    /// The initial customer model.
+    /// </summary>
     public partial class InitialCustomerModel : DbMigration
     {
+        /// <summary>
+        /// Operations to be performed during the upgrade process.
+        /// </summary>
         public override void Up()
         {
             CreateTable(
@@ -77,22 +91,24 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.C
                         LastUpdateTimeStamp = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.ObjectId);
-            
         }
-        
+
+        /// <summary>
+        /// Operations to be performed during the downgrade process.
+        /// </summary>
         public override void Down()
         {
-            DropIndex("dbo.Companies", new[] { "Address_ObjectId" });
-            DropIndex("dbo.People", new[] { "Address_ObjectId" });
-            DropIndex("dbo.People", new[] { "Employer_ObjectId" });
-            DropForeignKey("dbo.Companies", "Address_ObjectId", "dbo.Addresses");
-            DropForeignKey("dbo.People", "Address_ObjectId", "dbo.Addresses");
-            DropForeignKey("dbo.People", "Employer_ObjectId", "dbo.Companies");
-            DropTable("dbo.EMailAddresses");
-            DropTable("dbo.PhoneNumbers");
-            DropTable("dbo.Addresses");
-            DropTable("dbo.Companies");
-            DropTable("dbo.People");
+            this.DropIndex("dbo.Companies", new[] { "Address_ObjectId" });
+            this.DropIndex("dbo.People", new[] { "Address_ObjectId" });
+            this.DropIndex("dbo.People", new[] { "Employer_ObjectId" });
+            this.DropForeignKey("dbo.Companies", "Address_ObjectId", "dbo.Addresses");
+            this.DropForeignKey("dbo.People", "Address_ObjectId", "dbo.Addresses");
+            this.DropForeignKey("dbo.People", "Employer_ObjectId", "dbo.Companies");
+            this.DropTable("dbo.EMailAddresses");
+            this.DropTable("dbo.PhoneNumbers");
+            this.DropTable("dbo.Addresses");
+            this.DropTable("dbo.Companies");
+            this.DropTable("dbo.People");
         }
     }
 }

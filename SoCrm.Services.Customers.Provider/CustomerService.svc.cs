@@ -16,7 +16,7 @@ namespace SoCrm.Services.Customers.Provider
     using SoCrm.Services.Customers.Provider.PersonPersistence;
     using SoCrm.Services.Customers.Provider.PhoneNumberPersistence;
 
-    public class CustomerService : ICustomerService
+    public sealed class CustomerService : ICustomerService, IDisposable
     {
         private PersistenceServiceOf_AddressClient addressClient;
         private PersistenceServiceOf_CompanyClient companyClient;
@@ -107,6 +107,15 @@ namespace SoCrm.Services.Customers.Provider
                         PhoneNumbers = phoneNumbers,
                         EMailAddresses = emailAddresses
                     });
+        }
+
+        public void Dispose()
+        {
+            this.addressClient.Close();
+            this.companyClient.Close();
+            this.eMailAddressClient.Close();
+            this.personClient.Close();
+            this.phoneNumberClient.Close();
         }
     }
 }

@@ -1,16 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PhoneNumberDataService.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The phone number data service.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     using SoCrm.Contracts;
     using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts;
     using SoCrm.Services.Customers.Contracts;
 
+    /// <summary>
+    /// The phone number data service.
+    /// </summary>
     public class PhoneNumberDataService : IDataService
     {
+        /// <summary>
+        /// Creates the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
         public void Create(IDomainObject obj)
         {
             var phoneNumber = obj as PhoneNumber;
@@ -34,6 +50,12 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             }
         }
 
+        /// <summary>
+        /// Reads this instance.
+        /// </summary>
+        /// <returns>
+        /// The phone numbers.
+        /// </returns>
         public IEnumerable<IDomainObject> Read()
         {
             using (var db = new CustomerContext())
@@ -42,6 +64,13 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             }
         }
 
+        /// <summary>
+        /// Reads the specified object id.
+        /// </summary>
+        /// <param name="objectId">The object id.</param>
+        /// <returns>
+        /// The phone number.
+        /// </returns>
         public IDomainObject Read(Guid objectId)
         {
             using (var db = new CustomerContext())
@@ -50,6 +79,11 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             }
         }
 
+        /// <summary>
+        /// Updates the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
         public void Update(IDomainObject obj)
         {
             var phoneNumber = obj as PhoneNumber;
@@ -68,6 +102,10 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             }
         }
 
+        /// <summary>
+        /// Deletes the specified object id.
+        /// </summary>
+        /// <param name="objectId">The object id.</param>
         public void Delete(Guid objectId)
         {
             using (var db = new CustomerContext())
