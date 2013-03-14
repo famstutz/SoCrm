@@ -18,6 +18,15 @@ namespace SoCrm.Services.Customers.Contracts
         IEnumerable<Company> GetAllCompanies();
 
         [OperationContract]
+        IEnumerable<Address> GetAllAddresses();
+        
+        [OperationContract]
+        IEnumerable<EMailAddress> GetAllEMailAddresses();
+
+        [OperationContract]
+        IEnumerable<PhoneNumber> GetAllPhoneNumbers();
+
+        [OperationContract]
         Person GetPersonByObjectId(Guid objectId);
 
         [OperationContract]

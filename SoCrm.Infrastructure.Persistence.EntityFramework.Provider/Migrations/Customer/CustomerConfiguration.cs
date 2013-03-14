@@ -1,18 +1,15 @@
-namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations
+namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Customer
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class LoggingConfiguration : DbMigrationsConfiguration<SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.LoggingContext>
+    internal sealed class CustomerConfiguration : DbMigrationsConfiguration<SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.CustomerContext>
     {
-        public LoggingConfiguration()
+        public CustomerConfiguration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.LoggingContext context)
+        protected override void Seed(SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts.CustomerContext context)
         {
             //  This method will be called after migrating to the latest version.
 

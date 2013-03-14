@@ -1,16 +1,18 @@
 ﻿<Window x:Class="SoCrm.Test.WpfClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:wpfClient="clr-namespace:SoCrm.Test.WpfClient"
-        Title="MainWindow" Height="544" Width="620">
+        Title="MainWindow">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="514" VerticalAlignment="Top" Width="612">
+        <TabControl>
             <TabItem Header="LogEvent">
                 <Grid>
                     <wpfClient:LogEventControl />
                 </Grid>
             </TabItem>
             <TabItem Header="Address">
-                <Grid/>
+                <Grid>
+                    <wpfClient:AddressControl />
+                </Grid>
             </TabItem>
         </TabControl>
 

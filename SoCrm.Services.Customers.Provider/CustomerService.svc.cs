@@ -43,6 +43,21 @@ namespace SoCrm.Services.Customers.Provider
             return this.companyClient.GetAll();
         }
 
+        public IEnumerable<Address> GetAllAddresses()
+        {
+            return this.addressClient.GetAll();
+        }
+
+        public IEnumerable<EMailAddress> GetAllEMailAddresses()
+        {
+            return this.eMailAddressClient.GetAll();
+        }
+
+        public IEnumerable<PhoneNumber> GetAllPhoneNumbers()
+        {
+            return this.phoneNumberClient.GetAll();
+        }
+
         public Person GetPersonByObjectId(Guid objectId)
         {
             return this.personClient.Get(objectId);

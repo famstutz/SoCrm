@@ -9,7 +9,7 @@
         public DbSet<LogEvent> LogEvents { get; set; }
 
         public LoggingContext()
-            : base("Name=SoCrm")
+            : base("Name=Logging")
         {
         }
     }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SoCrm.Test.WpfClient.LogEventControl"
+﻿<UserControl x:Class="SoCrm.Test.WpfClient.AddressControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
              mc:Ignorable="d">
     <Grid>
         <StackPanel>
-            <GroupBox Header="New Log Event">
+            <GroupBox Header="New Address">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="120" />
@@ -17,25 +17,25 @@
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
+                        <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Message" />
-                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="MessageTextBox" />
-                    <TextBlock Grid.Column="0" Grid.Row="1"  Text="Severity" />
-                    <ComboBox Grid.Column="1" Grid.Row="1" x:Name="SeverityComboBox">
-                        <ComboBoxItem Content="Error"/>
-                        <ComboBoxItem Content="Warning"/>
-                        <ComboBoxItem Content="Info"/>
-                    </ComboBox>
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Timestamp" />
-                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="TimestampTextBox"/>
-                    <Button Grid.Column="1" Grid.Row="3" x:Name="NewLogEventButton" Content="Save New Log Event" Click="NewLogEventButton_Click"/>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Address Line" />
+                    <TextBox Grid.Column="1" Grid.Row="0" Name="AddressLineTextBox"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Zip Code" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Name="ZipCodeTextBox"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="City" />
+                    <TextBox Grid.Column="1" Grid.Row="2" Name="CityTextBox"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Country" />
+                    <TextBox Grid.Column="1" Grid.Row="3" Name="CountryTextBox"/>
+                    <Button Grid.Column="1" Grid.Row="4" Name="SaveNewAddressButton" Content="Save New Address" Click="SaveNewAddressButton_Click" />
                 </Grid>
             </GroupBox>
-            <GroupBox Header="Stored Log Events">
+            
+            <GroupBox Header="Stored Addresses">
                 <Grid>
                     <StackPanel>
                         <Button x:Name="RefreshButton" Content="Refresh" Click="RefreshButton_Click"/>
-                        <DataGrid x:Name="LogEventsDataGrid" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+                        <DataGrid x:Name="AddressesDataGrid" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
                     </StackPanel>
                 </Grid>
             </GroupBox>

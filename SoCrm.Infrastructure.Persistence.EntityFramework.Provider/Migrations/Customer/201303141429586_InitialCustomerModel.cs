@@ -1,9 +1,9 @@
-namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations
+namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Customer
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialSetUp : DbMigration
+    public partial class InitialCustomerModel : DbMigration
     {
         public override void Up()
         {
@@ -78,24 +78,10 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations
                     })
                 .PrimaryKey(t => t.ObjectId);
             
-            DropTable("dbo.LogEvents");
         }
         
         public override void Down()
         {
-            CreateTable(
-                "dbo.LogEvents",
-                c => new
-                    {
-                        ObjectId = c.Guid(nullable: false),
-                        Message = c.String(maxLength: 4000),
-                        Severity = c.Int(nullable: false),
-                        TimeStamp = c.DateTime(nullable: false),
-                        CreationTimeStamp = c.DateTime(nullable: false),
-                        LastUpdateTimeStamp = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.ObjectId);
-            
             DropIndex("dbo.Companies", new[] { "Address_ObjectId" });
             DropIndex("dbo.People", new[] { "Address_ObjectId" });
             DropIndex("dbo.People", new[] { "Employer_ObjectId" });

@@ -1,13 +1,12 @@
-namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations
+namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Logging
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
-    public partial class LogEvent : DbMigration
+
+    public partial class InitialLoggingModel : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
+            this.CreateTable(
                 "dbo.LogEvents",
                 c => new
                     {
@@ -24,7 +23,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.LogEvents");
+            this.DropTable("dbo.LogEvents");
         }
     }
 }

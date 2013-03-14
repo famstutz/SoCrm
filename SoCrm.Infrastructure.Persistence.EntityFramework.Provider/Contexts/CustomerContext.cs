@@ -12,6 +12,6 @@
         public DbSet<Address> Addresses { get; set; }
         public DbSet<EMailAddress> EMailAddresses { get; set; }
 
-        public CustomerContext() : base("Name=SoCrm") { }
+        public CustomerContext() : base("Name=Customer") { }
     }
 }

@@ -54,7 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddressPersistenceService.svc" />
-    <Content Include="App_Data\SoCrm.sdf" />
+    <Content Include="App_Data\Customer.sdf" />
+    <Content Include="App_Data\Logging.sdf" />
     <Content Include="CompanyPersistenceService.svc" />
     <Content Include="EMailAddressPersistenceService.svc" />
     <Content Include="LogEventPersistenceService.svc" />
@@ -74,11 +75,15 @@
     <Compile Include="EMailAddressPersistenceService.svc.cs">
       <DependentUpon>EMailAddressPersistenceService.svc</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201303141227536_InitalSetUp.cs" />
-    <Compile Include="Migrations\201303141227536_InitalSetUp.Designer.cs">
-      <DependentUpon>201303141227536_InitalSetUp.cs</DependentUpon>
+    <Compile Include="Migrations\Customer\201303141429586_InitialCustomerModel.cs" />
+    <Compile Include="Migrations\Customer\201303141429586_InitialCustomerModel.Designer.cs">
+      <DependentUpon>201303141429586_InitialCustomerModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\CustomerConfiguration.cs" />
+    <Compile Include="Migrations\Logging\201303141427102_InitialLoggingModel.cs" />
+    <Compile Include="Migrations\Logging\201303141427102_InitialLoggingModel.Designer.cs">
+      <DependentUpon>201303141427102_InitialLoggingModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Customer\CustomerConfiguration.cs" />
     <Compile Include="PersistenceServiceBase.cs" />
     <Compile Include="Contexts\CustomerContext.cs" />
     <Compile Include="DataServiceFactory.cs" />
@@ -93,11 +98,7 @@
     <Compile Include="LogEventPersistenceService.svc.cs">
       <DependentUpon>LogEventPersistenceService.svc</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201303132001381_LogEvent.cs" />
-    <Compile Include="Migrations\201303132001381_LogEvent.Designer.cs">
-      <DependentUpon>201303132001381_LogEvent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\LoggingConfiguration.cs" />
+    <Compile Include="Migrations\Logging\LoggingConfiguration.cs" />
     <Compile Include="PersonPersistenceService.svc.cs">
       <DependentUpon>PersonPersistenceService.svc</DependentUpon>
     </Compile>
@@ -105,14 +106,6 @@
       <DependentUpon>PhoneNumberPersistenceService.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201303132001381_LogEvent.resx">
-      <DependentUpon>201303132001381_LogEvent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201303141227536_InitalSetUp.resx">
-      <DependentUpon>201303141227536_InitalSetUp.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -140,6 +133,14 @@
       <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>
       <Name>SoCrm.Services.Logging.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\Customer\201303141429586_InitialCustomerModel.resx">
+      <DependentUpon>201303141429586_InitialCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Logging\201303141427102_InitialLoggingModel.resx">
+      <DependentUpon>201303141427102_InitialLoggingModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
