@@ -8,12 +8,12 @@
     public interface ILoggingService
     {
         [OperationContract]
-        IEnumerable<LogEvent> GetAll();
+        IEnumerable<LogEvent> GetAllLogEvents();
         [OperationContract]
-        IEnumerable<LogEvent> GetBySeverity(Severity severity);
+        IEnumerable<LogEvent> GetLogEventsBySeverity(Severity severity);
         [OperationContract]
-        LogEvent GetByObjectId(Guid objectId);
+        LogEvent GetLogEventByObjectId(Guid objectId);
         [OperationContract]
-        void Log(string message, Severity severity, DateTime timeStamp);
+        void LogEvent(string message, Severity severity, DateTime timeStamp);
     }
  }

@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPhoneNumberPersistenceService.cs" />
+    <Compile Include="ICompanyPersistenceService.cs" />
+    <Compile Include="IPersonPersistenceService.cs" />
+    <Compile Include="IEMailAddressPersistenceService.cs" />
+    <Compile Include="IAddressPersistenceService.cs" />
+    <Compile Include="ILogEventPersistenceService.cs" />
     <Compile Include="IPersistenceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -47,6 +53,14 @@
     <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
+      <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>
+      <Name>SoCrm.Services.Customers.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
+      <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>
+      <Name>SoCrm.Services.Logging.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
