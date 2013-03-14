@@ -1,5 +1,6 @@
 ﻿namespace SoCrm.Services.Security.Contracts
 {
+    using System;
     using System.Collections.Generic;
     using System.ServiceModel;
 
@@ -20,6 +21,9 @@
 
         [OperationContract]
         User GetUserByCredentials(string userName, string password);
+
+        [OperationContract]
+        User GetUserByObjectId(Guid objectId);
 
         [OperationContract]
         void SetPassword(User user, string oldPassword, string newPassword);

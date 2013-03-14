@@ -54,6 +54,11 @@
             throw new InvalidCredentialException();
         }
 
+        public User GetUserByObjectId(Guid objectId)
+        {
+            return this.client.GetAll().Single(u => u.ObjectId == objectId);
+        }
+
         public void SetPassword(User user, string oldPassword, string newPassword)
         {
             if (this.ValidateCredentials(user.UserName, oldPassword))
