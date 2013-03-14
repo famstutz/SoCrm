@@ -35,6 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customers", "Customers", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Customers.Contracts", "SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj", "{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Customers.Provider", "SoCrm.Services.Customers.Provider\SoCrm.Services.Customers.Provider.csproj", "{A80D72DD-65ED-4E97-A6C8-BF700F439212}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BDDA109D-0222-45BD-87C3-BB9B939AED89} = {BDDA109D-0222-45BD-87C3-BB9B939AED89}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +74,10 @@ Global
 		{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A80D72DD-65ED-4E97-A6C8-BF700F439212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80D72DD-65ED-4E97-A6C8-BF700F439212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80D72DD-65ED-4E97-A6C8-BF700F439212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80D72DD-65ED-4E97-A6C8-BF700F439212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +93,6 @@ Global
 		{BDDA109D-0222-45BD-87C3-BB9B939AED89} = {B46926A9-E86C-41E6-B488-F117261E2BE9}
 		{A52FEC95-4B43-44AD-AF34-16B596986F38} = {2CADDE14-E1CF-43EE-8833-B5B061C0A609}
 		{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735} = {BCD9FDF6-293C-40E9-B469-650A2FA62B12}
+		{A80D72DD-65ED-4E97-A6C8-BF700F439212} = {BCD9FDF6-293C-40E9-B469-650A2FA62B12}
 	EndGlobalSection
 EndGlobal
