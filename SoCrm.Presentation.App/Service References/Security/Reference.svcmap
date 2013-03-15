@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a477c560-a9ea-4e27-b59a-06f157cf8193" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:22667/SecurityService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SecurityService.wsdl" MetadataType="Wsdl" ID="ea6f3070-a862-4e91-964b-e8a40d7b0493" SourceId="1" SourceUrl="http://localhost:22667/SecurityService.svc?wsdl" />
+    <MetadataFile FileName="SecurityService.xsd" MetadataType="Schema" ID="a6726bcd-7fc6-4bae-93e7-af76dcf84307" SourceId="1" SourceUrl="http://localhost:22667/SecurityService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SecurityService.disco" MetadataType="Disco" ID="1f801c12-e93c-4248-a930-394d1b787a76" SourceId="1" SourceUrl="http://localhost:22667/SecurityService.svc?disco" />
+    <MetadataFile FileName="SecurityService1.xsd" MetadataType="Schema" ID="f9d39356-e456-4e8d-a551-6445824acd6e" SourceId="1" SourceUrl="http://localhost:22667/SecurityService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SecurityService2.xsd" MetadataType="Schema" ID="70d129ce-e50d-4e48-a7c5-d628373681fb" SourceId="1" SourceUrl="http://localhost:22667/SecurityService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SecurityService3.xsd" MetadataType="Schema" ID="d675c69c-7b31-4e23-9d19-f206303ee30d" SourceId="1" SourceUrl="http://localhost:22667/SecurityService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

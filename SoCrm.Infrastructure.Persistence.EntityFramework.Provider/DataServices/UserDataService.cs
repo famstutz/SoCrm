@@ -111,7 +111,9 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new SecurityContext())
             {
-                db.Users.Remove(this.Read(objectId) as User);
+                var user = this.Read(objectId) as User;
+                db.Users.Attach(user);
+                db.Users.Remove(user);
                 db.SaveChanges();
             }
         }

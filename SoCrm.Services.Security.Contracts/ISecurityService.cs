@@ -37,9 +37,22 @@ namespace SoCrm.Services.Security.Contracts
         /// Gets the users by role.
         /// </summary>
         /// <param name="role">The role.</param>
-        /// <returns>All users matching the given role.</returns>
+        /// <returns>
+        /// All users matching the given role.
+        /// </returns>
         [OperationContract]
         IEnumerable<User> GetUsersByRole(Role role);
+
+        /// <summary>
+        /// Gets the users by role.
+        /// </summary>
+        /// <param name="role">The role.</param>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns>
+        /// All users matching the given role and user name.
+        /// </returns>
+        [OperationContract]
+        IEnumerable<User> GetUsersByRoleAndUserName(Role role, string userName);
 
         /// <summary>
         /// Validates the credentials.
@@ -84,5 +97,12 @@ namespace SoCrm.Services.Security.Contracts
         /// <param name="role">The role.</param>
         [OperationContract]
         void CreateUser(string userName, string password, Role role);
+
+        /// <summary>
+        /// Deletes the user.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        [OperationContract]
+        void DeleteUser(User user);
     }
 }

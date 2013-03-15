@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SecurityService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:22667/SecurityService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:22667/SecurityService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:22667/SecurityService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" />
+      <xsd:import schemaLocation="http://localhost:22667/SecurityService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecurityService_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetAllRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetAllRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUsersByRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByRole" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUsersByRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUsersByRoleAndUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByRoleAndUserName" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUsersByRoleAndUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByRoleAndUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_ValidateCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_ValidateCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUserByCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUserByCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUserByObjectId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByObjectId" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_GetUserByObjectId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByObjectIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_SetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_SetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISecurityService">
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/GetAllUsers" message="tns:ISecurityService_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/GetAllUsersResponse" message="tns:ISecurityService_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/GetAllRoles" message="tns:ISecurityService_GetAllRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/GetAllRolesResponse" message="tns:ISecurityService_GetAllRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/GetUsersByRole" message="tns:ISecurityService_GetUsersByRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/GetUsersByRoleResponse" message="tns:ISecurityService_GetUsersByRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByRoleAndUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/GetUsersByRoleAndUserName" message="tns:ISecurityService_GetUsersByRoleAndUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/GetUsersByRoleAndUserNameResponse" message="tns:ISecurityService_GetUsersByRoleAndUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCredentials">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/ValidateCredentials" message="tns:ISecurityService_ValidateCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/ValidateCredentialsResponse" message="tns:ISecurityService_ValidateCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByCredentials">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/GetUserByCredentials" message="tns:ISecurityService_GetUserByCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/GetUserByCredentialsResponse" message="tns:ISecurityService_GetUserByCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByObjectId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/GetUserByObjectId" message="tns:ISecurityService_GetUserByObjectId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/GetUserByObjectIdResponse" message="tns:ISecurityService_GetUserByObjectId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/SetPassword" message="tns:ISecurityService_SetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/SetPasswordResponse" message="tns:ISecurityService_SetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/CreateUser" message="tns:ISecurityService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/CreateUserResponse" message="tns:ISecurityService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityService/DeleteUser" message="tns:ISecurityService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityService/DeleteUserResponse" message="tns:ISecurityService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISecurityService" type="tns:ISecurityService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/GetAllRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByRole">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/GetUsersByRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByRoleAndUserName">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/GetUsersByRoleAndUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCredentials">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/ValidateCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByCredentials">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/GetUserByCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByObjectId">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/GetUserByObjectId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/SetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/ISecurityService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecurityService">
+    <wsdl:port name="BasicHttpBinding_ISecurityService" binding="tns:BasicHttpBinding_ISecurityService">
+      <soap:address location="http://localhost:22667/SecurityService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

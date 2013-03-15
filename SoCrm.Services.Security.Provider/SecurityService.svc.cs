@@ -72,6 +72,25 @@ namespace SoCrm.Services.Security.Provider
         }
 
         /// <summary>
+        /// Gets the users by role.
+        /// </summary>
+        /// <param name="role">The role.</param>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns>
+        /// All users matching the given role.
+        /// </returns>
+        public IEnumerable<User> GetUsersByRoleAndUserName(Role role, string userName)
+        {
+            var users = this.GetUsersByRole(role);
+            if (!string.IsNullOrWhiteSpace(userName))
+            {
+                users = users.Where(u => u.UserName == userName);
+            }
+
+            return users;
+        }
+
+        /// <summary>
         /// Validates the credentials.
         /// </summary>
         /// <param name="userName">Name of the user.</param>
@@ -146,6 +165,15 @@ namespace SoCrm.Services.Security.Provider
         public void CreateUser(string userName, string password, Role role)
         {
             this.client.Save(new User { UserName = userName, Role = role, Password = HashPassword(password) });
+        }
+
+        /// <summary>
+        /// Deletes the user.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        public void DeleteUser(User user)
+        {
+            this.client.Remove(user);
         }
 
         /// <summary>
