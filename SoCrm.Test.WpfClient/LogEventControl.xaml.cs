@@ -21,7 +21,7 @@ namespace SoCrm.Test.WpfClient
     /// <summary>
     /// Interaction logic for LogEventControl.xaml
     /// </summary>
-    public partial class LogEventControl : UserControl
+    public partial class LogEventControl : UserControl, IDisposable
     {
          private LoggingServiceClient client;
 
@@ -46,6 +46,11 @@ namespace SoCrm.Test.WpfClient
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             this.LogEventsDataGrid.ItemsSource = this.client.GetAllLogEvents();
+        }
+
+        public void Dispose()
+        {
+            this.client.Close();
         }
     }
 }

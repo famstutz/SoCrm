@@ -20,7 +20,7 @@ namespace SoCrm.Test.WpfClient
     /// <summary>
     /// Interaction logic for AddressControl.xaml
     /// </summary>
-    public partial class AddressControl : UserControl
+    public partial class AddressControl : UserControl, IDisposable
     {
         private CustomerServiceClient client;
 
@@ -40,6 +40,11 @@ namespace SoCrm.Test.WpfClient
         {
             this.client.CreateAddress(
                 this.AddressLineTextBox.Text, this.ZipCodeTextBox.Text, this.CityTextBox.Text, this.CountryTextBox.Text);
+        }
+
+        public void Dispose()
+        {
+            this.client.Close();
         }
     }
 }
