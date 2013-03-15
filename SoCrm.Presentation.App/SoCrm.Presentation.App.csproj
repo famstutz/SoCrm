@@ -34,22 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
-      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Windsor">
-      <HintPath>..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -62,85 +54,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\WpfCommand.cs" />
-    <Compile Include="Container\Container.cs" />
-    <Compile Include="Container\IContainer.cs" />
-    <Compile Include="Container\MicrokernelContainer.cs" />
-    <Compile Include="MainView.xaml.cs">
-      <DependentUpon>MainView.xaml</DependentUpon>
+    <Compile Include="AppController.cs" />
+    <Compile Include="IAppController.cs" />
+    <Compile Include="Shell\IShellViewModel.cs" />
+    <Compile Include="Shell\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\NavigateToViewCommand.cs" />
-    <Compile Include="ViewModels\ICreateUserViewModel.cs" />
-    <Compile Include="ViewModels\IMainViewModel.cs" />
-    <Compile Include="ViewModels\IUserListViewModel.cs" />
-    <Compile Include="ViewModels\IViewModelBase.cs" />
-    <Compile Include="Views\CreateUserView.xaml.cs">
-      <DependentUpon>CreateUserView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PasswordBoxHelper.cs" />
-    <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="RelayCommand.cs" />
+    <Compile Include="ShellModule.cs" />
     <Compile Include="Service References\Security\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserListView.xaml.cs">
-      <DependentUpon>UserListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModels\CreateUserViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\UserListViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Page Include="MainView.xaml">
+    <Compile Include="Shell\ShellViewModel.cs" />
+    <Page Include="Resources\Templates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CreateUserView.xaml">
+    <Page Include="Shell\ShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Views\UserListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SoCrm.Services.Security.Contracts.User.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <AppDesigner Include="Properties\" />
     <None Include="Service References\Security\SecurityService.wsdl" />
     <None Include="Service References\Security\SecurityService.xsd">
@@ -163,6 +108,14 @@
     <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Presentation.Core\SoCrm.Presentation.Core.csproj">
+      <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
+      <Name>SoCrm.Presentation.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Presentation.Security\SoCrm.Presentation.Security.csproj">
+      <Project>{b640bf52-3cfe-4217-8955-59d87b02f586}</Project>
+      <Name>SoCrm.Presentation.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Security.Contracts\SoCrm.Services.Security.Contracts.csproj">
       <Project>{E13A6892-4D57-4A2A-8670-7B0D105018DC}</Project>

@@ -1,31 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="App.xaml.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   Interaction logic for App.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace SoCrm.Presentation.App
 {
-    using SoCrm.Presentation.App.Container;
-    using SoCrm.Presentation.App.ViewModels;
+    using System.Windows;
+
+    using Microsoft.Practices.Unity;
+
+    using SoCrm.Presentation.App.Shell;
+    using SoCrm.Presentation.Core;
+    using SoCrm.Presentation.Security;
 
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Interaction logic for App.
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
+        /// <summary>
+        /// Raises the <see cref="E:System.Windows.Application.Startup" /> event.
+        /// </summary>
+        /// <param name="e">A <see cref="T:System.Windows.StartupEventArgs" /> that contains the event data.</param>
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-            var container = new MicrokernelContainer();
+            var container = new UnityContainer();
 
-            container.RegisterA<IMainViewModel>(typeof(MainViewModel));
-            container.RegisterA<IUserListViewModel>(typeof(UserListViewModel));
-            container.RegisterA<ICreateUserViewModel>(typeof(CreateUserViewModel));
+            container.Resolve<Bootstrapper>()
+                .RegisterModule(typeof(ShellModule))
+                .RegisterModule(typeof(SecurityModule));
 
-            Container.Container.InitializeContainerWith(container);
+            container.Resolve<IShellViewModel>().Show();
+            container.Resolve<IAppController>().Run();
         }
     }
 }
