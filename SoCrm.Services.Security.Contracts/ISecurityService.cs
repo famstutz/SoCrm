@@ -95,8 +95,9 @@ namespace SoCrm.Services.Security.Contracts
         /// <param name="userName">Name of the user.</param>
         /// <param name="password">The password.</param>
         /// <param name="role">The role.</param>
+        /// <returns>The created user.</returns>
         [OperationContract]
-        void CreateUser(string userName, string password, Role role);
+        User CreateUser(string userName, string password, Role role);
 
         /// <summary>
         /// Deletes the user.

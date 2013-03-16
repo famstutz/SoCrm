@@ -26,8 +26,11 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         /// Creates the specified object.
         /// </summary>
         /// <param name="obj">The object.</param>
+        /// <returns>
+        /// The object id.
+        /// </returns>
         /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
-        public void Create(IDomainObject obj)
+        public Guid Create(IDomainObject obj)
         {
             var emailAddress = obj as EMailAddress;
             if (emailAddress == null)
@@ -48,6 +51,8 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
                 db.EMailAddresses.Add(emailAddress);
                 db.SaveChanges();
             }
+
+            return emailAddress.ObjectId;
         }
 
         /// <summary>
@@ -106,7 +111,9 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new CustomerContext())
             {
-                db.EMailAddresses.Remove(this.Read(objectId) as EMailAddress);
+                var emailAddress = this.Read(objectId) as EMailAddress;
+                db.EMailAddresses.Attach(emailAddress);
+                db.EMailAddresses.Remove(emailAddress);
                 db.SaveChanges();
             }
         }

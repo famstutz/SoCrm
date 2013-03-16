@@ -11,6 +11,7 @@ namespace SoCrm.Services.Customers.Provider
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
 
     using SoCrm.Services.Customers.Contracts;
@@ -83,16 +84,19 @@ namespace SoCrm.Services.Customers.Provider
         {
             return this.companyClient.GetAll();
         }
-
+        
         /// <summary>
-        /// Gets all addresses.
+        /// Gets all countries.
         /// </summary>
-        /// <returns>
-        /// All addresses.
-        /// </returns>
-        public IEnumerable<Address> GetAllAddresses()
+        /// <returns>All countries.</returns>
+        public IEnumerable<string> GetAllCountries()
         {
-            return this.addressClient.GetAll();
+            return
+                CultureInfo.GetCultures(CultureTypes.SpecificCultures)
+                           .Select(ci => new RegionInfo(ci.LCID))
+                           .GroupBy(ri => ri.TwoLetterISORegionName)
+                           .Select(g => g.First().DisplayName)
+                           .OrderBy(c => c);
         }
 
         /// <summary>
@@ -104,6 +108,15 @@ namespace SoCrm.Services.Customers.Provider
         public IEnumerable<EMailAddress> GetAllEMailAddresses()
         {
             return this.emailAddressClient.GetAll();
+        }
+
+        /// <summary>
+        /// Gets the contact types.
+        /// </summary>
+        /// <returns>The contact types.</returns>
+        public IEnumerable<ContactType> GetContactTypes()
+        {
+            return Enum.GetValues(typeof(ContactType)).Cast<ContactType>();
         }
 
         /// <summary>
@@ -167,26 +180,17 @@ namespace SoCrm.Services.Customers.Provider
         }
 
         /// <summary>
-        /// Creates the address.
-        /// </summary>
-        /// <param name="addressLine">The address line.</param>
-        /// <param name="zipCode">The zip code.</param>
-        /// <param name="city">The city.</param>
-        /// <param name="country">The country.</param>
-        public void CreateAddress(string addressLine, string zipCode, string city, string country)
-        {
-            this.addressClient.Save(
-                new Address { AddressLine = addressLine, City = city, Country = country, ZipCode = zipCode });
-        }
-
-        /// <summary>
         /// Creates the phone number.
         /// </summary>
         /// <param name="phoneNumber">The phone number.</param>
         /// <param name="contactType">Type of the contact.</param>
-        public void CreatePhoneNumber(string phoneNumber, ContactType contactType)
+        /// <returns>
+        /// The created phone number.
+        /// </returns>
+        public PhoneNumber CreatePhoneNumber(string phoneNumber, ContactType contactType)
         {
-            this.phoneNumberClient.Save(new PhoneNumber { ContactType = contactType, Number = phoneNumber });
+            var phoneNumberObjectId = this.phoneNumberClient.Save(new PhoneNumber { ContactType = contactType, Number = phoneNumber });
+            return this.phoneNumberClient.Get(phoneNumberObjectId);
         }
 
         /// <summary>
@@ -194,20 +198,44 @@ namespace SoCrm.Services.Customers.Provider
         /// </summary>
         /// <param name="emailAddress">The e mail address.</param>
         /// <param name="contactType">Type of the contact.</param>
-        public void CreateEmailAddress(string emailAddress, ContactType contactType)
+        /// <returns>
+        /// The created e mail address.
+        /// </returns>
+        public EMailAddress CreateEmailAddress(string emailAddress, ContactType contactType)
         {
-            this.emailAddressClient.Save(new EMailAddress { Address = emailAddress, ContactType = contactType });
+            var emailAddressObjectId = this.emailAddressClient.Save(new EMailAddress { Address = emailAddress, ContactType = contactType });
+            return this.emailAddressClient.Get(emailAddressObjectId);
         }
 
         /// <summary>
         /// Creates the company.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="address">The address.</param>
+        /// <param name="addressLine">The address line.</param>
+        /// <param name="zipCode">The zip code.</param>
+        /// <param name="city">The city.</param>
+        /// <param name="country">The country.</param>
         /// <param name="website">The website.</param>
-        public void CreateCompany(string name, Address address, string website)
+        /// <returns>
+        /// The created company.
+        /// </returns>
+        public Company CreateCompany(string name, string addressLine, string zipCode, string city, string country, string website)
         {
-            this.companyClient.Save(new Company { Address = address, Website = website, Name = name });
+            var companyObjectId = this.companyClient.Save(
+                new Company
+                    {
+                        Address =
+                            new Address
+                                {
+                                    AddressLine = addressLine,
+                                    City = city,
+                                    Country = country,
+                                    ZipCode = zipCode
+                                },
+                        Website = website,
+                        Name = name
+                    });
+            return this.companyClient.Get(companyObjectId);
         }
 
         /// <summary>
@@ -216,27 +244,71 @@ namespace SoCrm.Services.Customers.Provider
         /// <param name="firstName">The first name.</param>
         /// <param name="lastName">The last name.</param>
         /// <param name="employer">The employer.</param>
-        /// <param name="address">The address.</param>
+        /// <param name="addressLine">The address line.</param>
+        /// <param name="zipCode">The zip code.</param>
+        /// <param name="city">The city.</param>
+        /// <param name="country">The country.</param>
         /// <param name="phoneNumbers">The phone numbers.</param>
         /// <param name="emailAddresses">The email addresses.</param>
-        public void CreatePerson(
+        /// <returns>
+        /// The created person.
+        /// </returns>
+        public Person CreatePerson(
             string firstName,
             string lastName,
             Company employer,
-            Address address,
-            IEnumerable<PhoneNumber> phoneNumbers,
-            IEnumerable<EMailAddress> emailAddresses)
+            string addressLine,
+            string zipCode,
+            string city,
+            string country,
+            ICollection<PhoneNumber> phoneNumbers,
+            ICollection<EMailAddress> emailAddresses)
         {
-            this.personClient.Save(
+            var personObjectId = this.personClient.Save(
                 new Person
                     {
                         FirstName = firstName,
                         LastName = lastName,
                         Employer = employer,
-                        Address = address,
+                        Address =
+                            new Address
+                                {
+                                    AddressLine = addressLine,
+                                    City = city,
+                                    Country = country,
+                                    ZipCode = zipCode
+                                },
                         PhoneNumbers = phoneNumbers,
                         EMailAddresses = emailAddresses
                     });
+            return this.personClient.Get(personObjectId);
+        }
+
+        /// <summary>
+        /// Deletes the person.
+        /// </summary>
+        /// <param name="person">The person.</param>
+        public void DeletePerson(Person person)
+        {
+            this.personClient.Remove(person);
+        }
+
+        /// <summary>
+        /// Deletes the E mail address.
+        /// </summary>
+        /// <param name="emailAddress">The email address.</param>
+        public void DeleteEMailAddress(EMailAddress emailAddress)
+        {
+            this.emailAddressClient.Remove(emailAddress);
+        }
+
+        /// <summary>
+        /// Deletes the phone number.
+        /// </summary>
+        /// <param name="phoneNumber">The phone number.</param>
+        public void DeletePhoneNumber(PhoneNumber phoneNumber)
+        {
+            this.phoneNumberClient.Remove(phoneNumber);
         }
 
         /// <summary>

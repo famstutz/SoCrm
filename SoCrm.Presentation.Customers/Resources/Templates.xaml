@@ -1,10 +1,29 @@
 ﻿<ResourceDictionary 
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:customerList="clr-namespace:SoCrm.Presentation.Customers.CustomerList">
+	xmlns:customerList="clr-namespace:SoCrm.Presentation.Customers.CustomerList"
+	xmlns:createCustomer="clr-namespace:SoCrm.Presentation.Customers.CreateCustomer"
+	xmlns:createCompany="clr-namespace:SoCrm.Presentation.Customers.CreateCompany"
+	xmlns:createEMailAddress="clr-namespace:SoCrm.Presentation.Customers.CreateEMailAddress"
+	xmlns:createPhoneNumber="clr-namespace:SoCrm.Presentation.Customers.CreatePhoneNumber">
 
     <DataTemplate DataType="{x:Type customerList:CustomerListViewModel}">
         <customerList:CustomerListView />
     </DataTemplate>
     
+    <DataTemplate DataType="{x:Type createCustomer:CreateCustomerViewModel}">
+        <createCustomer:CreateCustomerView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type createCompany:CreateCompanyViewModel}">
+        <createCompany:CreateCompanyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type createEMailAddress:CreateEMailAddressViewModel}">
+        <createEMailAddress:CreateEMailAddressView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type createPhoneNumber:CreatePhoneNumberViewModel}">
+        <createPhoneNumber:CreatePhoneNumberView />
+    </DataTemplate>
 </ResourceDictionary>

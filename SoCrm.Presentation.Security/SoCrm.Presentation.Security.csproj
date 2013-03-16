@@ -35,6 +35,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -110,7 +111,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Properties\DataSources\SoCrm.Services.Security.Contracts.User.datasource" />
     <None Include="Service References\Security\SecurityService.wsdl" />
     <None Include="Service References\Security\SecurityService.xsd">

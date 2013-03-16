@@ -26,8 +26,11 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         /// Creates the specified object.
         /// </summary>
         /// <param name="obj">The object.</param>
+        /// <returns>
+        /// The object id.
+        /// </returns>
         /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
-        public void Create(IDomainObject obj)
+        public Guid Create(IDomainObject obj)
         {
             var person = obj as Person;
             if (person == null)
@@ -43,11 +46,45 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             person.CreationTimeStamp = DateTime.Now;
             person.LastUpdateTimeStamp = DateTime.Now;
 
+            if (person.Address != null)
+            {
+                if (person.Address.ObjectId == default(Guid))
+                {
+                    person.Address.ObjectId = Guid.NewGuid();
+                }
+
+                person.Address.CreationTimeStamp = DateTime.Now;
+                person.Address.LastUpdateTimeStamp = DateTime.Now;
+            }
+
             using (var db = new CustomerContext())
             {
+                if (person.Employer != null)
+                {
+                    db.Companies.Attach(person.Employer);
+                }
+
+                if (person.EMailAddresses != null)
+                {
+                    foreach (var emailAddress in person.EMailAddresses)
+                    {
+                        db.EMailAddresses.Attach(emailAddress);
+                    }
+                }
+
+                if (person.PhoneNumbers != null)
+                {
+                    foreach (var phoneNumber in person.PhoneNumbers)
+                    {
+                        db.PhoneNumbers.Attach(phoneNumber);
+                    }
+                }
+
                 db.Persons.Add(person);
                 db.SaveChanges();
             }
+
+            return person.ObjectId;
         }
 
         /// <summary>
@@ -60,7 +97,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new CustomerContext())
             {
-                return db.Persons.ToList();
+                return db.Persons.Include("Employer").Include("Address").Include("EMailAddresses").Include("PhoneNumbers").ToList();
             }
         }
 
@@ -75,7 +112,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new CustomerContext())
             {
-                return db.Persons.Single(p => p.ObjectId.Equals(objectId));
+                return db.Persons.Include("Employer").Include("Address").Include("EMailAddresses").Include("PhoneNumbers").Single(p => p.ObjectId.Equals(objectId));
             }
         }
 
@@ -94,7 +131,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
 
             using (var db = new CustomerContext())
             {
-                var readPerson = db.Persons.Single(p => p.ObjectId.Equals(person.ObjectId));
+                var readPerson = db.Persons.Include("Employer").Include("Address").Include("EMailAddresses").Include("PhoneNumbers").Single(p => p.ObjectId.Equals(person.ObjectId));
                 readPerson.Address = person.Address;
                 readPerson.EMailAddresses = person.EMailAddresses;
                 readPerson.Employer = person.Employer;
@@ -114,7 +151,9 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new CustomerContext())
             {
-                db.Persons.Remove(this.Read(objectId) as Person);
+                var person = this.Read(objectId) as Person;
+                db.Persons.Attach(person);
+                db.Persons.Remove(person);
                 db.SaveChanges();
             }
         }

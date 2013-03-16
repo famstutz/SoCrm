@@ -24,6 +24,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts
         public LoggingContext()
             : base("Name=Logging")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         /// <summary>

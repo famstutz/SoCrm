@@ -61,6 +61,14 @@ namespace SoCrm.Presentation.Security.UserList
         User SelectedUser { get; set; }
 
         /// <summary>
+        /// Gets or sets the selected users.
+        /// </summary>
+        /// <value>
+        /// The selected users.
+        /// </value>
+        ObservableCollection<User> SelectedUsers { get; set; }
+
+        /// <summary>
         /// Gets the search users command.
         /// </summary>
         /// <value>

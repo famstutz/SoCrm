@@ -26,8 +26,11 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         /// Creates the specified object.
         /// </summary>
         /// <param name="obj">The object.</param>
+        /// <returns>
+        /// The object id.
+        /// </returns>
         /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
-        public void Create(IDomainObject obj)
+        public Guid Create(IDomainObject obj)
         {
             var company = obj as Company;
             if (company == null)
@@ -43,11 +46,24 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
             company.CreationTimeStamp = DateTime.Now;
             company.LastUpdateTimeStamp = DateTime.Now;
 
+            if (company.Address != null)
+            {
+                if (company.Address.ObjectId == default(Guid))
+                {
+                    company.Address.ObjectId = Guid.NewGuid();
+                }
+
+                company.Address.CreationTimeStamp = DateTime.Now;
+                company.Address.LastUpdateTimeStamp = DateTime.Now;
+            }
+
             using (var db = new CustomerContext())
             {
                 db.Companies.Add(company);
                 db.SaveChanges();
             }
+
+            return company.ObjectId;
         }
 
         /// <summary>
@@ -58,7 +74,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new CustomerContext())
             {
-                return db.Companies.ToList();
+                return db.Companies.Include("Address").ToList();
             }
         }
 
@@ -71,7 +87,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new CustomerContext())
             {
-                return db.Companies.Single(c => c.ObjectId.Equals(objectId));
+                return db.Companies.Include("Address").Single(c => c.ObjectId.Equals(objectId));
             }
         }
 
@@ -90,10 +106,9 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
 
             using (var db = new CustomerContext())
             {
-                var readCompany = db.Companies.Single(c => c.ObjectId.Equals(company.ObjectId));
+                var readCompany = db.Companies.Include("Address").Single(c => c.ObjectId.Equals(company.ObjectId));
                 readCompany.Name = company.Name;
                 readCompany.Address = company.Address;
-                readCompany.Employees = company.Employees;
                 readCompany.LastUpdateTimeStamp = DateTime.Now;
                 db.SaveChanges();
             }

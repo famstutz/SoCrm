@@ -32,15 +32,15 @@ namespace SoCrm.Services.Customers.Contracts
         /// <returns>All companies.</returns>
         [OperationContract]
         IEnumerable<Company> GetAllCompanies();
-
+        
         /// <summary>
-        /// Gets all addresses.
+        /// Gets all countries.
         /// </summary>
-        /// <returns>All addresses.</returns>
+        /// <returns>All countries.</returns>
         [OperationContract]
-        IEnumerable<Address> GetAllAddresses();
+        IEnumerable<string> GetAllCountries();
 
-        /// <summary>
+            /// <summary>
         /// Gets all email addresses.
         /// </summary>
         /// <returns>All email addresses.</returns>
@@ -48,6 +48,13 @@ namespace SoCrm.Services.Customers.Contracts
         IEnumerable<EMailAddress> GetAllEMailAddresses();
 
         /// <summary>
+        /// Gets the contact types.
+        /// </summary>
+        /// <returns>The contact types.</returns>
+        [OperationContract]
+        IEnumerable<ContactType> GetContactTypes();
+
+            /// <summary>
         /// Gets all phone numbers.
         /// </summary>
         /// <returns>All phone numbers.</returns>
@@ -80,39 +87,35 @@ namespace SoCrm.Services.Customers.Contracts
         Company GetCompanyByObjectId(Guid objectId);
 
         /// <summary>
-        /// Creates the address.
-        /// </summary>
-        /// <param name="addressLine">The address line.</param>
-        /// <param name="zipCode">The zip code.</param>
-        /// <param name="city">The city.</param>
-        /// <param name="country">The country.</param>
-        [OperationContract]
-        void CreateAddress(string addressLine, string zipCode, string city, string country);
-
-        /// <summary>
         /// Creates the phone number.
         /// </summary>
         /// <param name="phoneNumber">The phone number.</param>
         /// <param name="contactType">Type of the contact.</param>
+        /// <returns>The created phone number.</returns>
         [OperationContract]
-        void CreatePhoneNumber(string phoneNumber, ContactType contactType);
+        PhoneNumber CreatePhoneNumber(string phoneNumber, ContactType contactType);
 
         /// <summary>
         /// Creates the email address.
         /// </summary>
         /// <param name="emailAddress">The e mail address.</param>
         /// <param name="contactType">Type of the contact.</param>
+        /// <returns>The created e mail address.</returns>
         [OperationContract]
-        void CreateEmailAddress(string emailAddress, ContactType contactType);
+        EMailAddress CreateEmailAddress(string emailAddress, ContactType contactType);
 
         /// <summary>
         /// Creates the company.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="address">The address.</param>
+        /// <param name="addressLine">The address line.</param>
+        /// <param name="zipCode">The zip code.</param>
+        /// <param name="city">The city.</param>
+        /// <param name="country">The country.</param>
         /// <param name="website">The website.</param>
+        /// <returns>The created company.</returns>
         [OperationContract]
-        void CreateCompany(string name, Address address, string website);
+        Company CreateCompany(string name, string addressLine, string zipCode, string city, string country, string website);
 
         /// <summary>
         /// Creates the person.
@@ -120,16 +123,44 @@ namespace SoCrm.Services.Customers.Contracts
         /// <param name="firstName">The first name.</param>
         /// <param name="lastName">The last name.</param>
         /// <param name="employer">The employer.</param>
-        /// <param name="address">The address.</param>
+        /// <param name="addressLine">The address line.</param>
+        /// <param name="zipCode">The zip code.</param>
+        /// <param name="city">The city.</param>
+        /// <param name="country">The country.</param>
         /// <param name="phoneNumbers">The phone numbers.</param>
         /// <param name="emailAddresses">The email addresses.</param>
+        /// <returns>The created person.</returns>
         [OperationContract]
-        void CreatePerson(
+        Person CreatePerson(
             string firstName,
             string lastName,
             Company employer,
-            Address address,
-            IEnumerable<PhoneNumber> phoneNumbers,
-            IEnumerable<EMailAddress> emailAddresses);
+            string addressLine,
+            string zipCode,
+            string city,
+            string country,
+            ICollection<PhoneNumber> phoneNumbers,
+            ICollection<EMailAddress> emailAddresses);
+
+        /// <summary>
+        /// Deletes the person.
+        /// </summary>
+        /// <param name="person">The person.</param>
+        [OperationContract]
+        void DeletePerson(Person person);
+
+        /// <summary>
+        /// Deletes the E mail address.
+        /// </summary>
+        /// <param name="emailAddress">The email address.</param>
+        [OperationContract]
+        void DeleteEMailAddress(EMailAddress emailAddress);
+
+        /// <summary>
+        /// Deletes the phone number.
+        /// </summary>
+        /// <param name="phoneNumber">The phone number.</param>
+        [OperationContract]
+        void DeletePhoneNumber(PhoneNumber phoneNumber);
     }
 }

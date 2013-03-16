@@ -12,6 +12,10 @@ namespace SoCrm.Presentation.Customers
     using Microsoft.Practices.Unity;
 
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Customers.CreateCompany;
+    using SoCrm.Presentation.Customers.CreateCustomer;
+    using SoCrm.Presentation.Customers.CreateEMailAddress;
+    using SoCrm.Presentation.Customers.CreatePhoneNumber;
     using SoCrm.Presentation.Customers.Customer;
     using SoCrm.Presentation.Customers.CustomerList;
 
@@ -28,7 +32,11 @@ namespace SoCrm.Presentation.Customers
         {
             container.RegisterType<ICustomerController, CustomerController>();
 
-            container.RegisterType<ICustomerListViewModel, ICustomerListViewModel>();
+            container.RegisterType<ICustomerListViewModel, CustomerListViewModel>();
+            container.RegisterType<ICreateCustomerViewModel, CreateCustomerViewModel>();
+            container.RegisterType<ICreateCompanyViewModel, CreateCompanyViewModel>();
+            container.RegisterType<ICreateEMailAddressViewModel, CreateEMailAddressViewModel>();
+            container.RegisterType<ICreatePhoneNumberViewModel, CreatePhoneNumberViewModel>();
 
             container.RegisterInstance(typeof(ICustomerService), new CustomerServiceClient(), new ContainerControlledLifetimeManager());
         }

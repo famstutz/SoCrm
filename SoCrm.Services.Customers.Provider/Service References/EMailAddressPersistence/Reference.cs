@@ -16,10 +16,10 @@ namespace SoCrm.Services.Customers.Provider.EMailAddressPersistence {
     public interface IPersistenceServiceOf_EMailAddress {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_EMailAddress/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_EMailAddress/SaveResponse")]
-        void Save(SoCrm.Services.Customers.Contracts.EMailAddress entity);
+        System.Guid Save(SoCrm.Services.Customers.Contracts.EMailAddress entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_EMailAddress/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_EMailAddress/SaveResponse")]
-        System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.EMailAddress entity);
+        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.EMailAddress entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_EMailAddress/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_EMailAddress/GetResponse")]
         SoCrm.Services.Customers.Contracts.EMailAddress Get(System.Guid objectId);
@@ -67,11 +67,11 @@ namespace SoCrm.Services.Customers.Provider.EMailAddressPersistence {
                 base(binding, remoteAddress) {
         }
         
-        public void Save(SoCrm.Services.Customers.Contracts.EMailAddress entity) {
-            base.Channel.Save(entity);
+        public System.Guid Save(SoCrm.Services.Customers.Contracts.EMailAddress entity) {
+            return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.EMailAddress entity) {
+        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.EMailAddress entity) {
             return base.Channel.SaveAsync(entity);
         }
         

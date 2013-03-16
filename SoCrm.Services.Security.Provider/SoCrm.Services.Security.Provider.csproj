@@ -40,22 +40,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SecurityService.svc" />
     <Content Include="Properties\DataSources\SoCrm.Services.Security.Contracts.User.datasource" />
-    <Content Include="Service References\UserPersistence\UserPersistenceService.disco" />
-    <Content Include="Service References\UserPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\UserPersistence\configuration.svcinfo" />
-    <Content Include="Service References\UserPersistence\Reference.svcmap">
+    <None Include="Service References\UserPersistence\UserPersistenceService.disco" />
+    <None Include="Service References\UserPersistence\configuration91.svcinfo" />
+    <None Include="Service References\UserPersistence\configuration.svcinfo" />
+    <None Include="Service References\UserPersistence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
     <None Include="Service References\UserPersistence\UserPersistenceService.xsd">
       <SubType>Designer</SubType>
@@ -85,7 +87,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service References\UserPersistence\UserPersistenceService.wsdl" />
+    <None Include="Service References\UserPersistence\UserPersistenceService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

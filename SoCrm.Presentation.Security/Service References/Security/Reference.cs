@@ -64,10 +64,10 @@ namespace SoCrm.Presentation.Security.Security {
         System.Threading.Tasks.Task SetPasswordAsync(SoCrm.Services.Security.Contracts.User user, string oldPassword, string newPassword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/CreateUser", ReplyAction="http://tempuri.org/ISecurityService/CreateUserResponse")]
-        void CreateUser(string userName, string password, SoCrm.Services.Security.Contracts.Role role);
+        SoCrm.Services.Security.Contracts.User CreateUser(string userName, string password, SoCrm.Services.Security.Contracts.Role role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/CreateUser", ReplyAction="http://tempuri.org/ISecurityService/CreateUserResponse")]
-        System.Threading.Tasks.Task CreateUserAsync(string userName, string password, SoCrm.Services.Security.Contracts.Role role);
+        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> CreateUserAsync(string userName, string password, SoCrm.Services.Security.Contracts.Role role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/DeleteUser", ReplyAction="http://tempuri.org/ISecurityService/DeleteUserResponse")]
         void DeleteUser(SoCrm.Services.Security.Contracts.User user);
@@ -167,11 +167,11 @@ namespace SoCrm.Presentation.Security.Security {
             return base.Channel.SetPasswordAsync(user, oldPassword, newPassword);
         }
         
-        public void CreateUser(string userName, string password, SoCrm.Services.Security.Contracts.Role role) {
-            base.Channel.CreateUser(userName, password, role);
+        public SoCrm.Services.Security.Contracts.User CreateUser(string userName, string password, SoCrm.Services.Security.Contracts.Role role) {
+            return base.Channel.CreateUser(userName, password, role);
         }
         
-        public System.Threading.Tasks.Task CreateUserAsync(string userName, string password, SoCrm.Services.Security.Contracts.Role role) {
+        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> CreateUserAsync(string userName, string password, SoCrm.Services.Security.Contracts.Role role) {
             return base.Channel.CreateUserAsync(userName, password, role);
         }
         

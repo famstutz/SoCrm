@@ -43,60 +43,62 @@
     <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomerService.svc" />
     <Content Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Address.datasource" />
-    <Content Include="Service References\AddressPersistence\AddressPersistenceService.disco" />
-    <Content Include="Service References\AddressPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\AddressPersistence\configuration.svcinfo" />
-    <Content Include="Service References\AddressPersistence\Reference.svcmap">
+    <None Include="Service References\AddressPersistence\AddressPersistenceService.disco" />
+    <None Include="Service References\AddressPersistence\configuration91.svcinfo" />
+    <None Include="Service References\AddressPersistence\configuration.svcinfo" />
+    <None Include="Service References\AddressPersistence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Company.datasource" />
-    <Content Include="Service References\CompanyPersistence\CompanyPersistenceService.disco" />
-    <Content Include="Service References\CompanyPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\CompanyPersistence\configuration.svcinfo" />
-    <Content Include="Service References\CompanyPersistence\Reference.svcmap">
+    <None Include="Service References\CompanyPersistence\CompanyPersistenceService.disco" />
+    <None Include="Service References\CompanyPersistence\configuration91.svcinfo" />
+    <None Include="Service References\CompanyPersistence\configuration.svcinfo" />
+    <None Include="Service References\CompanyPersistence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.EMailAddress.datasource" />
-    <Content Include="Service References\EMailAddressPersistence\EMailAddressPersistenceService.disco" />
-    <Content Include="Service References\EMailAddressPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\EMailAddressPersistence\configuration.svcinfo" />
-    <Content Include="Service References\EMailAddressPersistence\Reference.svcmap">
+    <None Include="Service References\EMailAddressPersistence\EMailAddressPersistenceService.disco" />
+    <None Include="Service References\EMailAddressPersistence\configuration91.svcinfo" />
+    <None Include="Service References\EMailAddressPersistence\configuration.svcinfo" />
+    <None Include="Service References\EMailAddressPersistence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Person.datasource" />
-    <Content Include="Service References\PersonPersistence\PersonPersistenceService.disco" />
-    <Content Include="Service References\PersonPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\PersonPersistence\configuration.svcinfo" />
-    <Content Include="Service References\PersonPersistence\Reference.svcmap">
+    <None Include="Service References\PersonPersistence\PersonPersistenceService.disco" />
+    <None Include="Service References\PersonPersistence\configuration91.svcinfo" />
+    <None Include="Service References\PersonPersistence\configuration.svcinfo" />
+    <None Include="Service References\PersonPersistence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.PhoneNumber.datasource" />
-    <Content Include="Service References\PhoneNumberPersistence\PhoneNumberPersistenceService.disco" />
-    <Content Include="Service References\PhoneNumberPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\PhoneNumberPersistence\configuration.svcinfo" />
-    <Content Include="Service References\PhoneNumberPersistence\Reference.svcmap">
+    <None Include="Service References\PhoneNumberPersistence\PhoneNumberPersistenceService.disco" />
+    <None Include="Service References\PhoneNumberPersistence\configuration91.svcinfo" />
+    <None Include="Service References\PhoneNumberPersistence\configuration.svcinfo" />
+    <None Include="Service References\PhoneNumberPersistence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
-    <Content Include="Service References\AddressPersistence\AddressPersistenceService.wsdl" />
+    <None Include="Service References\AddressPersistence\AddressPersistenceService.wsdl" />
     <None Include="Service References\AddressPersistence\AddressPersistenceService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AddressPersistence\AddressPersistenceService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\CompanyPersistence\CompanyPersistenceService.wsdl" />
+    <None Include="Service References\CompanyPersistence\CompanyPersistenceService.wsdl" />
     <None Include="Service References\CompanyPersistence\CompanyPersistenceService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -109,7 +111,7 @@
     <None Include="Service References\CompanyPersistence\CompanyPersistenceService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\EMailAddressPersistence\EMailAddressPersistenceService.wsdl" />
+    <None Include="Service References\EMailAddressPersistence\EMailAddressPersistenceService.wsdl" />
     <None Include="Service References\EMailAddressPersistence\EMailAddressPersistenceService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -122,7 +124,7 @@
     <None Include="Service References\EMailAddressPersistence\EMailAddressPersistenceService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\PersonPersistence\PersonPersistenceService.wsdl" />
+    <None Include="Service References\PersonPersistence\PersonPersistenceService.wsdl" />
     <None Include="Service References\PersonPersistence\PersonPersistenceService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -135,7 +137,7 @@
     <None Include="Service References\PersonPersistence\PersonPersistenceService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\PhoneNumberPersistence\PhoneNumberPersistenceService.wsdl" />
+    <None Include="Service References\PhoneNumberPersistence\PhoneNumberPersistenceService.wsdl" />
     <None Include="Service References\PhoneNumberPersistence\PhoneNumberPersistenceService.xsd">
       <SubType>Designer</SubType>
     </None>

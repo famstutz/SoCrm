@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="SoCrm.Presentation.Customers.CreateCustomer.CreateCustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Create Customer">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Firstname" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Lastname" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LastName}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Address" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding AddressLine}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Zip Code" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ZipCode}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="City" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding City}"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Country" />
+                    <ComboBox Grid.Row="5" Grid.Column="1" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country}" />
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Employer" />
+                    <StackPanel Grid.Row="6" Grid.Column="1">
+                        <ComboBox ItemsSource="{Binding Companies}" SelectedItem="{Binding Company}" DisplayMemberPath="Name"/>
+                        <Button Content="+" Command="{Binding CreateCompanyCommand}" />
+                    </StackPanel>
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="E-Mail Addresses" />
+                    <StackPanel Grid.Row="7" Grid.Column="1">
+                        <DataGrid ItemsSource="{Binding EMailAddresses}" SelectedItem="{Binding SelectedEMailAddress}" AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="E-Mail Address" Binding="{Binding Address}" />
+                                <DataGridTextColumn Header="Contact Type" Binding="{Binding ContactType}" />
+                                <DataGridTemplateColumn Header="Delete">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Delete" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteEMailAddressCommand}" CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Content="+" Command="{Binding CreateEMailAddressCommand}" />
+                    </StackPanel>
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="Phone Numbers" />
+                    <StackPanel Grid.Row="8" Grid.Column="1">
+                        <DataGrid ItemsSource="{Binding PhoneNumbers}" SelectedItem="{Binding SelectedPhoneNumber}" AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Phone Number" Binding="{Binding Number}" />
+                                <DataGridTextColumn Header="Contact Type" Binding="{Binding ContactType}" />
+                                <DataGridTemplateColumn Header="Delete">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Delete" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeletePhoneNumberCommand}" CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Content="+" Command="{Binding CreatePhoneNumberCommand}" />
+                    </StackPanel>
+                    <Button Grid.Row="9" Grid.Column="1" Content="Create New Customer" Command="{Binding CreateCustomerCommand}"/>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -57,21 +57,11 @@
   <xs:complexType name="EMailAddress">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" base="q4:DomainObject">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ContactType" type="tns:ContactType" />
-        </xs:sequence>
+        <xs:sequence />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="EMailAddress" nillable="true" type="tns:EMailAddress" />
-  <xs:simpleType name="ContactType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Private" />
-      <xs:enumeration value="Company" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ContactType" nillable="true" type="tns:ContactType" />
   <xs:complexType name="ArrayOfPhoneNumber">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
@@ -89,6 +79,13 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+  <xs:simpleType name="ContactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Private" />
+      <xs:enumeration value="Company" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContactType" nillable="true" type="tns:ContactType" />
   <xs:complexType name="ArrayOfCompany">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />

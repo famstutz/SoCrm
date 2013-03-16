@@ -274,6 +274,38 @@ namespace SoCrm.Presentation.Customers.Customer {
     [System.Runtime.Serialization.DataContractAttribute(Name="EMailAddress", Namespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts")]
     [System.SerializableAttribute()]
     public partial class EMailAddress : SoCrm.Presentation.Customers.Customer.DomainObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SoCrm.Presentation.Customers.Customer.ContactType ContactTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SoCrm.Presentation.Customers.Customer.ContactType ContactType {
+            get {
+                return this.ContactTypeField;
+            }
+            set {
+                if ((this.ContactTypeField.Equals(value) != true)) {
+                    this.ContactTypeField = value;
+                    this.RaisePropertyChanged("ContactType");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -284,9 +316,6 @@ namespace SoCrm.Presentation.Customers.Customer {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SoCrm.Presentation.Customers.Customer.Address AddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SoCrm.Presentation.Customers.Customer.Person[] EmployeesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -303,19 +332,6 @@ namespace SoCrm.Presentation.Customers.Customer {
                 if ((object.ReferenceEquals(this.AddressField, value) != true)) {
                     this.AddressField = value;
                     this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SoCrm.Presentation.Customers.Customer.Person[] Employees {
-            get {
-                return this.EmployeesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeesField, value) != true)) {
-                    this.EmployeesField = value;
-                    this.RaisePropertyChanged("Employees");
                 }
             }
         }
@@ -413,17 +429,23 @@ namespace SoCrm.Presentation.Customers.Customer {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllCompanies", ReplyAction="http://tempuri.org/ICustomerService/GetAllCompaniesResponse")]
         System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Company[]> GetAllCompaniesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllAddresses", ReplyAction="http://tempuri.org/ICustomerService/GetAllAddressesResponse")]
-        SoCrm.Presentation.Customers.Customer.Address[] GetAllAddresses();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllCountries", ReplyAction="http://tempuri.org/ICustomerService/GetAllCountriesResponse")]
+        string[] GetAllCountries();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllAddresses", ReplyAction="http://tempuri.org/ICustomerService/GetAllAddressesResponse")]
-        System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Address[]> GetAllAddressesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllCountries", ReplyAction="http://tempuri.org/ICustomerService/GetAllCountriesResponse")]
+        System.Threading.Tasks.Task<string[]> GetAllCountriesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllEMailAddresses", ReplyAction="http://tempuri.org/ICustomerService/GetAllEMailAddressesResponse")]
         SoCrm.Presentation.Customers.Customer.EMailAddress[] GetAllEMailAddresses();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllEMailAddresses", ReplyAction="http://tempuri.org/ICustomerService/GetAllEMailAddressesResponse")]
         System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.EMailAddress[]> GetAllEMailAddressesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetContactTypes", ReplyAction="http://tempuri.org/ICustomerService/GetContactTypesResponse")]
+        SoCrm.Presentation.Customers.Customer.ContactType[] GetContactTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetContactTypes", ReplyAction="http://tempuri.org/ICustomerService/GetContactTypesResponse")]
+        System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.ContactType[]> GetContactTypesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllPhoneNumbers", ReplyAction="http://tempuri.org/ICustomerService/GetAllPhoneNumbersResponse")]
         SoCrm.Presentation.Customers.Customer.PhoneNumber[] GetAllPhoneNumbers();
@@ -449,35 +471,47 @@ namespace SoCrm.Presentation.Customers.Customer {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCompanyByObjectId", ReplyAction="http://tempuri.org/ICustomerService/GetCompanyByObjectIdResponse")]
         System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Company> GetCompanyByObjectIdAsync(System.Guid objectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateAddress", ReplyAction="http://tempuri.org/ICustomerService/CreateAddressResponse")]
-        void CreateAddress(string addressLine, string zipCode, string city, string country);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateAddress", ReplyAction="http://tempuri.org/ICustomerService/CreateAddressResponse")]
-        System.Threading.Tasks.Task CreateAddressAsync(string addressLine, string zipCode, string city, string country);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreatePhoneNumber", ReplyAction="http://tempuri.org/ICustomerService/CreatePhoneNumberResponse")]
+        SoCrm.Presentation.Customers.Customer.PhoneNumber CreatePhoneNumber(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreatePhoneNumber", ReplyAction="http://tempuri.org/ICustomerService/CreatePhoneNumberResponse")]
-        void CreatePhoneNumber(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreatePhoneNumber", ReplyAction="http://tempuri.org/ICustomerService/CreatePhoneNumberResponse")]
-        System.Threading.Tasks.Task CreatePhoneNumberAsync(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType);
+        System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.PhoneNumber> CreatePhoneNumberAsync(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateEmailAddress", ReplyAction="http://tempuri.org/ICustomerService/CreateEmailAddressResponse")]
-        void CreateEmailAddress(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType);
+        SoCrm.Presentation.Customers.Customer.EMailAddress CreateEmailAddress(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateEmailAddress", ReplyAction="http://tempuri.org/ICustomerService/CreateEmailAddressResponse")]
-        System.Threading.Tasks.Task CreateEmailAddressAsync(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType);
+        System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.EMailAddress> CreateEmailAddressAsync(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateCompany", ReplyAction="http://tempuri.org/ICustomerService/CreateCompanyResponse")]
-        void CreateCompany(string name, SoCrm.Presentation.Customers.Customer.Address address, string website);
+        SoCrm.Presentation.Customers.Customer.Company CreateCompany(string name, string addressLine, string zipCode, string city, string country, string website);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateCompany", ReplyAction="http://tempuri.org/ICustomerService/CreateCompanyResponse")]
-        System.Threading.Tasks.Task CreateCompanyAsync(string name, SoCrm.Presentation.Customers.Customer.Address address, string website);
+        System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Company> CreateCompanyAsync(string name, string addressLine, string zipCode, string city, string country, string website);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreatePerson", ReplyAction="http://tempuri.org/ICustomerService/CreatePersonResponse")]
-        void CreatePerson(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, SoCrm.Presentation.Customers.Customer.Address address, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses);
+        SoCrm.Presentation.Customers.Customer.Person CreatePerson(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, string addressLine, string zipCode, string city, string country, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreatePerson", ReplyAction="http://tempuri.org/ICustomerService/CreatePersonResponse")]
-        System.Threading.Tasks.Task CreatePersonAsync(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, SoCrm.Presentation.Customers.Customer.Address address, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses);
+        System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Person> CreatePersonAsync(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, string addressLine, string zipCode, string city, string country, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeletePerson", ReplyAction="http://tempuri.org/ICustomerService/DeletePersonResponse")]
+        void DeletePerson(SoCrm.Presentation.Customers.Customer.Person person);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeletePerson", ReplyAction="http://tempuri.org/ICustomerService/DeletePersonResponse")]
+        System.Threading.Tasks.Task DeletePersonAsync(SoCrm.Presentation.Customers.Customer.Person person);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteEMailAddress", ReplyAction="http://tempuri.org/ICustomerService/DeleteEMailAddressResponse")]
+        void DeleteEMailAddress(SoCrm.Presentation.Customers.Customer.EMailAddress emailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteEMailAddress", ReplyAction="http://tempuri.org/ICustomerService/DeleteEMailAddressResponse")]
+        System.Threading.Tasks.Task DeleteEMailAddressAsync(SoCrm.Presentation.Customers.Customer.EMailAddress emailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeletePhoneNumber", ReplyAction="http://tempuri.org/ICustomerService/DeletePhoneNumberResponse")]
+        void DeletePhoneNumber(SoCrm.Presentation.Customers.Customer.PhoneNumber phoneNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeletePhoneNumber", ReplyAction="http://tempuri.org/ICustomerService/DeletePhoneNumberResponse")]
+        System.Threading.Tasks.Task DeletePhoneNumberAsync(SoCrm.Presentation.Customers.Customer.PhoneNumber phoneNumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -523,12 +557,12 @@ namespace SoCrm.Presentation.Customers.Customer {
             return base.Channel.GetAllCompaniesAsync();
         }
         
-        public SoCrm.Presentation.Customers.Customer.Address[] GetAllAddresses() {
-            return base.Channel.GetAllAddresses();
+        public string[] GetAllCountries() {
+            return base.Channel.GetAllCountries();
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Address[]> GetAllAddressesAsync() {
-            return base.Channel.GetAllAddressesAsync();
+        public System.Threading.Tasks.Task<string[]> GetAllCountriesAsync() {
+            return base.Channel.GetAllCountriesAsync();
         }
         
         public SoCrm.Presentation.Customers.Customer.EMailAddress[] GetAllEMailAddresses() {
@@ -537,6 +571,14 @@ namespace SoCrm.Presentation.Customers.Customer {
         
         public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.EMailAddress[]> GetAllEMailAddressesAsync() {
             return base.Channel.GetAllEMailAddressesAsync();
+        }
+        
+        public SoCrm.Presentation.Customers.Customer.ContactType[] GetContactTypes() {
+            return base.Channel.GetContactTypes();
+        }
+        
+        public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.ContactType[]> GetContactTypesAsync() {
+            return base.Channel.GetContactTypesAsync();
         }
         
         public SoCrm.Presentation.Customers.Customer.PhoneNumber[] GetAllPhoneNumbers() {
@@ -571,44 +613,60 @@ namespace SoCrm.Presentation.Customers.Customer {
             return base.Channel.GetCompanyByObjectIdAsync(objectId);
         }
         
-        public void CreateAddress(string addressLine, string zipCode, string city, string country) {
-            base.Channel.CreateAddress(addressLine, zipCode, city, country);
+        public SoCrm.Presentation.Customers.Customer.PhoneNumber CreatePhoneNumber(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
+            return base.Channel.CreatePhoneNumber(phoneNumber, contactType);
         }
         
-        public System.Threading.Tasks.Task CreateAddressAsync(string addressLine, string zipCode, string city, string country) {
-            return base.Channel.CreateAddressAsync(addressLine, zipCode, city, country);
-        }
-        
-        public void CreatePhoneNumber(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
-            base.Channel.CreatePhoneNumber(phoneNumber, contactType);
-        }
-        
-        public System.Threading.Tasks.Task CreatePhoneNumberAsync(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
+        public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.PhoneNumber> CreatePhoneNumberAsync(string phoneNumber, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
             return base.Channel.CreatePhoneNumberAsync(phoneNumber, contactType);
         }
         
-        public void CreateEmailAddress(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
-            base.Channel.CreateEmailAddress(emailAddress, contactType);
+        public SoCrm.Presentation.Customers.Customer.EMailAddress CreateEmailAddress(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
+            return base.Channel.CreateEmailAddress(emailAddress, contactType);
         }
         
-        public System.Threading.Tasks.Task CreateEmailAddressAsync(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
+        public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.EMailAddress> CreateEmailAddressAsync(string emailAddress, SoCrm.Presentation.Customers.Customer.ContactType contactType) {
             return base.Channel.CreateEmailAddressAsync(emailAddress, contactType);
         }
         
-        public void CreateCompany(string name, SoCrm.Presentation.Customers.Customer.Address address, string website) {
-            base.Channel.CreateCompany(name, address, website);
+        public SoCrm.Presentation.Customers.Customer.Company CreateCompany(string name, string addressLine, string zipCode, string city, string country, string website) {
+            return base.Channel.CreateCompany(name, addressLine, zipCode, city, country, website);
         }
         
-        public System.Threading.Tasks.Task CreateCompanyAsync(string name, SoCrm.Presentation.Customers.Customer.Address address, string website) {
-            return base.Channel.CreateCompanyAsync(name, address, website);
+        public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Company> CreateCompanyAsync(string name, string addressLine, string zipCode, string city, string country, string website) {
+            return base.Channel.CreateCompanyAsync(name, addressLine, zipCode, city, country, website);
         }
         
-        public void CreatePerson(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, SoCrm.Presentation.Customers.Customer.Address address, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses) {
-            base.Channel.CreatePerson(firstName, lastName, employer, address, phoneNumbers, emailAddresses);
+        public SoCrm.Presentation.Customers.Customer.Person CreatePerson(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, string addressLine, string zipCode, string city, string country, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses) {
+            return base.Channel.CreatePerson(firstName, lastName, employer, addressLine, zipCode, city, country, phoneNumbers, emailAddresses);
         }
         
-        public System.Threading.Tasks.Task CreatePersonAsync(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, SoCrm.Presentation.Customers.Customer.Address address, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses) {
-            return base.Channel.CreatePersonAsync(firstName, lastName, employer, address, phoneNumbers, emailAddresses);
+        public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Person> CreatePersonAsync(string firstName, string lastName, SoCrm.Presentation.Customers.Customer.Company employer, string addressLine, string zipCode, string city, string country, SoCrm.Presentation.Customers.Customer.PhoneNumber[] phoneNumbers, SoCrm.Presentation.Customers.Customer.EMailAddress[] emailAddresses) {
+            return base.Channel.CreatePersonAsync(firstName, lastName, employer, addressLine, zipCode, city, country, phoneNumbers, emailAddresses);
+        }
+        
+        public void DeletePerson(SoCrm.Presentation.Customers.Customer.Person person) {
+            base.Channel.DeletePerson(person);
+        }
+        
+        public System.Threading.Tasks.Task DeletePersonAsync(SoCrm.Presentation.Customers.Customer.Person person) {
+            return base.Channel.DeletePersonAsync(person);
+        }
+        
+        public void DeleteEMailAddress(SoCrm.Presentation.Customers.Customer.EMailAddress emailAddress) {
+            base.Channel.DeleteEMailAddress(emailAddress);
+        }
+        
+        public System.Threading.Tasks.Task DeleteEMailAddressAsync(SoCrm.Presentation.Customers.Customer.EMailAddress emailAddress) {
+            return base.Channel.DeleteEMailAddressAsync(emailAddress);
+        }
+        
+        public void DeletePhoneNumber(SoCrm.Presentation.Customers.Customer.PhoneNumber phoneNumber) {
+            base.Channel.DeletePhoneNumber(phoneNumber);
+        }
+        
+        public System.Threading.Tasks.Task DeletePhoneNumberAsync(SoCrm.Presentation.Customers.Customer.PhoneNumber phoneNumber) {
+            return base.Channel.DeletePhoneNumberAsync(phoneNumber);
         }
     }
 }

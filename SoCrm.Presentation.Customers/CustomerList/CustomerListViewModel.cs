@@ -61,6 +61,7 @@ namespace SoCrm.Presentation.Customers.CustomerList
             this.customerService = customerService;
 
             this.SearchCustomersCommand = new CommandModel(obj => this.Persons = new ObservableCollection<Person>(this.customerService.GetPersonsByNameAndCompany(this.SearchName, this.SearchCompany)));
+            this.DeleteCustomerCommand = new CommandModel(this.OnDeleteCustomer);
 
             this.Persons = new ObservableCollection<Person>(this.customerService.GetPersonsByNameAndCompany(this.SearchName, this.SearchCompany));
         }
@@ -120,6 +121,14 @@ namespace SoCrm.Presentation.Customers.CustomerList
         public ICommand SearchCustomersCommand { get; private set; }
 
         /// <summary>
+        /// Gets the delete user command.
+        /// </summary>
+        /// <value>
+        /// The delete user command.
+        /// </value>
+        public ICommand DeleteCustomerCommand { get; private set; }
+
+        /// <summary>
         /// Gets or sets the persons.
         /// </summary>
         /// <value>
@@ -163,6 +172,17 @@ namespace SoCrm.Presentation.Customers.CustomerList
                     this.OnPropertyChanged("SelectedPerson");
                 }
             }
+        }
+
+        /// <summary>
+        /// Called when user is deleted.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        private void OnDeleteCustomer(object obj)
+        {
+            var person = obj as Person;
+            this.customerService.DeletePerson(person);
+            this.Persons.Remove(person);
         }
     }
 }

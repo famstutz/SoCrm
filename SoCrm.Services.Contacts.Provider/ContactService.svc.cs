@@ -114,10 +114,14 @@ namespace SoCrm.Services.Contacts.Provider
         /// <param name="content">The content.</param>
         /// <param name="medium">The medium.</param>
         /// <param name="dateTime">The date time.</param>
-        public void CreateContact(User user, Person person, string content, ContactMedium medium, DateTime dateTime)
+        /// <returns>
+        /// The created contact.
+        /// </returns>
+        public Contact CreateContact(User user, Person person, string content, ContactMedium medium, DateTime dateTime)
         {
-            this.client.Save(
+            var contactObjectId = this.client.Save(
                 new Contact { Content = content, DateTime = dateTime, Medium = medium, Person = person, User = user });
+            return this.GetContactByObjectId(contactObjectId);
         }
 
         /// <summary>

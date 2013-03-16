@@ -86,9 +86,13 @@ namespace SoCrm.Services.Logging.Provider
         /// <param name="message">The message.</param>
         /// <param name="severity">The severity.</param>
         /// <param name="timeStamp">The time stamp.</param>
-        public void LogEvent(string message, Severity severity, DateTime timeStamp)
+        /// <returns>
+        /// The created log event.
+        /// </returns>
+        public LogEvent LogEvent(string message, Severity severity, DateTime timeStamp)
         {
-            this.client.Save(new LogEvent { Message = message, Severity = severity, TimeStamp = timeStamp });
+            var logEventObjectId = this.client.Save(new LogEvent { Message = message, Severity = severity, TimeStamp = timeStamp });
+            return this.client.Get(logEventObjectId);
         }
 
         /// <summary>

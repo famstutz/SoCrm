@@ -24,6 +24,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts
         public CustomerContext()
             : base("Name=Customer")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         /// <summary>

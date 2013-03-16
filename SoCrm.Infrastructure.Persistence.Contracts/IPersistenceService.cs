@@ -26,8 +26,9 @@ namespace SoCrm.Infrastructure.Persistence.Contracts
         /// Saves the specified entity.
         /// </summary>
         /// <param name="entity">The entity.</param>
+        /// <returns>The object id.</returns>
         [OperationContract]
-        void Save(T entity);
+        Guid Save(T entity);
 
         /// <summary>
         /// Gets the specified object id.

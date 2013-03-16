@@ -26,6 +26,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts
         public ContactContext()
             : base("Name=Contact")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         /// <summary>

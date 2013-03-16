@@ -77,7 +77,8 @@ namespace SoCrm.Services.Contacts.Contracts
         /// <param name="content">The content.</param>
         /// <param name="medium">The medium.</param>
         /// <param name="dateTime">The date time.</param>
+        /// <returns>The created contact.</returns>
         [OperationContract]
-        void CreateContact(User user, Person person, string content, ContactMedium medium, DateTime dateTime);
+        Contact CreateContact(User user, Person person, string content, ContactMedium medium, DateTime dateTime);
     }
 }

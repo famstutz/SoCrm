@@ -41,8 +41,15 @@ namespace SoCrm.Presentation.App.Shell
             this.UserListCommand = new CommandModel(obj => this.appController.NavigateToUserList());
             this.CreateUserCommand = new CommandModel(obj => this.appController.NavigateToCreateUser());
             this.CustomerListCommand = new CommandModel(obj => this.appController.NavigateToCustomerList());
+            this.CreateCustomerCommand = new CommandModel(obj => this.appController.NavigateToCreateCustomer());
         }
 
+        /// <summary>
+        /// Gets the customer list command.
+        /// </summary>
+        /// <value>
+        /// The customer list command.
+        /// </value>
         public ICommand CustomerListCommand { get; private set; }
 
         /// <summary>
@@ -68,6 +75,14 @@ namespace SoCrm.Presentation.App.Shell
         /// The create user command.
         /// </value>
         public ICommand CreateUserCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the create customer command.
+        /// </summary>
+        /// <value>
+        /// The create customer command.
+        /// </value>
+        public ICommand CreateCustomerCommand { get; private set; }
 
         /// <summary>
         /// Shows this instance.

@@ -26,8 +26,11 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         /// Creates the specified object.
         /// </summary>
         /// <param name="obj">The object.</param>
+        /// <returns>
+        /// The object id.
+        /// </returns>
         /// <exception cref="System.NotSupportedException">Thrown if the object is not of the expected type.</exception>
-        public void Create(IDomainObject obj)
+        public Guid Create(IDomainObject obj)
         {
             var address = obj as Address;
             if (address == null)
@@ -48,6 +51,8 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
                 db.Addresses.Add(address);
                 db.SaveChanges();
             }
+
+            return address.ObjectId;
         }
 
         /// <summary>

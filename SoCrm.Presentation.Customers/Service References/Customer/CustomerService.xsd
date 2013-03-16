@@ -44,17 +44,26 @@
   <xs:complexType name="EMailAddress">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" base="q3:DomainObject">
-        <xs:sequence />
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactType" type="tns:ContactType" />
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="EMailAddress" nillable="true" type="tns:EMailAddress" />
+  <xs:simpleType name="ContactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Private" />
+      <xs:enumeration value="Company" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContactType" nillable="true" type="tns:ContactType" />
   <xs:complexType name="Company">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" base="q4:DomainObject">
         <xs:sequence>
           <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
-          <xs:element minOccurs="0" name="Employees" nillable="true" type="tns:ArrayOfPerson" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
         </xs:sequence>
@@ -79,23 +88,16 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
-  <xs:simpleType name="ContactType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Private" />
-      <xs:enumeration value="Company" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ContactType" nillable="true" type="tns:ContactType" />
   <xs:complexType name="ArrayOfCompany">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
-  <xs:complexType name="ArrayOfAddress">
+  <xs:complexType name="ArrayOfContactType">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactType" type="tns:ContactType" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:element name="ArrayOfContactType" nillable="true" type="tns:ArrayOfContactType" />
 </xs:schema>

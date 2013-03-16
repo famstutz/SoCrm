@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://localhost:4957/CustomerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:4957/CustomerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" />
       <xsd:import schemaLocation="http://localhost:4957/CustomerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" />
+      <xsd:import schemaLocation="http://localhost:4957/CustomerService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICustomerService_GetAllPersons_InputMessage">
@@ -20,17 +21,23 @@
   <wsdl:message name="ICustomerService_GetAllCompanies_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCompaniesResponse" />
   </wsdl:message>
-  <wsdl:message name="ICustomerService_GetAllAddresses_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllAddresses" />
+  <wsdl:message name="ICustomerService_GetAllCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountries" />
   </wsdl:message>
-  <wsdl:message name="ICustomerService_GetAllAddresses_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllAddressesResponse" />
+  <wsdl:message name="ICustomerService_GetAllCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountriesResponse" />
   </wsdl:message>
   <wsdl:message name="ICustomerService_GetAllEMailAddresses_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllEMailAddresses" />
   </wsdl:message>
   <wsdl:message name="ICustomerService_GetAllEMailAddresses_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllEMailAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_GetContactTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactTypes" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_GetContactTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactTypesResponse" />
   </wsdl:message>
   <wsdl:message name="ICustomerService_GetAllPhoneNumbers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPhoneNumbers" />
@@ -56,12 +63,6 @@
   <wsdl:message name="ICustomerService_GetCompanyByObjectId_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCompanyByObjectIdResponse" />
   </wsdl:message>
-  <wsdl:message name="ICustomerService_CreateAddress_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateAddress" />
-  </wsdl:message>
-  <wsdl:message name="ICustomerService_CreateAddress_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateAddressResponse" />
-  </wsdl:message>
   <wsdl:message name="ICustomerService_CreatePhoneNumber_InputMessage">
     <wsdl:part name="parameters" element="tns:CreatePhoneNumber" />
   </wsdl:message>
@@ -86,6 +87,24 @@
   <wsdl:message name="ICustomerService_CreatePerson_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreatePersonResponse" />
   </wsdl:message>
+  <wsdl:message name="ICustomerService_DeletePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePerson" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_DeletePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_DeleteEMailAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEMailAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_DeleteEMailAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEMailAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_DeletePhoneNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_DeletePhoneNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhoneNumberResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICustomerService">
     <wsdl:operation name="GetAllPersons">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetAllPersons" message="tns:ICustomerService_GetAllPersons_InputMessage" />
@@ -95,13 +114,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetAllCompanies" message="tns:ICustomerService_GetAllCompanies_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetAllCompaniesResponse" message="tns:ICustomerService_GetAllCompanies_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllAddresses">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetAllAddresses" message="tns:ICustomerService_GetAllAddresses_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetAllAddressesResponse" message="tns:ICustomerService_GetAllAddresses_OutputMessage" />
+    <wsdl:operation name="GetAllCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetAllCountries" message="tns:ICustomerService_GetAllCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetAllCountriesResponse" message="tns:ICustomerService_GetAllCountries_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllEMailAddresses">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetAllEMailAddresses" message="tns:ICustomerService_GetAllEMailAddresses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetAllEMailAddressesResponse" message="tns:ICustomerService_GetAllEMailAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetContactTypes" message="tns:ICustomerService_GetContactTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetContactTypesResponse" message="tns:ICustomerService_GetContactTypes_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllPhoneNumbers">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetAllPhoneNumbers" message="tns:ICustomerService_GetAllPhoneNumbers_InputMessage" />
@@ -119,10 +142,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetCompanyByObjectId" message="tns:ICustomerService_GetCompanyByObjectId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetCompanyByObjectIdResponse" message="tns:ICustomerService_GetCompanyByObjectId_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateAddress">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/CreateAddress" message="tns:ICustomerService_CreateAddress_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/CreateAddressResponse" message="tns:ICustomerService_CreateAddress_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="CreatePhoneNumber">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/CreatePhoneNumber" message="tns:ICustomerService_CreatePhoneNumber_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/CreatePhoneNumberResponse" message="tns:ICustomerService_CreatePhoneNumber_OutputMessage" />
@@ -138,6 +157,18 @@
     <wsdl:operation name="CreatePerson">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/CreatePerson" message="tns:ICustomerService_CreatePerson_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/CreatePersonResponse" message="tns:ICustomerService_CreatePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/DeletePerson" message="tns:ICustomerService_DeletePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/DeletePersonResponse" message="tns:ICustomerService_DeletePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEMailAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/DeleteEMailAddress" message="tns:ICustomerService_DeleteEMailAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/DeleteEMailAddressResponse" message="tns:ICustomerService_DeleteEMailAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoneNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/DeletePhoneNumber" message="tns:ICustomerService_DeletePhoneNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/DeletePhoneNumberResponse" message="tns:ICustomerService_DeletePhoneNumber_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICustomerService" type="tns:ICustomerService">
@@ -160,8 +191,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllAddresses">
-      <soap:operation soapAction="http://tempuri.org/ICustomerService/GetAllAddresses" style="document" />
+    <wsdl:operation name="GetAllCountries">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/GetAllCountries" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -171,6 +202,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllEMailAddresses">
       <soap:operation soapAction="http://tempuri.org/ICustomerService/GetAllEMailAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactTypes">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/GetContactTypes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -214,15 +254,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateAddress">
-      <soap:operation soapAction="http://tempuri.org/ICustomerService/CreateAddress" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="CreatePhoneNumber">
       <soap:operation soapAction="http://tempuri.org/ICustomerService/CreatePhoneNumber" style="document" />
       <wsdl:input>
@@ -252,6 +283,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreatePerson">
       <soap:operation soapAction="http://tempuri.org/ICustomerService/CreatePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/DeletePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEMailAddress">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/DeleteEMailAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoneNumber">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/DeletePhoneNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

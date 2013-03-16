@@ -50,6 +50,26 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateCompany\CreateCompanyView.xaml.cs">
+      <DependentUpon>CreateCompanyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCompany\CreateCompanyViewModel.cs" />
+    <Compile Include="CreateCompany\ICreateCompanyViewModel.cs" />
+    <Compile Include="CreateCustomer\CreateCustomerView.xaml.cs">
+      <DependentUpon>CreateCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCustomer\CreateCustomerViewModel.cs" />
+    <Compile Include="CreateCustomer\ICreateCustomerViewModel.cs" />
+    <Compile Include="CreateEMailAddress\CreateEMailAddressView.xaml.cs">
+      <DependentUpon>CreateEMailAddressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEMailAddress\CreateEMailAddressViewModel.cs" />
+    <Compile Include="CreateEMailAddress\ICreateEMailAddressViewModel.cs" />
+    <Compile Include="CreatePhoneNumber\CreatePhoneNumberView.xaml.cs">
+      <DependentUpon>CreatePhoneNumberView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePhoneNumber\CreatePhoneNumberViewModel.cs" />
+    <Compile Include="CreatePhoneNumber\ICreatePhoneNumberViewModel.cs" />
     <Compile Include="CustomerController.cs" />
     <Compile Include="CustomerList\CustomerListView.xaml.cs">
       <DependentUpon>CustomerListView.xaml</DependentUpon>
@@ -75,7 +95,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Service References\Customer\CustomerService.wsdl" />
     <None Include="Service References\Customer\CustomerService.xsd">
       <SubType>Designer</SubType>
@@ -89,10 +108,13 @@
     <None Include="Service References\Customer\CustomerService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.Address.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\Customer\CustomerService4.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.Company.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.ContactType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.EMailAddress.datasource">
@@ -123,10 +145,24 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="CreateCustomer\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Page Include="CreateCompany\CreateCompanyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateCustomer\CreateCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateEMailAddress\CreateEMailAddressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreatePhoneNumber\CreatePhoneNumberView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomerList\CustomerListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

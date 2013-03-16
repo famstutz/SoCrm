@@ -63,7 +63,7 @@ namespace SoCrm.Services.Customers.Contracts
         /// The phone numbers.
         /// </value>
         [DataMember]
-        public IEnumerable<PhoneNumber> PhoneNumbers { get; set; }
+        public ICollection<PhoneNumber> PhoneNumbers { get; set; }
         
         /// <summary>
         /// Gets or sets the E mail addresses.
@@ -72,6 +72,6 @@ namespace SoCrm.Services.Customers.Contracts
         /// The E mail addresses.
         /// </value>
         [DataMember]
-        public IEnumerable<EMailAddress> EMailAddresses { get; set; }
+        public ICollection<EMailAddress> EMailAddresses { get; set; }
     }
 }

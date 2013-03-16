@@ -7,6 +7,7 @@
             <Menu IsMainMenu="True">
                 <MenuItem Header="Customers">
                     <MenuItem Header="View Customers" Command="{Binding CustomerListCommand}" />
+                    <MenuItem Header="Create Customer" Command="{Binding CreateCustomerCommand}" />
                 </MenuItem>
                 <MenuItem Header="Security">
                     <MenuItem Header="View Users" Command="{Binding UserListCommand}" />

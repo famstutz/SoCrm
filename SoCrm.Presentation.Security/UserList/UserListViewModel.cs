@@ -10,6 +10,7 @@
 namespace SoCrm.Presentation.Security.UserList
 {
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core;
@@ -58,6 +59,11 @@ namespace SoCrm.Presentation.Security.UserList
         private User selectedUser;
 
         /// <summary>
+        /// The selected users
+        /// </summary>
+        private ObservableCollection<User> selectedUsers;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="UserListViewModel" /> class.
         /// </summary>
         /// <param name="securityController">The security controller.</param>
@@ -73,6 +79,7 @@ namespace SoCrm.Presentation.Security.UserList
             
             this.Roles = new ObservableCollection<Role>(this.securityService.GetAllRoles());
             this.Users = new ObservableCollection<User>(this.securityService.GetUsersByRole(this.SearchRole));
+            this.SelectedUsers = new ObservableCollection<User>();
         }
 
         /// <summary>
@@ -191,6 +198,29 @@ namespace SoCrm.Presentation.Security.UserList
         }
 
         /// <summary>
+        /// Gets or sets the selected users.
+        /// </summary>
+        /// <value>
+        /// The selected users.
+        /// </value>
+        public ObservableCollection<User> SelectedUsers
+        {
+            get
+            {
+                return this.selectedUsers;
+            }
+
+            set
+            {
+                if (this.selectedUsers != value)
+                {
+                    this.selectedUsers = value;
+                    this.OnPropertyChanged("SelectedUsers");
+                }
+            }
+        } 
+
+        /// <summary>
         /// Gets the search users command.
         /// </summary>
         /// <value>
@@ -220,7 +250,7 @@ namespace SoCrm.Presentation.Security.UserList
         /// <param name="obj">The user.</param>
         private void OnDeleteUser(object obj)
         {
-            var user = obj as User;
+            var user = (User)obj;
             this.securityService.DeleteUser(user);
             this.Users.Remove(user);
         }

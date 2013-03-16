@@ -9,97 +9,17 @@
 //------------------------------------------------------------------------------
 
 namespace SoCrm.Services.Security.Provider.UserPersistence {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DomainObject", Namespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SoCrm.Services.Security.Contracts.User))]
-    public partial class DomainObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreationTimeStampField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastUpdateTimeStampField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid ObjectIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreationTimeStamp {
-            get {
-                return this.CreationTimeStampField;
-            }
-            set {
-                if ((this.CreationTimeStampField.Equals(value) != true)) {
-                    this.CreationTimeStampField = value;
-                    this.RaisePropertyChanged("CreationTimeStamp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastUpdateTimeStamp {
-            get {
-                return this.LastUpdateTimeStampField;
-            }
-            set {
-                if ((this.LastUpdateTimeStampField.Equals(value) != true)) {
-                    this.LastUpdateTimeStampField = value;
-                    this.RaisePropertyChanged("LastUpdateTimeStamp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ObjectId {
-            get {
-                return this.ObjectIdField;
-            }
-            set {
-                if ((this.ObjectIdField.Equals(value) != true)) {
-                    this.ObjectIdField = value;
-                    this.RaisePropertyChanged("ObjectId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserPersistence.IPersistenceServiceOf_User")]
     public interface IPersistenceServiceOf_User {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/SaveResponse")]
-        void Save(SoCrm.Services.Security.Contracts.User entity);
+        System.Guid Save(SoCrm.Services.Security.Contracts.User entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/SaveResponse")]
-        System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Security.Contracts.User entity);
+        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Security.Contracts.User entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/GetResponse")]
         SoCrm.Services.Security.Contracts.User Get(System.Guid objectId);
@@ -147,11 +67,11 @@ namespace SoCrm.Services.Security.Provider.UserPersistence {
                 base(binding, remoteAddress) {
         }
         
-        public void Save(SoCrm.Services.Security.Contracts.User entity) {
-            base.Channel.Save(entity);
+        public System.Guid Save(SoCrm.Services.Security.Contracts.User entity) {
+            return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Security.Contracts.User entity) {
+        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Security.Contracts.User entity) {
             return base.Channel.SaveAsync(entity);
         }
         

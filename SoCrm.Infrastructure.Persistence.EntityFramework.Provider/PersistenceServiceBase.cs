@@ -40,16 +40,22 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider
         /// Saves the specified entity.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        public void Save(T entity)
+        /// <returns>The object id.</returns>
+        public Guid Save(T entity)
         {
+            Guid objectId;
+
             if (entity.CreationTimeStamp == default(DateTime))
             {
-                this.dataService.Create(entity);
+                objectId = this.dataService.Create(entity);
             }
             else
             {
                 this.dataService.Update(entity);
+                objectId = entity.ObjectId;
             }
+
+            return objectId;
         }
 
         /// <summary>

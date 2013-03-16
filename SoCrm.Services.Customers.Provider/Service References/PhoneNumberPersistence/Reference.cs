@@ -16,10 +16,10 @@ namespace SoCrm.Services.Customers.Provider.PhoneNumberPersistence {
     public interface IPersistenceServiceOf_PhoneNumber {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/SaveResponse")]
-        void Save(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
+        System.Guid Save(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/SaveResponse")]
-        System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
+        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/GetResponse")]
         SoCrm.Services.Customers.Contracts.PhoneNumber Get(System.Guid objectId);
@@ -67,11 +67,11 @@ namespace SoCrm.Services.Customers.Provider.PhoneNumberPersistence {
                 base(binding, remoteAddress) {
         }
         
-        public void Save(SoCrm.Services.Customers.Contracts.PhoneNumber entity) {
-            base.Channel.Save(entity);
+        public System.Guid Save(SoCrm.Services.Customers.Contracts.PhoneNumber entity) {
+            return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity) {
+        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity) {
             return base.Channel.SaveAsync(entity);
         }
         

@@ -40,22 +40,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContactService.svc" />
     <Content Include="Properties\DataSources\SoCrm.Services.Contacts.Contracts.Contact.datasource" />
-    <Content Include="Service References\ContactPersistence\ContactPersistenceService.disco" />
-    <Content Include="Service References\ContactPersistence\configuration91.svcinfo" />
-    <Content Include="Service References\ContactPersistence\configuration.svcinfo" />
-    <Content Include="Service References\ContactPersistence\Reference.svcmap">
+    <None Include="Service References\ContactPersistence\ContactPersistenceService.disco" />
+    <None Include="Service References\ContactPersistence\configuration91.svcinfo" />
+    <None Include="Service References\ContactPersistence\configuration.svcinfo" />
+    <None Include="Service References\ContactPersistence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
     <None Include="Service References\ContactPersistence\ContactPersistenceService2.xsd">
       <SubType>Designer</SubType>
@@ -85,7 +87,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service References\ContactPersistence\ContactPersistenceService.wsdl" />
+    <None Include="Service References\ContactPersistence\ContactPersistenceService.wsdl" />
     <None Include="Service References\ContactPersistence\ContactPersistenceService.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -16,10 +16,10 @@ namespace SoCrm.Services.Customers.Provider.CompanyPersistence {
     public interface IPersistenceServiceOf_Company {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Company/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Company/SaveResponse")]
-        void Save(SoCrm.Services.Customers.Contracts.Company entity);
+        System.Guid Save(SoCrm.Services.Customers.Contracts.Company entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Company/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Company/SaveResponse")]
-        System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.Company entity);
+        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Company entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Company/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Company/GetResponse")]
         SoCrm.Services.Customers.Contracts.Company Get(System.Guid objectId);
@@ -67,11 +67,11 @@ namespace SoCrm.Services.Customers.Provider.CompanyPersistence {
                 base(binding, remoteAddress) {
         }
         
-        public void Save(SoCrm.Services.Customers.Contracts.Company entity) {
-            base.Channel.Save(entity);
+        public System.Guid Save(SoCrm.Services.Customers.Contracts.Company entity) {
+            return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.Company entity) {
+        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Company entity) {
             return base.Channel.SaveAsync(entity);
         }
         

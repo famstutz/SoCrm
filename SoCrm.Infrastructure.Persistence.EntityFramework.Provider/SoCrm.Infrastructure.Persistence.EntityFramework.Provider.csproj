@@ -81,6 +81,10 @@
     <Compile Include="EMailAddressPersistenceService.svc.cs">
       <DependentUpon>EMailAddressPersistenceService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201303161702337_UsingCollections.cs" />
+    <Compile Include="Migrations\201303161702337_UsingCollections.Designer.cs">
+      <DependentUpon>201303161702337_UsingCollections.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Contact\201303141815106_InitialContactModel.cs" />
     <Compile Include="Migrations\Contact\201303141815106_InitialContactModel.Designer.cs">
       <DependentUpon>201303141815106_InitialContactModel.cs</DependentUpon>
@@ -162,6 +166,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201303161702337_UsingCollections.resx">
+      <DependentUpon>201303161702337_UsingCollections.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Contact\201303141815106_InitialContactModel.resx">
       <DependentUpon>201303141815106_InitialContactModel.cs</DependentUpon>
     </EmbeddedResource>

@@ -61,11 +61,6 @@
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShellModule.cs" />
-    <Compile Include="Service References\Security\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Shell\ShellViewModel.cs" />
     <Page Include="Resources\Templates.xaml">
       <SubType>Designer</SubType>
@@ -87,19 +82,6 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SoCrm.Services.Security.Contracts.User.datasource" />
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\Security\SecurityService.wsdl" />
-    <None Include="Service References\Security\SecurityService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Security\SecurityService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Security\SecurityService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Security\SecurityService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -125,27 +107,6 @@
       <Project>{E13A6892-4D57-4A2A-8670-7B0D105018DC}</Project>
       <Name>SoCrm.Services.Security.Contracts</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Security\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Security\SecurityService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Security\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Security\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Security\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

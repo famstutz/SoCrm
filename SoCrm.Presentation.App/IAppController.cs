@@ -30,5 +30,10 @@ namespace SoCrm.Presentation.App
         /// Navigates to customer list.
         /// </summary>
         void NavigateToCustomerList();
+
+        /// <summary>
+        /// Navigates to create customer.
+        /// </summary>
+        void NavigateToCreateCustomer();
     }
 }

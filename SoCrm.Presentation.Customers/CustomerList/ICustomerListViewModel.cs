@@ -59,5 +59,13 @@ namespace SoCrm.Presentation.Customers.CustomerList
         /// The selected person.
         /// </value>
         Person SelectedPerson { get; set; }
+
+        /// <summary>
+        /// Gets the delete customer command.
+        /// </summary>
+        /// <value>
+        /// The delete customer command.
+        /// </value>
+        ICommand DeleteCustomerCommand { get; }
     }
 }

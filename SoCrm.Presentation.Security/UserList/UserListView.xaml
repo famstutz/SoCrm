@@ -25,7 +25,7 @@
                     <Button Grid.Row="2" Grid.Column="1" Content="Search Users" Command="{Binding SearchUsersCommand}" />
                 </Grid>
             </GroupBox>
-            <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedUser}">
+            <DataGrid ItemsSource="{Binding Users}" AutoGenerateColumns="False" SelectedItem="{Binding SelectedUser}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Username" Binding="{Binding UserName}" />
                     <DataGridTextColumn Header="Role" Binding="{Binding Role}" />
@@ -47,6 +47,7 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <Button Content="Delete" Command="{Binding DeleteUserCommand}" />
         </StackPanel>
     </Grid>
 </UserControl>

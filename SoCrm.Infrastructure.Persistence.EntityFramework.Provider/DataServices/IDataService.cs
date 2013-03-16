@@ -23,7 +23,8 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         /// Creates the specified object.
         /// </summary>
         /// <param name="obj">The object.</param>
-        void Create(IDomainObject obj);
+        /// <returns>The object id.</returns>
+        Guid Create(IDomainObject obj);
 
         /// <summary>
         /// Reads this instance.

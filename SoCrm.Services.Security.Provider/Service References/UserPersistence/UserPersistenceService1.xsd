@@ -11,20 +11,22 @@
   </xs:element>
   <xs:element name="SaveResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SaveResult" type="q2:guid" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Get">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="objectId" type="q2:guid" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="objectId" type="q3:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="GetResult" nillable="true" type="q3:User" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="GetResult" nillable="true" type="q4:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -36,14 +38,14 @@
   <xs:element name="GetAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="GetAllResult" nillable="true" type="q4:ArrayOfUser" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="GetAllResult" nillable="true" type="q5:ArrayOfUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Remove">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="entity" nillable="true" type="q5:User" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="entity" nillable="true" type="q6:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

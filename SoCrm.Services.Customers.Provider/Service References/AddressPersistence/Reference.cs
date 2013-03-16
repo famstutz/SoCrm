@@ -16,10 +16,10 @@ namespace SoCrm.Services.Customers.Provider.AddressPersistence {
     public interface IPersistenceServiceOf_Address {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/SaveResponse")]
-        void Save(SoCrm.Services.Customers.Contracts.Address entity);
+        System.Guid Save(SoCrm.Services.Customers.Contracts.Address entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/SaveResponse")]
-        System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.Address entity);
+        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Address entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/GetResponse")]
         SoCrm.Services.Customers.Contracts.Address Get(System.Guid objectId);
@@ -67,11 +67,11 @@ namespace SoCrm.Services.Customers.Provider.AddressPersistence {
                 base(binding, remoteAddress) {
         }
         
-        public void Save(SoCrm.Services.Customers.Contracts.Address entity) {
-            base.Channel.Save(entity);
+        public System.Guid Save(SoCrm.Services.Customers.Contracts.Address entity) {
+            return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Customers.Contracts.Address entity) {
+        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Address entity) {
             return base.Channel.SaveAsync(entity);
         }
         

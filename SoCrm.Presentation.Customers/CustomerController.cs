@@ -9,12 +9,15 @@
 
 namespace SoCrm.Presentation.Customers
 {
-    using System;
-
     using Microsoft.Practices.Unity;
 
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Customers.CreateCompany;
+    using SoCrm.Presentation.Customers.CreateCustomer;
+    using SoCrm.Presentation.Customers.CreateEMailAddress;
+    using SoCrm.Presentation.Customers.CreatePhoneNumber;
+    using SoCrm.Presentation.Customers.Customer;
     using SoCrm.Presentation.Customers.CustomerList;
 
     /// <summary>
@@ -31,6 +34,11 @@ namespace SoCrm.Presentation.Customers
         /// The main region.
         /// </summary>
         private readonly IRegion mainRegion;
+
+        /// <summary>
+        /// The create customer view model
+        /// </summary>
+        private ICreateCustomerViewModel createCustomerViewModel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerController" /> class.
@@ -57,7 +65,63 @@ namespace SoCrm.Presentation.Customers
         /// </summary>
         public void NavigateToCreateCustomer()
         {
-            throw new NotImplementedException();
+            this.createCustomerViewModel = this.container.Resolve<ICreateCustomerViewModel>();
+            this.mainRegion.Context = this.createCustomerViewModel;
+        }
+
+        /// <summary>
+        /// Navigates to create company.
+        /// </summary>
+        public void NavigateToCreateCompany()
+        {
+            var createCompanyViewModel = this.container.Resolve<ICreateCompanyViewModel>();
+            this.mainRegion.Context = createCompanyViewModel;
+        }
+
+        /// <summary>
+        /// Navigates to create E mail address.
+        /// </summary>
+        public void NavigateToCreateEMailAddress()
+        {
+            var createEMailAddressViewModel = this.container.Resolve<ICreateEMailAddressViewModel>();
+            this.mainRegion.Context = createEMailAddressViewModel;
+        }
+
+        public void NavigateToCreatePhoneNumber()
+        {
+            var createPhoneNumberViewModel = this.container.Resolve<ICreatePhoneNumberViewModel>();
+            this.mainRegion.Context = createPhoneNumberViewModel;
+        }
+
+        /// <summary>
+        /// Navigates the back to create customer.
+        /// </summary>
+        /// <param name="company">The company.</param>
+        public void NavigateBackToCreateCustomer(Company company)
+        {
+            this.createCustomerViewModel.Companies.Add(company);
+            this.createCustomerViewModel.Company = company;
+            this.mainRegion.Context = this.createCustomerViewModel;
+        }
+
+        /// <summary>
+        /// Navigates the back to create customer.
+        /// </summary>
+        /// <param name="emailAddress">The email address.</param>
+        public void NavigateBackToCreateCustomer(EMailAddress emailAddress)
+        {
+            this.createCustomerViewModel.EMailAddresses.Add(emailAddress);
+            this.mainRegion.Context = this.createCustomerViewModel;
+        }
+
+        /// <summary>
+        /// Navigates the back to create customer.
+        /// </summary>
+        /// <param name="phoneNumber">The phone number.</param>
+        public void NavigateBackToCreateCustomer(PhoneNumber phoneNumber)
+        {
+            this.createCustomerViewModel.PhoneNumbers.Add(phoneNumber);
+            this.mainRegion.Context = this.createCustomerViewModel;
         }
     }
 }

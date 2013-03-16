@@ -74,6 +74,16 @@ namespace SoCrm.Presentation.App
         }
 
         /// <summary>
+        /// Navigates to create customer.
+        /// </summary>
+        public void NavigateToCreateCustomer()
+        {
+            this.customersSessionContainer = this.GetCustomersSessionContainer();
+            var customerController = this.customersSessionContainer.Resolve<ICustomerController>();
+            customerController.NavigateToCreateCustomer();
+        }
+
+        /// <summary>
         /// Gets the security session container.
         /// </summary>
         /// <param name="create">if set to <c>true</c> [create].</param>

@@ -16,10 +16,10 @@ namespace SoCrm.Services.Logging.Provider.LogEventPersistence {
     public interface IPersistenceServiceOf_LogEvent {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_LogEvent/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_LogEvent/SaveResponse")]
-        void Save(SoCrm.Services.Logging.Contracts.LogEvent entity);
+        System.Guid Save(SoCrm.Services.Logging.Contracts.LogEvent entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_LogEvent/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_LogEvent/SaveResponse")]
-        System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Logging.Contracts.LogEvent entity);
+        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Logging.Contracts.LogEvent entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_LogEvent/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_LogEvent/GetResponse")]
         SoCrm.Services.Logging.Contracts.LogEvent Get(System.Guid objectId);
@@ -67,11 +67,11 @@ namespace SoCrm.Services.Logging.Provider.LogEventPersistence {
                 base(binding, remoteAddress) {
         }
         
-        public void Save(SoCrm.Services.Logging.Contracts.LogEvent entity) {
-            base.Channel.Save(entity);
+        public System.Guid Save(SoCrm.Services.Logging.Contracts.LogEvent entity) {
+            return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task SaveAsync(SoCrm.Services.Logging.Contracts.LogEvent entity) {
+        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Logging.Contracts.LogEvent entity) {
             return base.Channel.SaveAsync(entity);
         }
         

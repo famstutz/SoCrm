@@ -30,15 +30,6 @@ namespace SoCrm.Services.Customers.Contracts
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the employees.
-        /// </summary>
-        /// <value>
-        /// The employees.
-        /// </value>
-        [DataMember]
-        public IEnumerable<Person> Employees { get; set; }
-
-        /// <summary>
         /// Gets or sets the address.
         /// </summary>
         /// <value>

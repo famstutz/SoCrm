@@ -55,7 +55,8 @@ namespace SoCrm.Services.Logging.Contracts
         /// <param name="message">The message.</param>
         /// <param name="severity">The severity.</param>
         /// <param name="timeStamp">The time stamp.</param>
+        /// <returns>The created log event.</returns>
         [OperationContract]
-        void LogEvent(string message, Severity severity, DateTime timeStamp);
+        LogEvent LogEvent(string message, Severity severity, DateTime timeStamp);
     }
  }

@@ -24,6 +24,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts
         public SecurityContext()
             : base("Name=Security")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         /// <summary>

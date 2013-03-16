@@ -25,6 +25,7 @@ namespace SoCrm.Services.Customers.Contracts
         /// <value>
         /// The address.
         /// </value>
+        [DataMember]
         public string Address { get; set; }
 
         /// <summary>
@@ -33,6 +34,7 @@ namespace SoCrm.Services.Customers.Contracts
         /// <value>
         /// The type of the contact.
         /// </value>
+        [DataMember]
         public ContactType ContactType { get; set; }
     }
 }

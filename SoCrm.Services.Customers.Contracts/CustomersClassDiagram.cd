@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SoCrm.Services.Customers.Contracts.Address">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAIAAAABAAAAAAAQAAA=</HashCode>
+      <FileName>Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoCrm.Services.Customers.Contracts.Company">
+    <Position X="5.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQACAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Company.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoCrm.Services.Customers.Contracts.EMailAddress">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>EMailAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoCrm.Services.Customers.Contracts.Person">
+    <Position X="1.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAAAAAAAAAAAAAAQAAACAAAAAACAAAAAAAAAAg=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoCrm.Services.Customers.Contracts.PhoneNumber">
+    <Position X="6.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PhoneNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SoCrm.Services.Customers.Contracts.ICustomerService">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAQCDAAAIAAAAAEAAgAAAEAAEAACBAAA=</HashCode>
+      <FileName>ICustomerService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SoCrm.Services.Customers.Contracts.ContactType">
+    <Position X="3.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ContactType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
