@@ -9,6 +9,8 @@
 
 namespace SoCrm.Presentation.App
 {
+    using System;
+
     using Microsoft.Practices.Unity;
 
     using SoCrm.Presentation.Customers;
@@ -82,7 +84,7 @@ namespace SoCrm.Presentation.App
             var customerController = this.customersSessionContainer.Resolve<ICustomerController>();
             customerController.NavigateToCreateCustomer();
         }
-
+        
         /// <summary>
         /// Gets the security session container.
         /// </summary>

@@ -9,6 +9,7 @@
 
 namespace SoCrm.Presentation.App
 {
+    using System;
     using System.Windows;
 
     using Microsoft.Practices.Unity;
@@ -36,7 +37,19 @@ namespace SoCrm.Presentation.App
                      .RegisterModule(typeof(SecurityModule))
                      .RegisterModule(typeof(CustomerModule));
 
-            container.Resolve<IShellViewModel>().Show();
+            var shellViewModel = container.Resolve<IShellViewModel>();
+            shellViewModel.Closing += this.OnClosing;
+            shellViewModel.Show();
+        }
+
+        /// <summary>
+        /// Called when closing.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void OnClosing(object sender, EventArgs e)
+        {
+            Current.Shutdown();
         }
     }
 }

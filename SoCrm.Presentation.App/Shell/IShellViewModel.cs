@@ -9,6 +9,7 @@
 
 namespace SoCrm.Presentation.App.Shell
 {
+    using System;
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core.Interfaces;
@@ -18,6 +19,11 @@ namespace SoCrm.Presentation.App.Shell
     /// </summary>
     public interface IShellViewModel : IViewModelBase
     {
+        /// <summary>
+        /// Occurs when closing.
+        /// </summary>
+        event EventHandler Closing;
+
         /// <summary>
         /// Gets the user list command.
         /// </summary>
@@ -49,6 +55,14 @@ namespace SoCrm.Presentation.App.Shell
         /// The create customer command.
         /// </value>
         ICommand CreateCustomerCommand { get; }
+
+        /// <summary>
+        /// Gets the exit command.
+        /// </summary>
+        /// <value>
+        /// The exit command.
+        /// </value>
+        ICommand ExitCommand { get; }
 
         /// <summary>
         /// Gets the main region.

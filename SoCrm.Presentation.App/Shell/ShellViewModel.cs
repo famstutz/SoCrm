@@ -9,6 +9,7 @@
 
 namespace SoCrm.Presentation.App.Shell
 {
+    using System;
     using System.Windows.Input;
 
     using Microsoft.Practices.Unity;
@@ -42,7 +43,13 @@ namespace SoCrm.Presentation.App.Shell
             this.CreateUserCommand = new CommandModel(obj => this.appController.NavigateToCreateUser());
             this.CustomerListCommand = new CommandModel(obj => this.appController.NavigateToCustomerList());
             this.CreateCustomerCommand = new CommandModel(obj => this.appController.NavigateToCreateCustomer());
+            this.ExitCommand = new CommandModel(obj => this.Closing(this, EventArgs.Empty));
         }
+
+        /// <summary>
+        /// Occurs when closing.
+        /// </summary>
+        public event EventHandler Closing;
 
         /// <summary>
         /// Gets the customer list command.
@@ -51,6 +58,14 @@ namespace SoCrm.Presentation.App.Shell
         /// The customer list command.
         /// </value>
         public ICommand CustomerListCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the exit command.
+        /// </summary>
+        /// <value>
+        /// The exit command.
+        /// </value>
+        public ICommand ExitCommand { get; private set; }
 
         /// <summary>
         /// Gets the main region.
@@ -91,6 +106,19 @@ namespace SoCrm.Presentation.App.Shell
         {
             var shell = new ShellView { DataContext = this };
             shell.Show();
+        }
+
+        /// <summary>
+        /// Raises the <see cref="E:Closing" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        protected virtual void OnClosing(EventArgs e)
+        {
+            EventHandler handler = this.Closing;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
         }
     }
 }
