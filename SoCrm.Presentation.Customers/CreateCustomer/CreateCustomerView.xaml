@@ -39,45 +39,55 @@
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="Country" />
                     <ComboBox Grid.Row="5" Grid.Column="1" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country}" />
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="Employer" />
-                    <StackPanel Grid.Row="6" Grid.Column="1">
-                        <ComboBox ItemsSource="{Binding Companies}" SelectedItem="{Binding Company}" DisplayMemberPath="Name"/>
-                        <Button Content="+" Command="{Binding CreateCompanyCommand}" />
-                    </StackPanel>
+                    <DockPanel Grid.Row="6" Grid.Column="1" LastChildFill="True">
+                        <Button Command="{Binding CreateCompanyCommand}" DockPanel.Dock="Right" VerticalAlignment="Top">
+                            <Image Source="/SoCrm.Presentation.Core;component/Resources/add.png" Height="16" Width="16"/>
+                        </Button>
+                        <ComboBox ItemsSource="{Binding Companies}" SelectedItem="{Binding Company}" DisplayMemberPath="Name" />
+                    </DockPanel>
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="E-Mail Addresses" />
-                    <StackPanel Grid.Row="7" Grid.Column="1">
+                    <DockPanel Grid.Row="7" Grid.Column="1" LastChildFill="True">
+                        <Button Command="{Binding CreateEMailAddressCommand}" DockPanel.Dock="Right" VerticalAlignment="Top">
+                            <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/add.png" Height="16" Width="16"/>
+                        </Button>
                         <DataGrid ItemsSource="{Binding EMailAddresses}" SelectedItem="{Binding SelectedEMailAddress}" AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="E-Mail Address" Binding="{Binding Address}" />
                                 <DataGridTextColumn Header="Contact Type" Binding="{Binding ContactType}" />
-                                <DataGridTemplateColumn Header="Delete">
+                                <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="Delete" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteEMailAddressCommand}" CommandParameter="{Binding}"/>
+                                            <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteEMailAddressCommand}" CommandParameter="{Binding}">
+                                                <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/delete.png" Height="16" Width="16"/>
+                                            </Button>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Content="+" Command="{Binding CreateEMailAddressCommand}" />
-                    </StackPanel>
+                    </DockPanel>
                     <TextBlock Grid.Row="8" Grid.Column="0" Text="Phone Numbers" />
-                    <StackPanel Grid.Row="8" Grid.Column="1">
+                    <DockPanel Grid.Row="8" Grid.Column="1" LastChildFill="True">
+                        <Button Command="{Binding CreatePhoneNumberCommand}" DockPanel.Dock="Right" VerticalAlignment="Top">
+                            <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/add.png" Height="16" Width="16"/>
+                        </Button>
                         <DataGrid ItemsSource="{Binding PhoneNumbers}" SelectedItem="{Binding SelectedPhoneNumber}" AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Phone Number" Binding="{Binding Number}" />
                                 <DataGridTextColumn Header="Contact Type" Binding="{Binding ContactType}" />
-                                <DataGridTemplateColumn Header="Delete">
+                                <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="Delete" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeletePhoneNumberCommand}" CommandParameter="{Binding}"/>
+                                            <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeletePhoneNumberCommand}" CommandParameter="{Binding}">
+                                                <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/delete.png" Height="16" Width="16"/>
+                                            </Button>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Content="+" Command="{Binding CreatePhoneNumberCommand}" />
-                    </StackPanel>
-                    <Button Grid.Row="9" Grid.Column="1" Content="Create New Customer" Command="{Binding CreateCustomerCommand}"/>
+                    </DockPanel>
+                    <Button Grid.Row="9" Grid.Column="1" Content="Save Customer" Command="{Binding CreateCustomerCommand}" Width="120" HorizontalAlignment="Left"/>
                 </Grid>
             </GroupBox>
         </StackPanel>

@@ -25,6 +25,14 @@ namespace SoCrm.Presentation.App.Shell
         event EventHandler Closing;
 
         /// <summary>
+        /// Gets a value indicating whether this instance is logged on.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is logged on; otherwise, <c>false</c>.
+        /// </value>
+        bool IsLoggedOn { get; }
+
+        /// <summary>
         /// Gets the user list command.
         /// </summary>
         /// <value>
@@ -63,6 +71,14 @@ namespace SoCrm.Presentation.App.Shell
         /// The exit command.
         /// </value>
         ICommand ExitCommand { get; }
+
+        /// <summary>
+        /// Gets the company list command.
+        /// </summary>
+        /// <value>
+        /// The company list command.
+        /// </value>
+        ICommand CompanyListCommand { get; }
 
         /// <summary>
         /// Gets the main region.

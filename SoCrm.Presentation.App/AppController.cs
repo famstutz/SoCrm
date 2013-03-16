@@ -15,6 +15,7 @@ namespace SoCrm.Presentation.App
 
     using SoCrm.Presentation.Customers;
     using SoCrm.Presentation.Security;
+    using SoCrm.Services.Security.Contracts;
 
     /// <summary>
     /// The app controller.
@@ -43,6 +44,24 @@ namespace SoCrm.Presentation.App
         public AppController(IUnityContainer container)
         {
             this.container = container;
+        }
+
+        /// <summary>
+        /// Gets or sets the current user.
+        /// </summary>
+        /// <value>
+        /// The current user.
+        /// </value>
+        public User CurrentUser
+        {
+            get
+            {
+                return new User();
+            }
+
+            set
+            {
+            }
         }
 
         /// <summary>
@@ -84,7 +103,17 @@ namespace SoCrm.Presentation.App
             var customerController = this.customersSessionContainer.Resolve<ICustomerController>();
             customerController.NavigateToCreateCustomer();
         }
-        
+
+        /// <summary>
+        /// Navigates to company list.
+        /// </summary>
+        public void NavigateToCompanyList()
+        {
+            this.customersSessionContainer = this.GetCustomersSessionContainer();
+            var customerController = this.customersSessionContainer.Resolve<ICustomerController>();
+            customerController.NavigateToCompanyList();
+        }
+
         /// <summary>
         /// Gets the security session container.
         /// </summary>

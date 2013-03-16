@@ -83,7 +83,9 @@
       <Name>SoCrm.Services.Security.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\key_go.png" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="CreateUser\CreateUserView.xaml">
       <Generator>MSBuild:Compile</Generator>

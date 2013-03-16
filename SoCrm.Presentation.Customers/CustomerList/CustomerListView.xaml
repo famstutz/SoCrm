@@ -22,7 +22,7 @@
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SearchName}" />
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="Company" />
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SearchCompany}" />
-                    <Button Grid.Row="2" Grid.Column="1" Content="Search Customers" Command="{Binding SearchCustomersCommand}" />
+                    <Button Grid.Row="2" Grid.Column="1" Content="Search Customers" Command="{Binding SearchCustomersCommand}" Width="120" HorizontalAlignment="Left" />
                 </Grid>
             </GroupBox>
             <DataGrid ItemsSource="{Binding Persons}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedPerson}">
@@ -40,10 +40,12 @@
                     <DataGridTextColumn Header="Zip Code" Binding="{Binding Address.ZipCode}" />
                     <DataGridTextColumn Header="City" Binding="{Binding Address.City}" />
                     <DataGridTextColumn Header="Country" Binding="{Binding Address.Country}" />
-                    <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Delete" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteCustomerCommand}" CommandParameter="{Binding}"/>
+                                <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteCustomerCommand}" CommandParameter="{Binding}">
+                                    <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/delete.png" Height="16" Width="16"/>
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

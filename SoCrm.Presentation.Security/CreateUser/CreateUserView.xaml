@@ -26,7 +26,7 @@
                     <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Roles}" SelectedItem="{Binding Role}" />
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="Password" />
                     <PasswordBox Grid.Row="2" Grid.Column="1" helpers:PasswordBoxHelper.BindPassword="true" helpers:PasswordBoxHelper.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                    <Button Grid.Row="3" Grid.Column="1" Content="Create New User" Command="{Binding CreateUserCommand}"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="Create New User" Command="{Binding CreateUserCommand}" Width="120" HorizontalAlignment="Left" />
                 </Grid>
             </GroupBox>
         </StackPanel>

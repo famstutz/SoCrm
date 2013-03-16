@@ -96,6 +96,11 @@ namespace SoCrm.Presentation.Customers
             this.mainRegion.Context = createPhoneNumberViewModel;
         }
 
+        public void NavigateToCompanyList()
+        {
+            throw new System.NotImplementedException();
+        }
+
         /// <summary>
         /// Navigates the back to create customer.
         /// </summary>

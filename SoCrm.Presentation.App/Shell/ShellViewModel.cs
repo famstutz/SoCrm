@@ -43,6 +43,7 @@ namespace SoCrm.Presentation.App.Shell
             this.CreateUserCommand = new CommandModel(obj => this.appController.NavigateToCreateUser());
             this.CustomerListCommand = new CommandModel(obj => this.appController.NavigateToCustomerList());
             this.CreateCustomerCommand = new CommandModel(obj => this.appController.NavigateToCreateCustomer());
+            this.CompanyListCommand = new CommandModel(obj => this.appController.NavigateToCompanyList());
             this.ExitCommand = new CommandModel(obj => this.Closing(this, EventArgs.Empty));
         }
 
@@ -50,6 +51,20 @@ namespace SoCrm.Presentation.App.Shell
         /// Occurs when closing.
         /// </summary>
         public event EventHandler Closing;
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is logged on.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is logged on; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsLoggedOn
+        { 
+            get
+            {
+                return this.appController.CurrentUser != null;
+            }
+        }
 
         /// <summary>
         /// Gets the customer list command.
@@ -66,6 +81,14 @@ namespace SoCrm.Presentation.App.Shell
         /// The exit command.
         /// </value>
         public ICommand ExitCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the company list command.
+        /// </summary>
+        /// <value>
+        /// The company list command.
+        /// </value>
+        public ICommand CompanyListCommand { get; private set; }
 
         /// <summary>
         /// Gets the main region.

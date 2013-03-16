@@ -43,6 +43,11 @@ namespace SoCrm.Presentation.Customers
         void NavigateToCreatePhoneNumber();
 
         /// <summary>
+        /// Navigates to company list.
+        /// </summary>
+        void NavigateToCompanyList();
+
+        /// <summary>
         /// Navigates the back to create customer.
         /// </summary>
         /// <param name="company">The company.</param>

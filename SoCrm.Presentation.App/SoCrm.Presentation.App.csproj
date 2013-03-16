@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>layers.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
@@ -86,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
+      <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
+      <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Presentation.Core\SoCrm.Presentation.Core.csproj">
       <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
       <Name>SoCrm.Presentation.Core</Name>
@@ -98,6 +105,42 @@
       <Project>{b640bf52-3cfe-4217-8955-59d87b02f586}</Project>
       <Name>SoCrm.Presentation.Security</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Services.Security.Contracts\SoCrm.Services.Security.Contracts.csproj">
+      <Project>{E13A6892-4D57-4A2A-8670-7B0D105018DC}</Project>
+      <Name>SoCrm.Services.Security.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\user_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\vcard.png" />
+    <Resource Include="Resources\vcard_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\computer_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\computer.png" />
+    <Resource Include="Resources\computer_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\layers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\layers.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="layers.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
