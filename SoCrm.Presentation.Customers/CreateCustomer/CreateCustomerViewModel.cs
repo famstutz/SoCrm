@@ -1,4 +1,13 @@
-﻿namespace SoCrm.Presentation.Customers.CreateCustomer
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CreateCustomerViewModel.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The create customer view model.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace SoCrm.Presentation.Customers.CreateCustomer
 {
     using System.Collections.ObjectModel;
     using System.Linq;
@@ -7,38 +16,91 @@
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Customers.Customer;
 
+    /// <summary>
+    /// The create customer view model.
+    /// </summary>
     public class CreateCustomerViewModel : ViewModelBase, ICreateCustomerViewModel
     {
+        /// <summary>
+        /// The customer controller.
+        /// </summary>
         private readonly ICustomerController customerController;
 
+        /// <summary>
+        /// The customer service.
+        /// </summary>
         private readonly ICustomerService customerService;
 
+        /// <summary>
+        /// The first name.
+        /// </summary>
         private string firstName;
 
+        /// <summary>
+        /// The last name.
+        /// </summary>
         private string lastName;
 
+        /// <summary>
+        /// The address line.
+        /// </summary>
         private string addressLine;
 
+        /// <summary>
+        /// The zip code.
+        /// </summary>
         private string zipCode;
 
+        /// <summary>
+        /// The city.
+        /// </summary>
         private string city;
 
+        /// <summary>
+        /// The countries.
+        /// </summary>
         private ObservableCollection<string> countries;
 
+        /// <summary>
+        /// The country.
+        /// </summary>
         private string country;
 
+        /// <summary>
+        /// The companies.
+        /// </summary>
         private ObservableCollection<Company> companies;
 
+        /// <summary>
+        /// The company.
+        /// </summary>
         private Company company;
 
+        /// <summary>
+        /// The email addresses.
+        /// </summary>
         private ObservableCollection<EMailAddress> emailAddresses;
 
+        /// <summary>
+        /// The selected E mail address.
+        /// </summary>
         private EMailAddress selectedEMailAddress;
 
+        /// <summary>
+        /// The phone numbers.
+        /// </summary>
         private ObservableCollection<PhoneNumber> phoneNumbers;
 
+        /// <summary>
+        /// The selected phone number.
+        /// </summary>
         private PhoneNumber selectedPhoneNumber;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCustomerViewModel"/> class.
+        /// </summary>
+        /// <param name="customerController">The customer controller.</param>
+        /// <param name="customerService">The customer service.</param>
         public CreateCustomerViewModel(ICustomerController customerController, ICustomerService customerService)
         {
             this.customerController = customerController;
@@ -57,6 +119,12 @@
             this.PhoneNumbers = new ObservableCollection<PhoneNumber>();
         }
 
+        /// <summary>
+        /// Gets or sets the first name.
+        /// </summary>
+        /// <value>
+        /// The first name.
+        /// </value>
         public string FirstName
         {
             get
@@ -74,6 +142,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the last name.
+        /// </summary>
+        /// <value>
+        /// The last name.
+        /// </value>
         public string LastName
         {
             get
@@ -91,6 +165,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the address line.
+        /// </summary>
+        /// <value>
+        /// The address line.
+        /// </value>
         public string AddressLine
         {
             get
@@ -108,6 +188,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the zip code.
+        /// </summary>
+        /// <value>
+        /// The zip code.
+        /// </value>
         public string ZipCode
         {
             get
@@ -125,6 +211,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the city.
+        /// </summary>
+        /// <value>
+        /// The city.
+        /// </value>
         public string City
         {
             get
@@ -142,6 +234,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the countries.
+        /// </summary>
+        /// <value>
+        /// The countries.
+        /// </value>
         public ObservableCollection<string> Countries
         {
             get
@@ -159,6 +257,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the country.
+        /// </summary>
+        /// <value>
+        /// The country.
+        /// </value>
         public string Country
         {
             get
@@ -176,6 +280,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the companies.
+        /// </summary>
+        /// <value>
+        /// The companies.
+        /// </value>
         public ObservableCollection<Company> Companies
         {
             get
@@ -193,6 +303,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the company.
+        /// </summary>
+        /// <value>
+        /// The company.
+        /// </value>
         public Company Company
         {
             get
@@ -210,6 +326,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the E mail addresses.
+        /// </summary>
+        /// <value>
+        /// The E mail addresses.
+        /// </value>
         public ObservableCollection<EMailAddress> EMailAddresses
         {
             get
@@ -227,6 +349,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the selected E mail address.
+        /// </summary>
+        /// <value>
+        /// The selected E mail address.
+        /// </value>
         public EMailAddress SelectedEMailAddress
         {
             get
@@ -244,6 +372,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the phone numbers.
+        /// </summary>
+        /// <value>
+        /// The phone numbers.
+        /// </value>
         public ObservableCollection<PhoneNumber> PhoneNumbers
         {
             get
@@ -261,6 +395,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the selected phone number.
+        /// </summary>
+        /// <value>
+        /// The selected phone number.
+        /// </value>
         public PhoneNumber SelectedPhoneNumber
         {
             get
@@ -278,18 +418,58 @@
             }
         }
 
+        /// <summary>
+        /// Gets the create customer command.
+        /// </summary>
+        /// <value>
+        /// The create customer command.
+        /// </value>
         public ICommand CreateCustomerCommand { get; private set; }
 
+        /// <summary>
+        /// Gets the create company command.
+        /// </summary>
+        /// <value>
+        /// The create company command.
+        /// </value>
         public ICommand CreateCompanyCommand { get; private set; }
 
+        /// <summary>
+        /// Gets the create E mail address command.
+        /// </summary>
+        /// <value>
+        /// The create E mail address command.
+        /// </value>
         public ICommand CreateEMailAddressCommand { get; private set; }
 
+        /// <summary>
+        /// Gets the create phone number command.
+        /// </summary>
+        /// <value>
+        /// The create phone number command.
+        /// </value>
         public ICommand CreatePhoneNumberCommand { get; private set; }
 
+        /// <summary>
+        /// Gets the delete E mail address command.
+        /// </summary>
+        /// <value>
+        /// The delete E mail address command.
+        /// </value>
         public ICommand DeleteEMailAddressCommand { get; private set; }
 
+        /// <summary>
+        /// Gets the delete phone number command.
+        /// </summary>
+        /// <value>
+        /// The delete phone number command.
+        /// </value>
         public ICommand DeletePhoneNumberCommand { get; private set; }
 
+        /// <summary>
+        /// Called when customer is created.
+        /// </summary>
+        /// <param name="obj">The object.</param>
         private void OnCreateCustomer(object obj)
         {
             this.customerService.CreatePerson(
@@ -305,6 +485,10 @@
             this.customerController.NavigateToCustomerList();
         }
 
+        /// <summary>
+        /// Called when e mail address is deleted.
+        /// </summary>
+        /// <param name="obj">The object.</param>
         private void OnDeleteEMailAddress(object obj)
         {
             var emailAddress = (EMailAddress)obj;
@@ -312,12 +496,15 @@
             this.EMailAddresses.Remove(emailAddress);
         }
 
+        /// <summary>
+        /// Called when phone number is deleted.
+        /// </summary>
+        /// <param name="obj">The object.</param>
         private void OnDeletePhoneNumber(object obj)
         {
             var phoneNumber = (PhoneNumber)obj;
             this.customerService.DeletePhoneNumber(phoneNumber);
             this.PhoneNumbers.Remove(phoneNumber);
         }
-
     }
 }

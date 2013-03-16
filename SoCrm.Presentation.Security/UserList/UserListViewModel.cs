@@ -10,7 +10,6 @@
 namespace SoCrm.Presentation.Security.UserList
 {
     using System.Collections.ObjectModel;
-    using System.Linq;
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core;

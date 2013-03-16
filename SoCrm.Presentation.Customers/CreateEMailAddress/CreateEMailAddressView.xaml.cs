@@ -1,28 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CreateEMailAddressView.xaml.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   Interaction logic for CreateEMailAddressView.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace SoCrm.Presentation.Customers.CreateEMailAddress
 {
     /// <summary>
-    /// Interaction logic for CreateEMailAddressView.xaml
+    /// Interaction logic for CreateEMailAddressView.
     /// </summary>
-    public partial class CreateEMailAddressView : UserControl
+    public partial class CreateEMailAddressView
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEMailAddressView"/> class.
+        /// </summary>
         public CreateEMailAddressView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

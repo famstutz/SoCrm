@@ -1,4 +1,13 @@
-﻿namespace SoCrm.Presentation.Customers.CreateCompany
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CreateCompanyViewModel.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The create company view model.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace SoCrm.Presentation.Customers.CreateCompany
 {
     using System.Collections.ObjectModel;
     using System.Windows.Input;
@@ -6,26 +15,61 @@
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Customers.Customer;
 
+    /// <summary>
+    /// The create company view model.
+    /// </summary>
     public class CreateCompanyViewModel : ViewModelBase, ICreateCompanyViewModel
     {
+        /// <summary>
+        /// The customer controller.
+        /// </summary>
         private readonly ICustomerController customerController;
 
+        /// <summary>
+        /// The customer service.
+        /// </summary>
         private readonly ICustomerService customerService;
 
+        /// <summary>
+        /// The name.
+        /// </summary>
         private string name;
 
+        /// <summary>
+        /// The website.
+        /// </summary>
         private string website;
 
+        /// <summary>
+        /// The address line.
+        /// </summary>
         private string addressLine;
 
+        /// <summary>
+        /// The zip code.
+        /// </summary>
         private string zipCode;
 
+        /// <summary>
+        /// The city.
+        /// </summary>
         private string city;
 
+        /// <summary>
+        /// The countries.
+        /// </summary>
         private ObservableCollection<string> countries;
 
+        /// <summary>
+        /// The country.
+        /// </summary>
         private string country;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCompanyViewModel"/> class.
+        /// </summary>
+        /// <param name="customerController">The customer controller.</param>
+        /// <param name="customerService">The customer service.</param>
         public CreateCompanyViewModel(ICustomerController customerController, ICustomerService customerService)
         {
             this.customerController = customerController;
@@ -36,6 +80,12 @@
             this.Countries = new ObservableCollection<string>(this.customerService.GetAllCountries());
         }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name
         {
             get
@@ -53,6 +103,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the website.
+        /// </summary>
+        /// <value>
+        /// The website.
+        /// </value>
         public string Website
         {
             get
@@ -70,6 +126,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the address line.
+        /// </summary>
+        /// <value>
+        /// The address line.
+        /// </value>
         public string AddressLine
         {
             get
@@ -87,6 +149,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the zip code.
+        /// </summary>
+        /// <value>
+        /// The zip code.
+        /// </value>
         public string ZipCode
         {
             get
@@ -104,6 +172,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the city.
+        /// </summary>
+        /// <value>
+        /// The city.
+        /// </value>
         public string City
         {
             get
@@ -121,6 +195,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the countries.
+        /// </summary>
+        /// <value>
+        /// The countries.
+        /// </value>
         public ObservableCollection<string> Countries
         {
             get
@@ -138,6 +218,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the country.
+        /// </summary>
+        /// <value>
+        /// The country.
+        /// </value>
         public string Country
         {
             get
@@ -155,8 +241,18 @@
             }
         }
 
+        /// <summary>
+        /// Gets the create customer command.
+        /// </summary>
+        /// <value>
+        /// The create customer command.
+        /// </value>
         public ICommand CreateCompanyCommand { get; private set; }
 
+        /// <summary>
+        /// Called when company is created.
+        /// </summary>
+        /// <param name="obj">The object.</param>
         private void OnCreateCompany(object obj)
         {
             var company = this.customerService.CreateCompany(this.Name, this.AddressLine, this.ZipCode, this.City, this.Country, this.Website);

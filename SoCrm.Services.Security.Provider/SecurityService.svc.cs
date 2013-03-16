@@ -162,6 +162,9 @@ namespace SoCrm.Services.Security.Provider
         /// <param name="userName">Name of the user.</param>
         /// <param name="password">The password.</param>
         /// <param name="role">The role.</param>
+        /// <returns>
+        /// The created user.
+        /// </returns>
         public User CreateUser(string userName, string password, Role role)
         {
             var userObjectId = this.client.Save(new User { UserName = userName, Role = role, Password = HashPassword(password) });

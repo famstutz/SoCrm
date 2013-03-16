@@ -87,6 +87,9 @@ namespace SoCrm.Presentation.Customers
             this.mainRegion.Context = createEMailAddressViewModel;
         }
 
+        /// <summary>
+        /// Navigates to create phone number.
+        /// </summary>
         public void NavigateToCreatePhoneNumber()
         {
             var createPhoneNumberViewModel = this.container.Resolve<ICreatePhoneNumberViewModel>();

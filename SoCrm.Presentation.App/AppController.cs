@@ -105,7 +105,7 @@ namespace SoCrm.Presentation.App
         /// Gets the customers session container.
         /// </summary>
         /// <param name="create">if set to <c>true</c> [create].</param>
-        /// <returns></returns>
+        /// <returns>The session container.</returns>
         private IUnityContainer GetCustomersSessionContainer(bool create = false)
         {
             if (create || this.customersSessionContainer == null)

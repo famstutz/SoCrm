@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CustomersModule.cs" company="Florian Amstutz">
+// <copyright file="CustomerModule.cs" company="Florian Amstutz">
 //   Copyright (c) 2013 by Florian Amstutz.
 // </copyright>
 // <summary>
@@ -20,7 +20,7 @@ namespace SoCrm.Presentation.Customers
     using SoCrm.Presentation.Customers.CustomerList;
 
     /// <summary>
-    /// The customers module.
+    /// The customer module.
     /// </summary>
     public class CustomerModule : IModule
     {

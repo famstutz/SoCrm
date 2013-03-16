@@ -1,28 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CreatePhoneNumberView.xaml.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   Interaction logic for CreatePhoneNumberView.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace SoCrm.Presentation.Customers.CreatePhoneNumber
 {
     /// <summary>
-    /// Interaction logic for CreatePhoneNumberView.xaml
+    /// Interaction logic for CreatePhoneNumberView.
     /// </summary>
-    public partial class CreatePhoneNumberView : UserControl
+    public partial class CreatePhoneNumberView
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePhoneNumberView"/> class.
+        /// </summary>
         public CreatePhoneNumberView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

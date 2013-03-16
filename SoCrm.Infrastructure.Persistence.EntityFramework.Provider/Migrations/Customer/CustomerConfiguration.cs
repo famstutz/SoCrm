@@ -9,6 +9,7 @@
 
 namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Migrations.Customer
 {
+    using System;
     using System.Data.Entity.Migrations;
 
     using SoCrm.Infrastructure.Persistence.EntityFramework.Provider.Contexts;

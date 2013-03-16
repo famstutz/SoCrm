@@ -1,10 +1,22 @@
-﻿namespace SoCrm.Presentation.Customers.CreateCompany
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ICreateCompanyViewModel.cs" company="Florian Amstutz">
+//   Copyright (c) 2013 by Florian Amstutz.
+// </copyright>
+// <summary>
+//   The create company view model.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace SoCrm.Presentation.Customers.CreateCompany
 {
     using System.Collections.ObjectModel;
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core.Interfaces;
 
+    /// <summary>
+    /// The create company view model.
+    /// </summary>
     public interface ICreateCompanyViewModel : IViewModelBase
     {
         /// <summary>
