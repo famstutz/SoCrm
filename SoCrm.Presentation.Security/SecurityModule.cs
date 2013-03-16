@@ -34,7 +34,7 @@ namespace SoCrm.Presentation.Security
             container.RegisterType<ICreateUserViewModel, CreateUserViewModel>();
             container.RegisterType<ISetPasswordViewModel, SetPasswordViewModel>();
 
-            container.RegisterInstance(typeof(ISecurityService), new SecurityServiceClient());
+            container.RegisterInstance(typeof(ISecurityService), new SecurityServiceClient(), new ContainerControlledLifetimeManager());
         }
     }
 }

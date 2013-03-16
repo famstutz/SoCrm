@@ -84,7 +84,7 @@ namespace SoCrm.Services.Security.Provider
             var users = this.GetUsersByRole(role);
             if (!string.IsNullOrWhiteSpace(userName))
             {
-                users = users.Where(u => u.UserName == userName);
+                users = users.Where(u => u.UserName.Contains(userName));
             }
 
             return users;

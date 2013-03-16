@@ -45,15 +45,6 @@ namespace SoCrm.Presentation.Security
         }
 
         /// <summary>
-        /// Runs this instance.
-        /// </summary>
-        public void Run()
-        {
-            var userListViewModel = this.container.Resolve<IUserListViewModel>();
-            this.mainRegion.Context = userListViewModel;
-        }
-
-        /// <summary>
         /// Navigates to user list.
         /// </summary>
         public void NavigateToUserList()

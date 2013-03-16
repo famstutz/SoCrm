@@ -1,34 +1,29 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IAppController.cs" company="Florian Amstutz">
+// <copyright file="ICustomerController.cs" company="Florian Amstutz">
 //   Copyright (c) 2013 by Florian Amstutz.
 // </copyright>
 // <summary>
-//   The app controller.
+//   The customers controller.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SoCrm.Presentation.App
+namespace SoCrm.Presentation.Customers
 {
     using SoCrm.Presentation.Core.Interfaces;
 
     /// <summary>
-    /// The app controller.
+    /// The customers controller.
     /// </summary>
-    public interface IAppController : IController
+    public interface ICustomerController : IController
     {
         /// <summary>
-        /// Goes to user list.
-        /// </summary>
-        void NavigateToUserList();
-
-        /// <summary>
-        /// Goes to create user.
-        /// </summary>
-        void NavigateToCreateUser();
-
-        /// <summary>
-        /// Navigates to customer list.
+        /// Navigates to customers list.
         /// </summary>
         void NavigateToCustomerList();
+
+        /// <summary>
+        /// Navigates to new customer.
+        /// </summary>
+        void NavigateToCreateCustomer();
     }
 }

@@ -11,6 +11,7 @@ namespace SoCrm.Services.Customers.Provider
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using SoCrm.Services.Customers.Contracts;
     using SoCrm.Services.Customers.Provider.AddressPersistence;
@@ -126,6 +127,31 @@ namespace SoCrm.Services.Customers.Provider
         public Person GetPersonByObjectId(Guid objectId)
         {
             return this.personClient.Get(objectId);
+        }
+
+        /// <summary>
+        /// Gets the persons by name and company.
+        /// </summary>
+        /// <param name="personName">Name of the person.</param>
+        /// <param name="companyName">Name of the company.</param>
+        /// <returns>
+        /// The persons.
+        /// </returns>
+        public IEnumerable<Person> GetPersonsByNameAndCompany(string personName, string companyName)
+        {
+            var persons = this.GetAllPersons();
+
+            if (!string.IsNullOrWhiteSpace(personName))
+            {
+                persons = persons.Where(p => p.FirstName.Contains(personName) || p.LastName.Contains(personName));
+            }
+
+            if (!string.IsNullOrWhiteSpace(companyName))
+            {
+                persons = persons.Where(p => p.Employer != null && p.Employer.Name.Contains(companyName));
+            }
+
+            return persons;
         }
 
         /// <summary>

@@ -15,6 +15,7 @@ namespace SoCrm.Presentation.App
 
     using SoCrm.Presentation.App.Shell;
     using SoCrm.Presentation.Core;
+    using SoCrm.Presentation.Customers;
     using SoCrm.Presentation.Security;
 
     /// <summary>
@@ -31,11 +32,11 @@ namespace SoCrm.Presentation.App
             var container = new UnityContainer();
 
             container.Resolve<Bootstrapper>()
-                .RegisterModule(typeof(ShellModule))
-                .RegisterModule(typeof(SecurityModule));
+                     .RegisterModule(typeof(ShellModule))
+                     .RegisterModule(typeof(SecurityModule))
+                     .RegisterModule(typeof(CustomerModule));
 
             container.Resolve<IShellViewModel>().Show();
-            container.Resolve<IAppController>().Run();
         }
     }
 }

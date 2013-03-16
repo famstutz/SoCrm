@@ -73,6 +73,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Security
 		{882E2721-F229-46E9-8EFD-B4ADA83B6D3B} = {882E2721-F229-46E9-8EFD-B4ADA83B6D3B}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Customers", "SoCrm.Presentation.Customers\SoCrm.Presentation.Customers.csproj", "{4FF52647-3602-4273-825A-A32A99BFDE90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A80D72DD-65ED-4E97-A6C8-BF700F439212} = {A80D72DD-65ED-4E97-A6C8-BF700F439212}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +144,10 @@ Global
 		{B640BF52-3CFE-4217-8955-59D87B02F586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B640BF52-3CFE-4217-8955-59D87B02F586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B640BF52-3CFE-4217-8955-59D87B02F586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF52647-3602-4273-825A-A32A99BFDE90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF52647-3602-4273-825A-A32A99BFDE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF52647-3602-4273-825A-A32A99BFDE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF52647-3602-4273-825A-A32A99BFDE90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +173,7 @@ Global
 		{2BBD3B48-C570-412E-9EB6-4D269535E6D5} = {CD6DBB2E-D2A3-4F7E-9854-4EE61C8A9897}
 		{C5E4F41D-B81E-4E3B-A955-8477306E2A4C} = {CD6DBB2E-D2A3-4F7E-9854-4EE61C8A9897}
 		{B640BF52-3CFE-4217-8955-59D87B02F586} = {CD6DBB2E-D2A3-4F7E-9854-4EE61C8A9897}
+		{4FF52647-3602-4273-825A-A32A99BFDE90} = {CD6DBB2E-D2A3-4F7E-9854-4EE61C8A9897}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35

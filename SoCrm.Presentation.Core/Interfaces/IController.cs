@@ -14,9 +14,5 @@ namespace SoCrm.Presentation.Core.Interfaces
     /// </summary>
     public interface IController
     {
-        /// <summary>
-        /// Runs this instance.
-        /// </summary>
-        void Run();
     }
 }

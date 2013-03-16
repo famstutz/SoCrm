@@ -35,6 +35,14 @@ namespace SoCrm.Presentation.App.Shell
         ICommand CreateUserCommand { get; }
 
         /// <summary>
+        /// Gets the customer list command.
+        /// </summary>
+        /// <value>
+        /// The customer list command.
+        /// </value>
+        ICommand CustomerListCommand { get; }
+
+        /// <summary>
         /// Gets the main region.
         /// </summary>
         /// <value>

@@ -113,6 +113,10 @@
       <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
       <Name>SoCrm.Presentation.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Presentation.Customers\SoCrm.Presentation.Customers.csproj">
+      <Project>{4FF52647-3602-4273-825A-A32A99BFDE90}</Project>
+      <Name>SoCrm.Presentation.Customers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Presentation.Security\SoCrm.Presentation.Security.csproj">
       <Project>{b640bf52-3cfe-4217-8955-59d87b02f586}</Project>
       <Name>SoCrm.Presentation.Security</Name>

@@ -63,6 +63,15 @@ namespace SoCrm.Services.Customers.Contracts
         Person GetPersonByObjectId(Guid objectId);
 
         /// <summary>
+        /// Gets the persons by name and company.
+        /// </summary>
+        /// <param name="personName">Name of the person.</param>
+        /// <param name="companyName">Name of the company.</param>
+        /// <returns>The persons.</returns>
+        [OperationContract]
+        IEnumerable<Person> GetPersonsByNameAndCompany(string personName, string companyName);
+
+            /// <summary>
         /// Gets the company by object id.
         /// </summary>
         /// <param name="objectId">The object id.</param>

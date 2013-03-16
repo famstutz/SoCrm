@@ -11,6 +11,7 @@ namespace SoCrm.Presentation.App
 {
     using Microsoft.Practices.Unity;
 
+    using SoCrm.Presentation.Customers;
     using SoCrm.Presentation.Security;
 
     /// <summary>
@@ -29,6 +30,11 @@ namespace SoCrm.Presentation.App
         private IUnityContainer securitySessionContainer;
 
         /// <summary>
+        /// The customers session container
+        /// </summary>
+        private IUnityContainer customersSessionContainer;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AppController"/> class.
         /// </summary>
         /// <param name="container">The container.</param>
@@ -38,16 +44,9 @@ namespace SoCrm.Presentation.App
         }
 
         /// <summary>
-        /// Runs this instance.
-        /// </summary>
-        public void Run()
-        {
-        }
-
-        /// <summary>
         /// Goes to user list.
         /// </summary>
-        public void GoToUserList()
+        public void NavigateToUserList()
         {
             this.securitySessionContainer = this.GetSecuritySessionContainer();
             var securityController = this.securitySessionContainer.Resolve<ISecurityController>();
@@ -57,11 +56,21 @@ namespace SoCrm.Presentation.App
         /// <summary>
         /// Goes to create user.
         /// </summary>
-        public void GoToCreateUser()
+        public void NavigateToCreateUser()
         {
             this.securitySessionContainer = this.GetSecuritySessionContainer();
             var securityController = this.securitySessionContainer.Resolve<ISecurityController>();
             securityController.NavigateToCreateUser();
+        }
+
+        /// <summary>
+        /// Navigates to customer list.
+        /// </summary>
+        public void NavigateToCustomerList()
+        {
+            this.customersSessionContainer = this.GetCustomersSessionContainer();
+            var customerController = this.customersSessionContainer.Resolve<ICustomerController>();
+            customerController.NavigateToCustomerList();
         }
 
         /// <summary>
@@ -80,6 +89,24 @@ namespace SoCrm.Presentation.App
             }
 
             return this.securitySessionContainer;
+        }
+
+        /// <summary>
+        /// Gets the customers session container.
+        /// </summary>
+        /// <param name="create">if set to <c>true</c> [create].</param>
+        /// <returns></returns>
+        private IUnityContainer GetCustomersSessionContainer(bool create = false)
+        {
+            if (create || this.customersSessionContainer == null)
+            {
+                this.customersSessionContainer = this.container.CreateChildContainer();
+                var customerController = this.customersSessionContainer.Resolve<ICustomerController>();
+                this.customersSessionContainer.RegisterInstance(
+                    customerController, new ContainerControlledLifetimeManager());
+            }
+
+            return this.customersSessionContainer;
         }
     }
 }

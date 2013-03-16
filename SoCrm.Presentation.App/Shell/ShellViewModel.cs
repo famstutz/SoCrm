@@ -38,9 +38,12 @@ namespace SoCrm.Presentation.App.Shell
             container.RegisterInstance(RegionNames.MainRegion, this.MainRegion, new ContainerControlledLifetimeManager());
             container.RegisterInstance(this.MainRegion, new ContainerControlledLifetimeManager());
             
-            this.UserListCommand = new CommandModel(obj => this.appController.GoToUserList());
-            this.CreateUserCommand = new CommandModel(obj => this.appController.GoToCreateUser());
+            this.UserListCommand = new CommandModel(obj => this.appController.NavigateToUserList());
+            this.CreateUserCommand = new CommandModel(obj => this.appController.NavigateToCreateUser());
+            this.CustomerListCommand = new CommandModel(obj => this.appController.NavigateToCustomerList());
         }
+
+        public ICommand CustomerListCommand { get; private set; }
 
         /// <summary>
         /// Gets the main region.
