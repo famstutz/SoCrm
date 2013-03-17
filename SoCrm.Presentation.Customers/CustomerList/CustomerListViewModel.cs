@@ -60,7 +60,7 @@ namespace SoCrm.Presentation.Customers.CustomerList
             this.customerController = customerController;
             this.customerService = customerService;
 
-            this.SearchCustomersCommand = new CommandModel(obj => this.Persons = new ObservableCollection<Person>(this.customerService.GetPersonsByNameAndCompany(this.SearchName, this.SearchCompany)));
+            this.SearchCustomersCommand = new CommandModel(this.OnSearchCustomers);
             this.DeleteCustomerCommand = new CommandModel(this.OnDeleteCustomer);
 
             this.Persons = new ObservableCollection<Person>(this.customerService.GetPersonsByNameAndCompany(this.SearchName, this.SearchCompany));
@@ -183,6 +183,17 @@ namespace SoCrm.Presentation.Customers.CustomerList
             var person = obj as Person;
             this.customerService.DeletePerson(person);
             this.Persons.Remove(person);
+            this.customerController.SetLastStatus(string.Format("Successfully deleted {0} {1}.", person.FirstName, person.LastName));
+        }
+
+        /// <summary>
+        /// Called when customers are searched.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        private void OnSearchCustomers(object obj)
+        {
+            this.Persons = new ObservableCollection<Person>(this.customerService.GetPersonsByNameAndCompany(this.SearchName, this.SearchCompany));
+            this.customerController.SetLastStatus(string.Format("Found {0} customers.", this.Persons.Count));
         }
     }
 }

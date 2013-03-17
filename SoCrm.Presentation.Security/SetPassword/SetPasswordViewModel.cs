@@ -145,6 +145,7 @@ namespace SoCrm.Presentation.Security.SetPassword
         private void OnSetPassword(object obj)
         {
             this.securityService.SetPassword(this.User, this.OldPassword, this.NewPassword);
+            this.securityController.SetLastStatus(string.Format("Successfully set password of user {0}.", this.User.UserName));
             this.securityController.NavigateToUserList();
         }
     }

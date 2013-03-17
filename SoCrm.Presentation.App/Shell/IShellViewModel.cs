@@ -13,6 +13,7 @@ namespace SoCrm.Presentation.App.Shell
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Core.StatusBar;
 
     /// <summary>
     /// The shell view model.
@@ -31,6 +32,14 @@ namespace SoCrm.Presentation.App.Shell
         /// <c>true</c> if this instance is logged on; otherwise, <c>false</c>.
         /// </value>
         bool IsLoggedOn { get; }
+
+        /// <summary>
+        /// Gets or sets the status bar service.
+        /// </summary>
+        /// <value>
+        /// The status bar service.
+        /// </value>
+        IStatusBarService StatusBarService { get; set; }
 
         /// <summary>
         /// Gets the user list command.

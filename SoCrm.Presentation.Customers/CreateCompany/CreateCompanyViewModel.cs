@@ -256,6 +256,7 @@ namespace SoCrm.Presentation.Customers.CreateCompany
         private void OnCreateCompany(object obj)
         {
             var company = this.customerService.CreateCompany(this.Name, this.AddressLine, this.ZipCode, this.City, this.Country, this.Website);
+            this.customerController.SetLastStatus(string.Format("Successfully created company {0}.", company.Name));
             this.customerController.NavigateBackToCreateCustomer(company);
         }
     }

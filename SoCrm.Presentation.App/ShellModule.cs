@@ -13,6 +13,7 @@ namespace SoCrm.Presentation.App
 
     using SoCrm.Presentation.App.Shell;
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Core.StatusBar;
 
     /// <summary>
     /// The shell module.
@@ -27,6 +28,7 @@ namespace SoCrm.Presentation.App
         {
             container.RegisterType<IShellViewModel, ShellViewModel>(new ContainerControlledLifetimeManager());
             container.RegisterType<IAppController, AppController>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IStatusBarService, StatusBarService>(new ContainerControlledLifetimeManager());
         }
     }
 }

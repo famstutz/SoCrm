@@ -23,7 +23,7 @@ namespace SoCrm.Presentation.Customers
     /// <summary>
     /// The customer controller.
     /// </summary>
-    public class CustomerController : ICustomerController
+    public class CustomerController : ControllerBase, ICustomerController
     {
         /// <summary>
         /// The container.
@@ -46,6 +46,7 @@ namespace SoCrm.Presentation.Customers
         /// <param name="container">The container.</param>
         /// <param name="mainRegion">The main region.</param>
         public CustomerController(IUnityContainer container, [Dependency(RegionNames.MainRegion)] IRegion mainRegion)
+            : base(container)
         {
             this.container = container;
             this.mainRegion = mainRegion;

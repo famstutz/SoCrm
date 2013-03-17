@@ -144,7 +144,8 @@ namespace SoCrm.Presentation.Customers.CreatePhoneNumber
         private void OnCreatePhoneNumber(object obj)
         {
             var phoneNumber = this.customerService.CreatePhoneNumber(this.Number, this.ContactType);
-            this.customerController.NavigateBackToCreateCustomer(phoneNumber);
+            this.customerController.SetLastStatus(string.Format("Successfully created phone number {0}.", phoneNumber.Number));
+            this.customerController.NavigateBackToCreateCustomer(phoneNumber); 
         }
     }
 }

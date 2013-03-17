@@ -72,7 +72,7 @@ namespace SoCrm.Presentation.Security.UserList
             this.securityController = securityController;
             this.securityService = securityService;
 
-            this.SearchUsersCommand = new CommandModel(obj => this.Users = new ObservableCollection<User>(this.securityService.GetUsersByRoleAndUserName(this.SearchRole, this.SearchUserName)));
+            this.SearchUsersCommand = new CommandModel(this.OnSearchUsers);
             this.DeleteUserCommand = new CommandModel(this.OnDeleteUser);
             this.SetPasswordCommand = new CommandModel(obj => this.securityController.NavigateToSetPassword(this.SelectedUser));
             
@@ -252,6 +252,17 @@ namespace SoCrm.Presentation.Security.UserList
             var user = (User)obj;
             this.securityService.DeleteUser(user);
             this.Users.Remove(user);
+            this.securityController.SetLastStatus(string.Format("Successfully deleted user {0}.", user.UserName));
+        }
+
+        /// <summary>
+        /// Called when search users.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        private void OnSearchUsers(object obj)
+        {
+            this.Users = new ObservableCollection<User>(this.securityService.GetUsersByRoleAndUserName(this.SearchRole, this.SearchUserName));
+            this.securityController.SetLastStatus(string.Format("Found {0} users.", this.Users.Count));
         }
     }
 }

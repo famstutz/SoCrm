@@ -175,6 +175,7 @@ namespace SoCrm.Presentation.Security.CreateUser
         private void OnCreateUser(object obj)
         {
             this.securityService.CreateUser(this.UserName, this.Password, this.Role);
+            this.securityController.SetLastStatus(string.Format("Successfully created user {0}.", this.UserName));
             this.securityController.NavigateToUserList();
         }
     }

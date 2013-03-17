@@ -14,5 +14,10 @@ namespace SoCrm.Presentation.Core.Interfaces
     /// </summary>
     public interface IController
     {
+        /// <summary>
+        /// Sets the last status.
+        /// </summary>
+        /// <param name="status">The status.</param>
+        void SetLastStatus(string status);
     }
 }

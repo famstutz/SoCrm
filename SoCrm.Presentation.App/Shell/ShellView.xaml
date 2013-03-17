@@ -3,100 +3,108 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Service Oriented CRM" Icon="..\Resources\layers.png" Width="640" Height="480">
     <Grid>
-        <StackPanel>
-            <Menu IsMainMenu="True">
-                <MenuItem Header="File">
-                    <MenuItem Header="Logon">
-                        <MenuItem.Icon>
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Top">
+                <Menu IsMainMenu="True">
+                    <MenuItem Header="File">
+                        <MenuItem Header="Logon">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\computer_key.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="Exit" Command="{Binding ExitCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\cross.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Customers" IsEnabled="{Binding IsLoggedOn}">
+                        <MenuItem Header="Create Customer" Command="{Binding CreateCustomerCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\user_add.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="View Customers" Command="{Binding CustomerListCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\user.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="View Companies" Command="{Binding CompanyListCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\building.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Contacts" IsEnabled="{Binding IsLoggedOn}">
+                        <MenuItem Header="Create Contact">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\vcard_add.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="View Contacts">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\vcard.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Security" IsEnabled="{Binding IsLoggedOn}">
+                        <MenuItem Header="Create User" Command="{Binding CreateUserCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\computer_add.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="View Users" Command="{Binding UserListCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="..\Resources\computer.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <ToolBarTray>
+                    <ToolBar>
+                        <Button>
                             <Image Source="..\Resources\computer_key.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator/>
-                    <MenuItem Header="Exit" Command="{Binding ExitCommand}">
-                        <MenuItem.Icon>
-                            <Image Source="..\Resources\cross.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Customers" IsEnabled="{Binding IsLoggedOn}">
-                    <MenuItem Header="Create Customer" Command="{Binding CreateCustomerCommand}">
-                        <MenuItem.Icon>
+                        </Button>
+                    </ToolBar>
+                    <ToolBar IsEnabled="{Binding IsLoggedOn}">
+                        <Button Command="{Binding CreateCustomerCommand}">
                             <Image Source="..\Resources\user_add.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="View Customers" Command="{Binding CustomerListCommand}">
-                    <MenuItem.Icon>
-                        <Image Source="..\Resources\user.png"/>
-                    </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator/>
-                    <MenuItem Header="View Companies" Command="{Binding CompanyListCommand}">
-                        <MenuItem.Icon>
+                        </Button>
+                        <Button Command="{Binding CustomerListCommand}">
+                            <Image Source="..\Resources\user.png"/>
+                        </Button>
+                        <Separator/>
+                        <Button Command="{Binding CompanyListCommand}">
                             <Image Source="..\Resources\building.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Contacts" IsEnabled="{Binding IsLoggedOn}">
-                    <MenuItem Header="Create Contact">
-                        <MenuItem.Icon>
+                        </Button>
+                    </ToolBar>
+                    <ToolBar IsEnabled="{Binding IsLoggedOn}">
+                        <Button>
                             <Image Source="..\Resources\vcard_add.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="View Contacts">
-                        <MenuItem.Icon>
+                        </Button>
+                        <Button>
                             <Image Source="..\Resources\vcard.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Security" IsEnabled="{Binding IsLoggedOn}">
-                    <MenuItem Header="Create User" Command="{Binding CreateUserCommand}">
-                        <MenuItem.Icon>
+                        </Button>
+                    </ToolBar>
+                    <ToolBar IsEnabled="{Binding IsLoggedOn}">
+                        <Button Command="{Binding CreateUserCommand}">
                             <Image Source="..\Resources\computer_add.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="View Users" Command="{Binding UserListCommand}">
-                        <MenuItem.Icon>
+                        </Button>
+                        <Button Command="{Binding UserListCommand}">
                             <Image Source="..\Resources\computer.png"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-            </Menu>
-            <ToolBarTray>
-                <ToolBar>
-                    <Button>
-                        <Image Source="..\Resources\computer_key.png" />
-                    </Button>
-                </ToolBar>
-                <ToolBar IsEnabled="{Binding IsLoggedOn}">
-                    <Button Command="{Binding CreateUserCommand}">
-                        <Image Source="..\Resources\user_add.png"/>
-                    </Button>
-                    <Button Command="{Binding CustomerListCommand}">
-                        <Image Source="..\Resources\user.png"/>
-                    </Button>
-                    <Separator/>
-                    <Button Command="{Binding CompanyListCommand}">
-                        <Image Source="..\Resources\building.png"/>
-                    </Button>
-                </ToolBar>
-                <ToolBar IsEnabled="{Binding IsLoggedOn}">
-                    <Button>
-                        <Image Source="..\Resources\vcard_add.png"/>
-                    </Button>
-                    <Button>
-                        <Image Source="..\Resources\vcard.png"/>
-                    </Button>
-                </ToolBar>
-                <ToolBar IsEnabled="{Binding IsLoggedOn}">
-                    <Button Command="{Binding CreateUserCommand}">
-                        <Image Source="..\Resources\computer_add.png"/>
-                    </Button>
-                    <Button Command="{Binding UserListCommand}">
-                        <Image Source="..\Resources\computer_add.png"/>
-                    </Button>
-                </ToolBar>
-            </ToolBarTray>
+                        </Button>
+                    </ToolBar>
+                </ToolBarTray>
+            </StackPanel>
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem DockPanel.Dock="Right">
+                    <TextBlock Text="{Binding StatusBarService.DateTime, StringFormat=F}"/>
+                </StatusBarItem>
+                <StatusBarItem Content="{Binding StatusBarService.LastStatus}"/>
+            </StatusBar>
             <ContentControl Content="{Binding MainRegion.Context}"/>
-        </StackPanel>
+        </DockPanel>
     </Grid>
 </Window>

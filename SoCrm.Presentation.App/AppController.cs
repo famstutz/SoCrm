@@ -13,6 +13,7 @@ namespace SoCrm.Presentation.App
 
     using Microsoft.Practices.Unity;
 
+    using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Customers;
     using SoCrm.Presentation.Security;
     using SoCrm.Services.Security.Contracts;
@@ -20,7 +21,7 @@ namespace SoCrm.Presentation.App
     /// <summary>
     /// The app controller.
     /// </summary>
-    public class AppController : IAppController
+    public class AppController : ControllerBase, IAppController
     {
         /// <summary>
         /// The container.
@@ -42,6 +43,7 @@ namespace SoCrm.Presentation.App
         /// </summary>
         /// <param name="container">The container.</param>
         public AppController(IUnityContainer container)
+            : base(container)
         {
             this.container = container;
         }

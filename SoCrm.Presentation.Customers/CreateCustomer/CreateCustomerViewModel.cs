@@ -482,6 +482,7 @@ namespace SoCrm.Presentation.Customers.CreateCustomer
                 this.Country,
                 this.PhoneNumbers.ToArray(),
                 this.EMailAddresses.ToArray());
+            this.customerController.SetLastStatus(string.Format("Successfully created customer {0} {1}.", this.FirstName, this.LastName));
             this.customerController.NavigateToCustomerList();
         }
 
@@ -494,6 +495,7 @@ namespace SoCrm.Presentation.Customers.CreateCustomer
             var emailAddress = (EMailAddress)obj;
             this.customerService.DeleteEMailAddress(emailAddress);
             this.EMailAddresses.Remove(emailAddress);
+            this.customerController.SetLastStatus(string.Format("Successfully deleted e-mail address {0}.", emailAddress.Address));
         }
 
         /// <summary>
@@ -505,6 +507,7 @@ namespace SoCrm.Presentation.Customers.CreateCustomer
             var phoneNumber = (PhoneNumber)obj;
             this.customerService.DeletePhoneNumber(phoneNumber);
             this.PhoneNumbers.Remove(phoneNumber);
+            this.customerController.SetLastStatus(string.Format("Successfully deleted phone number {0}.", phoneNumber.Number));
         }
     }
 }

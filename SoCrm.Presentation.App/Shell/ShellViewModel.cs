@@ -16,6 +16,7 @@ namespace SoCrm.Presentation.App.Shell
 
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Core.StatusBar;
 
     /// <summary>
     /// The shell view model.
@@ -28,12 +29,18 @@ namespace SoCrm.Presentation.App.Shell
         private readonly IAppController appController;
 
         /// <summary>
+        /// The status bar service.
+        /// </summary>
+        private IStatusBarService statusBarService;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
         /// </summary>
         /// <param name="container">The container.</param>
         public ShellViewModel(IUnityContainer container)
         {
             this.appController = container.Resolve<IAppController>();
+            this.statusBarService = container.Resolve<IStatusBarService>();
 
             this.MainRegion = new RegionModel();
             container.RegisterInstance(RegionNames.MainRegion, this.MainRegion, new ContainerControlledLifetimeManager());
@@ -63,6 +70,29 @@ namespace SoCrm.Presentation.App.Shell
             get
             {
                 return this.appController.CurrentUser != null;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the status bar service.
+        /// </summary>
+        /// <value>
+        /// The status bar service.
+        /// </value>
+        public IStatusBarService StatusBarService
+        {
+            get
+            {
+                return this.statusBarService;
+            }
+
+            set
+            {
+                if (this.statusBarService != value)
+                {
+                    this.statusBarService = value;
+                    this.OnPropertyChanged("StatusBarService");
+                }
             }
         }
 

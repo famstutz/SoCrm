@@ -21,7 +21,7 @@ namespace SoCrm.Presentation.Security
     /// <summary>
     /// The security controller.
     /// </summary>
-    public class SecurityController : ISecurityController
+    public class SecurityController : ControllerBase, ISecurityController
     {
         /// <summary>
         /// The container.
@@ -39,6 +39,7 @@ namespace SoCrm.Presentation.Security
         /// <param name="container">The container.</param>
         /// <param name="mainRegion">The main region.</param>
         public SecurityController(IUnityContainer container, [Dependency(RegionNames.MainRegion)] IRegion mainRegion)
+            : base(container)
         {
             this.container = container;
             this.mainRegion = mainRegion;
