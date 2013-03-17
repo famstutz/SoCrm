@@ -465,6 +465,12 @@ namespace SoCrm.Presentation.Customers.Customer {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetPersonsByNameAndCompany", ReplyAction="http://tempuri.org/ICustomerService/GetPersonsByNameAndCompanyResponse")]
         System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Person[]> GetPersonsByNameAndCompanyAsync(string personName, string companyName);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCompaniesByNameAndCountry", ReplyAction="http://tempuri.org/ICustomerService/GetCompaniesByNameAndCountryResponse")]
+        SoCrm.Presentation.Customers.Customer.Company[] GetCompaniesByNameAndCountry(string name, string counrty);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCompaniesByNameAndCountry", ReplyAction="http://tempuri.org/ICustomerService/GetCompaniesByNameAndCountryResponse")]
+        System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Company[]> GetCompaniesByNameAndCountryAsync(string name, string counrty);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCompanyByObjectId", ReplyAction="http://tempuri.org/ICustomerService/GetCompanyByObjectIdResponse")]
         SoCrm.Presentation.Customers.Customer.Company GetCompanyByObjectId(System.Guid objectId);
         
@@ -603,6 +609,14 @@ namespace SoCrm.Presentation.Customers.Customer {
         
         public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Person[]> GetPersonsByNameAndCompanyAsync(string personName, string companyName) {
             return base.Channel.GetPersonsByNameAndCompanyAsync(personName, companyName);
+        }
+        
+        public SoCrm.Presentation.Customers.Customer.Company[] GetCompaniesByNameAndCountry(string name, string counrty) {
+            return base.Channel.GetCompaniesByNameAndCountry(name, counrty);
+        }
+        
+        public System.Threading.Tasks.Task<SoCrm.Presentation.Customers.Customer.Company[]> GetCompaniesByNameAndCountryAsync(string name, string counrty) {
+            return base.Channel.GetCompaniesByNameAndCountryAsync(name, counrty);
         }
         
         public SoCrm.Presentation.Customers.Customer.Company GetCompanyByObjectId(System.Guid objectId) {

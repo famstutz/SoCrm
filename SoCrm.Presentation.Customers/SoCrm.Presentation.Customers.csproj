@@ -44,6 +44,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyList\CompanyListView.xaml.cs">
+      <DependentUpon>CompanyListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyList\CompanyListViewModel.cs" />
+    <Compile Include="CompanyList\ICompanyListViewModel.cs" />
     <Compile Include="CreateCompany\CreateCompanyView.xaml.cs">
       <DependentUpon>CreateCompanyView.xaml</DependentUpon>
     </Compile>
@@ -140,6 +145,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CompanyList\CompanyListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateCompany\CreateCompanyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

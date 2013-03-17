@@ -5,7 +5,8 @@
 	xmlns:createCustomer="clr-namespace:SoCrm.Presentation.Customers.CreateCustomer"
 	xmlns:createCompany="clr-namespace:SoCrm.Presentation.Customers.CreateCompany"
 	xmlns:createEMailAddress="clr-namespace:SoCrm.Presentation.Customers.CreateEMailAddress"
-	xmlns:createPhoneNumber="clr-namespace:SoCrm.Presentation.Customers.CreatePhoneNumber">
+	xmlns:createPhoneNumber="clr-namespace:SoCrm.Presentation.Customers.CreatePhoneNumber"
+	xmlns:companyList="clr-namespace:SoCrm.Presentation.Customers.CompanyList">
 
     <DataTemplate DataType="{x:Type customerList:CustomerListViewModel}">
         <customerList:CustomerListView />
@@ -25,5 +26,9 @@
     
     <DataTemplate DataType="{x:Type createPhoneNumber:CreatePhoneNumberViewModel}">
         <createPhoneNumber:CreatePhoneNumberView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type companyList:CompanyListViewModel}">
+        <companyList:CompanyListView />
     </DataTemplate>
 </ResourceDictionary>

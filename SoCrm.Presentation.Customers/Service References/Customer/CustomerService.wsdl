@@ -57,6 +57,12 @@
   <wsdl:message name="ICustomerService_GetPersonsByNameAndCompany_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPersonsByNameAndCompanyResponse" />
   </wsdl:message>
+  <wsdl:message name="ICustomerService_GetCompaniesByNameAndCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompaniesByNameAndCountry" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerService_GetCompaniesByNameAndCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompaniesByNameAndCountryResponse" />
+  </wsdl:message>
   <wsdl:message name="ICustomerService_GetCompanyByObjectId_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCompanyByObjectId" />
   </wsdl:message>
@@ -137,6 +143,10 @@
     <wsdl:operation name="GetPersonsByNameAndCompany">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetPersonsByNameAndCompany" message="tns:ICustomerService_GetPersonsByNameAndCompany_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetPersonsByNameAndCompanyResponse" message="tns:ICustomerService_GetPersonsByNameAndCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompaniesByNameAndCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetCompaniesByNameAndCountry" message="tns:ICustomerService_GetCompaniesByNameAndCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/GetCompaniesByNameAndCountryResponse" message="tns:ICustomerService_GetCompaniesByNameAndCountry_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCompanyByObjectId">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/GetCompanyByObjectId" message="tns:ICustomerService_GetCompanyByObjectId_InputMessage" />
@@ -238,6 +248,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPersonsByNameAndCompany">
       <soap:operation soapAction="http://tempuri.org/ICustomerService/GetPersonsByNameAndCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompaniesByNameAndCountry">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/GetCompaniesByNameAndCountry" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

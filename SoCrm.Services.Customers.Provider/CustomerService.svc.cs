@@ -168,6 +168,29 @@ namespace SoCrm.Services.Customers.Provider
         }
 
         /// <summary>
+        /// Gets the companies by name and country.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="country">The country.</param>
+        /// <returns></returns>
+        public IEnumerable<Company> GetCompaniesByNameAndCountry(string name, string country)
+        {
+            var companies = this.GetAllCompanies();
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                companies = companies.Where(c => c.Name.Contains(name));
+            }
+
+            if (!string.IsNullOrWhiteSpace(country))
+            {
+                companies = companies.Where(c => c.Address != null && c.Address.Country.Contains(country));
+            }
+
+            return companies;
+        }
+
+        /// <summary>
         /// Gets the company by object id.
         /// </summary>
         /// <param name="objectId">The object id.</param>

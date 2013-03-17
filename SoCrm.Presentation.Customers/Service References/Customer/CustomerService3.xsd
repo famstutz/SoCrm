@@ -104,17 +104,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCompaniesByNameAndCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="counrty" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompaniesByNameAndCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="GetCompaniesByNameAndCountryResult" nillable="true" type="q10:ArrayOfCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetCompanyByObjectId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="objectId" type="q10:guid" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="objectId" type="q11:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCompanyByObjectIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="GetCompanyByObjectIdResult" nillable="true" type="q11:Company" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="GetCompanyByObjectIdResult" nillable="true" type="q12:Company" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -122,14 +137,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="phoneNumber" nillable="true" type="xs:string" />
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="contactType" type="q12:ContactType" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="contactType" type="q13:ContactType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreatePhoneNumberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreatePhoneNumberResult" nillable="true" type="q13:PhoneNumber" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreatePhoneNumberResult" nillable="true" type="q14:PhoneNumber" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -137,14 +152,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="contactType" type="q14:ContactType" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="contactType" type="q15:ContactType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateEmailAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreateEmailAddressResult" nillable="true" type="q15:EMailAddress" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreateEmailAddressResult" nillable="true" type="q16:EMailAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -163,7 +178,7 @@
   <xs:element name="CreateCompanyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreateCompanyResult" nillable="true" type="q16:Company" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreateCompanyResult" nillable="true" type="q17:Company" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -172,27 +187,27 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="employer" nillable="true" type="q17:Company" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="employer" nillable="true" type="q18:Company" />
         <xs:element minOccurs="0" name="addressLine" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="phoneNumbers" nillable="true" type="q18:ArrayOfPhoneNumber" />
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="emailAddresses" nillable="true" type="q19:ArrayOfEMailAddress" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="phoneNumbers" nillable="true" type="q19:ArrayOfPhoneNumber" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="emailAddresses" nillable="true" type="q20:ArrayOfEMailAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreatePersonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreatePersonResult" nillable="true" type="q20:Person" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="CreatePersonResult" nillable="true" type="q21:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeletePerson">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="person" nillable="true" type="q21:Person" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="person" nillable="true" type="q22:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -204,7 +219,7 @@
   <xs:element name="DeleteEMailAddress">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="emailAddress" nillable="true" type="q22:EMailAddress" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="emailAddress" nillable="true" type="q23:EMailAddress" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -216,7 +231,7 @@
   <xs:element name="DeletePhoneNumber">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="phoneNumber" nillable="true" type="q23:PhoneNumber" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="phoneNumber" nillable="true" type="q24:PhoneNumber" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

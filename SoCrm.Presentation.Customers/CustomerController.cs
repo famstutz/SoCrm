@@ -13,6 +13,7 @@ namespace SoCrm.Presentation.Customers
 
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Customers.CompanyList;
     using SoCrm.Presentation.Customers.CreateCompany;
     using SoCrm.Presentation.Customers.CreateCustomer;
     using SoCrm.Presentation.Customers.CreateEMailAddress;
@@ -97,9 +98,13 @@ namespace SoCrm.Presentation.Customers
             this.mainRegion.Context = createPhoneNumberViewModel;
         }
 
+        /// <summary>
+        /// Navigates to company list.
+        /// </summary>
         public void NavigateToCompanyList()
         {
-            throw new System.NotImplementedException();
+            var companyListViewModel = this.container.Resolve<ICompanyListViewModel>();
+            this.mainRegion.Context = companyListViewModel;
         }
 
         /// <summary>
