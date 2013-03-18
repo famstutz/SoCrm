@@ -11,6 +11,7 @@ namespace SoCrm.Presentation.Customers
 {
     using Microsoft.Practices.Unity;
 
+    using SoCrm.Presentation.Contacts;
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Core.Interfaces;
     using SoCrm.Presentation.Customers.CompanyList;
@@ -18,8 +19,8 @@ namespace SoCrm.Presentation.Customers
     using SoCrm.Presentation.Customers.CreateCustomer;
     using SoCrm.Presentation.Customers.CreateEMailAddress;
     using SoCrm.Presentation.Customers.CreatePhoneNumber;
-    using SoCrm.Presentation.Customers.Customer;
     using SoCrm.Presentation.Customers.CustomerList;
+    using SoCrm.Services.Customers.Contracts;
 
     /// <summary>
     /// The customer controller.
@@ -136,6 +137,16 @@ namespace SoCrm.Presentation.Customers
         {
             this.createCustomerViewModel.PhoneNumbers.Add(phoneNumber);
             this.mainRegion.Context = this.createCustomerViewModel;
+        }
+
+        /// <summary>
+        /// Navigates to create contact.
+        /// </summary>
+        /// <param name="person">The person.</param>
+        public void NavigateToCreateContact(Person person)
+        {
+            var contactController = this.container.Resolve<IContactController>();
+            contactController.NavigateToCreateContact(person);
         }
     }
 }

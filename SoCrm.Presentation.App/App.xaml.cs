@@ -15,6 +15,7 @@ namespace SoCrm.Presentation.App
     using Microsoft.Practices.Unity;
 
     using SoCrm.Presentation.App.Shell;
+    using SoCrm.Presentation.Contacts;
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Customers;
     using SoCrm.Presentation.Security;
@@ -35,7 +36,8 @@ namespace SoCrm.Presentation.App
             container.Resolve<Bootstrapper>()
                      .RegisterModule(typeof(ShellModule))
                      .RegisterModule(typeof(SecurityModule))
-                     .RegisterModule(typeof(CustomerModule));
+                     .RegisterModule(typeof(CustomerModule))
+                     .RegisterModule(typeof(ContactModule));
 
             var shellViewModel = container.Resolve<IShellViewModel>();
             shellViewModel.Closing += this.OnClosing;

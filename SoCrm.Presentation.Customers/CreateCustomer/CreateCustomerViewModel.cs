@@ -14,7 +14,9 @@ namespace SoCrm.Presentation.Customers.CreateCustomer
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core;
-    using SoCrm.Presentation.Customers.Customer;
+    using SoCrm.Services.Customers.Contracts;
+
+    using ICustomerService = SoCrm.Presentation.Customers.Customer.ICustomerService;
 
     /// <summary>
     /// The create customer view model.
@@ -480,8 +482,8 @@ namespace SoCrm.Presentation.Customers.CreateCustomer
                 this.ZipCode,
                 this.City,
                 this.Country,
-                this.PhoneNumbers.ToArray(),
-                this.EMailAddresses.ToArray());
+                this.PhoneNumbers.ToList(),
+                this.EMailAddresses.ToList());
             this.customerController.SetLastStatus(string.Format("Successfully created customer {0} {1}.", this.FirstName, this.LastName));
             this.customerController.NavigateToCustomerList();
         }

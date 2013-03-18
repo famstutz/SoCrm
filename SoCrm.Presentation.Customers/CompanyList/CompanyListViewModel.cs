@@ -13,7 +13,9 @@ namespace SoCrm.Presentation.Customers.CompanyList
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core;
-    using SoCrm.Presentation.Customers.Customer;
+    using SoCrm.Services.Customers.Contracts;
+
+    using ICustomerService = SoCrm.Presentation.Customers.Customer.ICustomerService;
 
     /// <summary>
     /// The company list view model.

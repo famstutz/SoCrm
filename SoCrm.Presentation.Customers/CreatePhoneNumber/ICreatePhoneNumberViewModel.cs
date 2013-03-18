@@ -13,7 +13,7 @@ namespace SoCrm.Presentation.Customers.CreatePhoneNumber
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core.Interfaces;
-    using SoCrm.Presentation.Customers.Customer;
+    using SoCrm.Services.Customers.Contracts;
 
     /// <summary>
     /// The create phone number view model.

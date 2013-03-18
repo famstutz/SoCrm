@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d308ec4a-911f-486b-907a-d4f3652a6f4c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:30319/ContactService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ContactService.xsd" MetadataType="Schema" ID="475d9e9a-e127-439b-b292-e9a6951f4fdc" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ContactService.wsdl" MetadataType="Wsdl" ID="bff3fbaf-a9e0-444d-a2e2-1145abca9bc5" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?wsdl" />
+    <MetadataFile FileName="ContactService.disco" MetadataType="Disco" ID="a6accacb-269a-4d92-8863-96bac8b467cf" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?disco" />
+    <MetadataFile FileName="ContactService1.xsd" MetadataType="Schema" ID="03f903d0-9262-44f3-9bdb-88618ef182fc" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ContactService2.xsd" MetadataType="Schema" ID="51d2a8ca-317d-4593-94b3-611eb50832d2" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ContactService3.xsd" MetadataType="Schema" ID="17b5f3e2-b669-4ccd-bc31-845842df77f8" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ContactService4.xsd" MetadataType="Schema" ID="03e78848-3612-493a-9fef-26a59086db31" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ContactService5.xsd" MetadataType="Schema" ID="9ffc14a7-36b5-42c2-8218-70563bae7ffe" SourceId="1" SourceUrl="http://localhost:30319/ContactService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

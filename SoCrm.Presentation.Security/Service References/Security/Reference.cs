@@ -16,64 +16,34 @@ namespace SoCrm.Presentation.Security.Security {
     public interface ISecurityService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetAllUsers", ReplyAction="http://tempuri.org/ISecurityService/GetAllUsersResponse")]
-        SoCrm.Services.Security.Contracts.User[] GetAllUsers();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetAllUsers", ReplyAction="http://tempuri.org/ISecurityService/GetAllUsersResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetAllUsersAsync();
+        System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetAllUsers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetAllRoles", ReplyAction="http://tempuri.org/ISecurityService/GetAllRolesResponse")]
-        SoCrm.Services.Security.Contracts.Role[] GetAllRoles();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetAllRoles", ReplyAction="http://tempuri.org/ISecurityService/GetAllRolesResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.Role[]> GetAllRolesAsync();
+        System.Collections.Generic.List<SoCrm.Services.Security.Contracts.Role> GetAllRoles();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUsersByRole", ReplyAction="http://tempuri.org/ISecurityService/GetUsersByRoleResponse")]
-        SoCrm.Services.Security.Contracts.User[] GetUsersByRole(SoCrm.Services.Security.Contracts.Role role);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUsersByRole", ReplyAction="http://tempuri.org/ISecurityService/GetUsersByRoleResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetUsersByRoleAsync(SoCrm.Services.Security.Contracts.Role role);
+        System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetUsersByRole(SoCrm.Services.Security.Contracts.Role role);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUsersByRoleAndUserName", ReplyAction="http://tempuri.org/ISecurityService/GetUsersByRoleAndUserNameResponse")]
-        SoCrm.Services.Security.Contracts.User[] GetUsersByRoleAndUserName(SoCrm.Services.Security.Contracts.Role role, string userName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUsersByRoleAndUserName", ReplyAction="http://tempuri.org/ISecurityService/GetUsersByRoleAndUserNameResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetUsersByRoleAndUserNameAsync(SoCrm.Services.Security.Contracts.Role role, string userName);
+        System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetUsersByRoleAndUserName(SoCrm.Services.Security.Contracts.Role role, string userName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/ValidateCredentials", ReplyAction="http://tempuri.org/ISecurityService/ValidateCredentialsResponse")]
         bool ValidateCredentials(string userName, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/ValidateCredentials", ReplyAction="http://tempuri.org/ISecurityService/ValidateCredentialsResponse")]
-        System.Threading.Tasks.Task<bool> ValidateCredentialsAsync(string userName, string password);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUserByCredentials", ReplyAction="http://tempuri.org/ISecurityService/GetUserByCredentialsResponse")]
         SoCrm.Services.Security.Contracts.User GetUserByCredentials(string userName, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUserByCredentials", ReplyAction="http://tempuri.org/ISecurityService/GetUserByCredentialsResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> GetUserByCredentialsAsync(string userName, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUserByObjectId", ReplyAction="http://tempuri.org/ISecurityService/GetUserByObjectIdResponse")]
         SoCrm.Services.Security.Contracts.User GetUserByObjectId(System.Guid objectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/GetUserByObjectId", ReplyAction="http://tempuri.org/ISecurityService/GetUserByObjectIdResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> GetUserByObjectIdAsync(System.Guid objectId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/SetPassword", ReplyAction="http://tempuri.org/ISecurityService/SetPasswordResponse")]
         void SetPassword(SoCrm.Services.Security.Contracts.User user, string oldPassword, string newPassword);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/SetPassword", ReplyAction="http://tempuri.org/ISecurityService/SetPasswordResponse")]
-        System.Threading.Tasks.Task SetPasswordAsync(SoCrm.Services.Security.Contracts.User user, string oldPassword, string newPassword);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/CreateUser", ReplyAction="http://tempuri.org/ISecurityService/CreateUserResponse")]
         SoCrm.Services.Security.Contracts.User CreateUser(string userName, string password, SoCrm.Services.Security.Contracts.Role role);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/CreateUser", ReplyAction="http://tempuri.org/ISecurityService/CreateUserResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> CreateUserAsync(string userName, string password, SoCrm.Services.Security.Contracts.Role role);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/DeleteUser", ReplyAction="http://tempuri.org/ISecurityService/DeleteUserResponse")]
         void DeleteUser(SoCrm.Services.Security.Contracts.User user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISecurityService/DeleteUser", ReplyAction="http://tempuri.org/ISecurityService/DeleteUserResponse")]
-        System.Threading.Tasks.Task DeleteUserAsync(SoCrm.Services.Security.Contracts.User user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -103,84 +73,44 @@ namespace SoCrm.Presentation.Security.Security {
                 base(binding, remoteAddress) {
         }
         
-        public SoCrm.Services.Security.Contracts.User[] GetAllUsers() {
+        public System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetAllUsers() {
             return base.Channel.GetAllUsers();
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetAllUsersAsync() {
-            return base.Channel.GetAllUsersAsync();
-        }
-        
-        public SoCrm.Services.Security.Contracts.Role[] GetAllRoles() {
+        public System.Collections.Generic.List<SoCrm.Services.Security.Contracts.Role> GetAllRoles() {
             return base.Channel.GetAllRoles();
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.Role[]> GetAllRolesAsync() {
-            return base.Channel.GetAllRolesAsync();
-        }
-        
-        public SoCrm.Services.Security.Contracts.User[] GetUsersByRole(SoCrm.Services.Security.Contracts.Role role) {
+        public System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetUsersByRole(SoCrm.Services.Security.Contracts.Role role) {
             return base.Channel.GetUsersByRole(role);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetUsersByRoleAsync(SoCrm.Services.Security.Contracts.Role role) {
-            return base.Channel.GetUsersByRoleAsync(role);
-        }
-        
-        public SoCrm.Services.Security.Contracts.User[] GetUsersByRoleAndUserName(SoCrm.Services.Security.Contracts.Role role, string userName) {
+        public System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetUsersByRoleAndUserName(SoCrm.Services.Security.Contracts.Role role, string userName) {
             return base.Channel.GetUsersByRoleAndUserName(role, userName);
-        }
-        
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetUsersByRoleAndUserNameAsync(SoCrm.Services.Security.Contracts.Role role, string userName) {
-            return base.Channel.GetUsersByRoleAndUserNameAsync(role, userName);
         }
         
         public bool ValidateCredentials(string userName, string password) {
             return base.Channel.ValidateCredentials(userName, password);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidateCredentialsAsync(string userName, string password) {
-            return base.Channel.ValidateCredentialsAsync(userName, password);
-        }
-        
         public SoCrm.Services.Security.Contracts.User GetUserByCredentials(string userName, string password) {
             return base.Channel.GetUserByCredentials(userName, password);
-        }
-        
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> GetUserByCredentialsAsync(string userName, string password) {
-            return base.Channel.GetUserByCredentialsAsync(userName, password);
         }
         
         public SoCrm.Services.Security.Contracts.User GetUserByObjectId(System.Guid objectId) {
             return base.Channel.GetUserByObjectId(objectId);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> GetUserByObjectIdAsync(System.Guid objectId) {
-            return base.Channel.GetUserByObjectIdAsync(objectId);
-        }
-        
         public void SetPassword(SoCrm.Services.Security.Contracts.User user, string oldPassword, string newPassword) {
             base.Channel.SetPassword(user, oldPassword, newPassword);
-        }
-        
-        public System.Threading.Tasks.Task SetPasswordAsync(SoCrm.Services.Security.Contracts.User user, string oldPassword, string newPassword) {
-            return base.Channel.SetPasswordAsync(user, oldPassword, newPassword);
         }
         
         public SoCrm.Services.Security.Contracts.User CreateUser(string userName, string password, SoCrm.Services.Security.Contracts.Role role) {
             return base.Channel.CreateUser(userName, password, role);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> CreateUserAsync(string userName, string password, SoCrm.Services.Security.Contracts.Role role) {
-            return base.Channel.CreateUserAsync(userName, password, role);
-        }
-        
         public void DeleteUser(SoCrm.Services.Security.Contracts.User user) {
             base.Channel.DeleteUser(user);
-        }
-        
-        public System.Threading.Tasks.Task DeleteUserAsync(SoCrm.Services.Security.Contracts.User user) {
-            return base.Channel.DeleteUserAsync(user);
         }
     }
 }

@@ -93,6 +93,10 @@
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Core.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Presentation.Contacts\SoCrm.Presentation.Contacts.csproj">
+      <Project>{0B24AB02-CF3B-4E84-827A-DF5869AABD62}</Project>
+      <Name>SoCrm.Presentation.Contacts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Presentation.Core\SoCrm.Presentation.Core.csproj">
       <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
       <Name>SoCrm.Presentation.Core</Name>

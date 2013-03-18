@@ -78,12 +78,11 @@ namespace SoCrm.Services.Customers.Contracts
         [OperationContract]
         IEnumerable<Person> GetPersonsByNameAndCompany(string personName, string companyName);
 
-
         /// <summary>
         /// Gets the companies by name and country.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="counrty">The counrty.</param>
+        /// <param name="counrty">The country.</param>
         /// <returns>The companies.</returns>
         [OperationContract]
         IEnumerable<Company> GetCompaniesByNameAndCountry(string name, string counrty);

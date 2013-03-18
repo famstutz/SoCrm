@@ -10,7 +10,7 @@
 namespace SoCrm.Presentation.Customers
 {
     using SoCrm.Presentation.Core.Interfaces;
-    using SoCrm.Presentation.Customers.Customer;
+    using SoCrm.Services.Customers.Contracts;
 
     /// <summary>
     /// The customers controller.
@@ -64,5 +64,11 @@ namespace SoCrm.Presentation.Customers
         /// </summary>
         /// <param name="phoneNumber">The phone number.</param>
         void NavigateBackToCreateCustomer(PhoneNumber phoneNumber);
+
+        /// <summary>
+        /// Navigates to create contact.
+        /// </summary>
+        /// <param name="person">The person.</param>
+        void NavigateToCreateContact(Person person);
     }
 }

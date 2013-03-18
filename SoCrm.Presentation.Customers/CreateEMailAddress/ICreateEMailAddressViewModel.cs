@@ -13,7 +13,7 @@ namespace SoCrm.Presentation.Customers.CreateEMailAddress
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core.Interfaces;
-    using SoCrm.Presentation.Customers.Customer;
+    using SoCrm.Services.Customers.Contracts;
 
     /// <summary>
     /// The create e mail address view model.

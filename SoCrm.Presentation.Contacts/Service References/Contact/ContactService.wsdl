@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ContactService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:30319/ContactService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:30319/ContactService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:30319/ContactService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" />
+      <xsd:import schemaLocation="http://localhost:30319/ContactService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" />
+      <xsd:import schemaLocation="http://localhost:30319/ContactService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" />
+      <xsd:import schemaLocation="http://localhost:30319/ContactService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IContactService_GetContactsByPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByPerson" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByCompany" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByUser" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactByObjectId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactByObjectId" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactByObjectId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactByObjectIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByContactMedium_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByContactMedium" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByContactMedium_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByContactMediumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetAllContactMediums_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllContactMediums" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetAllContactMediums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllContactMediumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_CreateContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContact" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_CreateContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContactResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IContactService">
+    <wsdl:operation name="GetContactsByPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetContactsByPerson" message="tns:IContactService_GetContactsByPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetContactsByPersonResponse" message="tns:IContactService_GetContactsByPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetContactsByCompany" message="tns:IContactService_GetContactsByCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetContactsByCompanyResponse" message="tns:IContactService_GetContactsByCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetContactsByUser" message="tns:IContactService_GetContactsByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetContactsByUserResponse" message="tns:IContactService_GetContactsByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactByObjectId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetContactByObjectId" message="tns:IContactService_GetContactByObjectId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetContactByObjectIdResponse" message="tns:IContactService_GetContactByObjectId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByContactMedium">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetContactsByContactMedium" message="tns:IContactService_GetContactsByContactMedium_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetContactsByContactMediumResponse" message="tns:IContactService_GetContactsByContactMedium_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllContactMediums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetAllContactMediums" message="tns:IContactService_GetAllContactMediums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetAllContactMediumsResponse" message="tns:IContactService_GetAllContactMediums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/CreateContact" message="tns:IContactService_CreateContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/CreateContactResponse" message="tns:IContactService_CreateContact_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IContactService" type="tns:IContactService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetContactsByPerson">
+      <soap:operation soapAction="http://tempuri.org/IContactService/GetContactsByPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByCompany">
+      <soap:operation soapAction="http://tempuri.org/IContactService/GetContactsByCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByUser">
+      <soap:operation soapAction="http://tempuri.org/IContactService/GetContactsByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactByObjectId">
+      <soap:operation soapAction="http://tempuri.org/IContactService/GetContactByObjectId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByContactMedium">
+      <soap:operation soapAction="http://tempuri.org/IContactService/GetContactsByContactMedium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllContactMediums">
+      <soap:operation soapAction="http://tempuri.org/IContactService/GetAllContactMediums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContact">
+      <soap:operation soapAction="http://tempuri.org/IContactService/CreateContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContactService">
+    <wsdl:port name="BasicHttpBinding_IContactService" binding="tns:BasicHttpBinding_IContactService">
+      <soap:address location="http://localhost:30319/ContactService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

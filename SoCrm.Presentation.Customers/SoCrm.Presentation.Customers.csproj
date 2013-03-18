@@ -85,15 +85,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
+      <Project>{f8479afc-cbff-4564-b587-6f47826d846d}</Project>
+      <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Presentation.Contacts\SoCrm.Presentation.Contacts.csproj">
+      <Project>{0B24AB02-CF3B-4E84-827A-DF5869AABD62}</Project>
+      <Name>SoCrm.Presentation.Contacts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Presentation.Core\SoCrm.Presentation.Core.csproj">
       <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
       <Name>SoCrm.Presentation.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
+      <Project>{603a6fb9-68d4-4e0f-8de4-e3eda93e3735}</Project>
+      <Name>SoCrm.Services.Customers.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Company.datasource" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.EMailAddress.datasource" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Person.datasource" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.PhoneNumber.datasource" />
     <None Include="Service References\Customer\CustomerService.wsdl" />
     <None Include="Service References\Customer\CustomerService.xsd">
       <SubType>Designer</SubType>
@@ -109,21 +126,6 @@
     </None>
     <None Include="Service References\Customer\CustomerService4.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.Company.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.ContactType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.EMailAddress.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.Person.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Customer\SoCrm.Presentation.Customers.Customer.PhoneNumber.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

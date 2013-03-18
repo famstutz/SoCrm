@@ -13,7 +13,9 @@ namespace SoCrm.Presentation.Customers.CreateEMailAddress
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core;
-    using SoCrm.Presentation.Customers.Customer;
+    using SoCrm.Services.Customers.Contracts;
+
+    using ICustomerService = SoCrm.Presentation.Customers.Customer.ICustomerService;
 
     /// <summary>
     /// The create e mail address view model.
