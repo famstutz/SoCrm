@@ -1,8 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Style.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/SoCrm.Presentation.Security;component/Resources/Templates.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/SoCrm.Presentation.Customers;component/Resources/Templates.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/SoCrm.Presentation.Contacts;component/Resources/Templates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+    
 </ResourceDictionary>

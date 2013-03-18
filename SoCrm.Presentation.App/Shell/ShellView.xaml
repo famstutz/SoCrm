@@ -104,7 +104,9 @@
                 </StatusBarItem>
                 <StatusBarItem Content="{Binding StatusBarService.LastStatus}"/>
             </StatusBar>
-            <ContentControl Content="{Binding MainRegion.Context}"/>
+            <ScrollViewer>
+                <ContentControl Content="{Binding MainRegion.Context}"/>
+            </ScrollViewer>
         </DockPanel>
     </Grid>
 </Window>

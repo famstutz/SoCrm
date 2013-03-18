@@ -64,6 +64,10 @@
     </Compile>
     <Compile Include="ShellModule.cs" />
     <Compile Include="Shell\ShellViewModel.cs" />
+    <Page Include="Resources\Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Templates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
