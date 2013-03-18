@@ -43,6 +43,15 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
+                                <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.CreateContactCommand}" CommandParameter="{Binding}">
+                                    <Image Source="pack://application:,,,/SoCrm.Presentation.App;component/Resources/vcard_add.png" Height="16" Width="16"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
                                 <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteCustomerCommand}" CommandParameter="{Binding}">
                                     <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/delete.png" Height="16" Width="16"/>
                                 </Button>

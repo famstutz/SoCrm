@@ -145,7 +145,9 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new ContactContext())
             {
-                db.Contacts.Remove(this.Read(objectId) as Contact);
+                var contact = this.Read(objectId) as Contact;
+                db.Contacts.Attach(contact);
+                db.Contacts.Remove(contact);
                 db.SaveChanges();
             }
         }

@@ -22,5 +22,15 @@ namespace SoCrm.Presentation.Contacts
         /// </summary>
         /// <param name="person">The person.</param>
         void NavigateToCreateContact(Person person);
+
+        /// <summary>
+        /// Navigates to create contact.
+        /// </summary>
+        void NavigateToCreateContact();
+
+        /// <summary>
+        /// Navigates to contact list.
+        /// </summary>
+        void NavigateToContactList();
     }
 }

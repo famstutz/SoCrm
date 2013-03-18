@@ -64,6 +64,7 @@ namespace SoCrm.Presentation.Customers.CustomerList
 
             this.SearchCustomersCommand = new CommandModel(this.OnSearchCustomers);
             this.DeleteCustomerCommand = new CommandModel(this.OnDeleteCustomer);
+            this.CreateContactCommand = new CommandModel(obj => this.customerController.NavigateToCreateContact(this.SelectedPerson));
 
             this.Persons = new ObservableCollection<Person>(this.customerService.GetPersonsByNameAndCompany(this.SearchName, this.SearchCompany));
         }
@@ -129,6 +130,14 @@ namespace SoCrm.Presentation.Customers.CustomerList
         /// The delete user command.
         /// </value>
         public ICommand DeleteCustomerCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the create contact command.
+        /// </summary>
+        /// <value>
+        /// The create contact command.
+        /// </value>
+        public ICommand CreateContactCommand { get; private set; }
 
         /// <summary>
         /// Gets or sets the persons.

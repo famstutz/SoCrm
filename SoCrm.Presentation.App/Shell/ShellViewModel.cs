@@ -59,6 +59,8 @@ namespace SoCrm.Presentation.App.Shell
             this.CreateCustomerCommand = new CommandModel(obj => this.appController.NavigateToCreateCustomer());
             this.CompanyListCommand = new CommandModel(obj => this.appController.NavigateToCompanyList());
             this.AuthenticationCommand = new CommandModel(obj => this.appController.NavigateToAuthentication());
+            this.ContactListCommand = new CommandModel(obj => this.appController.NavigateToContactList());
+            this.CreateContactCommand = new CommandModel(obj => this.appController.NavigateToCreateContact());
             this.ExitCommand = new CommandModel(obj => this.Closing(this, EventArgs.Empty));
         }
 
@@ -136,6 +138,22 @@ namespace SoCrm.Presentation.App.Shell
         /// The company list command.
         /// </value>
         public ICommand CompanyListCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the contact list command.
+        /// </summary>
+        /// <value>
+        /// The contact list command.
+        /// </value>
+        public ICommand ContactListCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the create contact command.
+        /// </summary>
+        /// <value>
+        /// The create contact command.
+        /// </value>
+        public ICommand CreateContactCommand { get; private set; }
 
         /// <summary>
         /// Gets the main region.

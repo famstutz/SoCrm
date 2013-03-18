@@ -40,6 +40,12 @@
   <wsdl:message name="IContactService_GetContactsByContactMedium_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetContactsByContactMediumResponse" />
   </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByContactMediumAndPersonName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByContactMediumAndPersonName" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_GetContactsByContactMediumAndPersonName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByContactMediumAndPersonNameResponse" />
+  </wsdl:message>
   <wsdl:message name="IContactService_GetAllContactMediums_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllContactMediums" />
   </wsdl:message>
@@ -51,6 +57,12 @@
   </wsdl:message>
   <wsdl:message name="IContactService_CreateContact_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_DeleteContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContact" />
+  </wsdl:message>
+  <wsdl:message name="IContactService_DeleteContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContactResponse" />
   </wsdl:message>
   <wsdl:portType name="IContactService">
     <wsdl:operation name="GetContactsByPerson">
@@ -73,6 +85,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetContactsByContactMedium" message="tns:IContactService_GetContactsByContactMedium_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetContactsByContactMediumResponse" message="tns:IContactService_GetContactsByContactMedium_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetContactsByContactMediumAndPersonName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetContactsByContactMediumAndPersonName" message="tns:IContactService_GetContactsByContactMediumAndPersonName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetContactsByContactMediumAndPersonNameResponse" message="tns:IContactService_GetContactsByContactMediumAndPersonName_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllContactMediums">
       <wsdl:input wsaw:Action="http://tempuri.org/IContactService/GetAllContactMediums" message="tns:IContactService_GetAllContactMediums_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IContactService/GetAllContactMediumsResponse" message="tns:IContactService_GetAllContactMediums_OutputMessage" />
@@ -80,6 +96,10 @@
     <wsdl:operation name="CreateContact">
       <wsdl:input wsaw:Action="http://tempuri.org/IContactService/CreateContact" message="tns:IContactService_CreateContact_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IContactService/CreateContactResponse" message="tns:IContactService_CreateContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContactService/DeleteContact" message="tns:IContactService_DeleteContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContactService/DeleteContactResponse" message="tns:IContactService_DeleteContact_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IContactService" type="tns:IContactService">
@@ -129,6 +149,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetContactsByContactMediumAndPersonName">
+      <soap:operation soapAction="http://tempuri.org/IContactService/GetContactsByContactMediumAndPersonName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllContactMediums">
       <soap:operation soapAction="http://tempuri.org/IContactService/GetAllContactMediums" style="document" />
       <wsdl:input>
@@ -140,6 +169,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateContact">
       <soap:operation soapAction="http://tempuri.org/IContactService/CreateContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <soap:operation soapAction="http://tempuri.org/IContactService/DeleteContact" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

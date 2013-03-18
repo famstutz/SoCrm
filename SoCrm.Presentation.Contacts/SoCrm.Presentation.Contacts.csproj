@@ -35,8 +35,10 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
@@ -50,9 +52,19 @@
     <Compile Include="ContactList\ContactListViewModel.cs" />
     <Compile Include="ContactList\IContactListViewModel.cs" />
     <Compile Include="ContactModule.cs" />
+    <Compile Include="CreateContact\CreateContactView.xaml.cs">
+      <DependentUpon>CreateContactView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateContact\CreateContactViewModel.cs" />
+    <Compile Include="CreateContact\ICreateContactViewModel.cs" />
     <Compile Include="IContactController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Contact\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Customer\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -66,6 +78,10 @@
     <ProjectReference Include="..\SoCrm.Presentation.Core\SoCrm.Presentation.Core.csproj">
       <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
       <Name>SoCrm.Presentation.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Presentation.Security\SoCrm.Presentation.Security.csproj">
+      <Project>{B640BF52-3CFE-4217-8955-59D87B02F586}</Project>
+      <Name>SoCrm.Presentation.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj">
       <Project>{4e381201-4b81-4bc3-a553-318017c21622}</Project>
@@ -85,6 +101,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\SoCrm.Services.Contacts.Contracts.Contact.datasource" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Company.datasource" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.EMailAddress.datasource" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Person.datasource" />
+    <None Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.PhoneNumber.datasource" />
     <None Include="Service References\Contact\ContactService.wsdl" />
     <None Include="Service References\Contact\ContactService.xsd">
       <SubType>Designer</SubType>
@@ -104,9 +124,26 @@
     <None Include="Service References\Contact\ContactService5.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Customer\CustomerService.wsdl" />
+    <None Include="Service References\Customer\CustomerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Customer\CustomerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Customer\CustomerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Customer\CustomerService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Customer\CustomerService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Contact\" />
+    <WCFMetadataStorage Include="Service References\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Contact\ContactService.disco" />
@@ -128,10 +165,29 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CreateContact\CreateContactView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Templates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Customer\CustomerService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Customer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Customer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Customer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

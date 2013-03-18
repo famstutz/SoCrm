@@ -171,5 +171,12 @@ namespace SoCrm.Services.Customers.Contracts
         /// <param name="phoneNumber">The phone number.</param>
         [OperationContract]
         void DeletePhoneNumber(PhoneNumber phoneNumber);
+
+        /// <summary>
+        /// Deletes the company.
+        /// </summary>
+        /// <param name="company">The company.</param>
+        [OperationContract]
+        void DeleteCompany(Company company);
     }
 }

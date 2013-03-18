@@ -63,6 +63,15 @@ namespace SoCrm.Services.Contacts.Contracts
         IEnumerable<Contact> GetContactsByContactMedium(ContactMedium contactMedium);
 
         /// <summary>
+        /// Gets the contacts by contact medium and person.
+        /// </summary>
+        /// <param name="contactMedium">The contact medium.</param>
+        /// <param name="personName">The person name.</param>
+        /// <returns>The contacts.</returns>
+        [OperationContract]
+        IEnumerable<Contact> GetContactsByContactMediumAndPersonName(ContactMedium contactMedium, string personName);
+
+            /// <summary>
         /// Gets all contact mediums.
         /// </summary>
         /// <returns>The contact mediums.</returns>
@@ -80,5 +89,12 @@ namespace SoCrm.Services.Contacts.Contracts
         /// <returns>The created contact.</returns>
         [OperationContract]
         Contact CreateContact(User user, Person person, string content, ContactMedium medium, DateTime dateTime);
+
+        /// <summary>
+        /// Deletes the contact.
+        /// </summary>
+        /// <param name="contact">The contact.</param>
+        [OperationContract]
+        void DeleteContact(Contact contact);
     }
 }

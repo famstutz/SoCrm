@@ -122,7 +122,9 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.Provider.DataServices
         {
             using (var db = new CustomerContext())
             {
-                db.Companies.Remove(this.Read(objectId) as Company);
+                var company = this.Read(objectId) as Company;
+                db.Companies.Attach(company);
+                db.Companies.Remove(company);
                 db.SaveChanges();
             }
         }

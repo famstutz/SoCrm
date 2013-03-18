@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b57f5de2-a0bd-491e-90f3-f5cc30a42dad" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4957/CustomerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CustomerService.xsd" MetadataType="Schema" ID="b69fd170-e66a-4d0c-bf6d-d225cf5a3a38" SourceId="1" SourceUrl="http://localhost:4957/CustomerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CustomerService1.xsd" MetadataType="Schema" ID="c921f77e-513d-4c71-9d9e-d094d30dba60" SourceId="1" SourceUrl="http://localhost:4957/CustomerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CustomerService.disco" MetadataType="Disco" ID="98585799-e0f0-400e-989a-30acaf524a83" SourceId="1" SourceUrl="http://localhost:4957/CustomerService.svc?disco" />
+    <MetadataFile FileName="CustomerService2.xsd" MetadataType="Schema" ID="5b945322-86de-4e52-939a-e9d393c23021" SourceId="1" SourceUrl="http://localhost:4957/CustomerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerService3.xsd" MetadataType="Schema" ID="7f39599a-c7f4-43dc-9227-36cef8efe7db" SourceId="1" SourceUrl="http://localhost:4957/CustomerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomerService4.xsd" MetadataType="Schema" ID="e67aa753-816a-45fc-9ace-951706b2bbbe" SourceId="1" SourceUrl="http://localhost:4957/CustomerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CustomerService.wsdl" MetadataType="Wsdl" ID="61d7a194-5e6b-446a-a8b1-dcdc802318ec" SourceId="1" SourceUrl="http://localhost:4957/CustomerService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -38,12 +38,12 @@
                         </MenuItem>
                     </MenuItem>
                     <MenuItem Header="Contacts" IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
-                        <MenuItem Header="Create Contact">
+                        <MenuItem Header="Create Contact" Command="{Binding CreateContactCommand}">
                             <MenuItem.Icon>
                                 <Image Source="..\Resources\vcard_add.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="View Contacts">
+                        <MenuItem Header="View Contacts" Command="{Binding ContactListCommand}">
                             <MenuItem.Icon>
                                 <Image Source="..\Resources\vcard.png"/>
                             </MenuItem.Icon>
@@ -81,10 +81,10 @@
                         </Button>
                     </ToolBar>
                     <ToolBar IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
-                        <Button>
+                        <Button Command="{Binding CreateContactCommand}">
                             <Image Source="..\Resources\vcard_add.png"/>
                         </Button>
-                        <Button>
+                        <Button Command="{Binding ContactListCommand}">
                             <Image Source="..\Resources\vcard.png"/>
                         </Button>
                     </ToolBar>

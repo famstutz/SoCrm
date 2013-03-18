@@ -335,6 +335,15 @@ namespace SoCrm.Services.Customers.Provider
         }
 
         /// <summary>
+        /// Deletes the company.
+        /// </summary>
+        /// <param name="company">The company.</param>
+        public void DeleteCompany(Company company)
+        {
+            this.companyClient.Remove(company);
+        }
+
+        /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose()

@@ -45,5 +45,15 @@ namespace SoCrm.Presentation.App
         /// Navigates to authentication.
         /// </summary>
         void NavigateToAuthentication();
+
+        /// <summary>
+        /// Navigates to contact list.
+        /// </summary>
+        void NavigateToContactList();
+
+        /// <summary>
+        /// Navigates to create contact.
+        /// </summary>
+        void NavigateToCreateContact();
     }
 }

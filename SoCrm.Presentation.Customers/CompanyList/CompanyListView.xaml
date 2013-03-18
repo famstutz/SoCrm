@@ -32,6 +32,15 @@
                     <DataGridTextColumn Header="Zip Code" Binding="{Binding Address.ZipCode}" />
                     <DataGridTextColumn Header="City" Binding="{Binding Address.City}" />
                     <DataGridTextColumn Header="Country" Binding="{Binding Address.Country}" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteCompanyCommand}" CommandParameter="{Binding}">
+                                    <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/delete.png" Height="16" Width="16"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

@@ -63,6 +63,7 @@ namespace SoCrm.Presentation.Customers.CompanyList
             this.customerService = customerService;
 
             this.SearchCompaniesCommand = new CommandModel(this.OnSearchCompanies);
+            this.DeleteCompanyCommand = new CommandModel(this.OnDeleteCompany);
 
             this.Countries = new ObservableCollection<string>(this.customerService.GetAllCountries());
             this.Companies = new ObservableCollection<Company>(this.customerService.GetAllCompanies());
@@ -169,6 +170,14 @@ namespace SoCrm.Presentation.Customers.CompanyList
         public ICommand SearchCompaniesCommand { get; private set; }
 
         /// <summary>
+        /// Gets the delete company command.
+        /// </summary>
+        /// <value>
+        /// The delete company command.
+        /// </value>
+        public ICommand DeleteCompanyCommand { get; private set; }
+
+        /// <summary>
         /// Called when companies are searched.
         /// </summary>
         /// <param name="obj">The object.</param>
@@ -176,6 +185,18 @@ namespace SoCrm.Presentation.Customers.CompanyList
         {
             this.Companies = new ObservableCollection<Company>(this.customerService.GetCompaniesByNameAndCountry(this.SearchName, this.SearchCountry));
             this.customerController.SetLastStatus(string.Format("Found {0} companies.", this.Companies.Count));
+        }
+
+        /// <summary>
+        /// Called when [delete company].
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        private void OnDeleteCompany(object obj)
+        {
+            var company = obj as Company;
+            this.customerService.DeleteCompany(company);
+            this.Companies.Remove(company);
+            this.customerController.SetLastStatus(string.Format("Successfully deleted {0} {1}.", company.Name));
         }
     }
 }

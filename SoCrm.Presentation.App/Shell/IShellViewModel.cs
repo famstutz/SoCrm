@@ -99,6 +99,22 @@ namespace SoCrm.Presentation.App.Shell
         ICommand AuthenticationCommand { get; }
 
         /// <summary>
+        /// Gets the contact list command.
+        /// </summary>
+        /// <value>
+        /// The contact list command.
+        /// </value>
+        ICommand ContactListCommand { get; }
+
+        /// <summary>
+        /// Gets the create contact command.
+        /// </summary>
+        /// <value>
+        /// The create contact command.
+        /// </value>
+        ICommand CreateContactCommand { get; }
+
+        /// <summary>
         /// Gets the main region.
         /// </summary>
         /// <value>

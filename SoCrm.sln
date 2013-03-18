@@ -73,6 +73,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Contacts", "SoCrm.Presentation.Contacts\SoCrm.Presentation.Contacts.csproj", "{0B24AB02-CF3B-4E84-827A-DF5869AABD62}"
 	ProjectSection(ProjectDependencies) = postProject
 		{379D8CD9-6AD5-46B4-842B-02ABB5172B23} = {379D8CD9-6AD5-46B4-842B-02ABB5172B23}
+		{A80D72DD-65ED-4E97-A6C8-BF700F439212} = {A80D72DD-65ED-4E97-A6C8-BF700F439212}
 	EndProjectSection
 EndProject
 Global

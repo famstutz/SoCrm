@@ -1,49 +1,28 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ICustomerListViewModel.cs" company="Florian Amstutz">
+// <copyright file="ICreateContactViewModel.cs" company="Florian Amstutz">
 //   Copyright (c) 2013 by Florian Amstutz.
 // </copyright>
 // <summary>
-//   The customer list view model.
+//   The create contact view model.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SoCrm.Presentation.Customers.CustomerList
+namespace SoCrm.Presentation.Contacts.CreateContact
 {
+    using System;
     using System.Collections.ObjectModel;
     using System.Windows.Input;
 
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Services.Contacts.Contracts;
     using SoCrm.Services.Customers.Contracts;
+    using SoCrm.Services.Security.Contracts;
 
     /// <summary>
-    /// The customer list view model.
+    /// The create contact view model.
     /// </summary>
-    public interface ICustomerListViewModel : IViewModelBase
+    public interface ICreateContactViewModel : IViewModelBase
     {
-        /// <summary>
-        /// Gets or sets the name of the search.
-        /// </summary>
-        /// <value>
-        /// The name of the search.
-        /// </value>
-        string SearchName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the search company.
-        /// </summary>
-        /// <value>
-        /// The search company.
-        /// </value>
-        string SearchCompany { get; set; }
-
-        /// <summary>
-        /// Gets the search customers command.
-        /// </summary>
-        /// <value>
-        /// The search customers command.
-        /// </value>
-        ICommand SearchCustomersCommand { get; }
-
         /// <summary>
         /// Gets or sets the persons.
         /// </summary>
@@ -53,20 +32,44 @@ namespace SoCrm.Presentation.Customers.CustomerList
         ObservableCollection<Person> Persons { get; set; }
 
         /// <summary>
-        /// Gets or sets the selected person.
+        /// Gets or sets the person.
         /// </summary>
         /// <value>
-        /// The selected person.
+        /// The person.
         /// </value>
-        Person SelectedPerson { get; set; }
+        Person Person { get; set; }
 
         /// <summary>
-        /// Gets the delete customer command.
+        /// Gets or sets the contact mediums.
         /// </summary>
         /// <value>
-        /// The delete customer command.
+        /// The contact mediums.
         /// </value>
-        ICommand DeleteCustomerCommand { get; }
+        ObservableCollection<ContactMedium> ContactMediums { get; set; }
+
+        /// <summary>
+        /// Gets or sets the contact medium.
+        /// </summary>
+        /// <value>
+        /// The contact medium.
+        /// </value>
+        ContactMedium ContactMedium { get; set; }
+
+        /// <summary>
+        /// Gets or sets the content.
+        /// </summary>
+        /// <value>
+        /// The content.
+        /// </value>
+        string Content { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date time.
+        /// </summary>
+        /// <value>
+        /// The date time.
+        /// </value>
+        DateTime DateTime { get; set; }
 
         /// <summary>
         /// Gets the create contact command.
@@ -75,5 +78,13 @@ namespace SoCrm.Presentation.Customers.CustomerList
         /// The create contact command.
         /// </value>
         ICommand CreateContactCommand { get; }
+
+        /// <summary>
+        /// Gets the user.
+        /// </summary>
+        /// <value>
+        /// The user.
+        /// </value>
+        User User { get; }
     }
 }

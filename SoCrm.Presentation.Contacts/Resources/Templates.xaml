@@ -1,10 +1,15 @@
 ﻿<ResourceDictionary 
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:contactList="clr-namespace:SoCrm.Presentation.Contacts.ContactList">
+	xmlns:contactList="clr-namespace:SoCrm.Presentation.Contacts.ContactList"
+	xmlns:createContact="clr-namespace:SoCrm.Presentation.Contacts.CreateContact">
 
     <DataTemplate DataType="{x:Type contactList:ContactListViewModel}">
         <contactList:ContactListView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type createContact:CreateContactViewModel}">
+        <createContact:CreateContactView/>
     </DataTemplate>
     
 </ResourceDictionary>

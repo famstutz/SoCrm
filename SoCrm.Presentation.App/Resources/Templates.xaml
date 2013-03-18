@@ -3,5 +3,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/SoCrm.Presentation.Security;component/Resources/Templates.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/SoCrm.Presentation.Customers;component/Resources/Templates.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SoCrm.Presentation.Contacts;component/Resources/Templates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

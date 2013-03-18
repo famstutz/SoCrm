@@ -59,5 +59,13 @@ namespace SoCrm.Presentation.Customers.CompanyList
         /// The search companies command.
         /// </value>
         ICommand SearchCompaniesCommand { get; }
+
+        /// <summary>
+        /// Gets the delete company command.
+        /// </summary>
+        /// <value>
+        /// The delete company command.
+        /// </value>
+        ICommand DeleteCompanyCommand { get; }
     }
 }

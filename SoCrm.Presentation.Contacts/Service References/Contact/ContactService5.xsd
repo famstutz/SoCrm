@@ -74,6 +74,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetContactsByContactMediumAndPersonName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="contactMedium" type="q11:ContactMedium" />
+        <xs:element minOccurs="0" name="personName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactsByContactMediumAndPersonNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="GetContactsByContactMediumAndPersonNameResult" nillable="true" type="q12:ArrayOfContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllContactMediums">
     <xs:complexType>
       <xs:sequence />
@@ -82,17 +97,17 @@
   <xs:element name="GetAllContactMediumsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="GetAllContactMediumsResult" nillable="true" type="q11:ArrayOfContactMedium" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="GetAllContactMediumsResult" nillable="true" type="q13:ArrayOfContactMedium" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateContact">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="user" nillable="true" type="q12:User" />
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="person" nillable="true" type="q13:Person" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SoCrm.Services.Security.Contracts" minOccurs="0" name="user" nillable="true" type="q14:User" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" minOccurs="0" name="person" nillable="true" type="q15:Person" />
         <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="medium" type="q14:ContactMedium" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="medium" type="q16:ContactMedium" />
         <xs:element minOccurs="0" name="dateTime" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
@@ -100,8 +115,20 @@
   <xs:element name="CreateContactResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="CreateContactResult" nillable="true" type="q15:Contact" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="CreateContactResult" nillable="true" type="q17:Contact" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SoCrm.Services.Contacts.Contracts" minOccurs="0" name="contact" nillable="true" type="q18:Contact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteContactResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

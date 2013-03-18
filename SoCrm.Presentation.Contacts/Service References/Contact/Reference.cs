@@ -30,11 +30,18 @@ namespace SoCrm.Presentation.Contacts.Contact {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContactService/GetContactsByContactMedium", ReplyAction="http://tempuri.org/IContactService/GetContactsByContactMediumResponse")]
         System.Collections.Generic.List<SoCrm.Services.Contacts.Contracts.Contact> GetContactsByContactMedium(SoCrm.Services.Contacts.Contracts.ContactMedium contactMedium);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContactService/GetContactsByContactMediumAndPersonName", ReplyAction="http://tempuri.org/IContactService/GetContactsByContactMediumAndPersonNameRespons" +
+            "e")]
+        System.Collections.Generic.List<SoCrm.Services.Contacts.Contracts.Contact> GetContactsByContactMediumAndPersonName(SoCrm.Services.Contacts.Contracts.ContactMedium contactMedium, string personName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContactService/GetAllContactMediums", ReplyAction="http://tempuri.org/IContactService/GetAllContactMediumsResponse")]
         System.Collections.Generic.List<SoCrm.Services.Contacts.Contracts.ContactMedium> GetAllContactMediums();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContactService/CreateContact", ReplyAction="http://tempuri.org/IContactService/CreateContactResponse")]
         SoCrm.Services.Contacts.Contracts.Contact CreateContact(SoCrm.Services.Security.Contracts.User user, SoCrm.Services.Customers.Contracts.Person person, string content, SoCrm.Services.Contacts.Contracts.ContactMedium medium, System.DateTime dateTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContactService/DeleteContact", ReplyAction="http://tempuri.org/IContactService/DeleteContactResponse")]
+        void DeleteContact(SoCrm.Services.Contacts.Contracts.Contact contact);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -84,12 +91,20 @@ namespace SoCrm.Presentation.Contacts.Contact {
             return base.Channel.GetContactsByContactMedium(contactMedium);
         }
         
+        public System.Collections.Generic.List<SoCrm.Services.Contacts.Contracts.Contact> GetContactsByContactMediumAndPersonName(SoCrm.Services.Contacts.Contracts.ContactMedium contactMedium, string personName) {
+            return base.Channel.GetContactsByContactMediumAndPersonName(contactMedium, personName);
+        }
+        
         public System.Collections.Generic.List<SoCrm.Services.Contacts.Contracts.ContactMedium> GetAllContactMediums() {
             return base.Channel.GetAllContactMediums();
         }
         
         public SoCrm.Services.Contacts.Contracts.Contact CreateContact(SoCrm.Services.Security.Contracts.User user, SoCrm.Services.Customers.Contracts.Person person, string content, SoCrm.Services.Contacts.Contracts.ContactMedium medium, System.DateTime dateTime) {
             return base.Channel.CreateContact(user, person, content, medium, dateTime);
+        }
+        
+        public void DeleteContact(SoCrm.Services.Contacts.Contracts.Contact contact) {
+            base.Channel.DeleteContact(contact);
         }
     }
 }

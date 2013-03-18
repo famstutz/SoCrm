@@ -6,6 +6,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <StackPanel>
+            <GroupBox Header="Search Contacts">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Name" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SearchPersonName}" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Medium" />
+                    <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ContactMediums}" SelectedItem="{Binding ContactMedium}" />
+                    <Button Grid.Row="2" Grid.Column="1" Content="Search Contacts" Command="{Binding SearchContactsCommand}" Width="120" HorizontalAlignment="Left" />
+                </Grid>
+            </GroupBox>
+            <DataGrid ItemsSource="{Binding Contacts}" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Customer">
+                        <DataGridTextColumn.Binding>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="Person.FirstName" />
+                                <Binding Path="Person.LastName" />
+                            </MultiBinding>
+                        </DataGridTextColumn.Binding>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Content" Binding="{Binding Content}" />
+                    <DataGridTextColumn Header="Date and time" Binding="{Binding DateTime, StringFormat=d}" />
+                    <DataGridTextColumn Header="Medium" Binding="{Binding Medium}" />
+                    <DataGridTextColumn Header="User" Binding="{Binding User.UserName}" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=DataContext.DeleteContactCommand}" CommandParameter="{Binding}">
+                                    <Image Source="pack://application:,,,/SoCrm.Presentation.Core;component/Resources/delete.png" Height="16" Width="16"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </UserControl>

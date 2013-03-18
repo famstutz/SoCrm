@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SoCrm.Presentation.Customers.Customer {
+namespace SoCrm.Presentation.Contacts.Customer {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -71,12 +71,12 @@ namespace SoCrm.Presentation.Customers.Customer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICustomerServiceChannel : SoCrm.Presentation.Customers.Customer.ICustomerService, System.ServiceModel.IClientChannel {
+    public interface ICustomerServiceChannel : SoCrm.Presentation.Contacts.Customer.ICustomerService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<SoCrm.Presentation.Customers.Customer.ICustomerService>, SoCrm.Presentation.Customers.Customer.ICustomerService {
+    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<SoCrm.Presentation.Contacts.Customer.ICustomerService>, SoCrm.Presentation.Contacts.Customer.ICustomerService {
         
         public CustomerServiceClient() {
         }

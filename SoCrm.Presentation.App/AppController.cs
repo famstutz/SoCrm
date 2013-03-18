@@ -13,6 +13,7 @@ namespace SoCrm.Presentation.App
 
     using Microsoft.Practices.Unity;
 
+    using SoCrm.Presentation.Contacts;
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Customers;
     using SoCrm.Presentation.Security;
@@ -36,6 +37,11 @@ namespace SoCrm.Presentation.App
         /// The customers session container
         /// </summary>
         private IUnityContainer customersSessionContainer;
+
+        /// <summary>
+        /// The contact session container.
+        /// </summary>
+        private IUnityContainer contactSessionContainer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AppController"/> class.
@@ -108,6 +114,26 @@ namespace SoCrm.Presentation.App
         }
 
         /// <summary>
+        /// Navigates to contact list.
+        /// </summary>
+        public void NavigateToContactList()
+        {
+            this.contactSessionContainer = this.GetContactsSessionContainer();
+            var contactController = this.contactSessionContainer.Resolve<IContactController>();
+            contactController.NavigateToContactList();
+        }
+
+        /// <summary>
+        /// Navigates to create contact.
+        /// </summary>
+        public void NavigateToCreateContact()
+        {
+            this.contactSessionContainer = this.GetContactsSessionContainer();
+            var contactController = this.contactSessionContainer.Resolve<IContactController>();
+            contactController.NavigateToCreateContact();
+        }
+
+        /// <summary>
         /// Gets the security session container.
         /// </summary>
         /// <param name="create">if set to <c>true</c> [create].</param>
@@ -141,6 +167,24 @@ namespace SoCrm.Presentation.App
             }
 
             return this.customersSessionContainer;
+        }
+
+        /// <summary>
+        /// Gets the contacts session container.
+        /// </summary>
+        /// <param name="create">if set to <c>true</c> [create].</param>
+        /// <returns>The session container.</returns>
+        private IUnityContainer GetContactsSessionContainer(bool create = false)
+        {
+            if (create || this.contactSessionContainer == null)
+            {
+                this.contactSessionContainer = this.container.CreateChildContainer();
+                var contactController = this.contactSessionContainer.Resolve<IContactController>();
+                this.contactSessionContainer.RegisterInstance(
+                    contactController, new ContainerControlledLifetimeManager());
+            }
+
+            return this.contactSessionContainer;
         }
     }
 }

@@ -13,6 +13,8 @@ namespace SoCrm.Presentation.Contacts
 
     using SoCrm.Presentation.Contacts.Contact;
     using SoCrm.Presentation.Contacts.ContactList;
+    using SoCrm.Presentation.Contacts.CreateContact;
+    using SoCrm.Presentation.Contacts.Customer;
     using SoCrm.Presentation.Core.Interfaces;
 
     /// <summary>
@@ -29,8 +31,10 @@ namespace SoCrm.Presentation.Contacts
             container.RegisterType<IContactController, ContactController>();
 
             container.RegisterType<IContactListViewModel, ContactListViewModel>();
+            container.RegisterType<ICreateContactViewModel, CreateContactViewModel>();
 
             container.RegisterInstance(typeof(IContactService), new ContactServiceClient(), new ContainerControlledLifetimeManager());
+            container.RegisterInstance(typeof(ICustomerService), new CustomerServiceClient(), new ContainerControlledLifetimeManager());
         }
     }
 }
