@@ -172,7 +172,7 @@ namespace SoCrm.Services.Customers.Provider
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="country">The country.</param>
-        /// <returns></returns>
+        /// <returns>The companies.</returns>
         public IEnumerable<Company> GetCompaniesByNameAndCountry(string name, string country)
         {
             var companies = this.GetAllCompanies();
