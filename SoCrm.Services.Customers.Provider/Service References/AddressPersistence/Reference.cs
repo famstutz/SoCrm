@@ -18,26 +18,14 @@ namespace SoCrm.Services.Customers.Provider.AddressPersistence {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/SaveResponse")]
         System.Guid Save(SoCrm.Services.Customers.Contracts.Address entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/SaveResponse")]
-        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Address entity);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/GetResponse")]
         SoCrm.Services.Customers.Contracts.Address Get(System.Guid objectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/GetResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Address> GetAsync(System.Guid objectId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/GetAllResponse")]
-        SoCrm.Services.Customers.Contracts.Address[] GetAll();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/GetAllResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Address[]> GetAllAsync();
+        System.Collections.Generic.List<SoCrm.Services.Customers.Contracts.Address> GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/RemoveResponse")]
         void Remove(SoCrm.Services.Customers.Contracts.Address entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Address/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Address/RemoveResponse")]
-        System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Customers.Contracts.Address entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -71,32 +59,16 @@ namespace SoCrm.Services.Customers.Provider.AddressPersistence {
             return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Address entity) {
-            return base.Channel.SaveAsync(entity);
-        }
-        
         public SoCrm.Services.Customers.Contracts.Address Get(System.Guid objectId) {
             return base.Channel.Get(objectId);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Address> GetAsync(System.Guid objectId) {
-            return base.Channel.GetAsync(objectId);
-        }
-        
-        public SoCrm.Services.Customers.Contracts.Address[] GetAll() {
+        public System.Collections.Generic.List<SoCrm.Services.Customers.Contracts.Address> GetAll() {
             return base.Channel.GetAll();
-        }
-        
-        public System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Address[]> GetAllAsync() {
-            return base.Channel.GetAllAsync();
         }
         
         public void Remove(SoCrm.Services.Customers.Contracts.Address entity) {
             base.Channel.Remove(entity);
-        }
-        
-        public System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Customers.Contracts.Address entity) {
-            return base.Channel.RemoveAsync(entity);
         }
     }
 }

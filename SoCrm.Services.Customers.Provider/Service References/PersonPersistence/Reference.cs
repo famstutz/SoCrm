@@ -18,26 +18,14 @@ namespace SoCrm.Services.Customers.Provider.PersonPersistence {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/SaveResponse")]
         System.Guid Save(SoCrm.Services.Customers.Contracts.Person entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/SaveResponse")]
-        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Person entity);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/GetResponse")]
         SoCrm.Services.Customers.Contracts.Person Get(System.Guid objectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/GetResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Person> GetAsync(System.Guid objectId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/GetAllResponse")]
-        SoCrm.Services.Customers.Contracts.Person[] GetAll();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/GetAllResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Person[]> GetAllAsync();
+        System.Collections.Generic.List<SoCrm.Services.Customers.Contracts.Person> GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/RemoveResponse")]
         void Remove(SoCrm.Services.Customers.Contracts.Person entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Person/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Person/RemoveResponse")]
-        System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Customers.Contracts.Person entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -71,32 +59,16 @@ namespace SoCrm.Services.Customers.Provider.PersonPersistence {
             return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.Person entity) {
-            return base.Channel.SaveAsync(entity);
-        }
-        
         public SoCrm.Services.Customers.Contracts.Person Get(System.Guid objectId) {
             return base.Channel.Get(objectId);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Person> GetAsync(System.Guid objectId) {
-            return base.Channel.GetAsync(objectId);
-        }
-        
-        public SoCrm.Services.Customers.Contracts.Person[] GetAll() {
+        public System.Collections.Generic.List<SoCrm.Services.Customers.Contracts.Person> GetAll() {
             return base.Channel.GetAll();
-        }
-        
-        public System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.Person[]> GetAllAsync() {
-            return base.Channel.GetAllAsync();
         }
         
         public void Remove(SoCrm.Services.Customers.Contracts.Person entity) {
             base.Channel.Remove(entity);
-        }
-        
-        public System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Customers.Contracts.Person entity) {
-            return base.Channel.RemoveAsync(entity);
         }
     }
 }

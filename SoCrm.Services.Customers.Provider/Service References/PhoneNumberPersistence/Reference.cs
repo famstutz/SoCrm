@@ -18,26 +18,14 @@ namespace SoCrm.Services.Customers.Provider.PhoneNumberPersistence {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/SaveResponse")]
         System.Guid Save(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/SaveResponse")]
-        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/GetResponse")]
         SoCrm.Services.Customers.Contracts.PhoneNumber Get(System.Guid objectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/GetResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.PhoneNumber> GetAsync(System.Guid objectId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/GetAllResponse")]
-        SoCrm.Services.Customers.Contracts.PhoneNumber[] GetAll();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/GetAllResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.PhoneNumber[]> GetAllAsync();
+        System.Collections.Generic.List<SoCrm.Services.Customers.Contracts.PhoneNumber> GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/RemoveResponse")]
         void Remove(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_PhoneNumber/RemoveResponse")]
-        System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -71,32 +59,16 @@ namespace SoCrm.Services.Customers.Provider.PhoneNumberPersistence {
             return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity) {
-            return base.Channel.SaveAsync(entity);
-        }
-        
         public SoCrm.Services.Customers.Contracts.PhoneNumber Get(System.Guid objectId) {
             return base.Channel.Get(objectId);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.PhoneNumber> GetAsync(System.Guid objectId) {
-            return base.Channel.GetAsync(objectId);
-        }
-        
-        public SoCrm.Services.Customers.Contracts.PhoneNumber[] GetAll() {
+        public System.Collections.Generic.List<SoCrm.Services.Customers.Contracts.PhoneNumber> GetAll() {
             return base.Channel.GetAll();
-        }
-        
-        public System.Threading.Tasks.Task<SoCrm.Services.Customers.Contracts.PhoneNumber[]> GetAllAsync() {
-            return base.Channel.GetAllAsync();
         }
         
         public void Remove(SoCrm.Services.Customers.Contracts.PhoneNumber entity) {
             base.Channel.Remove(entity);
-        }
-        
-        public System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Customers.Contracts.PhoneNumber entity) {
-            return base.Channel.RemoveAsync(entity);
         }
     }
 }

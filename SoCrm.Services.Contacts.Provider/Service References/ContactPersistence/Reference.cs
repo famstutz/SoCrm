@@ -18,26 +18,14 @@ namespace SoCrm.Services.Contacts.Provider.ContactPersistence {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/SaveResponse")]
         System.Guid Save(SoCrm.Services.Contacts.Contracts.Contact entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/SaveResponse")]
-        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Contacts.Contracts.Contact entity);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/GetResponse")]
         SoCrm.Services.Contacts.Contracts.Contact Get(System.Guid objectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/GetResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Contacts.Contracts.Contact> GetAsync(System.Guid objectId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/GetAllResponse")]
-        SoCrm.Services.Contacts.Contracts.Contact[] GetAll();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/GetAllResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Contacts.Contracts.Contact[]> GetAllAsync();
+        System.Collections.Generic.List<SoCrm.Services.Contacts.Contracts.Contact> GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/RemoveResponse")]
         void Remove(SoCrm.Services.Contacts.Contracts.Contact entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_Contact/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_Contact/RemoveResponse")]
-        System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Contacts.Contracts.Contact entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -71,32 +59,16 @@ namespace SoCrm.Services.Contacts.Provider.ContactPersistence {
             return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Contacts.Contracts.Contact entity) {
-            return base.Channel.SaveAsync(entity);
-        }
-        
         public SoCrm.Services.Contacts.Contracts.Contact Get(System.Guid objectId) {
             return base.Channel.Get(objectId);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Contacts.Contracts.Contact> GetAsync(System.Guid objectId) {
-            return base.Channel.GetAsync(objectId);
-        }
-        
-        public SoCrm.Services.Contacts.Contracts.Contact[] GetAll() {
+        public System.Collections.Generic.List<SoCrm.Services.Contacts.Contracts.Contact> GetAll() {
             return base.Channel.GetAll();
-        }
-        
-        public System.Threading.Tasks.Task<SoCrm.Services.Contacts.Contracts.Contact[]> GetAllAsync() {
-            return base.Channel.GetAllAsync();
         }
         
         public void Remove(SoCrm.Services.Contacts.Contracts.Contact entity) {
             base.Channel.Remove(entity);
-        }
-        
-        public System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Contacts.Contracts.Contact entity) {
-            return base.Channel.RemoveAsync(entity);
         }
     }
 }

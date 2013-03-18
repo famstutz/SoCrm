@@ -18,26 +18,14 @@ namespace SoCrm.Services.Security.Provider.UserPersistence {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/SaveResponse")]
         System.Guid Save(SoCrm.Services.Security.Contracts.User entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Save", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/SaveResponse")]
-        System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Security.Contracts.User entity);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/GetResponse")]
         SoCrm.Services.Security.Contracts.User Get(System.Guid objectId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Get", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/GetResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> GetAsync(System.Guid objectId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/GetAllResponse")]
-        SoCrm.Services.Security.Contracts.User[] GetAll();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/GetAll", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/GetAllResponse")]
-        System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetAllAsync();
+        System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/RemoveResponse")]
         void Remove(SoCrm.Services.Security.Contracts.User entity);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersistenceServiceOf_User/Remove", ReplyAction="http://tempuri.org/IPersistenceServiceOf_User/RemoveResponse")]
-        System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Security.Contracts.User entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -71,32 +59,16 @@ namespace SoCrm.Services.Security.Provider.UserPersistence {
             return base.Channel.Save(entity);
         }
         
-        public System.Threading.Tasks.Task<System.Guid> SaveAsync(SoCrm.Services.Security.Contracts.User entity) {
-            return base.Channel.SaveAsync(entity);
-        }
-        
         public SoCrm.Services.Security.Contracts.User Get(System.Guid objectId) {
             return base.Channel.Get(objectId);
         }
         
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User> GetAsync(System.Guid objectId) {
-            return base.Channel.GetAsync(objectId);
-        }
-        
-        public SoCrm.Services.Security.Contracts.User[] GetAll() {
+        public System.Collections.Generic.List<SoCrm.Services.Security.Contracts.User> GetAll() {
             return base.Channel.GetAll();
-        }
-        
-        public System.Threading.Tasks.Task<SoCrm.Services.Security.Contracts.User[]> GetAllAsync() {
-            return base.Channel.GetAllAsync();
         }
         
         public void Remove(SoCrm.Services.Security.Contracts.User entity) {
             base.Channel.Remove(entity);
-        }
-        
-        public System.Threading.Tasks.Task RemoveAsync(SoCrm.Services.Security.Contracts.User entity) {
-            return base.Channel.RemoveAsync(entity);
         }
     }
 }
