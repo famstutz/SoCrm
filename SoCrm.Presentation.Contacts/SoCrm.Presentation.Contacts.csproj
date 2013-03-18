@@ -37,18 +37,18 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactController.cs" />
+    <Compile Include="ContactList\ContactListView.xaml.cs">
+      <DependentUpon>ContactListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContactList\ContactListViewModel.cs" />
+    <Compile Include="ContactList\IContactListViewModel.cs" />
     <Compile Include="ContactModule.cs" />
     <Compile Include="IContactController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,10 +75,6 @@
       <Project>{603a6fb9-68d4-4e0f-8de4-e3eda93e3735}</Project>
       <Name>SoCrm.Services.Customers.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
-      <Project>{10282890-8f76-4ac9-a361-214535c47f0d}</Project>
-      <Name>SoCrm.Services.Logging.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Security.Contracts\SoCrm.Services.Security.Contracts.csproj">
       <Project>{e13a6892-4d57-4a2a-8670-7b0d105018dc}</Project>
       <Name>SoCrm.Services.Security.Contracts</Name>
@@ -88,7 +84,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Properties\DataSources\SoCrm.Services.Contacts.Contracts.Contact.datasource" />
     <None Include="Service References\Contact\ContactService.wsdl" />
     <None Include="Service References\Contact\ContactService.xsd">
@@ -129,6 +124,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ContactList\ContactListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Templates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

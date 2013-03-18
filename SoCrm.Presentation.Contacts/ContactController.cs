@@ -11,6 +11,7 @@ namespace SoCrm.Presentation.Contacts
 {
     using Microsoft.Practices.Unity;
 
+    using SoCrm.Presentation.Contacts.ContactList;
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Core.Interfaces;
     using SoCrm.Services.Customers.Contracts;
@@ -48,6 +49,9 @@ namespace SoCrm.Presentation.Contacts
         /// <param name="person">The person.</param>
         public void NavigateToCreateContact(Person person)
         {
+            var contactListViewModel = this.container.Resolve<IContactListViewModel>();
+            contactListViewModel.Person = person;
+            this.mainRegion.Context = contactListViewModel;
         }
     }
 }

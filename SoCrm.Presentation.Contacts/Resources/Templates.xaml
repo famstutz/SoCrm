@@ -1,5 +1,10 @@
 ﻿<ResourceDictionary 
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:contactList="clr-namespace:SoCrm.Presentation.Contacts.ContactList">
 
+    <DataTemplate DataType="{x:Type contactList:ContactListViewModel}">
+        <contactList:ContactListView/>
+    </DataTemplate>
+    
 </ResourceDictionary>

@@ -38,7 +38,6 @@
     <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
@@ -79,18 +78,6 @@
       <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
       <Name>SoCrm.Presentation.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj">
-      <Project>{4e381201-4b81-4bc3-a553-318017c21622}</Project>
-      <Name>SoCrm.Services.Contacts.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
-      <Project>{603a6fb9-68d4-4e0f-8de4-e3eda93e3735}</Project>
-      <Name>SoCrm.Services.Customers.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
-      <Project>{10282890-8f76-4ac9-a361-214535c47f0d}</Project>
-      <Name>SoCrm.Services.Logging.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Security.Contracts\SoCrm.Services.Security.Contracts.csproj">
       <Project>{E13A6892-4D57-4A2A-8670-7B0D105018DC}</Project>
       <Name>SoCrm.Services.Security.Contracts</Name>
@@ -121,7 +108,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Properties\DataSources\SoCrm.Services.Security.Contracts.User.datasource" />
     <None Include="Service References\Security\SecurityService.wsdl" />
     <None Include="Service References\Security\SecurityService.xsd">

@@ -12,6 +12,7 @@ namespace SoCrm.Presentation.Contacts
     using Microsoft.Practices.Unity;
 
     using SoCrm.Presentation.Contacts.Contact;
+    using SoCrm.Presentation.Contacts.ContactList;
     using SoCrm.Presentation.Core.Interfaces;
 
     /// <summary>
@@ -26,6 +27,8 @@ namespace SoCrm.Presentation.Contacts
         public void Register(IUnityContainer container)
         {
             container.RegisterType<IContactController, ContactController>();
+
+            container.RegisterType<IContactListViewModel, ContactListViewModel>();
 
             container.RegisterInstance(typeof(IContactService), new ContactServiceClient(), new ContainerControlledLifetimeManager());
         }
