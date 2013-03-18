@@ -7,7 +7,7 @@
             <StackPanel DockPanel.Dock="Top">
                 <Menu IsMainMenu="True">
                     <MenuItem Header="File">
-                        <MenuItem Header="Logon">
+                        <MenuItem Header="Logon" Command="{Binding AuthenticationCommand}">
                             <MenuItem.Icon>
                                 <Image Source="..\Resources\computer_key.png" />
                             </MenuItem.Icon>
@@ -19,7 +19,7 @@
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Customers" IsEnabled="{Binding IsLoggedOn}">
+                    <MenuItem Header="Customers" IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
                         <MenuItem Header="Create Customer" Command="{Binding CreateCustomerCommand}">
                             <MenuItem.Icon>
                                 <Image Source="..\Resources\user_add.png"/>
@@ -37,7 +37,7 @@
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Contacts" IsEnabled="{Binding IsLoggedOn}">
+                    <MenuItem Header="Contacts" IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
                         <MenuItem Header="Create Contact">
                             <MenuItem.Icon>
                                 <Image Source="..\Resources\vcard_add.png"/>
@@ -49,7 +49,7 @@
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Security" IsEnabled="{Binding IsLoggedOn}">
+                    <MenuItem Header="Security" IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
                         <MenuItem Header="Create User" Command="{Binding CreateUserCommand}">
                             <MenuItem.Icon>
                                 <Image Source="..\Resources\computer_add.png"/>
@@ -64,11 +64,11 @@
                 </Menu>
                 <ToolBarTray>
                     <ToolBar>
-                        <Button>
+                        <Button Command="{Binding AuthenticationCommand}">
                             <Image Source="..\Resources\computer_key.png" />
                         </Button>
                     </ToolBar>
-                    <ToolBar IsEnabled="{Binding IsLoggedOn}">
+                    <ToolBar IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
                         <Button Command="{Binding CreateCustomerCommand}">
                             <Image Source="..\Resources\user_add.png"/>
                         </Button>
@@ -80,7 +80,7 @@
                             <Image Source="..\Resources\building.png"/>
                         </Button>
                     </ToolBar>
-                    <ToolBar IsEnabled="{Binding IsLoggedOn}">
+                    <ToolBar IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
                         <Button>
                             <Image Source="..\Resources\vcard_add.png"/>
                         </Button>
@@ -88,7 +88,7 @@
                             <Image Source="..\Resources\vcard.png"/>
                         </Button>
                     </ToolBar>
-                    <ToolBar IsEnabled="{Binding IsLoggedOn}">
+                    <ToolBar IsEnabled="{Binding AuthenticationService.IsUserLoggedOn}">
                         <Button Command="{Binding CreateUserCommand}">
                             <Image Source="..\Resources\computer_add.png"/>
                         </Button>

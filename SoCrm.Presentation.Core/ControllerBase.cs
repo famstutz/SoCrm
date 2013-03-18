@@ -20,6 +20,11 @@ namespace SoCrm.Presentation.Core
     public class ControllerBase : IController
     {
         /// <summary>
+        /// The main region.
+        /// </summary>
+        protected readonly IRegion MainRegion;
+
+        /// <summary>
         /// The container.
         /// </summary>
         private readonly IUnityContainer container;
@@ -30,13 +35,15 @@ namespace SoCrm.Presentation.Core
         private readonly IStatusBarService statusBarService;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ControllerBase"/> class.
+        /// Initializes a new instance of the <see cref="ControllerBase" /> class.
         /// </summary>
         /// <param name="unityContainer">The unity container.</param>
-        public ControllerBase(IUnityContainer unityContainer)
+        /// <param name="mainRegion">The main region.</param>
+        public ControllerBase(IUnityContainer unityContainer, [Dependency(RegionNames.MainRegion)] IRegion mainRegion)
         {
             this.container = unityContainer;
             this.statusBarService = this.container.Resolve<IStatusBarService>();
+            this.MainRegion = mainRegion;
         }
 
         /// <summary>
@@ -46,6 +53,14 @@ namespace SoCrm.Presentation.Core
         public void SetLastStatus(string status)
         {
             this.statusBarService.LastStatus = status;
+        }
+
+        /// <summary>
+        /// Clears the main region.
+        /// </summary>
+        public void ClearMainRegion()
+        {
+            this.MainRegion.Context = null;
         }
     }
 }

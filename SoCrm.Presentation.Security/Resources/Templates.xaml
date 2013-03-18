@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:userList="clr-namespace:SoCrm.Presentation.Security.UserList"
 	xmlns:createUser="clr-namespace:SoCrm.Presentation.Security.CreateUser"
-	xmlns:setPassword="clr-namespace:SoCrm.Presentation.Security.SetPassword">
+	xmlns:setPassword="clr-namespace:SoCrm.Presentation.Security.SetPassword"
+	xmlns:authentication="clr-namespace:SoCrm.Presentation.Security.Authentication">
 
     <DataTemplate DataType="{x:Type userList:UserListViewModel}">
         <userList:UserListView/>
@@ -15,6 +16,10 @@
     
     <DataTemplate DataType="{x:Type setPassword:SetPasswordViewModel}">
         <setPassword:SetPasswordView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type authentication:AuthenticationViewModel}">
+        <authentication:AuthenticationView/>
     </DataTemplate>
     
 </ResourceDictionary>

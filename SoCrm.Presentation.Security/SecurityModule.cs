@@ -12,6 +12,7 @@ namespace SoCrm.Presentation.Security
     using Microsoft.Practices.Unity;
 
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Security.Authentication;
     using SoCrm.Presentation.Security.CreateUser;
     using SoCrm.Presentation.Security.Security;
     using SoCrm.Presentation.Security.SetPassword;
@@ -30,9 +31,12 @@ namespace SoCrm.Presentation.Security
         {
             container.RegisterType<ISecurityController, SecurityController>();
 
+            container.RegisterType<IAuthenticationService, AuthenticationService>(new ContainerControlledLifetimeManager());
+
             container.RegisterType<IUserListViewModel, UserListViewModel>();
             container.RegisterType<ICreateUserViewModel, CreateUserViewModel>();
             container.RegisterType<ISetPasswordViewModel, SetPasswordViewModel>();
+            container.RegisterType<IAuthenticationViewModel, AuthenticationViewModel>();
 
             container.RegisterInstance(typeof(ISecurityService), new SecurityServiceClient(), new ContainerControlledLifetimeManager());
         }

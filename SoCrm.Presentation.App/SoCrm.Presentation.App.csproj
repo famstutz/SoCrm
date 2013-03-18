@@ -89,10 +89,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
-      <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
-      <Name>SoCrm.Core.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Presentation.Contacts\SoCrm.Presentation.Contacts.csproj">
       <Project>{0B24AB02-CF3B-4E84-827A-DF5869AABD62}</Project>
       <Name>SoCrm.Presentation.Contacts</Name>
@@ -108,10 +104,6 @@
     <ProjectReference Include="..\SoCrm.Presentation.Security\SoCrm.Presentation.Security.csproj">
       <Project>{b640bf52-3cfe-4217-8955-59d87b02f586}</Project>
       <Name>SoCrm.Presentation.Security</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SoCrm.Services.Security.Contracts\SoCrm.Services.Security.Contracts.csproj">
-      <Project>{E13A6892-4D57-4A2A-8670-7B0D105018DC}</Project>
-      <Name>SoCrm.Services.Security.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

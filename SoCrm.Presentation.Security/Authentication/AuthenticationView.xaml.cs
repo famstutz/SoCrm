@@ -1,23 +1,23 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ContactListView.xaml.cs" company="Florian Amstutz">
+// <copyright file="AuthenticationView.xaml.cs" company="Florian Amstutz">
 //   Copyright (c) 2013 by Florian Amstutz.
 // </copyright>
 // <summary>
-//   Interaction logic for ContactListView.
+//   Interaction logic for AuthenticationView.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SoCrm.Presentation.Contacts.ContactList
+namespace SoCrm.Presentation.Security.Authentication
 {
     /// <summary>
-    /// Interaction logic for ContactListView.
+    /// Interaction logic for AuthenticationView.
     /// </summary>
-    public partial class ContactListView
+    public partial class AuthenticationView
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContactListView"/> class.
+        /// Initializes a new instance of the <see cref="AuthenticationView"/> class.
         /// </summary>
-        public ContactListView()
+        public AuthenticationView()
         {
             this.InitializeComponent();
         }

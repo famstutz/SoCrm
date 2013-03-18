@@ -10,21 +10,12 @@
 namespace SoCrm.Presentation.App
 {
     using SoCrm.Presentation.Core.Interfaces;
-    using SoCrm.Services.Security.Contracts;
 
     /// <summary>
     /// The app controller.
     /// </summary>
     public interface IAppController : IController
     {
-        /// <summary>
-        /// Gets or sets the current user.
-        /// </summary>
-        /// <value>
-        /// The current user.
-        /// </value>
-        User CurrentUser { get; set; }
-
         /// <summary>
         /// Goes to user list.
         /// </summary>
@@ -49,5 +40,10 @@ namespace SoCrm.Presentation.App
         /// Navigates to company list.
         /// </summary>
         void NavigateToCompanyList();
+
+        /// <summary>
+        /// Navigates to authentication.
+        /// </summary>
+        void NavigateToAuthentication();
     }
 }

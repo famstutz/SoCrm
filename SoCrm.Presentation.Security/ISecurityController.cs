@@ -32,5 +32,10 @@ namespace SoCrm.Presentation.Security
         /// </summary>
         /// <param name="user">The user.</param>
         void NavigateToSetPassword(User user);
+
+        /// <summary>
+        /// Navigates to authentication.
+        /// </summary>
+        void NavigateToAuthentication();
     }
 }

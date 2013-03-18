@@ -19,5 +19,10 @@ namespace SoCrm.Presentation.Core.Interfaces
         /// </summary>
         /// <param name="status">The status.</param>
         void SetLastStatus(string status);
+
+        /// <summary>
+        /// Clears the main region.
+        /// </summary>
+        void ClearMainRegion();
     }
 }

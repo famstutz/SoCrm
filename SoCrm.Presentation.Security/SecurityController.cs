@@ -13,6 +13,7 @@ namespace SoCrm.Presentation.Security
 
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Core.Interfaces;
+    using SoCrm.Presentation.Security.Authentication;
     using SoCrm.Presentation.Security.CreateUser;
     using SoCrm.Presentation.Security.SetPassword;
     using SoCrm.Presentation.Security.UserList;
@@ -29,20 +30,14 @@ namespace SoCrm.Presentation.Security
         private readonly IUnityContainer container;
 
         /// <summary>
-        /// The main region.
-        /// </summary>
-        private readonly IRegion mainRegion;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="SecurityController"/> class.
         /// </summary>
         /// <param name="container">The container.</param>
         /// <param name="mainRegion">The main region.</param>
         public SecurityController(IUnityContainer container, [Dependency(RegionNames.MainRegion)] IRegion mainRegion)
-            : base(container)
+            : base(container, mainRegion)
         {
             this.container = container;
-            this.mainRegion = mainRegion;
         }
 
         /// <summary>
@@ -51,7 +46,7 @@ namespace SoCrm.Presentation.Security
         public void NavigateToUserList()
         {
             var userListViewModel = this.container.Resolve<IUserListViewModel>();
-            this.mainRegion.Context = userListViewModel;
+            this.MainRegion.Context = userListViewModel;
         }
 
         /// <summary>
@@ -60,7 +55,7 @@ namespace SoCrm.Presentation.Security
         public void NavigateToCreateUser()
         {
             var createUserListViewModel = this.container.Resolve<ICreateUserViewModel>();
-            this.mainRegion.Context = createUserListViewModel;
+            this.MainRegion.Context = createUserListViewModel;
         }
 
         /// <summary>
@@ -70,7 +65,16 @@ namespace SoCrm.Presentation.Security
         public void NavigateToSetPassword(User user)
         {
             var setPasswordViewModel = this.container.Resolve<ISetPasswordViewModel>(new ParameterOverride("user", user));
-            this.mainRegion.Context = setPasswordViewModel;
+            this.MainRegion.Context = setPasswordViewModel;
+        }
+
+        /// <summary>
+        /// Navigates to authentication.
+        /// </summary>
+        public void NavigateToAuthentication()
+        {
+            var authenticationViewModel = this.container.Resolve<IAuthenticationViewModel>();
+            this.MainRegion.Context = authenticationViewModel;
         }
     }
 }

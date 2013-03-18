@@ -14,6 +14,7 @@ namespace SoCrm.Presentation.App.Shell
 
     using SoCrm.Presentation.Core.Interfaces;
     using SoCrm.Presentation.Core.StatusBar;
+    using SoCrm.Presentation.Security.Authentication;
 
     /// <summary>
     /// The shell view model.
@@ -26,12 +27,12 @@ namespace SoCrm.Presentation.App.Shell
         event EventHandler Closing;
 
         /// <summary>
-        /// Gets a value indicating whether this instance is logged on.
+        /// Gets or sets the authentication service.
         /// </summary>
         /// <value>
-        /// <c>true</c> if this instance is logged on; otherwise, <c>false</c>.
+        /// The authentication service.
         /// </value>
-        bool IsLoggedOn { get; }
+        IAuthenticationService AuthenticationService { get; set; }
 
         /// <summary>
         /// Gets or sets the status bar service.
@@ -88,6 +89,14 @@ namespace SoCrm.Presentation.App.Shell
         /// The company list command.
         /// </value>
         ICommand CompanyListCommand { get; }
+
+        /// <summary>
+        /// Gets the authentication command.
+        /// </summary>
+        /// <value>
+        /// The authentication command.
+        /// </value>
+        ICommand AuthenticationCommand { get; }
 
         /// <summary>
         /// Gets the main region.

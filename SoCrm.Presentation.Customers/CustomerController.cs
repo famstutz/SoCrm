@@ -33,11 +33,6 @@ namespace SoCrm.Presentation.Customers
         private readonly IUnityContainer container;
 
         /// <summary>
-        /// The main region.
-        /// </summary>
-        private readonly IRegion mainRegion;
-
-        /// <summary>
         /// The create customer view model
         /// </summary>
         private ICreateCustomerViewModel createCustomerViewModel;
@@ -48,10 +43,9 @@ namespace SoCrm.Presentation.Customers
         /// <param name="container">The container.</param>
         /// <param name="mainRegion">The main region.</param>
         public CustomerController(IUnityContainer container, [Dependency(RegionNames.MainRegion)] IRegion mainRegion)
-            : base(container)
+            : base(container, mainRegion)
         {
             this.container = container;
-            this.mainRegion = mainRegion;
         }
 
         /// <summary>
@@ -60,7 +54,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateToCustomerList()
         {
             var customerListViewModel = this.container.Resolve<ICustomerListViewModel>();
-            this.mainRegion.Context = customerListViewModel;
+            this.MainRegion.Context = customerListViewModel;
         }
 
         /// <summary>
@@ -69,7 +63,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateToCreateCustomer()
         {
             this.createCustomerViewModel = this.container.Resolve<ICreateCustomerViewModel>();
-            this.mainRegion.Context = this.createCustomerViewModel;
+            this.MainRegion.Context = this.createCustomerViewModel;
         }
 
         /// <summary>
@@ -78,7 +72,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateToCreateCompany()
         {
             var createCompanyViewModel = this.container.Resolve<ICreateCompanyViewModel>();
-            this.mainRegion.Context = createCompanyViewModel;
+            this.MainRegion.Context = createCompanyViewModel;
         }
 
         /// <summary>
@@ -87,7 +81,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateToCreateEMailAddress()
         {
             var createEMailAddressViewModel = this.container.Resolve<ICreateEMailAddressViewModel>();
-            this.mainRegion.Context = createEMailAddressViewModel;
+            this.MainRegion.Context = createEMailAddressViewModel;
         }
 
         /// <summary>
@@ -96,7 +90,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateToCreatePhoneNumber()
         {
             var createPhoneNumberViewModel = this.container.Resolve<ICreatePhoneNumberViewModel>();
-            this.mainRegion.Context = createPhoneNumberViewModel;
+            this.MainRegion.Context = createPhoneNumberViewModel;
         }
 
         /// <summary>
@@ -105,7 +99,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateToCompanyList()
         {
             var companyListViewModel = this.container.Resolve<ICompanyListViewModel>();
-            this.mainRegion.Context = companyListViewModel;
+            this.MainRegion.Context = companyListViewModel;
         }
 
         /// <summary>
@@ -116,7 +110,7 @@ namespace SoCrm.Presentation.Customers
         {
             this.createCustomerViewModel.Companies.Add(company);
             this.createCustomerViewModel.Company = company;
-            this.mainRegion.Context = this.createCustomerViewModel;
+            this.MainRegion.Context = this.createCustomerViewModel;
         }
 
         /// <summary>
@@ -126,7 +120,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateBackToCreateCustomer(EMailAddress emailAddress)
         {
             this.createCustomerViewModel.EMailAddresses.Add(emailAddress);
-            this.mainRegion.Context = this.createCustomerViewModel;
+            this.MainRegion.Context = this.createCustomerViewModel;
         }
 
         /// <summary>
@@ -136,7 +130,7 @@ namespace SoCrm.Presentation.Customers
         public void NavigateBackToCreateCustomer(PhoneNumber phoneNumber)
         {
             this.createCustomerViewModel.PhoneNumbers.Add(phoneNumber);
-            this.mainRegion.Context = this.createCustomerViewModel;
+            this.MainRegion.Context = this.createCustomerViewModel;
         }
 
         /// <summary>

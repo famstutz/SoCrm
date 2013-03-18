@@ -27,20 +27,14 @@ namespace SoCrm.Presentation.Contacts
         private readonly IUnityContainer container;
 
         /// <summary>
-        /// The main region.
-        /// </summary>
-        private readonly IRegion mainRegion;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="ContactController"/> class.
         /// </summary>
         /// <param name="container">The container.</param>
         /// <param name="mainRegion">The main region.</param>
         public ContactController(IUnityContainer container, [Dependency(RegionNames.MainRegion)] IRegion mainRegion)
-            : base(container)
+            : base(container, mainRegion)
         {
             this.container = container;
-            this.mainRegion = mainRegion;
         }
 
         /// <summary>
@@ -51,7 +45,7 @@ namespace SoCrm.Presentation.Contacts
         {
             var contactListViewModel = this.container.Resolve<IContactListViewModel>();
             contactListViewModel.Person = person;
-            this.mainRegion.Context = contactListViewModel;
+            this.MainRegion.Context = contactListViewModel;
         }
     }
 }

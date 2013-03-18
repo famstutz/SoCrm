@@ -17,6 +17,7 @@ namespace SoCrm.Presentation.App.Shell
     using SoCrm.Presentation.Core;
     using SoCrm.Presentation.Core.Interfaces;
     using SoCrm.Presentation.Core.StatusBar;
+    using SoCrm.Presentation.Security.Authentication;
 
     /// <summary>
     /// The shell view model.
@@ -27,6 +28,11 @@ namespace SoCrm.Presentation.App.Shell
         /// The app controller.
         /// </summary>
         private readonly IAppController appController;
+
+        /// <summary>
+        /// The authentication service.
+        /// </summary>
+        private IAuthenticationService authenticationService;
 
         /// <summary>
         /// The status bar service.
@@ -41,6 +47,7 @@ namespace SoCrm.Presentation.App.Shell
         {
             this.appController = container.Resolve<IAppController>();
             this.statusBarService = container.Resolve<IStatusBarService>();
+            this.authenticationService = container.Resolve<IAuthenticationService>();
 
             this.MainRegion = new RegionModel();
             container.RegisterInstance(RegionNames.MainRegion, this.MainRegion, new ContainerControlledLifetimeManager());
@@ -51,6 +58,7 @@ namespace SoCrm.Presentation.App.Shell
             this.CustomerListCommand = new CommandModel(obj => this.appController.NavigateToCustomerList());
             this.CreateCustomerCommand = new CommandModel(obj => this.appController.NavigateToCreateCustomer());
             this.CompanyListCommand = new CommandModel(obj => this.appController.NavigateToCompanyList());
+            this.AuthenticationCommand = new CommandModel(obj => this.appController.NavigateToAuthentication());
             this.ExitCommand = new CommandModel(obj => this.Closing(this, EventArgs.Empty));
         }
 
@@ -60,16 +68,25 @@ namespace SoCrm.Presentation.App.Shell
         public event EventHandler Closing;
 
         /// <summary>
-        /// Gets a value indicating whether this instance is logged on.
+        /// Gets or sets the authentication service.
         /// </summary>
         /// <value>
-        /// <c>true</c> if this instance is logged on; otherwise, <c>false</c>.
+        /// The authentication service.
         /// </value>
-        public bool IsLoggedOn
-        { 
+        public IAuthenticationService AuthenticationService
+        {
             get
             {
-                return this.appController.CurrentUser != null;
+                return this.authenticationService;
+            }
+
+            set
+            {
+                if (this.authenticationService != value)
+                {
+                    this.authenticationService = value;
+                    this.OnPropertyChanged("AuthenticationService");
+                }
             }
         }
 
@@ -151,6 +168,14 @@ namespace SoCrm.Presentation.App.Shell
         /// The create customer command.
         /// </value>
         public ICommand CreateCustomerCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the authentication command.
+        /// </summary>
+        /// <value>
+        /// The authentication command.
+        /// </value>
+        public ICommand AuthenticationCommand { get; private set; }
 
         /// <summary>
         /// Shows this instance.
