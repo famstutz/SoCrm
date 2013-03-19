@@ -23,7 +23,7 @@
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding UserName}"/>
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="Password" />
                     <PasswordBox Grid.Row="1" Grid.Column="1" helpers:PasswordBoxHelper.BindPassword="true" helpers:PasswordBoxHelper.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                    <Button Grid.Row="2" Grid.Column="1" Content="Log On" Command="{Binding LogOnCommand}" Width="120" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="2" Grid.Column="1" Content="Log On" Command="{Binding LogOnCommand}" />
                 </Grid>
             </GroupBox>
         </StackPanel>

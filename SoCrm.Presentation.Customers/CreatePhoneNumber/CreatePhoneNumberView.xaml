@@ -22,7 +22,7 @@
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Number}"/>
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="Contact Type" />
                     <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ContactTypes}" SelectedItem="{Binding ContactType}" />
-                    <Button Grid.Row="2" Grid.Column="1" Content="Save Phone Number" Command="{Binding CreatePhoneNumberCommand}" Width="120" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="2" Grid.Column="1" Content="Save Phone Number" Command="{Binding CreatePhoneNumberCommand}" />
                 </Grid>
             </GroupBox>
         </StackPanel>

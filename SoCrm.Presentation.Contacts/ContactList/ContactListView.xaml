@@ -22,7 +22,7 @@
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SearchPersonName}" />
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="Medium" />
                     <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ContactMediums}" SelectedItem="{Binding ContactMedium}" />
-                    <Button Grid.Row="2" Grid.Column="1" Content="Search Contacts" Command="{Binding SearchContactsCommand}" Width="120" HorizontalAlignment="Left" />
+                    <Button Grid.Row="2" Grid.Column="1" Content="Search Contacts" Command="{Binding SearchContactsCommand}" />
                 </Grid>
             </GroupBox>
             <DataGrid ItemsSource="{Binding Contacts}" AutoGenerateColumns="False" IsReadOnly="True">

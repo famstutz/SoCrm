@@ -34,7 +34,7 @@
                     <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding City}"/>
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="Country" />
                     <ComboBox Grid.Row="5" Grid.Column="1" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country}" />
-                    <Button Grid.Row="6" Grid.Column="1" Content="Save Company" Command="{Binding CreateCompanyCommand}" Width="120" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="6" Grid.Column="1" Content="Save Company" Command="{Binding CreateCompanyCommand}" />
                 </Grid>
             </GroupBox>
         </StackPanel>

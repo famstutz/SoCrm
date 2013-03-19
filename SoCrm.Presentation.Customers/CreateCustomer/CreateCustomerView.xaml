@@ -87,7 +87,7 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </DockPanel>
-                    <Button Grid.Row="9" Grid.Column="1" Content="Save Customer" Command="{Binding CreateCustomerCommand}" Width="120" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="9" Grid.Column="1" Content="Save Customer" Command="{Binding CreateCustomerCommand}" />
                 </Grid>
             </GroupBox>
         </StackPanel>

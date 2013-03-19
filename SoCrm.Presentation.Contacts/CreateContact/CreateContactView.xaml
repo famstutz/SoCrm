@@ -47,7 +47,7 @@
                     <DatePicker Grid.Row="3" Grid.Column="1" SelectedDate="{Binding DateTime, StringFormat=d}" IsTodayHighlighted="True"/>
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="User" />
                     <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding User.UserName}" IsReadOnly="true"/>
-                    <Button Grid.Row="5" Grid.Column="1" Content="Save Contact" Command="{Binding CreateContactCommand}" Width="120" HorizontalAlignment="Left"/>
+                    <Button Grid.Row="5" Grid.Column="1" Content="Save Contact" Command="{Binding CreateContactCommand}" />
                 </Grid>
             </GroupBox>
         </StackPanel>
