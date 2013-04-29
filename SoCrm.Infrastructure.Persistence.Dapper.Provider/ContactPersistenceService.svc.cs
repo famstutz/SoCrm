@@ -15,6 +15,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Contacts.Contracts;
 
+    using global::Dapper;
+
     /// <summary>
     /// The contact persistence service.
     /// </summary>
@@ -35,7 +37,46 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The id of the contact</returns>
         public Guid Save(Contact entity)
         {
-            throw new NotImplementedException();
+            using (var connection = this.OpenConnection())
+            {
+                if (this.IsEntityStoredInDatabase(entity))
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO Contacts (ObjectId, UserId, PersonId, Content, Medium, DateTime, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @UserId, @PersonId, @Content, @Medium, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                        {
+                            entity.ObjectId,
+                            entity.UserId,
+                            entity.PersonId,
+                            entity.Content,
+                            Medium = (int)entity.Medium,
+                            entity.DateTime,
+                            entity.CreationTimeStamp,
+                            entity.LastUpdateTimeStamp
+                        });
+                }
+                else
+                {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE Contacts SET UserId = @UserId, PersonId = @PersonId, Content = @Content, Medium = @Medium, DateTime = @DateTime, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                        {
+                            entity.UserId,
+                            entity.PersonId,
+                            entity.Content,
+                            Medium = (int)entity.Medium,
+                            entity.DateTime,
+                            entity.LastUpdateTimeStamp,
+                            entity.ObjectId
+                        });
+                }
+            }
+
+            return entity.ObjectId;
         }
 
         /// <summary>
