@@ -15,6 +15,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Customers.Contracts;
 
+    using global::Dapper;
+
     /// <summary>
     /// The person persistence service.
     /// </summary>
@@ -35,7 +37,44 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The id of the person.</returns>
         public Guid Save(Person entity)
         {
-            throw new NotImplementedException();
+            using (var connection = this.OpenConnection())
+            {
+                if (this.IsEntityStoredInDatabase(entity))
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO People (ObjectId, FirstName, LastName, Employer_ObjectId, Address_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @FirstName, @LastName, @EmployerObjectId, @AddressObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                        {
+                            entity.ObjectId,
+                            entity.FirstName,
+                            entity.LastName,
+                            EmployerObjectId = entity.Employer.ObjectId,
+                            AddressObjectId = entity.Address.ObjectId,
+                            entity.CreationTimeStamp,
+                            entity.LastUpdateTimeStamp
+                        });
+                }
+                else
+                {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE People SET FirstName = @FirstName, LastName = @LastName, Employer_ObjectId = @EmployerObjectId, Address_ObjectId = @AddressObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                        {
+                            entity.FirstName,
+                            entity.LastName,
+                            EmployerObjectId = entity.Employer.ObjectId,
+                            AddressObjectId = entity.Address.ObjectId,
+                            entity.LastUpdateTimeStamp,
+                            entity.ObjectId
+                        });
+                }
+            }
+
+            return entity.ObjectId;
         }
 
         /// <summary>
