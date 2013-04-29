@@ -12,10 +12,10 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
     using System;
     using System.Collections.Generic;
 
+    using global::Dapper;
+
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Contacts.Contracts;
-
-    using global::Dapper;
 
     /// <summary>
     /// The contact persistence service.

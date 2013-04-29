@@ -12,6 +12,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
     using System;
     using System.Collections.Generic;
 
+    using global::Dapper;
+
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Logging.Contracts;
 
@@ -35,7 +37,42 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The id of the log event.</returns>
         public Guid Save(LogEvent entity)
         {
-            throw new NotImplementedException();
+            using (var connection = this.OpenConnection())
+            {
+                if (this.IsEntityStoredInDatabase(entity))
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO LogEvents (ObjectId, Message, Severity, TimeStamp, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Message, @Severity, @TimeStamp, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                        {
+                            entity.ObjectId,
+                            entity.Message,
+                            Severity = (int)entity.Severity,
+                            entity.TimeStamp,
+                            entity.CreationTimeStamp,
+                            entity.LastUpdateTimeStamp
+                        });
+                }
+                else
+                {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE LogEvents SET Message = @Message, Severity = @Severity, TimeStamp = @TimeStamp, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                        {
+                            entity.Message,
+                            Severity = (int)entity.Severity,
+                            entity.TimeStamp,
+                            entity.LastUpdateTimeStamp,
+                            entity.ObjectId
+                        });
+                }
+            }
+
+            return entity.ObjectId;
         }
 
         /// <summary>
