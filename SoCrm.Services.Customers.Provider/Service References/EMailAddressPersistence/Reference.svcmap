@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1048/EMailAddressPersistenceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1213/EMailAddressPersistenceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EMailAddressPersistenceService.xsd" MetadataType="Schema" ID="85505e0f-c91c-451a-95ca-79588edd523a" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd2" />
-    <MetadataFile FileName="EMailAddressPersistenceService1.xsd" MetadataType="Schema" ID="fdb9ed4f-39bf-41dc-a230-670307cac3d0" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd3" />
-    <MetadataFile FileName="EMailAddressPersistenceService2.xsd" MetadataType="Schema" ID="f699e677-9596-4c0f-9417-0906bef81c93" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="EMailAddressPersistenceService3.xsd" MetadataType="Schema" ID="49118e05-c8b0-453c-b0bb-d19575c866c6" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="EMailAddressPersistenceService.disco" MetadataType="Disco" ID="16af8588-d2ac-42bf-96f1-25e15a80ee46" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?disco" />
-    <MetadataFile FileName="EMailAddressPersistenceService.wsdl" MetadataType="Wsdl" ID="031c4dbf-5add-46dd-843a-3d720ed6d0c1" SourceId="1" SourceUrl="http://localhost:1048/EMailAddressPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="EMailAddressPersistenceService.xsd" MetadataType="Schema" ID="85505e0f-c91c-451a-95ca-79588edd523a" SourceId="1" SourceUrl="http://localhost:1213/EMailAddressPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EMailAddressPersistenceService1.xsd" MetadataType="Schema" ID="fdb9ed4f-39bf-41dc-a230-670307cac3d0" SourceId="1" SourceUrl="http://localhost:1213/EMailAddressPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="EMailAddressPersistenceService2.xsd" MetadataType="Schema" ID="f699e677-9596-4c0f-9417-0906bef81c93" SourceId="1" SourceUrl="http://localhost:1213/EMailAddressPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EMailAddressPersistenceService3.xsd" MetadataType="Schema" ID="49118e05-c8b0-453c-b0bb-d19575c866c6" SourceId="1" SourceUrl="http://localhost:1213/EMailAddressPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EMailAddressPersistenceService.disco" MetadataType="Disco" ID="16af8588-d2ac-42bf-96f1-25e15a80ee46" SourceId="1" SourceUrl="http://localhost:1213/EMailAddressPersistenceService.svc?disco" />
+    <MetadataFile FileName="EMailAddressPersistenceService.wsdl" MetadataType="Wsdl" ID="031c4dbf-5add-46dd-843a-3d720ed6d0c1" SourceId="1" SourceUrl="http://localhost:1213/EMailAddressPersistenceService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

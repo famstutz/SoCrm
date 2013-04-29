@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1048/AddressPersistenceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1213/AddressPersistenceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AddressPersistenceService.xsd" MetadataType="Schema" ID="2d5475b9-8897-4a99-a603-f6c0d02576fb" SourceId="1" SourceUrl="http://localhost:1048/AddressPersistenceService.svc?xsd=xsd3" />
-    <MetadataFile FileName="AddressPersistenceService1.xsd" MetadataType="Schema" ID="f1f7520f-0c6d-4d59-a78d-801cef1e2ef5" SourceId="1" SourceUrl="http://localhost:1048/AddressPersistenceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="AddressPersistenceService.disco" MetadataType="Disco" ID="5ea17b39-44e7-48c9-a93a-1a369248762d" SourceId="1" SourceUrl="http://localhost:1048/AddressPersistenceService.svc?disco" />
-    <MetadataFile FileName="AddressPersistenceService2.xsd" MetadataType="Schema" ID="a38ddfe3-164c-4ec9-b830-49fd567c9b46" SourceId="1" SourceUrl="http://localhost:1048/AddressPersistenceService.svc?xsd=xsd2" />
-    <MetadataFile FileName="AddressPersistenceService3.xsd" MetadataType="Schema" ID="64a90d2e-3ff2-411a-babe-00885bc1127d" SourceId="1" SourceUrl="http://localhost:1048/AddressPersistenceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="AddressPersistenceService.wsdl" MetadataType="Wsdl" ID="b19281cd-81af-42d5-a363-220c601d29b9" SourceId="1" SourceUrl="http://localhost:1048/AddressPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="AddressPersistenceService.xsd" MetadataType="Schema" ID="2d5475b9-8897-4a99-a603-f6c0d02576fb" SourceId="1" SourceUrl="http://localhost:1213/AddressPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AddressPersistenceService1.xsd" MetadataType="Schema" ID="f1f7520f-0c6d-4d59-a78d-801cef1e2ef5" SourceId="1" SourceUrl="http://localhost:1213/AddressPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AddressPersistenceService.disco" MetadataType="Disco" ID="5ea17b39-44e7-48c9-a93a-1a369248762d" SourceId="1" SourceUrl="http://localhost:1213/AddressPersistenceService.svc?disco" />
+    <MetadataFile FileName="AddressPersistenceService2.xsd" MetadataType="Schema" ID="a38ddfe3-164c-4ec9-b830-49fd567c9b46" SourceId="1" SourceUrl="http://localhost:1213/AddressPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AddressPersistenceService3.xsd" MetadataType="Schema" ID="64a90d2e-3ff2-411a-babe-00885bc1127d" SourceId="1" SourceUrl="http://localhost:1213/AddressPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AddressPersistenceService.wsdl" MetadataType="Wsdl" ID="b19281cd-81af-42d5-a363-220c601d29b9" SourceId="1" SourceUrl="http://localhost:1213/AddressPersistenceService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

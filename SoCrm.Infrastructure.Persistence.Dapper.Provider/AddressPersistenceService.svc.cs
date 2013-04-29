@@ -41,6 +41,22 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE Addresses SET AddressLine = @AddressLine, ZipCode = @ZipCode, City = @City, Country = @Country, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                            {
+                                entity.AddressLine,
+                                entity.ZipCode,
+                                entity.City,
+                                entity.Country,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
                     this.PrepareEntity(ref entity);
 
                     connection.Execute(
@@ -54,22 +70,6 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                                 entity.Country,
                                 entity.CreationTimeStamp,
                                 entity.LastUpdateTimeStamp
-                            });
-                }
-                else
-                {
-                    entity.LastUpdateTimeStamp = DateTime.Now;
-
-                    connection.Execute(
-                        "UPDATE Addresses SET AddressLine = @AddressLine, ZipCode = @ZipCode, City = @City, Country = @Country, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
-                        new
-                            {
-                                entity.AddressLine,
-                                entity.ZipCode,
-                                entity.City,
-                                entity.Country,
-                                entity.LastUpdateTimeStamp,
-                                entity.ObjectId
                             });
                 }
             }

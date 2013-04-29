@@ -41,34 +41,34 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
-                    this.PrepareEntity(ref entity);
-
-                    connection.Execute(
-                        "INSERT INTO Companies (ObjectId, Name, Website, Address_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Name, @Website, @AddressObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
-                        new
-                        {
-                            entity.ObjectId,
-                            entity.Name,
-                            entity.Website,
-                            AddressObjectId = entity.Address.ObjectId,
-                            entity.CreationTimeStamp,
-                            entity.LastUpdateTimeStamp
-                        });
-                }
-                else
-                {
                     entity.LastUpdateTimeStamp = DateTime.Now;
 
                     connection.Execute(
                         "UPDATE Companies SET Name = @Name, Website = @Website, Address_ObjectId = @AddressObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
-                        {
-                            entity.Name,
-                            entity.Website,
-                            AddressObjectId = entity.Address.ObjectId,
-                            entity.LastUpdateTimeStamp,
-                            entity.ObjectId
-                        });
+                            {
+                                entity.Name,
+                                entity.Website,
+                                AddressObjectId = entity.Address.ObjectId,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO Companies (ObjectId, Name, Website, Address_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Name, @Website, @AddressObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                            {
+                                entity.ObjectId,
+                                entity.Name,
+                                entity.Website,
+                                AddressObjectId = entity.Address.ObjectId,
+                                entity.CreationTimeStamp,
+                                entity.LastUpdateTimeStamp
+                            });
                 }
             }
 

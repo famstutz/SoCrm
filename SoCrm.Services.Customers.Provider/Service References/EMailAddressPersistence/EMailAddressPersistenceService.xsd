@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SoCrm.Services.Customers.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:1048/EMailAddressPersistenceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" />
+  <xs:import schemaLocation="http://localhost:1213/EMailAddressPersistenceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" />
   <xs:complexType name="EMailAddress">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SoCrm.Contracts" base="q1:DomainObject">

@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1048/CompanyPersistenceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1213/CompanyPersistenceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CompanyPersistenceService.xsd" MetadataType="Schema" ID="9acd4e3e-bf84-4f38-9599-926efcfd7f44" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CompanyPersistenceService.wsdl" MetadataType="Wsdl" ID="8160aeb4-d46b-4b76-8479-ff3beb7c0f27" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?wsdl" />
-    <MetadataFile FileName="CompanyPersistenceService1.xsd" MetadataType="Schema" ID="5667b6a0-6124-4611-98f5-768f44d901ca" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CompanyPersistenceService.disco" MetadataType="Disco" ID="87af02ba-471e-4790-8396-deded43034b5" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?disco" />
-    <MetadataFile FileName="CompanyPersistenceService2.xsd" MetadataType="Schema" ID="565ef0c4-bd40-466a-aacd-59b41672c006" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CompanyPersistenceService3.xsd" MetadataType="Schema" ID="7e4ffced-dd44-4a8b-9463-117a5e63899d" SourceId="1" SourceUrl="http://localhost:1048/CompanyPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CompanyPersistenceService.xsd" MetadataType="Schema" ID="9acd4e3e-bf84-4f38-9599-926efcfd7f44" SourceId="1" SourceUrl="http://localhost:1213/CompanyPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CompanyPersistenceService.wsdl" MetadataType="Wsdl" ID="8160aeb4-d46b-4b76-8479-ff3beb7c0f27" SourceId="1" SourceUrl="http://localhost:1213/CompanyPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="CompanyPersistenceService1.xsd" MetadataType="Schema" ID="5667b6a0-6124-4611-98f5-768f44d901ca" SourceId="1" SourceUrl="http://localhost:1213/CompanyPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CompanyPersistenceService.disco" MetadataType="Disco" ID="87af02ba-471e-4790-8396-deded43034b5" SourceId="1" SourceUrl="http://localhost:1213/CompanyPersistenceService.svc?disco" />
+    <MetadataFile FileName="CompanyPersistenceService2.xsd" MetadataType="Schema" ID="565ef0c4-bd40-466a-aacd-59b41672c006" SourceId="1" SourceUrl="http://localhost:1213/CompanyPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CompanyPersistenceService3.xsd" MetadataType="Schema" ID="7e4ffced-dd44-4a8b-9463-117a5e63899d" SourceId="1" SourceUrl="http://localhost:1213/CompanyPersistenceService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

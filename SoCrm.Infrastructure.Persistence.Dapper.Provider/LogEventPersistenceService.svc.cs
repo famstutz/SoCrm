@@ -41,34 +41,34 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
-                    this.PrepareEntity(ref entity);
-
-                    connection.Execute(
-                        "INSERT INTO LogEvents (ObjectId, Message, Severity, TimeStamp, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Message, @Severity, @TimeStamp, @CreationTimeStamp, @LastUpdateTimeStamp)",
-                        new
-                        {
-                            entity.ObjectId,
-                            entity.Message,
-                            Severity = (int)entity.Severity,
-                            entity.TimeStamp,
-                            entity.CreationTimeStamp,
-                            entity.LastUpdateTimeStamp
-                        });
-                }
-                else
-                {
                     entity.LastUpdateTimeStamp = DateTime.Now;
 
                     connection.Execute(
                         "UPDATE LogEvents SET Message = @Message, Severity = @Severity, TimeStamp = @TimeStamp, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
-                        {
-                            entity.Message,
-                            Severity = (int)entity.Severity,
-                            entity.TimeStamp,
-                            entity.LastUpdateTimeStamp,
-                            entity.ObjectId
-                        });
+                            {
+                                entity.Message,
+                                entity.Severity,
+                                entity.TimeStamp,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO LogEvents (ObjectId, Message, Severity, TimeStamp, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Message, @Severity, @TimeStamp, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                            {
+                                entity.ObjectId,
+                                entity.Message,
+                                entity.Severity,
+                                entity.TimeStamp,
+                                entity.CreationTimeStamp,
+                                entity.LastUpdateTimeStamp
+                            });
                 }
             }
 

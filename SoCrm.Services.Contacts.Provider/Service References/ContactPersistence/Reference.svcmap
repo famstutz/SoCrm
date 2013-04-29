@@ -20,17 +20,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1048/ContactPersistenceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1213/ContactPersistenceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ContactPersistenceService.xsd" MetadataType="Schema" ID="b04d0cb9-0ef1-4e66-8f34-8d27d13fae49" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?xsd=xsd5" />
-    <MetadataFile FileName="ContactPersistenceService.wsdl" MetadataType="Wsdl" ID="126b3e30-81af-40c7-8d62-6f3bae371032" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?wsdl" />
-    <MetadataFile FileName="ContactPersistenceService1.xsd" MetadataType="Schema" ID="4edbce47-df81-48b2-bed6-5ac1a53398af" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ContactPersistenceService.disco" MetadataType="Disco" ID="b44da212-c8cd-4b4c-8c86-309d4e958213" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?disco" />
-    <MetadataFile FileName="ContactPersistenceService2.xsd" MetadataType="Schema" ID="8f136697-fbf2-4632-b308-fb1aa75e8011" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?xsd=xsd4" />
-    <MetadataFile FileName="ContactPersistenceService3.xsd" MetadataType="Schema" ID="152c2fa0-0d2c-4327-b113-46731af68066" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ContactPersistenceService4.xsd" MetadataType="Schema" ID="6e9f8f68-22f1-4a29-b2f1-a1c6ec6a5f96" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ContactPersistenceService5.xsd" MetadataType="Schema" ID="24fbfa6f-d0b2-4d72-8baa-b2027ffa8a75" SourceId="1" SourceUrl="http://localhost:1048/ContactPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ContactPersistenceService.xsd" MetadataType="Schema" ID="b04d0cb9-0ef1-4e66-8f34-8d27d13fae49" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ContactPersistenceService.wsdl" MetadataType="Wsdl" ID="126b3e30-81af-40c7-8d62-6f3bae371032" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="ContactPersistenceService1.xsd" MetadataType="Schema" ID="4edbce47-df81-48b2-bed6-5ac1a53398af" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ContactPersistenceService.disco" MetadataType="Disco" ID="b44da212-c8cd-4b4c-8c86-309d4e958213" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?disco" />
+    <MetadataFile FileName="ContactPersistenceService2.xsd" MetadataType="Schema" ID="8f136697-fbf2-4632-b308-fb1aa75e8011" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ContactPersistenceService3.xsd" MetadataType="Schema" ID="152c2fa0-0d2c-4327-b113-46731af68066" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ContactPersistenceService4.xsd" MetadataType="Schema" ID="6e9f8f68-22f1-4a29-b2f1-a1c6ec6a5f96" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ContactPersistenceService5.xsd" MetadataType="Schema" ID="24fbfa6f-d0b2-4d72-8baa-b2027ffa8a75" SourceId="1" SourceUrl="http://localhost:1213/ContactPersistenceService.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

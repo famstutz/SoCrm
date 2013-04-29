@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IPersistenceServiceOf_Company" contract="CompanyPersistence.IPersistenceServiceOf_Company" bindingType="basicHttpBinding" address="http://localhost:1048/CompanyPersistenceService.svc" bindingConfiguration="BasicHttpBinding_IPersistenceServiceOf_Company">
+    <endpoint name="BasicHttpBinding_IPersistenceServiceOf_Company" contract="CompanyPersistence.IPersistenceServiceOf_Company" bindingType="basicHttpBinding" address="http://localhost:1213/CompanyPersistenceService.svc" bindingConfiguration="BasicHttpBinding_IPersistenceServiceOf_Company">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:1048/CompanyPersistenceService.svc</serializedValue>
+          <serializedValue>http://localhost:1213/CompanyPersistenceService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

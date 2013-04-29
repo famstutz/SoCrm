@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1048/PersonPersistenceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1213/PersonPersistenceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PersonPersistenceService.xsd" MetadataType="Schema" ID="099831c3-2df5-4ab4-bc6c-4f3798d4a20f" SourceId="1" SourceUrl="http://localhost:1048/PersonPersistenceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PersonPersistenceService.wsdl" MetadataType="Wsdl" ID="5f4425e1-e46c-424d-a61b-6e671917b471" SourceId="1" SourceUrl="http://localhost:1048/PersonPersistenceService.svc?wsdl" />
-    <MetadataFile FileName="PersonPersistenceService1.xsd" MetadataType="Schema" ID="077b6b8a-e540-4295-8b94-73aff2ae410b" SourceId="1" SourceUrl="http://localhost:1048/PersonPersistenceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PersonPersistenceService.disco" MetadataType="Disco" ID="5f48f9c5-153f-4e60-89d8-f07326cf5d80" SourceId="1" SourceUrl="http://localhost:1048/PersonPersistenceService.svc?disco" />
-    <MetadataFile FileName="PersonPersistenceService2.xsd" MetadataType="Schema" ID="15d46d9e-fe92-46e5-9d00-0ad1b0dd22d0" SourceId="1" SourceUrl="http://localhost:1048/PersonPersistenceService.svc?xsd=xsd3" />
-    <MetadataFile FileName="PersonPersistenceService3.xsd" MetadataType="Schema" ID="93b7d409-6650-440e-8b4a-ac191838dadb" SourceId="1" SourceUrl="http://localhost:1048/PersonPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PersonPersistenceService.xsd" MetadataType="Schema" ID="099831c3-2df5-4ab4-bc6c-4f3798d4a20f" SourceId="1" SourceUrl="http://localhost:1213/PersonPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PersonPersistenceService.wsdl" MetadataType="Wsdl" ID="5f4425e1-e46c-424d-a61b-6e671917b471" SourceId="1" SourceUrl="http://localhost:1213/PersonPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="PersonPersistenceService1.xsd" MetadataType="Schema" ID="077b6b8a-e540-4295-8b94-73aff2ae410b" SourceId="1" SourceUrl="http://localhost:1213/PersonPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PersonPersistenceService.disco" MetadataType="Disco" ID="5f48f9c5-153f-4e60-89d8-f07326cf5d80" SourceId="1" SourceUrl="http://localhost:1213/PersonPersistenceService.svc?disco" />
+    <MetadataFile FileName="PersonPersistenceService2.xsd" MetadataType="Schema" ID="15d46d9e-fe92-46e5-9d00-0ad1b0dd22d0" SourceId="1" SourceUrl="http://localhost:1213/PersonPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PersonPersistenceService3.xsd" MetadataType="Schema" ID="93b7d409-6650-440e-8b4a-ac191838dadb" SourceId="1" SourceUrl="http://localhost:1213/PersonPersistenceService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

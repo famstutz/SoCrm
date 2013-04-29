@@ -41,36 +41,36 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
-                    this.PrepareEntity(ref entity);
-
-                    connection.Execute(
-                        "INSERT INTO People (ObjectId, FirstName, LastName, Employer_ObjectId, Address_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @FirstName, @LastName, @EmployerObjectId, @AddressObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
-                        new
-                        {
-                            entity.ObjectId,
-                            entity.FirstName,
-                            entity.LastName,
-                            EmployerObjectId = entity.Employer.ObjectId,
-                            AddressObjectId = entity.Address.ObjectId,
-                            entity.CreationTimeStamp,
-                            entity.LastUpdateTimeStamp
-                        });
-                }
-                else
-                {
                     entity.LastUpdateTimeStamp = DateTime.Now;
 
                     connection.Execute(
                         "UPDATE People SET FirstName = @FirstName, LastName = @LastName, Employer_ObjectId = @EmployerObjectId, Address_ObjectId = @AddressObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
-                        {
-                            entity.FirstName,
-                            entity.LastName,
-                            EmployerObjectId = entity.Employer.ObjectId,
-                            AddressObjectId = entity.Address.ObjectId,
-                            entity.LastUpdateTimeStamp,
-                            entity.ObjectId
-                        });
+                            {
+                                entity.FirstName,
+                                entity.LastName,
+                                EmployerObjectId = entity.Employer.ObjectId,
+                                AddressObjectId = entity.Address.ObjectId,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO People (ObjectId, FirstName, LastName, Employer_ObjectId, Address_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @FirstName, @LastName, @EmployerObjectId, @AddressObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                            {
+                                entity.ObjectId,
+                                entity.FirstName,
+                                entity.LastName,
+                                EmployerObjectId = entity.Employer.ObjectId,
+                                AddressObjectId = entity.Address.ObjectId,
+                                entity.CreationTimeStamp,
+                                entity.LastUpdateTimeStamp
+                            });
                 }
             }
 

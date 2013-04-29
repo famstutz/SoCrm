@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1048/UserPersistenceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1213/UserPersistenceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserPersistenceService.wsdl" MetadataType="Wsdl" ID="a57ab91f-1182-47bc-a33a-49dbffadfa29" SourceId="1" SourceUrl="http://localhost:1048/UserPersistenceService.svc?wsdl" />
-    <MetadataFile FileName="UserPersistenceService.disco" MetadataType="Disco" ID="80418992-fad7-4579-8ae6-18ec733866fb" SourceId="1" SourceUrl="http://localhost:1048/UserPersistenceService.svc?disco" />
-    <MetadataFile FileName="UserPersistenceService.xsd" MetadataType="Schema" ID="4069541c-68db-4d61-be7c-09af076dd5ed" SourceId="1" SourceUrl="http://localhost:1048/UserPersistenceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="UserPersistenceService1.xsd" MetadataType="Schema" ID="03fe7403-d45f-413a-82cd-c3273e3e1cbe" SourceId="1" SourceUrl="http://localhost:1048/UserPersistenceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="UserPersistenceService2.xsd" MetadataType="Schema" ID="5289e8d1-ea8f-4c18-876e-883211d78c1b" SourceId="1" SourceUrl="http://localhost:1048/UserPersistenceService.svc?xsd=xsd3" />
-    <MetadataFile FileName="UserPersistenceService3.xsd" MetadataType="Schema" ID="bdeccd6a-78a6-4e9a-b220-d399b9b00e87" SourceId="1" SourceUrl="http://localhost:1048/UserPersistenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserPersistenceService.wsdl" MetadataType="Wsdl" ID="a57ab91f-1182-47bc-a33a-49dbffadfa29" SourceId="1" SourceUrl="http://localhost:1213/UserPersistenceService.svc?wsdl" />
+    <MetadataFile FileName="UserPersistenceService.disco" MetadataType="Disco" ID="80418992-fad7-4579-8ae6-18ec733866fb" SourceId="1" SourceUrl="http://localhost:1213/UserPersistenceService.svc?disco" />
+    <MetadataFile FileName="UserPersistenceService.xsd" MetadataType="Schema" ID="4069541c-68db-4d61-be7c-09af076dd5ed" SourceId="1" SourceUrl="http://localhost:1213/UserPersistenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserPersistenceService1.xsd" MetadataType="Schema" ID="03fe7403-d45f-413a-82cd-c3273e3e1cbe" SourceId="1" SourceUrl="http://localhost:1213/UserPersistenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserPersistenceService2.xsd" MetadataType="Schema" ID="5289e8d1-ea8f-4c18-876e-883211d78c1b" SourceId="1" SourceUrl="http://localhost:1213/UserPersistenceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserPersistenceService3.xsd" MetadataType="Schema" ID="bdeccd6a-78a6-4e9a-b220-d399b9b00e87" SourceId="1" SourceUrl="http://localhost:1213/UserPersistenceService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

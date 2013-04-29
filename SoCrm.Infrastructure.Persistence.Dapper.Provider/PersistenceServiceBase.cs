@@ -118,7 +118,12 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                         string.Format("SELECT * FROM {0} WHERE ObjectId = @ObjectId", this.tableName),
                         new { entity.ObjectId }).SingleOrDefault();
 
-                return result != null;
+                if (result == null)
+                {
+                    return false;
+                }
+
+                return true;
             }
         }
 

@@ -41,38 +41,38 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
-                    this.PrepareEntity(ref entity);
-
-                    connection.Execute(
-                        "INSERT INTO Contacts (ObjectId, UserId, PersonId, Content, Medium, DateTime, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @UserId, @PersonId, @Content, @Medium, @CreationTimeStamp, @LastUpdateTimeStamp)",
-                        new
-                        {
-                            entity.ObjectId,
-                            entity.UserId,
-                            entity.PersonId,
-                            entity.Content,
-                            Medium = (int)entity.Medium,
-                            entity.DateTime,
-                            entity.CreationTimeStamp,
-                            entity.LastUpdateTimeStamp
-                        });
-                }
-                else
-                {
                     entity.LastUpdateTimeStamp = DateTime.Now;
 
                     connection.Execute(
                         "UPDATE Contacts SET UserId = @UserId, PersonId = @PersonId, Content = @Content, Medium = @Medium, DateTime = @DateTime, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
-                        {
-                            entity.UserId,
-                            entity.PersonId,
-                            entity.Content,
-                            Medium = (int)entity.Medium,
-                            entity.DateTime,
-                            entity.LastUpdateTimeStamp,
-                            entity.ObjectId
-                        });
+                            {
+                                entity.UserId,
+                                entity.PersonId,
+                                entity.Content,
+                                entity.Medium,
+                                entity.DateTime,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO Contacts (ObjectId, UserId, PersonId, Content, Medium, DateTime, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @UserId, @PersonId, @Content, @Medium, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                            {
+                                entity.ObjectId,
+                                entity.UserId,
+                                entity.PersonId,
+                                entity.Content,
+                                entity.Medium,
+                                entity.DateTime,
+                                entity.CreationTimeStamp,
+                                entity.LastUpdateTimeStamp
+                            });
                 }
             }
 

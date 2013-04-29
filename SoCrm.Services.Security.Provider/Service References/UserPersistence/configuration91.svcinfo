@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IPersistenceServiceOf_User" contract="UserPersistence.IPersistenceServiceOf_User" bindingType="basicHttpBinding" address="http://localhost:1048/UserPersistenceService.svc" bindingConfiguration="BasicHttpBinding_IPersistenceServiceOf_User">
+    <endpoint name="BasicHttpBinding_IPersistenceServiceOf_User" contract="UserPersistence.IPersistenceServiceOf_User" bindingType="basicHttpBinding" address="http://localhost:1213/UserPersistenceService.svc" bindingConfiguration="BasicHttpBinding_IPersistenceServiceOf_User">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:1048/UserPersistenceService.svc</serializedValue>
+          <serializedValue>http://localhost:1213/UserPersistenceService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -41,6 +41,21 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE PhoneNumbers SET Number = @Number, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                            {
+                                entity.Number,
+                                entity.ContactType,
+                                //entity.???,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
                     this.PrepareEntity(ref entity);
 
                     connection.Execute(
@@ -49,25 +64,10 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                             {
                                 entity.ObjectId,
                                 entity.Number,
-                                ContactType = (int)entity.ContactType,
+                                entity.ContactType,
                                 //PersonObjectId = entity.???,
                                 entity.CreationTimeStamp,
                                 entity.LastUpdateTimeStamp
-                            });
-                }
-                else
-                {
-                    entity.LastUpdateTimeStamp = DateTime.Now;
-
-                    connection.Execute(
-                        "UPDATE PhoneNumbers SET Number = @Number, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
-                        new
-                            {
-                                entity.Number,
-                                ContactType = (int)entity.ContactType,
-                                //entity.???,
-                                entity.LastUpdateTimeStamp,
-                                entity.ObjectId
                             });
                 }
             }

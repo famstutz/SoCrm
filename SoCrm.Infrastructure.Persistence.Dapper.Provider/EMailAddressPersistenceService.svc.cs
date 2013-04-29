@@ -41,34 +41,34 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
-                    this.PrepareEntity(ref entity);
-
-                    connection.Execute(
-                        "INSERT INTO EMailAddresses (ObjectId, Address, ContactType, Person_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Address, @ContactType, @PersonObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
-                        new
-                        {
-                            entity.ObjectId,
-                            entity.Address,
-                            ContactType = (int)entity.ContactType,
-                            //PersonObjectId = entity.???
-                            entity.CreationTimeStamp,
-                            entity.LastUpdateTimeStamp
-                        });
-                }
-                else
-                {
                     entity.LastUpdateTimeStamp = DateTime.Now;
 
                     connection.Execute(
                         "UPDATE EMailAddresses SET Address = @Address, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
-                        {
-                            entity.Address,
-                            ContactType = (int)entity.ContactType,
-                            //PersonObjectId = entity.???,
-                            entity.LastUpdateTimeStamp,
-                            entity.ObjectId
-                        });
+                            {
+                                entity.Address,
+                                entity.ContactType,
+                                //PersonObjectId = entity.???,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO EMailAddresses (ObjectId, Address, ContactType, Person_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Address, @ContactType, @PersonObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                            {
+                                entity.ObjectId,
+                                entity.Address,
+                                entity.ContactType,
+                                //PersonObjectId = entity.???
+                                entity.CreationTimeStamp,
+                                entity.LastUpdateTimeStamp
+                            });
                 }
             }
 

@@ -41,6 +41,21 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE Users SET UserName = @UserName, Role = @Role, Password = @Password, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                            {
+                                entity.UserName,
+                                entity.Role,
+                                entity.Password,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+                else
+                {
                     this.PrepareEntity(ref entity);
 
                     connection.Execute(
@@ -49,25 +64,10 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                             {
                                 entity.ObjectId,
                                 entity.UserName,
-                                Role = (int)entity.Role,
+                                entity.Role,
                                 entity.Password,
                                 entity.CreationTimeStamp,
                                 entity.LastUpdateTimeStamp
-                            });
-                }
-                else
-                {
-                    entity.LastUpdateTimeStamp = DateTime.Now;
-
-                    connection.Execute(
-                        "UPDATE Users SET UserName = @UserName, Role = @Role, Password = @Password, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
-                        new
-                            {
-                                entity.UserName,
-                                Role = (int)entity.Role,
-                                entity.Password,
-                                entity.LastUpdateTimeStamp,
-                                entity.ObjectId
                             });
                 }
             }
