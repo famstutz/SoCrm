@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="UserPersistenceService.svc.cs" company="Florian Amstutz">
+// <copyright file="PhoneNumberPersistenceService.svc.cs" company="Florian Amstutz">
 //   Copyright (c) 2013 by Florian Amstutz.
 // </copyright>
 // <summary>
-//   The user persistence service.
+//   The phone number persistence service.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -15,18 +15,18 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
     using global::Dapper;
 
     using SoCrm.Infrastructure.Persistence.Contracts;
-    using SoCrm.Services.Security.Contracts;
+    using SoCrm.Services.Customers.Contracts;
 
     /// <summary>
-    /// The user persistence service.
+    /// The phone number persistence service.
     /// </summary>
-    public class UserPersistenceService : PersistenceServiceBase<User>, IUserPersistenceService
+    public class PhoneNumberPersistenceService : PersistenceServiceBase<PhoneNumber>, IPhoneNumberPersistenceService
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserPersistenceService"/> class.
+        /// Initializes a new instance of the <see cref="PhoneNumberPersistenceService"/> class.
         /// </summary>
-        public UserPersistenceService()
-            : base("Security.sdf", "Users")
+        public PhoneNumberPersistenceService()
+            : base("Customer.sdf", "PhoneNumbers")
         {
         }
 
@@ -34,21 +34,21 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// Saves the specified entity.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        /// <returns>The id.</returns>
-        public Guid Save(User entity)
+        /// <returns>The id of the phone number.</returns>
+        public Guid Save(PhoneNumber entity)
         {
             using (var connection = this.OpenConnection())
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
                     connection.Execute(
-                        "INSERT INTO Users (ObjectId, UserName, Role, Password, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @UserName, @Role, @Password, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        "INSERT INTO PhoneNumbers (ObjectId, Number, ContactType, Person_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Number, @ContactType, @PersonObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
                         new
                             {
                                 entity.ObjectId,
-                                entity.UserName,
-                                Role = (int)entity.Role,
-                                entity.Password,
+                                entity.Number,
+                                ContactType = (int)entity.ContactType,
+                                //PersonObjectId = entity.???,
                                 entity.CreationTimeStamp,
                                 entity.LastUpdateTimeStamp
                             });
@@ -56,12 +56,12 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                 else
                 {
                     connection.Execute(
-                        "UPDATE Users SET UserName = @UserName, Role = @Role, Password = @Password, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        "UPDATE PhoneNumbers SET Number = @Number, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
                             {
-                                entity.UserName,
-                                Role = (int)entity.Role,
-                                entity.Password,
+                                entity.Number,
+                                ContactType = (int)entity.ContactType,
+                                //entity.???,
                                 entity.LastUpdateTimeStamp,
                                 entity.ObjectId
                             });
@@ -75,8 +75,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// Gets the specified object id.
         /// </summary>
         /// <param name="objectId">The object id.</param>
-        /// <returns>The user.</returns>
-        public User Get(Guid objectId)
+        /// <returns>The phone number.</returns>
+        public PhoneNumber Get(Guid objectId)
         {
             return this.GetEntity(objectId);
         }
@@ -84,8 +84,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <summary>
         /// Gets all.
         /// </summary>
-        /// <returns>All users.</returns>
-        public IEnumerable<User> GetAll()
+        /// <returns>All the phone numbers.</returns>
+        public IEnumerable<PhoneNumber> GetAll()
         {
             return this.GetAllEntities();
         }
@@ -93,8 +93,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <summary>
         /// Removes the specified entity.
         /// </summary>
-        /// <param name="entity">The entity.</param>
-        public void Remove(User entity)
+        /// <param name="entity">The phone number.</param>
+        public void Remove(PhoneNumber entity)
         {
             this.RemoveEntity(entity);
         }

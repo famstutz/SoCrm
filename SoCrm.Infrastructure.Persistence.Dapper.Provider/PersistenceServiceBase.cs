@@ -9,13 +9,21 @@
 
 namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
 {
+    using System;
+    using System.Collections.Generic;
     using System.Data;
     using System.Data.SqlServerCe;
+    using System.Linq;
+
+    using global::Dapper;
+
+    using SoCrm.Contracts;
 
     /// <summary>
     /// The persistence service base.
     /// </summary>
-    public abstract class PersistenceServiceBase
+    /// <typeparam name="T">The entity.</typeparam>
+    public abstract class PersistenceServiceBase<T> where T : IDomainObject
     {
         /// <summary>
         /// The database name.
@@ -23,12 +31,19 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         private readonly string databaseName;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PersistenceServiceBase"/> class.
+        /// The table name.
+        /// </summary>
+        private readonly string tableName;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersistenceServiceBase{T}"/> class.
         /// </summary>
         /// <param name="databaseName">Name of the database.</param>
-        protected PersistenceServiceBase(string databaseName)
+        /// <param name="tableName">Name of the table.</param>
+        protected PersistenceServiceBase(string databaseName, string tableName)
         {
             this.databaseName = databaseName;
+            this.tableName = tableName;
         }
 
         /// <summary>
@@ -42,6 +57,69 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                     string.Format(@"Data Source=|DataDirectory|\{0};Persist Security Info=False", this.databaseName));
             connection.Open();
             return connection;
+        }
+
+        /// <summary>
+        /// Gets the entity.
+        /// </summary>
+        /// <param name="objectId">The object id.</param>
+        /// <returns>The entity.</returns>
+        protected T GetEntity(Guid objectId)
+        {
+            using (var connection = this.OpenConnection())
+            {
+                return
+                    connection.Query<T>(
+                        string.Format("SELECT * FROM {0} WHERE ObjectId = @ObjectId", this.tableName),
+                        new { ObjectId = objectId }).Single();
+            }
+        }
+
+        /// <summary>
+        /// The get all entities.
+        /// </summary>
+        /// <returns>
+        /// All the entities.
+        /// </returns>
+        protected IEnumerable<T> GetAllEntities()
+        {
+            using (var connection = this.OpenConnection())
+            {
+                return connection.Query<T>(string.Format("SELECT * FROM {0}", this.tableName));
+            }
+        }
+
+        /// <summary>
+        /// Removes the entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        protected void RemoveEntity(T entity)
+        {
+            using (var connection = this.OpenConnection())
+            {
+                connection.Execute(
+                    string.Format("DELETE FROM {0} WHERE ObjectId = @ObjectId", this.tableName), new { entity.ObjectId });
+            }
+        }
+
+        /// <summary>
+        /// Determines whether [is entity stored in database] [the specified entity].
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <returns>
+        ///   <c>true</c> if [is entity stored in database] [the specified entity]; otherwise, <c>false</c>.
+        /// </returns>
+        protected bool IsEntityStoredInDatabase(T entity)
+        {
+            using (var connection = this.OpenConnection())
+            {
+                var result =
+                    connection.Query<T>(
+                        string.Format("SELECT * FROM {0} WHERE ObjectId = @ObjectId", this.tableName),
+                        new { entity.ObjectId }).SingleOrDefault();
+
+                return result != null;
+            }
         }
     }
 }
