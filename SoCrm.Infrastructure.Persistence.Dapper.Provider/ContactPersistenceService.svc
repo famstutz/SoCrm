@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SoCrm.Infrastructure.Persistence.Dapper.Provider.ContactPersistenceService" CodeBehind="ContactPersistenceService.svc.cs" %>
