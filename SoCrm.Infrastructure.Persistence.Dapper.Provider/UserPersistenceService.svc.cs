@@ -41,6 +41,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
+                    this.PrepareEntity(ref entity);
+
                     connection.Execute(
                         "INSERT INTO Users (ObjectId, UserName, Role, Password, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @UserName, @Role, @Password, @CreationTimeStamp, @LastUpdateTimeStamp)",
                         new
@@ -55,6 +57,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                 }
                 else
                 {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
                     connection.Execute(
                         "UPDATE Users SET UserName = @UserName, Role = @Role, Password = @Password, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new

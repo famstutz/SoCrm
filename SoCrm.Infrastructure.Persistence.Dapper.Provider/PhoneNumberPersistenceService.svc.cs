@@ -41,6 +41,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 if (this.IsEntityStoredInDatabase(entity))
                 {
+                    this.PrepareEntity(ref entity);
+
                     connection.Execute(
                         "INSERT INTO PhoneNumbers (ObjectId, Number, ContactType, Person_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Number, @ContactType, @PersonObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
                         new
@@ -55,6 +57,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                 }
                 else
                 {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
                     connection.Execute(
                         "UPDATE PhoneNumbers SET Number = @Number, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new

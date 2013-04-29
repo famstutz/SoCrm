@@ -12,6 +12,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
     using System;
     using System.Collections.Generic;
 
+    using global::Dapper;
+
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Customers.Contracts;
 
@@ -35,7 +37,44 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The id of the address.</returns>
         public Guid Save(Address entity)
         {
-            throw new NotImplementedException();
+            using (var connection = this.OpenConnection())
+            {
+                if (this.IsEntityStoredInDatabase(entity))
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO Addresses (ObjectId, AddressLine, ZipCode, City, Country, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @AddressLine, @ZipCode, @City, @Country, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                            {
+                                entity.ObjectId,
+                                entity.AddressLine,
+                                entity.ZipCode,
+                                entity.City,
+                                entity.Country,
+                                entity.CreationTimeStamp,
+                                entity.LastUpdateTimeStamp
+                            });
+                }
+                else
+                {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE Addresses SET AddressLine = @AddressLine, ZipCode = @ZipCode, City = @City, Country = @Country, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                            {
+                                entity.AddressLine,
+                                entity.ZipCode,
+                                entity.City,
+                                entity.Country,
+                                entity.LastUpdateTimeStamp,
+                                entity.ObjectId
+                            });
+                }
+            }
+
+            return entity.ObjectId;
         }
 
         /// <summary>

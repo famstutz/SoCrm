@@ -121,5 +121,26 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                 return result != null;
             }
         }
+
+        /// <summary>
+        /// Prepares the entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        /// <exception cref="System.NotSupportedException">Supplied entity is null</exception>
+        protected void PrepareEntity(ref T entity)
+        {
+            if (entity == null)
+            {
+                throw new NotSupportedException("Supplied entity is null");
+            }
+
+            if (entity.ObjectId == default(Guid))
+            {
+                entity.ObjectId = Guid.NewGuid();
+            }
+
+            entity.CreationTimeStamp = DateTime.Now;
+            entity.LastUpdateTimeStamp = DateTime.Now;
+        }
     }
 }
