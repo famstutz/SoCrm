@@ -15,6 +15,8 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Customers.Contracts;
 
+    using global::Dapper;
+
     /// <summary>
     /// The e mail address persistence service.
     /// </summary>
@@ -35,7 +37,42 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The id of the email address.</returns>
         public Guid Save(EMailAddress entity)
         {
-            throw new NotImplementedException();
+            using (var connection = this.OpenConnection())
+            {
+                if (this.IsEntityStoredInDatabase(entity))
+                {
+                    this.PrepareEntity(ref entity);
+
+                    connection.Execute(
+                        "INSERT INTO EMailAddresses (ObjectId, Address, ContactType, Person_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Address, @ContactType, @PersonObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        new
+                        {
+                            entity.ObjectId,
+                            entity.Address,
+                            ContactType = (int)entity.ContactType,
+                            //PersonObjectId = entity.???
+                            entity.CreationTimeStamp,
+                            entity.LastUpdateTimeStamp
+                        });
+                }
+                else
+                {
+                    entity.LastUpdateTimeStamp = DateTime.Now;
+
+                    connection.Execute(
+                        "UPDATE EMailAddresses SET Address = @Address, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        new
+                        {
+                            entity.Address,
+                            ContactType = (int)entity.ContactType,
+                            //PersonObjectId = entity.???,
+                            entity.LastUpdateTimeStamp,
+                            entity.ObjectId
+                        });
+                }
+            }
+
+            return entity.ObjectId;
         }
 
         /// <summary>
