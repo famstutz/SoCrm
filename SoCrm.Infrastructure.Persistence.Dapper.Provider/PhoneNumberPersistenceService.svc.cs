@@ -44,12 +44,11 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                     entity.LastUpdateTimeStamp = DateTime.Now;
 
                     connection.Execute(
-                        "UPDATE PhoneNumbers SET Number = @Number, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        "UPDATE PhoneNumbers SET Number = @Number, ContactType = @ContactType, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
                             {
                                 entity.Number,
                                 entity.ContactType,
-                                //entity.???,
                                 entity.LastUpdateTimeStamp,
                                 entity.ObjectId
                             });

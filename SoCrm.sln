@@ -78,6 +78,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Contacts
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.Dapper.Provider", "SoCrm.Infrastructure.Persistence.Dapper.Provider\SoCrm.Infrastructure.Persistence.Dapper.Provider.csproj", "{A161D65C-E429-4535-BF93-61E77D15EE6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.NHibernate.Provider", "SoCrm.Infrastructure.Persistence.NHibernate.Provider\SoCrm.Infrastructure.Persistence.NHibernate.Provider.csproj", "{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +154,10 @@ Global
 		{A161D65C-E429-4535-BF93-61E77D15EE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A161D65C-E429-4535-BF93-61E77D15EE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A161D65C-E429-4535-BF93-61E77D15EE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +174,7 @@ Global
 		{4CC4504B-15B7-4BB0-9744-87A2D429D451} = {B46926A9-E86C-41E6-B488-F117261E2BE9}
 		{BDDA109D-0222-45BD-87C3-BB9B939AED89} = {B46926A9-E86C-41E6-B488-F117261E2BE9}
 		{A161D65C-E429-4535-BF93-61E77D15EE6E} = {B46926A9-E86C-41E6-B488-F117261E2BE9}
+		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49} = {B46926A9-E86C-41E6-B488-F117261E2BE9}
 		{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735} = {BCD9FDF6-293C-40E9-B469-650A2FA62B12}
 		{A80D72DD-65ED-4E97-A6C8-BF700F439212} = {BCD9FDF6-293C-40E9-B469-650A2FA62B12}
 		{E13A6892-4D57-4A2A-8670-7B0D105018DC} = {BB8A883F-2E7A-42BB-99BE-D7DABA30552F}
