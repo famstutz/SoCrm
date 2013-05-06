@@ -196,7 +196,7 @@ namespace SoCrm.Presentation.Customers.CompanyList
             var company = obj as Company;
             this.customerService.DeleteCompany(company);
             this.Companies.Remove(company);
-            this.customerController.SetLastStatus(string.Format("Successfully deleted {0} {1}.", company.Name));
+            this.customerController.SetLastStatus(string.Format("Successfully deleted {0}.", company.Name));
         }
     }
 }

@@ -11,6 +11,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using global::Dapper;
 
@@ -84,7 +85,22 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The person.</returns>
         public Person Get(Guid objectId)
         {
-            return this.GetEntity(objectId);
+            using (var connection = this.OpenConnection())
+            {
+                return
+                    connection.Query<Person, Company, Address, Person>(
+                        string.Format(
+                            "SELECT * FROM People p " +
+                            "INNER JOIN Companies c ON p.Employer_ObjectId = c.ObjectId " +
+                            "INNER JOIN Addresses a ON p.Address_ObjectId = a.ObjectId"),
+                        (person, company, address) =>
+                            {
+                                person.Employer = company;
+                                person.Address = address;
+                                return person;
+                            },
+                        new { ObjectId = objectId }).Single();
+            }
         }
 
         /// <summary>
@@ -93,7 +109,22 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>All the people.</returns>
         public IEnumerable<Person> GetAll()
         {
-            return this.GetAllEntities();
+            using (var connection = this.OpenConnection())
+            {
+                return
+                    connection.Query<Person, Company, Address, Person>(
+                        string.Format(
+                            "SELECT * FROM People p " + 
+                            "INNER JOIN Companies c ON p.Employer_ObjectId = c.ObjectId " +
+                            "INNER JOIN Addresses a ON p.Address_ObjectId = a.ObjectId"),
+                        (person, company, address) =>
+                            {
+                                person.Employer = company;
+                                person.Address = address;
+                                return person;
+                            },
+                        splitOn: "ObjectId");
+            }
         }
 
         /// <summary>

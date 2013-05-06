@@ -31,11 +31,6 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         private readonly string databaseName;
 
         /// <summary>
-        /// The table name.
-        /// </summary>
-        private readonly string tableName;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="PersistenceServiceBase{T}"/> class.
         /// </summary>
         /// <param name="databaseName">Name of the database.</param>
@@ -43,8 +38,16 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         protected PersistenceServiceBase(string databaseName, string tableName)
         {
             this.databaseName = databaseName;
-            this.tableName = tableName;
+            this.TableName = tableName;
         }
+
+        /// <summary>
+        /// Gets the name of the table.
+        /// </summary>
+        /// <value>
+        /// The name of the table.
+        /// </value>
+        protected string TableName { get; private set; }
 
         /// <summary>
         /// Opens the connection.
@@ -70,7 +73,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 return
                     connection.Query<T>(
-                        string.Format("SELECT * FROM {0} WHERE ObjectId = @ObjectId", this.tableName),
+                        string.Format("SELECT * FROM {0} WHERE ObjectId = @ObjectId", this.TableName),
                         new { ObjectId = objectId }).Single();
             }
         }
@@ -85,7 +88,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         {
             using (var connection = this.OpenConnection())
             {
-                return connection.Query<T>(string.Format("SELECT * FROM {0}", this.tableName));
+                return connection.Query<T>(string.Format("SELECT * FROM {0}", this.TableName));
             }
         }
 
@@ -98,7 +101,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             using (var connection = this.OpenConnection())
             {
                 connection.Execute(
-                    string.Format("DELETE FROM {0} WHERE ObjectId = @ObjectId", this.tableName), new { entity.ObjectId });
+                    string.Format("DELETE FROM {0} WHERE ObjectId = @ObjectId", this.TableName), new { entity.ObjectId });
             }
         }
 
@@ -115,7 +118,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
             {
                 var result =
                     connection.Query<T>(
-                        string.Format("SELECT * FROM {0} WHERE ObjectId = @ObjectId", this.tableName),
+                        string.Format("SELECT * FROM {0} WHERE ObjectId = @ObjectId", this.TableName),
                         new { entity.ObjectId }).SingleOrDefault();
 
                 if (result == null)
