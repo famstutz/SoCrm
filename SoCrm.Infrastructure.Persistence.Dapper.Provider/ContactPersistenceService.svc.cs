@@ -11,6 +11,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using global::Dapper;
 
@@ -61,7 +62,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                     this.PrepareEntity(ref entity);
 
                     connection.Execute(
-                        "INSERT INTO Contacts (ObjectId, UserId, PersonId, Content, Medium, DateTime, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @UserId, @PersonId, @Content, @Medium, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        "INSERT INTO Contacts (ObjectId, UserId, PersonId, Content, Medium, DateTime, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @UserId, @PersonId, @Content, @Medium, @DateTime, @CreationTimeStamp, @LastUpdateTimeStamp)",
                         new
                             {
                                 entity.ObjectId,
@@ -86,7 +87,14 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The contact.</returns>
         public Contact Get(Guid objectId)
         {
-            return this.GetEntity(objectId);
+            var userPersistenceService = new UserPersistenceService();
+            var personPersistenceService = new PersonPersistenceService();
+
+            var contact = this.GetEntity(objectId);
+            contact.User = userPersistenceService.Get(contact.UserId);
+            contact.Person = personPersistenceService.Get(contact.PersonId);
+
+            return contact;
         }
 
         /// <summary>
@@ -95,7 +103,17 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>All the contacts.</returns>
         public IEnumerable<Contact> GetAll()
         {
-            return this.GetAllEntities();
+            var userPersistenceService = new UserPersistenceService();
+            var personPersistenceService = new PersonPersistenceService();
+
+            var contacts = this.GetAllEntities().ToList();
+            foreach (var contact in contacts)
+            {
+                contact.User = userPersistenceService.Get(contact.UserId);
+                contact.Person = personPersistenceService.Get(contact.PersonId);
+            }
+
+            return contacts;
         }
 
         /// <summary>

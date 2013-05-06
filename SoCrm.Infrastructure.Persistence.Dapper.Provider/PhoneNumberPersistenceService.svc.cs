@@ -59,13 +59,12 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                     this.PrepareEntity(ref entity);
 
                     connection.Execute(
-                        "INSERT INTO PhoneNumbers (ObjectId, Number, ContactType, Person_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Number, @ContactType, @PersonObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        "INSERT INTO PhoneNumbers (ObjectId, Number, ContactType, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Number, @ContactType, @CreationTimeStamp, @LastUpdateTimeStamp)",
                         new
                             {
                                 entity.ObjectId,
                                 entity.Number,
                                 entity.ContactType,
-                                //PersonObjectId = entity.???,
                                 entity.CreationTimeStamp,
                                 entity.LastUpdateTimeStamp
                             });

@@ -40,6 +40,9 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         {
             using (var connection = this.OpenConnection())
             {
+                var addressService = new AddressPersistenceService();
+                entity.Address.ObjectId = addressService.Save(entity.Address);
+
                 if (this.IsEntityStoredInDatabase(entity))
                 {
                     entity.LastUpdateTimeStamp = DateTime.Now;
@@ -92,14 +95,16 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                         string.Format(
                             "SELECT * FROM People p " +
                             "INNER JOIN Companies c ON p.Employer_ObjectId = c.ObjectId " +
-                            "INNER JOIN Addresses a ON p.Address_ObjectId = a.ObjectId"),
+                            "INNER JOIN Addresses a ON p.Address_ObjectId = a.ObjectId " +
+                            "WHERE p.ObjectId = @ObjectId"),
                         (person, company, address) =>
                             {
                                 person.Employer = company;
                                 person.Address = address;
                                 return person;
                             },
-                        new { ObjectId = objectId }).Single();
+                        new { ObjectId = objectId },
+                        splitOn: "ObjectId").Single();
             }
         }
 

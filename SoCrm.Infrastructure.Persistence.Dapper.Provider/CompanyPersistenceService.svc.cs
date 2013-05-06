@@ -11,6 +11,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using global::Dapper;
 
@@ -39,6 +40,9 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         {
             using (var connection = this.OpenConnection())
             {
+                var addressService = new AddressPersistenceService();
+                entity.Address.ObjectId = addressService.Save(entity.Address);
+
                 if (this.IsEntityStoredInDatabase(entity))
                 {
                     entity.LastUpdateTimeStamp = DateTime.Now;
@@ -82,7 +86,22 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>The company.</returns>
         public Company Get(Guid objectId)
         {
-            return this.GetEntity(objectId);
+            using (var connection = this.OpenConnection())
+            {
+                return
+                    connection.Query<Company, Address, Company>(
+                        string.Format(
+                            "SELECT * FROM Companies c " +
+                            "INNER JOIN Addresses a ON c.Address_ObjectId = a.ObjectId " +
+                            "WHERE c.ObjectId = @ObjectId"),
+                        (company, address) =>
+                        {
+                            company.Address = address;
+                            return company;
+                        },
+                        new { ObjectId = objectId },
+                        splitOn: "ObjectId").Single();
+            }
         }
 
         /// <summary>
@@ -91,7 +110,20 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
         /// <returns>All the companies.</returns>
         public IEnumerable<Company> GetAll()
         {
-            return this.GetAllEntities();
+            using (var connection = this.OpenConnection())
+            {
+                return
+                    connection.Query<Company, Address, Company>(
+                        string.Format(
+                            "SELECT * FROM Companies c " + 
+                            "INNER JOIN Addresses a ON c.Address_ObjectId = a.ObjectId"),
+                        (company, address) =>
+                            {
+                                company.Address = address;
+                                return company;
+                            },
+                        splitOn: "ObjectId");
+            }
         }
 
         /// <summary>

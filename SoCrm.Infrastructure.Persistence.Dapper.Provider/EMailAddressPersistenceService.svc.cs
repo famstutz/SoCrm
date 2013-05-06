@@ -44,12 +44,11 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                     entity.LastUpdateTimeStamp = DateTime.Now;
 
                     connection.Execute(
-                        "UPDATE EMailAddresses SET Address = @Address, ContactType = @ContactType, Person_ObjectId = @PersonObjectId, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
+                        "UPDATE EMailAddresses SET Address = @Address, ContactType = @ContactType, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
                         new
                             {
                                 entity.Address,
                                 entity.ContactType,
-                                //PersonObjectId = entity.???,
                                 entity.LastUpdateTimeStamp,
                                 entity.ObjectId
                             });
@@ -59,13 +58,12 @@ namespace SoCrm.Infrastructure.Persistence.Dapper.Provider
                     this.PrepareEntity(ref entity);
 
                     connection.Execute(
-                        "INSERT INTO EMailAddresses (ObjectId, Address, ContactType, Person_ObjectId, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Address, @ContactType, @PersonObjectId, @CreationTimeStamp, @LastUpdateTimeStamp)",
+                        "INSERT INTO EMailAddresses (ObjectId, Address, ContactType, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Address, @ContactType, @CreationTimeStamp, @LastUpdateTimeStamp)",
                         new
                             {
                                 entity.ObjectId,
                                 entity.Address,
                                 entity.ContactType,
-                                //PersonObjectId = entity.???
                                 entity.CreationTimeStamp,
                                 entity.LastUpdateTimeStamp
                             });
