@@ -80,6 +80,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.NHibernate.Provider", "SoCrm.Infrastructure.Persistence.NHibernate.Provider\SoCrm.Infrastructure.Persistence.NHibernate.Provider.csproj", "{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8A2C321B-15AD-4421-846E-730377E2EB05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Core.Contracts.Tests", "Tests\SoCrm.Core.Contracts.Tests\SoCrm.Core.Contracts.Tests.csproj", "{793F137A-9963-4825-BE8C-39E50F9A9629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Contracts.Tests", "Tests\SoCrm.Services.Contacts.Contracts.Tests\SoCrm.Services.Contacts.Contracts.Tests.csproj", "{AB3F75AE-361F-46BA-A59D-B603E816AB13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Tests.Common", "Tests\SoCrm.Tests.Common\SoCrm.Tests.Common.csproj", "{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Provider", "Tests\SoCrm.Services.Contacts.Provider\SoCrm.Services.Contacts.Provider.csproj", "{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Customers.Contracts", "Tests\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj", "{FC3D5390-7D50-43EF-A17D-B921CED4A36A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -158,6 +170,26 @@ Global
 		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{793F137A-9963-4825-BE8C-39E50F9A9629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793F137A-9963-4825-BE8C-39E50F9A9629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793F137A-9963-4825-BE8C-39E50F9A9629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793F137A-9963-4825-BE8C-39E50F9A9629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3F75AE-361F-46BA-A59D-B603E816AB13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3F75AE-361F-46BA-A59D-B603E816AB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3F75AE-361F-46BA-A59D-B603E816AB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3F75AE-361F-46BA-A59D-B603E816AB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC3D5390-7D50-43EF-A17D-B921CED4A36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3D5390-7D50-43EF-A17D-B921CED4A36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3D5390-7D50-43EF-A17D-B921CED4A36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3D5390-7D50-43EF-A17D-B921CED4A36A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,6 +218,11 @@ Global
 		{B640BF52-3CFE-4217-8955-59D87B02F586} = {CD6DBB2E-D2A3-4F7E-9854-4EE61C8A9897}
 		{4FF52647-3602-4273-825A-A32A99BFDE90} = {CD6DBB2E-D2A3-4F7E-9854-4EE61C8A9897}
 		{0B24AB02-CF3B-4E84-827A-DF5869AABD62} = {CD6DBB2E-D2A3-4F7E-9854-4EE61C8A9897}
+		{793F137A-9963-4825-BE8C-39E50F9A9629} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{AB3F75AE-361F-46BA-A59D-B603E816AB13} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{8C3FABAE-1888-4F1A-A4E2-0A89644A2866} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{FC3D5390-7D50-43EF-A17D-B921CED4A36A} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35

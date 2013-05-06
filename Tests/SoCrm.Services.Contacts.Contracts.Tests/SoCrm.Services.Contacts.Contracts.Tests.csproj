@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB3F75AE-361F-46BA-A59D-B603E816AB13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoCrm.Services.Contacts.Contracts.Tests</RootNamespace>
+    <AssemblyName>SoCrm.Services.Contacts.Contracts.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContactTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
+      <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
+      <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj">
+      <Project>{4E381201-4B81-4BC3-A553-318017C21622}</Project>
+      <Name>SoCrm.Services.Contacts.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
+      <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>
+      <Name>SoCrm.Services.Customers.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoCrm.Services.Security.Contracts\SoCrm.Services.Security.Contracts.csproj">
+      <Project>{E13A6892-4D57-4A2A-8670-7B0D105018DC}</Project>
+      <Name>SoCrm.Services.Security.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Tests.Common\SoCrm.Tests.Common.csproj">
+      <Project>{8c3fabae-1888-4f1a-a4e2-0a89644a2866}</Project>
+      <Name>SoCrm.Tests.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
