@@ -92,6 +92,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Customers.Contracts.Tests", "Tests\SoCrm.Services.Customers.Contracts.Tests\SoCrm.Services.Customers.Contracts.Tests.csproj", "{FC3D5390-7D50-43EF-A17D-B921CED4A36A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Logging.Contracts.Tests", "Tests\SoCrm.Services.Logging.Contracts.Tests\SoCrm.Services.Logging.Contracts.Tests.csproj", "{A47549B9-6C11-41F6-8BCF-251CBF51E609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Security.Contracts.Tests", "Tests\SoCrm.Services.Security.Contracts.Tests\SoCrm.Services.Security.Contracts.Tests.csproj", "{220B7AE4-6883-4DDA-83A5-5E72271EB5E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -190,6 +194,14 @@ Global
 		{FC3D5390-7D50-43EF-A17D-B921CED4A36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC3D5390-7D50-43EF-A17D-B921CED4A36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC3D5390-7D50-43EF-A17D-B921CED4A36A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47549B9-6C11-41F6-8BCF-251CBF51E609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47549B9-6C11-41F6-8BCF-251CBF51E609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47549B9-6C11-41F6-8BCF-251CBF51E609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47549B9-6C11-41F6-8BCF-251CBF51E609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220B7AE4-6883-4DDA-83A5-5E72271EB5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220B7AE4-6883-4DDA-83A5-5E72271EB5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220B7AE4-6883-4DDA-83A5-5E72271EB5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220B7AE4-6883-4DDA-83A5-5E72271EB5E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -223,6 +235,8 @@ Global
 		{8C3FABAE-1888-4F1A-A4E2-0A89644A2866} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{FC3D5390-7D50-43EF-A17D-B921CED4A36A} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{A47549B9-6C11-41F6-8BCF-251CBF51E609} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{220B7AE4-6883-4DDA-83A5-5E72271EB5E8} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
