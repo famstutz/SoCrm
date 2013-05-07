@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="SoCrm.Infrastructure.Persistence.EntityFramework.Provider.UserPersistenceService" CodeBehind="UserPersistenceService.svc.cs" %>

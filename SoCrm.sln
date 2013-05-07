@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.Contracts", "SoCrm.Infrastructure.Persistence.Contracts\SoCrm.Infrastructure.Persistence.Contracts.csproj", "{4CC4504B-15B7-4BB0-9744-87A2D429D451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.EntityFramework.Provider", "SoCrm.Infrastructure.Persistence.EntityFramework.Provider\SoCrm.Infrastructure.Persistence.EntityFramework.Provider.csproj", "{BDDA109D-0222-45BD-87C3-BB9B939AED89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.EntityFramework", "SoCrm.Infrastructure.Persistence.EntityFramework\SoCrm.Infrastructure.Persistence.EntityFramework.csproj", "{BDDA109D-0222-45BD-87C3-BB9B939AED89}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customers", "Customers", "{BCD9FDF6-293C-40E9-B469-650A2FA62B12}"
 EndProject
@@ -76,9 +76,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Contacts
 		{A80D72DD-65ED-4E97-A6C8-BF700F439212} = {A80D72DD-65ED-4E97-A6C8-BF700F439212}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.Dapper.Provider", "SoCrm.Infrastructure.Persistence.Dapper.Provider\SoCrm.Infrastructure.Persistence.Dapper.Provider.csproj", "{A161D65C-E429-4535-BF93-61E77D15EE6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.Dapper", "SoCrm.Infrastructure.Persistence.Dapper\SoCrm.Infrastructure.Persistence.Dapper.csproj", "{A161D65C-E429-4535-BF93-61E77D15EE6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.NHibernate.Provider", "SoCrm.Infrastructure.Persistence.NHibernate.Provider\SoCrm.Infrastructure.Persistence.NHibernate.Provider.csproj", "{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Infrastructure.Persistence.NHibernate", "SoCrm.Infrastructure.Persistence.NHibernate\SoCrm.Infrastructure.Persistence.NHibernate.csproj", "{2E7D8824-609F-4D69-8A6D-1C3EB4481B49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8A2C321B-15AD-4421-846E-730377E2EB05}"
 EndProject
