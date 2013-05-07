@@ -24,7 +24,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         protected void Application_Start(object sender, EventArgs e)
         {
             AppDomain.CurrentDomain.SetData(
-                "DataDirectory", @"C:\Dev\SoCrm\SoCrm.Infrastructure.Persistence.EntityFramework.Provider\App_Data");
+                "DataDirectory", @"C:\Dev\SoCrm\SoCrm.Infrastructure.Persistence.EntityFramework\App_Data");
         }
 
         /// <summary>
