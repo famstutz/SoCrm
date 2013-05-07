@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}</ProjectGuid>
+    <ProjectGuid>{FC3D5390-7D50-43EF-A17D-B921CED4A36A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SoCrm.Services.Contacts.Provider</RootNamespace>
-    <AssemblyName>SoCrm.Services.Contacts.Provider</AssemblyName>
+    <RootNamespace>SoCrm.Services.Customers.Contracts.Tests</RootNamespace>
+    <AssemblyName>SoCrm.Services.Customers.Contracts.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -42,18 +43,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactServiceTests.cs" />
+    <Compile Include="AddressTests.cs" />
+    <Compile Include="CompanyTests.cs" />
+    <Compile Include="PersonTests.cs" />
+    <Compile Include="PhoneNumberTests.cs" />
+    <Compile Include="EMailAddressTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj">
-      <Project>{4E381201-4B81-4BC3-A553-318017C21622}</Project>
-      <Name>SoCrm.Services.Contacts.Contracts</Name>
+    <ProjectReference Include="..\..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
+      <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
+      <Name>SoCrm.Core.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SoCrm.Services.Contacts.Provider\SoCrm.Services.Contacts.Provider.csproj">
-      <Project>{379D8CD9-6AD5-46B4-842B-02ABB5172B23}</Project>
-      <Name>SoCrm.Services.Contacts.Provider %28Services\Contacts\SoCrm.Services.Contacts.Provider%29</Name>
+    <ProjectReference Include="..\..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
+      <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>
+      <Name>SoCrm.Services.Customers.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Tests.Common\SoCrm.Tests.Common.csproj">
+      <Project>{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}</Project>
+      <Name>SoCrm.Tests.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

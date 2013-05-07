@@ -1,4 +1,4 @@
-﻿namespace SoCrm.Services.Customers.Contracts
+﻿namespace SoCrm.Services.Customers.Contracts.Tests
 {
     using NUnit.Framework;
 

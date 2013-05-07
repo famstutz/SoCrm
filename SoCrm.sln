@@ -88,9 +88,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Tests.Common", "Tests\SoCrm.Tests.Common\SoCrm.Tests.Common.csproj", "{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Provider", "Tests\SoCrm.Services.Contacts.Provider\SoCrm.Services.Contacts.Provider.csproj", "{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Contacts.Provider.Tests", "Tests\SoCrm.Services.Contacts.Provider.Tests\SoCrm.Services.Contacts.Provider.Tests.csproj", "{D73234BC-A3ED-408D-93BC-D8D08DE9C6C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Customers.Contracts", "Tests\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj", "{FC3D5390-7D50-43EF-A17D-B921CED4A36A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Customers.Contracts.Tests", "Tests\SoCrm.Services.Customers.Contracts.Tests\SoCrm.Services.Customers.Contracts.Tests.csproj", "{FC3D5390-7D50-43EF-A17D-B921CED4A36A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

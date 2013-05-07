@@ -1,4 +1,4 @@
-﻿namespace SoCrm.Services.Contacts.Provider
+﻿namespace SoCrm.Services.Contacts.Provider.Tests
 {
     using NUnit.Framework;
 
