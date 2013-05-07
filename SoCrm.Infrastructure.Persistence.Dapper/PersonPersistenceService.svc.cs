@@ -13,10 +13,10 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
     using System.Collections.Generic;
     using System.Linq;
 
+    using global::Dapper;
+
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Customers.Contracts;
-
-    using global::Dapper;
 
     /// <summary>
     /// The person persistence service.

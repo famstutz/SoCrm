@@ -1,1 +1,6 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="SoCrm.Services.Contacts.Provider.ContactService" CodeBehind="ContactService.svc.cs" %>
+﻿<%@ ServiceHost 
+    Language="C#" 
+    Debug="true" 
+    Service="SoCrm.Services.Contacts.Provider.ContactService" 
+    Factory="SoCrm.Services.Contacts.Provider.ContactServiceHostFactory"
+    CodeBehind="ContactService.svc.cs" %>

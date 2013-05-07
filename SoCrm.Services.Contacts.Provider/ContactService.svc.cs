@@ -25,14 +25,17 @@ namespace SoCrm.Services.Contacts.Provider
         /// <summary>
         /// The contact client.
         /// </summary>
-        private ContactPersistence.PersistenceServiceOf_ContactClient client;
+        private readonly ContactPersistence.PersistenceServiceOf_ContactClient client;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactService"/> class.
         /// </summary>
-        public ContactService()
+        /// <param name="client">
+        /// The client.
+        /// </param>
+        public ContactService(ContactPersistence.PersistenceServiceOf_ContactClient client)
         {
-            this.client = new ContactPersistence.PersistenceServiceOf_ContactClient();
+            this.client = client;
         }
 
         /// <summary>
