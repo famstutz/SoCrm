@@ -14,18 +14,19 @@ namespace SoCrm.Services.Contacts.Provider
     using System.Linq;
 
     using SoCrm.Services.Contacts.Contracts;
+    using SoCrm.Services.Contacts.Provider.ContactPersistence;
     using SoCrm.Services.Customers.Contracts;
     using SoCrm.Services.Security.Contracts;
 
     /// <summary>
     /// The contact service.
     /// </summary>
-    public sealed class ContactService : IContactService, IDisposable
+    public sealed class ContactService : IContactService
     {
         /// <summary>
         /// The contact client.
         /// </summary>
-        private readonly ContactPersistence.PersistenceServiceOf_ContactClient client;
+        private readonly IPersistenceServiceOf_Contact client;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactService"/> class.
@@ -33,7 +34,7 @@ namespace SoCrm.Services.Contacts.Provider
         /// <param name="client">
         /// The client.
         /// </param>
-        public ContactService(ContactPersistence.PersistenceServiceOf_ContactClient client)
+        public ContactService(IPersistenceServiceOf_Contact client)
         {
             this.client = client;
         }
@@ -168,14 +169,6 @@ namespace SoCrm.Services.Contacts.Provider
         public void DeleteContact(Contact contact)
         {
             this.client.Remove(contact);
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.client.Close();
         }
     }
 }

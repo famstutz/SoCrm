@@ -30,23 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
+      <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
+      <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SoCrm.Services.Contacts.Contracts\SoCrm.Services.Contacts.Contracts.csproj">
       <Project>{4E381201-4B81-4BC3-A553-318017C21622}</Project>
       <Name>SoCrm.Services.Contacts.Contracts</Name>
@@ -54,6 +56,14 @@
     <ProjectReference Include="..\..\SoCrm.Services.Contacts.Provider\SoCrm.Services.Contacts.Provider.csproj">
       <Project>{379D8CD9-6AD5-46B4-842B-02ABB5172B23}</Project>
       <Name>SoCrm.Services.Contacts.Provider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
+      <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>
+      <Name>SoCrm.Services.Customers.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoCrm.Services.Security.Contracts\SoCrm.Services.Security.Contracts.csproj">
+      <Project>{E13A6892-4D57-4A2A-8670-7B0D105018DC}</Project>
+      <Name>SoCrm.Services.Security.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
