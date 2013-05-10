@@ -22,19 +22,20 @@ namespace SoCrm.Services.Security.Provider
     /// <summary>
     /// The security service.
     /// </summary>
-    public sealed class SecurityService : ISecurityService, IDisposable
+    public sealed class SecurityService : ISecurityService
     {
         /// <summary>
         /// The client.
         /// </summary>
-        private readonly PersistenceServiceOf_UserClient client;
+        private readonly IPersistenceServiceOf_User client;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityService"/> class.
+        /// Initializes a new instance of the <see cref="SecurityService" /> class.
         /// </summary>
-        public SecurityService()
+        /// <param name="client">The client.</param>
+        public SecurityService(IPersistenceServiceOf_User client)
         {
-            this.client = new PersistenceServiceOf_UserClient();
+            this.client = client;
         }
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace SoCrm.Services.Security.Provider
         /// </returns>
         public User GetUserByObjectId(Guid objectId)
         {
-            return this.client.GetAll().Single(u => u.ObjectId == objectId);
+            return this.client.Get(objectId);
         }
 
         /// <summary>
@@ -178,14 +179,6 @@ namespace SoCrm.Services.Security.Provider
         public void DeleteUser(User user)
         {
             this.client.Remove(user);
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.client.Close();
         }
 
         /// <summary>

@@ -98,6 +98,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Security.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Core.Services", "SoCrm.Core.Services\SoCrm.Core.Services.csproj", "{234A3C6B-D4B0-4206-BBB4-69ED99A82C50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Security.Provider.Tests", "Tests\SoCrm.Services.Security.Provider.Tests\SoCrm.Services.Security.Provider.Tests.csproj", "{67EC5385-24CC-4451-9410-CDB2C9007C87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -208,6 +210,10 @@ Global
 		{234A3C6B-D4B0-4206-BBB4-69ED99A82C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{234A3C6B-D4B0-4206-BBB4-69ED99A82C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{234A3C6B-D4B0-4206-BBB4-69ED99A82C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67EC5385-24CC-4451-9410-CDB2C9007C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67EC5385-24CC-4451-9410-CDB2C9007C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67EC5385-24CC-4451-9410-CDB2C9007C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67EC5385-24CC-4451-9410-CDB2C9007C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,6 +250,7 @@ Global
 		{FC3D5390-7D50-43EF-A17D-B921CED4A36A} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{A47549B9-6C11-41F6-8BCF-251CBF51E609} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{220B7AE4-6883-4DDA-83A5-5E72271EB5E8} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{67EC5385-24CC-4451-9410-CDB2C9007C87} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
