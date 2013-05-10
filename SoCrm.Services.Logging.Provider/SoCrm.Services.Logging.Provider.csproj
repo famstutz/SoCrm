@@ -40,10 +40,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.ServiceModel.Web" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +58,7 @@
     <Content Include="Properties\DataSources\SoCrm.Services.Logging.Contracts.LogEvent.datasource">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="packages.config" />
     <None Include="Service References\LogEventPersistence\LogEventPersistenceService.disco" />
     <None Include="Service References\LogEventPersistence\configuration91.svcinfo" />
     <None Include="Service References\LogEventPersistence\configuration.svcinfo" />
@@ -63,6 +71,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoggingServiceHostFactory.cs" />
     <Compile Include="LoggingService.svc.cs">
       <DependentUpon>LoggingService.svc</DependentUpon>
     </Compile>
@@ -101,6 +110,10 @@
     <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Core.Services\SoCrm.Core.Services.csproj">
+      <Project>{234A3C6B-D4B0-4206-BBB4-69ED99A82C50}</Project>
+      <Name>SoCrm.Core.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
       <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>

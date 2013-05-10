@@ -19,19 +19,20 @@ namespace SoCrm.Services.Logging.Provider
     /// <summary>
     /// The logging service.
     /// </summary>
-    public sealed class LoggingService : ILoggingService, IDisposable
+    public sealed class LoggingService : ILoggingService
     {
         /// <summary>
         /// The client.
         /// </summary>
-        private readonly PersistenceServiceOf_LogEventClient client;
+        private readonly IPersistenceServiceOf_LogEvent client;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoggingService"/> class.
+        /// Initializes a new instance of the <see cref="LoggingService" /> class.
         /// </summary>
-        public LoggingService()
+        /// <param name="client">The client.</param>
+        public LoggingService(IPersistenceServiceOf_LogEvent client)
         {
-            this.client = new PersistenceServiceOf_LogEventClient();
+            this.client = client;
         }
 
         /// <summary>
@@ -93,14 +94,6 @@ namespace SoCrm.Services.Logging.Provider
         {
             var logEventObjectId = this.client.Save(new LogEvent { Message = message, Severity = severity, TimeStamp = timeStamp });
             return this.client.Get(logEventObjectId);
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.client.Close();
         }
     }
 }

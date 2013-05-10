@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SecurityServiceHostFactory.cs" company="Florian Amstutz">
+// <copyright file="LoggingServiceHostFactory.cs" company="Florian Amstutz">
 //   Copyright (c) 2013 by Florian Amstutz.
 // </copyright>
 // <summary>
@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SoCrm.Services.Security.Provider
+namespace SoCrm.Services.Logging.Provider
 {
     using System;
     using System.ServiceModel;
@@ -16,12 +16,12 @@ namespace SoCrm.Services.Security.Provider
     using Microsoft.Practices.Unity;
 
     using SoCrm.Core.Services;
-    using SoCrm.Services.Security.Provider.UserPersistence;
+    using SoCrm.Services.Logging.Provider.LogEventPersistence;
 
     /// <summary>
     /// The contact service host factory.
     /// </summary>
-    public class SecurityServiceHostFactory : ServiceHostFactory
+    public class LoggingServiceHostFactory : ServiceHostFactory
     {
         /// <summary>
         /// Creates a <see cref="T:System.ServiceModel.ServiceHost" /> for a specified type of service with a specific base address.
@@ -37,7 +37,7 @@ namespace SoCrm.Services.Security.Provider
             var container = new UnityContainer();
             serviceHost.Container = container;
 
-            container.RegisterType<IPersistenceServiceOf_User, PersistenceServiceOf_UserClient>(new InjectionConstructor());
+            container.RegisterType<IPersistenceServiceOf_LogEvent, PersistenceServiceOf_LogEventClient>(new InjectionConstructor());
 
             return serviceHost;
         }
