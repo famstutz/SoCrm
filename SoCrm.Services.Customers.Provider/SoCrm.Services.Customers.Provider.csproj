@@ -40,15 +40,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="SoCrm.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.ServiceModel.Web" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomerService.svc" />
     <Content Include="Properties\DataSources\SoCrm.Services.Customers.Contracts.Address.datasource" />
+    <Content Include="packages.config" />
     <None Include="Service References\AddressPersistence\AddressPersistenceService.disco" />
     <None Include="Service References\AddressPersistence\configuration91.svcinfo" />
     <None Include="Service References\AddressPersistence\configuration.svcinfo" />
@@ -150,6 +158,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerServiceHostFactory.cs" />
     <Compile Include="CustomerService.svc.cs">
       <DependentUpon>CustomerService.svc</DependentUpon>
     </Compile>
@@ -201,6 +210,10 @@
     <ProjectReference Include="..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoCrm.Core.Services\SoCrm.Core.Services.csproj">
+      <Project>{234A3C6B-D4B0-4206-BBB4-69ED99A82C50}</Project>
+      <Name>SoCrm.Core.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
       <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>

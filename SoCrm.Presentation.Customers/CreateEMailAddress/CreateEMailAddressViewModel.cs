@@ -145,7 +145,7 @@ namespace SoCrm.Presentation.Customers.CreateEMailAddress
         /// <param name="obj">The object.</param>
         private void OnCreateEMailAddress(object obj)
         {
-            var emailAddress = this.customerService.CreateEmailAddress(this.Address, this.ContactType);
+            var emailAddress = this.customerService.CreateEMailAddress(this.Address, this.ContactType);
             this.customerController.SetLastStatus(string.Format("Successfully created e-mail address {0}.", emailAddress.Address));
             this.customerController.NavigateBackToCreateCustomer(emailAddress);
         }

@@ -48,8 +48,8 @@ namespace SoCrm.Presentation.Customers.Customer {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreatePhoneNumber", ReplyAction="http://tempuri.org/ICustomerService/CreatePhoneNumberResponse")]
         SoCrm.Services.Customers.Contracts.PhoneNumber CreatePhoneNumber(string phoneNumber, SoCrm.Services.Customers.Contracts.ContactType contactType);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateEmailAddress", ReplyAction="http://tempuri.org/ICustomerService/CreateEmailAddressResponse")]
-        SoCrm.Services.Customers.Contracts.EMailAddress CreateEmailAddress(string emailAddress, SoCrm.Services.Customers.Contracts.ContactType contactType);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateEMailAddress", ReplyAction="http://tempuri.org/ICustomerService/CreateEMailAddressResponse")]
+        SoCrm.Services.Customers.Contracts.EMailAddress CreateEMailAddress(string emailAddress, SoCrm.Services.Customers.Contracts.ContactType contactType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/CreateCompany", ReplyAction="http://tempuri.org/ICustomerService/CreateCompanyResponse")]
         SoCrm.Services.Customers.Contracts.Company CreateCompany(string name, string addressLine, string zipCode, string city, string country, string website);
@@ -141,8 +141,8 @@ namespace SoCrm.Presentation.Customers.Customer {
             return base.Channel.CreatePhoneNumber(phoneNumber, contactType);
         }
         
-        public SoCrm.Services.Customers.Contracts.EMailAddress CreateEmailAddress(string emailAddress, SoCrm.Services.Customers.Contracts.ContactType contactType) {
-            return base.Channel.CreateEmailAddress(emailAddress, contactType);
+        public SoCrm.Services.Customers.Contracts.EMailAddress CreateEMailAddress(string emailAddress, SoCrm.Services.Customers.Contracts.ContactType contactType) {
+            return base.Channel.CreateEMailAddress(emailAddress, contactType);
         }
         
         public SoCrm.Services.Customers.Contracts.Company CreateCompany(string name, string addressLine, string zipCode, string city, string country, string website) {

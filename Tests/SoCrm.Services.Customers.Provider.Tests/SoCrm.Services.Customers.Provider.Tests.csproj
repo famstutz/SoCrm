@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{757AC0E3-AC54-4AF6-B7A5-FAC11F1E4E2F}</ProjectGuid>
+    <ProjectGuid>{92DCCBF0-AF2E-4D92-9A3C-83EEF1F28400}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SoCrm.Services.Logging.Provider.Tests</RootNamespace>
-    <AssemblyName>SoCrm.Services.Logging.Provider.Tests</AssemblyName>
+    <RootNamespace>SoCrm.Services.Customers.Provider.Tests</RootNamespace>
+    <AssemblyName>SoCrm.Services.Customers.Provider.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,9 +38,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoggingServiceTests.cs" />
+    <Compile Include="CustomerServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,13 +56,13 @@
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Core.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SoCrm.Services.Logging.Contracts\SoCrm.Services.Logging.Contracts.csproj">
-      <Project>{10282890-8F76-4AC9-A361-214535C47F0D}</Project>
-      <Name>SoCrm.Services.Logging.Contracts</Name>
+    <ProjectReference Include="..\..\SoCrm.Services.Customers.Contracts\SoCrm.Services.Customers.Contracts.csproj">
+      <Project>{603A6FB9-68D4-4E0F-8DE4-E3EDA93E3735}</Project>
+      <Name>SoCrm.Services.Customers.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SoCrm.Services.Logging.Provider\SoCrm.Services.Logging.Provider.csproj">
-      <Project>{9E05D837-AB23-44D9-8F89-631F2C2BBBD2}</Project>
-      <Name>SoCrm.Services.Logging.Provider</Name>
+    <ProjectReference Include="..\..\SoCrm.Services.Customers.Provider\SoCrm.Services.Customers.Provider.csproj">
+      <Project>{A80D72DD-65ED-4E97-A6C8-BF700F439212}</Project>
+      <Name>SoCrm.Services.Customers.Provider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

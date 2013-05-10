@@ -24,43 +24,53 @@ namespace SoCrm.Services.Customers.Provider
     /// <summary>
     /// The customer service.
     /// </summary>
-    public sealed class CustomerService : ICustomerService, IDisposable
+    public sealed class CustomerService : ICustomerService
     {
         /// <summary>
         /// The address client.
         /// </summary>
-        private readonly PersistenceServiceOf_AddressClient addressClient;
+        private readonly IPersistenceServiceOf_Address addressClient;
 
         /// <summary>
         /// The company client.
         /// </summary>
-        private readonly PersistenceServiceOf_CompanyClient companyClient;
+        private readonly IPersistenceServiceOf_Company companyClient;
 
         /// <summary>
         /// The e mail address client.
         /// </summary>
-        private readonly PersistenceServiceOf_EMailAddressClient emailAddressClient;
+        private readonly IPersistenceServiceOf_EMailAddress emailAddressClient;
 
         /// <summary>
         /// The person client.
         /// </summary>
-        private readonly PersistenceServiceOf_PersonClient personClient;
+        private readonly IPersistenceServiceOf_Person personClient;
 
         /// <summary>
         /// The phone number client
         /// </summary>
-        private readonly PersistenceServiceOf_PhoneNumberClient phoneNumberClient;
+        private readonly IPersistenceServiceOf_PhoneNumber phoneNumberClient;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomerService"/> class.
+        /// Initializes a new instance of the <see cref="CustomerService" /> class.
         /// </summary>
-        public CustomerService()
+        /// <param name="addressClient">The address client.</param>
+        /// <param name="companyClient">The company client.</param>
+        /// <param name="emailAddressClient">The email address client.</param>
+        /// <param name="personClient">The person client.</param>
+        /// <param name="phoneNumberClient">The phone number client.</param>
+        public CustomerService(
+            IPersistenceServiceOf_Address addressClient,
+            IPersistenceServiceOf_Company companyClient,
+            IPersistenceServiceOf_EMailAddress emailAddressClient,
+            IPersistenceServiceOf_Person personClient,
+            IPersistenceServiceOf_PhoneNumber phoneNumberClient)
         {
-            this.addressClient = new PersistenceServiceOf_AddressClient();
-            this.companyClient = new PersistenceServiceOf_CompanyClient();
-            this.emailAddressClient = new PersistenceServiceOf_EMailAddressClient();
-            this.personClient = new PersistenceServiceOf_PersonClient();
-            this.phoneNumberClient = new PersistenceServiceOf_PhoneNumberClient();
+            this.addressClient = addressClient;
+            this.companyClient = companyClient;
+            this.emailAddressClient = emailAddressClient;
+            this.personClient = personClient;
+            this.phoneNumberClient = phoneNumberClient;
         }
 
         /// <summary>
@@ -224,7 +234,7 @@ namespace SoCrm.Services.Customers.Provider
         /// <returns>
         /// The created e mail address.
         /// </returns>
-        public EMailAddress CreateEmailAddress(string emailAddress, ContactType contactType)
+        public EMailAddress CreateEMailAddress(string emailAddress, ContactType contactType)
         {
             var emailAddressObjectId = this.emailAddressClient.Save(new EMailAddress { Address = emailAddress, ContactType = contactType });
             return this.emailAddressClient.Get(emailAddressObjectId);
@@ -341,18 +351,6 @@ namespace SoCrm.Services.Customers.Provider
         public void DeleteCompany(Company company)
         {
             this.companyClient.Remove(company);
-        }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.addressClient.Close();
-            this.companyClient.Close();
-            this.emailAddressClient.Close();
-            this.personClient.Close();
-            this.phoneNumberClient.Close();
         }
     }
 }

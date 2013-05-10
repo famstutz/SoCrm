@@ -75,11 +75,11 @@
   <wsdl:message name="ICustomerService_CreatePhoneNumber_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreatePhoneNumberResponse" />
   </wsdl:message>
-  <wsdl:message name="ICustomerService_CreateEmailAddress_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEmailAddress" />
+  <wsdl:message name="ICustomerService_CreateEMailAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEMailAddress" />
   </wsdl:message>
-  <wsdl:message name="ICustomerService_CreateEmailAddress_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEmailAddressResponse" />
+  <wsdl:message name="ICustomerService_CreateEMailAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateEMailAddressResponse" />
   </wsdl:message>
   <wsdl:message name="ICustomerService_CreateCompany_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateCompany" />
@@ -162,9 +162,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/CreatePhoneNumber" message="tns:ICustomerService_CreatePhoneNumber_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/CreatePhoneNumberResponse" message="tns:ICustomerService_CreatePhoneNumber_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateEmailAddress">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/CreateEmailAddress" message="tns:ICustomerService_CreateEmailAddress_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/CreateEmailAddressResponse" message="tns:ICustomerService_CreateEmailAddress_OutputMessage" />
+    <wsdl:operation name="CreateEMailAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/CreateEMailAddress" message="tns:ICustomerService_CreateEMailAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerService/CreateEMailAddressResponse" message="tns:ICustomerService_CreateEMailAddress_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateCompany">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerService/CreateCompany" message="tns:ICustomerService_CreateCompany_InputMessage" />
@@ -292,8 +292,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateEmailAddress">
-      <soap:operation soapAction="http://tempuri.org/ICustomerService/CreateEmailAddress" style="document" />
+    <wsdl:operation name="CreateEMailAddress">
+      <soap:operation soapAction="http://tempuri.org/ICustomerService/CreateEMailAddress" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

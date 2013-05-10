@@ -111,7 +111,7 @@ namespace SoCrm.Services.Customers.Contracts
         /// <param name="contactType">Type of the contact.</param>
         /// <returns>The created e mail address.</returns>
         [OperationContract]
-        EMailAddress CreateEmailAddress(string emailAddress, ContactType contactType);
+        EMailAddress CreateEMailAddress(string emailAddress, ContactType contactType);
 
         /// <summary>
         /// Creates the company.
