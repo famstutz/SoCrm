@@ -27,7 +27,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// Initializes a new instance of the <see cref="PersonPersistenceService"/> class.
         /// </summary>
         public PersonPersistenceService()
-            : base("Customer.sdf", "People")
+            : base("Customer", "People")
         {
         }
 

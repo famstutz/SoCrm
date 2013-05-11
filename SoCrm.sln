@@ -104,8 +104,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Logging.Prov
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Services.Customers.Provider.Tests", "Tests\SoCrm.Services.Customers.Provider.Tests\SoCrm.Services.Customers.Provider.Tests.csproj", "{92DCCBF0-AF2E-4D92-9A3C-83EEF1F28400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.App.Tests", "Tests\SoCrm.Presentation.App.Tests\SoCrm.Presentation.App.Tests.csproj", "{089D537C-1F04-4299-91AF-BD7E5A13D49B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -228,10 +226,6 @@ Global
 		{92DCCBF0-AF2E-4D92-9A3C-83EEF1F28400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92DCCBF0-AF2E-4D92-9A3C-83EEF1F28400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92DCCBF0-AF2E-4D92-9A3C-83EEF1F28400}.Release|Any CPU.Build.0 = Release|Any CPU
-		{089D537C-1F04-4299-91AF-BD7E5A13D49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{089D537C-1F04-4299-91AF-BD7E5A13D49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{089D537C-1F04-4299-91AF-BD7E5A13D49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{089D537C-1F04-4299-91AF-BD7E5A13D49B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -271,7 +265,6 @@ Global
 		{67EC5385-24CC-4451-9410-CDB2C9007C87} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{757AC0E3-AC54-4AF6-B7A5-FAC11F1E4E2F} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{92DCCBF0-AF2E-4D92-9A3C-83EEF1F28400} = {8A2C321B-15AD-4421-846E-730377E2EB05}
-		{089D537C-1F04-4299-91AF-BD7E5A13D49B} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35

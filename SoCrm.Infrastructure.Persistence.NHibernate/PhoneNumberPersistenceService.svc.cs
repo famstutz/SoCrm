@@ -3,22 +3,20 @@
 //   Copyright (c) 2013 by Florian Amstutz.
 // </copyright>
 // <summary>
-//   The phone number persistence service.
+//   Defines the PhoneNumberPersistenceService type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SoCrm.Infrastructure.Persistence.Dapper
+namespace SoCrm.Infrastructure.Persistence.NHibernate
 {
     using System;
     using System.Collections.Generic;
-
-    using global::Dapper;
 
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Customers.Contracts;
 
     /// <summary>
-    /// The phone number persistence service.
+    /// The address persistence service.
     /// </summary>
     public class PhoneNumberPersistenceService : PersistenceServiceBase<PhoneNumber>, IPhoneNumberPersistenceService
     {
@@ -26,7 +24,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// Initializes a new instance of the <see cref="PhoneNumberPersistenceService"/> class.
         /// </summary>
         public PhoneNumberPersistenceService()
-            : base("Customer", "PhoneNumbers")
+            : base("Customer")
         {
         }
 
@@ -37,47 +35,14 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// <returns>The id of the phone number.</returns>
         public Guid Save(PhoneNumber entity)
         {
-            using (var connection = this.OpenConnection())
-            {
-                if (this.IsEntityStoredInDatabase(entity))
-                {
-                    entity.LastUpdateTimeStamp = DateTime.Now;
-
-                    connection.Execute(
-                        "UPDATE PhoneNumbers SET Number = @Number, ContactType = @ContactType, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
-                        new
-                            {
-                                entity.Number,
-                                entity.ContactType,
-                                entity.LastUpdateTimeStamp,
-                                entity.ObjectId
-                            });
-                }
-                else
-                {
-                    this.PrepareEntity(ref entity);
-
-                    connection.Execute(
-                        "INSERT INTO PhoneNumbers (ObjectId, Number, ContactType, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Number, @ContactType, @CreationTimeStamp, @LastUpdateTimeStamp)",
-                        new
-                            {
-                                entity.ObjectId,
-                                entity.Number,
-                                entity.ContactType,
-                                entity.CreationTimeStamp,
-                                entity.LastUpdateTimeStamp
-                            });
-                }
-            }
-
-            return entity.ObjectId;
+            return this.SaveOrUpdateEntity(entity);
         }
 
         /// <summary>
         /// Gets the specified object id.
         /// </summary>
         /// <param name="objectId">The object id.</param>
-        /// <returns>The phone number.</returns>
+        /// <returns>A phone number.</returns>
         public PhoneNumber Get(Guid objectId)
         {
             return this.GetEntity(objectId);
@@ -95,7 +60,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// <summary>
         /// Removes the specified entity.
         /// </summary>
-        /// <param name="entity">The phone number.</param>
+        /// <param name="entity">The entity.</param>
         public void Remove(PhoneNumber entity)
         {
             this.RemoveEntity(entity);

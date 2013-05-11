@@ -7,12 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SoCrm.Infrastructure.Persistence.Dapper
+namespace SoCrm.Infrastructure.Persistence.NHibernate
 {
     using System;
     using System.Collections.Generic;
-
-    using global::Dapper;
 
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Services.Logging.Contracts;
@@ -26,7 +24,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// Initializes a new instance of the <see cref="LogEventPersistenceService"/> class.
         /// </summary>
         public LogEventPersistenceService()
-            : base("Logging", "LogEvents")
+            : base("Logging")
         {
         }
 
@@ -37,49 +35,14 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// <returns>The id of the log event.</returns>
         public Guid Save(LogEvent entity)
         {
-            using (var connection = this.OpenConnection())
-            {
-                if (this.IsEntityStoredInDatabase(entity))
-                {
-                    entity.LastUpdateTimeStamp = DateTime.Now;
-
-                    connection.Execute(
-                        "UPDATE LogEvents SET Message = @Message, Severity = @Severity, TimeStamp = @TimeStamp, LastUpdateTimeStamp = @LastUpdateTimeStamp WHERE ObjectId = @ObjectId",
-                        new
-                            {
-                                entity.Message,
-                                entity.Severity,
-                                entity.TimeStamp,
-                                entity.LastUpdateTimeStamp,
-                                entity.ObjectId
-                            });
-                }
-                else
-                {
-                    this.PrepareEntity(ref entity);
-
-                    connection.Execute(
-                        "INSERT INTO LogEvents (ObjectId, Message, Severity, TimeStamp, CreationTimeStamp, LastUpdateTimeStamp) VALUES (@ObjectId, @Message, @Severity, @TimeStamp, @CreationTimeStamp, @LastUpdateTimeStamp)",
-                        new
-                            {
-                                entity.ObjectId,
-                                entity.Message,
-                                entity.Severity,
-                                entity.TimeStamp,
-                                entity.CreationTimeStamp,
-                                entity.LastUpdateTimeStamp
-                            });
-                }
-            }
-
-            return entity.ObjectId;
+            return this.SaveOrUpdateEntity(entity);
         }
 
         /// <summary>
         /// Gets the specified object id.
         /// </summary>
         /// <param name="objectId">The object id.</param>
-        /// <returns>The log event.</returns>
+        /// <returns>A log event.</returns>
         public LogEvent Get(Guid objectId)
         {
             return this.GetEntity(objectId);
@@ -101,6 +64,6 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         public void Remove(LogEvent entity)
         {
             this.RemoveEntity(entity);
-        }   
+        }
     }
 }

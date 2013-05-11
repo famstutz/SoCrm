@@ -57,7 +57,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         {
             var connection =
                 new SqlCeConnection(
-                    string.Format(@"Data Source=|DataDirectory|\{0};Persist Security Info=False", this.databaseName));
+                    string.Format(@"Data Source=|DataDirectory|\{0}.sdf;Persist Security Info=False", this.databaseName));
             connection.Open();
             return connection;
         }

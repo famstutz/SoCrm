@@ -27,7 +27,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// Initializes a new instance of the <see cref="CompanyPersistenceService"/> class.
         /// </summary>
         public CompanyPersistenceService()
-            : base("Customer.sdf", "Companies")
+            : base("Customer", "Companies")
         {
         }
 

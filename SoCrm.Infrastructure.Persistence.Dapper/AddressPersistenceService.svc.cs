@@ -26,7 +26,7 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
         /// Initializes a new instance of the <see cref="AddressPersistenceService"/> class.
         /// </summary>
         public AddressPersistenceService()
-            : base("Customer.sdf", "Addresses")
+            : base("Customer", "Addresses")
         {
         }
 
