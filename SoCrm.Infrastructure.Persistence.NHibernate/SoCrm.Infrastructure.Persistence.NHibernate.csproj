@@ -81,8 +81,15 @@
     <Compile Include="LogEventPersistenceService.svc.cs">
       <DependentUpon>LogEventPersistenceService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Mappings\AddressMap.cs" />
+    <Compile Include="Mappings\CompanyMap.cs" />
+    <Compile Include="Mappings\ContactMap.cs" />
     <Compile Include="Mappings\DomainObjectMap.cs" />
+    <Compile Include="Mappings\EMailAddressMap.cs" />
     <Compile Include="Mappings\LogEventMap.cs" />
+    <Compile Include="Mappings\PersonMap.cs" />
+    <Compile Include="Mappings\PhoneNumberMap.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="PersistenceServiceBase.cs" />
     <Compile Include="PersonPersistenceService.svc.cs">

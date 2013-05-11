@@ -34,7 +34,7 @@ namespace SoCrm.Infrastructure.Persistence.NHibernate
                             MsSqlCeConfiguration.Standard.ConnectionString(
                                 string.Format(
                                     @"Data Source=|DataDirectory|\{0}.sdf;Persist Security Info=False", databaseName)))
-                        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<LogEventPersistenceService>())
+                        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Global>())
                         .ExposeConfiguration(BuildSchema)
                         .BuildSessionFactory();
         }
