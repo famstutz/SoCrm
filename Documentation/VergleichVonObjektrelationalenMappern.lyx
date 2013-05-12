@@ -178,7 +178,15 @@ Management Summary
 Objektorientierte Programmiersprachen kapseln Daten und Verhalten in Objekten,
  relationale Datenbank verwenden hingegen Tabellen.
  Um zwischen diesen grundverschiedenen Paradigmen übersetzen zu können werden
- objektrelationale Mapper (OR-Mapper) verwendet.
+ objektrelationale Mapper (OR-Mapper
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OR-Mapper"
+description "Ein OR-Mapper (objektrelationaler Mapper) stellt eine Schicht zwischen Anwendung und Datenbank dar. Der OR-Mapper kümmert sich dabei um das Mapping zwischen Objekten und Zeilen einer Tabelle in der Datenbank."
+
+\end_inset
+
+) verwendet.
  
 \end_layout
 
@@ -237,6 +245,29 @@ t und dargelegt werden.
  Im Umsetzungsteil erfolgt anschliessend die Beschreibung der Implementierung
  bzw.
  der Anwendung.
+\end_layout
+
+\begin_layout Section
+Ziel der Arbeit
+\end_layout
+
+\begin_layout Standard
+Das Ziel dieser Arbeit besteht darin die Entscheidung zu vereinfachen, welchen
+ OR-Mapper in welcher Art von Applikation eingesetzt werden soll.
+ Die Entscheidungsgrundlage wird dabei auf Basis von Enterprise Pattern
+ (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+) gegeben, welche heutzutage in jeder grösseren Applikation eine entscheidene
+ Rolle spielen.
+ Abschliessend wird pro Enterpise Pattern eine Empfehlung abgegeben werden,
+ welcher frei verfügbare und Open-Source OR-Mapper im .NET-Umfeld eingesetzt
+ werden soll.
+ 
 \end_layout
 
 \begin_layout Section
@@ -765,7 +796,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="4">
+<lyxtabular version="3" rows="10" columns="4">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0">
 <column alignment="left" valignment="top" width="0">
@@ -823,7 +854,7 @@ Themenevaluation
 \begin_inset Text
 
 \begin_layout Plain Layout
-15.10.2011
+02.10.2012
 \end_layout
 
 \end_inset
@@ -832,7 +863,7 @@ Themenevaluation
 \begin_inset Text
 
 \begin_layout Plain Layout
-04.11.2011
+16.11.2012
 \end_layout
 
 \end_inset
@@ -841,7 +872,45 @@ Themenevaluation
 \begin_inset Text
 
 \begin_layout Plain Layout
-M1, M2
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erstellung der Aufgabenstellung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17.11.2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+07.01.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M1
 \end_layout
 
 \end_inset
@@ -861,7 +930,7 @@ Erfassen der Anforderungen
 \begin_inset Text
 
 \begin_layout Plain Layout
-04.11.2011
+08.01.2013
 \end_layout
 
 \end_inset
@@ -870,7 +939,45 @@ Erfassen der Anforderungen
 \begin_inset Text
 
 \begin_layout Plain Layout
-01.12.2011
+30.01.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erstellen der Marktübersicht
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31.01.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02.03.2013
 \end_layout
 
 \end_inset
@@ -886,20 +993,11 @@ Erfassen der Anforderungen
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Erarbeiten des Konzepts
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-01.12.2011
+Auswahl und Vergleich ausgewählter OR-Mapper
 \end_layout
 
 \end_inset
@@ -908,7 +1006,54 @@ Erarbeiten des Konzepts
 \begin_inset Text
 
 \begin_layout Plain Layout
-13.03.2012
+03.03.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28.03.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implementierung Proof of Concept
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29.03.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22.05.2013
 \end_layout
 
 \end_inset
@@ -928,7 +1073,7 @@ M3
 \begin_inset Text
 
 \begin_layout Plain Layout
-Implementierungs des Konzepts
+Erstellung Produktempfehlung
 \end_layout
 
 \end_inset
@@ -937,7 +1082,7 @@ Implementierungs des Konzepts
 \begin_inset Text
 
 \begin_layout Plain Layout
-13.03.2012
+23.05.2013
 \end_layout
 
 \end_inset
@@ -946,7 +1091,7 @@ Implementierungs des Konzepts
 \begin_inset Text
 
 \begin_layout Plain Layout
-01.05.2012
+01.06.2013
 \end_layout
 
 \end_inset
@@ -966,7 +1111,7 @@ Implementierungs des Konzepts
 \begin_inset Text
 
 \begin_layout Plain Layout
-Überprüfen und Test des Konzepts
+Finalisierung Dokumentation
 \end_layout
 
 \end_inset
@@ -975,7 +1120,7 @@ Implementierungs des Konzepts
 \begin_inset Text
 
 \begin_layout Plain Layout
-01.05.2012
+02.06.2013
 \end_layout
 
 \end_inset
@@ -984,7 +1129,7 @@ Implementierungs des Konzepts
 \begin_inset Text
 
 \begin_layout Plain Layout
-23.05.2012
+09.07.2013
 \end_layout
 
 \end_inset
@@ -1013,7 +1158,7 @@ Erarbeiten der Präsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-23.05.2012
+10.07.2013
 \end_layout
 
 \end_inset
@@ -1022,7 +1167,7 @@ Erarbeiten der Präsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-06.06.2012
+???
 \end_layout
 
 \end_inset
@@ -1148,7 +1293,7 @@ M1
 \begin_inset Text
 
 \begin_layout Plain Layout
-Kick-Off 
+Freigabe der Arbeit
 \end_layout
 
 \end_inset
@@ -1157,7 +1302,7 @@ Kick-Off
 \begin_inset Text
 
 \begin_layout Plain Layout
-04.11.2011
+07.01.2013
 \end_layout
 
 \end_inset
@@ -1177,7 +1322,7 @@ M2
 \begin_inset Text
 
 \begin_layout Plain Layout
-Freigabe der Arbeit
+Kick-Off 
 \end_layout
 
 \end_inset
@@ -1186,7 +1331,7 @@ Freigabe der Arbeit
 \begin_inset Text
 
 \begin_layout Plain Layout
-06.11.2011
+30.01.2013
 \end_layout
 
 \end_inset
@@ -1215,7 +1360,7 @@ Design-Review
 \begin_inset Text
 
 \begin_layout Plain Layout
-13.03.2012
+22.05.2013
 \end_layout
 
 \end_inset
@@ -1244,7 +1389,7 @@ Abgabe der Arbeit
 \begin_inset Text
 
 \begin_layout Plain Layout
-23.05.2012
+09.07.2013
 \end_layout
 
 \end_inset
@@ -1273,7 +1418,7 @@ Schlusspräsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-06.06.2012
+???
 \end_layout
 
 \end_inset
@@ -1304,6 +1449,236 @@ name "tab:Meilensteine"
 
 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Anforderungen
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Anforderungen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In der Phasenplanung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Phasenplanung"
+
+\end_inset
+
+) wurde festgelegt, dass in der ersten Projektphase die Anforderungen erhoben
+ werden.
+ Dazu wird zu Beginn dieses Kapitels der Begriff Anforderung definiert und
+ es wird auf verschiedene Arten von Anforderungen näher eingegangen.
+ Anschliessend werden die Anforderungen an den Persistenzlayer einer serviceorie
+ntierten Architektur festgehalten sowie die Anforderungen der betrachteten
+ Enterprise Pattern erhoben.
+ In einem letzten Schritt wird der Systemkontext der CRM-Applikation beschrieben
+ und eingegrenzt sowie die konkreten Anforderungen an die CRM-Applikation
+ als Use-Cases
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Use-Case"
+description "Ein Use-Case (dt. Anwendungsfall) bündelt alle möglichen Szenarien, die eintreten können, wenn ein Akteur versucht, mit Hilfe des betrachteten Systems ein bestimmtes fachliches Ziel zu erreichen. Er beschreibt, was inhaltlich beim Versuch der Zielerreichung passieren kann, und abstrahiert von konkreten technischen Lösungen. Das Ergebnis des Anwendungsfalls kann ein Erfolg oder Fehlschlag/Abbruch sein."
+
+\end_inset
+
+ modelliert und spezifiziert.
+ Der Abschluss dieses Kapitels wie auch der Anforderungsphase selbst bildet
+ das Entwerfen der für den Benutzer sichtbaren Dialogfenster.
+\end_layout
+
+\begin_layout Section
+Was sind Anforderungen?
+\end_layout
+
+\begin_layout Standard
+Die erste Phase des Wasserfallmodells beschäftigt sich mit den Anforderungen
+ an das zu entwickelnde Softwareprodukt.
+ Damit das Entwicklungsprodukt zum Erfolg geführt werden kann, muss zunächst
+ bekannt sein, was die Anforderungen an das System sind und diese müssen
+ geeignet dokumentiert sein.
+ Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEEE610.12-1990"
+
+\end_inset
+
+ wird eine Anforderung wie folgt definiert:
+\end_layout
+
+\begin_layout Description
+Anforderung Eine Anforderung ist:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Eine Bedingung oder Fähigkeit, die von einem Benutzer (Person oder System)
+ zur Lösung eines Problems zur Erreichung eines Ziels benötigt wird.
+\end_layout
+
+\begin_layout Enumerate
+Eine Bedingung oder Fähigkeit, die ein System oder Teilsystem erfüllen oder
+ besitzen muss, um einen Vertrag, eine Norm, eine Spezifikation oder andere,
+ formell vorgegebene Dokumente zu erfüllen.
+\end_layout
+
+\begin_layout Enumerate
+Eine dokumentierte Repräsentation einer Bedingung oder Eigenschaft gemäss
+ 1.
+ oder 2.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+---
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen an das im Rahmen dieser Semesterarbeit zu entwickelnde
+ System werden in Use-Case-Diagrammen modellhaft dargestellt und als Use-Case-Sp
+ezifikationen ausformuliert.
+ Auf eine natürlichsprachige Dokumentation der Anforderungen wird verzichtet,
+ da die modellierten Anforderungen innerhalb der Use-Case-Diagramme verständlich
+ genug sind und zu den Use-Case-Diagrammen noch detaillierte Use-Case-Spezifikat
+ionen vorhanden sind, welche die gesamte Anforderung abdecken.
+ 
+\end_layout
+
+\begin_layout Subsection
+Arten von Anforderungen
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Arten-von-Anforderungen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+ unterscheidet man im Allgemeinen zwischen drei Arten von Anforderungen:
+\end_layout
+
+\begin_layout Itemize
+Funktionale Anforderungen legen die Funktionalität fest, die das geplante
+ System zur Verfügung stellen soll.
+ Sie werden typischerweise in Funktions-, Verhaltens- und Strukturanforderungen
+ unterteilt.
+\end_layout
+
+\begin_layout Itemize
+Qualitätsanforderungen legen gewünschte Qualitäten des zu entwickelnden
+ Systems fest und beeinflussen häufig in grösserem Umfang als die funktionalen
+ Anforderungen die Gestalt der Systemarchitektur.
+ Typischerweise beziehen sich Qualitätsanforderungen auf die Performance,
+ die Verfügbarkeit, die Zuverlässigkeit, die Skalierbarkeit oder die Portabilitä
+t des betrachteten Systems.
+ Anforderungen dieses Typs werden häufig auch der Klasse 
+\begin_inset Quotes eld
+\end_inset
+
+nicht funktionaler Anforderungen
+\begin_inset Quotes erd
+\end_inset
+
+ zugeordnet.
+\end_layout
+
+\begin_layout Itemize
+Randbedingungen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+auch Rahmenbedingungen genannt
+\end_layout
+
+\end_inset
+
+ können von den Projektbeteiligten nicht beeinflusst werden.
+ Randbedingungen können sich sowohl auf das betrachtete System beziehen
+ (z.B.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Das System soll über Webservices mit Aussensysteme kommunizieren
+\begin_inset Quotes erd
+\end_inset
+
+) als auch auf den Entwicklungsprozess des Systems (z.B.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Das System soll bis spätestens Mitte 2013 am Markt verfügbar sein
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Randbedingungen werden, im Gegensatz zu funktionalen Anforderungen und
+ Qualitätsanforderungen, nicht umgesetzt, sondern schränken die Umsetzungsmöglic
+hkeiten, das heisst den Lösungsraum im Entwicklungsprozess ein.
+\end_layout
+
+\begin_layout Standard
+In diesem Dokument werden der Einfachheit halber nur funktionale Anforderungen
+ beschrieben.
+ Qualitätsanforderungen betreffend der Leistungsfähigkeit oder Wartbarkeit
+ des Systems werden nicht erhoben, da diese für den Prototypen nur eingeschränkt
+ relevant sind und innerhalb dieses Projekts darauf keinen Wert gelegt werden
+ soll.
+ 
+\end_layout
+
+\begin_layout Standard
+Rahmenbedingungen werden nicht implizit festgehalten sondern ergeben sich
+ einerseits aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stern2012"
+
+\end_inset
+
+ sowohl der technischen Umgebung des Systems.
+ Technische Rahmenbedingungen die das Projekt beeinflussen werden im Konzept
+ beziehungsweise in der Implementierung berücksichtigt und entsprechend
+ hervorgehoben.
+\end_layout
+
+\begin_layout Section
+Anforderungen Persistenzlayer
+\end_layout
+
+\begin_layout Section
+Anforderungen Enterprise Pattern
+\end_layout
+
+\begin_layout Section
+Anforderungen CRM-Applikation
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
 
 \end_inset
 
