@@ -1663,8 +1663,44 @@ key "Stern2012"
  hervorgehoben.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section
+Anforderungen Persistenzlayer
+\end_layout
 
+\begin_layout Section
+Anforderungen Enterprise Pattern
+\end_layout
+
+\begin_layout Subsection
+Transaction Script
+\end_layout
+
+\begin_layout Subsection
+Domain Model
+\end_layout
+
+\begin_layout Subsection
+Table Module
+\end_layout
+
+\begin_layout Subsection
+Active Record
+\end_layout
+
+\begin_layout Section
+Anforderungen CRM-Applikation
+\end_layout
+
+\begin_layout Subsection
+Systemkontext
+\end_layout
+
+\begin_layout Subsection
+Use-Case-Spezifikationen
+\end_layout
+
+\begin_layout Subsection
+Mockups
 \end_layout
 
 \begin_layout Standard
