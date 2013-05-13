@@ -1,0 +1,1728 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrbook
+\use_default_options true
+\maintain_unincluded_children false
+\language german-ch
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Vergleich von objektrelationalen Mappern
+\end_layout
+
+\begin_layout Author
+Florian Amstutz <
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+florian@amstutz.nu
+\end_layout
+
+\end_inset
+
+>
+\end_layout
+
+\begin_layout Publishers
+Bachelorarbeit an der Zürcher Hochschule für Angewandte Wissenschaften
+\end_layout
+
+\begin_layout Chapter*
+Eidesstattliche Erklärung
+\end_layout
+
+\begin_layout Standard
+Hiermit bestätigt die oder der Unterzeichnende, dass die Bachelorarbeit
+ mit dem Thema Vergleich von objektrelationalen Mapperngemäss freigegebener
+ Aufgabenstellung mit Freigabe vom 8.
+ Januar 2013 ohne jede fremde Hilfe im Rahmen der gültigen Reglements selbständi
+g ausgeführt wurde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{3em}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent Zürich, 
+\backslash
+today
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushright} 
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+overline{~~~~~~~~~
+\backslash
+mbox{Florian Amstutz}~~~~~~~~~}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Einführung
+\end_layout
+
+\begin_layout Standard
+Als einführendes Kapitel dieses Dokuments wird die Bachelorarbeit als Projekt
+ kurz vorgestellt und es werden die Rahmenbedingungen der Arbeit zusammengefasst
+ niedergeschrieben.
+ Weiter wird die Vorgehensweise für die Bearbeitung dieser Bachelorarbeit
+ vorgestellt und erklärt.
+ Am Ende dieses Kapitels wird die Projektplanung erstellt und die wichtigsten
+ Meilensteine festgelegt.
+\end_layout
+
+\begin_layout Section
+Management Summary
+\end_layout
+
+\begin_layout Standard
+Objektorientierte Programmiersprachen kapseln Daten und Verhalten in Objekten,
+ relationale Datenbank verwenden hingegen Tabellen.
+ Um zwischen diesen grundverschiedenen Paradigmen übersetzen zu können werden
+ objektrelationale Mapper (OR-Mapper
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OR-Mapper"
+description "Ein OR-Mapper (objektrelationaler Mapper) stellt eine Schicht zwischen Anwendung und Datenbank dar. Der OR-Mapper kümmert sich dabei um das Mapping zwischen Objekten und Zeilen einer Tabelle in der Datenbank."
+
+\end_inset
+
+) verwendet.
+ 
+\end_layout
+
+\begin_layout Standard
+Heutige serviceorientierte Architekturen verwenden fast in jedem Fall einen
+ Persistenzlayer welcher Objekte in eine Datenbank speichert und sie von
+ dort liest.
+ Diese Aufgabe wird meist nicht von der Applikation selber übernommen sondern
+ durch einen OR-Mapper ausgeführt.
+ Es gibt eine Reihe von Einflussfaktoren und Entscheidungskriterien die
+ beim Entwurf und der Implementierung von Persistenzkomponenten beachtet
+ werden müssen.
+ Die Auswahl des passenden OR-Mappers für die jeweilige Architektur ist
+ eine der zentralen Fragen, die zu Beginn des Implementierungszyklus einer
+ Applikation beantwortet werden muss (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+), denn oft ist der Persistenzlayer das Nadelöhr einer Enterprise Applikation
+ (gemäss 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Liebhart2007"
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Section
+Über die Bachelorarbeit
+\end_layout
+
+\begin_layout Standard
+Gemäss Reglement der ZHAW (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stern2012"
+
+\end_inset
+
+) dient die Bachelorarbeit zum Nachweis der Fähigkeit ingenieurswissenschaftlich
+ zu arbeiten.
+ Die Bachelorarbeit ist nach den allgemeingültigen Standards für technisch/wisse
+nschaftliches Arbeiten verfasst.
+\end_layout
+
+\begin_layout Standard
+Die Bachelorarbeit besteht aus einer konzeptionellen Arbeit und deren Umsetzung.
+ Der Schwerpunkt liegt auf dem konzeptionellen Teil, in dem die theoretischen
+ und methodischen Grundlagen einer Entwicklung oder eines Konzeptes ausgearbeite
+t und dargelegt werden.
+ Im Umsetzungsteil erfolgt anschliessend die Beschreibung der Implementierung
+ bzw.
+ der Anwendung.
+\end_layout
+
+\begin_layout Section
+Ziel der Arbeit
+\end_layout
+
+\begin_layout Standard
+Das Ziel dieser Arbeit besteht darin die Entscheidung zu vereinfachen, welchen
+ OR-Mapper in welcher Art von Applikation eingesetzt werden soll.
+ Die Entscheidungsgrundlage wird dabei auf Basis von Enterprise Pattern
+ (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+) gegeben, welche heutzutage in jeder grösseren Applikation eine entscheidene
+ Rolle spielen.
+ Abschliessend wird pro Enterpise Pattern eine Empfehlung abgegeben werden,
+ welcher frei verfügbare und Open-Source OR-Mapper im .NET-Umfeld eingesetzt
+ werden soll.
+ 
+\end_layout
+
+\begin_layout Section
+Vorgehensweise
+\end_layout
+
+\begin_layout Standard
+Software lässt sich nach einer Vielzahl von Prozessen und Modellen entwickeln.
+ Von iterativen Vorgehen wie Scrum über komplexe und vergleichsweise starre
+ Modelle wie RUP
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RUP"
+description "Der Rational Unified Process ist ein kommerzielles Vorgehensmodell zur Softwareentwicklung von IBM. "
+
+\end_inset
+
+ bis hin zu klassischen, linearen Vorgehen wie dem Wasserfallmodell
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Wasserfallmodell"
+description "Das Wasserfallmodell ist ein lineares (nicht iteratives) Vorgehensmodell, das in Phasen organisiert wird. Dabei gehen die Phasenergebnisse wie bei einem Wasserfall immer als bindende Vorgaben für die nächsttiefere Phase ein. Im Wasserfallmodell hat jede Phase vordefinierte Start- und Endpunkte mit eindeutig definierten Ergebnissen. "
+
+\end_inset
+
+ oder dem V-Modell
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "V-Modell"
+description "Das V-Modell ist ein Vorgehensmodell in der Softwareentwicklung, bei dem der Softwareentwicklungsprozess in Phasen organisiert wird. Neben diesen Entwicklungsphasen definiert das V-Modell auch das Vorgehen zur Qualitätssicherung (Testen) phasenweise."
+
+\end_inset
+
+.
+ Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+ ist die Auswahl des Entwicklungsprozesses eine der kritischsten Entscheidungen,
+ die man bei einem Softwareprojekt treffen muss.
+ Häufig besitzen Unternehmungen bereits etablierte, auf sie zugeschnittene
+ Entwicklungsmodelle, die mehr oder weniger gut zur Organisation der Unternehmun
+g und dem jeweiligen Projekt passen.
+ Ein ungünstig gewählter oder nicht vollständig eingeführter und gelebter
+ Entwicklungsprozess ist nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+ einer der Hauptgründe wieso Softwareprojekte mit Qualitätsmängeln, Budgetübersc
+hreitungen oder zeitlichen Verzögerungen zu kämpfen haben.
+\end_layout
+
+\begin_layout Standard
+Für dieses Projekt wurde das Wasserfallmodell als Entwicklungsprozess ausgewählt.
+ Das Wasserfallmodell teilt die Softwareentwicklung meist in fünf verschiedene
+ Phasen ein (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wasserfallprozess-nach"
+
+\end_inset
+
+).
+ Dabei kann jeweils erst mit der nächsten Phase begonnen werden wenn die
+ Lieferergebnisse und die Ergebnisdokumentation der vorhergehenden Phase
+ fertiggestellt und abgenommen worden sind.
+ Das Wasserfallmodell wurde ausgewählt, da dieses Projekt gut linear abgearbeite
+t werden kann und da der Betreuer als einziger externer Stakeholder
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Stakeholder"
+description "Als Stakeholder (engl.) wird eine Person oder Gruppe bezeichnet, die ein berechtigtes Interesse am Verlauf oder Ergebnis eines Prozesses oder Projektes hat."
+
+\end_inset
+
+ des Projekts zu festdefinierten Zeitpunkten (namtlich dem Kick-Off und
+ dem Design-Review) Einfluss auf das Projekt ausüben kann und danach keine
+ andere Möglichkeit besitzt, im Projektverlauf zu intervenieren.
+ Die grössten Nachteile des Wasserfallmodells sind nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Elmer2005"
+
+\end_inset
+
+ Abgrenzugsprobleme zwischen den einzelnen Phasen sowie die Schwierigkeit
+ des Abschlusses einzelner Phasen da diese nur mit viel (zusätzlichem) Aufwand
+ isoliert von anderen Phasen abgeschlossen werden können.
+ Dadurch dass der Betreuer nur in der Anforderungs- und Konzeptphase Einfluss
+ auf das Projekt nehmen kann und der Student alleinig den Abschluss der
+ Phasen steuert und verifiziert sowie den Ablauf der Phasen innerhalb des
+ Projekts steuert, können diese Nachteile umgangen werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/sw-process.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wasserfallprozess nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hung2007"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wasserfallprozess-nach"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zu Beginn des Wasserfallmodells steht das Sammeln und Dokumentieren der
+ Anforderungen (Requirements) im Vordergrund.
+ Wenn die Anforderungen umfänglich und in hohem Detaillierungsgrad niedergeschri
+eben sind, werden diese vom Auftraggeber abgenommen und das Projekt geht
+ in die Phase Design über.
+ Die zu entwickelnde Software wird auf verschiedenen Ebenen von Softwarearchitek
+ten designed und eine Blaupause wird erstellt, nach welcher sich die Softwareent
+wickler in der Implementationsphase zu halten haben.
+ Das Design sollte einen Plan beinhalten, welcher die Implementierung der
+ Anforderungen aufzeigt.
+ 
+\end_layout
+
+\begin_layout Standard
+Wenn das Design fertiggestellt worden ist, wird dieses von den Entwicklern
+ in Programmcode umgesetzt.
+ Gegen Ende der Implementierungsphase werden die Softwarekomponenten verschieden
+er Teams integriert und als Gesamtsystem zum Einsatz gebracht.
+ Nachdem die Implementierungs- und Integrationsphase abgeschlossen ist,
+ wird das Softwareprodukt getestet und allfällige Fehler aus früheren Phasen
+ werden zu diesem Zeitpunkt behoben.
+ Danach wird das Softwareprodukt installiert und später in der Wartungsphase
+ (Maintenance) um weitere Funktionalitäten erweitert beziehungsweise werden
+ neu entdeckte Bugs
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Bug"
+description "Ein Programm- oder Softwarefehler wird als Bug bezeichnet und beschreibt im Allgemeinen ein fehlerhaftes Verhalten von Computerprogrammen."
+
+\end_inset
+
+ behoben.
+\end_layout
+
+\begin_layout Standard
+Auch die Struktur dieses Projekts und der dazugehörigen Dokumentation hält
+ sich an den Wasserfallprozess nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hung2007"
+
+\end_inset
+
+ (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Zuweisungstablle-der-Phasen"
+
+\end_inset
+
+).
+ Die Phase Maintenance wird dabei ausgelassen, da sich die innerhalb des
+ Projekts entwickelte Applikation nach Abschluss der Verifizierungsphase
+ noch im Protoypenstadium befinden wird und nicht dem Reifegrad einer Applikatio
+n entspricht, die in die Wartung übergehen kann.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phase
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kapitelüberschrift
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Siehe Seite
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requirements
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Anforderungen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "chap:Anforderungen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Konzept-und-Architektur"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "chap:Konzept-und-Architektur"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implementation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Implementierung"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "chap:Implementierung"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verification
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Test"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "chap:Test"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Zuweisungstabelle der Phasen zu Kapiteln in diesem Dokument
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Zuweisungstablle-der-Phasen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Projektplanung
+\end_layout
+
+\begin_layout Standard
+Nach Reglement der ZHAW (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stern2012"
+
+\end_inset
+
+) muss die Bachelorarbeit sechs Monate nach Freigabe beendet sein.
+ Um die Planbarkeit der Arbeit zu erhöhen wurde das Projekt bei Projektstart
+ in einzelne Phasen unterteilt, welche auf die vorgängig bekannten Termine
+ als Meilensteine enden.
+\end_layout
+
+\begin_layout Standard
+Ziel dieser Phasenplanung ist es, möglichst frühzeitig im Verlauf der Bachelorar
+beit Teile der erwarteten Resultate sowie der Dokumentation fertiggestellt
+ zu haben, so dass das Risiko von Qualitätseinbussen der Abgaberesultate
+ durch überhastiges fertigstellen, gering ist.
+ Ausserdem sinkt das Wahrscheinlichkeit, dass nicht alle erwarteten Resultate
+ der Arbeit geliefert werden können, da die Lieferergebnisse bei jeweiligem
+ Phasenende schon in abgabefertiger Qualität vorliegen.
+\end_layout
+
+\begin_layout Subsection
+Phasenplanung
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Phasenplanung"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nach dem Wasserfallmodell wird das Projekt in einzelne Phasen eingeteilt,
+ die zu einem bestimmten Zeitpunkt mit vordefinierten Endergebnissenen enden.
+ Bei Erreichen des Endzeitpunkts und bei Lieferung aller Endergebnisse geht
+ das Projekt in die nächste Phase über.
+ Die Phasen dieser Semesterarbeit wurden so modelliert, dass ihr Endzeitpunkt
+ möglichst mit dem Erreichen eines Meilensteins zusammenfällt (siehe Tabelle
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Phasenplan"
+
+\end_inset
+
+).
+ Das heisst, dass bei Erreichen des Meilensteins die vorhergehende Phase
+ zwingend abgeschlossen sein muss.
+\end_layout
+
+\begin_layout Standard
+Vor dem eigentlichen Projektstart werden geeigeneten Themen für die Semesterarbe
+it evaluiert, ein Betreuer gesucht sowie ein Projektantrag in EBS erfasst.
+ Diese Phase endet mit dem Kick-Off-Meeting zwischen Betreuer und Student
+ sowie der formalen Freigabe der Semesterarbeit durch die Studiengangsleitung.
+ Das Erheben und Dokumentieren der Anforderungen ist die erste Phase des
+ eigentlichen Projekts und mündet in der Konzepterarbeitung auf Basis der
+ Anforderungen.
+ Ist das Konzept vollständig abgeschlossen, findet das Design-Review statt,
+ bei welchem der Betreuer das Konzept begutachtet und allfällige Anpassungen
+ daran vorschlägt.
+ Nach Fertigstellung des Konzepts folgt die Implementierungsphase und Testphase,
+ nach denen die Arbeit abgegeben werden muss.
+ In der letzten Phase des Projekts wird die Präsentation erarbeitet, die
+ an der Schlusspräsentation (Meilenstein M5) vorgetragen wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Phase
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Start
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ende
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Endet in Meilenstein
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Themenevaluation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02.10.2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16.11.2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erstellung der Aufgabenstellung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17.11.2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+07.01.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erfassen der Anforderungen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+08.01.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30.01.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erstellen der Marktübersicht
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31.01.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02.03.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Auswahl und Vergleich ausgewählter OR-Mapper
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03.03.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28.03.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implementierung Proof of Concept
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29.03.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22.05.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erstellung Produktempfehlung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23.05.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+01.06.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Finalisierung Dokumentation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02.06.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+09.07.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erarbeiten der Präsentation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.07.2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+???
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Phasenplan
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Phasenplan"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Meilensteine
+\end_layout
+
+\begin_layout Standard
+Ein Meilenstein ist ein Ereignis von besonderer Bedeutung und stellt ein
+ (Zwischen-) Ziel innerhalb eines Projekts dar.
+ Meilensteine werden typischerweise von Personen oder Organisationen ausserhalb
+ des Projekts vorgegeben und passen mit den im vorhergehenden Kapitel definierte
+n Phasenenden überein.
+\end_layout
+
+\begin_layout Standard
+Die Meilensteine des Projekts sind in der Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Meilensteine"
+
+\end_inset
+
+ ersichtlich.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meilenstein
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Datum
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Freigabe der Arbeit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+07.01.2013
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kick-Off 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30.01.2013
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Design-Review
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22.05.2013
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abgabe der Arbeit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+09.07.2013
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+M5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Schlusspräsentation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+???
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Meilensteine
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Meilensteine"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Anforderungen
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Anforderungen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In der Phasenplanung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Phasenplanung"
+
+\end_inset
+
+) wurde festgelegt, dass in der ersten Projektphase die Anforderungen erhoben
+ werden.
+ Dazu wird zu Beginn dieses Kapitels der Begriff Anforderung definiert und
+ es wird auf verschiedene Arten von Anforderungen näher eingegangen.
+ Anschliessend werden die Anforderungen an den Persistenzlayer einer serviceorie
+ntierten Architektur festgehalten sowie die Anforderungen der betrachteten
+ Enterprise Pattern erhoben.
+ In einem letzten Schritt wird der Systemkontext der CRM-Applikation beschrieben
+ und eingegrenzt sowie die konkreten Anforderungen an die CRM-Applikation
+ als Use-Cases
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Use-Case"
+description "Ein Use-Case (dt. Anwendungsfall) bündelt alle möglichen Szenarien, die eintreten können, wenn ein Akteur versucht, mit Hilfe des betrachteten Systems ein bestimmtes fachliches Ziel zu erreichen. Er beschreibt, was inhaltlich beim Versuch der Zielerreichung passieren kann, und abstrahiert von konkreten technischen Lösungen. Das Ergebnis des Anwendungsfalls kann ein Erfolg oder Fehlschlag/Abbruch sein."
+
+\end_inset
+
+ modelliert und spezifiziert.
+ Der Abschluss dieses Kapitels wie auch der Anforderungsphase selbst bildet
+ das Entwerfen der für den Benutzer sichtbaren Dialogfenster.
+\end_layout
+
+\begin_layout Section
+Was sind Anforderungen?
+\end_layout
+
+\begin_layout Standard
+Die erste Phase des Wasserfallmodells beschäftigt sich mit den Anforderungen
+ an das zu entwickelnde Softwareprodukt.
+ Damit das Entwicklungsprodukt zum Erfolg geführt werden kann, muss zunächst
+ bekannt sein, was die Anforderungen an das System sind und diese müssen
+ geeignet dokumentiert sein.
+ Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEEE610.12-1990"
+
+\end_inset
+
+ wird eine Anforderung wie folgt definiert:
+\end_layout
+
+\begin_layout Description
+Anforderung Eine Anforderung ist:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Eine Bedingung oder Fähigkeit, die von einem Benutzer (Person oder System)
+ zur Lösung eines Problems zur Erreichung eines Ziels benötigt wird.
+\end_layout
+
+\begin_layout Enumerate
+Eine Bedingung oder Fähigkeit, die ein System oder Teilsystem erfüllen oder
+ besitzen muss, um einen Vertrag, eine Norm, eine Spezifikation oder andere,
+ formell vorgegebene Dokumente zu erfüllen.
+\end_layout
+
+\begin_layout Enumerate
+Eine dokumentierte Repräsentation einer Bedingung oder Eigenschaft gemäss
+ 1.
+ oder 2.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+---
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen an das im Rahmen dieser Semesterarbeit zu entwickelnde
+ System werden in Use-Case-Diagrammen modellhaft dargestellt und als Use-Case-Sp
+ezifikationen ausformuliert.
+ Auf eine natürlichsprachige Dokumentation der Anforderungen wird verzichtet,
+ da die modellierten Anforderungen innerhalb der Use-Case-Diagramme verständlich
+ genug sind und zu den Use-Case-Diagrammen noch detaillierte Use-Case-Spezifikat
+ionen vorhanden sind, welche die gesamte Anforderung abdecken.
+ 
+\end_layout
+
+\begin_layout Subsection
+Arten von Anforderungen
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Arten-von-Anforderungen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+ unterscheidet man im Allgemeinen zwischen drei Arten von Anforderungen:
+\end_layout
+
+\begin_layout Itemize
+Funktionale Anforderungen legen die Funktionalität fest, die das geplante
+ System zur Verfügung stellen soll.
+ Sie werden typischerweise in Funktions-, Verhaltens- und Strukturanforderungen
+ unterteilt.
+\end_layout
+
+\begin_layout Itemize
+Qualitätsanforderungen legen gewünschte Qualitäten des zu entwickelnden
+ Systems fest und beeinflussen häufig in grösserem Umfang als die funktionalen
+ Anforderungen die Gestalt der Systemarchitektur.
+ Typischerweise beziehen sich Qualitätsanforderungen auf die Performance,
+ die Verfügbarkeit, die Zuverlässigkeit, die Skalierbarkeit oder die Portabilitä
+t des betrachteten Systems.
+ Anforderungen dieses Typs werden häufig auch der Klasse 
+\begin_inset Quotes eld
+\end_inset
+
+nicht funktionaler Anforderungen
+\begin_inset Quotes erd
+\end_inset
+
+ zugeordnet.
+\end_layout
+
+\begin_layout Itemize
+Randbedingungen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+auch Rahmenbedingungen genannt
+\end_layout
+
+\end_inset
+
+ können von den Projektbeteiligten nicht beeinflusst werden.
+ Randbedingungen können sich sowohl auf das betrachtete System beziehen
+ (z.B.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Das System soll über Webservices mit Aussensysteme kommunizieren
+\begin_inset Quotes erd
+\end_inset
+
+) als auch auf den Entwicklungsprozess des Systems (z.B.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Das System soll bis spätestens Mitte 2013 am Markt verfügbar sein
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Randbedingungen werden, im Gegensatz zu funktionalen Anforderungen und
+ Qualitätsanforderungen, nicht umgesetzt, sondern schränken die Umsetzungsmöglic
+hkeiten, das heisst den Lösungsraum im Entwicklungsprozess ein.
+\end_layout
+
+\begin_layout Standard
+In diesem Dokument werden der Einfachheit halber nur funktionale Anforderungen
+ beschrieben.
+ Qualitätsanforderungen betreffend der Leistungsfähigkeit oder Wartbarkeit
+ des Systems werden nicht erhoben, da diese für den Prototypen nur eingeschränkt
+ relevant sind und innerhalb dieses Projekts darauf keinen Wert gelegt werden
+ soll.
+ 
+\end_layout
+
+\begin_layout Standard
+Rahmenbedingungen werden nicht implizit festgehalten sondern ergeben sich
+ einerseits aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stern2012"
+
+\end_inset
+
+ sowohl der technischen Umgebung des Systems.
+ Technische Rahmenbedingungen die das Projekt beeinflussen werden im Konzept
+ beziehungsweise in der Implementierung berücksichtigt und entsprechend
+ hervorgehoben.
+\end_layout
+
+\begin_layout Section
+Anforderungen Persistenzlayer
+\end_layout
+
+\begin_layout Section
+Anforderungen Enterprise Pattern
+\end_layout
+
+\begin_layout Subsection
+Transaction Script
+\end_layout
+
+\begin_layout Subsection
+Domain Model
+\end_layout
+
+\begin_layout Subsection
+Table Module
+\end_layout
+
+\begin_layout Subsection
+Active Record
+\end_layout
+
+\begin_layout Section
+Anforderungen CRM-Applikation
+\end_layout
+
+\begin_layout Subsection
+Systemkontext
+\end_layout
+
+\begin_layout Subsection
+Use-Case-Spezifikationen
+\end_layout
+
+\begin_layout Subsection
+Mockups
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "VergleichVonObjektrelationalenMappern"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
