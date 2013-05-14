@@ -108,6 +108,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Security
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Customers.Tests", "Tests\SoCrm.Presentation.Customers.Tests\SoCrm.Presentation.Customers.Tests.csproj", "{341683B2-3418-4BCA-87A0-50FAC538FCEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoCrm.Presentation.Contacts.Tests", "Tests\SoCrm.Presentation.Contacts.Tests\SoCrm.Presentation.Contacts.Tests.csproj", "{767221C5-97E0-4284-B8C4-079D54809C3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -238,6 +240,10 @@ Global
 		{341683B2-3418-4BCA-87A0-50FAC538FCEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{341683B2-3418-4BCA-87A0-50FAC538FCEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{341683B2-3418-4BCA-87A0-50FAC538FCEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{767221C5-97E0-4284-B8C4-079D54809C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{767221C5-97E0-4284-B8C4-079D54809C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{767221C5-97E0-4284-B8C4-079D54809C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{767221C5-97E0-4284-B8C4-079D54809C3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -279,6 +285,7 @@ Global
 		{92DCCBF0-AF2E-4D92-9A3C-83EEF1F28400} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{E6A7D16E-2BBD-451D-B0B8-C7D81B50E579} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 		{341683B2-3418-4BCA-87A0-50FAC538FCEC} = {8A2C321B-15AD-4421-846E-730377E2EB05}
+		{767221C5-97E0-4284-B8C4-079D54809C3D} = {8A2C321B-15AD-4421-846E-730377E2EB05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
