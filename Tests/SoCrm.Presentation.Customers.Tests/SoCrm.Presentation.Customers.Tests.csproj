@@ -48,6 +48,8 @@
     <Compile Include="CompanyListViewModelTests.cs" />
     <Compile Include="CreateCompanyViewModelTests.cs" />
     <Compile Include="CreateCustomerViewModelTests.cs" />
+    <Compile Include="CreateEMailAddressViewModelTests.cs" />
+    <Compile Include="CreatePhoneNumberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
