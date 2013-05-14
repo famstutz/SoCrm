@@ -131,9 +131,6 @@
             this.userClientMock.Setup(u => u.GetAll()).Returns(userList);
 
             var result = this.securityService.GetUserByCredentials(user.UserName, "NotTheUsersPassword");
-
-            Assert.AreEqual(user, result);
-            this.userClientMock.Verify(u => u.GetAll());
         }
 
         [Test]
