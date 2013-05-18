@@ -2862,6 +2862,96 @@ name "sec:Anforderungen-CRM-Applikation"
 Systemkontext
 \end_layout
 
+\begin_layout Standard
+Als erster Schritt in der Erhebung und Dokumentierung der Anforderung wird
+ der Systemkontext ermittelt.
+ Es wird eine Sollperspektive eingenommen, das heisst, es wird eine Annahme
+ getroffen, wie sich das geplante System in die Realität integrieren wird.
+ Hierdurch wird der Realitätsausschnitt identifiziert, der das System und
+ damit potenziell auch dessen Anforderungen beeinflusst.
+ Um die Anforderungen an das geplante System korrekt und vollständig spezifizier
+en zu können, ist es notwendig, die Beziehung zwischen den einzelnen materiellen
+ und immateriellen Aspekten im Systemkontext und dem geplanten System exakt
+ zu definieren.
+ Der für die Anforderungen des Systems relevante Ausschnitt der Realität
+ wird als Systemkontext bezeichnet (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Der Ursprung der Anforderungen des Systems liegt im Systemkontext des geplanten
+ Systems.
+ Aus diesem Grund wird der Systemkontext vor Erhebung und Dokumentierung
+ der Anforderungen festgelegt.
+ Der Systemkontext des Systems CRM-Applikation ist in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Systemkontext"
+
+\end_inset
+
+ als Modell dargestellt.
+\end_layout
+
+\begin_layout Standard
+Die Benutzer als Stakeholder an das System erfassen Kunden und Kontakte
+ und befinden sich innerhalb des Systemkontexts, da sie direkt mit dem System
+ interagieren.
+ Die Prozesse als geben Rahmenbedingungen vor, wie neue Kontakte oder Kunden
+ erfasst werden können.
+ Diese sind in der Geschäftslogik spezifiziert und integragieren über Wofklows
+ mit dem System.
+ Der Administrator verwaltet die Benutzer des Systems.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/Systemkontext.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Systemkontext
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Systemkontext"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Use-Case-Spezifikationen
 \end_layout
@@ -2928,35 +3018,387 @@ key "Pohl2011"
  
 \end_layout
 
+\begin_layout Subsubsection
+Benutzer oder Administrator authentifizieren
+\end_layout
+
 \begin_layout Standard
-Jeder Use-Case wird im Rahmen der Verifizierungsphase (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Test"
+Ein Benutzer oder Administrator möchte mit dem System interagieren und authentif
+iziert sich dazu mit seinem Benutzernamen und Passwort beim System.
+ Das System prüft den eingegebenen Benutzernamen und das Passwort und der
+ Benutzer oder Administrator wird authentifziert falls diese dem System
+ bekannt sind.
+ Er kann nun weitere Aktionen mit dem System tätigen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/UC1-BenutzerOderAdministratorAuthentifizieren.png
+	scale 50
 
 \end_inset
 
-) als Akzeptanztest einzeln getestet.
+
 \end_layout
 
-\begin_layout Subsubsection
-Benutzer authentifizieren
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Use-Case Benutzer authentifizieren
 \end_layout
 
-\begin_layout Subsubsection
-Benutzer anzeigen
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsubsection
-Passwort setzen
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsubsection
-Benutzer hinzufügen
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="10cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abschnitt
 \end_layout
 
-\begin_layout Subsubsection
-Benutzer löschen
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inhalt
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Benutzer oder Administrator authentifizieren
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Priorität
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wichtigkeit für Systemerfolg: hoch
+\begin_inset Newline newline
+\end_inset
+
+Technologisches Risiko: mittel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kritikalität
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hoch
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beschreibung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der Benutzer oder Administrator authentifiziert sich beim System.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Auslösendes Ereignis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der Benutzer oder Administrator möchte mit dem System interagieren.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Akteure
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Benutzer, Administrator
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vorbedingung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der Benutzer oder Administrator ist nicht schon beim System authentifiziert.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachbedingung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der Benutzer oder Administrator ist authentifziert und kann mit dem System
+ interagieren.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ergebnis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Eine Authentifikation wird ausgestellt.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hauptszenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Der Benutzer oder Administrator gibt seinen Benutzernamen und Passwort
+ ein.
+\end_layout
+
+\begin_layout Plain Layout
+2.
+ Der Benutzer oder Administrator erfragt die Authentifizierung vom
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alternativszenarien
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2a.
+ Der gewählte Benutzername ist bereits im Gespräch vorhanden.
+\end_layout
+
+\begin_layout Plain Layout
+2a1.
+ Der Benutzer wird aufgefordert einen anderen Benutzernamen auszuwählen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ausnahmeszenarien
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Auslösendes Ereignis: Der Benutzer kann keine Verbindung zum Server herstellen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Use-Case-Spezifikation Benutzer authentifizieren
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2993,6 +3435,22 @@ Kontakt hinzufügen
 
 \begin_layout Subsubsection
 Kontakt löschen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Passwort setzen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer löschen
 \end_layout
 
 \begin_layout Subsection

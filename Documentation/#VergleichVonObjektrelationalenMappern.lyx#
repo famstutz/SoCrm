@@ -3040,7 +3040,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Grafiken/UC1-BenutzerAuthentifizieren.png
+	filename Grafiken/UC1-BenutzerOderAdministratorAuthentifizieren.png
 	scale 50
 
 \end_inset
@@ -3052,7 +3052,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Use-Case Benutzer authentifizieren
+Use-Case Benutzer oder Administrator authentifizieren
 \end_layout
 
 \end_inset
@@ -3133,7 +3133,7 @@ Name
 \begin_inset Text
 
 \begin_layout Plain Layout
-Benutzer authentifizieren
+Benutzer oder Administrator authentifizieren
 \end_layout
 
 \end_inset
@@ -3197,7 +3197,7 @@ Beschreibung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Benutzer authentifiziert sich beim Gespräch.
+Der Benutzer oder Administrator authentifiziert sich beim System.
 \end_layout
 
 \end_inset
@@ -3217,7 +3217,7 @@ Auslösendes Ereignis
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Benutzer möchte mit dem System interagieren.
+Der Benutzer oder Administrator möchte mit dem System interagieren.
 \end_layout
 
 \end_inset
@@ -3237,7 +3237,7 @@ Akteure
 \begin_inset Text
 
 \begin_layout Plain Layout
-Benutzer
+Benutzer, Administrator
 \end_layout
 
 \end_inset
@@ -3257,7 +3257,7 @@ Vorbedingung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Benutzer ist nicht schon einem Gespräch beigetreten.
+Der Benutzer oder Administrator ist nicht schon beim System authentifiziert.
 \end_layout
 
 \end_inset
@@ -3277,8 +3277,8 @@ Nachbedingung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Benutzer kann Nachrichten versenden und Nachrichten anderer Gesprächsteilneh
-mer empfangen.
+Der Benutzer oder Administrator ist authentifziert und kann mit dem System
+ interagieren.
 \end_layout
 
 \end_inset
@@ -3298,7 +3298,7 @@ Ergebnis
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein gültiges Session-Ticket wird erstellt.
+Eine Authentifikation wird ausgestellt.
 \end_layout
 
 \end_inset
@@ -3319,18 +3319,19 @@ Hauptszenario
 
 \begin_layout Plain Layout
 1.
- Der Benutzer wählt einen Benutzernamen.
+ Der Benutzer oder Administrator gibt seinen Benutzernamen und Passwort
+ ein.
 \end_layout
 
 \begin_layout Plain Layout
 2.
- Der Benutzer stellt eine Verbindung zum Server her.
+ Der Benutzer oder Administrator erfragt die Authentifizierung vom System.
 \end_layout
 
 \begin_layout Plain Layout
 3.
- Der Server erstellt ein Session-Ticket für den Benutzer und gibt ihm dieses
- zurück.
+ Das System erstellt eine Authentifikation und übergibt dieses dem Benutzer
+ oder Administrator.
 \end_layout
 
 \end_inset
@@ -3351,12 +3352,13 @@ Alternativszenarien
 
 \begin_layout Plain Layout
 2a.
- Der gewählte Benutzername ist bereits im Gespräch vorhanden.
+ Der Benutzername oder das Passwort ist inkorrekt.
 \end_layout
 
 \begin_layout Plain Layout
 2a1.
- Der Benutzer wird aufgefordert einen anderen Benutzernamen auszuwählen.
+ Der Benutzer oder Administrator wird aufgefordert seinen Benutzernamen
+ oder Passwort zu überprüfen und erneut einzugeben.
 \end_layout
 
 \end_inset
@@ -3376,7 +3378,8 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Auslösendes Ereignis: Der Benutzer kann keine Verbindung zum Server herstellen.
+Auslösendes Ereignis: Der Benutzer oder Administrator kann keine Verbindung
+ zum System herstellen.
 \end_layout
 
 \end_inset
@@ -3393,7 +3396,7 @@ Auslösendes Ereignis: Der Benutzer kann keine Verbindung zum Server herstellen.
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Use-Case-Spezifikation Benutzer authentifizieren
+Use-Case-Spezifikation Benutzer oder Administrator authentifizieren
 \end_layout
 
 \end_inset
@@ -3408,6 +3411,10 @@ Use-Case-Spezifikation Benutzer authentifizieren
 
 \begin_layout Subsubsection
 Kunden anzeigen
+\end_layout
+
+\begin_layout Standard
+Der Benutzer 
 \end_layout
 
 \begin_layout Subsubsection
