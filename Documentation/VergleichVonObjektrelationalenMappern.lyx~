@@ -1667,6 +1667,672 @@ key "Stern2012"
 Anforderungen Persistenzlayer
 \end_layout
 
+\begin_layout Standard
+Dieses Kapitel enthält die Anforderungen an den Persistenzlayer einer serviceori
+entierten Architektur und wird auch in den Anforderungen der CRM-Applikation
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Anforderungen-CRM-Applikation"
+
+\end_inset
+
+) berücksichtigt.
+ Anforderungen werden normalerweise aus Aktorensicht definiert und sind
+ nicht auf einen Layer einer Applikation ausgelegt.
+ Damit jedoch später eine Vergleichsmöglichkeit verschiedener OR-Mapper
+ gegeben werden kann müssen diese im Rahmen dieser Bachelorarbeit jedoch
+ auf diese Art und Weise niedergeschrieben sein.
+ Anstelle einer modellbasierten Beschreibung der Anforderungen werden diese
+ natürlichsprachig dokumentiert.
+ Dazu wird die Satzschablone nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+ verwendet und die Anforderungen werden funktionalen Anforderungen, Qualitätsanf
+orderungen und Randbedingungen aufgeteilt.
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen stammen aus eigenen Erfahrungen mit serviceorientierten
+ Architekturen sowie 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Liebhart2007"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chou2010"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pulier2006"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Funktionale Anforderungen
+\end_layout
+
+\begin_layout Standard
+Tabelle 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "tab:Funktionale-Anforderungen-an"
+
+\end_inset
+
+ enthält die funktionalen Anforderungen in natürlichsprachiger Form an den
+ Persistenzlayer einer serviceorientierten Architektur.
+ Der Begriff 
+\begin_inset Quotes eld
+\end_inset
+
+das System
+\begin_inset Quotes erd
+\end_inset
+
+ stehet dabei für den Persistenzlayer als eigenständiges System auf welches
+ über einen Webservice
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Webservice"
+description "Ein Webservice ist eine Softwareanwendung die in beliebigen Anwednungen benutzbar ist. Der Zugriff geschieht dabei über das Simple Object Access Protocol (SOAP) gesteuert, das auf Basis von XML den Remote Procedure Call (RPC) realisiert."
+
+\end_inset
+
+ zugegriffen werden kann.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anforderung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss CRUD-Operationen pro persistierbarer Entität zur Verfügung
+ stellen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine einzelne Instanz einer Entität auf Basis seiner ID
+ zurückgeben können.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss alle Instanzen einer Entität zurückgeben können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine oder mehrer Instanzen einer Entität auf Basis von Suchkrite
+rien zurückgeben können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine einzelne Instanz persistieren können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss mehrere Instanzen gleichzeitig persistieren können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine einzelne Instanz löschen können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss mehrere Instanzen gleichzeitig löschen können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-F-9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss dem Administrator die Möglichkeit bieten den Ablauf sämtlicher
+ Operationen nachzuverfolgen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Funktionale Anforderungen an den Persistenzlayer
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Funktionale-Anforderungen-an"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Qualitätsanforderungen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anforderung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-Q-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss fähig sein bei sämtlichen Operationen ACID
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ACID"
+description "ACID steht für Atomicity, Consisistency, Isolation und Durability und beschreibt erwünschte Eigenschaften von Verarbeitungsschritten in Datenbankmanagementssystemen."
+
+\end_inset
+
+ zu garantieren.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-Q-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss die Datenbankmanagementssysteme Microsoft SQL Server und
+ Oracle Database unterstützen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-Q-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss dem Entwickler die Möglichkeit bieten die externe Schnittstelle
+ des Systems automatisierbar zu testen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-Q-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System soll keine Logik auf die Datenbank auslagern.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-Q-5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss bestimmte Performancewerte erfüllen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Im Rahmen dieser Arbeit werden die Performanceanforderungen nicht genauer
+ definiert, da insbesondere das überprüfen deren diesen Rahmen sprengen
+ würde.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Qualitätsanforderungen an den Persistenzlayer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Randbedingungen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anforderung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-R-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss alle Operationen als SOAP-basierter Webservice anbieten.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-R-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss dem Entwickler die Möglichkeit bieten ohne Wissen über die
+ Datenbank oder datenbanknahe Technologie auf die Operationen zuzugreifen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-R-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss dem Entwickler für sämtliche Operationen ein Resultat entweder
+ in Form der Entität oder den Entitäten oder in Form eines Operationresultats
+ zurückliefern.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P-R-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss dem Entwickler die Möglichkeit bieten durch ein anderes
+ System (anderen Persistenzlayer) austauschbar sein.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Randbedingungen an den Persistenzlayer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Anforderungen Enterprise Pattern
 \end_layout
@@ -1689,6 +2355,13 @@ Active Record
 
 \begin_layout Section
 Anforderungen CRM-Applikation
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Anforderungen-CRM-Applikation"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1697,6 +2370,135 @@ Systemkontext
 
 \begin_layout Subsection
 Use-Case-Spezifikationen
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+ zeigen Use-Case-Diagamme die aus einer externen Nutzungssicht wesentlichen
+ Funktionalitäten des betrachteten Systems sowie spezifische Beziehungen
+ der einzelnen Funktionalitäten untereinander beziehungsweise zu Aspekten
+ in der Umgebung des Systems.
+ Abgesehen vom Namen des Use-Cases und dessen Beziehungen dokumentieren
+ Use-Case-Diagramme keinerlei weitere Informationen über die einzelnen Use-Cases
+, wie z.B.
+ die Systematik der Interaktion eines Use-Case mit Akteuren in der Umgebung.
+ Diese Informationen werden unter Verwendung einer geeigneten Schablone
+ zusätzlich zum Use-Case-Diagramm textuell als Use-Case-Spezifikation festgehalt
+en.
+\end_layout
+
+\begin_layout Standard
+Alle funktionalen Anforderungen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Arten-von-Anforderungen"
+
+\end_inset
+
+) werden als Use-Cases modelliert und spezifiziert
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Die verwendete Schablone stammt aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+ und dient zur zweckmässigen Strukturierung von Typen von Informationen,
+ die einen Use-Case betreffen.
+ Die vorgeschlagenen Abschnitte der Schablone Autor, Quelle, Verantwortlicher
+ und Qualität werden ausgelassen, da sie im Rahmen dieses Projekts keinen
+ zusätzlichen Nutzen bringen.
+\end_layout
+
+\end_inset
+
+.
+ Als Quellen der Anforderungen dienen der Betreuer, das Reglement der ZHAW
+ betreffend der Semesterarbeit sowie der Student in der Rolle des Benutzers
+ des Systems.
+ Zusätzlich zu den Use-Cases und den dazugehörigen Use-Case-Spezifikationen
+ wird vorgängig in Prosatext der Anwendungsfall beschrieben.
+ Aus Gründen der Übersichtlichkeit und der limitierten Gesamtfunktionaliät
+ des Systems stellen diese Use-Cases die primären Anforderungen an das zu
+ entwickelnde Softwaresystem dar.
+ 
+\end_layout
+
+\begin_layout Standard
+Jeder Use-Case wird im Rahmen der Verifizierungsphase (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Test"
+
+\end_inset
+
+) als Akzeptanztest einzeln getestet.
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer authentifizieren
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Passwort setzen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer löschen
+\end_layout
+
+\begin_layout Subsubsection
+Kunden anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Kunde hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Kunde löschen
+\end_layout
+
+\begin_layout Subsubsection
+Firmen anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Firma hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Firma löschen
+\end_layout
+
+\begin_layout Subsubsection
+Kontakte anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Kontakt hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Kontakt löschen
 \end_layout
 
 \begin_layout Subsection
