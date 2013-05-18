@@ -2889,7 +2889,7 @@ Der Ursprung der Anforderungen des Systems liegt im Systemkontext des geplanten
  Systems.
  Aus diesem Grund wird der Systemkontext vor Erhebung und Dokumentierung
  der Anforderungen festgelegt.
- Der Systemkontext des Systems YAEM ist in Abbildung 
+ Der Systemkontext des Systems CRM-Applikation ist in Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Systemkontext"
@@ -2900,12 +2900,14 @@ reference "fig:Systemkontext"
 \end_layout
 
 \begin_layout Standard
-Die Benutzer als Stakeholder an das System senden und empfangen Nachrichten
+Die Benutzer als Stakeholder an das System erfassen Kunden und Kontakte
  und befinden sich innerhalb des Systemkontexts, da sie direkt mit dem System
  interagieren.
- Die Verschlüsselungsalgorithmen sind in der Fachliteratur klar geregelt
- und normiert und geben aus diesem Grund die konkreten Implementierungsvorschrif
-ten ihrerselbst an das System vor.
+ Die Prozesse als geben Rahmenbedingungen vor, wie neue Kontakte oder Kunden
+ erfasst werden können.
+ Diese sind in der Geschäftslogik spezifiziert und integragieren über Wofklows
+ mit dem System.
+ Der Administrator verwaltet die Benutzer des Systems.
 \end_layout
 
 \begin_layout Standard
@@ -3032,22 +3034,6 @@ Benutzer authentifizieren
 \end_layout
 
 \begin_layout Subsubsection
-Benutzer anzeigen
-\end_layout
-
-\begin_layout Subsubsection
-Passwort setzen
-\end_layout
-
-\begin_layout Subsubsection
-Benutzer hinzufügen
-\end_layout
-
-\begin_layout Subsubsection
-Benutzer löschen
-\end_layout
-
-\begin_layout Subsubsection
 Kunden anzeigen
 \end_layout
 
@@ -3081,6 +3067,22 @@ Kontakt hinzufügen
 
 \begin_layout Subsubsection
 Kontakt löschen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Passwort setzen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer löschen
 \end_layout
 
 \begin_layout Subsection
