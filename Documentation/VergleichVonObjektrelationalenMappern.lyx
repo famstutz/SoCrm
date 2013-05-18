@@ -2341,16 +2341,510 @@ Anforderungen Enterprise Pattern
 Transaction Script
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anforderung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss alle Datenbankoperationen durch einen dünnen Datenbankwrapper
+ direkt an die Datenbank stellen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss alle Operationen atomar ausführen können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Anforderungen Transaction Script
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Domain Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anforderung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine minimale Kopplung des Domain Models an andere Layer
+ ermöglichen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss die Möglichkeiten einer Spezifikation bieten, mit welcher
+ der Teil eines zu ladenden Objektgraphen beschrieben wird.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss den Entiäten sowohl Informationen sowie Verhalten zuweisen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System soll Design Patterns verwenden um ein reiches Domain Model zu
+ erstellen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D-5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss das Domain Model von der Datenbank vollständig entkoppeln.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Anforderungen Domain Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Table Module
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anforderung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss die Objektstruktur analog der Datenbankstruktur abbilden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine einzelne Instanz zur Verfügung stellen, welche alle
+ Geschäftslogik aller Zeilen einer Datenbanktabelle abhandelt.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine einfache Domänenlogik verwenden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Anforderungen Table Module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Active Record
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anforderung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss die Objektstruktur analog der Datenbankstruktur abbilden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss keine Konversion von Objektdatentypen und Datentypen der
+ Datenbanktablle verwenden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das System muss eine einfache Domänenlogik verwenden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Anforderungen Active Record
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2370,6 +2864,135 @@ Systemkontext
 
 \begin_layout Subsection
 Use-Case-Spezifikationen
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+ zeigen Use-Case-Diagamme die aus einer externen Nutzungssicht wesentlichen
+ Funktionalitäten des betrachteten Systems sowie spezifische Beziehungen
+ der einzelnen Funktionalitäten untereinander beziehungsweise zu Aspekten
+ in der Umgebung des Systems.
+ Abgesehen vom Namen des Use-Cases und dessen Beziehungen dokumentieren
+ Use-Case-Diagramme keinerlei weitere Informationen über die einzelnen Use-Cases
+, wie z.B.
+ die Systematik der Interaktion eines Use-Case mit Akteuren in der Umgebung.
+ Diese Informationen werden unter Verwendung einer geeigneten Schablone
+ zusätzlich zum Use-Case-Diagramm textuell als Use-Case-Spezifikation festgehalt
+en.
+\end_layout
+
+\begin_layout Standard
+Alle funktionalen Anforderungen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Arten-von-Anforderungen"
+
+\end_inset
+
+) werden als Use-Cases modelliert und spezifiziert
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Die verwendete Schablone stammt aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pohl2011"
+
+\end_inset
+
+ und dient zur zweckmässigen Strukturierung von Typen von Informationen,
+ die einen Use-Case betreffen.
+ Die vorgeschlagenen Abschnitte der Schablone Autor, Quelle, Verantwortlicher
+ und Qualität werden ausgelassen, da sie im Rahmen dieses Projekts keinen
+ zusätzlichen Nutzen bringen.
+\end_layout
+
+\end_inset
+
+.
+ Als Quellen der Anforderungen dienen der Betreuer, das Reglement der ZHAW
+ betreffend der Semesterarbeit sowie der Student in der Rolle des Benutzers
+ des Systems.
+ Zusätzlich zu den Use-Cases und den dazugehörigen Use-Case-Spezifikationen
+ wird vorgängig in Prosatext der Anwendungsfall beschrieben.
+ Aus Gründen der Übersichtlichkeit und der limitierten Gesamtfunktionaliät
+ des Systems stellen diese Use-Cases die primären Anforderungen an das zu
+ entwickelnde Softwaresystem dar.
+ 
+\end_layout
+
+\begin_layout Standard
+Jeder Use-Case wird im Rahmen der Verifizierungsphase (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Test"
+
+\end_inset
+
+) als Akzeptanztest einzeln getestet.
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer authentifizieren
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Passwort setzen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Benutzer löschen
+\end_layout
+
+\begin_layout Subsubsection
+Kunden anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Kunde hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Kunde löschen
+\end_layout
+
+\begin_layout Subsubsection
+Firmen anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Firma hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Firma löschen
+\end_layout
+
+\begin_layout Subsubsection
+Kontakte anzeigen
+\end_layout
+
+\begin_layout Subsubsection
+Kontakt hinzufügen
+\end_layout
+
+\begin_layout Subsubsection
+Kontakt löschen
 \end_layout
 
 \begin_layout Subsection
