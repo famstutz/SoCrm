@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass scrbook
+\begin_preamble
+\usepackage{pdflscape}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language german-ch
@@ -378,6 +381,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/sw-process.png
+	display false
 	scale 75
 
 \end_inset
@@ -2921,6 +2925,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/Systemkontext.png
+	display false
 	scale 50
 
 \end_inset
@@ -3048,6 +3053,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC1-BenutzerOderAdministratorAuthentifizieren.png
+	display false
 	scale 50
 
 \end_inset
@@ -3441,6 +3447,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC2-KundenAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -3827,6 +3834,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC3-KundeHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -4233,6 +4241,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC4-KundeLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -4622,6 +4631,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC5-FirmenAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -5013,6 +5023,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC6-FirmaHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -5391,6 +5402,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC7-FirmaLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -5780,6 +5792,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC8-KontakteAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -6155,6 +6168,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC9-KontaktHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -6522,6 +6536,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC10-KontaktLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -6902,6 +6917,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC11-BenutzerAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -7276,6 +7292,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC12-PasswortSetzen.png
+	display false
 	scale 50
 
 \end_inset
@@ -7653,6 +7670,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC13-BenutzerHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -8024,6 +8042,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC14-BenutzerLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -8442,6 +8461,23 @@ Marktübersicht
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Marktübersicht"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\size tiny
+\begin_inset External
+	template PDFPages
+	filename Grafiken/Vergleich.pdf
+	rotateAngle 90
 
 \end_inset
 

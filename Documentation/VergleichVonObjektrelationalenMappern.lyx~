@@ -378,6 +378,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/sw-process.png
+	display false
 	scale 75
 
 \end_inset
@@ -2921,6 +2922,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/Systemkontext.png
+	display false
 	scale 50
 
 \end_inset
@@ -3048,6 +3050,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC1-BenutzerOderAdministratorAuthentifizieren.png
+	display false
 	scale 50
 
 \end_inset
@@ -3441,6 +3444,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC2-KundenAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -3827,6 +3831,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC3-KundeHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -4233,6 +4238,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC4-KundeLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -4622,6 +4628,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC5-FirmenAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -5013,6 +5020,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC6-FirmaHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -5391,6 +5399,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC7-FirmaLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -5780,6 +5789,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC8-KontakteAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -6155,6 +6165,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC9-KontaktHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -6522,6 +6533,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC10-KontaktLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -6902,6 +6914,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC11-BenutzerAnzeigen.png
+	display false
 	scale 50
 
 \end_inset
@@ -7276,6 +7289,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC12-PasswortSetzen.png
+	display false
 	scale 50
 
 \end_inset
@@ -7653,6 +7667,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC13-BenutzerHinzufügen.png
+	display false
 	scale 50
 
 \end_inset
@@ -8024,6 +8039,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/UC14-BenutzerLöschen.png
+	display false
 	scale 50
 
 \end_inset
@@ -8393,6 +8409,375 @@ Use-Case-Spezifikation Benutzer löschen
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Konzept und Architektur
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Konzept-und-Architektur"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Konzeptphase
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+auch Designphase genannt
+\end_layout
+
+\end_inset
+
+ des Wasserfallmodells behandelt die Entwicklung eines vollständigen und
+ umfassenden Lösungskonzepts auf Basis der dokumentierten Anforderungen
+ (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oestereich2006"
+
+\end_inset
+
+).
+ Als Grundlage für das Konzept wird in einem ersten Schritt die Toolchain
+ erfasst, welche weitere (technisch) Rahmenbedingungen für das Konzept und
+ die Archtektur des Systems vorgibt.
+ Danach wird das System aus der Bausteinperspektive betrachtet, es wird
+ von der Komponentenebene bis zur Klassenebene das System modelliert und
+ die Systemarchitektur festgelegt.
+ Als weitere Sicht wird die Laufzeitsicht und die Verteilungssicht des Systems
+ beleuchtet und spezifiziert.
+\end_layout
+
+\begin_layout Section
+Marktübersicht
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Marktübersicht"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Produkteauswahl
+\end_layout
+
+\begin_layout Standard
+Das Ziel der Produkteauswahl ist es, aus der Marktübersicht drei OR-Mapper
+ zu identifizieren, die genauer betrachtet werden sollen.
+ Dazu wurde eine nicht repräsentative Umfrage unter 30 erfahrenen .NET-Entwickler
+n durchgeführt, welche Verbreitung, Erfahrungswerte und Beliebtheit bei
+ Entwicklern messen sollte.
+\end_layout
+
+\begin_layout Subsection
+Umfrage
+\end_layout
+
+\begin_layout Standard
+Die folgenden Fragen wurden in der Umfrage gestellt:
+\end_layout
+
+\begin_layout Enumerate
+Welche der folgenden .NET OR-Mapper kennst du?
+\end_layout
+
+\begin_layout Enumerate
+Welche davon hast du schon in einem Projekt eingesetzt? 
+\end_layout
+
+\begin_layout Enumerate
+Mit welchem Produkt hast du die besten Erfahrungen gemacht? 
+\end_layout
+
+\begin_layout Enumerate
+Welches Produkt schätzt du am verbreitesten ein? 
+\end_layout
+
+\begin_layout Enumerate
+Für ein privates Projekt, welchen ORM würdest du einsetzen?
+\end_layout
+
+\begin_layout Standard
+Um die Umfrage einzugrenzen wurden nur die folgenden, in der Marktübersicht
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Marktübersicht"
+
+\end_inset
+
+) betrachteten, Produkte zur Auswahl zugelassen:
+\end_layout
+
+\begin_layout Itemize
+Entity Framework
+\end_layout
+
+\begin_layout Itemize
+OpenAccess ORM
+\end_layout
+
+\begin_layout Itemize
+BLToolkit
+\end_layout
+
+\begin_layout Itemize
+Dapper
+\end_layout
+
+\begin_layout Itemize
+MyBatis.NET
+\end_layout
+
+\begin_layout Itemize
+Linq-2-SQL
+\end_layout
+
+\begin_layout Itemize
+NHibernate
+\end_layout
+
+\begin_layout Itemize
+SubSonic
+\end_layout
+
+\begin_layout Itemize
+Signum Framework
+\end_layout
+
+\begin_layout Subsubsection
+Rücklauf
+\end_layout
+
+\begin_layout Standard
+Von den 30 angeschriebenen Entwicklern haben 25 geantwortet.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U1-WelcheDerFolgendenORMapperKennstDu.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Welche davon hast du schon in einem Projekt eingesetzt? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U2-WelcheDavonHastDuSchonInEinemProjektEingesetzt.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mit welchem Produkt hast du die besten Erfahrungen gemacht?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U3-MitWelchemProduktHastDuDieBestenErfahrungenGemacht.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Welches Produkt schätzt du am verbreitesten ein? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U4-WelchesProduktSchätztDuAmVerbreitestenEin.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Für ein privates Projekt, welchen ORM würdest du einsetzen?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U5-FürEinPrivatesProjektWelchenORMWürdestDuEinsetzen.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Resultat
+\end_layout
+
+\begin_layout Standard
+Das Resultat der Umfrage war wenig überraschend.
+ Die weite Verbreitung und den guten Ruf des Entity Frameworks war anzunehmen
+ aufgrund des Marketings von Microsoft.
+ Für die weiteren Schritte werden nun somit folgende drei Produkte genauer
+ betrachtet:
+\end_layout
+
+\begin_layout Itemize
+Entity Framework
+\end_layout
+
+\begin_layout Itemize
+Dapper
+\end_layout
+
+\begin_layout Itemize
+NHibernate
 \end_layout
 
 \begin_layout Standard
