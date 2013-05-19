@@ -8847,6 +8847,242 @@ Komponentendiagramm
 \end_layout
 
 \begin_layout Standard
+Das Komponentendigramm in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Komponentendiagramm-SoCRM"
+
+\end_inset
+
+ stellt das System SoCRM aus der Vogelperspektive dar und ist die höchstabstrahi
+erte Ansicht der Bausteinsicht, die in diesem Projekt verfügbar ist.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/Komponentendiagramm.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Komponentendiagramm SoCRM
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Komponentendiagramm-SoCRM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Domänenmodell
+\end_layout
+
+\begin_layout Standard
+Das Domänenmodell (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Klassendiagramm-Domänenmodell"
+
+\end_inset
+
+) umfasst nur die Klassen der Objekte, die über die Serviceschnittstelle
+ von der Client
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Client"
+description "Ein Client (oder Clientapplikation) ist eine Softwareanwendung die im Gegensatz zu einer Serverapplikation auf dem Rechner des Benutzers ausgeführt wird."
+
+\end_inset
+
+- an die Serverapplikation
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Server"
+description "Ein Server (auch Serverapplikation) ist eine serverseitige Anwendung die auf einem zentralen Computer (Server) ausgeführt wird."
+
+\end_inset
+
+ beziehungsweise umgekehrt übertragen werden.
+ 
+\end_layout
+
+\begin_layout Standard
+YAEM verwendet ein vergleichsweise simples Domänenmodell.
+ Jeder Benutzer wird als 
+\emph on
+User
+\emph default
+objekt im Repository
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Repository"
+description "Ein Repository ist ein Verzeichnis zur Speicherung von digitalen Objekten. In diesem Kontext ist ein Repository eine Datenbank zur Speicherung und zum Wiederfinden von Objektinstanzen."
+
+\end_inset
+
+ der Serverapplikation gespeichert.
+ Bei erfolgreichem Gesprächsbeitritt erstellt die Serverapplikation ein
+ 
+\emph on
+Ticket
+\emph default
+objekt, welches an die Clientapplikation zurückgegeben wird.
+ Wird eine Nachricht versendet, so erstellt der Client ein 
+\emph on
+Message
+\emph default
+objekt, welches die Nachricht selbst als Bytearray
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Bytearray"
+description "Ein Bytearray ist eine Datenstruktur die als Container für Byte-Werte (ganzzahlige Werte von 0 bis 255) dient."
+
+\end_inset
+
+ in der Eigenschaft 
+\emph on
+Payload
+\emph default
+ speichert.
+ Will der Benutzer eine verschlüsselte Nachricht versenden, so setzt er
+ die Eigenschaft 
+\emph on
+Algorithm
+\emph default
+ des 
+\emph on
+Message
+\emph default
+objekts auf einen Wert des Enumerators 
+\emph on
+CryptoAlgorithm
+\emph default
+, der ungleich 
+\emph on
+None
+\emph default
+ ist.
+ Wenn die Eigenschaft 
+\emph on
+Algorithm
+\emph default
+ gesetzt ist, so muss der Benutzer den 
+\emph on
+Payload
+\emph default
+ verschlüsselt in der 
+\emph on
+Message
+\emph default
+ ablegen.
+\end_layout
+
+\begin_layout Standard
+Sämtliche Domänenobjekte leiten von der Klasse 
+\emph on
+ObjectBase
+\emph default
+ ab.
+ 
+\emph on
+ObjectBase
+\emph default
+ enthält eine Eigenschaft 
+\emph on
+Key
+\emph default
+ in Form einer Globally Unique Identifier
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Globally Unique Identifier"
+description "Ein Globally Unique Identifier (auch GUID genannt) ist eine eindeutige, 128 Bit lange Zahl, die zur Identifzierung von Objekten in verteilten Systemen dient."
+
+\end_inset
+
+ zur eindeutigen Identifizierung der Objekte in den Repositories.
+ Weiterhin implementiert 
+\emph on
+ObjectBase
+\emph default
+ das Interface 
+\emph on
+INotifyPropertyChanged
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Die genaue Schnittstellenbeschreibung ist in der MSDN unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged.
+aspx
+\end_layout
+
+\end_inset
+
+ zu finden.
+\end_layout
+
+\end_inset
+
+, welches in der Windows Presentation Foundation
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "WPF"
+description "Windows Presentation Foundation (kurz WPF) ist ein Grafik-Framework das zusammen mit dem .NET Framework mitgeliefert wird und zur Darstellung von UI-Elementen dient."
+
+\end_inset
+
+ und in Silverlight
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Silverlight"
+description "Silverlight ist eine Erweiterung für Webbrowser, welche die Ausführung von Rich Internet Applications erlaubt. Silverlight ist eine abgespeckte Version von WPF und wird für auch als Framework für Windows Phone 7 verwendet."
+
+\end_inset
+
+ dazu dient, UI-Elemente, die an Datenobjekte gebunden sind, über geänderte
+ Eigenschaften zu informieren.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "auto"
