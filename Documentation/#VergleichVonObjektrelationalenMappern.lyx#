@@ -3775,7 +3775,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Kein
+Keine
 \end_layout
 
 \end_inset
@@ -4173,8 +4173,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Der Kunde existiert schon.
+Auslösenden Ereignis: Der Kunde existiert schon.
  Der Benutzer wird aufgefordert zu überprüfen ob die Daten fehlerhaft eingetrage
 n wurden oder ob dies ein Duplikat darstellt.
 \end_layout
@@ -5316,7 +5315,10 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Die Firma existiert bereits.
+ Der Benutzer wird aufgefordert zu überprüfen ob die Daten fehlerhaft eingetrage
+n wurden oder ob dies ein Duplikat darstellt.
 \end_layout
 
 \end_inset
@@ -5336,10 +5338,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Die Firma existiert bereits.
- Der Benutzer wird aufgefordert zu überprüfen ob die Daten fehlerhaft eingetrage
-n wurden oder ob dies ein Duplikat darstellt.
+Keine
 \end_layout
 
 \end_inset
@@ -5702,7 +5701,15 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Falls die Firma Angestellte besitzt (Kunden) wird der Benutzer darauf hingewies
+en dass auch die zur Firma gehörigen Angestellten gelöscht werden.
+\end_layout
+
+\begin_layout Plain Layout
+1b.
+ Falls der Angestellte Kontakte besitzt wird der Benutzer darauf hingewiesen
+ dass auch die zum Angestellten gehörigen Kontakte gelöscht werden.
 \end_layout
 
 \end_inset
@@ -5722,15 +5729,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Falls die Firma Angestellte besitzt (Kunden) wird der Benutzer darauf hingewies
-en dass auch die zur Firma gehörigen Angestellten gelöscht werden.
-\end_layout
-
-\begin_layout Plain Layout
-1b.
- Falls der Angestellte Kontakte besitzt wird der Benutzer darauf hingewiesen
- dass auch die zum Angestellten gehörigen Kontakte gelöscht werden.
+Keine.
 \end_layout
 
 \end_inset
@@ -6086,7 +6085,13 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Der Benutzer gibt keine Namen ein.
+\end_layout
+
+\begin_layout Plain Layout
+2a.
+ Der Benutzer wählt kein Kontaktmedium aus.
 \end_layout
 
 \end_inset
@@ -6106,13 +6111,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Der Benutzer gibt keine Namen ein.
-\end_layout
-
-\begin_layout Plain Layout
-2a.
- Der Benutzer wählt kein Kontaktmedium aus.
+Keine.
 \end_layout
 
 \end_inset
@@ -7207,7 +7206,13 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Der Administrator gibt keinen Benutzernamen ein.
+\end_layout
+
+\begin_layout Plain Layout
+2a.
+ Der Administrator wählt keine Rolle aus.
 \end_layout
 
 \end_inset
@@ -7227,13 +7232,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Der Administrator gibt keinen Benutzernamen ein.
-\end_layout
-
-\begin_layout Plain Layout
-2a.
- Der Administrator wählt keine Rolle aus.
+Keine.
 \end_layout
 
 \end_inset
@@ -7558,13 +7557,12 @@ Hauptszenario
 
 \begin_layout Plain Layout
 1.
- Der Administrator gibt den Benutzernamen des Benutzers an, den er suchen
- möchte.
+ Der Benutzer gibt sein altes Passwort sowie das neue Passwort ein.
 \end_layout
 
 \begin_layout Plain Layout
 2.
- Der Administrator wählt die Rolle aus, die die zu suchenden Benutzer innehaben.
+ Das System setzt das neue Passwort.
 \end_layout
 
 \end_inset
@@ -7584,7 +7582,14 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
+1a.
+ Der Administrator gibt das neue Passwort eines Benutzers ein.
+\end_layout
 
+\begin_layout Plain Layout
+2a.
+ Das alte Passwort des Benutzers ist falsch, der Benutzer wird aufgefordert
+ das alte Passwort erneut einzugeben.
 \end_layout
 
 \end_inset
@@ -7604,7 +7609,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Keine.
 \end_layout
 
 \end_inset
@@ -8378,6 +8383,351 @@ Ausnahmeszenarien
 
 \begin_layout Plain Layout
 Use-Case-Spezifikation Benutzer löschen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Konzept und Architektur
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Konzept-und-Architektur"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Konzeptphase
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+auch Designphase genannt
+\end_layout
+
+\end_inset
+
+ des Wasserfallmodells behandelt die Entwicklung eines vollständigen und
+ umfassenden Lösungskonzepts auf Basis der dokumentierten Anforderungen
+ (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oestereich2006"
+
+\end_inset
+
+).
+ Als Grundlage für das Konzept wird in einem ersten Schritt die Toolchain
+ erfasst, welche weitere (technisch) Rahmenbedingungen für das Konzept und
+ die Archtektur des Systems vorgibt.
+ Danach wird das System aus der Bausteinperspektive betrachtet, es wird
+ von der Komponentenebene bis zur Klassenebene das System modelliert und
+ die Systemarchitektur festgelegt.
+ Als weitere Sicht wird die Laufzeitsicht und die Verteilungssicht des Systems
+ beleuchtet und spezifiziert.
+\end_layout
+
+\begin_layout Section
+Marktübersicht
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Marktübersicht"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Produkteauswahl
+\end_layout
+
+\begin_layout Standard
+Das Ziel der Produkteauswahl ist es, aus der Marktübersicht drei OR-Mapper
+ zu identifizieren, die genauer betrachtet werden sollen.
+ Dazu wurde eine nicht repräsentative Umfrage unter 30 erfahrenen .NET-Entwickler
+n durchgeführt, welche Verbreitung, Erfahrungswerte und Beliebtheit bei
+ Entwicklern messen sollte.
+\end_layout
+
+\begin_layout Subsection
+Umfrage
+\end_layout
+
+\begin_layout Standard
+Die folgenden Fragen wurden in der Umfrage gestellt:
+\end_layout
+
+\begin_layout Enumerate
+Welche der folgenden .NET OR-Mapper kennst du?
+\end_layout
+
+\begin_layout Enumerate
+Welche davon hast du schon in einem Projekt eingesetzt? 
+\end_layout
+
+\begin_layout Enumerate
+Mit welchem Produkt hast du die besten Erfahrungen gemacht? 
+\end_layout
+
+\begin_layout Enumerate
+Welches Produkt schätzt du am verbreitesten ein? 
+\end_layout
+
+\begin_layout Enumerate
+Für ein privates Projekt, welchen ORM würdest du einsetzen?
+\end_layout
+
+\begin_layout Standard
+Um die Umfrage einzugrenzen wurden nur die folgenden, in der Marktübersicht
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Marktübersicht"
+
+\end_inset
+
+) betrachteten, Produkte zur Auswahl zugelassen:
+\end_layout
+
+\begin_layout Itemize
+Entity Framework
+\end_layout
+
+\begin_layout Itemize
+OpenAccess ORM
+\end_layout
+
+\begin_layout Itemize
+BLToolkit
+\end_layout
+
+\begin_layout Itemize
+Dapper
+\end_layout
+
+\begin_layout Itemize
+MyBatis.NET
+\end_layout
+
+\begin_layout Itemize
+Linq-2-SQL
+\end_layout
+
+\begin_layout Itemize
+NHibernate
+\end_layout
+
+\begin_layout Itemize
+SubSonic
+\end_layout
+
+\begin_layout Itemize
+Signum Framework
+\end_layout
+
+\begin_layout Subsubsection
+Rücklauf
+\end_layout
+
+\begin_layout Standard
+Von den 30 angeschriebenen Entwicklern haben 25 geantwortet.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U1-WelcheDerFolgendenORMapperKennstDu.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Welche davon hast du schon in einem Projekt eingesetzt? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U2-WelcheDavonHastDuSchonInEinemProjektEingesetzt.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mit welchem Produkt hast du die besten Erfahrungen gemacht?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U3-MitWelchemProduktHastDuDieBestenErfahrungenGemacht.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Welches Produkt schätzt du am verbreitesten ein? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U4-WelchesProduktSchätztDuAmVerbreitestenEin.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Für ein privates Projekt, welchen ORM würdest du einsetzen?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/U5-FürEinPrivatesProjektWelchenORMWürdestDuEinsetzen.png
+	display false
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
 \end_layout
 
 \end_inset

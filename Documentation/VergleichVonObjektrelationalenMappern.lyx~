@@ -3775,7 +3775,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Kein
+Keine
 \end_layout
 
 \end_inset
@@ -4173,8 +4173,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Der Kunde existiert schon.
+Auslösenden Ereignis: Der Kunde existiert schon.
  Der Benutzer wird aufgefordert zu überprüfen ob die Daten fehlerhaft eingetrage
 n wurden oder ob dies ein Duplikat darstellt.
 \end_layout
@@ -5316,7 +5315,10 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Die Firma existiert bereits.
+ Der Benutzer wird aufgefordert zu überprüfen ob die Daten fehlerhaft eingetrage
+n wurden oder ob dies ein Duplikat darstellt.
 \end_layout
 
 \end_inset
@@ -5336,10 +5338,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Die Firma existiert bereits.
- Der Benutzer wird aufgefordert zu überprüfen ob die Daten fehlerhaft eingetrage
-n wurden oder ob dies ein Duplikat darstellt.
+Keine
 \end_layout
 
 \end_inset
@@ -5702,7 +5701,15 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Falls die Firma Angestellte besitzt (Kunden) wird der Benutzer darauf hingewies
+en dass auch die zur Firma gehörigen Angestellten gelöscht werden.
+\end_layout
+
+\begin_layout Plain Layout
+1b.
+ Falls der Angestellte Kontakte besitzt wird der Benutzer darauf hingewiesen
+ dass auch die zum Angestellten gehörigen Kontakte gelöscht werden.
 \end_layout
 
 \end_inset
@@ -5722,15 +5729,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Falls die Firma Angestellte besitzt (Kunden) wird der Benutzer darauf hingewies
-en dass auch die zur Firma gehörigen Angestellten gelöscht werden.
-\end_layout
-
-\begin_layout Plain Layout
-1b.
- Falls der Angestellte Kontakte besitzt wird der Benutzer darauf hingewiesen
- dass auch die zum Angestellten gehörigen Kontakte gelöscht werden.
+Keine.
 \end_layout
 
 \end_inset
@@ -6086,7 +6085,13 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Der Benutzer gibt keine Namen ein.
+\end_layout
+
+\begin_layout Plain Layout
+2a.
+ Der Benutzer wählt kein Kontaktmedium aus.
 \end_layout
 
 \end_inset
@@ -6106,13 +6111,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Der Benutzer gibt keine Namen ein.
-\end_layout
-
-\begin_layout Plain Layout
-2a.
- Der Benutzer wählt kein Kontaktmedium aus.
+Keine.
 \end_layout
 
 \end_inset
@@ -7207,7 +7206,13 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Der Administrator gibt keinen Benutzernamen ein.
+\end_layout
+
+\begin_layout Plain Layout
+2a.
+ Der Administrator wählt keine Rolle aus.
 \end_layout
 
 \end_inset
@@ -7227,13 +7232,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Der Administrator gibt keinen Benutzernamen ein.
-\end_layout
-
-\begin_layout Plain Layout
-2a.
- Der Administrator wählt keine Rolle aus.
+Keine.
 \end_layout
 
 \end_inset
@@ -7389,7 +7388,7 @@ Priorität
 \begin_inset Text
 
 \begin_layout Plain Layout
-Wichtigkeit für Systemerfolg: mittel
+Wichtigkeit für Systemerfolg: niedrig
 \begin_inset Newline newline
 \end_inset
 
@@ -7433,7 +7432,8 @@ Beschreibung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Administrator zeigt eine Liste aller Benutzer an.
+Der Benutzer setzt sein eigenes Passwort.
+ Der Administrator setzt sein eigenes oder dasjenigen jedes anderen Benutzers.
 \end_layout
 
 \end_inset
@@ -7453,7 +7453,9 @@ Auslösendes Ereignis
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Administrator möchte eine Liste aller Benutzer anzeigen.
+Der Benutzer möchte sein eigenes Passwort setzen.
+ Der Administrator möchten sein eigenes oder dasjenigen jedes anderen Benutzers
+ setzen.
 \end_layout
 
 \end_inset
@@ -7473,7 +7475,7 @@ Akteure
 \begin_inset Text
 
 \begin_layout Plain Layout
-Administrator
+Benutzer, Administrator
 \end_layout
 
 \end_inset
@@ -7493,7 +7495,7 @@ Vorbedingung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Administrator ist beim System authentifiziert.
+Der Benutzer oder Administrator ist beim System authentifiziert.
 \end_layout
 
 \end_inset
@@ -7513,8 +7515,8 @@ Nachbedingung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Administrator kann einen angezeigten Benutzer detaillierter betrachten
- oder den Benutzer löschen.
+Der Benutzer oder Administrator kann sich mit seinem neuen Passwort beim
+ System authentifizieren.
 \end_layout
 
 \end_inset
@@ -7534,7 +7536,7 @@ Ergebnis
 \begin_inset Text
 
 \begin_layout Plain Layout
-Eine Liste mit Benutzern wird angezeigt.
+Eine Bestätigung wird angezeigt.
 \end_layout
 
 \end_inset
@@ -7555,13 +7557,12 @@ Hauptszenario
 
 \begin_layout Plain Layout
 1.
- Der Administrator gibt den Benutzernamen des Benutzers an, den er suchen
- möchte.
+ Der Benutzer gibt sein altes Passwort sowie das neue Passwort ein.
 \end_layout
 
 \begin_layout Plain Layout
 2.
- Der Administrator wählt die Rolle aus, die die zu suchenden Benutzer innehaben.
+ Das System setzt das neue Passwort.
 \end_layout
 
 \end_inset
@@ -7581,7 +7582,14 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+1a.
+ Der Administrator gibt das neue Passwort eines Benutzers ein.
+\end_layout
+
+\begin_layout Plain Layout
+2a.
+ Das alte Passwort des Benutzers ist falsch, der Benutzer wird aufgefordert
+ das alte Passwort erneut einzugeben.
 \end_layout
 
 \end_inset
@@ -7601,13 +7609,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-1a.
- Der Administrator gibt keinen Benutzernamen ein.
-\end_layout
-
-\begin_layout Plain Layout
-2a.
- Der Administrator wählt keine Rolle aus.
+Keine.
 \end_layout
 
 \end_inset
