@@ -8469,10 +8469,6 @@ name "sec:Marktübersicht"
 
 \begin_layout Standard
 
-\end_layout
-
-\begin_layout Standard
-
 \size tiny
 \begin_inset External
 	template PDFPages
@@ -8798,6 +8794,56 @@ Dapper
 
 \begin_layout Itemize
 NHibernate
+\end_layout
+
+\begin_layout Section
+Architektur SoCRM
+\end_layout
+
+\begin_layout Subsection
+Bausteinsicht
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hruschka2013"
+
+\end_inset
+
+ lassen sich unter dem Begriff 
+\begin_inset Quotes eld
+\end_inset
+
+Bausteine
+\begin_inset Quotes erd
+\end_inset
+
+ sämtliche Software- oder Implementierungskomponenten zusammenfassen, die
+ letztendlich Abstraktionen von Quellcode darstellen.
+ Dazu gehören Klassen, Prozeduren, Programme, Pakete, Komponenten (nach
+ der UML-Definition) oder Subsysteme.
+\end_layout
+
+\begin_layout Standard
+Die Bausteinsicht bildet die Aufgaben des System auf Software-Bausteine
+ oder -Komponenten ab.
+ Diese Sicht macht Struktur und Zusammenhänge zwischen den Bausteinen der
+ Architektur explizit.
+ Bausteinsichten zeigen die statischen Aspekte des Systemes und entsprechen
+ in dieser Hinsicht den konventionellen Implementierungsmodellen.
+\end_layout
+
+\begin_layout Subsubsection
+Komponentendiagramm
 \end_layout
 
 \begin_layout Standard

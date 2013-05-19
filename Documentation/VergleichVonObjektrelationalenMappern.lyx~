@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass scrbook
+\begin_preamble
+\usepackage{pdflscape}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language german-ch
@@ -8458,6 +8461,19 @@ Marktübersicht
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Marktübersicht"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size tiny
+\begin_inset External
+	template PDFPages
+	filename Grafiken/Vergleich.pdf
+	rotateAngle 90
 
 \end_inset
 
