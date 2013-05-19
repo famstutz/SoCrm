@@ -660,7 +660,7 @@ Verification
 \begin_layout Plain Layout
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "chap:Test"
+reference "chap:Verifikation"
 
 \end_inset
 
@@ -675,7 +675,7 @@ reference "chap:Test"
 \begin_layout Plain Layout
 \begin_inset CommandInset ref
 LatexCommand pageref
-reference "chap:Test"
+reference "chap:Verifikation"
 
 \end_inset
 
@@ -8603,7 +8603,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du?
 \end_layout
 
 \end_inset
@@ -8642,7 +8642,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Welche davon hast du schon in einem Projekt eingesetzt?
 \end_layout
 
 \end_inset
@@ -8681,7 +8681,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 \end_layout
 
 \end_inset
@@ -8720,7 +8720,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Welches Produkt schätzt du am verbreitesten ein?
 \end_layout
 
 \end_inset
@@ -8759,7 +8759,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Für ein privates Projekt, welchen ORM würdest du einsetzen?
 \end_layout
 
 \end_inset
@@ -8794,6 +8794,14 @@ Dapper
 
 \begin_layout Itemize
 NHibernate
+\end_layout
+
+\begin_layout Section
+Vergleich ausgewählter Produkte
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
@@ -10471,9 +10479,1155 @@ reference "sub:Bindings"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/Verteilungsdiagramm.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Verteilungsdiagramm SoCRM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Implementierung
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Implementierung"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Service Oriented CRM
+\end_layout
+
+\begin_layout Subsection
+Komponenten im Detail
+\end_layout
+
+\begin_layout Standard
+Dieses Kapitel beschreibt im Detail die Implementierung der einzelnen Komponente
+n.
+ Dabei wird auf Besonderheiten in der Architektur der Komponenten hingewiesen
+ und es wird ein gesamter technischer Überblick über die Umsetzung des Konzepts
+ gegeben.
+\end_layout
+
+\begin_layout Standard
+Zur besseren Orientierung innerhalb des Systems wird auf Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Visual-Studio-Solution"
+
+\end_inset
+
+ verwiesen, welche die Struktur Visual Studio-Solution darstellt.
+ Die Namensgebung der Unterkapitel hält sich dabei an die Namespaces der
+ Projekte.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Visual Studio-Solution
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visual-Studio-Solution"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Verifikation
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Verifikation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Überprüfung und Verifikation des Softwareprodukts zählt zu den wichtigsten
+ Teilen der Softwareentwicklung.
+ Insbesondere da in den letzten Jahren neue Methoden und Technologien auf
+ den Markt gekommen sind, die dem Softwareentwickler helfen, diese anspruchsvoll
+e Arbeit zu erledigen wird in diesem Kapitel ein Basiswissen auf technischer
+ Ebene vermittelt.
+\end_layout
+
+\begin_layout Standard
+Unit-Tests als automatisierte Tests, die in Quellcode vom Softwareentwickler
+ geschrieben werden, werden als Erstes vorgestellt.
+ Anschliessend wird auf das Thema Akzeptanztest eingegangen, mit Hilfe deren
+ Anforderungen an ein System unter Einbezug der Systemfunktionalitäten selbst
+ getestet werden können.
+\end_layout
+
+\begin_layout Section
+Unit-Tests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Unit-Tests"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unit-Tests (auch Komponententests genannt) überprüfen, ob die von Entwicklern
+ geschriebenen Komponenten so arbeiten, wie diese es beabsichtigen.
+ Zur Qualitätssicherung eines Softwareprodukts wird eine sehr häufige Ausführung
+ der Unit-Tests angestrebt.
+ Das lässt sich nur erreichen, wenn die Tests vollständig automatisiert
+ vorliegen, sie also selbst ein Programm sind, dessen Ausführung nicht mehr
+ Aufwand als einen Knopfdruck erfordert.
+ Insbesondere in der testgetriebenen Entwicklung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Testgetriebene-Entwicklung"
+
+\end_inset
+
+) werden Unit-Tests auch als Regressionstests nach Refactoring verwendet.
+ 
+\end_layout
+
+\begin_layout Standard
+Durch die testgetriebene Entwicklung von YAEM werden alle implementierten
+ Komponenten schon vorgängig mit Unit-Tests abgedeckt.
+ Die Unit-Tests sind dabei in einem eigenen Visual Studio-Projekt innerhalb
+ der Solution untergebracht und werden nicht zusammen mit dem produktiven
+ Code verteilt.
+\end_layout
+
+\begin_layout Subsection
+Testabdeckung
+\end_layout
+
+\begin_layout Standard
+Eine Kenngrösse zur Qualitätssicherung und zur Steigerung der Softwarequalität
+ stellt die Testabdeckung dar.
+ Die Testabdeckung bezeichnet die prozentuale Menge des produktiven Quellcodes,
+ der über automatisierte Unit-Tests abgedeckt ist, im Vergleich zur Gesamtmenge
+ des Codebasis.
+ Insbesondere hift die Testabdeckung bei der Identifizierung von einzelnen
+ Bereichen im Quellcode die potentiell fehleranfällig (da ungetestet beziehungsw
+eise ungenügend getestet) sind.
+\end_layout
+
+\begin_layout Standard
+Wie in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Testabdeckung"
+
+\end_inset
+
+ ersichtlich ist, beträgt die Testabdeckung der einzelnen Namespaces jeweils
+ mehr als 80%, die laut Aufgabenstellung gefordert sind.
+ Die totale Testabdeckung des Projekts YAEM beträgt 94.13%.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Namespace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Codeblöcke
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Getestet (Blöcke)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Getestet (% Blöcke)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.DesktopClient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+656
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+612
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+93.29%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto.Aes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto.Rijndael
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto.TripleDES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Domain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+61
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+85.91%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+157
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+149
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+94.90%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Contracts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Testabdeckung
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Testabdeckung"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Akzeptanztests
+\end_layout
+
+\begin_layout Standard
+Mithilfe von Akzeptanztest
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+auch Abnahmetests oder User Acceptance Tests (UAT)
+\end_layout
+
+\end_inset
+
+ wird geprüft, ob die Software die funktionalen Erwartungen und Anforderungen
+ im Gebrauch erfüllt.
+ Dabei werden Akzeptanztests als Black-Box-Tests
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Black-Box-Test"
+description "Ein Black-Box-Test bezeichnet einen Test ohne Kenntnisse über die innere Funktionsweise des zu testenden Systems. Er beschränkt sich auf funktionsorientiertes Testen, das heisst für die Ermittlung der Testfälle werden nur die Anforderungen, aber nicht die Implementierung des Testobjekts herangezogen. Die genaue Beschaffenheit des Programms wird nicht betrachtet, sondern vielmehr als Black Box behandelt. Nur nach aussen sichtbares Verhalten fliesst in den Test ein."
+
+\end_inset
+
+ gegen die einzelnen Use-Cases der funktionalen Anforderungen (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Use-Case-Spezifikationen"
+
+\end_inset
+
+) geprüft, das heisst der Test hat keine Kentnisse über die innere Funktionsweis
+e des Systems und imitiert den Benutzer der Applikation.
+\end_layout
+
+\begin_layout Standard
+In diesem Projekt werden zur Entwicklung der Akzeptanztests Coded UI-Tests
+ verwendet.
+ Coded UI-Tests
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu Coded UI-Tests in der MSDN Library unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/dd286681.aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ sind automatisierte Tests die auf der Benutzerfläche festgelegte Aktionen
+ als Skript ausführen lassen.
+ Ein Coded UI-Test kann ausserdem auf einzelnen UI-Elementen Erwartungen
+ definieren (z.B.
+ nach Klick auf den 
+\begin_inset Quotes eld
+\end_inset
+
+Senden
+\begin_inset Quotes erd
+\end_inset
+
+-Button muss die Nachricht-Textbox leer sein).
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen in den Use-Cases UC1 bis UC4 aus den Use-Case-Spezifikationen
+ werden als Coded UI-Tests ausformuliert und im Visual Studio-Projekt 
+\emph on
+YAEM.AcceptanceTests
+\emph default
+ abgelegt.
+ Beim Ausführen einer der Coded UI-Tests wird automatisch die Serverapplikation
+ sowie die Clientapplikation gestartet und der jeweilige Testfall wird als
+ Skript abgearbeitet.
+ Je nach Use-Case sind unterschiedliche Eingaben sowie Erwartungen definiert.
+ Werden diese nicht erfüllt (z.B.
+ wird nach dem Senden einer Nachricht beim Empfänger keine neue Nachricht
+ angezeigt) so wird schlägt der Test fehl.
+\end_layout
+
+\begin_layout Standard
+Die Ergebnisse der Akzeptanztests sind in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Akzeptantests"
+
+\end_inset
+
+ ersichtlich.
+ Alle Anforderungen können erfüllt werden und die Akzeptanztests werden
+ als bestanden betrachtet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use-Case
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Testklasse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Testergebnis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gespräch beitreten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC1Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gespräch verlassen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC2Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachricht senden
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC3Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachricht empfangen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC4Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Akzeptantests
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Akzeptantests"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Fazit
+\end_layout
+
+\begin_layout Section
+Schlussfolgerungen
+\end_layout
+
+\begin_layout Chapter*
+\start_of_appendix
+Akronyme
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+AES Advanced Encryption Standard
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+API Application Programming Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CAPI Cryptography API
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DCOM Distributed Component Object Model
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DES Data Encryption Standard
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+GUI Graphical User Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+HTTP Hypertext Transfer Protocol
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+IIS Internet Information Server
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+IV Initialisierungsvektor
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MEF Managed Extensibility Framework
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MSDN Microsoft Developer Network
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MSMQ Microsoft Message Queuing
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MVVM Model View View-Model
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+NIST National Institute of Standards and Technology
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+RUP Rational Unified Process
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SL Silverlight
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SOA Service Oriented Architecture
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SOAP Simple Object Access Protocol
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+TDD Test Driven Development
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UC Use Case
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UI User Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+URI Uniform Resource Identifier
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UX User Experience
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+W3C World Wide Web Consortium
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WCF Windows Communication Foundation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WSDL Web Services Description Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WPF Windows Presentation Foundation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WWW World Wide Web
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+XAML Extensible Application Markup Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+XML Extensible Markup Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+XP Extreme Programming
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+YAEM Yet Another Encrypted Messenger
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ZHAW Zürcher Hochschule für Angewandte Wissenschaften
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
 
 \end_inset
 

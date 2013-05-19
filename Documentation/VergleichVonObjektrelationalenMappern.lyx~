@@ -8603,7 +8603,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du?
 \end_layout
 
 \end_inset
@@ -8642,7 +8642,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Welche davon hast du schon in einem Projekt eingesetzt?
 \end_layout
 
 \end_inset
@@ -8681,7 +8681,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 \end_layout
 
 \end_inset
@@ -8720,7 +8720,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Welches Produkt schätzt du am verbreitesten ein?
 \end_layout
 
 \end_inset
@@ -8759,7 +8759,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du? 
+Umfrageresultate Für ein privates Projekt, welchen ORM würdest du einsetzen?
 \end_layout
 
 \end_inset
@@ -8847,9 +8847,2706 @@ Komponentendiagramm
 \end_layout
 
 \begin_layout Standard
+Das Komponentendigramm in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Komponentendiagramm-SoCRM"
+
+\end_inset
+
+ stellt das System SoCRM aus der Vogelperspektive dar und ist die höchstabstrahi
+erte Ansicht der Bausteinsicht, die in diesem Projekt verfügbar ist.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/Komponentendiagramm.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Komponentendiagramm SoCRM
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Komponentendiagramm-SoCRM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Domänenmodell
+\end_layout
+
+\begin_layout Standard
+Das Domänenmodell (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Klassendiagramm-Domänenmodell-So"
+
+\end_inset
+
+) umfasst nur die Klassen der Objekte, die über die Serviceschnittstelle
+ von der Client
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Client"
+description "Ein Client (oder Clientapplikation) ist eine Softwareanwendung die im Gegensatz zu einer Serverapplikation auf dem Rechner des Benutzers ausgeführt wird."
+
+\end_inset
+
+- an die Serverapplikation
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Server"
+description "Ein Server (auch Serverapplikation) ist eine serverseitige Anwendung die auf einem zentralen Computer (Server) ausgeführt wird."
+
+\end_inset
+
+ beziehungsweise umgekehrt übertragen werden.
+ 
+\end_layout
+
+\begin_layout Standard
+YAEM verwendet ein vergleichsweise simples Domänenmodell.
+ Jeder Benutzer wird als 
+\emph on
+User
+\emph default
+objekt im Repository
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Repository"
+description "Ein Repository ist ein Verzeichnis zur Speicherung von digitalen Objekten. In diesem Kontext ist ein Repository eine Datenbank zur Speicherung und zum Wiederfinden von Objektinstanzen."
+
+\end_inset
+
+ der Serverapplikation gespeichert.
+ Bei erfolgreichem Gesprächsbeitritt erstellt die Serverapplikation ein
+ 
+\emph on
+Ticket
+\emph default
+objekt, welches an die Clientapplikation zurückgegeben wird.
+ Wird eine Nachricht versendet, so erstellt der Client ein 
+\emph on
+Message
+\emph default
+objekt, welches die Nachricht selbst als Bytearray
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Bytearray"
+description "Ein Bytearray ist eine Datenstruktur die als Container für Byte-Werte (ganzzahlige Werte von 0 bis 255) dient."
+
+\end_inset
+
+ in der Eigenschaft 
+\emph on
+Payload
+\emph default
+ speichert.
+ Will der Benutzer eine verschlüsselte Nachricht versenden, so setzt er
+ die Eigenschaft 
+\emph on
+Algorithm
+\emph default
+ des 
+\emph on
+Message
+\emph default
+objekts auf einen Wert des Enumerators 
+\emph on
+CryptoAlgorithm
+\emph default
+, der ungleich 
+\emph on
+None
+\emph default
+ ist.
+ Wenn die Eigenschaft 
+\emph on
+Algorithm
+\emph default
+ gesetzt ist, so muss der Benutzer den 
+\emph on
+Payload
+\emph default
+ verschlüsselt in der 
+\emph on
+Message
+\emph default
+ ablegen.
+\end_layout
+
+\begin_layout Standard
+Sämtliche Domänenobjekte leiten von der Klasse 
+\emph on
+ObjectBase
+\emph default
+ ab.
+ 
+\emph on
+ObjectBase
+\emph default
+ enthält eine Eigenschaft 
+\emph on
+Key
+\emph default
+ in Form einer Globally Unique Identifier
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Globally Unique Identifier"
+description "Ein Globally Unique Identifier (auch GUID genannt) ist eine eindeutige, 128 Bit lange Zahl, die zur Identifzierung von Objekten in verteilten Systemen dient."
+
+\end_inset
+
+ zur eindeutigen Identifizierung der Objekte in den Repositories.
+ Weiterhin implementiert 
+\emph on
+ObjectBase
+\emph default
+ das Interface 
+\emph on
+INotifyPropertyChanged
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Die genaue Schnittstellenbeschreibung ist in der MSDN unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged.
+aspx
+\end_layout
+
+\end_inset
+
+ zu finden.
+\end_layout
+
+\end_inset
+
+, welches in der Windows Presentation Foundation
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "WPF"
+description "Windows Presentation Foundation (kurz WPF) ist ein Grafik-Framework das zusammen mit dem .NET Framework mitgeliefert wird und zur Darstellung von UI-Elementen dient."
+
+\end_inset
+
+ und in Silverlight
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Silverlight"
+description "Silverlight ist eine Erweiterung für Webbrowser, welche die Ausführung von Rich Internet Applications erlaubt. Silverlight ist eine abgespeckte Version von WPF und wird für auch als Framework für Windows Phone 7 verwendet."
+
+\end_inset
+
+ dazu dient, UI-Elemente, die an Datenobjekte gebunden sind, über geänderte
+ Eigenschaften zu informieren.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/Domänenmodell.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm Domänenmodell SoCRM
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Klassendiagramm-Domänenmodell-So"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Service Contracts
+\end_layout
+
+\begin_layout Standard
+Ein Service Contract spezifiziert eine Schnittstelle zur Kommunikation verschied
+ener Applikationen innerhalb eines verteilten Systems.
+ Häufig werden diese Service Contracts als Webservices
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Webservice"
+description "Ein Webservice ist eine Softwareapplikation, auf den über einen URI eindeutig idenifiziert ist und Daten als XML-Artefakt zurückgibt. Er wird über internetbasierte Protokolle angesprochen."
+
+\end_inset
+
+ angeboten, da sie dadurch plattform- und frameworkunabhängig genutzt werden
+ können.
+ 
+\end_layout
+
+\begin_layout Standard
+Typischerweise umfasst ein Service Contract mehrere Operationen, deren Rückgabew
+erte als XML-Fragmente an die konsumierende Applikation zurückgegeben werden.
+ Ausserdem ist ein Service Contract per Definition grundsätzlich zustandslos,
+ er behandelt mehrere Anfragen (auch desselben Auftraggebers) immer als
+ unabhängige Transaktionen.
+ Anfragen werden ohne Bezug zu früheren, vorhergegeganen Anfragen behandelt
+ und es werden auch keine Sitzungsinformationen ausgetauscht.
+\end_layout
+
+\begin_layout Paragraph
+ISecurityService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Methode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aufgabe
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreateUser
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteUser
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllRoles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllUsers
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetUserByCredentials
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetUserByObjectId
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetUsersByRole
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetUsersByRoleAndUserName
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SetPassword
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ValidateCredentials
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Methoden von ISecurityService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ISecurityService.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm ISecurityService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+ICustomerService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="19" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Methode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aufgabe
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreateCompany
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreateEMailAddress
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreatePerson
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreatePhoneNumber
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteCompany
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteEMailAddress
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeletePerson
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeletePhoneNumber
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllCompanies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllCountries
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllEMailAddresses
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllPersons
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllPhoneNumbers
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetCompaniesByNameAndCountry
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetCompanyByObjectId
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetContactTypes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetPersonByObjectId
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetPersonsByNameAndCompany
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Methoden von ICustomerService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ICustomerService.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm ICustomerService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+IContactService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Methode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aufgabe
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreateContact
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteContact
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllContactMediums
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetContactByObjectId
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetContactsByCompany
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetContactsByContactMedium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetContactsByContactMediumAndPersonName
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetContactsByPerson
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetContactsByUser
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Methoden von IContactService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/IContactService.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm IContactService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+ILoggingService
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Methode
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aufgabe
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllLogEvents
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetAllSeverities
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetLogEventByObjectId
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GetLogEventsByServerity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LogEvent
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Methoden von ILoggingService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ILoggingService.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm ILoggingService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Laufzeitsicht
+\end_layout
+
+\begin_layout Standard
+Die Laufzeitsicht beschreibt, welche Bestandteile des Systems zur Laufzeit
+ existieren und wie diese zusammenwirken (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+).
+ Dabei kommen wichtige Aspekte des Systembetriebs ins Spiel, die beispielsweise
+ den Systemstart, die Laufzeitkonfiguration oder die Administration des
+ Systems betreffen.
+\end_layout
+
+\begin_layout Standard
+Darüber hinaus dokumentiert die Laufzeitsicht, wie Laufzeitkomponenten sich
+ aus Instanzen von Implementierungsbausteinen zusammensetzen.
+ 
+\end_layout
+
+\begin_layout Subsection
+Verteilungssicht
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+ beschreibt die Verteilungssicht die Ablaufumgebung des Systems in Form
+ von Hardwarekomponenten (wie Prozessoren, Speicher, Netzwerk, Router und
+ Firewalls) sowie den beteiligten Protokollen.
+ In der Infrastruktursicht können die Leistungsdaten und Parameter der beteiligt
+en Elemente dargestellt werden.
+ Ausserdem werden zusätzlich Betriebssysteme oder externe Systeme aufgenommen.
+\end_layout
+
+\begin_layout Standard
+Die Verteilungssicht ist von grosser Beduetung für die Betreiber des Systems,
+ die Hardwarearchitekten, das Entwicklungsteam sowie Management und Projektleitu
+ng (gemäss 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hruschka2012"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Verteilungsdiagramm
+\end_layout
+
+\begin_layout Standard
+Die Verteilungssicht dieser Projektdokumentation enthält nur ein sehr rudimentär
+ ausgearbeitetes Verteilungsdiagramm (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Verteilungsdiagramm"
+
+\end_inset
+
+).
+ Dies, da kein konkretes Verteilungsszenario der Applikation innerhalb des
+ Projekts geplant wurde.
+ Das Projekt beeinhaltet die Erarbeitung des Konzepts sowie die konkrete
+ Implementierung der Applikation ohne jedoch auf die Verteilung des Systems
+ einzugehen.
+ 
+\end_layout
+
+\begin_layout Standard
+Generell können die einzelnen Clientapplikationen auf jeglicher Hardware
+ laufen, benötigen jedoch jeweils das passende Betriebssystem beziehungsweise
+ im Fall des Silverlight-Clients einen Browser mit Silverlight-Plugin.
+ Zwischen den Clientapplikationen und der Serverapplikation in Form des
+ Servicehosts wird eine Netzwerkverbindung vorausgesetzt bei welcher die
+ passenden Ports (siehe Binding Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Bindings"
+
+\end_inset
+
+) geöffnet und zugänglich sind.
+ Auch ist eine Verteilung über das WWW denkbar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/Verteilungsdiagramm.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Verteilungsdiagramm SoCRM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Implementierung
+\end_layout
+
+\begin_layout Chapter
+Verifikation
+\end_layout
+
+\begin_layout Standard
+Die Überprüfung und Verifikation des Softwareprodukts zählt zu den wichtigsten
+ Teilen der Softwareentwicklung.
+ Insbesondere da in den letzten Jahren neue Methoden und Technologien auf
+ den Markt gekommen sind, die dem Softwareentwickler helfen, diese anspruchsvoll
+e Arbeit zu erledigen wird in diesem Kapitel ein Basiswissen auf technischer
+ Ebene vermittelt.
+\end_layout
+
+\begin_layout Standard
+Unit-Tests als automatisierte Tests, die in Quellcode vom Softwareentwickler
+ geschrieben werden, werden als Erstes vorgestellt.
+ Anschliessend wird auf das Thema Akzeptanztest eingegangen, mit Hilfe deren
+ Anforderungen an ein System unter Einbezug der Systemfunktionalitäten selbst
+ getestet werden können.
+\end_layout
+
+\begin_layout Section
+Unit-Tests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Unit-Tests"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unit-Tests (auch Komponententests genannt) überprüfen, ob die von Entwicklern
+ geschriebenen Komponenten so arbeiten, wie diese es beabsichtigen.
+ Zur Qualitätssicherung eines Softwareprodukts wird eine sehr häufige Ausführung
+ der Unit-Tests angestrebt.
+ Das lässt sich nur erreichen, wenn die Tests vollständig automatisiert
+ vorliegen, sie also selbst ein Programm sind, dessen Ausführung nicht mehr
+ Aufwand als einen Knopfdruck erfordert.
+ Insbesondere in der testgetriebenen Entwicklung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Testgetriebene-Entwicklung"
+
+\end_inset
+
+) werden Unit-Tests auch als Regressionstests nach Refactoring verwendet.
+ 
+\end_layout
+
+\begin_layout Standard
+Durch die testgetriebene Entwicklung von YAEM werden alle implementierten
+ Komponenten schon vorgängig mit Unit-Tests abgedeckt.
+ Die Unit-Tests sind dabei in einem eigenen Visual Studio-Projekt innerhalb
+ der Solution untergebracht und werden nicht zusammen mit dem produktiven
+ Code verteilt.
+\end_layout
+
+\begin_layout Subsection
+Testabdeckung
+\end_layout
+
+\begin_layout Standard
+Eine Kenngrösse zur Qualitätssicherung und zur Steigerung der Softwarequalität
+ stellt die Testabdeckung dar.
+ Die Testabdeckung bezeichnet die prozentuale Menge des produktiven Quellcodes,
+ der über automatisierte Unit-Tests abgedeckt ist, im Vergleich zur Gesamtmenge
+ des Codebasis.
+ Insbesondere hift die Testabdeckung bei der Identifizierung von einzelnen
+ Bereichen im Quellcode die potentiell fehleranfällig (da ungetestet beziehungsw
+eise ungenügend getestet) sind.
+\end_layout
+
+\begin_layout Standard
+Wie in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Testabdeckung"
+
+\end_inset
+
+ ersichtlich ist, beträgt die Testabdeckung der einzelnen Namespaces jeweils
+ mehr als 80%, die laut Aufgabenstellung gefordert sind.
+ Die totale Testabdeckung des Projekts YAEM beträgt 94.13%.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Namespace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Codeblöcke
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Getestet (Blöcke)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Getestet (% Blöcke)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.DesktopClient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+656
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+612
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+93.29%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto.Aes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto.Rijndael
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Crypto.TripleDES
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Domain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+61
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+85.91%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+157
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+149
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+94.90%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+YAEM.Contracts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Testabdeckung
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Testabdeckung"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Akzeptanztests
+\end_layout
+
+\begin_layout Standard
+Mithilfe von Akzeptanztest
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+auch Abnahmetests oder User Acceptance Tests (UAT)
+\end_layout
+
+\end_inset
+
+ wird geprüft, ob die Software die funktionalen Erwartungen und Anforderungen
+ im Gebrauch erfüllt.
+ Dabei werden Akzeptanztests als Black-Box-Tests
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Black-Box-Test"
+description "Ein Black-Box-Test bezeichnet einen Test ohne Kenntnisse über die innere Funktionsweise des zu testenden Systems. Er beschränkt sich auf funktionsorientiertes Testen, das heisst für die Ermittlung der Testfälle werden nur die Anforderungen, aber nicht die Implementierung des Testobjekts herangezogen. Die genaue Beschaffenheit des Programms wird nicht betrachtet, sondern vielmehr als Black Box behandelt. Nur nach aussen sichtbares Verhalten fliesst in den Test ein."
+
+\end_inset
+
+ gegen die einzelnen Use-Cases der funktionalen Anforderungen (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Use-Case-Spezifikationen"
+
+\end_inset
+
+) geprüft, das heisst der Test hat keine Kentnisse über die innere Funktionsweis
+e des Systems und imitiert den Benutzer der Applikation.
+\end_layout
+
+\begin_layout Standard
+In diesem Projekt werden zur Entwicklung der Akzeptanztests Coded UI-Tests
+ verwendet.
+ Coded UI-Tests
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu Coded UI-Tests in der MSDN Library unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/dd286681.aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ sind automatisierte Tests die auf der Benutzerfläche festgelegte Aktionen
+ als Skript ausführen lassen.
+ Ein Coded UI-Test kann ausserdem auf einzelnen UI-Elementen Erwartungen
+ definieren (z.B.
+ nach Klick auf den 
+\begin_inset Quotes eld
+\end_inset
+
+Senden
+\begin_inset Quotes erd
+\end_inset
+
+-Button muss die Nachricht-Textbox leer sein).
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen in den Use-Cases UC1 bis UC4 aus den Use-Case-Spezifikationen
+ werden als Coded UI-Tests ausformuliert und im Visual Studio-Projekt 
+\emph on
+YAEM.AcceptanceTests
+\emph default
+ abgelegt.
+ Beim Ausführen einer der Coded UI-Tests wird automatisch die Serverapplikation
+ sowie die Clientapplikation gestartet und der jeweilige Testfall wird als
+ Skript abgearbeitet.
+ Je nach Use-Case sind unterschiedliche Eingaben sowie Erwartungen definiert.
+ Werden diese nicht erfüllt (z.B.
+ wird nach dem Senden einer Nachricht beim Empfänger keine neue Nachricht
+ angezeigt) so wird schlägt der Test fehl.
+\end_layout
+
+\begin_layout Standard
+Die Ergebnisse der Akzeptanztests sind in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Akzeptantests"
+
+\end_inset
+
+ ersichtlich.
+ Alle Anforderungen können erfüllt werden und die Akzeptanztests werden
+ als bestanden betrachtet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use-Case
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Testklasse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Testergebnis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gespräch beitreten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC1Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gespräch verlassen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC2Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachricht senden
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC3Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachricht empfangen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+UC4Tests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Akzeptantests
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Akzeptantests"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Fazit
+\end_layout
+
+\begin_layout Section
+Schlussfolgerungen
+\end_layout
+
+\begin_layout Chapter*
+\start_of_appendix
+Akronyme
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+AES Advanced Encryption Standard
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+API Application Programming Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CAPI Cryptography API
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DCOM Distributed Component Object Model
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DES Data Encryption Standard
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+GUI Graphical User Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+HTTP Hypertext Transfer Protocol
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+IIS Internet Information Server
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+IV Initialisierungsvektor
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MEF Managed Extensibility Framework
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MSDN Microsoft Developer Network
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MSMQ Microsoft Message Queuing
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MVVM Model View View-Model
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+NIST National Institute of Standards and Technology
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+RUP Rational Unified Process
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SL Silverlight
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SOA Service Oriented Architecture
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SOAP Simple Object Access Protocol
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+TDD Test Driven Development
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UC Use Case
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UI User Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+URI Uniform Resource Identifier
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UX User Experience
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+W3C World Wide Web Consortium
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WCF Windows Communication Foundation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WSDL Web Services Description Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WPF Windows Presentation Foundation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+WWW World Wide Web
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+XAML Extensible Application Markup Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+XML Extensible Markup Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+XP Extreme Programming
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+YAEM Yet Another Encrypted Messenger
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ZHAW Zürcher Hochschule für Angewandte Wissenschaften
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset nomencl_print
 LatexCommand printnomenclature
 set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
 
 \end_inset
 
