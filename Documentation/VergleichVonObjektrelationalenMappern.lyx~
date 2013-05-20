@@ -5,6 +5,8 @@
 \textclass scrbook
 \begin_preamble
 \usepackage{pdflscape}
+\usepackage{footnote}
+\makesavenoteenv{tabular}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -8484,6 +8486,7 @@ key "Schwichtenberg2008"
 \begin_inset External
 	template PDFPages
 	filename Grafiken/Vergleich.pdf
+	extra LaTeX "pages=-"
 	rotateAngle 90
 
 \end_inset
@@ -8832,6 +8835,7 @@ reference "sub:Umfrage"
  und Debuggingmöglichkeiten.
  Dabei wird je nach Kriterium auf Grund einer Tabelle der Gewinner erkoren
  oder einfach nur auf textueller Basis.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -8840,8 +8844,15 @@ Benutzerfreundlichkeit
 
 \begin_layout Standard
 Mit Benutzerfreundlichkeit ist der Ease of Use für einen Entwickler gemeint.
- Vergleichskriterien umfassen dabei das Vorhandensein von Fluent Interfaces
- 
+ Die Bewertung der Benutzerfreundlichkeit ist auch stark vom Geschmack des
+ einzelnen Entwicklers ab.
+ Ich persönlich präferiere zum Beispiel Fluent Interfaces da ich dann bereits
+ vom Compiler gewarnt werde, falls ich mich beim Namen einer Eigenschaft
+ verschrieben habe.
+ Andere Entwickler bevorzugen vielleicht XML-basiertes Mapping, da sie die
+ baumartige Struktur von XML präferieren.
+ Wiederum andere Entwickler werden das Vorhandensein eines Mapping-Designers
+ schätzen, da das Mapping abstrahiert wird.
 \end_layout
 
 \begin_layout Standard
@@ -8853,7 +8864,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="4">
+<lyxtabular version="3" rows="13" columns="4">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -8911,7 +8922,7 @@ Fluent Interfaces
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -8920,7 +8931,7 @@ Fluent Interfaces
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -8929,7 +8940,143 @@ Fluent Interfaces
 \begin_inset Text
 
 \begin_layout Plain Layout
+Nein
+\begin_inset Foot
+status open
 
+\begin_layout Plain Layout
+Die Erweiterung Fluent NHibernate (siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.fluentnhibernate.org/
+\end_layout
+
+\end_inset
+
+) erlaubt flüssige Interfaces.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forward Mapping (Database-First)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nein
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ja
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reverse Mapping (Model-First)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ja
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Migrations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nein
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ja
 \end_layout
 
 \end_inset
@@ -8952,7 +9099,7 @@ reference "sub:Modelgenerierung"
 
 \end_inset
 
- noch im Detail behandelt)
+) noch im Detail behandelt
 \end_layout
 
 \end_inset
@@ -8966,7 +9113,7 @@ reference "sub:Modelgenerierung"
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -8975,7 +9122,7 @@ reference "sub:Modelgenerierung"
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -8984,6 +9131,27 @@ reference "sub:Modelgenerierung"
 \begin_inset Text
 
 \begin_layout Plain Layout
+Nein
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Das kommerzielle Produkte NHibernate Designer (siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.mindscapehq.com/products/nhdesigner
+\end_layout
+
+\end_inset
+
+) bietet einen Modeldesigner.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -9004,7 +9172,7 @@ Assistentenunterstützung
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -9013,7 +9181,7 @@ Assistentenunterstützung
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -9022,7 +9190,7 @@ Assistentenunterstützung
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -9033,7 +9201,7 @@ Assistentenunterstützung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Forward Mapping
+XML-basiertes Mappping/Mapping-Datei
 \end_layout
 
 \end_inset
@@ -9042,7 +9210,7 @@ Forward Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -9051,7 +9219,7 @@ Forward Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -9060,7 +9228,7 @@ Forward Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -9071,7 +9239,7 @@ Forward Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-Reverse Mapping
+Codebasiertes Mapping über Annotationen
 \end_layout
 
 \end_inset
@@ -9080,7 +9248,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -9089,7 +9257,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -9098,7 +9266,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -9109,6 +9277,23 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
+Monitoring
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Ist in einem späteren Vergleich (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Monitoring"
+
+\end_inset
+
+) eingehender betrachter
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -9118,7 +9303,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -9127,7 +9312,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Nein
 \end_layout
 
 \end_inset
@@ -9136,18 +9321,18 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Unterstützung von Hersteller
 \end_layout
 
 \end_inset
@@ -9156,7 +9341,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Sehr viel
 \end_layout
 
 \end_inset
@@ -9165,7 +9350,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Wenig
 \end_layout
 
 \end_inset
@@ -9174,18 +9359,56 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Mittel
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+Inhalt Community-Webseiten (Blogs, Codeproject.com, ...)
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sehr viel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mittel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+StackOverflow Posts
 \end_layout
 
 \end_inset
@@ -9194,7 +9417,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+25000
 \end_layout
 
 \end_inset
@@ -9203,7 +9426,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+400
 \end_layout
 
 \end_inset
@@ -9212,7 +9435,7 @@ Reverse Mapping
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+18000
 \end_layout
 
 \end_inset
@@ -9240,6 +9463,18 @@ Kriterien Benutzerfreundlichkeit
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+NHibernate hat den grossen Vorteil das viele der für Hibernate zugeschnittenen
+ 3rd-Party-Erweiterungen auch funktionieren und es eine grosse Nutzercommunity
+ gibt.
+ Der klare Sieger dieser Kategorie ist jedoch das Entity Framework.
+ Einerseits weil es Forward- und Reverse-Mapping beherrscht und einen sehr
+ mächtigen, in Visual Studio mitgelieferten, Designer besitzt.
+ Auch ist der Hilfestellungscontent auf der Seite von Microsoft bzw.
+ der Erfahrungsschatz der Community auf Seiten wie StackOverflow ein gewichtiges
+ Argument für die Wahl des Entity Frameworks als OR-Mapper.
 \end_layout
 
 \begin_layout Subsection
@@ -9949,7 +10184,14 @@ name "sub:Modelgenerierung"
 \end_layout
 
 \begin_layout Subsection
-Profiling- und Debuggingmöglichkeit
+Monitoring
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Monitoring"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
