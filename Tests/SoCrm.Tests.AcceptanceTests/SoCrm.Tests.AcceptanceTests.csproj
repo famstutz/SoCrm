@@ -57,7 +57,21 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Uc1Test.cs" />
+    <Compile Include="CodedUITestBase.cs" />
+    <Compile Include="SetPasswordTest.cs" />
+    <Compile Include="DeleteUserTest.cs" />
+    <Compile Include="CreateNewUserTest.cs" />
+    <Compile Include="SearchUsersTest.cs" />
+    <Compile Include="DeleteContactTest.cs" />
+    <Compile Include="CreateNewContactTest.cs" />
+    <Compile Include="SearchContactsTest.cs" />
+    <Compile Include="DeleteCompanyTest.cs" />
+    <Compile Include="CreateNewCompanyTest.cs" />
+    <Compile Include="SearchCompaniesTest.cs" />
+    <Compile Include="DeleteCustomerTest.cs" />
+    <Compile Include="CreateNewCustomerTest.cs" />
+    <Compile Include="SearchCustomersTest.cs" />
+    <Compile Include="AuthenticationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIMap.cs">
       <DependentUpon>UIMap.uitest</DependentUpon>
@@ -67,7 +81,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="UIMap.uitest" />
+    <None Include="UIMap.uitest">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

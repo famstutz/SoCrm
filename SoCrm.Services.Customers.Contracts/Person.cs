@@ -11,6 +11,7 @@ namespace SoCrm.Services.Customers.Contracts
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
+    using System.Text;
 
     using SoCrm.Contracts;
 

@@ -6,12 +6,12 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [CodedUITest]
-    public class Uc1Test
+    public abstract class CodedUITestBase
     {
         private UIMap map;
         private ApplicationUnderTest app;
 
-        public UIMap UIMap
+        protected UIMap UIMap
         {
             get
             {
@@ -25,23 +25,18 @@
         }
 
         [TestInitialize]
-        public void MyTestInitialize()
+        public void TestInitialize()
         {
             this.app = ApplicationUnderTest.Launch(Path.Combine(Directory.GetCurrentDirectory(), @"App\SoCrm.Presentation.App.exe"));
         }
 
         [TestCleanup]
-        public void MyTestCleanup()
+        public void TestCleanup()
         {
             this.app.Close();
         }
 
         [TestMethod]
-        public void RunUc1Test()
-        {
-            this.UIMap.OpenAuthentication();
-            this.UIMap.EnterCredentials();
-            this.UIMap.LogOn();
-        }
+        public abstract void Execute();
     }
 }

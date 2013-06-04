@@ -31,6 +31,84 @@ namespace SoCrm.Tests.AcceptanceTests
     {
         
         /// <summary>
+        /// EnterCompanyInformation - Use 'EnterCompanyInformationParams' to pass parameters into this method.
+        /// </summary>
+        public void EnterCompanyInformation()
+        {
+            #region Variable Declarations
+            WpfButton uIItemButton2 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UIItemButton2;
+            WpfEdit uIItemEdit = this.UIServiceOrientedCRMWindow.UIItemCustom111.UICreateCompanyGroup.UINameText.UIItemEdit;
+            WpfEdit uIItemEdit1 = this.UIServiceOrientedCRMWindow.UIItemCustom112.UICreateCompanyGroup.UINameText.UIItemEdit;
+            WpfEdit uIItemEdit2 = this.UIServiceOrientedCRMWindow.UIItemCustom113.UICreateCompanyGroup.UIWebsiteText.UIItemEdit;
+            WpfEdit uIItemEdit3 = this.UIServiceOrientedCRMWindow.UIItemCustom114.UICreateCompanyGroup.UIWebsiteText.UIItemEdit;
+            WpfEdit uIItemEdit4 = this.UIServiceOrientedCRMWindow.UIItemCustom115.UICreateCompanyGroup.UIAddressText.UIItemEdit;
+            WpfEdit uIItemEdit5 = this.UIServiceOrientedCRMWindow.UIItemCustom116.UICreateCompanyGroup.UIAddressText.UIItemEdit;
+            WpfEdit uIItemEdit6 = this.UIServiceOrientedCRMWindow.UIItemCustom117.UICreateCompanyGroup.UIZipCodeText.UIItemEdit;
+            WpfEdit uIItemEdit7 = this.UIServiceOrientedCRMWindow.UIItemCustom118.UICreateCompanyGroup.UIZipCodeText.UIItemEdit;
+            WpfEdit uIItemEdit8 = this.UIServiceOrientedCRMWindow.UIItemCustom119.UICreateCompanyGroup.UICityText.UIItemEdit;
+            WpfEdit uIItemEdit9 = this.UIServiceOrientedCRMWindow.UIItemCustom120.UICreateCompanyGroup.UICityText.UIItemEdit;
+            WpfComboBox uIItemComboBox = this.UIServiceOrientedCRMWindow.UIItemCustom121.UICreateCompanyGroup.UICountryText.UIItemComboBox;
+            #endregion
+
+            // Click button
+            Mouse.Click(uIItemButton2, new Point(44, 10));
+
+            // Type 'Muster AG' in first text box next to 'Name' label
+            uIItemEdit.Text = this.EnterCompanyInformationParams.UIItemEditText;
+
+            // Type '{Tab}' in first text box next to 'Name' label
+            Keyboard.SendKeys(uIItemEdit1, this.EnterCompanyInformationParams.UIItemEditSendKeys, ModifierKeys.None);
+
+            // Type 'www.muster.ch' in first text box next to 'Website' label
+            uIItemEdit2.Text = this.EnterCompanyInformationParams.UIItemEditText1;
+
+            // Type '{Tab}' in first text box next to 'Website' label
+            Keyboard.SendKeys(uIItemEdit3, this.EnterCompanyInformationParams.UIItemEditSendKeys1, ModifierKeys.None);
+
+            // Type 'Musterstr. 39' in first text box next to 'Address' label
+            uIItemEdit4.Text = this.EnterCompanyInformationParams.UIItemEditText2;
+
+            // Type '{Tab}' in first text box next to 'Address' label
+            Keyboard.SendKeys(uIItemEdit5, this.EnterCompanyInformationParams.UIItemEditSendKeys2, ModifierKeys.None);
+
+            // Type '2982' in first text box next to 'Zip Code' label
+            uIItemEdit6.Text = this.EnterCompanyInformationParams.UIItemEditText3;
+
+            // Type '{Tab}' in first text box next to 'Zip Code' label
+            Keyboard.SendKeys(uIItemEdit7, this.EnterCompanyInformationParams.UIItemEditSendKeys3, ModifierKeys.None);
+
+            // Type 'Musterort' in first text box next to 'City' label
+            uIItemEdit8.Text = this.EnterCompanyInformationParams.UIItemEditText4;
+
+            // Type '{Tab}' in first text box next to 'City' label
+            Keyboard.SendKeys(uIItemEdit9, this.EnterCompanyInformationParams.UIItemEditSendKeys4, ModifierKeys.None);
+
+            // Type 'c' in first combo box next to 'Country' label
+            Keyboard.SendKeys(uIItemComboBox, this.EnterCompanyInformationParams.UIItemComboBoxSendKeys, ModifierKeys.None);
+        }
+        
+        /// <summary>
+        /// EnterContactInformation - Use 'EnterContactInformationParams' to pass parameters into this method.
+        /// </summary>
+        public void EnterContactInformation()
+        {
+            #region Variable Declarations
+            WpfControl uIItemRowHeader = this.UIServiceOrientedCRMWindow.UICreateContactGroup.UIItemTable.UIObjectId8c0222465f79Row.UIItemRowHeader;
+            WpfEdit uIItemEdit = this.UIServiceOrientedCRMWindow.UICreateContactGroup.UIContentText.UIItemEdit;
+            WpfDatePicker uIItemDatePicker = this.UIServiceOrientedCRMWindow.UICreateContactGroup.UIDateTimeText.UIItemDatePicker;
+            #endregion
+
+            // Click row header
+            Mouse.Click(uIItemRowHeader, new Point(1, 14));
+
+            // Type 'Angebot: Wurstwaren' in first text box next to 'Content' label
+            uIItemEdit.Text = this.EnterContactInformationParams.UIItemEditText;
+
+            // Select '23-Jun-2013' in first date picker next to 'DateTime' label
+            uIItemDatePicker.DateAsString = this.EnterContactInformationParams.UIItemDatePickerDateAsString;
+        }
+        
+        /// <summary>
         /// EnterCredentials - Use 'EnterCredentialsParams' to pass parameters into this method.
         /// </summary>
         public void EnterCredentials()
@@ -48,6 +126,113 @@ namespace SoCrm.Tests.AcceptanceTests
 
             // Type '********' in first text box next to 'Password' label
             Keyboard.SendKeys(uIItemEdit1, this.EnterCredentialsParams.UIItemEditSendKeys, true);
+        }
+        
+        /// <summary>
+        /// EnterNewPersonInformation - Use 'EnterNewPersonInformationParams' to pass parameters into this method.
+        /// </summary>
+        public void EnterNewPersonInformation()
+        {
+            #region Variable Declarations
+            WpfEdit uIItemEdit = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UIFirstnameText.UIItemEdit;
+            WpfEdit uIItemEdit1 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UILastnameText.UIItemEdit;
+            WpfEdit uIItemEdit2 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UIAddressText.UIItemEdit;
+            WpfEdit uIItemEdit3 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UIZipCodeText.UIItemEdit;
+            WpfEdit uIItemEdit4 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UICityText.UIItemEdit;
+            WpfComboBox uIItemComboBox = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UICountryText.UIItemComboBox;
+            WpfButton uIItemButton2 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UIItemButton2;
+            WpfComboBox uIItemComboBox1 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UIItemButton2.UIItemComboBox;
+            WpfButton uIItemButton11 = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UIItemButton11;
+            WpfEdit uIItemEdit5 = this.UIServiceOrientedCRMWindow.UIItemCustom17.UICreateEMailAddressGroup.UIEMailAddressText.UIItemEdit;
+            WpfButton uISaveEMailAddressButton = this.UIServiceOrientedCRMWindow.UIItemCustom17.UICreateEMailAddressGroup.UISaveEMailAddressButton;
+            WpfButton uIItemButton1 = this.UIServiceOrientedCRMWindow.UIItemCustom5.UICreateCustomerGroup.UIItemButton1;
+            WpfEdit uIItemEdit6 = this.UIServiceOrientedCRMWindow.UIItemCustom31.UICreatePhoneNumberGroup.UIPhoneNumberText.UIItemEdit;
+            WpfButton uISavePhoneNumberButton = this.UIServiceOrientedCRMWindow.UIItemCustom31.UICreatePhoneNumberGroup.UISavePhoneNumberButton;
+            #endregion
+
+            // Type 'Peter' in first text box next to 'Firstname' label
+            uIItemEdit.Text = this.EnterNewPersonInformationParams.UIItemEditText;
+
+            // Type '{Tab}' in first text box next to 'Firstname' label
+            Keyboard.SendKeys(uIItemEdit, this.EnterNewPersonInformationParams.UIItemEditSendKeys, ModifierKeys.None);
+
+            // Type 'Muster' in first text box next to 'Lastname' label
+            uIItemEdit1.Text = this.EnterNewPersonInformationParams.UIItemEditText1;
+
+            // Type '{Tab}' in first text box next to 'Lastname' label
+            Keyboard.SendKeys(uIItemEdit1, this.EnterNewPersonInformationParams.UIItemEditSendKeys1, ModifierKeys.None);
+
+            // Type 'Musterstrasse 93' in first text box next to 'Address' label
+            uIItemEdit2.Text = this.EnterNewPersonInformationParams.UIItemEditText2;
+
+            // Type '{Tab}' in first text box next to 'Address' label
+            Keyboard.SendKeys(uIItemEdit2, this.EnterNewPersonInformationParams.UIItemEditSendKeys2, ModifierKeys.None);
+
+            // Type '8393' in first text box next to 'Zip Code' label
+            uIItemEdit3.Text = this.EnterNewPersonInformationParams.UIItemEditText3;
+
+            // Type '{Tab}' in first text box next to 'Zip Code' label
+            Keyboard.SendKeys(uIItemEdit3, this.EnterNewPersonInformationParams.UIItemEditSendKeys3, ModifierKeys.None);
+
+            // Type 'Musterstadt' in first text box next to 'City' label
+            uIItemEdit4.Text = this.EnterNewPersonInformationParams.UIItemEditText4;
+
+            // Type '{Tab}' in first text box next to 'City' label
+            Keyboard.SendKeys(uIItemEdit4, this.EnterNewPersonInformationParams.UIItemEditSendKeys4, ModifierKeys.None);
+
+            // Type 'l{Tab}' in first combo box next to 'Country' label
+            Keyboard.SendKeys(uIItemComboBox, this.EnterNewPersonInformationParams.UIItemComboBoxSendKeys, ModifierKeys.None);
+
+            // Type '{Tab}' in button
+            Keyboard.SendKeys(uIItemButton2, this.EnterNewPersonInformationParams.UIItemButton2SendKeys, ModifierKeys.None);
+
+            // Type 'e' in combo box
+            Keyboard.SendKeys(uIItemComboBox1, this.EnterNewPersonInformationParams.UIItemComboBoxSendKeys1, ModifierKeys.None);
+
+            // Click button numbered 2 in 'Create Customer' group
+            Mouse.Click(uIItemButton11, new Point(35, 5));
+
+            // Type 'peter' in first text box next to 'E-Mail Address' label
+            uIItemEdit5.Text = this.EnterNewPersonInformationParams.UIItemEditText5;
+
+            // Type 'Alt, Control + 2' in first text box next to 'E-Mail Address' label
+            Keyboard.SendKeys(uIItemEdit5, this.EnterNewPersonInformationParams.UIItemEditSendKeys5, (ModifierKeys.Alt | ModifierKeys.Control));
+
+            // Type 'peter@muster.ch' in first text box next to 'E-Mail Address' label
+            uIItemEdit5.Text = this.EnterNewPersonInformationParams.UIItemEditText6;
+
+            // Click 'Save E-Mail Address' button
+            Mouse.Click(uISaveEMailAddressButton, new Point(19, 8));
+
+            // Click button numbered 3 in 'Create Customer' group
+            Mouse.Click(uIItemButton1, new Point(84, 14));
+
+            // Type '0793859392' in first text box next to 'Phone Number' label
+            uIItemEdit6.Text = this.EnterNewPersonInformationParams.UIItemEditText7;
+
+            // Click 'Save Phone Number' button
+            Mouse.Click(uISavePhoneNumberButton, new Point(28, 2));
+        }
+        
+        /// <summary>
+        /// EnterUserInformation - Use 'EnterUserInformationParams' to pass parameters into this method.
+        /// </summary>
+        public void EnterUserInformation()
+        {
+            #region Variable Declarations
+            WpfEdit uIItemEdit = this.UIServiceOrientedCRMWindow.UIItemCustom23.UICreateUserGroup.UIUsernameText.UIItemEdit;
+            WpfEdit uIItemEdit1 = this.UIServiceOrientedCRMWindow.UIItemCustom24.UICreateUserGroup.UIPasswordText.UIItemEdit;
+            WpfEdit uIItemEdit2 = this.UIServiceOrientedCRMWindow.UIItemCustom25.UICreateUserGroup.UIPasswordText.UIItemEdit;
+            #endregion
+
+            // Type 'TestUser' in first text box next to 'Username' label
+            uIItemEdit.Text = this.EnterUserInformationParams.UIItemEditText;
+
+            // Click first text box next to 'Password' label
+            Mouse.Click(uIItemEdit1, new Point(89, 5));
+
+            // Type '********' in first text box next to 'Password' label
+            Keyboard.SendKeys(uIItemEdit2, this.EnterUserInformationParams.UIItemEditSendKeys, true);
         }
         
         /// <summary>
@@ -69,14 +254,260 @@ namespace SoCrm.Tests.AcceptanceTests
         public void OpenAuthentication()
         {
             #region Variable Declarations
-            WpfButton uIItemButton = this.UIServiceOrientedCRMWindow.UIItemToolBar.UIToolBarThumbIndicator.UIItemButton;
+            WpfMenuItem uILogonMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UIFileMenuItem.UILogonMenuItem;
             #endregion
 
-            // Click first button next to 'ToolBarThumb' Indicator
-            Mouse.Click(uIItemButton, new Point(7, 16));
+            // Click 'File' -> 'Logon' menu item
+            Mouse.Click(uILogonMenuItem, new Point(21, 2));
+        }
+        
+        /// <summary>
+        /// OpenCompanyList
+        /// </summary>
+        public void OpenCompanyList()
+        {
+            #region Variable Declarations
+            WpfMenuItem uIViewCompaniesMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UICustomersMenuItem.UIViewCompaniesMenuItem;
+            #endregion
+
+            // Click 'Customers' -> 'View Companies' menu item
+            Mouse.Click(uIViewCompaniesMenuItem, new Point(65, 5));
+        }
+        
+        /// <summary>
+        /// OpenContactList
+        /// </summary>
+        public void OpenContactList()
+        {
+            #region Variable Declarations
+            WpfMenuItem uIViewContactsMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UIContactsMenuItem.UIViewContactsMenuItem;
+            #endregion
+
+            // Click 'Contacts' -> 'View Contacts' menu item
+            Mouse.Click(uIViewContactsMenuItem, new Point(39, 5));
+        }
+        
+        /// <summary>
+        /// OpenCreateContact
+        /// </summary>
+        public void OpenCreateContact()
+        {
+            #region Variable Declarations
+            WpfMenuItem uIContactsMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UIContactsMenuItem;
+            WpfMenuItem uICreateContactMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UIContactsMenuItem.UICreateContactMenuItem;
+            #endregion
+
+            // Click 'Contacts' menu item
+            Mouse.Click(uIContactsMenuItem, new Point(31, 0));
+
+            // Click 'Contacts' -> 'Create Contact' menu item
+            Mouse.Click(uICreateContactMenuItem, new Point(50, 4));
+        }
+        
+        /// <summary>
+        /// OpenCreatePerson
+        /// </summary>
+        public void OpenCreatePerson()
+        {
+            #region Variable Declarations
+            WpfMenuItem uICreateCustomerMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UICustomersMenuItem.UICreateCustomerMenuItem;
+            #endregion
+
+            // Click 'Customers' -> 'Create Customer' menu item
+            Mouse.Click(uICreateCustomerMenuItem, new Point(54, 1));
+        }
+        
+        /// <summary>
+        /// OpenCreateUser
+        /// </summary>
+        public void OpenCreateUser()
+        {
+            #region Variable Declarations
+            WpfMenuItem uICreateUserMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UISecurityMenuItem.UICreateUserMenuItem;
+            #endregion
+
+            // Click 'Security' -> 'Create User' menu item
+            Mouse.Click(uICreateUserMenuItem, new Point(44, 17));
+        }
+        
+        /// <summary>
+        /// OpenPersonList
+        /// </summary>
+        public void OpenPersonList()
+        {
+            #region Variable Declarations
+            WpfMenuItem uIViewCustomersMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UICustomersMenuItem.UIViewCustomersMenuItem;
+            #endregion
+
+            // Click 'Customers' -> 'View Customers' menu item
+            Mouse.Click(uIViewCustomersMenuItem, new Point(61, 10));
+        }
+        
+        /// <summary>
+        /// OpenUserList
+        /// </summary>
+        public void OpenUserList()
+        {
+            #region Variable Declarations
+            WpfMenuItem uIViewUsersMenuItem = this.UIServiceOrientedCRMWindow.UIItemMenu.UISecurityMenuItem.UIViewUsersMenuItem;
+            #endregion
+
+            // Click 'Security' -> 'View Users' menu item
+            Mouse.Click(uIViewUsersMenuItem, new Point(37, 4));
+        }
+        
+        /// <summary>
+        /// SaveNewCompany
+        /// </summary>
+        public void SaveNewCompany()
+        {
+            #region Variable Declarations
+            WpfButton uISaveCompanyButton = this.UIServiceOrientedCRMWindow.UIItemCustom111.UICreateCompanyGroup.UISaveCompanyButton;
+            #endregion
+
+            // Click 'Save Company' button
+            Mouse.Click(uISaveCompanyButton, new Point(32, 15));
+        }
+        
+        /// <summary>
+        /// SaveNewContact
+        /// </summary>
+        public void SaveNewContact()
+        {
+            #region Variable Declarations
+            WpfButton uISaveContactButton = this.UIServiceOrientedCRMWindow.UIItemCustom22.UICreateContactGroup.UISaveContactButton;
+            #endregion
+
+            // Click 'Save Contact' button
+            Mouse.Click(uISaveContactButton, new Point(48, 9));
+        }
+        
+        /// <summary>
+        /// SaveNewPerson
+        /// </summary>
+        public void SaveNewPerson()
+        {
+            #region Variable Declarations
+            WpfButton uISaveCustomerButton = this.UIServiceOrientedCRMWindow.UIItemCustom4.UICreateCustomerGroup.UISaveCustomerButton;
+            #endregion
+
+            // Click 'Save Customer' button
+            Mouse.Click(uISaveCustomerButton, new Point(88, 8));
+        }
+        
+        /// <summary>
+        /// SaveNewUser
+        /// </summary>
+        public void SaveNewUser()
+        {
+            #region Variable Declarations
+            WpfButton uICreateNewUserButton = this.UIServiceOrientedCRMWindow.UIItemCustom23.UICreateUserGroup.UICreateNewUserButton;
+            #endregion
+
+            // Click 'Create New User' button
+            Mouse.Click(uICreateNewUserButton, new Point(38, 6));
+        }
+        
+        /// <summary>
+        /// SearchCompanies
+        /// </summary>
+        public void SearchCompanies()
+        {
+            #region Variable Declarations
+            WpfButton uISearchCompaniesButton = this.UIServiceOrientedCRMWindow.UIItemCustom20.UISearchCompaniesGroup.UISearchCompaniesButton;
+            #endregion
+
+            // Click 'Search Companies' button
+            Mouse.Click(uISearchCompaniesButton, new Point(66, 9));
+        }
+        
+        /// <summary>
+        /// SearchPeople
+        /// </summary>
+        public void SearchPeople()
+        {
+            #region Variable Declarations
+            WpfButton uISearchCustomersButton = this.UIServiceOrientedCRMWindow.UIItemCustom3.UISearchCustomersGroup.UISearchCustomersButton;
+            #endregion
+
+            // Click 'Search Customers' button
+            Mouse.Click(uISearchCustomersButton, new Point(46, 11));
+        }
+        
+        /// <summary>
+        /// SearchUsers
+        /// </summary>
+        public void SearchUsers()
+        {
+            #region Variable Declarations
+            WpfGroup uISearchUsersGroup = this.UIServiceOrientedCRMWindow.UISoCrmPresentationSecPane.UISearchUsersGroup;
+            WpfButton uISearchUsersButton = this.UIServiceOrientedCRMWindow.UIItemCustom1.UISearchUsersGroup.UISearchUsersButton;
+            WpfButton uISearchUsersButton1 = this.UIServiceOrientedCRMWindow.UIItemCustom1.UISearchUsersGroup.UISearchUsersButton1;
+            WpfCustom uIItemCustom = this.UIServiceOrientedCRMWindow.UISoCrmPresentationSecPane.UIItemCustom;
+            WpfButton uISearchUsersButton2 = this.UIServiceOrientedCRMWindow.UIItemCustom1.UISearchUsersGroup.UISearchUsersButton2;
+            #endregion
+
+            // Click 'Search Users' group
+            Mouse.Click(uISearchUsersGroup, new Point(267, 138));
+
+            // Click 'Search Users' button
+            Mouse.Click(uISearchUsersButton, new Point(60, 19));
+
+            // Click 'Search Users' button
+            Mouse.Click(uISearchUsersButton1, new Point(59, 12));
+
+            // Windows Internet Explorer zoom setting must be set to 100%. Please change the value to 100% and try again.
+
+            // Windows Internet Explorer zoom setting must be set to 100%. Please change the value to 100% and try again.
+
+            // Windows Internet Explorer zoom setting must be set to 100%. Please change the value to 100% and try again.
+
+            // Move custom control
+            Mouse.StartDragging(uIItemCustom, new Point(574, 358), MouseButtons.Left, ModifierKeys.None);
+            Mouse.StopDragging(uIItemCustom, -333, -111);
+
+            // Click 'Search Users' button
+            Mouse.Click(uISearchUsersButton2, new Point(66, 6));
+        }
+        
+        /// <summary>
+        /// SearchContacts
+        /// </summary>
+        public void SearchContacts()
+        {
+            #region Variable Declarations
+            WpfButton uISearchContactsButton = this.UIServiceOrientedCRMWindow.UIItemCustom26.UISearchContactsGroup.UISearchContactsButton;
+            #endregion
+
+            // Click 'Search Contacts' button
+            Mouse.Click(uISearchContactsButton, new Point(98, 15));
         }
         
         #region Properties
+        public virtual EnterCompanyInformationParams EnterCompanyInformationParams
+        {
+            get
+            {
+                if ((this.mEnterCompanyInformationParams == null))
+                {
+                    this.mEnterCompanyInformationParams = new EnterCompanyInformationParams();
+                }
+                return this.mEnterCompanyInformationParams;
+            }
+        }
+        
+        public virtual EnterContactInformationParams EnterContactInformationParams
+        {
+            get
+            {
+                if ((this.mEnterContactInformationParams == null))
+                {
+                    this.mEnterContactInformationParams = new EnterContactInformationParams();
+                }
+                return this.mEnterContactInformationParams;
+            }
+        }
+        
         public virtual EnterCredentialsParams EnterCredentialsParams
         {
             get
@@ -86,6 +517,30 @@ namespace SoCrm.Tests.AcceptanceTests
                     this.mEnterCredentialsParams = new EnterCredentialsParams();
                 }
                 return this.mEnterCredentialsParams;
+            }
+        }
+        
+        public virtual EnterNewPersonInformationParams EnterNewPersonInformationParams
+        {
+            get
+            {
+                if ((this.mEnterNewPersonInformationParams == null))
+                {
+                    this.mEnterNewPersonInformationParams = new EnterNewPersonInformationParams();
+                }
+                return this.mEnterNewPersonInformationParams;
+            }
+        }
+        
+        public virtual EnterUserInformationParams EnterUserInformationParams
+        {
+            get
+            {
+                if ((this.mEnterUserInformationParams == null))
+                {
+                    this.mEnterUserInformationParams = new EnterUserInformationParams();
+                }
+                return this.mEnterUserInformationParams;
             }
         }
         
@@ -112,14 +567,135 @@ namespace SoCrm.Tests.AcceptanceTests
                 return this.mUIDebugWindow;
             }
         }
+        
+        public UIServiceOrientedCRMWindow1 UIServiceOrientedCRMWindow1
+        {
+            get
+            {
+                if ((this.mUIServiceOrientedCRMWindow1 == null))
+                {
+                    this.mUIServiceOrientedCRMWindow1 = new UIServiceOrientedCRMWindow1();
+                }
+                return this.mUIServiceOrientedCRMWindow1;
+            }
+        }
+        
+        public UIGitHubWindow UIGitHubWindow
+        {
+            get
+            {
+                if ((this.mUIGitHubWindow == null))
+                {
+                    this.mUIGitHubWindow = new UIGitHubWindow();
+                }
+                return this.mUIGitHubWindow;
+            }
+        }
         #endregion
         
         #region Fields
+        private EnterCompanyInformationParams mEnterCompanyInformationParams;
+        
+        private EnterContactInformationParams mEnterContactInformationParams;
+        
         private EnterCredentialsParams mEnterCredentialsParams;
+        
+        private EnterNewPersonInformationParams mEnterNewPersonInformationParams;
+        
+        private EnterUserInformationParams mEnterUserInformationParams;
         
         private UIServiceOrientedCRMWindow mUIServiceOrientedCRMWindow;
         
         private UIDebugWindow mUIDebugWindow;
+        
+        private UIServiceOrientedCRMWindow1 mUIServiceOrientedCRMWindow1;
+        
+        private UIGitHubWindow mUIGitHubWindow;
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'EnterCompanyInformation'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class EnterCompanyInformationParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'Muster AG' in first text box next to 'Name' label
+        /// </summary>
+        public string UIItemEditText = "Muster AG";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Name' label
+        /// </summary>
+        public string UIItemEditSendKeys = "{Tab}";
+        
+        /// <summary>
+        /// Type 'www.muster.ch' in first text box next to 'Website' label
+        /// </summary>
+        public string UIItemEditText1 = "www.muster.ch";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Website' label
+        /// </summary>
+        public string UIItemEditSendKeys1 = "{Tab}";
+        
+        /// <summary>
+        /// Type 'Musterstr. 39' in first text box next to 'Address' label
+        /// </summary>
+        public string UIItemEditText2 = "Musterstr. 39";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Address' label
+        /// </summary>
+        public string UIItemEditSendKeys2 = "{Tab}";
+        
+        /// <summary>
+        /// Type '2982' in first text box next to 'Zip Code' label
+        /// </summary>
+        public string UIItemEditText3 = "2982";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Zip Code' label
+        /// </summary>
+        public string UIItemEditSendKeys3 = "{Tab}";
+        
+        /// <summary>
+        /// Type 'Musterort' in first text box next to 'City' label
+        /// </summary>
+        public string UIItemEditText4 = "Musterort";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'City' label
+        /// </summary>
+        public string UIItemEditSendKeys4 = "{Tab}";
+        
+        /// <summary>
+        /// Type 'c' in first combo box next to 'Country' label
+        /// </summary>
+        public string UIItemComboBoxSendKeys = "c";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'EnterContactInformation'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class EnterContactInformationParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'Angebot: Wurstwaren' in first text box next to 'Content' label
+        /// </summary>
+        public string UIItemEditText = "Angebot: Wurstwaren";
+        
+        /// <summary>
+        /// Select '23-Jun-2013' in first date picker next to 'DateTime' label
+        /// </summary>
+        public string UIItemDatePickerDateAsString = "23-Jun-2013";
         #endregion
     }
     
@@ -140,6 +716,121 @@ namespace SoCrm.Tests.AcceptanceTests
         /// Type '********' in first text box next to 'Password' label
         /// </summary>
         public string UIItemEditSendKeys = "hcUvlo5grpdp3sPFgUcb1RMmMzXVyf+H";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'EnterNewPersonInformation'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class EnterNewPersonInformationParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'Peter' in first text box next to 'Firstname' label
+        /// </summary>
+        public string UIItemEditText = "Peter";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Firstname' label
+        /// </summary>
+        public string UIItemEditSendKeys = "{Tab}";
+        
+        /// <summary>
+        /// Type 'Muster' in first text box next to 'Lastname' label
+        /// </summary>
+        public string UIItemEditText1 = "Muster";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Lastname' label
+        /// </summary>
+        public string UIItemEditSendKeys1 = "{Tab}";
+        
+        /// <summary>
+        /// Type 'Musterstrasse 93' in first text box next to 'Address' label
+        /// </summary>
+        public string UIItemEditText2 = "Musterstrasse 93";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Address' label
+        /// </summary>
+        public string UIItemEditSendKeys2 = "{Tab}";
+        
+        /// <summary>
+        /// Type '8393' in first text box next to 'Zip Code' label
+        /// </summary>
+        public string UIItemEditText3 = "8393";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'Zip Code' label
+        /// </summary>
+        public string UIItemEditSendKeys3 = "{Tab}";
+        
+        /// <summary>
+        /// Type 'Musterstadt' in first text box next to 'City' label
+        /// </summary>
+        public string UIItemEditText4 = "Musterstadt";
+        
+        /// <summary>
+        /// Type '{Tab}' in first text box next to 'City' label
+        /// </summary>
+        public string UIItemEditSendKeys4 = "{Tab}";
+        
+        /// <summary>
+        /// Type 'l{Tab}' in first combo box next to 'Country' label
+        /// </summary>
+        public string UIItemComboBoxSendKeys = "l{Tab}";
+        
+        /// <summary>
+        /// Type '{Tab}' in button
+        /// </summary>
+        public string UIItemButton2SendKeys = "{Tab}";
+        
+        /// <summary>
+        /// Type 'e' in combo box
+        /// </summary>
+        public string UIItemComboBoxSendKeys1 = "e";
+        
+        /// <summary>
+        /// Type 'peter' in first text box next to 'E-Mail Address' label
+        /// </summary>
+        public string UIItemEditText5 = "peter";
+        
+        /// <summary>
+        /// Type 'Alt, Control + 2' in first text box next to 'E-Mail Address' label
+        /// </summary>
+        public string UIItemEditSendKeys5 = "2";
+        
+        /// <summary>
+        /// Type 'peter@muster.ch' in first text box next to 'E-Mail Address' label
+        /// </summary>
+        public string UIItemEditText6 = "peter@muster.ch";
+        
+        /// <summary>
+        /// Type '0793859392' in first text box next to 'Phone Number' label
+        /// </summary>
+        public string UIItemEditText7 = "0793859392";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'EnterUserInformation'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class EnterUserInformationParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'TestUser' in first text box next to 'Username' label
+        /// </summary>
+        public string UIItemEditText = "TestUser";
+        
+        /// <summary>
+        /// Type '********' in first text box next to 'Password' label
+        /// </summary>
+        public string UIItemEditSendKeys = "mUmWug6uKolNo9YYjMcrkU4t8k50MFqA";
         #endregion
     }
     
@@ -216,6 +907,544 @@ namespace SoCrm.Tests.AcceptanceTests
                 return this.mUIItemCustom2;
             }
         }
+        
+        public UIItemCustom3 UIItemCustom3
+        {
+            get
+            {
+                if ((this.mUIItemCustom3 == null))
+                {
+                    this.mUIItemCustom3 = new UIItemCustom3(this);
+                }
+                return this.mUIItemCustom3;
+            }
+        }
+        
+        public UIItemCustom4 UIItemCustom4
+        {
+            get
+            {
+                if ((this.mUIItemCustom4 == null))
+                {
+                    this.mUIItemCustom4 = new UIItemCustom4(this);
+                }
+                return this.mUIItemCustom4;
+            }
+        }
+        
+        public UIItemCustom5 UIItemCustom5
+        {
+            get
+            {
+                if ((this.mUIItemCustom5 == null))
+                {
+                    this.mUIItemCustom5 = new UIItemCustom5(this);
+                }
+                return this.mUIItemCustom5;
+            }
+        }
+        
+        public UIItemCustom6 UIItemCustom6
+        {
+            get
+            {
+                if ((this.mUIItemCustom6 == null))
+                {
+                    this.mUIItemCustom6 = new UIItemCustom6(this);
+                }
+                return this.mUIItemCustom6;
+            }
+        }
+        
+        public UIItemCustom7 UIItemCustom7
+        {
+            get
+            {
+                if ((this.mUIItemCustom7 == null))
+                {
+                    this.mUIItemCustom7 = new UIItemCustom7(this);
+                }
+                return this.mUIItemCustom7;
+            }
+        }
+        
+        public UIItemCustom8 UIItemCustom8
+        {
+            get
+            {
+                if ((this.mUIItemCustom8 == null))
+                {
+                    this.mUIItemCustom8 = new UIItemCustom8(this);
+                }
+                return this.mUIItemCustom8;
+            }
+        }
+        
+        public UIItemCustom9 UIItemCustom9
+        {
+            get
+            {
+                if ((this.mUIItemCustom9 == null))
+                {
+                    this.mUIItemCustom9 = new UIItemCustom9(this);
+                }
+                return this.mUIItemCustom9;
+            }
+        }
+        
+        public UIItemCustom10 UIItemCustom10
+        {
+            get
+            {
+                if ((this.mUIItemCustom10 == null))
+                {
+                    this.mUIItemCustom10 = new UIItemCustom10(this);
+                }
+                return this.mUIItemCustom10;
+            }
+        }
+        
+        public UIItemCustom11 UIItemCustom11
+        {
+            get
+            {
+                if ((this.mUIItemCustom11 == null))
+                {
+                    this.mUIItemCustom11 = new UIItemCustom11(this);
+                }
+                return this.mUIItemCustom11;
+            }
+        }
+        
+        public UIItemCustom12 UIItemCustom12
+        {
+            get
+            {
+                if ((this.mUIItemCustom12 == null))
+                {
+                    this.mUIItemCustom12 = new UIItemCustom12(this);
+                }
+                return this.mUIItemCustom12;
+            }
+        }
+        
+        public UIItemCustom13 UIItemCustom13
+        {
+            get
+            {
+                if ((this.mUIItemCustom13 == null))
+                {
+                    this.mUIItemCustom13 = new UIItemCustom13(this);
+                }
+                return this.mUIItemCustom13;
+            }
+        }
+        
+        public UIItemCustom14 UIItemCustom14
+        {
+            get
+            {
+                if ((this.mUIItemCustom14 == null))
+                {
+                    this.mUIItemCustom14 = new UIItemCustom14(this);
+                }
+                return this.mUIItemCustom14;
+            }
+        }
+        
+        public UIItemCustom15 UIItemCustom15
+        {
+            get
+            {
+                if ((this.mUIItemCustom15 == null))
+                {
+                    this.mUIItemCustom15 = new UIItemCustom15(this);
+                }
+                return this.mUIItemCustom15;
+            }
+        }
+        
+        public UIItemCustom16 UIItemCustom16
+        {
+            get
+            {
+                if ((this.mUIItemCustom16 == null))
+                {
+                    this.mUIItemCustom16 = new UIItemCustom16(this);
+                }
+                return this.mUIItemCustom16;
+            }
+        }
+        
+        public UIItemCustom17 UIItemCustom17
+        {
+            get
+            {
+                if ((this.mUIItemCustom17 == null))
+                {
+                    this.mUIItemCustom17 = new UIItemCustom17(this);
+                }
+                return this.mUIItemCustom17;
+            }
+        }
+        
+        public UIItemCustom18 UIItemCustom18
+        {
+            get
+            {
+                if ((this.mUIItemCustom18 == null))
+                {
+                    this.mUIItemCustom18 = new UIItemCustom18(this);
+                }
+                return this.mUIItemCustom18;
+            }
+        }
+        
+        public UIItemCustom19 UIItemCustom19
+        {
+            get
+            {
+                if ((this.mUIItemCustom19 == null))
+                {
+                    this.mUIItemCustom19 = new UIItemCustom19(this);
+                }
+                return this.mUIItemCustom19;
+            }
+        }
+        
+        public UIItemCustom110 UIItemCustom110
+        {
+            get
+            {
+                if ((this.mUIItemCustom110 == null))
+                {
+                    this.mUIItemCustom110 = new UIItemCustom110(this);
+                }
+                return this.mUIItemCustom110;
+            }
+        }
+        
+        public UIItemCustom21 UIItemCustom21
+        {
+            get
+            {
+                if ((this.mUIItemCustom21 == null))
+                {
+                    this.mUIItemCustom21 = new UIItemCustom21(this);
+                }
+                return this.mUIItemCustom21;
+            }
+        }
+        
+        public UIItemCustom31 UIItemCustom31
+        {
+            get
+            {
+                if ((this.mUIItemCustom31 == null))
+                {
+                    this.mUIItemCustom31 = new UIItemCustom31(this);
+                }
+                return this.mUIItemCustom31;
+            }
+        }
+        
+        public UIItemCustom32 UIItemCustom32
+        {
+            get
+            {
+                if ((this.mUIItemCustom32 == null))
+                {
+                    this.mUIItemCustom32 = new UIItemCustom32(this);
+                }
+                return this.mUIItemCustom32;
+            }
+        }
+        
+        public UIItemCustom33 UIItemCustom33
+        {
+            get
+            {
+                if ((this.mUIItemCustom33 == null))
+                {
+                    this.mUIItemCustom33 = new UIItemCustom33(this);
+                }
+                return this.mUIItemCustom33;
+            }
+        }
+        
+        public UIItemMenu UIItemMenu
+        {
+            get
+            {
+                if ((this.mUIItemMenu == null))
+                {
+                    this.mUIItemMenu = new UIItemMenu(this);
+                }
+                return this.mUIItemMenu;
+            }
+        }
+        
+        public UISoCrmPresentationCusPane UISoCrmPresentationCusPane
+        {
+            get
+            {
+                if ((this.mUISoCrmPresentationCusPane == null))
+                {
+                    this.mUISoCrmPresentationCusPane = new UISoCrmPresentationCusPane(this);
+                }
+                return this.mUISoCrmPresentationCusPane;
+            }
+        }
+        
+        public WpfPane UISoCrmPresentationCusPane1
+        {
+            get
+            {
+                if ((this.mUISoCrmPresentationCusPane1 == null))
+                {
+                    this.mUISoCrmPresentationCusPane1 = new WpfPane(this);
+                    #region Search Criteria
+                    this.mUISoCrmPresentationCusPane1.SearchProperties[WpfPane.PropertyNames.ClassName] = "Uia.ScrollViewer";
+                    this.mUISoCrmPresentationCusPane1.SearchProperties[WpfPane.PropertyNames.Name] = "SoCrm.Presentation.Customers.CreatePhoneNumber.CreatePhoneNumberViewModel";
+                    this.mUISoCrmPresentationCusPane1.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISoCrmPresentationCusPane1;
+            }
+        }
+        
+        public WpfPane UISoCrmPresentationCusPane2
+        {
+            get
+            {
+                if ((this.mUISoCrmPresentationCusPane2 == null))
+                {
+                    this.mUISoCrmPresentationCusPane2 = new WpfPane(this);
+                    #region Search Criteria
+                    this.mUISoCrmPresentationCusPane2.SearchProperties[WpfPane.PropertyNames.ClassName] = "Uia.ScrollViewer";
+                    this.mUISoCrmPresentationCusPane2.SearchProperties[WpfPane.PropertyNames.Name] = "SoCrm.Presentation.Customers.CustomerList.CustomerListViewModel";
+                    this.mUISoCrmPresentationCusPane2.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISoCrmPresentationCusPane2;
+            }
+        }
+        
+        public UIItemCustom20 UIItemCustom20
+        {
+            get
+            {
+                if ((this.mUIItemCustom20 == null))
+                {
+                    this.mUIItemCustom20 = new UIItemCustom20(this);
+                }
+                return this.mUIItemCustom20;
+            }
+        }
+        
+        public UIItemCustom111 UIItemCustom111
+        {
+            get
+            {
+                if ((this.mUIItemCustom111 == null))
+                {
+                    this.mUIItemCustom111 = new UIItemCustom111(this);
+                }
+                return this.mUIItemCustom111;
+            }
+        }
+        
+        public UIItemCustom112 UIItemCustom112
+        {
+            get
+            {
+                if ((this.mUIItemCustom112 == null))
+                {
+                    this.mUIItemCustom112 = new UIItemCustom112(this);
+                }
+                return this.mUIItemCustom112;
+            }
+        }
+        
+        public UIItemCustom113 UIItemCustom113
+        {
+            get
+            {
+                if ((this.mUIItemCustom113 == null))
+                {
+                    this.mUIItemCustom113 = new UIItemCustom113(this);
+                }
+                return this.mUIItemCustom113;
+            }
+        }
+        
+        public UIItemCustom114 UIItemCustom114
+        {
+            get
+            {
+                if ((this.mUIItemCustom114 == null))
+                {
+                    this.mUIItemCustom114 = new UIItemCustom114(this);
+                }
+                return this.mUIItemCustom114;
+            }
+        }
+        
+        public UIItemCustom115 UIItemCustom115
+        {
+            get
+            {
+                if ((this.mUIItemCustom115 == null))
+                {
+                    this.mUIItemCustom115 = new UIItemCustom115(this);
+                }
+                return this.mUIItemCustom115;
+            }
+        }
+        
+        public UIItemCustom116 UIItemCustom116
+        {
+            get
+            {
+                if ((this.mUIItemCustom116 == null))
+                {
+                    this.mUIItemCustom116 = new UIItemCustom116(this);
+                }
+                return this.mUIItemCustom116;
+            }
+        }
+        
+        public UIItemCustom117 UIItemCustom117
+        {
+            get
+            {
+                if ((this.mUIItemCustom117 == null))
+                {
+                    this.mUIItemCustom117 = new UIItemCustom117(this);
+                }
+                return this.mUIItemCustom117;
+            }
+        }
+        
+        public UIItemCustom118 UIItemCustom118
+        {
+            get
+            {
+                if ((this.mUIItemCustom118 == null))
+                {
+                    this.mUIItemCustom118 = new UIItemCustom118(this);
+                }
+                return this.mUIItemCustom118;
+            }
+        }
+        
+        public UIItemCustom119 UIItemCustom119
+        {
+            get
+            {
+                if ((this.mUIItemCustom119 == null))
+                {
+                    this.mUIItemCustom119 = new UIItemCustom119(this);
+                }
+                return this.mUIItemCustom119;
+            }
+        }
+        
+        public UIItemCustom120 UIItemCustom120
+        {
+            get
+            {
+                if ((this.mUIItemCustom120 == null))
+                {
+                    this.mUIItemCustom120 = new UIItemCustom120(this);
+                }
+                return this.mUIItemCustom120;
+            }
+        }
+        
+        public UIItemCustom121 UIItemCustom121
+        {
+            get
+            {
+                if ((this.mUIItemCustom121 == null))
+                {
+                    this.mUIItemCustom121 = new UIItemCustom121(this);
+                }
+                return this.mUIItemCustom121;
+            }
+        }
+        
+        public UICreateContactGroup UICreateContactGroup
+        {
+            get
+            {
+                if ((this.mUICreateContactGroup == null))
+                {
+                    this.mUICreateContactGroup = new UICreateContactGroup(this);
+                }
+                return this.mUICreateContactGroup;
+            }
+        }
+        
+        public UIItemCustom22 UIItemCustom22
+        {
+            get
+            {
+                if ((this.mUIItemCustom22 == null))
+                {
+                    this.mUIItemCustom22 = new UIItemCustom22(this);
+                }
+                return this.mUIItemCustom22;
+            }
+        }
+        
+        public UIItemCustom23 UIItemCustom23
+        {
+            get
+            {
+                if ((this.mUIItemCustom23 == null))
+                {
+                    this.mUIItemCustom23 = new UIItemCustom23(this);
+                }
+                return this.mUIItemCustom23;
+            }
+        }
+        
+        public UIItemCustom24 UIItemCustom24
+        {
+            get
+            {
+                if ((this.mUIItemCustom24 == null))
+                {
+                    this.mUIItemCustom24 = new UIItemCustom24(this);
+                }
+                return this.mUIItemCustom24;
+            }
+        }
+        
+        public UIItemCustom25 UIItemCustom25
+        {
+            get
+            {
+                if ((this.mUIItemCustom25 == null))
+                {
+                    this.mUIItemCustom25 = new UIItemCustom25(this);
+                }
+                return this.mUIItemCustom25;
+            }
+        }
+        
+        public UIItemCustom26 UIItemCustom26
+        {
+            get
+            {
+                if ((this.mUIItemCustom26 == null))
+                {
+                    this.mUIItemCustom26 = new UIItemCustom26(this);
+                }
+                return this.mUIItemCustom26;
+            }
+        }
         #endregion
         
         #region Fields
@@ -228,6 +1457,94 @@ namespace SoCrm.Tests.AcceptanceTests
         private UIItemCustom1 mUIItemCustom1;
         
         private UIItemCustom2 mUIItemCustom2;
+        
+        private UIItemCustom3 mUIItemCustom3;
+        
+        private UIItemCustom4 mUIItemCustom4;
+        
+        private UIItemCustom5 mUIItemCustom5;
+        
+        private UIItemCustom6 mUIItemCustom6;
+        
+        private UIItemCustom7 mUIItemCustom7;
+        
+        private UIItemCustom8 mUIItemCustom8;
+        
+        private UIItemCustom9 mUIItemCustom9;
+        
+        private UIItemCustom10 mUIItemCustom10;
+        
+        private UIItemCustom11 mUIItemCustom11;
+        
+        private UIItemCustom12 mUIItemCustom12;
+        
+        private UIItemCustom13 mUIItemCustom13;
+        
+        private UIItemCustom14 mUIItemCustom14;
+        
+        private UIItemCustom15 mUIItemCustom15;
+        
+        private UIItemCustom16 mUIItemCustom16;
+        
+        private UIItemCustom17 mUIItemCustom17;
+        
+        private UIItemCustom18 mUIItemCustom18;
+        
+        private UIItemCustom19 mUIItemCustom19;
+        
+        private UIItemCustom110 mUIItemCustom110;
+        
+        private UIItemCustom21 mUIItemCustom21;
+        
+        private UIItemCustom31 mUIItemCustom31;
+        
+        private UIItemCustom32 mUIItemCustom32;
+        
+        private UIItemCustom33 mUIItemCustom33;
+        
+        private UIItemMenu mUIItemMenu;
+        
+        private UISoCrmPresentationCusPane mUISoCrmPresentationCusPane;
+        
+        private WpfPane mUISoCrmPresentationCusPane1;
+        
+        private WpfPane mUISoCrmPresentationCusPane2;
+        
+        private UIItemCustom20 mUIItemCustom20;
+        
+        private UIItemCustom111 mUIItemCustom111;
+        
+        private UIItemCustom112 mUIItemCustom112;
+        
+        private UIItemCustom113 mUIItemCustom113;
+        
+        private UIItemCustom114 mUIItemCustom114;
+        
+        private UIItemCustom115 mUIItemCustom115;
+        
+        private UIItemCustom116 mUIItemCustom116;
+        
+        private UIItemCustom117 mUIItemCustom117;
+        
+        private UIItemCustom118 mUIItemCustom118;
+        
+        private UIItemCustom119 mUIItemCustom119;
+        
+        private UIItemCustom120 mUIItemCustom120;
+        
+        private UIItemCustom121 mUIItemCustom121;
+        
+        private UICreateContactGroup mUICreateContactGroup;
+        
+        private UIItemCustom22 mUIItemCustom22;
+        
+        private UIItemCustom23 mUIItemCustom23;
+        
+        private UIItemCustom24 mUIItemCustom24;
+        
+        private UIItemCustom25 mUIItemCustom25;
+        
+        private UIItemCustom26 mUIItemCustom26;
         #endregion
     }
     
@@ -277,25 +1594,44 @@ namespace SoCrm.Tests.AcceptanceTests
         }
         
         #region Properties
-        public WpfButton UIItemButton
+        public WpfButton LogOnButton
         {
             get
             {
-                if ((this.mUIItemButton == null))
+                if ((this.mLogOnButton == null))
                 {
-                    this.mUIItemButton = new WpfButton(this);
+                    this.mLogOnButton = new WpfButton(this);
                     #region Search Criteria
-                    this.mUIItemButton.SearchConfigurations.Add(SearchConfiguration.NextSibling);
-                    this.mUIItemButton.WindowTitles.Add("Service Oriented CRM");
+                    this.mLogOnButton.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mLogOnButton.WindowTitles.Add("Service Oriented CRM");
                     #endregion
                 }
-                return this.mUIItemButton;
+                return this.mLogOnButton;
+            }
+        }
+        
+        public WpfButton CreatePersonButton
+        {
+            get
+            {
+                if ((this.mCreatePersonButton == null))
+                {
+                    this.mCreatePersonButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mCreatePersonButton.SearchProperties[WpfButton.PropertyNames.HelpText] = "Create Customer";
+                    this.mCreatePersonButton.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mCreatePersonButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mCreatePersonButton;
             }
         }
         #endregion
         
         #region Fields
-        private WpfButton mUIItemButton;
+        private WpfButton mLogOnButton;
+        
+        private WpfButton mCreatePersonButton;
         #endregion
     }
     
@@ -497,10 +1833,28 @@ namespace SoCrm.Tests.AcceptanceTests
                 return this.mUISearchUsersGroup;
             }
         }
+        
+        public WpfCustom UIItemCustom
+        {
+            get
+            {
+                if ((this.mUIItemCustom == null))
+                {
+                    this.mUIItemCustom = new WpfCustom(this);
+                    #region Search Criteria
+                    this.mUIItemCustom.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.UserListView";
+                    this.mUIItemCustom.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemCustom;
+            }
+        }
         #endregion
         
         #region Fields
         private WpfGroup mUISearchUsersGroup;
+        
+        private WpfCustom mUIItemCustom;
         #endregion
     }
     
@@ -561,10 +1915,64 @@ namespace SoCrm.Tests.AcceptanceTests
                 return this.mUIUsernameText;
             }
         }
+        
+        public WpfButton UISearchUsersButton
+        {
+            get
+            {
+                if ((this.mUISearchUsersButton == null))
+                {
+                    this.mUISearchUsersButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISearchUsersButton.SearchProperties[WpfButton.PropertyNames.Name] = "Search Users";
+                    this.mUISearchUsersButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISearchUsersButton;
+            }
+        }
+        
+        public WpfButton UISearchUsersButton1
+        {
+            get
+            {
+                if ((this.mUISearchUsersButton1 == null))
+                {
+                    this.mUISearchUsersButton1 = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISearchUsersButton1.SearchProperties[WpfButton.PropertyNames.Name] = "Search Users";
+                    this.mUISearchUsersButton1.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISearchUsersButton1;
+            }
+        }
+        
+        public WpfButton UISearchUsersButton2
+        {
+            get
+            {
+                if ((this.mUISearchUsersButton2 == null))
+                {
+                    this.mUISearchUsersButton2 = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISearchUsersButton2.SearchProperties[WpfButton.PropertyNames.Name] = "Search Users";
+                    this.mUISearchUsersButton2.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISearchUsersButton2;
+            }
+        }
         #endregion
         
         #region Fields
         private UIUsernameText1 mUIUsernameText;
+        
+        private WpfButton mUISearchUsersButton;
+        
+        private WpfButton mUISearchUsersButton1;
+        
+        private WpfButton mUISearchUsersButton2;
         #endregion
     }
     
@@ -705,6 +2113,5632 @@ namespace SoCrm.Tests.AcceptanceTests
     }
     
     [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom3 : WpfCustom
+    {
+        
+        public UIItemCustom3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CustomerListView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UISearchCustomersGroup UISearchCustomersGroup
+        {
+            get
+            {
+                if ((this.mUISearchCustomersGroup == null))
+                {
+                    this.mUISearchCustomersGroup = new UISearchCustomersGroup(this);
+                }
+                return this.mUISearchCustomersGroup;
+            }
+        }
+        
+        public UIItemTable UIItemTable
+        {
+            get
+            {
+                if ((this.mUIItemTable == null))
+                {
+                    this.mUIItemTable = new UIItemTable(this);
+                }
+                return this.mUIItemTable;
+            }
+        }
+        
+        public UIItemTable1 UIItemTable1
+        {
+            get
+            {
+                if ((this.mUIItemTable1 == null))
+                {
+                    this.mUIItemTable1 = new UIItemTable1(this);
+                }
+                return this.mUIItemTable1;
+            }
+        }
+        
+        public UIItemTable2 UIItemTable2
+        {
+            get
+            {
+                if ((this.mUIItemTable2 == null))
+                {
+                    this.mUIItemTable2 = new UIItemTable2(this);
+                }
+                return this.mUIItemTable2;
+            }
+        }
+        
+        public UIItemTable3 UIItemTable3
+        {
+            get
+            {
+                if ((this.mUIItemTable3 == null))
+                {
+                    this.mUIItemTable3 = new UIItemTable3(this);
+                }
+                return this.mUIItemTable3;
+            }
+        }
+        
+        public UIItemTable4 UIItemTable4
+        {
+            get
+            {
+                if ((this.mUIItemTable4 == null))
+                {
+                    this.mUIItemTable4 = new UIItemTable4(this);
+                }
+                return this.mUIItemTable4;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UISearchCustomersGroup mUISearchCustomersGroup;
+        
+        private UIItemTable mUIItemTable;
+        
+        private UIItemTable1 mUIItemTable1;
+        
+        private UIItemTable2 mUIItemTable2;
+        
+        private UIItemTable3 mUIItemTable3;
+        
+        private UIItemTable4 mUIItemTable4;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UISearchCustomersGroup : WpfGroup
+    {
+        
+        public UISearchCustomersGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Search Customers";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UISearchCustomersButton
+        {
+            get
+            {
+                if ((this.mUISearchCustomersButton == null))
+                {
+                    this.mUISearchCustomersButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISearchCustomersButton.SearchProperties[WpfButton.PropertyNames.Name] = "Search Customers";
+                    this.mUISearchCustomersButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISearchCustomersButton;
+            }
+        }
+        
+        public UINameText UINameText
+        {
+            get
+            {
+                if ((this.mUINameText == null))
+                {
+                    this.mUINameText = new UINameText(this);
+                }
+                return this.mUINameText;
+            }
+        }
+        
+        public UICompanyText UICompanyText
+        {
+            get
+            {
+                if ((this.mUICompanyText == null))
+                {
+                    this.mUICompanyText = new UICompanyText(this);
+                }
+                return this.mUICompanyText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUISearchCustomersButton;
+        
+        private UINameText mUINameText;
+        
+        private UICompanyText mUICompanyText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UINameText : WpfText
+    {
+        
+        public UINameText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Name";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICompanyText : WpfText
+    {
+        
+        public UICompanyText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemTable : WpfTable
+    {
+        
+        public UIItemTable(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfRow UIObjectIdc8dbbe2358faRow
+        {
+            get
+            {
+                if ((this.mUIObjectIdc8dbbe2358faRow == null))
+                {
+                    this.mUIObjectIdc8dbbe2358faRow = new WpfRow(this);
+                    #region Search Criteria
+                    this.mUIObjectIdc8dbbe2358faRow.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: c8dbbe23-58fa-497e-aadb-7c22eaf3a593,Name: Peter Muster";
+                    this.mUIObjectIdc8dbbe2358faRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIObjectIdc8dbbe2358faRow.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIObjectIdc8dbbe2358faRow;
+            }
+        }
+        
+        public UIObjectId859bf5ca805fRow UIObjectId859bf5ca805fRow
+        {
+            get
+            {
+                if ((this.mUIObjectId859bf5ca805fRow == null))
+                {
+                    this.mUIObjectId859bf5ca805fRow = new UIObjectId859bf5ca805fRow(this);
+                }
+                return this.mUIObjectId859bf5ca805fRow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfRow mUIObjectIdc8dbbe2358faRow;
+        
+        private UIObjectId859bf5ca805fRow mUIObjectId859bf5ca805fRow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIObjectId859bf5ca805fRow : WpfRow
+    {
+        
+        public UIObjectId859bf5ca805fRow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: 859bf5ca-805f-46dd-a0fd-2a048529fb24,Name: Peter Muster";
+            this.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemObjectId859bf5caCell UIItemObjectId859bf5caCell
+        {
+            get
+            {
+                if ((this.mUIItemObjectId859bf5caCell == null))
+                {
+                    this.mUIItemObjectId859bf5caCell = new UIItemObjectId859bf5caCell(this);
+                }
+                return this.mUIItemObjectId859bf5caCell;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemObjectId859bf5caCell mUIItemObjectId859bf5caCell;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemObjectId859bf5caCell : WpfCell
+    {
+        
+        public UIItemObjectId859bf5caCell(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = null;
+            this.SearchProperties[WpfCell.PropertyNames.ColumnIndex] = "7";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UIItemButton
+        {
+            get
+            {
+                if ((this.mUIItemButton == null))
+                {
+                    this.mUIItemButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUIItemButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemTable1 : WpfTable
+    {
+        
+        public UIItemTable1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfRow UIObjectIdc8dbbe2358faRow
+        {
+            get
+            {
+                if ((this.mUIObjectIdc8dbbe2358faRow == null))
+                {
+                    this.mUIObjectIdc8dbbe2358faRow = new WpfRow(this);
+                    #region Search Criteria
+                    this.mUIObjectIdc8dbbe2358faRow.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: c8dbbe23-58fa-497e-aadb-7c22eaf3a593,Name: Peter Muster";
+                    this.mUIObjectIdc8dbbe2358faRow.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIObjectIdc8dbbe2358faRow.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIObjectIdc8dbbe2358faRow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfRow mUIObjectIdc8dbbe2358faRow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemTable2 : WpfTable
+    {
+        
+        public UIItemTable2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfRow UIObjectId8c0222465f79Row
+        {
+            get
+            {
+                if ((this.mUIObjectId8c0222465f79Row == null))
+                {
+                    this.mUIObjectId8c0222465f79Row = new WpfRow(this);
+                    #region Search Criteria
+                    this.mUIObjectId8c0222465f79Row.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: 8c022246-5f79-41af-bd77-2862009720c5,Name: Hans Wurscht";
+                    this.mUIObjectId8c0222465f79Row.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+                    this.mUIObjectId8c0222465f79Row.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIObjectId8c0222465f79Row;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfRow mUIObjectId8c0222465f79Row;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemTable3 : WpfTable
+    {
+        
+        public UIItemTable3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIObjectIdc8dbbe2358faRow UIObjectIdc8dbbe2358faRow
+        {
+            get
+            {
+                if ((this.mUIObjectIdc8dbbe2358faRow == null))
+                {
+                    this.mUIObjectIdc8dbbe2358faRow = new UIObjectIdc8dbbe2358faRow(this);
+                }
+                return this.mUIObjectIdc8dbbe2358faRow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIObjectIdc8dbbe2358faRow mUIObjectIdc8dbbe2358faRow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIObjectIdc8dbbe2358faRow : WpfRow
+    {
+        
+        public UIObjectIdc8dbbe2358faRow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: c8dbbe23-58fa-497e-aadb-7c22eaf3a593,Name: Peter Muster";
+            this.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UILaoPDRCell UILaoPDRCell
+        {
+            get
+            {
+                if ((this.mUILaoPDRCell == null))
+                {
+                    this.mUILaoPDRCell = new UILaoPDRCell(this);
+                }
+                return this.mUILaoPDRCell;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UILaoPDRCell mUILaoPDRCell;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UILaoPDRCell : WpfCell
+    {
+        
+        public UILaoPDRCell(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Country";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfText UILaoPDRText
+        {
+            get
+            {
+                if ((this.mUILaoPDRText == null))
+                {
+                    this.mUILaoPDRText = new WpfText(this);
+                    #region Search Criteria
+                    this.mUILaoPDRText.SearchProperties[WpfText.PropertyNames.Name] = "Lao P.D.R.";
+                    this.mUILaoPDRText.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUILaoPDRText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfText mUILaoPDRText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemTable4 : WpfTable
+    {
+        
+        public UIItemTable4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIObjectIdc8dbbe2358faRow1 UIObjectIdc8dbbe2358faRow
+        {
+            get
+            {
+                if ((this.mUIObjectIdc8dbbe2358faRow == null))
+                {
+                    this.mUIObjectIdc8dbbe2358faRow = new UIObjectIdc8dbbe2358faRow1(this);
+                }
+                return this.mUIObjectIdc8dbbe2358faRow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIObjectIdc8dbbe2358faRow1 mUIObjectIdc8dbbe2358faRow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIObjectIdc8dbbe2358faRow1 : WpfRow
+    {
+        
+        public UIObjectIdc8dbbe2358faRow1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: c8dbbe23-58fa-497e-aadb-7c22eaf3a593,Name: Peter Muster";
+            this.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemObjectIdc8dbbe23Cell UIItemObjectIdc8dbbe23Cell
+        {
+            get
+            {
+                if ((this.mUIItemObjectIdc8dbbe23Cell == null))
+                {
+                    this.mUIItemObjectIdc8dbbe23Cell = new UIItemObjectIdc8dbbe23Cell(this);
+                }
+                return this.mUIItemObjectIdc8dbbe23Cell;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemObjectIdc8dbbe23Cell mUIItemObjectIdc8dbbe23Cell;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemObjectIdc8dbbe23Cell : WpfCell
+    {
+        
+        public UIItemObjectIdc8dbbe23Cell(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = null;
+            this.SearchProperties[WpfCell.PropertyNames.ColumnIndex] = "7";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UIItemButton
+        {
+            get
+            {
+                if ((this.mUIItemButton == null))
+                {
+                    this.mUIItemButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUIItemButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom4 : WpfCustom
+    {
+        
+        public UIItemCustom4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup : WpfGroup
+    {
+        
+        public UICreateCustomerGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIFirstnameText UIFirstnameText
+        {
+            get
+            {
+                if ((this.mUIFirstnameText == null))
+                {
+                    this.mUIFirstnameText = new UIFirstnameText(this);
+                }
+                return this.mUIFirstnameText;
+            }
+        }
+        
+        public WpfButton UISaveCustomerButton
+        {
+            get
+            {
+                if ((this.mUISaveCustomerButton == null))
+                {
+                    this.mUISaveCustomerButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISaveCustomerButton.SearchProperties[WpfButton.PropertyNames.Name] = "Save Customer";
+                    this.mUISaveCustomerButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISaveCustomerButton;
+            }
+        }
+        
+        public UILastnameText UILastnameText
+        {
+            get
+            {
+                if ((this.mUILastnameText == null))
+                {
+                    this.mUILastnameText = new UILastnameText(this);
+                }
+                return this.mUILastnameText;
+            }
+        }
+        
+        public UILastnameText1 UILastnameText1
+        {
+            get
+            {
+                if ((this.mUILastnameText1 == null))
+                {
+                    this.mUILastnameText1 = new UILastnameText1(this);
+                }
+                return this.mUILastnameText1;
+            }
+        }
+        
+        public UIAddressText UIAddressText
+        {
+            get
+            {
+                if ((this.mUIAddressText == null))
+                {
+                    this.mUIAddressText = new UIAddressText(this);
+                }
+                return this.mUIAddressText;
+            }
+        }
+        
+        public UIAddressText1 UIAddressText1
+        {
+            get
+            {
+                if ((this.mUIAddressText1 == null))
+                {
+                    this.mUIAddressText1 = new UIAddressText1(this);
+                }
+                return this.mUIAddressText1;
+            }
+        }
+        
+        public UIZipCodeText UIZipCodeText
+        {
+            get
+            {
+                if ((this.mUIZipCodeText == null))
+                {
+                    this.mUIZipCodeText = new UIZipCodeText(this);
+                }
+                return this.mUIZipCodeText;
+            }
+        }
+        
+        public UIZipCodeText1 UIZipCodeText1
+        {
+            get
+            {
+                if ((this.mUIZipCodeText1 == null))
+                {
+                    this.mUIZipCodeText1 = new UIZipCodeText1(this);
+                }
+                return this.mUIZipCodeText1;
+            }
+        }
+        
+        public UICityText UICityText
+        {
+            get
+            {
+                if ((this.mUICityText == null))
+                {
+                    this.mUICityText = new UICityText(this);
+                }
+                return this.mUICityText;
+            }
+        }
+        
+        public UICountryText UICountryText
+        {
+            get
+            {
+                if ((this.mUICountryText == null))
+                {
+                    this.mUICountryText = new UICountryText(this);
+                }
+                return this.mUICountryText;
+            }
+        }
+        
+        public UIItemButton UIItemButton
+        {
+            get
+            {
+                if ((this.mUIItemButton == null))
+                {
+                    this.mUIItemButton = new UIItemButton(this);
+                }
+                return this.mUIItemButton;
+            }
+        }
+        
+        public WpfButton UIItemButton1
+        {
+            get
+            {
+                if ((this.mUIItemButton1 == null))
+                {
+                    this.mUIItemButton1 = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton1.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r\n";
+                    this.mUIItemButton1.SearchProperties[WpfButton.PropertyNames.Instance] = "2";
+                    this.mUIItemButton1.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton1;
+            }
+        }
+        
+        public UIItemButton2 UIItemButton2
+        {
+            get
+            {
+                if ((this.mUIItemButton2 == null))
+                {
+                    this.mUIItemButton2 = new UIItemButton2(this);
+                }
+                return this.mUIItemButton2;
+            }
+        }
+        
+        public UIItemButton3 UIItemButton3
+        {
+            get
+            {
+                if ((this.mUIItemButton3 == null))
+                {
+                    this.mUIItemButton3 = new UIItemButton3(this);
+                }
+                return this.mUIItemButton3;
+            }
+        }
+        
+        public WpfButton UIItemButton11
+        {
+            get
+            {
+                if ((this.mUIItemButton11 == null))
+                {
+                    this.mUIItemButton11 = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton11.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r";
+                    this.mUIItemButton11.SearchProperties[WpfButton.PropertyNames.Instance] = "2";
+                    this.mUIItemButton11.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton11;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIFirstnameText mUIFirstnameText;
+        
+        private WpfButton mUISaveCustomerButton;
+        
+        private UILastnameText mUILastnameText;
+        
+        private UILastnameText1 mUILastnameText1;
+        
+        private UIAddressText mUIAddressText;
+        
+        private UIAddressText1 mUIAddressText1;
+        
+        private UIZipCodeText mUIZipCodeText;
+        
+        private UIZipCodeText1 mUIZipCodeText1;
+        
+        private UICityText mUICityText;
+        
+        private UICountryText mUICountryText;
+        
+        private UIItemButton mUIItemButton;
+        
+        private WpfButton mUIItemButton1;
+        
+        private UIItemButton2 mUIItemButton2;
+        
+        private UIItemButton3 mUIItemButton3;
+        
+        private WpfButton mUIItemButton11;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIFirstnameText : WpfText
+    {
+        
+        public UIFirstnameText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Firstname";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UILastnameText : WpfText
+    {
+        
+        public UILastnameText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Lastname";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UILastnameText1 : WpfText
+    {
+        
+        public UILastnameText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Lastname";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIAddressText : WpfText
+    {
+        
+        public UIAddressText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIAddressText1 : WpfText
+    {
+        
+        public UIAddressText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIZipCodeText : WpfText
+    {
+        
+        public UIZipCodeText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Zip Code";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIZipCodeText1 : WpfText
+    {
+        
+        public UIZipCodeText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Zip Code";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICityText : WpfText
+    {
+        
+        public UICityText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "City";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICountryText : WpfText
+    {
+        
+        public UICountryText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Country";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemButton : WpfButton
+    {
+        
+        public UIItemButton(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r\n";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemButton2 : WpfButton
+    {
+        
+        public UIItemButton2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemButton3 : WpfButton
+    {
+        
+        public UIItemButton3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom5 : WpfCustom
+    {
+        
+        public UIItemCustom5(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup1 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup1(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup1 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup1 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIFirstnameText1 UIFirstnameText
+        {
+            get
+            {
+                if ((this.mUIFirstnameText == null))
+                {
+                    this.mUIFirstnameText = new UIFirstnameText1(this);
+                }
+                return this.mUIFirstnameText;
+            }
+        }
+        
+        public WpfButton UIItemButton
+        {
+            get
+            {
+                if ((this.mUIItemButton == null))
+                {
+                    this.mUIItemButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r\n";
+                    this.mUIItemButton.SearchProperties[WpfButton.PropertyNames.Instance] = "3";
+                    this.mUIItemButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton;
+            }
+        }
+        
+        public WpfButton UIItemButton1
+        {
+            get
+            {
+                if ((this.mUIItemButton1 == null))
+                {
+                    this.mUIItemButton1 = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton1.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r";
+                    this.mUIItemButton1.SearchProperties[WpfButton.PropertyNames.Instance] = "3";
+                    this.mUIItemButton1.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIFirstnameText1 mUIFirstnameText;
+        
+        private WpfButton mUIItemButton;
+        
+        private WpfButton mUIItemButton1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIFirstnameText1 : WpfText
+    {
+        
+        public UIFirstnameText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Firstname";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom6 : WpfCustom
+    {
+        
+        public UIItemCustom6(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup2 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup2(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup2 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup2 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UILastnameText2 UILastnameText
+        {
+            get
+            {
+                if ((this.mUILastnameText == null))
+                {
+                    this.mUILastnameText = new UILastnameText2(this);
+                }
+                return this.mUILastnameText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UILastnameText2 mUILastnameText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UILastnameText2 : WpfText
+    {
+        
+        public UILastnameText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Lastname";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom7 : WpfCustom
+    {
+        
+        public UIItemCustom7(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup3 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup3(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup3 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup3 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UILastnameText3 UILastnameText
+        {
+            get
+            {
+                if ((this.mUILastnameText == null))
+                {
+                    this.mUILastnameText = new UILastnameText3(this);
+                }
+                return this.mUILastnameText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UILastnameText3 mUILastnameText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UILastnameText3 : WpfText
+    {
+        
+        public UILastnameText3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Lastname";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom8 : WpfCustom
+    {
+        
+        public UIItemCustom8(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup4 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup4(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup4 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup4 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIAddressText2 UIAddressText
+        {
+            get
+            {
+                if ((this.mUIAddressText == null))
+                {
+                    this.mUIAddressText = new UIAddressText2(this);
+                }
+                return this.mUIAddressText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIAddressText2 mUIAddressText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIAddressText2 : WpfText
+    {
+        
+        public UIAddressText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom9 : WpfCustom
+    {
+        
+        public UIItemCustom9(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup5 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup5(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup5 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup5 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup5(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIAddressText3 UIAddressText
+        {
+            get
+            {
+                if ((this.mUIAddressText == null))
+                {
+                    this.mUIAddressText = new UIAddressText3(this);
+                }
+                return this.mUIAddressText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIAddressText3 mUIAddressText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIAddressText3 : WpfText
+    {
+        
+        public UIAddressText3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom10 : WpfCustom
+    {
+        
+        public UIItemCustom10(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup6 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup6(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup6 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup6 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup6(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIZipCodeText2 UIZipCodeText
+        {
+            get
+            {
+                if ((this.mUIZipCodeText == null))
+                {
+                    this.mUIZipCodeText = new UIZipCodeText2(this);
+                }
+                return this.mUIZipCodeText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIZipCodeText2 mUIZipCodeText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIZipCodeText2 : WpfText
+    {
+        
+        public UIZipCodeText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Zip Code";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom11 : WpfCustom
+    {
+        
+        public UIItemCustom11(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup7 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup7(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup7 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup7 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup7(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIZipCodeText3 UIZipCodeText
+        {
+            get
+            {
+                if ((this.mUIZipCodeText == null))
+                {
+                    this.mUIZipCodeText = new UIZipCodeText3(this);
+                }
+                return this.mUIZipCodeText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIZipCodeText3 mUIZipCodeText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIZipCodeText3 : WpfText
+    {
+        
+        public UIZipCodeText3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Zip Code";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom12 : WpfCustom
+    {
+        
+        public UIItemCustom12(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup8 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup8(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup8 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup8 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup8(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICityText1 UICityText
+        {
+            get
+            {
+                if ((this.mUICityText == null))
+                {
+                    this.mUICityText = new UICityText1(this);
+                }
+                return this.mUICityText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICityText1 mUICityText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICityText1 : WpfText
+    {
+        
+        public UICityText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "City";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom13 : WpfCustom
+    {
+        
+        public UIItemCustom13(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup9 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup9(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup9 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup9 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup9(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICityText2 UICityText
+        {
+            get
+            {
+                if ((this.mUICityText == null))
+                {
+                    this.mUICityText = new UICityText2(this);
+                }
+                return this.mUICityText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICityText2 mUICityText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICityText2 : WpfText
+    {
+        
+        public UICityText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "City";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom14 : WpfCustom
+    {
+        
+        public UIItemCustom14(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup10 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup10(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup10 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup10 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup10(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICountryText1 UICountryText
+        {
+            get
+            {
+                if ((this.mUICountryText == null))
+                {
+                    this.mUICountryText = new UICountryText1(this);
+                }
+                return this.mUICountryText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICountryText1 mUICountryText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICountryText1 : WpfText
+    {
+        
+        public UICountryText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Country";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom15 : WpfCustom
+    {
+        
+        public UIItemCustom15(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup11 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup11(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup11 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup11 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup11(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemButton1 UIItemButton
+        {
+            get
+            {
+                if ((this.mUIItemButton == null))
+                {
+                    this.mUIItemButton = new UIItemButton1(this);
+                }
+                return this.mUIItemButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemButton1 mUIItemButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemButton1 : WpfButton
+    {
+        
+        public UIItemButton1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r\n";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom16 : WpfCustom
+    {
+        
+        public UIItemCustom16(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup12 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup12(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup12 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup12 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup12(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UIItemButton1
+        {
+            get
+            {
+                if ((this.mUIItemButton1 == null))
+                {
+                    this.mUIItemButton1 = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton1.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r\n";
+                    this.mUIItemButton1.SearchProperties[WpfButton.PropertyNames.Instance] = "2";
+                    this.mUIItemButton1.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUIItemButton1;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom17 : WpfCustom
+    {
+        
+        public UIItemCustom17(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateEMailAddressView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateEMailAddressGroup UICreateEMailAddressGroup
+        {
+            get
+            {
+                if ((this.mUICreateEMailAddressGroup == null))
+                {
+                    this.mUICreateEMailAddressGroup = new UICreateEMailAddressGroup(this);
+                }
+                return this.mUICreateEMailAddressGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateEMailAddressGroup mUICreateEMailAddressGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateEMailAddressGroup : WpfGroup
+    {
+        
+        public UICreateEMailAddressGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create E-Mail Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIEMailAddressText UIEMailAddressText
+        {
+            get
+            {
+                if ((this.mUIEMailAddressText == null))
+                {
+                    this.mUIEMailAddressText = new UIEMailAddressText(this);
+                }
+                return this.mUIEMailAddressText;
+            }
+        }
+        
+        public WpfButton UISaveEMailAddressButton
+        {
+            get
+            {
+                if ((this.mUISaveEMailAddressButton == null))
+                {
+                    this.mUISaveEMailAddressButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISaveEMailAddressButton.SearchProperties[WpfButton.PropertyNames.Name] = "Save E-Mail Address";
+                    this.mUISaveEMailAddressButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISaveEMailAddressButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIEMailAddressText mUIEMailAddressText;
+        
+        private WpfButton mUISaveEMailAddressButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIEMailAddressText : WpfText
+    {
+        
+        public UIEMailAddressText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "E-Mail Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom18 : WpfCustom
+    {
+        
+        public UIItemCustom18(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateEMailAddressView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateEMailAddressGroup1 UICreateEMailAddressGroup
+        {
+            get
+            {
+                if ((this.mUICreateEMailAddressGroup == null))
+                {
+                    this.mUICreateEMailAddressGroup = new UICreateEMailAddressGroup1(this);
+                }
+                return this.mUICreateEMailAddressGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateEMailAddressGroup1 mUICreateEMailAddressGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateEMailAddressGroup1 : WpfGroup
+    {
+        
+        public UICreateEMailAddressGroup1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create E-Mail Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIEMailAddressText1 UIEMailAddressText
+        {
+            get
+            {
+                if ((this.mUIEMailAddressText == null))
+                {
+                    this.mUIEMailAddressText = new UIEMailAddressText1(this);
+                }
+                return this.mUIEMailAddressText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIEMailAddressText1 mUIEMailAddressText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIEMailAddressText1 : WpfText
+    {
+        
+        public UIEMailAddressText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "E-Mail Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom19 : WpfCustom
+    {
+        
+        public UIItemCustom19(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateEMailAddressView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateEMailAddressGroup2 UICreateEMailAddressGroup
+        {
+            get
+            {
+                if ((this.mUICreateEMailAddressGroup == null))
+                {
+                    this.mUICreateEMailAddressGroup = new UICreateEMailAddressGroup2(this);
+                }
+                return this.mUICreateEMailAddressGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateEMailAddressGroup2 mUICreateEMailAddressGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateEMailAddressGroup2 : WpfGroup
+    {
+        
+        public UICreateEMailAddressGroup2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create E-Mail Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIEMailAddressText2 UIEMailAddressText
+        {
+            get
+            {
+                if ((this.mUIEMailAddressText == null))
+                {
+                    this.mUIEMailAddressText = new UIEMailAddressText2(this);
+                }
+                return this.mUIEMailAddressText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIEMailAddressText2 mUIEMailAddressText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIEMailAddressText2 : WpfText
+    {
+        
+        public UIEMailAddressText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "E-Mail Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom110 : WpfCustom
+    {
+        
+        public UIItemCustom110(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateEMailAddressView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateEMailAddressGroup3 UICreateEMailAddressGroup
+        {
+            get
+            {
+                if ((this.mUICreateEMailAddressGroup == null))
+                {
+                    this.mUICreateEMailAddressGroup = new UICreateEMailAddressGroup3(this);
+                }
+                return this.mUICreateEMailAddressGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateEMailAddressGroup3 mUICreateEMailAddressGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateEMailAddressGroup3 : WpfGroup
+    {
+        
+        public UICreateEMailAddressGroup3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create E-Mail Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UISaveEMailAddressButton
+        {
+            get
+            {
+                if ((this.mUISaveEMailAddressButton == null))
+                {
+                    this.mUISaveEMailAddressButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISaveEMailAddressButton.SearchProperties[WpfButton.PropertyNames.Name] = "Save E-Mail Address";
+                    this.mUISaveEMailAddressButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISaveEMailAddressButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUISaveEMailAddressButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom21 : WpfCustom
+    {
+        
+        public UIItemCustom21(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCustomerView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCustomerGroup13 UICreateCustomerGroup
+        {
+            get
+            {
+                if ((this.mUICreateCustomerGroup == null))
+                {
+                    this.mUICreateCustomerGroup = new UICreateCustomerGroup13(this);
+                }
+                return this.mUICreateCustomerGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCustomerGroup13 mUICreateCustomerGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCustomerGroup13 : WpfGroup
+    {
+        
+        public UICreateCustomerGroup13(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Customer";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UIItemButton
+        {
+            get
+            {
+                if ((this.mUIItemButton == null))
+                {
+                    this.mUIItemButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIItemButton.SearchProperties[WpfButton.PropertyNames.AccessKey] = "\r\n";
+                    this.mUIItemButton.SearchProperties[WpfButton.PropertyNames.Instance] = "3";
+                    this.mUIItemButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUIItemButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom31 : WpfCustom
+    {
+        
+        public UIItemCustom31(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreatePhoneNumberView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreatePhoneNumberGroup UICreatePhoneNumberGroup
+        {
+            get
+            {
+                if ((this.mUICreatePhoneNumberGroup == null))
+                {
+                    this.mUICreatePhoneNumberGroup = new UICreatePhoneNumberGroup(this);
+                }
+                return this.mUICreatePhoneNumberGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreatePhoneNumberGroup mUICreatePhoneNumberGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreatePhoneNumberGroup : WpfGroup
+    {
+        
+        public UICreatePhoneNumberGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Phone Number";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIPhoneNumberText UIPhoneNumberText
+        {
+            get
+            {
+                if ((this.mUIPhoneNumberText == null))
+                {
+                    this.mUIPhoneNumberText = new UIPhoneNumberText(this);
+                }
+                return this.mUIPhoneNumberText;
+            }
+        }
+        
+        public UIContactTypeText UIContactTypeText
+        {
+            get
+            {
+                if ((this.mUIContactTypeText == null))
+                {
+                    this.mUIContactTypeText = new UIContactTypeText(this);
+                }
+                return this.mUIContactTypeText;
+            }
+        }
+        
+        public WpfButton UISavePhoneNumberButton
+        {
+            get
+            {
+                if ((this.mUISavePhoneNumberButton == null))
+                {
+                    this.mUISavePhoneNumberButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISavePhoneNumberButton.SearchProperties[WpfButton.PropertyNames.Name] = "Save Phone Number";
+                    this.mUISavePhoneNumberButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISavePhoneNumberButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIPhoneNumberText mUIPhoneNumberText;
+        
+        private UIContactTypeText mUIContactTypeText;
+        
+        private WpfButton mUISavePhoneNumberButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIPhoneNumberText : WpfText
+    {
+        
+        public UIPhoneNumberText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Phone Number";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIContactTypeText : WpfText
+    {
+        
+        public UIContactTypeText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Contact Type";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom32 : WpfCustom
+    {
+        
+        public UIItemCustom32(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreatePhoneNumberView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreatePhoneNumberGroup1 UICreatePhoneNumberGroup
+        {
+            get
+            {
+                if ((this.mUICreatePhoneNumberGroup == null))
+                {
+                    this.mUICreatePhoneNumberGroup = new UICreatePhoneNumberGroup1(this);
+                }
+                return this.mUICreatePhoneNumberGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreatePhoneNumberGroup1 mUICreatePhoneNumberGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreatePhoneNumberGroup1 : WpfGroup
+    {
+        
+        public UICreatePhoneNumberGroup1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Phone Number";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIContactTypeText1 UIContactTypeText
+        {
+            get
+            {
+                if ((this.mUIContactTypeText == null))
+                {
+                    this.mUIContactTypeText = new UIContactTypeText1(this);
+                }
+                return this.mUIContactTypeText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIContactTypeText1 mUIContactTypeText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIContactTypeText1 : WpfText
+    {
+        
+        public UIContactTypeText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Contact Type";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom33 : WpfCustom
+    {
+        
+        public UIItemCustom33(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreatePhoneNumberView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreatePhoneNumberGroup2 UICreatePhoneNumberGroup
+        {
+            get
+            {
+                if ((this.mUICreatePhoneNumberGroup == null))
+                {
+                    this.mUICreatePhoneNumberGroup = new UICreatePhoneNumberGroup2(this);
+                }
+                return this.mUICreatePhoneNumberGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreatePhoneNumberGroup2 mUICreatePhoneNumberGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreatePhoneNumberGroup2 : WpfGroup
+    {
+        
+        public UICreatePhoneNumberGroup2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Phone Number";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UISavePhoneNumberButton
+        {
+            get
+            {
+                if ((this.mUISavePhoneNumberButton == null))
+                {
+                    this.mUISavePhoneNumberButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISavePhoneNumberButton.SearchProperties[WpfButton.PropertyNames.Name] = "Save Phone Number";
+                    this.mUISavePhoneNumberButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISavePhoneNumberButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUISavePhoneNumberButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemMenu : WpfMenu
+    {
+        
+        public UIItemMenu(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIFileMenuItem UIFileMenuItem
+        {
+            get
+            {
+                if ((this.mUIFileMenuItem == null))
+                {
+                    this.mUIFileMenuItem = new UIFileMenuItem(this);
+                }
+                return this.mUIFileMenuItem;
+            }
+        }
+        
+        public UICustomersMenuItem UICustomersMenuItem
+        {
+            get
+            {
+                if ((this.mUICustomersMenuItem == null))
+                {
+                    this.mUICustomersMenuItem = new UICustomersMenuItem(this);
+                }
+                return this.mUICustomersMenuItem;
+            }
+        }
+        
+        public UIContactsMenuItem UIContactsMenuItem
+        {
+            get
+            {
+                if ((this.mUIContactsMenuItem == null))
+                {
+                    this.mUIContactsMenuItem = new UIContactsMenuItem(this);
+                }
+                return this.mUIContactsMenuItem;
+            }
+        }
+        
+        public UISecurityMenuItem UISecurityMenuItem
+        {
+            get
+            {
+                if ((this.mUISecurityMenuItem == null))
+                {
+                    this.mUISecurityMenuItem = new UISecurityMenuItem(this);
+                }
+                return this.mUISecurityMenuItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIFileMenuItem mUIFileMenuItem;
+        
+        private UICustomersMenuItem mUICustomersMenuItem;
+        
+        private UIContactsMenuItem mUIContactsMenuItem;
+        
+        private UISecurityMenuItem mUISecurityMenuItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIFileMenuItem : WpfMenuItem
+    {
+        
+        public UIFileMenuItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfMenuItem.PropertyNames.Name] = "File";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfMenuItem UILogonMenuItem
+        {
+            get
+            {
+                if ((this.mUILogonMenuItem == null))
+                {
+                    this.mUILogonMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUILogonMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "Logon";
+                    this.mUILogonMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUILogonMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUILogonMenuItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfMenuItem mUILogonMenuItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICustomersMenuItem : WpfMenuItem
+    {
+        
+        public UICustomersMenuItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfMenuItem.PropertyNames.Name] = "Customers";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfMenuItem UIViewCustomersMenuItem
+        {
+            get
+            {
+                if ((this.mUIViewCustomersMenuItem == null))
+                {
+                    this.mUIViewCustomersMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUIViewCustomersMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "View Customers";
+                    this.mUIViewCustomersMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUIViewCustomersMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIViewCustomersMenuItem;
+            }
+        }
+        
+        public WpfMenuItem UICreateCustomerMenuItem
+        {
+            get
+            {
+                if ((this.mUICreateCustomerMenuItem == null))
+                {
+                    this.mUICreateCustomerMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUICreateCustomerMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "Create Customer";
+                    this.mUICreateCustomerMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUICreateCustomerMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUICreateCustomerMenuItem;
+            }
+        }
+        
+        public WpfMenuItem UIViewCompaniesMenuItem
+        {
+            get
+            {
+                if ((this.mUIViewCompaniesMenuItem == null))
+                {
+                    this.mUIViewCompaniesMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUIViewCompaniesMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "View Companies";
+                    this.mUIViewCompaniesMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUIViewCompaniesMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIViewCompaniesMenuItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfMenuItem mUIViewCustomersMenuItem;
+        
+        private WpfMenuItem mUICreateCustomerMenuItem;
+        
+        private WpfMenuItem mUIViewCompaniesMenuItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIContactsMenuItem : WpfMenuItem
+    {
+        
+        public UIContactsMenuItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfMenuItem.PropertyNames.Name] = "Contacts";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfMenuItem UIViewContactsMenuItem
+        {
+            get
+            {
+                if ((this.mUIViewContactsMenuItem == null))
+                {
+                    this.mUIViewContactsMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUIViewContactsMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "View Contacts";
+                    this.mUIViewContactsMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUIViewContactsMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIViewContactsMenuItem;
+            }
+        }
+        
+        public WpfMenuItem UICreateContactMenuItem
+        {
+            get
+            {
+                if ((this.mUICreateContactMenuItem == null))
+                {
+                    this.mUICreateContactMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUICreateContactMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "Create Contact";
+                    this.mUICreateContactMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUICreateContactMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUICreateContactMenuItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfMenuItem mUIViewContactsMenuItem;
+        
+        private WpfMenuItem mUICreateContactMenuItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UISecurityMenuItem : WpfMenuItem
+    {
+        
+        public UISecurityMenuItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfMenuItem.PropertyNames.Name] = "Security";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfMenuItem UIViewUsersMenuItem
+        {
+            get
+            {
+                if ((this.mUIViewUsersMenuItem == null))
+                {
+                    this.mUIViewUsersMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUIViewUsersMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "View Users";
+                    this.mUIViewUsersMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUIViewUsersMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIViewUsersMenuItem;
+            }
+        }
+        
+        public WpfMenuItem UICreateUserMenuItem
+        {
+            get
+            {
+                if ((this.mUICreateUserMenuItem == null))
+                {
+                    this.mUICreateUserMenuItem = new WpfMenuItem(this);
+                    #region Search Criteria
+                    this.mUICreateUserMenuItem.SearchProperties[WpfMenuItem.PropertyNames.Name] = "Create User";
+                    this.mUICreateUserMenuItem.SearchConfigurations.Add(SearchConfiguration.ExpandWhileSearching);
+                    this.mUICreateUserMenuItem.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUICreateUserMenuItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfMenuItem mUIViewUsersMenuItem;
+        
+        private WpfMenuItem mUICreateUserMenuItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UISoCrmPresentationCusPane : WpfPane
+    {
+        
+        public UISoCrmPresentationCusPane(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfPane.PropertyNames.ClassName] = "Uia.ScrollViewer";
+            this.SearchProperties[WpfPane.PropertyNames.Name] = "SoCrm.Presentation.Customers.CreateEMailAddress.CreateEMailAddressViewModel";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfGroup UICreateEMailAddressGroup
+        {
+            get
+            {
+                if ((this.mUICreateEMailAddressGroup == null))
+                {
+                    this.mUICreateEMailAddressGroup = new WpfGroup(this);
+                    #region Search Criteria
+                    this.mUICreateEMailAddressGroup.SearchProperties[WpfGroup.PropertyNames.Name] = "Create E-Mail Address";
+                    this.mUICreateEMailAddressGroup.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUICreateEMailAddressGroup;
+            }
+        }
+        
+        public WpfGroup UICreatePhoneNumberGroup
+        {
+            get
+            {
+                if ((this.mUICreatePhoneNumberGroup == null))
+                {
+                    this.mUICreatePhoneNumberGroup = new WpfGroup(this);
+                    #region Search Criteria
+                    this.mUICreatePhoneNumberGroup.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Phone Number";
+                    this.mUICreatePhoneNumberGroup.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUICreatePhoneNumberGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfGroup mUICreateEMailAddressGroup;
+        
+        private WpfGroup mUICreatePhoneNumberGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom20 : WpfCustom
+    {
+        
+        public UIItemCustom20(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CompanyListView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UISearchCompaniesGroup UISearchCompaniesGroup
+        {
+            get
+            {
+                if ((this.mUISearchCompaniesGroup == null))
+                {
+                    this.mUISearchCompaniesGroup = new UISearchCompaniesGroup(this);
+                }
+                return this.mUISearchCompaniesGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UISearchCompaniesGroup mUISearchCompaniesGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UISearchCompaniesGroup : WpfGroup
+    {
+        
+        public UISearchCompaniesGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Search Companies";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UISearchCompaniesButton
+        {
+            get
+            {
+                if ((this.mUISearchCompaniesButton == null))
+                {
+                    this.mUISearchCompaniesButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISearchCompaniesButton.SearchProperties[WpfButton.PropertyNames.Name] = "Search Companies";
+                    this.mUISearchCompaniesButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISearchCompaniesButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUISearchCompaniesButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom111 : WpfCustom
+    {
+        
+        public UIItemCustom111(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup : WpfGroup
+    {
+        
+        public UICreateCompanyGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UINameText1 UINameText
+        {
+            get
+            {
+                if ((this.mUINameText == null))
+                {
+                    this.mUINameText = new UINameText1(this);
+                }
+                return this.mUINameText;
+            }
+        }
+        
+        public WpfButton UISaveCompanyButton
+        {
+            get
+            {
+                if ((this.mUISaveCompanyButton == null))
+                {
+                    this.mUISaveCompanyButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISaveCompanyButton.SearchProperties[WpfButton.PropertyNames.Name] = "Save Company";
+                    this.mUISaveCompanyButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISaveCompanyButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UINameText1 mUINameText;
+        
+        private WpfButton mUISaveCompanyButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UINameText1 : WpfText
+    {
+        
+        public UINameText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Name";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom112 : WpfCustom
+    {
+        
+        public UIItemCustom112(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup1 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup1(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup1 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup1 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UINameText2 UINameText
+        {
+            get
+            {
+                if ((this.mUINameText == null))
+                {
+                    this.mUINameText = new UINameText2(this);
+                }
+                return this.mUINameText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UINameText2 mUINameText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UINameText2 : WpfText
+    {
+        
+        public UINameText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Name";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom113 : WpfCustom
+    {
+        
+        public UIItemCustom113(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup2 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup2(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup2 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup2 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIWebsiteText UIWebsiteText
+        {
+            get
+            {
+                if ((this.mUIWebsiteText == null))
+                {
+                    this.mUIWebsiteText = new UIWebsiteText(this);
+                }
+                return this.mUIWebsiteText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIWebsiteText mUIWebsiteText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIWebsiteText : WpfText
+    {
+        
+        public UIWebsiteText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Website";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom114 : WpfCustom
+    {
+        
+        public UIItemCustom114(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup3 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup3(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup3 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup3 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIWebsiteText1 UIWebsiteText
+        {
+            get
+            {
+                if ((this.mUIWebsiteText == null))
+                {
+                    this.mUIWebsiteText = new UIWebsiteText1(this);
+                }
+                return this.mUIWebsiteText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIWebsiteText1 mUIWebsiteText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIWebsiteText1 : WpfText
+    {
+        
+        public UIWebsiteText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Website";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom115 : WpfCustom
+    {
+        
+        public UIItemCustom115(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup4 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup4(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup4 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup4 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIAddressText4 UIAddressText
+        {
+            get
+            {
+                if ((this.mUIAddressText == null))
+                {
+                    this.mUIAddressText = new UIAddressText4(this);
+                }
+                return this.mUIAddressText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIAddressText4 mUIAddressText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIAddressText4 : WpfText
+    {
+        
+        public UIAddressText4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom116 : WpfCustom
+    {
+        
+        public UIItemCustom116(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup5 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup5(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup5 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup5 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup5(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIAddressText5 UIAddressText
+        {
+            get
+            {
+                if ((this.mUIAddressText == null))
+                {
+                    this.mUIAddressText = new UIAddressText5(this);
+                }
+                return this.mUIAddressText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIAddressText5 mUIAddressText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIAddressText5 : WpfText
+    {
+        
+        public UIAddressText5(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Address";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom117 : WpfCustom
+    {
+        
+        public UIItemCustom117(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup6 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup6(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup6 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup6 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup6(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIZipCodeText4 UIZipCodeText
+        {
+            get
+            {
+                if ((this.mUIZipCodeText == null))
+                {
+                    this.mUIZipCodeText = new UIZipCodeText4(this);
+                }
+                return this.mUIZipCodeText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIZipCodeText4 mUIZipCodeText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIZipCodeText4 : WpfText
+    {
+        
+        public UIZipCodeText4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Zip Code";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom118 : WpfCustom
+    {
+        
+        public UIItemCustom118(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup7 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup7(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup7 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup7 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup7(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIZipCodeText5 UIZipCodeText
+        {
+            get
+            {
+                if ((this.mUIZipCodeText == null))
+                {
+                    this.mUIZipCodeText = new UIZipCodeText5(this);
+                }
+                return this.mUIZipCodeText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIZipCodeText5 mUIZipCodeText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIZipCodeText5 : WpfText
+    {
+        
+        public UIZipCodeText5(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Zip Code";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom119 : WpfCustom
+    {
+        
+        public UIItemCustom119(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup8 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup8(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup8 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup8 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup8(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICityText3 UICityText
+        {
+            get
+            {
+                if ((this.mUICityText == null))
+                {
+                    this.mUICityText = new UICityText3(this);
+                }
+                return this.mUICityText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICityText3 mUICityText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICityText3 : WpfText
+    {
+        
+        public UICityText3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "City";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom120 : WpfCustom
+    {
+        
+        public UIItemCustom120(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup9 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup9(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup9 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup9 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup9(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICityText4 UICityText
+        {
+            get
+            {
+                if ((this.mUICityText == null))
+                {
+                    this.mUICityText = new UICityText4(this);
+                }
+                return this.mUICityText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICityText4 mUICityText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICityText4 : WpfText
+    {
+        
+        public UICityText4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "City";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom121 : WpfCustom
+    {
+        
+        public UIItemCustom121(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateCompanyView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateCompanyGroup10 UICreateCompanyGroup
+        {
+            get
+            {
+                if ((this.mUICreateCompanyGroup == null))
+                {
+                    this.mUICreateCompanyGroup = new UICreateCompanyGroup10(this);
+                }
+                return this.mUICreateCompanyGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateCompanyGroup10 mUICreateCompanyGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateCompanyGroup10 : WpfGroup
+    {
+        
+        public UICreateCompanyGroup10(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Company";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICountryText2 UICountryText
+        {
+            get
+            {
+                if ((this.mUICountryText == null))
+                {
+                    this.mUICountryText = new UICountryText2(this);
+                }
+                return this.mUICountryText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICountryText2 mUICountryText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICountryText2 : WpfText
+    {
+        
+        public UICountryText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Country";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateContactGroup : WpfGroup
+    {
+        
+        public UICreateContactGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Contact";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemTable5 UIItemTable
+        {
+            get
+            {
+                if ((this.mUIItemTable == null))
+                {
+                    this.mUIItemTable = new UIItemTable5(this);
+                }
+                return this.mUIItemTable;
+            }
+        }
+        
+        public UIMediumText UIMediumText
+        {
+            get
+            {
+                if ((this.mUIMediumText == null))
+                {
+                    this.mUIMediumText = new UIMediumText(this);
+                }
+                return this.mUIMediumText;
+            }
+        }
+        
+        public UIContentText UIContentText
+        {
+            get
+            {
+                if ((this.mUIContentText == null))
+                {
+                    this.mUIContentText = new UIContentText(this);
+                }
+                return this.mUIContentText;
+            }
+        }
+        
+        public UIDateTimeText UIDateTimeText
+        {
+            get
+            {
+                if ((this.mUIDateTimeText == null))
+                {
+                    this.mUIDateTimeText = new UIDateTimeText(this);
+                }
+                return this.mUIDateTimeText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemTable5 mUIItemTable;
+        
+        private UIMediumText mUIMediumText;
+        
+        private UIContentText mUIContentText;
+        
+        private UIDateTimeText mUIDateTimeText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemTable5 : WpfTable
+    {
+        
+        public UIItemTable5(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIObjectId044a8266e12fRow UIObjectId044a8266e12fRow
+        {
+            get
+            {
+                if ((this.mUIObjectId044a8266e12fRow == null))
+                {
+                    this.mUIObjectId044a8266e12fRow = new UIObjectId044a8266e12fRow(this);
+                }
+                return this.mUIObjectId044a8266e12fRow;
+            }
+        }
+        
+        public UIObjectId8c0222465f79Row UIObjectId8c0222465f79Row
+        {
+            get
+            {
+                if ((this.mUIObjectId8c0222465f79Row == null))
+                {
+                    this.mUIObjectId8c0222465f79Row = new UIObjectId8c0222465f79Row(this);
+                }
+                return this.mUIObjectId8c0222465f79Row;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIObjectId044a8266e12fRow mUIObjectId044a8266e12fRow;
+        
+        private UIObjectId8c0222465f79Row mUIObjectId8c0222465f79Row;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIObjectId044a8266e12fRow : WpfRow
+    {
+        
+        public UIObjectId044a8266e12fRow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: 044a8266-e12f-4fb1-93b8-779becb96a4e,Name: Ueli Pfister";
+            this.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfControl UIItemRowHeader
+        {
+            get
+            {
+                if ((this.mUIItemRowHeader == null))
+                {
+                    this.mUIItemRowHeader = new WpfControl(this);
+                    #region Search Criteria
+                    this.mUIItemRowHeader.SearchProperties[UITestControl.PropertyNames.ControlType] = "RowHeader";
+                    this.mUIItemRowHeader.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemRowHeader;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfControl mUIItemRowHeader;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIObjectId8c0222465f79Row : WpfRow
+    {
+        
+        public UIObjectId8c0222465f79Row(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfRow.PropertyNames.Name] = "ObjectId: 8c022246-5f79-41af-bd77-2862009720c5,Name: Hans Wurscht";
+            this.SearchConfigurations.Add(SearchConfiguration.AlwaysSearch);
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfControl UIItemRowHeader
+        {
+            get
+            {
+                if ((this.mUIItemRowHeader == null))
+                {
+                    this.mUIItemRowHeader = new WpfControl(this);
+                    #region Search Criteria
+                    this.mUIItemRowHeader.SearchProperties[UITestControl.PropertyNames.ControlType] = "RowHeader";
+                    this.mUIItemRowHeader.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemRowHeader;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfControl mUIItemRowHeader;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIMediumText : WpfText
+    {
+        
+        public UIMediumText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Medium";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIItemComboBox.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemComboBox.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIContentText : WpfText
+    {
+        
+        public UIContentText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Content";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIDateTimeText : WpfText
+    {
+        
+        public UIDateTimeText(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "DateTime";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfDatePicker UIItemDatePicker
+        {
+            get
+            {
+                if ((this.mUIItemDatePicker == null))
+                {
+                    this.mUIItemDatePicker = new WpfDatePicker(this);
+                    #region Search Criteria
+                    this.mUIItemDatePicker.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemDatePicker.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemDatePicker;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfDatePicker mUIItemDatePicker;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom22 : WpfCustom
+    {
+        
+        public UIItemCustom22(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateContactView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateContactGroup1 UICreateContactGroup
+        {
+            get
+            {
+                if ((this.mUICreateContactGroup == null))
+                {
+                    this.mUICreateContactGroup = new UICreateContactGroup1(this);
+                }
+                return this.mUICreateContactGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateContactGroup1 mUICreateContactGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateContactGroup1 : WpfGroup
+    {
+        
+        public UICreateContactGroup1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create Contact";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UISaveContactButton
+        {
+            get
+            {
+                if ((this.mUISaveContactButton == null))
+                {
+                    this.mUISaveContactButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISaveContactButton.SearchProperties[WpfButton.PropertyNames.Name] = "Save Contact";
+                    this.mUISaveContactButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISaveContactButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUISaveContactButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom23 : WpfCustom
+    {
+        
+        public UIItemCustom23(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateUserView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateUserGroup UICreateUserGroup
+        {
+            get
+            {
+                if ((this.mUICreateUserGroup == null))
+                {
+                    this.mUICreateUserGroup = new UICreateUserGroup(this);
+                }
+                return this.mUICreateUserGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateUserGroup mUICreateUserGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateUserGroup : WpfGroup
+    {
+        
+        public UICreateUserGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create User";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIUsernameText3 UIUsernameText
+        {
+            get
+            {
+                if ((this.mUIUsernameText == null))
+                {
+                    this.mUIUsernameText = new UIUsernameText3(this);
+                }
+                return this.mUIUsernameText;
+            }
+        }
+        
+        public WpfButton UICreateNewUserButton
+        {
+            get
+            {
+                if ((this.mUICreateNewUserButton == null))
+                {
+                    this.mUICreateNewUserButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUICreateNewUserButton.SearchProperties[WpfButton.PropertyNames.Name] = "Create New User";
+                    this.mUICreateNewUserButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUICreateNewUserButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIUsernameText3 mUIUsernameText;
+        
+        private WpfButton mUICreateNewUserButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIUsernameText3 : WpfText
+    {
+        
+        public UIUsernameText3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Username";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom24 : WpfCustom
+    {
+        
+        public UIItemCustom24(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateUserView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateUserGroup1 UICreateUserGroup
+        {
+            get
+            {
+                if ((this.mUICreateUserGroup == null))
+                {
+                    this.mUICreateUserGroup = new UICreateUserGroup1(this);
+                }
+                return this.mUICreateUserGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateUserGroup1 mUICreateUserGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateUserGroup1 : WpfGroup
+    {
+        
+        public UICreateUserGroup1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create User";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIPasswordText1 UIPasswordText
+        {
+            get
+            {
+                if ((this.mUIPasswordText == null))
+                {
+                    this.mUIPasswordText = new UIPasswordText1(this);
+                }
+                return this.mUIPasswordText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIPasswordText1 mUIPasswordText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIPasswordText1 : WpfText
+    {
+        
+        public UIPasswordText1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Password";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom25 : WpfCustom
+    {
+        
+        public UIItemCustom25(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.CreateUserView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UICreateUserGroup2 UICreateUserGroup
+        {
+            get
+            {
+                if ((this.mUICreateUserGroup == null))
+                {
+                    this.mUICreateUserGroup = new UICreateUserGroup2(this);
+                }
+                return this.mUICreateUserGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UICreateUserGroup2 mUICreateUserGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UICreateUserGroup2 : WpfGroup
+    {
+        
+        public UICreateUserGroup2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Create User";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UIPasswordText2 UIPasswordText
+        {
+            get
+            {
+                if ((this.mUIPasswordText == null))
+                {
+                    this.mUIPasswordText = new UIPasswordText2(this);
+                }
+                return this.mUIPasswordText;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIPasswordText2 mUIPasswordText;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIPasswordText2 : WpfText
+    {
+        
+        public UIPasswordText2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfText.PropertyNames.Name] = "Password";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIItemEdit.SearchConfigurations.Add(SearchConfiguration.NextSibling);
+                    this.mUIItemEdit.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom26 : WpfCustom
+    {
+        
+        public UIItemCustom26(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.ContactListView";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public UISearchContactsGroup UISearchContactsGroup
+        {
+            get
+            {
+                if ((this.mUISearchContactsGroup == null))
+                {
+                    this.mUISearchContactsGroup = new UISearchContactsGroup(this);
+                }
+                return this.mUISearchContactsGroup;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UISearchContactsGroup mUISearchContactsGroup;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UISearchContactsGroup : WpfGroup
+    {
+        
+        public UISearchContactsGroup(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfGroup.PropertyNames.Name] = "Search Contacts";
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfButton UISearchContactsButton
+        {
+            get
+            {
+                if ((this.mUISearchContactsButton == null))
+                {
+                    this.mUISearchContactsButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUISearchContactsButton.SearchProperties[WpfButton.PropertyNames.Name] = "Search Contacts";
+                    this.mUISearchContactsButton.WindowTitles.Add("Service Oriented CRM");
+                    #endregion
+                }
+                return this.mUISearchContactsButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfButton mUISearchContactsButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
     public class UIDebugWindow : WinWindow
     {
         
@@ -802,6 +7836,201 @@ namespace SoCrm.Tests.AcceptanceTests
         
         #region Fields
         private WinEdit mUINameEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIServiceOrientedCRMWindow1 : WinWindow
+    {
+        
+        public UIServiceOrientedCRMWindow1()
+        {
+            #region Search Criteria
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "Service Oriented CRM";
+            this.SearchProperties.Add(new PropertyExpression(WinWindow.PropertyNames.ClassName, "HwndWrapper", PropertyExpressionOperator.Contains));
+            this.WindowTitles.Add("Service Oriented CRM");
+            #endregion
+        }
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIGitHubWindow : WpfWindow
+    {
+        
+        public UIGitHubWindow()
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfWindow.PropertyNames.Name] = "GitHub";
+            this.SearchProperties.Add(new PropertyExpression(WpfWindow.PropertyNames.ClassName, "HwndWrapper", PropertyExpressionOperator.Contains));
+            this.WindowTitles.Add("GitHub");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemCustom27 UIItemCustom
+        {
+            get
+            {
+                if ((this.mUIItemCustom == null))
+                {
+                    this.mUIItemCustom = new UIItemCustom27(this);
+                }
+                return this.mUIItemCustom;
+            }
+        }
+        
+        public WpfButton UICloseButtonButton
+        {
+            get
+            {
+                if ((this.mUICloseButtonButton == null))
+                {
+                    this.mUICloseButtonButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUICloseButtonButton.SearchProperties[WpfButton.PropertyNames.AutomationId] = "CloseButton";
+                    this.mUICloseButtonButton.WindowTitles.Add("GitHub");
+                    #endregion
+                }
+                return this.mUICloseButtonButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemCustom27 mUIItemCustom;
+        
+        private WpfButton mUICloseButtonButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIItemCustom27 : WpfCustom
+    {
+        
+        public UIItemCustom27(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[UITestControl.PropertyNames.ClassName] = "Uia.Commit";
+            this.WindowTitles.Add("GitHub");
+            #endregion
+        }
+        
+        #region Properties
+        public UIFilesList UIFilesList
+        {
+            get
+            {
+                if ((this.mUIFilesList == null))
+                {
+                    this.mUIFilesList = new UIFilesList(this);
+                }
+                return this.mUIFilesList;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIFilesList mUIFilesList;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIFilesList : WpfList
+    {
+        
+        public UIFilesList(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfList.PropertyNames.AutomationId] = "Files";
+            this.WindowTitles.Add("GitHub");
+            #endregion
+        }
+        
+        #region Properties
+        public UIGitHubModelsFileListItem UIGitHubModelsFileListItem
+        {
+            get
+            {
+                if ((this.mUIGitHubModelsFileListItem == null))
+                {
+                    this.mUIGitHubModelsFileListItem = new UIGitHubModelsFileListItem(this);
+                }
+                return this.mUIGitHubModelsFileListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIGitHubModelsFileListItem mUIGitHubModelsFileListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIGitHubModelsFileListItem : WpfListItem
+    {
+        
+        public UIGitHubModelsFileListItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfListItem.PropertyNames.Name] = "GitHub.Models.File";
+            this.WindowTitles.Add("GitHub");
+            #endregion
+        }
+        
+        #region Properties
+        public UIExpanderExpander UIExpanderExpander
+        {
+            get
+            {
+                if ((this.mUIExpanderExpander == null))
+                {
+                    this.mUIExpanderExpander = new UIExpanderExpander(this);
+                }
+                return this.mUIExpanderExpander;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIExpanderExpander mUIExpanderExpander;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "11.0.60315.1")]
+    public class UIExpanderExpander : WpfExpander
+    {
+        
+        public UIExpanderExpander(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfExpander.PropertyNames.AutomationId] = "expander";
+            this.WindowTitles.Add("GitHub");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfTable UIItemTable
+        {
+            get
+            {
+                if ((this.mUIItemTable == null))
+                {
+                    this.mUIItemTable = new WpfTable(this);
+                    #region Search Criteria
+                    this.mUIItemTable.WindowTitles.Add("GitHub");
+                    #endregion
+                }
+                return this.mUIItemTable;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfTable mUIItemTable;
         #endregion
     }
 }
