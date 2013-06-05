@@ -13244,7 +13244,7 @@ reference "fig:Visual-Studio-Solution"
  Projekte.
  Die verwendeten Grafiken zeigen nur die beschriebenen Klassen und Interfaces
  an, die Projekte enthalten noch weitere Codedateien die jedoch nicht erwähnensw
-ert sind und deswegen in den Klassendiagrammen auch nicht auftauchen.
+ert sind und deswegen in den Klassendiagrammen auch nicht gezeichnet sind.
 \end_layout
 
 \begin_layout Standard

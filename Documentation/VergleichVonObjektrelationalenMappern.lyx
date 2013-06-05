@@ -13240,11 +13240,17 @@ reference "fig:Visual-Studio-Solution"
 \end_inset
 
  verwiesen, welche die Struktur Visual Studio-Solution darstellt.
- Die Namensgebung der Unterkapitel hält sich dabei an die Namespaces der
+ 
+\end_layout
+
+\begin_layout Standard
+Die Namensgebung der Unterkapitel hält sich dabei an die Namespaces der
  Projekte.
  Die verwendeten Grafiken zeigen nur die beschriebenen Klassen und Interfaces
  an, die Projekte enthalten noch weitere Codedateien die jedoch nicht erwähnensw
 ert sind und deswegen in den Klassendiagrammen auch nicht gezeichnet sind.
+ Auch wurden nur in denjenigen Unterkapiteln Klassendiagramme eingefügt
+ wo es für den Leser von Interesse sein könnte.
 \end_layout
 
 \begin_layout Standard
@@ -13299,6 +13305,40 @@ t.
  Identifier, die ObjectId, deklariert.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Core.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Core.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Core.Services
 \end_layout
@@ -13349,6 +13389,40 @@ Für jeden Entitätstyp existiert ein Persistenzservice, wessen Interface
  für jeden Entitätstyp ein eigenes Persistence-Service Inteface erstellt.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Persistence.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Infrastructure.Persistence.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Persistence.Dapper
 \end_layout
@@ -13379,6 +13453,40 @@ n.Security Assembly bezieht und dort auf die gewünschten Seiten navigiert.
 Beim Aufstarten der Applikation werden im Bootstrapper die Module der Presentati
 on-Assemblies registriert, welche wiederum die Controller und ViewModels
  im Unity-Container registrieren.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.App.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.App
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
