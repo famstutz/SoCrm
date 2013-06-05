@@ -12,7 +12,7 @@ namespace SoCrm.Services.Logging.Contracts
     using System;
     using System.Runtime.Serialization;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
 
     /// <summary>
     /// The log event.

@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace SoCrm.Contracts
+namespace SoCrm.Core.Contracts
 {
     using System;
 

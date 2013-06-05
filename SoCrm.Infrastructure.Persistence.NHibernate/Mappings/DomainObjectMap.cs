@@ -11,7 +11,7 @@ namespace SoCrm.Infrastructure.Persistence.NHibernate.Mappings
 {
     using FluentNHibernate.Mapping;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
 
     /// <summary>
     /// The domain object map.

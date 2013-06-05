@@ -15,9 +15,9 @@ namespace SoCrm.Infrastructure.Persistence.Dapper
     using System.Data.SqlServerCe;
     using System.Linq;
 
-    using global::Dapper;
+    using SoCrm.Core.Contracts;
 
-    using SoCrm.Contracts;
+    using global::Dapper;
 
     /// <summary>
     /// The persistence service base.

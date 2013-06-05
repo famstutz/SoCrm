@@ -13,7 +13,7 @@ namespace SoCrm.Services.Customers.Contracts
     using System.Runtime.Serialization;
     using System.Text;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
 
     /// <summary>
     /// The person.

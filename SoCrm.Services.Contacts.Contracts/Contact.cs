@@ -12,7 +12,7 @@ namespace SoCrm.Services.Contacts.Contracts
     using System;
     using System.Runtime.Serialization;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
     using SoCrm.Services.Customers.Contracts;
     using SoCrm.Services.Security.Contracts;
 

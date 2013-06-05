@@ -13,7 +13,7 @@ namespace SoCrm.Infrastructure.Persistence.Contracts
     using System.Collections.Generic;
     using System.ServiceModel;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
 
     /// <summary>
     /// The PersistenceService interface.

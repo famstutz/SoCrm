@@ -13,7 +13,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework
     using System.Collections.Generic;
     using System.Linq;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
     using SoCrm.Infrastructure.Persistence.Contracts;
     using SoCrm.Infrastructure.Persistence.EntityFramework.DataServices;
 

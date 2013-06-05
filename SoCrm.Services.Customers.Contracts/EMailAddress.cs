@@ -11,7 +11,7 @@ namespace SoCrm.Services.Customers.Contracts
 {
     using System.Runtime.Serialization;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
 
     /// <summary>
     /// The email address.

@@ -12,7 +12,7 @@ namespace SoCrm.Services.Customers.Contracts
     using System.Collections.Generic;
     using System.Runtime.Serialization;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
 
     /// <summary>
     /// The company.

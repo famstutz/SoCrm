@@ -12,7 +12,7 @@ namespace SoCrm.Infrastructure.Persistence.EntityFramework.DataServices
     using System;
     using System.Collections.Generic;
 
-    using SoCrm.Contracts;
+    using SoCrm.Core.Contracts;
 
     /// <summary>
     /// The data service interface.
