@@ -8820,6 +8820,13 @@ NHibernate
 
 \begin_layout Section
 Vergleich ausgewählter Produkte
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Vergleich-ausgewählter-Produkte"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11035,6 +11042,48 @@ ng wohl nicht so klar ausfallen da NHibernate auch sehr populär ist und
 Unterstützung Enterprise Pattern
 \end_layout
 
+\begin_layout Standard
+Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
+ Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingend
+ den Entwickler nicht dazu ein Pattern über das andere zu favorisieren.
+ Entity Framwork und NHibernate liefern eine einfach Möglichkeit Unit of
+ Work
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zum Pattern 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://martinfowler.com/eaaCatalog/unitOfWork.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ zu implementiern, was jedoch nicht Gegenstand dieser Bachelorarbeit ist.
+ Dapper hingegen ist als Extension für IDBConnection am flexibelsten für
+ jedewedes Enterprise Pattern einzusetzen.
+ Im Endeffekt obliegt es dem Entwickler bzw.
+ Software Architekten wie der Persistenzlayer einer SOA implementiert werden
+ soll und welche Pattenr eingesetzt werden sollen.
+ Die Entscheidung ist zu abhängig vom Anwendungsfall des Systems bzw.
+ den Anforderungen an dasselbe als dass im Rahmen dieses Vergleichs von
+ ORMs eine abschliessende Wertung erstellt werden kann.
+\end_layout
+
+\begin_layout Standard
+Aus diesem Grund ist diese Kategorie nicht bewertbar und es gibt keine Gewinner
+ oder Verlierer.
+\end_layout
+
 \begin_layout Subsection
 Monitoring
 \begin_inset CommandInset label
@@ -11057,6 +11106,13 @@ Montoring eines Persistenzlayers und des dazugehörigen ORMs wird bei der
 \end_layout
 
 \begin_layout Standard
+Natürlich lassen sich alle ORMs über einen SQL Profiler monitoren.
+ Nur leider ist das meistens schwierig zu sagen woher genau die abgesetzten
+ Queries stammen beziehungsweise ist die Nachverfolgbarkeit der einzelnen
+ Queries zum Mapping im OR-Mapper schwierig.
+\end_layout
+
+\begin_layout Standard
 Das Entity Framework bietet out-of-the-box nur das Intellitrace debugging
  mit.
  Da jedoch für das Entity Framework die PDB Symbole auf Microsofts Symbol
@@ -11065,14 +11121,51 @@ n des Entity Frameworks möglich.
  Da das Entity Framework auf Grund seiner Vielzahl von Funktionalitäten
  sehr komplex ist, ist es für einen Entwickler nicht ganz einfach ein einfaches
  Mapping nach zu vollziehen.
- 
+ Es existieren eine grosse Anzahl an Dritterherstellertools wie der Entity
+ Framework Profiler von Hibernating Rhinos
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.hibernatingrhinos.com/products/EFProf
 \end_layout
 
-\begin_layout Standard
-Natürlich lassen sich alle ORMs über einen SQL Profiler monitoren.
- Nur leider ist das meistens schwierig zu sagen woher genau die abgesetzten
- Queries stammen beziehungsweise ist die Nachverfolgbarkeit der einzelnen
- Queries zum Mapping im OR-Mapper schwierig.
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ oder der EF Provider Wrapper in der Visual Studio Gallery
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr dazu unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://code.msdn.microsoft.com/EFProviderWrappers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ welche bei Performanceengpässen in produktiven Umgebungen zum Einsatz kommen
+ können.
 \end_layout
 
 \begin_layout Standard
@@ -11085,7 +11178,14 @@ Da Dapper in Sourcecodeform vorliegt ist das Debugging denkbar einfach gestaltet
 \end_layout
 
 \begin_layout Standard
-Für NHibernate existiert wie auch für das Entity Framework der NHibernate
+NHibernate ist ein Open-Source Projekt und aus diesem Grund kann dieses
+ für Debuggingzwecke selbst kompiliert werden und debugged werden.
+ Auf Grund der Natur von NHibernate (1-zu-1 Portierung von Hibernate in
+ Java) ist die lesbarkeit und Verständlichkeit für einen .NET Entwickler
+ nicht immer geben.
+ Auch ist das Kompilieren von NHibernate mit erheblichem Konfiguraitonsaufwand
+ verbunden nicht ohne weiteres durchführbar.
+ Für NHibernate existiert wie auch für das Entity Framework der NHibernate
  Profiler von Hibernating Rhinos
 \begin_inset Foot
 status open
@@ -11107,11 +11207,9 @@ http://www.hibernatingrhinos.com/products/nhprof
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-NHibernate bietet auch die Möglichkeit eigene Interceptoren
+ welcher auf Grund der Session Statistiken zur Verfügung stellt und auch
+ mit dem Sourcecode verknüpft werden kann.
+ NHibernate bietet auch die Möglichkeit eigene Interceptoren
 \begin_inset Foot
 status open
 
@@ -11168,7 +11266,8 @@ Abschliessend lässt es sich sagen dass alle drei betrachteten OR-Mapper
  Montoringsuiten zu entwickeln und auch verkaufen.
  Dieser Vergleich bezieht sich somit auf die Möglichkeit zu Monitoring und
  auch auf die verfügbaren Monitoringtools von Drittherstelltern.
- Bei dieser Betrachtung ist das Entity Framework der Gewinner dieses Vergleichs.
+ Bei dieser Betrachtung ist das Entity Framework der knappe Gewinner vor
+ NHibernate dieses Vergleichs.
 \end_layout
 
 \begin_layout Subsection
@@ -11302,7 +11401,7 @@ Unterstützung Enterprise Pattern
 \begin_inset Text
 
 \begin_layout Plain Layout
-NHibernate
+-
 \end_layout
 
 \end_inset
@@ -13075,7 +13174,7 @@ name "chap:Implementierung"
 \end_layout
 
 \begin_layout Section
-Evaluieriung selektierte OR-Mapper
+Evaluierung selektierte OR-Mapper
 \end_layout
 
 \begin_layout Section

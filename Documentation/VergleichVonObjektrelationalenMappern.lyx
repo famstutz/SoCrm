@@ -8820,6 +8820,13 @@ NHibernate
 
 \begin_layout Section
 Vergleich ausgewählter Produkte
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Vergleich-ausgewählter-Produkte"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11035,6 +11042,48 @@ ng wohl nicht so klar ausfallen da NHibernate auch sehr populär ist und
 Unterstützung Enterprise Pattern
 \end_layout
 
+\begin_layout Standard
+Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
+ Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingend
+ den Entwickler nicht dazu ein Pattern über das andere zu favorisieren.
+ Entity Framwork und NHibernate liefern eine einfach Möglichkeit Unit of
+ Work
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zum Pattern 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://martinfowler.com/eaaCatalog/unitOfWork.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ zu implementiern, was jedoch nicht Gegenstand dieser Bachelorarbeit ist.
+ Dapper hingegen ist als Extension für IDBConnection am flexibelsten für
+ jedewedes Enterprise Pattern einzusetzen.
+ Im Endeffekt obliegt es dem Entwickler bzw.
+ Software Architekten wie der Persistenzlayer einer SOA implementiert werden
+ soll und welche Pattenr eingesetzt werden sollen.
+ Die Entscheidung ist zu abhängig vom Anwendungsfall des Systems bzw.
+ den Anforderungen an dasselbe als dass im Rahmen dieses Vergleichs von
+ ORMs eine abschliessende Wertung erstellt werden kann.
+\end_layout
+
+\begin_layout Standard
+Aus diesem Grund ist diese Kategorie nicht bewertbar und es gibt keine Gewinner
+ oder Verlierer.
+\end_layout
+
 \begin_layout Subsection
 Monitoring
 \begin_inset CommandInset label
@@ -11352,7 +11401,7 @@ Unterstützung Enterprise Pattern
 \begin_inset Text
 
 \begin_layout Plain Layout
-NHibernate
+-
 \end_layout
 
 \end_inset
@@ -13125,7 +13174,7 @@ name "chap:Implementierung"
 \end_layout
 
 \begin_layout Section
-Evaluieriung selektierte OR-Mapper
+Evaluierung selektierte OR-Mapper
 \end_layout
 
 \begin_layout Section
