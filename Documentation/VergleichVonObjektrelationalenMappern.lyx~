@@ -93,10 +93,10 @@ Eidesstattliche Erklärung
 \end_layout
 
 \begin_layout Standard
-Hiermit bestätigt die oder der Unterzeichnende, dass die Bachelorarbeit
- mit dem Thema Vergleich von objektrelationalen Mapperngemäss freigegebener
- Aufgabenstellung mit Freigabe vom 8.
- Januar 2013 ohne jede fremde Hilfe im Rahmen der gültigen Reglements selbständi
+Hiermit bestätigt der Unterzeichnende, dass die Bachelorarbeit mit dem Thema
+ Vergleich von objektrelationalen Mappern gemäss freigegebener Aufgabenstellung
+ vom 8.
+ Januar 2013 ohne jede fremde Hilfe im Rahmen des gültigen Reglements selbständi
 g ausgeführt wurde.
 \end_layout
 
@@ -166,12 +166,12 @@ Einführung
 \end_layout
 
 \begin_layout Standard
-Als einführendes Kapitel dieses Dokuments wird die Bachelorarbeit als Projekt
- kurz vorgestellt und es werden die Rahmenbedingungen der Arbeit zusammengefasst
- niedergeschrieben.
+Als einführendes Kapitel dieser Dokumentation wird die Bachelorarbeit als
+ Projekt kurz vorgestellt und es werden die Rahmenbedingungen der Arbeit
+ zusammengefasst niedergeschrieben.
  Weiter wird die Vorgehensweise für die Bearbeitung dieser Bachelorarbeit
  vorgestellt und erklärt.
- Am Ende dieses Kapitels wird die Projektplanung erstellt und die wichtigsten
+ Am Ende des Kapitels wird die Projektplanung erstellt und die wichtigsten
  Meilensteine festgelegt.
 \end_layout
 
@@ -236,8 +236,8 @@ key "Stern2012"
 
 \end_inset
 
-) dient die Bachelorarbeit zum Nachweis der Fähigkeit ingenieurswissenschaftlich
- zu arbeiten.
+) dient die Bachelorarbeit zum Nachweis der Fähigkeit ein Projekt auf ingenieurs
+wissenschaftlich Art und Weise zu bearbeiten.
  Die Bachelorarbeit ist nach den allgemeingültigen Standards für technisch/wisse
 nschaftliches Arbeiten verfasst.
 \end_layout
@@ -267,12 +267,13 @@ key "Fowler2002"
 
 \end_inset
 
-) gegeben, welche heutzutage in jeder grösseren Applikation eine entscheidene
- Rolle spielen.
+) gegeben, welche heutzutage in jedem grösseren (Software-) System eine
+ entscheidene Rolle spielen.
  Abschliessend wird pro Enterpise Pattern eine Empfehlung abgegeben werden,
  welcher frei verfügbare und Open-Source OR-Mapper im .NET-Umfeld eingesetzt
  werden soll.
- 
+ Zusätzlich zu diesen Vergleichen und der Empfehlungen wird eine serviceorientie
+rte CRM-Applikation als Proof-of-Concept erstellt.
 \end_layout
 
 \begin_layout Section
@@ -1135,7 +1136,7 @@ Finalisierung Dokumentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-09.07.2013
+18.06.2013
 \end_layout
 
 \end_inset
@@ -1164,7 +1165,7 @@ Erarbeiten der Präsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-10.07.2013
+18.06.2013
 \end_layout
 
 \end_inset
@@ -1173,7 +1174,7 @@ Erarbeiten der Präsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-???
+01.07.2013
 \end_layout
 
 \end_inset
@@ -1395,7 +1396,7 @@ Abgabe der Arbeit
 \begin_inset Text
 
 \begin_layout Plain Layout
-09.07.2013
+18.06.2013
 \end_layout
 
 \end_inset
@@ -1424,7 +1425,7 @@ Schlusspräsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-???
+02.07.2013
 \end_layout
 
 \end_inset
@@ -8477,7 +8478,7 @@ key "Schwichtenberg2008"
 
 \end_inset
 
- aufgebaut.
+ angelehnt.
 \end_layout
 
 \begin_layout Standard
@@ -9095,7 +9096,7 @@ status open
 Wird später (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "sub:Modelgenerierung"
+reference "sub:Toolunterstützung"
 
 \end_inset
 
@@ -10164,23 +10165,874 @@ eben.
 Performance
 \end_layout
 
-\begin_layout Subsection
-Toolunterstützung
+\begin_layout Standard
+Angelehnt an 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rocha2011"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kochetov2011"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Subsection
-Enterprise Patternsupport
-\end_layout
+\begin_layout Itemize
+Query auf eine Tabelle mit Filter auf Primärschlüssel: 
+\begin_inset listings
+inline false
+status open
 
-\begin_layout Subsection
-Modelgenerierung
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Modelgenerierung"
+\begin_layout Plain Layout
+
+SELECT ArtistId, Name FROM Artist WHERE Artist.ArtistId = @id
+\end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+Query auf mehrer Tabellen mit Joins, Filter auf Spalte einer Tabelle:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT 
+\end_layout
+
+\begin_layout Plain Layout
+
+  Album.Title as AlbumName,
+\end_layout
+
+\begin_layout Plain Layout
+
+  Track.Name as SongName,
+\end_layout
+
+\begin_layout Plain Layout
+
+  Artist.Name as ArtistName
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM Artist
+\end_layout
+
+\begin_layout Plain Layout
+
+  INNER JOIN Album ON Album.ArtistId = Artist.ArtistId
+\end_layout
+
+\begin_layout Plain Layout
+
+  INNER JOIN Track ON Track.AlbumId = Album.AlbumId
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Artist.Name = @name 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Einfügen, Aktualisieren und Löschen einer Instanz:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO Artist (ArtistId, Name) VALUES (@id, "Daft Prunk")
+\end_layout
+
+\begin_layout Plain Layout
+
+UPDATE Artist SET Name = "Daft Punk" WHERE ArtistId = @id
+\end_layout
+
+\begin_layout Plain Layout
+
+DELETE FROM Artist WHERE ArtistId = @id
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="16" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kriterium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entity Framework
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dapper
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NHibernate
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf eine Tabelle (1 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.2ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf eine Tabelle (10 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22.5ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.5ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.4ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf eine Tabelle (100 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+207.2ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28.0ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+48.1ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf eine Tabelle (500 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1041.0ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+141.5ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+253.6ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf eine Tabelle (1000 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2099.8ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+285.6ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+509.5ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf mehrere Tabellen (1 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0 ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.4ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf mehrere Tabellen (10 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.9ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.4ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+35.6ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf mehrere Tabellen (100 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+103.3ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+68.0ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+359.5ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf mehrere Tabellen (500 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+525.6ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+346.1ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1806.2ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance eines Queries auf mehrere Tabellen (1000 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1071.0ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+685.5ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3647.1ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance Einfügen, Aktualisieren und Löschen (1 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12.8ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.6ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.1ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance Einfügen, Aktualisieren und Löschen (10 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+92.1ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+48.0ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+63.7ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance Einfügen, Aktualisieren und Löschen (100 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+813.3ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+432.2ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+599.1ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance Einfügen, Aktualisieren und Löschen (500 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3765.1ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2013.8ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2710.5ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance Einfügen, Aktualisieren und Löschen (1000 Run)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6521.0ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3721.4ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4987.2ms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Kriterien Performance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In diesem Vergleich zeigt sich sehr stark der Unterschied zwischen eine
+ kompletten und einem leichtgewichtigen OR-Mapper.
+ Dapper als leichtgewichtiger OR-Mapper hat diesen Vergleich klar gewonnen
+ und sämtliche Metriken dominiert.
+ Dies liegt insbesondere an der einfachen Schichtung des ORMs.
+ Entity Framework als der featurestärkste OR-Mapper hat klar die schlechteste
+ aufgewiesene Performance.
+ 
+\end_layout
+
+\begin_layout Subsection
+Toolunterstützung
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Toolunterstützung"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Entity Framework bietet mehrfache Toolunterstützung.
+ Wenn ein Model-First oder Database-First Ansatz gewählt wird existiert
+ ein Designer welcher es erlaubt Entitäten mit ihren Attributen und Beziehungen
+ zu modellieren.
+ Ausserdem bietet EF verschiedene Assistenten um ein bestehendes Datenbankschema
+ zu importieren.
+ Wird Code-First das Domain Model entwickelt so existieren eine benutzerfreundli
+che NuGet Extension welche dem Entwickler viel Unterstützung bietet.
+\end_layout
+
+\begin_layout Standard
+Dapper als leichtgewichtiger OR-Mapper bietet keinerlei Toolunterstützung
+ an.
+ Sämtliche Konfiguration des ORMs geschieht über in Code geschriebene Mappings
+ und muss vom Entwickler selbst erstellt werden.
+ Die Entitäten können jedoch auch über den Visual Studio Klassendesigner
+ erstellt werden.
+\end_layout
+
+\begin_layout Standard
+NHibernate als herunterladbare Library kommt ohne Tools mit.
+ Die Konfiguration geschieht mittels XML-Dateien und die Entitäten können
+ mit dem Visual Studio Klassendesigner erstellt werden.
+ NHibernate liefert jedoch direkt die XSD Schemas für die XML-Dateien, welche
+ dann auch direkt mit Intellisense verwendet werden können.
+ Es gibt zahlreiche Fremdkomponentenhersteller welche zusätzliche Tools
+ für NHibernate entwickeln, so zum Beispiel der NHibernate Designer von
+ Mindscape HQ
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.mindscapehq.com/products/nhdesigner
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ oder Visual NHibenrate von Slyce
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.slyce.com/VisualNHibernate/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ Diese Tools sind durchaus mächtig und für grössere Projekte anzuraten,
+ werden jedoch in dieser Bachelorarbeit nicht betrachtet da sie meist kostenpfli
+chtig sind.
+\end_layout
+
+\begin_layout Standard
+Der Gewinner in dieser Kategorie ist das Entity Framework.
+ Die mit dem EF mitgelieferten Tools machen es dem Entwickler denkbar einfach
+ Mappings zu erstellen und bieten den gewohnen Komfort von Microsoft Produkten
+ wie dem Visual Studio.
+ Würde man die Drittanbietertools für NHibernate betrachten würde die Entscheidu
+ng wohl nicht so klar ausfallen da NHibernate auch sehr populär ist und
+ aus diesem Grund viele Tools von Fremdherstellern existieren.
+\end_layout
+
+\begin_layout Subsection
+Unterstützung Enterprise Pattern
 \end_layout
 
 \begin_layout Subsection
@@ -10196,6 +11048,183 @@ name "sub:Monitoring"
 
 \begin_layout Subsection
 Vergleichsmatrix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kriterium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stärkster OR-Mapper
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Benutzerfreundlichkeit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entity Framework
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Plattformunterstützung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NHibernate
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dapper
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Toolunterstützung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enitity Framework
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unterstützung Enterprise Pattern
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Monitoring
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vergleichsmatrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -10603,7 +11632,7 @@ CreateUser
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen neuen Benutzer mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -10623,7 +11652,7 @@ DeleteUser
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht einen Benutzer auf Basis der ObjectId
 \end_layout
 
 \end_inset
@@ -10643,7 +11672,7 @@ GetAllRoles
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Rollen zurück
 \end_layout
 
 \end_inset
@@ -10663,7 +11692,7 @@ GetAllUsers
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Benutzer zurück
 \end_layout
 
 \end_inset
@@ -10683,7 +11712,7 @@ GetUserByCredentials
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Benutzer auf Grund seiner Benutzerinformationen zurück
 \end_layout
 
 \end_inset
@@ -10703,7 +11732,7 @@ GetUserByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Benutzer auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -10723,7 +11752,7 @@ GetUsersByRole
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Benutzer auf Grund ihrer Rolle zurück
 \end_layout
 
 \end_inset
@@ -10743,7 +11772,7 @@ GetUsersByRoleAndUserName
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Benutzer auf Grund ihrer Rolle und Benutzernamen zurück
 \end_layout
 
 \end_inset
@@ -10763,7 +11792,7 @@ SetPassword
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Setzt das Password für einen bestimmten Benutzer
 \end_layout
 
 \end_inset
@@ -10783,7 +11812,8 @@ ValidateCredentials
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Überprüft die übergebenen Benutzerinformationen und liefert wahr oder falsch
+ zurück
 \end_layout
 
 \end_inset
@@ -10899,7 +11929,7 @@ CreateCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt eine neue Firma mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -10919,7 +11949,7 @@ CreateEMailAddress
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt eine neue E-Mail-Adresse für einen Kunden
 \end_layout
 
 \end_inset
@@ -10939,7 +11969,7 @@ CreatePerson
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen neuen Kunden mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -10959,7 +11989,7 @@ CreatePhoneNumber
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt eine neue Telefonnummer für einen Kunden
 \end_layout
 
 \end_inset
@@ -10979,7 +12009,7 @@ DeleteCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht eine Firma auf Basis ihrer ObjectId
 \end_layout
 
 \end_inset
@@ -10999,7 +12029,7 @@ DeleteEMailAddress
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht eine E-Mail-Adresse auf Basis ihrer ObjectId
 \end_layout
 
 \end_inset
@@ -11019,7 +12049,7 @@ DeletePerson
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht einen Kunden auf Basis seiner ObjectId
 \end_layout
 
 \end_inset
@@ -11039,7 +12069,7 @@ DeletePhoneNumber
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht eine Telefonnummer auf Basis ihrer ObjectId
 \end_layout
 
 \end_inset
@@ -11059,7 +12089,7 @@ GetAllCompanies
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Firmen zurück
 \end_layout
 
 \end_inset
@@ -11079,7 +12109,7 @@ GetAllCountries
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Länder zurück
 \end_layout
 
 \end_inset
@@ -11099,7 +12129,7 @@ GetAllEMailAddresses
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle E-Mail-Adressen eines Kunden zurück
 \end_layout
 
 \end_inset
@@ -11119,7 +12149,7 @@ GetAllPersons
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Kunden zurück
 \end_layout
 
 \end_inset
@@ -11139,7 +12169,7 @@ GetAllPhoneNumbers
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Telefonnummern eines Kunden zurück
 \end_layout
 
 \end_inset
@@ -11159,7 +12189,7 @@ GetCompaniesByNameAndCountry
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Firmen auf Grund ihres Namen und des Landes zurück
 \end_layout
 
 \end_inset
@@ -11179,7 +12209,7 @@ GetCompanyByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt eine Firma auf Grund ihrer ObjectId zurück
 \end_layout
 
 \end_inset
@@ -11199,7 +12229,7 @@ GetContactTypes
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Kontaktarten zurück
 \end_layout
 
 \end_inset
@@ -11219,7 +12249,7 @@ GetPersonByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Kunden auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -11239,7 +12269,7 @@ GetPersonsByNameAndCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kunden auf Grund ihres Namens und Arbeitgebers zurück
 \end_layout
 
 \end_inset
@@ -11355,7 +12385,7 @@ CreateContact
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen Kontakt für einen Kunden mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -11375,7 +12405,7 @@ DeleteContact
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht einen Kontakt auf Grund seiner ObjectId
 \end_layout
 
 \end_inset
@@ -11395,7 +12425,7 @@ GetAllContactMediums
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Kontaktmedien zurück
 \end_layout
 
 \end_inset
@@ -11415,7 +12445,7 @@ GetContactByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Kontakt auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -11435,7 +12465,7 @@ GetContactsByCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Arbeitgebers des Kunden zurück
 \end_layout
 
 \end_inset
@@ -11455,7 +12485,7 @@ GetContactsByContactMedium
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Kontaktmediums zurück
 \end_layout
 
 \end_inset
@@ -11475,7 +12505,7 @@ GetContactsByContactMediumAndPersonName
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Kontaktmediums und des Kundennamen zurück
 \end_layout
 
 \end_inset
@@ -11495,7 +12525,7 @@ GetContactsByPerson
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Kunden zurück
 \end_layout
 
 \end_inset
@@ -11515,7 +12545,7 @@ GetContactsByUser
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Benutzers zurück
 \end_layout
 
 \end_inset
@@ -11631,7 +12661,7 @@ GetAllLogEvents
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Logeinträge zurück
 \end_layout
 
 \end_inset
@@ -11651,7 +12681,7 @@ GetAllSeverities
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Schweregrade zurück
 \end_layout
 
 \end_inset
@@ -11671,7 +12701,7 @@ GetLogEventByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Logeintrag auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -11691,7 +12721,7 @@ GetLogEventsByServerity
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Logeinträge auf Grund ihres Schweregrads zurück
 \end_layout
 
 \end_inset
@@ -11711,7 +12741,7 @@ LogEvent
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen neuen Logeinträge mit den übergebenen Werten
 \end_layout
 
 \end_inset
