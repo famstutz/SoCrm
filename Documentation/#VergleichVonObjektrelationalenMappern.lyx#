@@ -13186,6 +13186,40 @@ Service Oriented CRM
 \end_layout
 
 \begin_layout Subsection
+Designprinzipien
+\end_layout
+
+\begin_layout Itemize
+Sämtliche Interfaces und Entitäten sind in eigenen Klassenbibliotheken abgelegt.
+ Dies um die Wiederverwendbarkeit zu erhöhen und die Assemblygrösse zu verkleine
+rn.
+ Die Service Referenzen zwischen den Projekten und den Web Services verwenden
+ immer diese Assemblies anstatt die Entitäten aus dem WSDL des Services
+ zu erzeugen.
+\end_layout
+
+\begin_layout Itemize
+Das Präsentationspattern, welches verwendet wird, ist MVVM+C (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Skimp2012"
+
+\end_inset
+
+).
+ MVVM+C stellt eine Weiterentwicklung von MVVM dar und verschiebt die Erzeugung
+ der View und des ViewModels in den Controller.
+ Auch wird die Beziehung zwischen der View und dem ViewModel im Controller
+ erzeugt und nicht mehr über das Binding gelöst.
+\end_layout
+
+\begin_layout Itemize
+Um dynamisch Views innerhalb einer Shell laden zu können sind alle Views
+ als UserControls implementiert, welche in den ControlContainer der ShellView
+ eingefügt werden können.
+\end_layout
+
+\begin_layout Subsection
 Komponenten im Detail
 \end_layout
 
@@ -13214,13 +13248,24 @@ reference "fig:Visual-Studio-Solution"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/Solution.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Visual Studio-Solution
+Visual Studio Solution
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Visual-Studio-Solution"
@@ -13238,6 +13283,145 @@ name "fig:Visual-Studio-Solution"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Core.Contracts
+\end_layout
+
+\begin_layout Standard
+Diese Klassenbibliothek enthält die Basisklasse aller Entitäten, das DomainObjec
+t.
+ Sie implementiert das Interface IDomainObject welches unter anderem den
+ Identifier, die ObjectId, deklariert.
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Core.Services
+\end_layout
+
+\begin_layout Standard
+In der Klassenbibliothek SoCrm.Core.Services befindet sich die Infrastruktur
+ um WCF Services mit dem Dependency Injection Container Unity
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu Unity und Dependency Injection unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://unity.codeplex.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ betreiben zu können.
+ Damit die WCF Services mit Unit Tests versehen werden können wurden die
+ externen Abhängigkeiten mit Dependency Injection entkoppelt.
+ Für das Starten der Services wird jedoch ein spezieller Service-Host, der
+ UnityServiceHost, benötigt, welcher beim Aufstarten ein Behavior mit dem
+ Unity-Container erzeugt und dem Service injected.
+ Der spezifische Service-Host, das Service-Behavior und das Instance-Behavior
+ sind in diesem Projekt zu finden.
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Persistence.Contracts
+\end_layout
+
+\begin_layout Standard
+Für jeden Entitätstyp existiert ein Persistenzservice, wessen Interface
+ in dieser Assembly abgelegt ist.
+ Dabei erbt jedes Inteface von einem generischen Interface IPersistenceService<T
+>.
+ Da WCF jedoch nicht ohne weiteres generische Interfaces unterstützt wurde
+ für jeden Entitätstyp ein eigenes Persistence-Service Inteface erstellt.
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Persistence.Dapper
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Persistence.EntityFramework
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Persistence.NHibernate
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Presentation.App
+\end_layout
+
+\begin_layout Standard
+Dieses Projekt liefert eine ausführbare Assembly als Build-Output.
+ Die ShellView beeinhaltet ein Dockpanel, welches ein Menu, eine Toolbar,
+ ein zentrales ContentControl sowie eine StatusBar enthält.
+ Das ShellViewModel besitzt eine Referenz auf den AppController welcher
+ aus dem UnityContainer die Controller der Contacts, Customers oder Security
+ Assembly bezieht und dort auf die gewünschten Seiten navigiert.
+ Dazu sind alle 
+\end_layout
+
+\begin_layout Standard
+Beim Aufstarten der Applikation wird
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Presentation.Contacts
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Presentation.Core
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Presentation.Customers
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Infrastructure.Presentation.Security
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Contacts.Contracts
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Contacts.Provider
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Customers.Contracts
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Customers.Provider
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Logging.Contracts
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Logging.Provider
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Security.Contracts
+\end_layout
+
+\begin_layout Subsubsection
+SoCrm.Services.Security.Provider
 \end_layout
 
 \begin_layout Chapter
