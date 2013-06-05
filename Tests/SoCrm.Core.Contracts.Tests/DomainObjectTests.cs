@@ -4,7 +4,6 @@
 
     using NUnit.Framework;
 
-    using SoCrm.Contracts;
     using SoCrm.Tests.Common;
 
     [TestFixture]

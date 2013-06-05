@@ -20,22 +20,70 @@ namespace SoCrm.Core.Contracts
     public class DomainObject : IDomainObject
     {
         /// <summary>
+        /// The last update time stamp.
+        /// </summary>
+        private DateTime lastUpdateTimeStamp;
+
+        /// <summary>
+        /// The creation time stamp.
+        /// </summary>
+        private DateTime creationTimeStamp;
+
+        /// <summary>
+        /// The object id.
+        /// </summary>
+        private Guid objectId;
+
+        /// <summary>
         /// Gets or sets the object id.
         /// </summary>
         [DataMember]
         [Key]
-        public Guid ObjectId { get; set; }
+        public Guid ObjectId
+        {
+            get
+            {
+                return this.objectId;
+            }
+
+            set
+            {
+                this.objectId = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the creation time stamp.
         /// </summary>
         [DataMember]
-        public DateTime CreationTimeStamp { get; set; }
+        public DateTime CreationTimeStamp
+        {
+            get
+            {
+                return this.creationTimeStamp;
+            }
+
+            set
+            {
+                this.creationTimeStamp = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the last update time stamp.
         /// </summary>
         [DataMember]
-        public DateTime LastUpdateTimeStamp { get; set; }
+        public DateTime LastUpdateTimeStamp
+        {
+            get
+            {
+                return this.lastUpdateTimeStamp;
+            }
+
+            set
+            {
+                this.lastUpdateTimeStamp = value;
+            }
+        }
     }
 }

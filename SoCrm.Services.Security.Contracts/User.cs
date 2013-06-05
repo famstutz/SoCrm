@@ -20,13 +20,39 @@ namespace SoCrm.Services.Security.Contracts
     public class User : DomainObject
     {
         /// <summary>
+        /// The user name.
+        /// </summary>
+        private string userName;
+
+        /// <summary>
+        /// The role.
+        /// </summary>
+        private Role role;
+
+        /// <summary>
+        /// The password.
+        /// </summary>
+        private string password;
+
+        /// <summary>
         /// Gets or sets the name of the user.
         /// </summary>
         /// <value>
         /// The name of the user.
         /// </value>
         [DataMember]
-        public string UserName { get; set; }
+        public string UserName
+        {
+            get
+            {
+                return this.userName;
+            }
+
+            set
+            {
+                this.userName = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the role.
@@ -35,7 +61,18 @@ namespace SoCrm.Services.Security.Contracts
         /// The role.
         /// </value>
         [DataMember]
-        public Role Role { get; set; }
+        public Role Role
+        {
+            get
+            {
+                return this.role;
+            }
+
+            set
+            {
+                this.role = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the password.
@@ -44,6 +81,17 @@ namespace SoCrm.Services.Security.Contracts
         /// The password.
         /// </value>
         [DataMember]
-        public string Password { get; set; }
+        public string Password
+        {
+            get
+            {
+                return this.password;
+            }
+
+            set
+            {
+                this.password = value;
+            }
+        }
     }
 }

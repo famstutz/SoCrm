@@ -23,13 +23,59 @@ namespace SoCrm.Services.Contacts.Contracts
     public class Contact : DomainObject
     {
         /// <summary>
+        /// The person.
+        /// </summary>
+        private Person person;
+
+        /// <summary>
+        /// The user.
+        /// </summary>
+        private User user;
+
+        /// <summary>
+        /// The date time.
+        /// </summary>
+        private DateTime dateTime;
+
+        /// <summary>
+        /// The medium.
+        /// </summary>
+        private ContactMedium medium;
+
+        /// <summary>
+        /// The content.
+        /// </summary>
+        private string content;
+
+        /// <summary>
+        /// The person id.
+        /// </summary>
+        private Guid personId;
+
+        /// <summary>
+        /// The user id.
+        /// </summary>
+        private Guid userId;
+
+        /// <summary>
         /// Gets or sets the user id.
         /// </summary>
         /// <value>
         /// The user id.
         /// </value>
         [DataMember]
-        public Guid UserId { get; set; }
+        public Guid UserId
+        {
+            get
+            {
+                return this.userId;
+            }
+
+            set
+            {
+                this.userId = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the person id.
@@ -38,7 +84,18 @@ namespace SoCrm.Services.Contacts.Contracts
         /// The person id.
         /// </value>
         [DataMember]
-        public Guid PersonId { get; set; }
+        public Guid PersonId
+        {
+            get
+            {
+                return this.personId;
+            }
+
+            set
+            {
+                this.personId = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the content.
@@ -47,7 +104,18 @@ namespace SoCrm.Services.Contacts.Contracts
         /// The content.
         /// </value>
         [DataMember]
-        public string Content { get; set; }
+        public string Content
+        {
+            get
+            {
+                return this.content;
+            }
+
+            set
+            {
+                this.content = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the medium.
@@ -56,7 +124,18 @@ namespace SoCrm.Services.Contacts.Contracts
         /// The medium.
         /// </value>
         [DataMember]
-        public ContactMedium Medium { get; set; }
+        public ContactMedium Medium
+        {
+            get
+            {
+                return this.medium;
+            }
+
+            set
+            {
+                this.medium = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the date time.
@@ -65,7 +144,18 @@ namespace SoCrm.Services.Contacts.Contracts
         /// The date time.
         /// </value>
         [DataMember]
-        public DateTime DateTime { get; set; }
+        public DateTime DateTime
+        {
+            get
+            {
+                return this.dateTime;
+            }
+
+            set
+            {
+                this.dateTime = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the user.
@@ -74,7 +164,18 @@ namespace SoCrm.Services.Contacts.Contracts
         /// The user.
         /// </value>
         [DataMember]
-        public User User { get; set; }
+        public User User
+        {
+            get
+            {
+                return this.user;
+            }
+
+            set
+            {
+                this.user = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the person.
@@ -83,6 +184,17 @@ namespace SoCrm.Services.Contacts.Contracts
         /// The person.
         /// </value>
         [DataMember]
-        public Person Person { get; set; }
+        public Person Person
+        {
+            get
+            {
+                return this.person;
+            }
+
+            set
+            {
+                this.person = value;
+            }
+        }
     }
 }

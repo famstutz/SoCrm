@@ -21,13 +21,39 @@ namespace SoCrm.Services.Customers.Contracts
     public class Company : DomainObject
     {
         /// <summary>
+        /// The name.
+        /// </summary>
+        private string name;
+
+        /// <summary>
+        /// The address.
+        /// </summary>
+        private Address address;
+
+        /// <summary>
+        /// The website.
+        /// </summary>
+        private string website;
+
+        /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>
         /// The name.
         /// </value>
         [DataMember]
-        public string Name { get; set; }
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+
+            set
+            {
+                this.name = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the address.
@@ -36,7 +62,18 @@ namespace SoCrm.Services.Customers.Contracts
         /// The address.
         /// </value>
         [DataMember]
-        public Address Address { get; set; }
+        public Address Address
+        {
+            get
+            {
+                return this.address;
+            }
+
+            set
+            {
+                this.address = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the website.
@@ -45,6 +82,17 @@ namespace SoCrm.Services.Customers.Contracts
         /// The website.
         /// </value>
         [DataMember]
-        public string Website { get; set; }
+        public string Website
+        {
+            get
+            {
+                return this.website;
+            }
+
+            set
+            {
+                this.website = value;
+            }
+        }
     }
 }

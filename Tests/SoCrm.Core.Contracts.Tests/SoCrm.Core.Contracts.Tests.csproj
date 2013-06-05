@@ -33,9 +33,6 @@
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="SoCrm.Contracts">
-      <HintPath>..\..\SoCrm.Presentation.Customers\bin\Debug\SoCrm.Contracts.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -47,6 +44,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
+      <Project>{f8479afc-cbff-4564-b587-6f47826d846d}</Project>
+      <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoCrm.Tests.Common\SoCrm.Tests.Common.csproj">
       <Project>{8C3FABAE-1888-4F1A-A4E2-0A89644A2866}</Project>
       <Name>SoCrm.Tests.Common</Name>

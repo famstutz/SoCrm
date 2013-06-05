@@ -20,13 +20,44 @@ namespace SoCrm.Services.Customers.Contracts
     public class Address : DomainObject
     {
         /// <summary>
+        /// The address line.
+        /// </summary>
+        private string addressLine;
+
+        /// <summary>
+        /// The zip code.
+        /// </summary>
+        private string zipCode;
+
+        /// <summary>
+        /// The city.
+        /// </summary>
+        private string city;
+
+        /// <summary>
+        /// The country.
+        /// </summary>
+        private string country;
+
+        /// <summary>
         /// Gets or sets the address line.
         /// </summary>
         /// <value>
         /// The address line.
         /// </value>
         [DataMember]
-        public string AddressLine { get; set; }
+        public string AddressLine
+        {
+            get
+            {
+                return this.addressLine;
+            }
+
+            set
+            {
+                this.addressLine = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the zip code.
@@ -35,7 +66,18 @@ namespace SoCrm.Services.Customers.Contracts
         /// The zip code.
         /// </value>
         [DataMember]
-        public string ZipCode { get; set; }
+        public string ZipCode
+        {
+            get
+            {
+                return this.zipCode;
+            }
+
+            set
+            {
+                this.zipCode = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the city.
@@ -44,7 +86,18 @@ namespace SoCrm.Services.Customers.Contracts
         /// The city.
         /// </value>
         [DataMember]
-        public string City { get; set; }
+        public string City
+        {
+            get
+            {
+                return this.city;
+            }
+
+            set
+            {
+                this.city = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the country.
@@ -53,6 +106,17 @@ namespace SoCrm.Services.Customers.Contracts
         /// The country.
         /// </value>
         [DataMember]
-        public string Country { get; set; }
+        public string Country
+        {
+            get
+            {
+                return this.country;
+            }
+
+            set
+            {
+                this.country = value;
+            }
+        }
     }
 }

@@ -20,13 +20,34 @@ namespace SoCrm.Services.Customers.Contracts
     public class EMailAddress : DomainObject
     {
         /// <summary>
+        /// The address.
+        /// </summary>
+        private string address;
+
+        /// <summary>
+        /// The contact type.
+        /// </summary>
+        private ContactType contactType;
+
+        /// <summary>
         /// Gets or sets the address.
         /// </summary>
         /// <value>
         /// The address.
         /// </value>
         [DataMember]
-        public string Address { get; set; }
+        public string Address
+        {
+            get
+            {
+                return this.address;
+            }
+
+            set
+            {
+                this.address = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the type of the contact.
@@ -35,6 +56,17 @@ namespace SoCrm.Services.Customers.Contracts
         /// The type of the contact.
         /// </value>
         [DataMember]
-        public ContactType ContactType { get; set; }
+        public ContactType ContactType
+        {
+            get
+            {
+                return this.contactType;
+            }
+
+            set
+            {
+                this.contactType = value;
+            }
+        }
     }
 }

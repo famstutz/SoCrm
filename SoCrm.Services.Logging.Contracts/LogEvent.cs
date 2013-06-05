@@ -21,13 +21,39 @@ namespace SoCrm.Services.Logging.Contracts
     public class LogEvent : DomainObject
     {
         /// <summary>
+        /// The message.
+        /// </summary>
+        private string message;
+
+        /// <summary>
+        /// The severity.
+        /// </summary>
+        private Severity severity;
+
+        /// <summary>
+        /// The time stamp.
+        /// </summary>
+        private DateTime timeStamp;
+
+        /// <summary>
         /// Gets or sets the message.
         /// </summary>
         /// <value>
         /// The message.
         /// </value>
         [DataMember]
-        public string Message { get; set; }
+        public string Message
+        {
+            get
+            {
+                return this.message;
+            }
+
+            set
+            {
+                this.message = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the severity.
@@ -36,7 +62,18 @@ namespace SoCrm.Services.Logging.Contracts
         /// The severity.
         /// </value>
         [DataMember]
-        public Severity Severity { get; set; }
+        public Severity Severity
+        {
+            get
+            {
+                return this.severity;
+            }
+
+            set
+            {
+                this.severity = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the time stamp.
@@ -45,6 +82,17 @@ namespace SoCrm.Services.Logging.Contracts
         /// The time stamp.
         /// </value>
         [DataMember]
-        public DateTime TimeStamp { get; set; }
+        public DateTime TimeStamp
+        {
+            get
+            {
+                return this.timeStamp;
+            }
+
+            set
+            {
+                this.timeStamp = value;
+            }
+        }
     }
 }
