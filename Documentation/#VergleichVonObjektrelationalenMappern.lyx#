@@ -93,10 +93,10 @@ Eidesstattliche Erklärung
 \end_layout
 
 \begin_layout Standard
-Hiermit bestätigt die oder der Unterzeichnende, dass die Bachelorarbeit
- mit dem Thema Vergleich von objektrelationalen Mapperngemäss freigegebener
- Aufgabenstellung mit Freigabe vom 8.
- Januar 2013 ohne jede fremde Hilfe im Rahmen der gültigen Reglements selbständi
+Hiermit bestätigt der Unterzeichnende, dass die Bachelorarbeit mit dem Thema
+ Vergleich von objektrelationalen Mappern gemäss freigegebener Aufgabenstellung
+ vom 8.
+ Januar 2013 ohne jede fremde Hilfe im Rahmen des gültigen Reglements selbständi
 g ausgeführt wurde.
 \end_layout
 
@@ -166,12 +166,12 @@ Einführung
 \end_layout
 
 \begin_layout Standard
-Als einführendes Kapitel dieses Dokuments wird die Bachelorarbeit als Projekt
- kurz vorgestellt und es werden die Rahmenbedingungen der Arbeit zusammengefasst
- niedergeschrieben.
+Als einführendes Kapitel dieser Dokumentation wird die Bachelorarbeit als
+ Projekt kurz vorgestellt und es werden die Rahmenbedingungen der Arbeit
+ zusammengefasst niedergeschrieben.
  Weiter wird die Vorgehensweise für die Bearbeitung dieser Bachelorarbeit
  vorgestellt und erklärt.
- Am Ende dieses Kapitels wird die Projektplanung erstellt und die wichtigsten
+ Am Ende des Kapitels wird die Projektplanung erstellt und die wichtigsten
  Meilensteine festgelegt.
 \end_layout
 
@@ -236,8 +236,8 @@ key "Stern2012"
 
 \end_inset
 
-) dient die Bachelorarbeit zum Nachweis der Fähigkeit ingenieurswissenschaftlich
- zu arbeiten.
+) dient die Bachelorarbeit zum Nachweis der Fähigkeit ein Projekt auf ingenieurs
+wissenschaftlich Art und Weise zu bearbeiten.
  Die Bachelorarbeit ist nach den allgemeingültigen Standards für technisch/wisse
 nschaftliches Arbeiten verfasst.
 \end_layout
@@ -267,12 +267,13 @@ key "Fowler2002"
 
 \end_inset
 
-) gegeben, welche heutzutage in jeder grösseren Applikation eine entscheidene
- Rolle spielen.
+) gegeben, welche heutzutage in jedem grösseren (Software-) System eine
+ entscheidene Rolle spielen.
  Abschliessend wird pro Enterpise Pattern eine Empfehlung abgegeben werden,
  welcher frei verfügbare und Open-Source OR-Mapper im .NET-Umfeld eingesetzt
  werden soll.
- 
+ Zusätzlich zu diesen Vergleichen und der Empfehlungen wird eine serviceorientie
+rte CRM-Applikation als Proof-of-Concept erstellt.
 \end_layout
 
 \begin_layout Section
@@ -1135,7 +1136,7 @@ Finalisierung Dokumentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-09.07.2013
+18.06.2013
 \end_layout
 
 \end_inset
@@ -1164,7 +1165,7 @@ Erarbeiten der Präsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-10.07.2013
+18.06.2013
 \end_layout
 
 \end_inset
@@ -1173,7 +1174,7 @@ Erarbeiten der Präsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-???
+01.07.2013
 \end_layout
 
 \end_inset
@@ -1395,7 +1396,7 @@ Abgabe der Arbeit
 \begin_inset Text
 
 \begin_layout Plain Layout
-09.07.2013
+18.06.2013
 \end_layout
 
 \end_inset
@@ -1424,7 +1425,7 @@ Schlusspräsentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-???
+02.07.2013
 \end_layout
 
 \end_inset
@@ -8477,7 +8478,7 @@ key "Schwichtenberg2008"
 
 \end_inset
 
- aufgebaut.
+ angelehnt.
 \end_layout
 
 \begin_layout Standard
@@ -10845,7 +10846,7 @@ Performance Einfügen, Aktualisieren und Löschen (500 Run)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2013.8ms
 \end_layout
 
 \end_inset
@@ -10854,7 +10855,7 @@ Performance Einfügen, Aktualisieren und Löschen (500 Run)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2710.5ms
 \end_layout
 
 \end_inset
@@ -10883,7 +10884,7 @@ Performance Einfügen, Aktualisieren und Löschen (1000 Run)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3721.4ms
 \end_layout
 
 \end_inset
@@ -10892,7 +10893,7 @@ Performance Einfügen, Aktualisieren und Löschen (1000 Run)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+4987.2ms
 \end_layout
 
 \end_inset
@@ -10922,6 +10923,17 @@ Kriterien Performance
 
 \end_layout
 
+\begin_layout Standard
+In diesem Vergleich zeigt sich sehr stark der Unterschied zwischen eine
+ kompletten und einem leichtgewichtigen OR-Mapper.
+ Dapper als leichtgewichtiger OR-Mapper hat diesen Vergleich klar gewonnen
+ und sämtliche Metriken dominiert.
+ Dies liegt insbesondere an der einfachen Schichtung des ORMs.
+ Entity Framework als der featurestärkste OR-Mapper hat klar die schlechteste
+ aufgewiesene Performance.
+ 
+\end_layout
+
 \begin_layout Subsection
 Toolunterstützung
 \begin_inset CommandInset label
@@ -10931,6 +10943,92 @@ name "sub:Toolunterstützung"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Das Entity Framework bietet mehrfache Toolunterstützung.
+ Wenn ein Model-First oder Database-First Ansatz gewählt wird existiert
+ ein Designer welcher es erlaubt Entitäten mit ihren Attributen und Beziehungen
+ zu modellieren.
+ Ausserdem bietet EF verschiedene Assistenten um ein bestehendes Datenbankschema
+ zu importieren.
+ Wird Code-First das Domain Model entwickelt so existieren eine benutzerfreundli
+che NuGet Extension welche dem Entwickler viel Unterstützung bietet.
+\end_layout
+
+\begin_layout Standard
+Dapper als leichtgewichtiger OR-Mapper bietet keinerlei Toolunterstützung
+ an.
+ Sämtliche Konfiguration des ORMs geschieht über in Code geschriebene Mappings
+ und muss vom Entwickler selbst erstellt werden.
+ Die Entitäten können jedoch auch über den Visual Studio Klassendesigner
+ erstellt werden.
+\end_layout
+
+\begin_layout Standard
+NHibernate als herunterladbare Library kommt ohne Tools mit.
+ Die Konfiguration geschieht mittels XML-Dateien und die Entitäten können
+ mit dem Visual Studio Klassendesigner erstellt werden.
+ NHibernate liefert jedoch direkt die XSD Schemas für die XML-Dateien, welche
+ dann auch direkt mit Intellisense verwendet werden können.
+ Es gibt zahlreiche Fremdkomponentenhersteller welche zusätzliche Tools
+ für NHibernate entwickeln, so zum Beispiel der NHibernate Designer von
+ Mindscape HQ
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.mindscapehq.com/products/nhdesigner
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ oder Visual NHibenrate von Slyce
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.slyce.com/VisualNHibernate/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ Diese Tools sind durchaus mächtig und für grössere Projekte anzuraten,
+ werden jedoch in dieser Bachelorarbeit nicht betrachtet da sie meist kostenpfli
+chtig sind.
+\end_layout
+
+\begin_layout Standard
+Der Gewinner in dieser Kategorie ist das Entity Framework.
+ Die mit dem EF mitgelieferten Tools machen es dem Entwickler denkbar einfach
+ Mappings zu erstellen und bieten den gewohnen Komfort von Microsoft Produkten
+ wie dem Visual Studio.
+ Würde man die Drittanbietertools für NHibernate betrachten würde die Entscheidu
+ng wohl nicht so klar ausfallen da NHibernate auch sehr populär ist und
+ aus diesem Grund viele Tools von Fremdherstellern existieren.
 \end_layout
 
 \begin_layout Subsection
@@ -10946,6 +11044,131 @@ name "sub:Monitoring"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Montoring eines Persistenzlayers und des dazugehörigen ORMs wird bei der
+ Evaluation von ORMs oft fälschlicherweise ausser acht gelassen.
+ Dies, da das Montoring häufig erst spät in der Entwicklung eines Systems
+ bezeiehungsweise erst in der Wartung des Systems eine Rolle spielt wenn
+ Performanceengpässe spürbar werden.
+ Wird dann ein ORM eingesetzt der nur sehr eingeschränkt debug- und überwachbar
+ ist wird es schwierig die eigentlichen Bottlenecks zu erkennen und beheben.
+\end_layout
+
+\begin_layout Standard
+Das Entity Framework bietet out-of-the-box nur das Intellitrace debugging
+ mit.
+ Da jedoch für das Entity Framework die PDB Symbole auf Microsofts Symbol
+ Server verfügbar sind ist das debugging ohne grosse Hürden wie selbstkompiliere
+n des Entity Frameworks möglich.
+ Da das Entity Framework auf Grund seiner Vielzahl von Funktionalitäten
+ sehr komplex ist, ist es für einen Entwickler nicht ganz einfach ein einfaches
+ Mapping nach zu vollziehen.
+ 
+\end_layout
+
+\begin_layout Standard
+Natürlich lassen sich alle ORMs über einen SQL Profiler monitoren.
+ Nur leider ist das meistens schwierig zu sagen woher genau die abgesetzten
+ Queries stammen beziehungsweise ist die Nachverfolgbarkeit der einzelnen
+ Queries zum Mapping im OR-Mapper schwierig.
+\end_layout
+
+\begin_layout Standard
+Da Dapper in Sourcecodeform vorliegt ist das Debugging denkbar einfach gestaltet.
+ Der Entwickler kann auch einfach eigene Performancecounters implementieren
+ oder zum Beispiel ein Tracing aller SQL-Statements realisieren da der Quellcode
+ relativ einfach lesbar ist.
+ Der Nachteil ist allerdings, dass dies alles selber entwickelt werden muss.
+ Dapper selbst liefert keinerlei Montioringtools oder ähnliches mit.
+\end_layout
+
+\begin_layout Standard
+Für NHibernate existiert wie auch für das Entity Framework der NHibernate
+ Profiler von Hibernating Rhinos
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.hibernatingrhinos.com/products/nhprof
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+NHibernate bietet auch die Möglichkeit eigene Interceptoren
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zum Interceptor Pattern siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://bosy.dailydev.org/2007/04/interceptor-design-pattern.html.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ zu schreiben.
+ So kann zum Beispiel jedes abgesetzte SQL-Statement mit einem Interceptor
+ abgefangen werden und in ein Tracefile geschrieben werden.
+ Auch lässt sich direkt eine log4net
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu log4net siehe 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://logging.apache.org/log4net/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ Konfiguration erstellen, welche erweiterte Tracemeldungen von NHibenrate
+ in den gewünschten Kanal persistiert.
+\end_layout
+
+\begin_layout Standard
+Abschliessend lässt es sich sagen dass alle drei betrachteten OR-Mapper
+ von Haus aus wenig Montoringmöglichkeiten mitbringen.
+ Dies ist wohl auch so gewünscht, bieten insbesondere NHibernate und das
+ Entity Framework zahlreiche Möglichkeiten für Entwickler oder Drittanbieter
+ Montoringsuiten zu entwickeln und auch verkaufen.
+ Dieser Vergleich bezieht sich somit auf die Möglichkeit zu Monitoring und
+ auch auf die verfügbaren Monitoringtools von Drittherstelltern.
+ Bei dieser Betrachtung ist das Entity Framework der Gewinner dieses Vergleichs.
 \end_layout
 
 \begin_layout Subsection
@@ -11059,7 +11282,7 @@ Toolunterstützung
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Enitity Framework
 \end_layout
 
 \end_inset
@@ -11079,7 +11302,7 @@ Unterstützung Enterprise Pattern
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+NHibernate
 \end_layout
 
 \end_inset
@@ -11099,7 +11322,7 @@ Monitoring
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Entity Framework
 \end_layout
 
 \end_inset
@@ -11534,7 +11757,7 @@ CreateUser
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen neuen Benutzer mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -11554,7 +11777,7 @@ DeleteUser
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht einen Benutzer auf Basis der ObjectId
 \end_layout
 
 \end_inset
@@ -11574,7 +11797,7 @@ GetAllRoles
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Rollen zurück
 \end_layout
 
 \end_inset
@@ -11594,7 +11817,7 @@ GetAllUsers
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Benutzer zurück
 \end_layout
 
 \end_inset
@@ -11614,7 +11837,7 @@ GetUserByCredentials
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Benutzer auf Grund seiner Benutzerinformationen zurück
 \end_layout
 
 \end_inset
@@ -11634,7 +11857,7 @@ GetUserByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Benutzer auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -11654,7 +11877,7 @@ GetUsersByRole
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Benutzer auf Grund ihrer Rolle zurück
 \end_layout
 
 \end_inset
@@ -11674,7 +11897,7 @@ GetUsersByRoleAndUserName
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Benutzer auf Grund ihrer Rolle und Benutzernamen zurück
 \end_layout
 
 \end_inset
@@ -11694,7 +11917,7 @@ SetPassword
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Setzt das Password für einen bestimmten Benutzer
 \end_layout
 
 \end_inset
@@ -11714,7 +11937,8 @@ ValidateCredentials
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Überprüft die übergebenen Benutzerinformationen und liefert wahr oder falsch
+ zurück
 \end_layout
 
 \end_inset
@@ -11830,7 +12054,7 @@ CreateCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt eine neue Firma mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -11850,7 +12074,7 @@ CreateEMailAddress
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt eine neue E-Mail-Adresse für einen Kunden
 \end_layout
 
 \end_inset
@@ -11870,7 +12094,7 @@ CreatePerson
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen neuen Kunden mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -11890,7 +12114,7 @@ CreatePhoneNumber
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt eine neue Telefonnummer für einen Kunden
 \end_layout
 
 \end_inset
@@ -11910,7 +12134,7 @@ DeleteCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht eine Firma auf Basis ihrer ObjectId
 \end_layout
 
 \end_inset
@@ -11930,7 +12154,7 @@ DeleteEMailAddress
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht eine E-Mail-Adresse auf Basis ihrer ObjectId
 \end_layout
 
 \end_inset
@@ -11950,7 +12174,7 @@ DeletePerson
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht einen Kunden auf Basis seiner ObjectId
 \end_layout
 
 \end_inset
@@ -11970,7 +12194,7 @@ DeletePhoneNumber
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht eine Telefonnummer auf Basis ihrer ObjectId
 \end_layout
 
 \end_inset
@@ -11990,7 +12214,7 @@ GetAllCompanies
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Firmen zurück
 \end_layout
 
 \end_inset
@@ -12010,7 +12234,7 @@ GetAllCountries
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Länder zurück
 \end_layout
 
 \end_inset
@@ -12030,7 +12254,7 @@ GetAllEMailAddresses
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle E-Mail-Adressen eines Kunden zurück
 \end_layout
 
 \end_inset
@@ -12050,7 +12274,7 @@ GetAllPersons
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Kunden zurück
 \end_layout
 
 \end_inset
@@ -12070,7 +12294,7 @@ GetAllPhoneNumbers
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Telefonnummern eines Kunden zurück
 \end_layout
 
 \end_inset
@@ -12090,7 +12314,7 @@ GetCompaniesByNameAndCountry
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Firmen auf Grund ihres Namen und des Landes zurück
 \end_layout
 
 \end_inset
@@ -12110,7 +12334,7 @@ GetCompanyByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt eine Firma auf Grund ihrer ObjectId zurück
 \end_layout
 
 \end_inset
@@ -12130,7 +12354,7 @@ GetContactTypes
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Kontaktarten zurück
 \end_layout
 
 \end_inset
@@ -12150,7 +12374,7 @@ GetPersonByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Kunden auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -12170,7 +12394,7 @@ GetPersonsByNameAndCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kunden auf Grund ihres Namens und Arbeitgebers zurück
 \end_layout
 
 \end_inset
@@ -12286,7 +12510,7 @@ CreateContact
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen Kontakt für einen Kunden mit den übergebenen Werten
 \end_layout
 
 \end_inset
@@ -12306,7 +12530,7 @@ DeleteContact
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Löscht einen Kontakt auf Grund seiner ObjectId
 \end_layout
 
 \end_inset
@@ -12326,7 +12550,7 @@ GetAllContactMediums
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Kontaktmedien zurück
 \end_layout
 
 \end_inset
@@ -12346,7 +12570,7 @@ GetContactByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Kontakt auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -12366,7 +12590,7 @@ GetContactsByCompany
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Arbeitgebers des Kunden zurück
 \end_layout
 
 \end_inset
@@ -12386,7 +12610,7 @@ GetContactsByContactMedium
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Kontaktmediums zurück
 \end_layout
 
 \end_inset
@@ -12406,7 +12630,7 @@ GetContactsByContactMediumAndPersonName
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Kontaktmediums und des Kundennamen zurück
 \end_layout
 
 \end_inset
@@ -12426,7 +12650,7 @@ GetContactsByPerson
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Kunden zurück
 \end_layout
 
 \end_inset
@@ -12446,7 +12670,7 @@ GetContactsByUser
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt Kontakte auf Grund des Benutzers zurück
 \end_layout
 
 \end_inset
@@ -12562,7 +12786,7 @@ GetAllLogEvents
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Logeinträge zurück
 \end_layout
 
 \end_inset
@@ -12582,7 +12806,7 @@ GetAllSeverities
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Schweregrade zurück
 \end_layout
 
 \end_inset
@@ -12602,7 +12826,7 @@ GetLogEventByObjectId
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt einen Logeintrag auf Grund seiner ObjectId zurück
 \end_layout
 
 \end_inset
@@ -12622,7 +12846,7 @@ GetLogEventsByServerity
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Gibt alle Logeinträge auf Grund ihres Schweregrads zurück
 \end_layout
 
 \end_inset
@@ -12642,7 +12866,7 @@ LogEvent
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt einen neuen Logeinträge mit den übergebenen Werten
 \end_layout
 
 \end_inset
