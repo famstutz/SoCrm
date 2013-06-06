@@ -13477,6 +13477,10 @@ Klassendiagramm SoCrm.Infrastructure.Persistence.Contracts
 SoCrm.Infrastructure.Persistence.Dapper
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Persistence.EntityFramework
 \end_layout
@@ -14098,6 +14102,23 @@ eise ungenügend getestet) sind.
 \end_layout
 
 \begin_layout Standard
+Die Persistenzlayerimplementierungen SoCrm.Infrastructure.Persistence.Dapper,
+ SoCrm.Infrastructure.Persistence.EntityFramework und SoCrm.Infrastructure.Persistenc
+e.NHibernate wurden aus Zeitgründen nicht automatisiert über Unit Tests getestet.
+ Dies da insbesondere in NHibernate und EntityFramwork es sehr aufwendig
+ ist die Session bzw.
+ den ObjectContext zu mocken und der Persistenzlayer implizit in den Akzeptanzte
+st (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Akzeptanztests"
+
+\end_inset
+
+) getestet wird.
+\end_layout
+
+\begin_layout Standard
 Wie in Tabelle 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -14105,9 +14126,8 @@ reference "tab:Testabdeckung"
 
 \end_inset
 
- ersichtlich ist, beträgt die Testabdeckung der einzelnen Namespaces jeweils
- mehr als 80%, die laut Aufgabenstellung gefordert sind.
- Die totale Testabdeckung des Projekts YAEM beträgt 94.13%.
+ ersichtlich ist, beträgt die totale Testabdeckung (ohne den Persistenzlayer)
+ 85%.
 \end_layout
 
 \begin_layout Standard
@@ -14291,7 +14311,7 @@ SoCrm.Infrastructure.Persistence.Dapper
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14300,7 +14320,7 @@ SoCrm.Infrastructure.Persistence.Dapper
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14309,7 +14329,7 @@ SoCrm.Infrastructure.Persistence.Dapper
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14329,7 +14349,7 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14338,7 +14358,7 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14347,7 +14367,7 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14367,7 +14387,7 @@ SoCrm.Infrastructure.Persistence.NHibernate
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14376,7 +14396,7 @@ SoCrm.Infrastructure.Persistence.NHibernate
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14385,7 +14405,7 @@ SoCrm.Infrastructure.Persistence.NHibernate
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -14481,7 +14501,7 @@ SoCrm.Presentation.Core
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+162
 \end_layout
 
 \end_inset
@@ -14490,7 +14510,7 @@ SoCrm.Presentation.Core
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+128
 \end_layout
 
 \end_inset
@@ -14499,7 +14519,7 @@ SoCrm.Presentation.Core
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+79%
 \end_layout
 
 \end_inset
@@ -14519,7 +14539,7 @@ SoCrm.Presentation.Customers
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+529
 \end_layout
 
 \end_inset
@@ -14528,7 +14548,7 @@ SoCrm.Presentation.Customers
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+497
 \end_layout
 
 \end_inset
@@ -14537,7 +14557,7 @@ SoCrm.Presentation.Customers
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+94%
 \end_layout
 
 \end_inset
@@ -14557,7 +14577,7 @@ SoCrm.Presentation.Security
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+276
 \end_layout
 
 \end_inset
@@ -14566,7 +14586,7 @@ SoCrm.Presentation.Security
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+252
 \end_layout
 
 \end_inset
@@ -14575,7 +14595,7 @@ SoCrm.Presentation.Security
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+91%
 \end_layout
 
 \end_inset
@@ -14595,7 +14615,7 @@ SoCrm.Services.Contacts.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+42
 \end_layout
 
 \end_inset
@@ -14604,7 +14624,7 @@ SoCrm.Services.Contacts.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+42
 \end_layout
 
 \end_inset
@@ -14613,7 +14633,7 @@ SoCrm.Services.Contacts.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100%
 \end_layout
 
 \end_inset
@@ -14633,7 +14653,7 @@ SoCrm.Services.Contacts.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+49
 \end_layout
 
 \end_inset
@@ -14642,7 +14662,7 @@ SoCrm.Services.Contacts.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+42
 \end_layout
 
 \end_inset
@@ -14651,7 +14671,7 @@ SoCrm.Services.Contacts.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+86%
 \end_layout
 
 \end_inset
@@ -14671,7 +14691,7 @@ SoCrm.Services.Customers.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+102
 \end_layout
 
 \end_inset
@@ -14680,7 +14700,7 @@ SoCrm.Services.Customers.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+102
 \end_layout
 
 \end_inset
@@ -14689,7 +14709,7 @@ SoCrm.Services.Customers.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100%
 \end_layout
 
 \end_inset
@@ -14709,7 +14729,7 @@ SoCrm.Services.Customers.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+103
 \end_layout
 
 \end_inset
@@ -14718,7 +14738,7 @@ SoCrm.Services.Customers.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+92
 \end_layout
 
 \end_inset
@@ -14727,7 +14747,7 @@ SoCrm.Services.Customers.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+92%
 \end_layout
 
 \end_inset
@@ -14747,7 +14767,7 @@ SoCrm.Services.Logging.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+18
 \end_layout
 
 \end_inset
@@ -14756,7 +14776,7 @@ SoCrm.Services.Logging.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+18
 \end_layout
 
 \end_inset
@@ -14765,7 +14785,7 @@ SoCrm.Services.Logging.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100%
 \end_layout
 
 \end_inset
@@ -14785,7 +14805,7 @@ SoCrm.Services.Logging.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+28
 \end_layout
 
 \end_inset
@@ -14794,7 +14814,7 @@ SoCrm.Services.Logging.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+21
 \end_layout
 
 \end_inset
@@ -14803,7 +14823,7 @@ SoCrm.Services.Logging.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+75%
 \end_layout
 
 \end_inset
@@ -14823,7 +14843,7 @@ SoCrm.Services.Security.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+18
 \end_layout
 
 \end_inset
@@ -14832,7 +14852,7 @@ SoCrm.Services.Security.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+18
 \end_layout
 
 \end_inset
@@ -14841,7 +14861,7 @@ SoCrm.Services.Security.Contracts
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100%
 \end_layout
 
 \end_inset
@@ -14861,7 +14881,7 @@ SoCrm.Services.Security.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+69
 \end_layout
 
 \end_inset
@@ -14870,7 +14890,7 @@ SoCrm.Services.Security.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+62
 \end_layout
 
 \end_inset
@@ -14879,7 +14899,7 @@ SoCrm.Services.Security.Provider
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+85%
 \end_layout
 
 \end_inset
@@ -14918,6 +14938,13 @@ name "tab:Testabdeckung"
 
 \begin_layout Section
 Akzeptanztests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Akzeptanztests"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

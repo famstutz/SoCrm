@@ -13255,6 +13255,15 @@ Um dynamisch Views innerhalb einer Shell laden zu können sind alle Views
  eingefügt werden können.
 \end_layout
 
+\begin_layout Itemize
+Die Serviceimplementierungen (.svc Code-Behind-Dateien) sollen möglichst
+ schlank und entkoppelt sein.
+ Deswegen wird möglichst viel Logik in Basisklassen bzw.
+ andere Orte ausgelagert insbesondere im Zusammenhang mit dem Zugriff auf
+ ORMs.
+ Dadurch wird die Les- und Testbarkeit der Serviceimplementeirungen erhöht.
+\end_layout
+
 \begin_layout Subsection
 Komponenten im Detail
 \end_layout
@@ -13477,12 +13486,89 @@ Klassendiagramm SoCrm.Infrastructure.Persistence.Contracts
 SoCrm.Infrastructure.Persistence.Dapper
 \end_layout
 
+\begin_layout Standard
+Die Persistenzlayerimplementierung von Dapper in der WCF Service Application
+ SoCrm.Infrastructure.Persistence.Dapper besteht aus einer Basisklasse PersistenceS
+erviceBase<T>, welche als Parameter den Entitätstypen akzeptiert, und den
+ acht *PersistenceServices, welche jeweils einen eigenen WCF Service darstellen.
+ Jeder PersistenceService implementiert das entsprechende PersistenceService
+ Interface aus SoCrm.Infrastructure.Persistence.Contracts und leitet von der
+ PersistenceServiceBase ab.
+\end_layout
+
+\begin_layout Standard
+Die PersistenceServiceBase beeinhaltet sämtliche Zugriffslogik auf Dapper
+ um einzelne Entitäten zu Lesen und zu löschen, das Speichern und das Lesen
+ von Objektgraphen ist im jeweiligen *PersistenceService implementiert da
+ ein manuelles Mapping innerhalb von Dapper dafür notwendig ist.
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Persistence.EntityFramework
 \end_layout
 
+\begin_layout Standard
+Die Persistenzlayerimplementierung von EntityFramework als WCF Service Applikati
+on in SoCrm.Infrastructure.Persistence.EntityFramework besitzt wiederum acht
+ *PersistenceServices welche die entsprechendne Service-Inferfaces aus SoCrm.Infr
+astructure.Persistence.Contracts implementieren.
+ Sämtliche Logik ist dabei in der generischen Basisklasse PersistenceServiceBase
+ abgelegt, die einzelnen *PersistenceServices sind leer und dienen lediglich
+ als Endpoints für die WCF Services.
+\end_layout
+
+\begin_layout Standard
+Die PeristenceServiceBase kümmert sich um das vorbereiten der Entitäten
+ (Validierung, setzen von Änderungsdatum und -Benutzer, usw.) und holt sich
+ aus der DataServiceFactory den pro Entität spezfischen DataService.
+ Der DataService interagiert mit dem jeweiligen ObjectContext des Entity
+ Frameworks.
+\end_layout
+
+\begin_layout Standard
+Aus Gründen der Übersichtlichkeit und ERweiterbarkeit wurden vier ObjectContexte
+ eingeführt, einer für jede Funktionalität des Systems: SecurityContext,
+ LoggingContext, CustomerContext und ContactContext.
+\end_layout
+
+\begin_layout Standard
+Da das EntityFramework 5.0 verwendet wird, wurden die Entitäten Code-First
+ entwickelt.
+ Das EntityFramework bietet für den diesen Anwdungsfalls Migrationen an,
+ welche von der PowerShell-Extension über die NuGet-Konsole erzeugt werden.
+ Diese Migraitonen sind auch in dieser Assembly gespeichert im Namespace
+ SoCrm.Infrastructure.Persistence.EntityFramework.Migrations.
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Persistence.NHibernate
+\end_layout
+
+\begin_layout Standard
+Die Mappings für alle Entitäten sind im Namespace SoCrm.Infrastructure.Persistence.
+NHibernate.Mappings abgelegt.
+ Dabei werden FluentNHibernate
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.fluentnhibernate.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ verwendet um die XML-Konfiguration zu vereinfachen und den aufwand z
 \end_layout
 
 \begin_layout Subsubsection
@@ -14095,6 +14181,23 @@ Eine Kenngrösse zur Qualitätssicherung und zur Steigerung der Softwarequalitä
  Insbesondere hift die Testabdeckung bei der Identifizierung von einzelnen
  Bereichen im Quellcode die potentiell fehleranfällig (da ungetestet beziehungsw
 eise ungenügend getestet) sind.
+\end_layout
+
+\begin_layout Standard
+Die Persistenzlayerimplementierungen SoCrm.Infrastructure.Persistence.Dapper,
+ SoCrm.Infrastructure.Persistence.EntityFramework und SoCrm.Infrastructure.Persistenc
+e.NHibernate wurden aus Zeitgründen nicht automatisiert über Unit Tests getestet.
+ Dies da insbesondere in NHibernate und EntityFramwork es sehr aufwendig
+ ist die Session bzw.
+ den ObjectContext zu mocken und der Persistenzlayer implizit in den Akzeptanzte
+st (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Akzeptanztests"
+
+\end_inset
+
+) getestet wird.
 \end_layout
 
 \begin_layout Standard
@@ -14917,6 +15020,13 @@ name "tab:Testabdeckung"
 
 \begin_layout Section
 Akzeptanztests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Akzeptanztests"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
