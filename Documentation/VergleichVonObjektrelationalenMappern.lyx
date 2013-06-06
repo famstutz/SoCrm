@@ -7,6 +7,7 @@
 \usepackage{pdflscape}
 \usepackage{footnote}
 \makesavenoteenv{tabular}
+\makenomenclature
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -94,8 +95,15 @@ Eidesstattliche Erklärung
 
 \begin_layout Standard
 Hiermit bestätigt der Unterzeichnende, dass die Bachelorarbeit mit dem Thema
- Vergleich von objektrelationalen Mappern gemäss freigegebener Aufgabenstellung
- vom 8.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Vergleich von objektrelationalen Mappern
+\begin_inset Quotes erd
+\end_inset
+
+ gemäss freigegebener Aufgabenstellung vom 8.
  Januar 2013 ohne jede fremde Hilfe im Rahmen des gültigen Reglements selbständi
 g ausgeführt wurde.
 \end_layout
@@ -171,7 +179,7 @@ Als einführendes Kapitel dieser Dokumentation wird die Bachelorarbeit als
  zusammengefasst niedergeschrieben.
  Weiter wird die Vorgehensweise für die Bearbeitung dieser Bachelorarbeit
  vorgestellt und erklärt.
- Am Ende des Kapitels wird die Projektplanung erstellt und die wichtigsten
+ Am Ende dieses Kapitels wird eine Projektplanung erstellt und die wichtigsten
  Meilensteine festgelegt.
 \end_layout
 
@@ -15390,8 +15398,44 @@ name "tab:Akzeptantests"
 Fazit
 \end_layout
 
+\begin_layout Standard
+agd
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+nomenclature{hsymboli}{hdescriptioni}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Schlussfolgerungen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+printnomenclature
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter*
@@ -15562,16 +15606,6 @@ YAEM Yet Another Encrypted Messenger
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 ZHAW Zürcher Hochschule für Angewandte Wissenschaften
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset nomencl_print
-LatexCommand printnomenclature
-set_width "auto"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
