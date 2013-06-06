@@ -13240,11 +13240,17 @@ reference "fig:Visual-Studio-Solution"
 \end_inset
 
  verwiesen, welche die Struktur Visual Studio-Solution darstellt.
- Die Namensgebung der Unterkapitel hält sich dabei an die Namespaces der
+ 
+\end_layout
+
+\begin_layout Standard
+Die Namensgebung der Unterkapitel hält sich dabei an die Namespaces der
  Projekte.
  Die verwendeten Grafiken zeigen nur die beschriebenen Klassen und Interfaces
  an, die Projekte enthalten noch weitere Codedateien die jedoch nicht erwähnensw
 ert sind und deswegen in den Klassendiagrammen auch nicht gezeichnet sind.
+ Auch wurden nur in denjenigen Unterkapiteln Klassendiagramme eingefügt
+ wo es für den Leser von Interesse sein könnte.
 \end_layout
 
 \begin_layout Standard
@@ -13299,6 +13305,40 @@ t.
  Identifier, die ObjectId, deklariert.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Core.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Core.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Core.Services
 \end_layout
@@ -13349,6 +13389,40 @@ Für jeden Entitätstyp existiert ein Persistenzservice, wessen Interface
  für jeden Entitätstyp ein eigenes Persistence-Service Inteface erstellt.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Persistence.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Infrastructure.Persistence.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Persistence.Dapper
 \end_layout
@@ -13381,24 +13455,232 @@ on-Assemblies registriert, welche wiederum die Controller und ViewModels
  im Unity-Container registrieren.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.App.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.App
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Presentation.Contacts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Contacts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Presentation.Core
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Core.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Core
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Presentation.Customers
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Customers.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Customers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
 SoCrm.Infrastructure.Presentation.Security
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Security.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Security
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Services.Contacts.Contracts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Contacts.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Contacts.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -13409,6 +13691,40 @@ SoCrm.Services.Contacts.Provider
 SoCrm.Services.Customers.Contracts
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Customers.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Customers.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Services.Customers.Provider
 \end_layout
@@ -13417,12 +13733,80 @@ SoCrm.Services.Customers.Provider
 SoCrm.Services.Logging.Contracts
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Logging.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Logging.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Services.Logging.Provider
 \end_layout
 
 \begin_layout Subsubsection
 SoCrm.Services.Security.Contracts
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Security.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Security.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection

@@ -11807,6 +11807,13 @@ erte als XML-Fragmente an die konsumierende Applikation zurückgegeben werden.
 
 \begin_layout Paragraph
 ISecurityService
+\begin_inset CommandInset label
+LatexCommand label
+name "par:ISecurityService"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12104,6 +12111,13 @@ Klassendiagramm ISecurityService
 
 \begin_layout Paragraph
 ICustomerService
+\begin_inset CommandInset label
+LatexCommand label
+name "par:ICustomerService"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12560,6 +12574,13 @@ Klassendiagramm ICustomerService
 
 \begin_layout Paragraph
 IContactService
+\begin_inset CommandInset label
+LatexCommand label
+name "par:IContactService"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12836,6 +12857,13 @@ Klassendiagramm IContactService
 
 \begin_layout Paragraph
 ILoggingService
+\begin_inset CommandInset label
+LatexCommand label
+name "par:ILoggingService"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13199,6 +13227,14 @@ rn.
 \end_layout
 
 \begin_layout Itemize
+Die Persistence-Services (in SoCrm.Infrastructure.Persistence) besitzen keinerlei
+ Geschäftslogik sondern dienen rein dazu Objekte aus dem jeweils verwendeten
+ ORM aus der Datenbank zu lesen, zu aktualisieren, hinzuzufügen bzw.
+ zu löschen.
+ Sämtliche Geschäftslogik ist in den Services (in SoCrm.Services) implementiert.
+\end_layout
+
+\begin_layout Itemize
 Das Präsentationspattern, welches verwendet wird, ist MVVM+C (nach 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -13296,6 +13332,13 @@ name "fig:Visual-Studio-Solution"
 
 \begin_layout Subsubsection
 SoCrm.Core.Contracts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:SoCrm.Core.Contracts"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13309,7 +13352,7 @@ t.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -13341,6 +13384,13 @@ Klassendiagramm SoCrm.Core.Contracts
 
 \begin_layout Subsubsection
 SoCrm.Core.Services
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:SoCrm.Core.Services"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13393,7 +13443,7 @@ Für jeden Entitätstyp existiert ein Persistenzservice, wessen Interface
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -13436,7 +13486,7 @@ SoCrm.Infrastructure.Persistence.NHibernate
 \end_layout
 
 \begin_layout Subsubsection
-SoCrm.Infrastructure.Presentation.App
+SoCrm.Presentation.App
 \end_layout
 
 \begin_layout Standard
@@ -13459,7 +13509,7 @@ on-Assemblies registriert, welche wiederum die Controller und ViewModels
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -13490,51 +13540,480 @@ Klassendiagramm SoCrm.Presentation.App
 \end_layout
 
 \begin_layout Subsubsection
-SoCrm.Infrastructure.Presentation.Contacts
+SoCrm.Presentation.Contacts
+\end_layout
+
+\begin_layout Standard
+In der Assembly SoCrm.Infrastructure.Presentation.Contacts sind die Views und
+ ViewModels der Kontaktfunktionalität untergebracht.
+ Wie bei allen Presentation-Assemblies ist der Controller (hier der ContactContr
+oller) Dreh- und Angelpunkt.
+ Er instanziiert bei Bedarf die ConstactListView und das ContactListViewModel
+ (für das Anzeigen bestehender Kontakte verantwortlich) sowie die CreateContactV
+iew und das CreateContactViewModel (enthält die Funktionalität zum Erstellen
+ von neuen Kontakten für einen Kunden).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Contacts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-SoCrm.Infrastructure.Presentation.Core
+SoCrm.Presentation.Core
+\end_layout
+
+\begin_layout Standard
+Diese Assembly enthält die gesamte Infrastruktur für die WPF Anwendung.
+ Dazu gehören die Basisklassen für ViewModel und Controller als auch der
+ StatusBarService, welcher Nachrichten in der Statusbar der ShellView darstellt.
+ Das RegionModel dient zum Darstellen der aktuellen View im ContentControl
+ der ShellView.
+ Die ViewModelBase implementiert das Interface INotifyPropertyChanged (siehe
+ MSDN 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged.
+aspx
+\end_layout
+
+\end_inset
+
+) welches das Binding bei geänderten Objektendaten im Modell benachrichtigt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Core.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Core
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-SoCrm.Infrastructure.Presentation.Customers
+SoCrm.Presentation.Customers
+\end_layout
+
+\begin_layout Standard
+Die Assembly SoCrm.Infrastructure.Presentation.Customers enthält sämtlich Funktiona
+litäten für das Anzeigen Hinzufügen und Löschen von Kunden als auch Firmen.
+ Alle Views und ViewModels werden über den CustomerController instanziiert
+ und angezeigt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Customers.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Customers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-SoCrm.Infrastructure.Presentation.Security
+SoCrm.Presentation.Security
+\end_layout
+
+\begin_layout Standard
+SoCrm.Infrastructure.Presentation.Security enthält die Views und ViewModels
+ für die Benutzerverwaltung sowie das Authentifizieren beim System.
+ Auch ist die SetPasswordView und das SetPasswordViewModel ein Teil dieser
+ Assembly.
+ Das AuthenticationViewModel besitzt eine Referenz auf den AuthenticationService
+ welcher als Singelton im Unity-Container registriert ist und den jeweils
+ angemeldeten Benutzer verwaltet.
+ Der SecurityController verwaltet die Instanziierung der Views und ViewModels.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Presentation.Security.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Presentation.Security
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
 SoCrm.Services.Contacts.Contracts
 \end_layout
 
+\begin_layout Standard
+In diesere Assembly befindet sich die Entität Contact, welche von DomainObject
+ (in SoCrm.Core.Contracts, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:SoCrm.Core.Contracts"
+
+\end_inset
+
+) erbt und das bereits im oberen Kapitel beschriebene Service-Interface
+ IContactService (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:IContactService"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Contacts.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Contacts.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Services.Contacts.Provider
+\end_layout
+
+\begin_layout Standard
+Die WCF Service Applikation SoCrm.Services.Contacts.Provider liefert die Implementi
+erung zum Service-Interface IContactService in SoCrm.Services.Contacts.Contracts.
+ Der ContactService besitzt dabei seine eigene ContactServiceHostFactory
+ die von ServiceHostFactory ableitet und den UnityServiceHost (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:SoCrm.Core.Services"
+
+\end_inset
+
+) instaziiert und einen neuen Unity-Container erstellt.
+ Der ContactService implementiert sämtliche Geschäftslogik betreffend Kontaktdat
+en und ruft den Persistenzservice für Kontakte (implementiert in einem der
+ SoCrm.Infrastructure.Persistence.* Projekte) auf um die Entitäten aus dem
+ Persistenzlayer zu lesen.
+ 
 \end_layout
 
 \begin_layout Subsubsection
 SoCrm.Services.Customers.Contracts
 \end_layout
 
+\begin_layout Standard
+Die Klassenbibliothek SoCrm.Services.Customers.Contracts beeinhaltet alle Entitäten
+ den Kunden sowie Firmen betreffend.
+ Ausserdem ist das Interface ICustomerService in diesere Assembly definiert
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:ICustomerService"
+
+\end_inset
+
+), welches in SoCrm.Service.Customers.Provider als WCF Service CustomerService
+ implementiert ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Customers.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Customers.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Services.Customers.Provider
+\end_layout
+
+\begin_layout Standard
+SoCrm.Services.Customers.Provider ist eine WCF Service Applikation welche das
+ Interface ICustomerService implementiert und auf die Persistenceservices
+ IAddresPersistenceService, ICompanyPersistenceService, IEMailAddressPersistence
+Service, IPersonPersistenceService und IPhoneNumberPersistenceService zugreift.
+ Es beeinhaltet alle Geschäftslogik um mit Personen und Firmen zu interagieren.
 \end_layout
 
 \begin_layout Subsubsection
 SoCrm.Services.Logging.Contracts
 \end_layout
 
+\begin_layout Standard
+In der Assembly SoCrm.Services.Logging.Contracts enthält die Entität LogEvent
+ und das Service-Interface ILoggingService (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:ILoggingService"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Logging.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Logging.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Services.Logging.Provider
+\end_layout
+
+\begin_layout Standard
+Die WCF Service Application SoCrm.Services.Logging.Provider beeinhaltet den
+ LoggingService welcher das Service-Interface ILoggingService aus dem Namespace
+ SoCrm.Services.Logging.Contracts.
+ Die Service Application nutzt dafür den Persistence-Service ILogEventPersistenc
+eService aus dem Persistenzlayer und implementiert die Geschäftslogik für
+ den Umgang mit Logeinträgen.
 \end_layout
 
 \begin_layout Subsubsection
 SoCrm.Services.Security.Contracts
 \end_layout
 
+\begin_layout Standard
+Die Assembly SoCrm.Services.Security.Contracts definiert aus dem Service-Interface
+ ISecurityService (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:ISecurityService"
+
+\end_inset
+
+) auch die Entität User.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SoCrm.Services.Security.Contracts.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm SoCrm.Services.Security.Contracts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 SoCrm.Services.Security.Provider
+\end_layout
+
+\begin_layout Standard
+SoCrm.Services.Security.Provider ist eine WCF Service Application, welche den
+ Service SecurityService enthält.
+ Der SecurityService implementiert das Interface ISecurityService aus dem
+ Namespace SoCrm.Services.Security.Contracts und enhält die Geschäftslogik
+ für den Umgang mit Benutzern des Systems SoCRM.
+ Der SecurityService seinerseits erhält seine Objekte aus dem Persistence-Servic
+e IUserPersistenceService.
 \end_layout
 
 \begin_layout Chapter
