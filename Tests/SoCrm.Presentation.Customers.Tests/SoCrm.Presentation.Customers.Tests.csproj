@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
@@ -50,16 +54,23 @@
     <Compile Include="CreateCustomerViewModelTests.cs" />
     <Compile Include="CreateEMailAddressViewModelTests.cs" />
     <Compile Include="CreatePhoneNumberViewModel.cs" />
+    <Compile Include="CustomerControllerTests.cs" />
     <Compile Include="CustomerListViewModelTests.cs" />
+    <Compile Include="CustomerModuleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SoCrm.Core.Contracts\SoCrm.Core.Contracts.csproj">
       <Project>{F8479AFC-CBFF-4564-B587-6F47826D846D}</Project>
       <Name>SoCrm.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoCrm.Presentation.Contacts\SoCrm.Presentation.Contacts.csproj">
+      <Project>{0B24AB02-CF3B-4E84-827A-DF5869AABD62}</Project>
+      <Name>SoCrm.Presentation.Contacts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\SoCrm.Presentation.Core\SoCrm.Presentation.Core.csproj">
       <Project>{C5E4F41D-B81E-4E3B-A955-8477306E2A4C}</Project>
