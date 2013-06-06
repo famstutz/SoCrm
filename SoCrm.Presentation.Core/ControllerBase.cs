@@ -17,7 +17,7 @@ namespace SoCrm.Presentation.Core
     /// <summary>
     /// The controller base.
     /// </summary>
-    public class ControllerBase : IController
+    public abstract class ControllerBase : IController
     {
         /// <summary>
         /// The main region.
