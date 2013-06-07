@@ -817,7 +817,7 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="4">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="5.5cm">
 <column alignment="left" valignment="top" width="0">
 <column alignment="left" valignment="top" width="0">
 <column alignment="left" valignment="top" width="0">
@@ -860,7 +860,7 @@ Endet in Meilenstein
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -898,7 +898,7 @@ Themenevaluation
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -936,7 +936,7 @@ M1
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -974,7 +974,7 @@ M2
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1012,7 +1012,7 @@ Erstellen der Marktübersicht
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1050,7 +1050,7 @@ Auswahl und Vergleich ausgewählter OR-Mapper
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1088,7 +1088,7 @@ M3
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1126,7 +1126,7 @@ Erstellung Produktempfehlung
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1164,7 +1164,7 @@ M4
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1657,7 +1657,8 @@ Anforderungen Persistenzlayer
 
 \begin_layout Standard
 Dieses Kapitel enthält die Anforderungen an den Persistenzlayer einer serviceori
-entierten Architektur und wird auch in den Anforderungen der CRM-Applikation
+entierten Architektur.
+ Diese sind auch gleichzeitig auch Teil der Anforderungen der CRM-Applikation
  (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1665,12 +1666,17 @@ reference "sec:Anforderungen-CRM-Applikation"
 
 \end_inset
 
-) berücksichtigt.
- Anforderungen werden normalerweise aus Aktorensicht definiert und sind
- nicht auf einen Layer einer Applikation ausgelegt.
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Anforderungen werden üblicherweise aus Aktorensicht definiert und sind nicht
+ auf einen Layer einer Softwarearchitektur spezifiziert.
  Damit jedoch später eine Vergleichsmöglichkeit verschiedener OR-Mapper
- gegeben werden kann müssen diese im Rahmen dieser Bachelorarbeit jedoch
- auf diese Art und Weise niedergeschrieben sein.
+ gegeben werden kann müssen, diese im Rahmen dieser Bachelorarbeit jedoch
+ auf den Persistenzlayer einer serviceorientierten Softwarearchitektur spezifizi
+ert sein.
  Anstelle einer modellbasierten Beschreibung der Anforderungen werden diese
  natürlichsprachig dokumentiert.
  Dazu wird die Satzschablone nach 
@@ -1680,8 +1686,8 @@ key "Pohl2011"
 
 \end_inset
 
- verwendet und die Anforderungen werden funktionalen Anforderungen, Qualitätsanf
-orderungen und Randbedingungen aufgeteilt.
+ verwendet und die Anforderungen werden in funktionale Anforderungen, Qualitätsa
+nforderungen und Randbedingungen aufgeteilt.
 \end_layout
 
 \begin_layout Standard
@@ -1717,7 +1723,7 @@ Funktionale Anforderungen
 \begin_layout Standard
 Tabelle 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "tab:Funktionale-Anforderungen-an"
 
 \end_inset
@@ -1732,7 +1738,7 @@ das System
 \begin_inset Quotes erd
 \end_inset
 
- stehet dabei für den Persistenzlayer als eigenständiges System auf welches
+ steht dabei für den Persistenzlayer als eigenständiges System auf welches
  über einen Webservice
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1742,6 +1748,7 @@ description "Ein Webservice ist eine Softwareanwendung die in beliebigen Anwednu
 \end_inset
 
  zugegriffen werden kann.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1819,8 +1826,8 @@ PF2
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss eine einzelne Instanz einer Entität auf Basis seiner ID
- zurückgeben können.
+Das System muss eine einzelne Instanz einer Entität auf Basis seines Identifikat
+ors zurückgeben können.
  
 \end_layout
 
@@ -1980,7 +1987,7 @@ Das System muss dem Administrator die Möglichkeit bieten den Ablauf sämtlicher
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Funktionale Anforderungen an den Persistenzlayer
+Funktionale Anforderungen an einen Persistenzlayer
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Funktionale-Anforderungen-an"
@@ -2005,7 +2012,38 @@ Qualitätsanforderungen
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+Die Qualitätsanforderungen an den Persistenzlayer einer serviceorientierten
+ Architektur beschreiben Anforderungen an die Umstände, unter denen die
+ geforderte Funktionalität zu erbringen ist.
+ Sie sind in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Qualitätsanforderungen-an-den"
+
+\end_inset
+
+ festgehalten.
+\end_layout
+
+\begin_layout Standard
+Die Abgrenzung zwischen funktionalen und nicht-funktionalen Anforderungen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Wie Qualitätsanforderungen auch noch genannt werden
+\end_layout
+
+\end_inset
+
+ ist unscharf.
+ Sie beschreiben die Art und Weise wie der Persistenzlayer zu implementieren
+ ist und geben Bedingungen an die Implementierung vor.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
 placement H
 wide false
 sideways false
@@ -2102,7 +2140,7 @@ PQ3
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler die Möglichkeit bieten die externe Schnittstelle
- des Systems automatisierbar zu testen.
+ des Systems automatisiert zu testen.
 \end_layout
 
 \end_inset
@@ -2173,6 +2211,13 @@ footnotemark
 
 \begin_layout Plain Layout
 Qualitätsanforderungen an den Persistenzlayer
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Qualitätsanforderungen-an-den"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2194,8 +2239,8 @@ status open
 
 \backslash
 footnotetext{Im Rahmen dieser Arbeit werden die Performanceanforderungen
- nicht genauer definiert, da insbesondere das überprüfen deren diesen Rahmen
- sprengen würde.}
+ nicht genauer definiert, da insbesondere das Überprüfen deren den Rahmen
+ dieser Bachelorarbeit sprengen würde.}
 \end_layout
 
 \end_inset
@@ -2208,7 +2253,38 @@ Randbedingungen
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+Der Persistenzlayer einer serviceorientierten Softwarearchitektur muss gewisse
+ Randbedingungen erfüllen, welche in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Randbedingungen-an-den"
+
+\end_inset
+
+ genauer spezifiziert sind.
+ Die Randbedingungen sind Umstände, die zwingend erfüllt werden müssen.
+ Wiederum ist die Abgrenzung von den Qualitätsanforderungen schwierig, da
+ der Übergang zwischen den zwei Anforderungstypen fliessend ist.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Randbedingungen sind Implementierungsvorgaben welche massgeblich dafür
+ verantwortlich sind, während der Erarbeitung und Umsetzung des Konzepts
+ einen austauschbaren Persistenzlayer zu erhalten, wie dies in der Aufgabenstell
+ung der Bachelorarbeit (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Amstutz2013"
+
+\end_inset
+
+) gefordert ist.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
 placement H
 wide false
 sideways false
@@ -2255,7 +2331,7 @@ PR1
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss alle Operationen als SOAP-basierter Webservice anbieten.
+Das System muss alle Operationen als XML-basierten Webservice anbieten.
 \end_layout
 
 \end_inset
@@ -2297,7 +2373,7 @@ PR3
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler für sämtliche Operationen ein Resultat entweder
- in Form der Entität oder den Entitäten oder in Form eines Operationresultats
+ in Form der Entität oder den Entitäten oder in Form eines Operationsresultats
  zurückliefern.
 \end_layout
 
@@ -2319,7 +2395,7 @@ PR4
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler die Möglichkeit bieten durch ein anderes
- System (anderen Persistenzlayer) austauschbar sein.
+ System (einen anderen Persistenzlayer) austauschbar sein.
 \end_layout
 
 \end_inset
@@ -2337,6 +2413,13 @@ Das System muss dem Entwickler die Möglichkeit bieten durch ein anderes
 
 \begin_layout Plain Layout
 Randbedingungen an den Persistenzlayer
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Randbedingungen-an-den"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2353,8 +2436,171 @@ Randbedingungen an den Persistenzlayer
 Anforderungen Enterprise Pattern
 \end_layout
 
+\begin_layout Standard
+Dieses Kapitel beeinhaltet die Anforderungen an Martin Fowlers Enterprise
+ Pattern Transaction Script, Domain Model, Table Module und Active Record.
+ Die Anforderungen stammen sowohl aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+ als auch aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pulier2006"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chou2010"
+
+\end_inset
+
+ und eigenen Erfahrungen im Design und der Entwicklung von serviceorientierten
+ Architekturen.
+ Anstatt wie in den Arten von Anforderungen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Arten-von-Anforderungen"
+
+\end_inset
+
+) beschrieben, werden die Anforderungen an Enterprise Pattern rein auf funktiona
+ler Ebene beschrieben.
+ 
+\end_layout
+
+\begin_layout Standard
+Neben den konkreten Anforderungen werden die einzelnen Enterprise Pattern
+ auch noch im Detail beschrieben und deren Anwendung im Persistenzlayer
+ einer serviceorientierten Architektur erläutert.
+ Es hat sich als schwierig herausgestellt aus einem Enterprise Pattern konkrete
+ Anforderungen abzuleiten.
+ Aus diesem Grund sind die Anforderungen in diesem Kapitel nur rudimentär
+ beschrieben.
+ Die spätere Evaluierung der OR-Mapper auf Basis dieser Anforderungen (siehe
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Evaluierung-selektierte-OR-Mappe"
+
+\end_inset
+
+) berücksichtigt auch die Beschreibung der einzelnen Enterprise Pattern
+ in den folgenden Unterkapiteln.
+\end_layout
+
 \begin_layout Subsection
 Transaction Script
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+ organisiert das Transaction Script Pattern die Geschäftslogik nach Prozeduren,
+ wobei jede Prozedure einen einzelnen Aufruf der Benutzeroberfläche behandelt.
+ Die meisten Geschäftsapplikationen können als eine Reihe von Transaktionen
+ betrachtet werden.
+ Eine Transaktion kann das Betrachten von Information repräsentieren, eine
+ andere Transaktion bearbeitet diese Information.
+ Das Transaction Script organisiert die Domänenlogik primär nach Transaktionen
+ die der Benutzer auf dem System vornimmt.
+ Jede vom Benutzer intiierte Transaktion besitzt ihr eigenes Transaction
+ Script, auch wenn dieses in einzelne Subprozeduren aufgebrochen werden
+ kann.
+\end_layout
+
+\begin_layout Standard
+Ein Vorteil des Transaction Scripts besteht darin, dass alle Transaktionen
+ absolut atomar ausgeführt werden.
+ Der Entwickler muss sich nicht um konkurrierende Transaktionen kümmern,
+ da diese jeweils im Kontext eines anderen Transaction Scripts ausgeführt
+ werden.
+ Je kompliziert die Geschäftslogik jedoch wird, je schwieriger wird es diese
+ in einem funktionalen und lesbaren Zustand zu bewahren.
+ Das grösste Problem besteht dabei in der Vermeidung von Codeduplizierung
+ zwischen Transaktionen.
+ Da das Ziel des Transaction Script Patterns es ist, allen Code einer Transaktio
+n an einer einzelnen Stelle zusammenzufassen, bedeutet es das all gemeinsamer
+ Code potentiell dupliziert wird, wenn während der Entwicklung nicht besonderes
+ Augenmerk auf diese Tatsache gelegt wird.
+ In grösseren Projekten mit vielen Entwicklern stellt sich dies jedoch bald
+ als nahezu unmöglich dar.
+\end_layout
+
+\begin_layout Standard
+Das Transaction Script ist meist mit dem Command Pattern aufgebaut
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zum Command Pattern siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.codeproject.com/Articles/15207/Design-Patterns-Command-Pattern
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Im Comand Pattern kapselt das Command-Objekt einen Befehl, um es zu ermöglichen
+, Operationen z.B.
+ in eine Warteschlange zu stellen, Logeinträge zu führen oder auch Operationen
+ rückgängig zu machen.
+ 
+\end_layout
+
+\begin_layout Standard
+Für simple Geschäftslogik ist das Transaction Script die erste und offensichtlic
+he Wahl.
+ Wenn allrdings komplexere Geschäftsdomänen im System abgebildet werden,
+ so macht es Sinn das Transaction Script in ein Domain Model umzubauen (siehe
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Domain-Model"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Anforderungen-Transaction-Script"
+
+\end_inset
+
+ enthält die Anforderungen an den Persistenzlayer einer serviceorientierten
+ Architektur bei Verwendung von Transaction Scripts für die Organisation
+ der Geschäftslogik.
 \end_layout
 
 \begin_layout Standard
@@ -2444,6 +2690,13 @@ Das System muss alle Operationen atomar ausführen können.
 
 \begin_layout Plain Layout
 Anforderungen Transaction Script
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Anforderungen-Transaction-Script"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2458,6 +2711,122 @@ Anforderungen Transaction Script
 
 \begin_layout Subsection
 Domain Model
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Domain-Model"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Domain Model ist ein Objektmodell einer Domäne, welches Verhalten und
+ Information beeinhaltet (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+).
+ Die Geschäftslogik kann in einem grossen System sehr komplex sein.
+ Ein Domain Model erstellt ein Netzwerk von miteinander verbunden Objekten,
+ wobei jedes Objekt für sich selbst eine sinnvolle Einheit ist, egal ob
+ das Objekt eine ganze Bestellung repräsentiert oder nur eine Zeile in einem
+ Bestellformular.
+\end_layout
+
+\begin_layout Standard
+Wird ein Domain Model in eine Applikation integriert, so fügt man einen
+ komplett neuen Layer von Objekten ein, welche das Geschäftsfeld abbilden,
+ in welchem man sich bewegt.
+ Die Objekte in einem Domain Model imitieren Daten im Unternehmen und beeinhalte
+n die Regeln, nach welchen dieses Unternehmen beziehungsweise seine Prozesse
+ funktionieren.
+ 
+\end_layout
+
+\begin_layout Standard
+Ein objektorientiertes Domain Model ist häufig dem Datenbankmodell sehr
+ ähnlich, wenn es auch einige Unterschiede geben wird.
+ Das Domain Model vermischt Daten und Prozesse, hat mehrwertige Attribute
+ und ein komplexes Netzwerk von Assoziationen.
+ Es benutzt auch sehr viele Mechanismen aus der objektorientierten Entwicklung
+ wie zum Beispiel die Vererbung.
+ 
+\end_layout
+
+\begin_layout Standard
+Laut 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+ gibt es zwei Stile von Domain Models die sich etabliert haben.
+ Das simple Domain Model hat sehr grosse Ähnlichkeiten mit dem Datenbankmodell,
+ wobei meist ein Domänenobjekt für eine Datenbanktabelle existiert.
+ Das reiche Domain Model kann stark vom Datenbankmodell abweichen.
+ Es benutzt eine Vielzahl von Design Patterns (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gamma1994"
+
+\end_inset
+
+) und besitzt komplexe Netzwerke von kleinen, miteinander verbundenen Objekten.
+ Ein reiches Domain Model ist besser geeignet komplexe Geschäftslogik abzubilden
+ aber es ist dafür schwieriger auf die Datenbank zu projeziieren.
+ Es benötigt in den meisten Fällen einen mehr oder minder aufwändigen Data
+ Mapper
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Der Data Mapper ist auch ein Enterprise Pattern.
+ Mehr dazu unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://martinfowler.com/eaaCatalog/dataMapper.html
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+, der meist in einem OR-Mapper implementiert ist.
+\end_layout
+
+\begin_layout Standard
+Das Domain Model ist stark verbreitet, da heute viele Entwickler lieber
+ mit Domänenobjekten arbeiten als mit SQL Daten direkt in der Datenbank
+ zu manipulieren.
+ Es ist sicher nicht der einfachste Weg Domänenobjekte zu modellieren und
+ braucht viel Erfahrung aber die vereinfachte Testbarkeit und Benutzerbarkeit
+ macht meist den Nachteil des Modellierens wett.
+ Gewöhnt man sich einmal an die Vorteile eines Domain Models so ist es sehr
+ schwierig wieder zurück zu einfacheren Datenbankzugriffsmechanismen zu
+ wechseln, wie zum Beispiel dem Transaction Script.
+\end_layout
+
+\begin_layout Standard
+In Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Anforderungen-Domain-Model"
+
+\end_inset
+
+ sind die Anforderungen an der Persistenzlayer einer serviceorientierten
+ Architektur bei Verwendung eines Domain Models enthalten.
 \end_layout
 
 \begin_layout Standard
@@ -2550,7 +2919,7 @@ D3
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss den Entiäten sowohl Informationen sowie Verhalten zuweisen.
+Das System muss den Entiäten sowohl Informationen wie auch Verhalten zuweisen.
 \end_layout
 
 \end_inset
@@ -2609,6 +2978,13 @@ Das System muss das Domain Model von der Datenbank vollständig entkoppeln.
 
 \begin_layout Plain Layout
 Anforderungen Domain Model
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Anforderungen-Domain-Model"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2623,6 +2999,98 @@ Anforderungen Domain Model
 
 \begin_layout Subsection
 Table Module
+\end_layout
+
+\begin_layout Standard
+Ein Table Module ist eine einzelne Instanz welches die gesamte Geschäftslogik
+ für alle Zeilen einer Datenbanktabelle oder -view beinhaltet (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Eine der zentralen Aspekte der objektorientierten Programmierung ist es,
+ Daten mit dem dazugehörigen Verhalten zusammenzufassen.
+ Der traditionalle objektorientierte Ansatz basiert auf Objekten mit einer
+ eindeutigen Identität.
+ Das heisst jede Instanz einer Klasse entspricht einer Zeile einer Datenbank.
+ Eines der Probleme des Domain Models ist die Schnittstelle zu relationalen
+ Datenbanken.
+ Ein Table Module organisiert Geschäftslogik in einer Klasse pro Tabelle
+ einer Datenbank und eine einzige Instanz dieser Klasse enthält die verschiedene
+n Prozeduren um mit den Daten dieser Tabelle zu interagieren.
+\end_layout
+
+\begin_layout Standard
+Eine Stärke des Table Modules ist die Möglichkeit des Zusammenfassens von
+ Daten und Verhalten zur selben Zeit um vereinfacht mit einer relationalen
+ Datenbank zu interagieren.
+ Das Table Module verhält sich wie ein ganz normales Objekte, der grosse
+ liegt darin Unterschied, dass das Objekt keine Ahnung von der Identität
+ der Objekte hat, mit welchen es interagiiert.
+ Das heisst, wenn zum Beispiel ein einzelner Kunde gelesen werden soll,
+ muss ein Aufruf ähnlich wie CustomerModule.GetCustomer(int customerId) aufgerufe
+n werden.
+ Jedes Mal wenn mit diesem Kunden mit der ID customerId interagiert werden
+ soll, muss eine Art von Identitätsreferenz ans Table Module übergeben werden
+ (hier in Form des Integers customerId).
+\end_layout
+
+\begin_layout Standard
+Die offensichtliche Verwendung des Table Module Patterns besteht darin ein
+ Table Module für jede Tabelle der Datenbank zu erstellen.
+ Es ist jedoch auch möglich für einzelne Queries oder Views eigene Table
+ Modules zu implementieren.
+ Das Table Module kann bei jeder Verwendung als neue Instanz erstellt werden
+ oder es kann auch als eine Sammlung von statischen Methoden implementiert
+ werden.
+ Der Vorteil einer Instanz wäre zum Beispiel, dass das Table Module bereits
+ mit einem Record Set
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zum Record Set auf 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://martinfowler.com/eaaCatalog/recordSet.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ oder einem bestehenden Resultat eines Queries intialisiert werden könnte.
+ Dieses Resultat könnte dann mit der Instanz des Table Modules manipuliert
+ werden.
+\end_layout
+
+\begin_layout Standard
+Das Table Module baut stark auf tabellarischen Daten auf.
+ Es macht also Sinn das Table Module im Zusammenhang mit einem Record Set
+ zu verwenden.
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen an das Table Module sind in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Anforderungen-Table-Module"
+
+\end_inset
+
+ in natürlichsprachiger Form dokumentiert.
 \end_layout
 
 \begin_layout Standard
@@ -2694,7 +3162,7 @@ T2
 
 \begin_layout Plain Layout
 Das System muss eine einzelne Instanz zur Verfügung stellen, welche alle
- Geschäftslogik aller Zeilen einer Datenbanktabelle abhandelt.
+ Geschäftslogik aller Zeilen einer Datenbanktabelle beinhaltet.
 \end_layout
 
 \end_inset
@@ -2732,6 +3200,13 @@ Das System muss eine einfache Domänenlogik verwenden.
 
 \begin_layout Plain Layout
 Anforderungen Table Module
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Anforderungen-Table-Module"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2746,6 +3221,97 @@ Anforderungen Table Module
 
 \begin_layout Subsection
 Active Record
+\end_layout
+
+\begin_layout Standard
+Gemäss 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+ kapselt eine Implementierung des Active Record Patterns eine Zeile einer
+ Datenbanktabelle oder -view, den Datenbankzugriff und enhält die Geschäftslogik
+ im Zusammenhang mit dieser Zeile.
+ Ein Objekt enhält Daten und Verhalten.
+ Der Grossteil dieser Daten ist persistent und wird in einer Datenbank gespeiche
+rt.
+ Active Record verwendet diesen Ansatz und fügt die Geschäftslogik dem Domänenob
+jekt hinzu.
+\end_layout
+
+\begin_layout Standard
+Die Essenz von Active Record ist ein simples Domain Model in welchem die
+ Domänenobjekte stark mit der darunterliegenden Datenbankstruktur verwandt
+ sind.
+ Jedes Active Record ist verantwortlich für das Speichern und Laden der
+ Objekte aus der Datenbank und auch für jegliche Domänenlogik welche mit
+ diesen Objekten verbunden ist.
+ Dies kann zum Beispiel sämtliche Domänenlogik der Applikation sein oder
+ es kann auch die zwischen Active Records gemeinsame Domänenlogik in Transaction
+ Scripts implementiert sein und datenorientierter Code im jeweiligen Active
+ Record.
+\end_layout
+
+\begin_layout Standard
+Die Datenstruktur des Active Records sollte exakt mit der Datenbank übereinstimm
+en: ein Feld in der Klasse für eine Spalte in der Tabelle.
+ Die Namen der Felder sollten direkt mit denjenigen der Tabelle übereinstimmen,
+ es sollte keine Datenkonversion im Active Record implementiert werden.
+ Typischerweise bietet das einzelne Active Record folgende Methoden an:
+\end_layout
+
+\begin_layout Itemize
+Konstruieren einer neue Instanz des Active Records mit dem bestehenden Resultat
+ einer SQL Query
+\end_layout
+
+\begin_layout Itemize
+Konstruieren einer neue Instanz des Active Records welche später in die
+ Datenbanktabelle gespeichert wird
+\end_layout
+
+\begin_layout Itemize
+Statisch Suchmethode welche oft genutzte SQL Queries kapselt und als Active
+ Records Objekte zurückgibt
+\end_layout
+
+\begin_layout Itemize
+Aktualisieren des Active Records mit den aktuellen Werten aus der Datenbank
+\end_layout
+
+\begin_layout Itemize
+Lesen und Speichern der Felder (Getter- und Setter-Methoden)
+\end_layout
+
+\begin_layout Itemize
+Implementieren von Teilen der Geschäftslogik
+\end_layout
+
+\begin_layout Standard
+Active Record ist eine gute Option für relativ simple Geschäftslogik.
+ Validierungen auf Basis eines einzelnen Datensatzes funktioniert gut mit
+ dieser Stuktur.
+ Wird ein Domain Model verwendet so besteht zu Beginn der Konzeptphase die
+ Entscheidung zwischen der Verwendung von Active Records oder eines Data
+ Mappers.
+ Das Active Record hat den Vorteil der Einfachheit, wird das Domain Model
+ komplex und es werden zusätzliche Beziehungen, Felder, Vererbung oder Listen
+ hinzugefügt wird das Active Record schnell unübersichtlich und ein Data
+ Mapper ist einfacher zu verwenden.
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen an den Persistzenlayer einer serviceorientierten Architektur
+ in Bezug auf das Active Record Pattern sind in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Anforderungen-Active-Record"
+
+\end_inset
+
+ festgehalten.
 \end_layout
 
 \begin_layout Standard
@@ -2855,6 +3421,13 @@ Das System muss eine einfache Domänenlogik verwenden.
 
 \begin_layout Plain Layout
 Anforderungen Active Record
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Anforderungen-Active-Record"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2876,6 +3449,13 @@ name "sec:Anforderungen-CRM-Applikation"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Ein Teil dieser Bachelorarbeit besteht darin ein Proof-of-Conept einer serviceor
+ientierten Architektur zu erstellen.
+ Dies einerseits um die Anforderungen aus den vorhergehenden Kapiteln zu
+ überprüfen aber auch um Erfahrung mit den 
 \end_layout
 
 \begin_layout Subsection
@@ -13216,6 +13796,13 @@ name "chap:Implementierung"
 
 \begin_layout Section
 Evaluierung selektierte OR-Mapper
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Evaluierung-selektierte-OR-Mappe"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -15607,7 +16194,7 @@ set_width "auto"
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "VergleichVonObjektrelationalenMappern"
-options "plain"
+options "/Users/florian/Downloads/alphadin"
 
 \end_inset
 
