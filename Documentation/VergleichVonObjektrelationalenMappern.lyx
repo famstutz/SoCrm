@@ -7,7 +7,6 @@
 \usepackage{pdflscape}
 \usepackage{footnote}
 \makesavenoteenv{tabular}
-\makenomenclature
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -245,9 +244,9 @@ key "Stern2012"
 \end_inset
 
 ) dient die Bachelorarbeit zum Nachweis der Fähigkeit ein Projekt auf ingenieurs
-wissenschaftlich Art und Weise zu bearbeiten.
- Die Bachelorarbeit ist nach den allgemeingültigen Standards für technisch/wisse
-nschaftliches Arbeiten verfasst.
+wissenschaftliche Art und Weise zu bearbeiten.
+ Die Bachelorarbeit soll nach den allgemeingültigen Standards für technisch/wiss
+enschaftliches Arbeiten verfasst werden.
 \end_layout
 
 \begin_layout Standard
@@ -256,8 +255,7 @@ Die Bachelorarbeit besteht aus einer konzeptionellen Arbeit und deren Umsetzung.
  und methodischen Grundlagen einer Entwicklung oder eines Konzeptes ausgearbeite
 t und dargelegt werden.
  Im Umsetzungsteil erfolgt anschliessend die Beschreibung der Implementierung
- bzw.
- der Anwendung.
+ beziehungsweise der Anwendung.
 \end_layout
 
 \begin_layout Section
@@ -265,23 +263,28 @@ Ziel der Arbeit
 \end_layout
 
 \begin_layout Standard
-Das Ziel dieser Arbeit besteht darin die Entscheidung zu vereinfachen, welchen
+Das Ziel dieser Arbeit besteht darin die Entscheidung zu vereinfachen, welcher
  OR-Mapper in welcher Art von Applikation eingesetzt werden soll.
- Die Entscheidungsgrundlage wird dabei auf Basis von Enterprise Pattern
- (siehe 
+ Die Entscheidungsgrundlage wird dabei auf Basis von Martin Fowlers Enterprise
+ Pattern (siehe 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fowler2002"
 
 \end_inset
 
-) gegeben, welche heutzutage in jedem grösseren (Software-) System eine
+) erarbeitet, welche heutzutage in jedem grösseren (Software-) System eine
  entscheidene Rolle spielen.
- Abschliessend wird pro Enterpise Pattern eine Empfehlung abgegeben werden,
- welcher frei verfügbare und Open-Source OR-Mapper im .NET-Umfeld eingesetzt
- werden soll.
- Zusätzlich zu diesen Vergleichen und der Empfehlungen wird eine serviceorientie
-rte CRM-Applikation als Proof-of-Concept erstellt.
+ Es wird pro Enterprise Pattern eine Empfehlung abgegeben werden, welcher
+ frei verfügbare und Open-Source OR-Mapper im .NET-Umfeld eingesetzt werden
+ soll.
+\end_layout
+
+\begin_layout Standard
+Zusätzlich zu diesen Vergleichen und den Empfehlungen wird eine serviceorientier
+te CRM-Applikation als Proof-of-Concept erstellt.
+ Für diese CRM-Applikation werden Anforderungen erhoben, es wird ein Konzept
+ erstellt und die Umsetzung wird verifiziert.
 \end_layout
 
 \begin_layout Section
@@ -324,7 +327,7 @@ key "Starke2011"
 \end_inset
 
  ist die Auswahl des Entwicklungsprozesses eine der kritischsten Entscheidungen,
- die man bei einem Softwareprojekt treffen muss.
+ die in einem Softwareprojekt getroffen werden muss.
  Häufig besitzen Unternehmungen bereits etablierte, auf sie zugeschnittene
  Entwicklungsmodelle, die mehr oder weniger gut zur Organisation der Unternehmun
 g und dem jeweiligen Projekt passen.
@@ -374,25 +377,25 @@ key "Elmer2005"
 \end_inset
 
  Abgrenzugsprobleme zwischen den einzelnen Phasen sowie die Schwierigkeit
- des Abschlusses einzelner Phasen da diese nur mit viel (zusätzlichem) Aufwand
- isoliert von anderen Phasen abgeschlossen werden können.
+ des Abschlusses einzelner Phasen da diese nur mit viel (in anderen Entwicklungs
+modellen unnötigem) Aufwand isoliert von anderen Phasen abgeschlossen werden
+ können.
  Dadurch dass der Betreuer nur in der Anforderungs- und Konzeptphase Einfluss
  auf das Projekt nehmen kann und der Student alleinig den Abschluss der
  Phasen steuert und verifiziert sowie den Ablauf der Phasen innerhalb des
- Projekts steuert, können diese Nachteile umgangen werden.
+ Projekts steuert, können diese Nachteile entschärft werden.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Grafiken/sw-process.png
-	display false
 	scale 75
 
 \end_inset
@@ -438,8 +441,8 @@ Zu Beginn des Wasserfallmodells steht das Sammeln und Dokumentieren der
 eben sind, werden diese vom Auftraggeber abgenommen und das Projekt geht
  in die Phase Design über.
  Die zu entwickelnde Software wird auf verschiedenen Ebenen von Softwarearchitek
-ten designed und eine Blaupause wird erstellt, nach welcher sich die Softwareent
-wickler in der Implementationsphase zu halten haben.
+ten entwickelt und eine Blaupause wird erstellt, nach welcher sich die Softwaree
+ntwickler in der Implementationsphase zu halten haben.
  Das Design sollte einen Plan beinhalten, welcher die Implementierung der
  Anforderungen aufzeigt.
  
@@ -740,16 +743,16 @@ key "Stern2012"
 \end_inset
 
 ) muss die Bachelorarbeit sechs Monate nach Freigabe beendet sein.
- Um die Planbarkeit der Arbeit zu erhöhen wurde das Projekt bei Projektstart
- in einzelne Phasen unterteilt, welche auf die vorgängig bekannten Termine
- als Meilensteine enden.
+ Um die Planbarkeit der Arbeit zu erhöhen wird das Projekt Bachelorarbeit
+ bei Projektstart in einzelne Phasen unterteilt, welche auf die vorgängig
+ bekannten Termine als Meilensteine enden.
 \end_layout
 
 \begin_layout Standard
 Ziel dieser Phasenplanung ist es, möglichst frühzeitig im Verlauf der Bachelorar
 beit Teile der erwarteten Resultate sowie der Dokumentation fertiggestellt
  zu haben, so dass das Risiko von Qualitätseinbussen der Abgaberesultate
- durch überhastiges fertigstellen, gering ist.
+ durch überhastigtes Fertigstellen, gering ist.
  Ausserdem sinkt das Wahrscheinlichkeit, dass nicht alle erwarteten Resultate
  der Arbeit geliefert werden können, da die Lieferergebnisse bei jeweiligem
  Phasenende schon in abgabefertiger Qualität vorliegen.
@@ -768,10 +771,10 @@ name "sub:Phasenplanung"
 
 \begin_layout Standard
 Nach dem Wasserfallmodell wird das Projekt in einzelne Phasen eingeteilt,
- die zu einem bestimmten Zeitpunkt mit vordefinierten Endergebnissenen enden.
+ die zu einem bestimmten Zeitpunkt mit vordefinierten Endergebnissen enden.
  Bei Erreichen des Endzeitpunkts und bei Lieferung aller Endergebnisse geht
  das Projekt in die nächste Phase über.
- Die Phasen dieser Semesterarbeit wurden so modelliert, dass ihr Endzeitpunkt
+ Die Phasen dieser Bachelorarbeit wurden so modelliert, dass ihr Endzeitpunkt
  möglichst mit dem Erreichen eines Meilensteins zusammenfällt (siehe Tabelle
  
 \begin_inset CommandInset ref
@@ -786,13 +789,14 @@ reference "tab:Phasenplan"
 \end_layout
 
 \begin_layout Standard
-Vor dem eigentlichen Projektstart werden geeigeneten Themen für die Semesterarbe
+Vor dem eigentlichen Projektstart werden geeigeneten Themen für die Bachelorarbe
 it evaluiert, ein Betreuer gesucht sowie ein Projektantrag in EBS erfasst.
- Diese Phase endet mit dem Kick-Off-Meeting zwischen Betreuer und Student
- sowie der formalen Freigabe der Semesterarbeit durch die Studiengangsleitung.
- Das Erheben und Dokumentieren der Anforderungen ist die erste Phase des
- eigentlichen Projekts und mündet in der Konzepterarbeitung auf Basis der
- Anforderungen.
+ Diese Phase endet mit dem Kick-Off-Meeting zwischen Betreuer, Student und
+ Studiengangsleitung sowie der formalen Freigabe der Semesterarbeit durch
+ die Studiengangsleitung.
+ Das Erheben und Dokumentieren der Anforderungen ist die erste Phase der
+ eigentlichen Bachelorarbeit und mündet in der Konzepterarbeitung auf Basis
+ der Anforderungen.
  Ist das Konzept vollständig abgeschlossen, findet das Design-Review statt,
  bei welchem der Betreuer das Konzept begutachtet und allfällige Anpassungen
  daran vorschlägt.
@@ -1144,7 +1148,7 @@ Finalisierung Dokumentation
 \begin_inset Text
 
 \begin_layout Plain Layout
-18.06.2013
+17.06.2013
 \end_layout
 
 \end_inset
@@ -1490,7 +1494,7 @@ reference "sub:Phasenplanung"
 \end_inset
 
 ) wurde festgelegt, dass in der ersten Projektphase die Anforderungen erhoben
- werden.
+ und dokumentiert werden.
  Dazu wird zu Beginn dieses Kapitels der Begriff Anforderung definiert und
  es wird auf verschiedene Arten von Anforderungen näher eingegangen.
  Anschliessend werden die Anforderungen an den Persistenzlayer einer serviceorie
@@ -1507,8 +1511,6 @@ description "Ein Use-Case (dt. Anwendungsfall) bündelt alle möglichen Szenarie
 \end_inset
 
  modelliert und spezifiziert.
- Der Abschluss dieses Kapitels wie auch der Anforderungsphase selbst bildet
- das Entwerfen der für den Benutzer sichtbaren Dialogfenster.
 \end_layout
 
 \begin_layout Section
@@ -1538,7 +1540,7 @@ Anforderung Eine Anforderung ist:
 \begin_deeper
 \begin_layout Enumerate
 Eine Bedingung oder Fähigkeit, die von einem Benutzer (Person oder System)
- zur Lösung eines Problems zur Erreichung eines Ziels benötigt wird.
+ zur Lösung eines Problems oder zur Erreichung eines Ziels benötigt wird.
 \end_layout
 
 \begin_layout Enumerate
@@ -1555,11 +1557,7 @@ Eine dokumentierte Repräsentation einer Bedingung oder Eigenschaft gemäss
 
 \end_deeper
 \begin_layout Standard
----
-\end_layout
-
-\begin_layout Standard
-Die Anforderungen an das im Rahmen dieser Semesterarbeit zu entwickelnde
+Die Anforderungen an das im Rahmen dieser Bachelorarbeit zu entwickelnde
  System werden in Use-Case-Diagrammen modellhaft dargestellt und als Use-Case-Sp
 ezifikationen ausformuliert.
  Auf eine natürlichsprachige Dokumentation der Anforderungen wird verzichtet,
@@ -1653,38 +1651,14 @@ Das System soll bis spätestens Mitte 2013 am Markt verfügbar sein
 hkeiten, das heisst den Lösungsraum im Entwicklungsprozess ein.
 \end_layout
 
-\begin_layout Standard
-In diesem Dokument werden der Einfachheit halber nur funktionale Anforderungen
- beschrieben.
- Qualitätsanforderungen betreffend der Leistungsfähigkeit oder Wartbarkeit
- des Systems werden nicht erhoben, da diese für den Prototypen nur eingeschränkt
- relevant sind und innerhalb dieses Projekts darauf keinen Wert gelegt werden
- soll.
- 
-\end_layout
-
-\begin_layout Standard
-Rahmenbedingungen werden nicht implizit festgehalten sondern ergeben sich
- einerseits aus 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Stern2012"
-
-\end_inset
-
- sowohl der technischen Umgebung des Systems.
- Technische Rahmenbedingungen die das Projekt beeinflussen werden im Konzept
- beziehungsweise in der Implementierung berücksichtigt und entsprechend
- hervorgehoben.
-\end_layout
-
 \begin_layout Section
 Anforderungen Persistenzlayer
 \end_layout
 
 \begin_layout Standard
 Dieses Kapitel enthält die Anforderungen an den Persistenzlayer einer serviceori
-entierten Architektur und wird auch in den Anforderungen der CRM-Applikation
+entierten Architektur.
+ Diese sind auch gleichzeitig auch Teil der Anforderungen der CRM-Applikation
  (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1692,12 +1666,17 @@ reference "sec:Anforderungen-CRM-Applikation"
 
 \end_inset
 
-) berücksichtigt.
- Anforderungen werden normalerweise aus Aktorensicht definiert und sind
- nicht auf einen Layer einer Applikation ausgelegt.
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Anforderungen werden üblicherweise aus Aktorensicht definiert und sind nicht
+ auf einen Layer einer Softwarearchitektur spezifiziert.
  Damit jedoch später eine Vergleichsmöglichkeit verschiedener OR-Mapper
- gegeben werden kann müssen diese im Rahmen dieser Bachelorarbeit jedoch
- auf diese Art und Weise niedergeschrieben sein.
+ gegeben werden kann müssen, diese im Rahmen dieser Bachelorarbeit jedoch
+ auf den Persistenzlayer einer serviceorientierten Softwarearchitektur spezifizi
+ert sein.
  Anstelle einer modellbasierten Beschreibung der Anforderungen werden diese
  natürlichsprachig dokumentiert.
  Dazu wird die Satzschablone nach 
@@ -1707,8 +1686,8 @@ key "Pohl2011"
 
 \end_inset
 
- verwendet und die Anforderungen werden funktionalen Anforderungen, Qualitätsanf
-orderungen und Randbedingungen aufgeteilt.
+ verwendet und die Anforderungen werden in funktionale Anforderungen, Qualitätsa
+nforderungen und Randbedingungen aufgeteilt.
 \end_layout
 
 \begin_layout Standard
@@ -1744,7 +1723,7 @@ Funktionale Anforderungen
 \begin_layout Standard
 Tabelle 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "tab:Funktionale-Anforderungen-an"
 
 \end_inset
@@ -1759,7 +1738,7 @@ das System
 \begin_inset Quotes erd
 \end_inset
 
- stehet dabei für den Persistenzlayer als eigenständiges System auf welches
+ steht dabei für den Persistenzlayer als eigenständiges System auf welches
  über einen Webservice
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1769,10 +1748,16 @@ description "Ein Webservice ist eine Softwareanwendung die in beliebigen Anwednu
 \end_inset
 
  zugegriffen werden kann.
+ 
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -1783,7 +1768,7 @@ status open
 <lyxtabular version="3" rows="10" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1809,7 +1794,7 @@ Anforderung
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-1
+PF1
 \end_layout
 
 \end_inset
@@ -1818,8 +1803,10 @@ P-F-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss CRUD-Operationen pro persistierbarer Entität zur Verfügung
- stellen.
+Das System muss CRUD-Operationen pro persistierbarer Entität zur
+ 
+\lang german-ch
+Verfügung stellen.
 \end_layout
 
 \end_inset
@@ -1830,7 +1817,7 @@ Das System muss CRUD-Operationen pro persistierbarer Entität zur Verfügung
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-2
+PF2
 \end_layout
 
 \end_inset
@@ -1839,8 +1826,8 @@ P-F-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss eine einzelne Instanz einer Entität auf Basis seiner ID
- zurückgeben können.
+Das System muss eine einzelne Instanz einer Entität auf Basis seines Identifikat
+ors zurückgeben können.
  
 \end_layout
 
@@ -1852,7 +1839,7 @@ Das System muss eine einzelne Instanz einer Entität auf Basis seiner ID
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-3
+PF3
 \end_layout
 
 \end_inset
@@ -1872,7 +1859,7 @@ Das System muss alle Instanzen einer Entität zurückgeben können.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-4
+PF4
 \end_layout
 
 \end_inset
@@ -1893,7 +1880,7 @@ rien zurückgeben können.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-5
+PF5
 \end_layout
 
 \end_inset
@@ -1913,7 +1900,7 @@ Das System muss eine einzelne Instanz persistieren können.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-6
+PF6
 \end_layout
 
 \end_inset
@@ -1933,7 +1920,7 @@ Das System muss mehrere Instanzen gleichzeitig persistieren können.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-7
+PF7
 \end_layout
 
 \end_inset
@@ -1953,12 +1940,12 @@ Das System muss eine einzelne Instanz löschen können.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-8
+PF8
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1973,12 +1960,12 @@ Das System muss mehrere Instanzen gleichzeitig löschen können.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-F-9
+PF9
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2000,7 +1987,7 @@ Das System muss dem Administrator die Möglichkeit bieten den Ablauf sämtlicher
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Funktionale Anforderungen an den Persistenzlayer
+Funktionale Anforderungen an einen Persistenzlayer
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Funktionale-Anforderungen-an"
@@ -2025,7 +2012,39 @@ Qualitätsanforderungen
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+Die Qualitätsanforderungen an den Persistenzlayer einer serviceorientierten
+ Architektur beschreiben Anforderungen an die Umstände, unter denen die
+ geforderte Funktionalität zu erbringen ist.
+ Sie sind in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Qualitätsanforderungen-an-den"
+
+\end_inset
+
+ festgehalten.
+\end_layout
+
+\begin_layout Standard
+Die Abgrenzung zwischen funktionalen und nicht-funktionalen Anforderungen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Wie Qualitätsanforderungen auch noch genannt werden
+\end_layout
+
+\end_inset
+
+ ist unscharf.
+ Sie beschreiben die Art und Weise wie der Persistenzlayer zu implementieren
+ ist und geben Bedingungen an die Implementierung vor.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2036,7 +2055,7 @@ status open
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2062,7 +2081,7 @@ Anforderung
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-Q-1
+PQ1
 \end_layout
 
 \end_inset
@@ -2090,7 +2109,7 @@ description "ACID steht für Atomicity, Consisistency, Isolation und Durability 
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-Q-2
+PQ2
 \end_layout
 
 \end_inset
@@ -2111,7 +2130,7 @@ Das System muss die Datenbankmanagementssysteme Microsoft SQL Server und
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-Q-3
+PQ3
 \end_layout
 
 \end_inset
@@ -2121,7 +2140,7 @@ P-Q-3
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler die Möglichkeit bieten die externe Schnittstelle
- des Systems automatisierbar zu testen.
+ des Systems automatisiert zu testen.
 \end_layout
 
 \end_inset
@@ -2132,7 +2151,7 @@ Das System muss dem Entwickler die Möglichkeit bieten die externe Schnittstelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-Q-4
+PQ4
 \end_layout
 
 \end_inset
@@ -2152,7 +2171,7 @@ Das System soll keine Logik auf die Datenbank auslagern.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-Q-5
+PQ5
 \end_layout
 
 \end_inset
@@ -2162,13 +2181,14 @@ P-Q-5
 
 \begin_layout Plain Layout
 Das System muss bestimmte Performancewerte erfüllen
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Im Rahmen dieser Arbeit werden die Performanceanforderungen nicht genauer
- definiert, da insbesondere das überprüfen deren diesen Rahmen sprengen
- würde.
+
+
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -2191,11 +2211,36 @@ Im Rahmen dieser Arbeit werden die Performanceanforderungen nicht genauer
 
 \begin_layout Plain Layout
 Qualitätsanforderungen an den Persistenzlayer
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Qualitätsanforderungen-an-den"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotetext{Im Rahmen dieser Arbeit werden die Performanceanforderungen
+ nicht genauer definiert, da insbesondere das Überprüfen deren den Rahmen
+ dieser Bachelorarbeit sprengen würde.}
 \end_layout
 
 \end_inset
@@ -2208,7 +2253,39 @@ Randbedingungen
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+Der Persistenzlayer einer serviceorientierten Softwarearchitektur muss gewisse
+ Randbedingungen erfüllen, welche in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Randbedingungen-an-den"
+
+\end_inset
+
+ genauer spezifiziert sind.
+ Die Randbedingungen sind Umstände, die zwingend erfüllt werden müssen.
+ Wiederum ist die Abgrenzung von den Qualitätsanforderungen schwierig, da
+ der Übergang zwischen den zwei Anforderungstypen fliessend ist.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Randbedingungen sind Implementierungsvorgaben welche massgeblich dafür
+ verantwortlich sind, während der Erarbeitung und Umsetzung des Konzepts
+ einen austauschbaren Persistenzlayer zu erhalten, wie dies in der Aufgabenstell
+ung der Bachelorarbeit (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Amstutz2013"
+
+\end_inset
+
+) gefordert ist.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2219,7 +2296,7 @@ status open
 <lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2245,7 +2322,7 @@ Anforderung
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-R-1
+PR1
 \end_layout
 
 \end_inset
@@ -2254,7 +2331,7 @@ P-R-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss alle Operationen als SOAP-basierter Webservice anbieten.
+Das System muss alle Operationen als XML-basierten Webservice anbieten.
 \end_layout
 
 \end_inset
@@ -2265,7 +2342,7 @@ Das System muss alle Operationen als SOAP-basierter Webservice anbieten.
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-R-2
+PR2
 \end_layout
 
 \end_inset
@@ -2286,7 +2363,7 @@ Das System muss dem Entwickler die Möglichkeit bieten ohne Wissen über die
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-R-3
+PR3
 \end_layout
 
 \end_inset
@@ -2296,7 +2373,7 @@ P-R-3
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler für sämtliche Operationen ein Resultat entweder
- in Form der Entität oder den Entitäten oder in Form eines Operationresultats
+ in Form der Entität oder den Entitäten oder in Form eines Operationsresultats
  zurückliefern.
 \end_layout
 
@@ -2308,7 +2385,7 @@ Das System muss dem Entwickler für sämtliche Operationen ein Resultat entweder
 \begin_inset Text
 
 \begin_layout Plain Layout
-P-R-4
+PR4
 \end_layout
 
 \end_inset
@@ -2318,7 +2395,7 @@ P-R-4
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler die Möglichkeit bieten durch ein anderes
- System (anderen Persistenzlayer) austauschbar sein.
+ System (einen anderen Persistenzlayer) austauschbar sein.
 \end_layout
 
 \end_inset
@@ -2336,6 +2413,13 @@ Das System muss dem Entwickler die Möglichkeit bieten durch ein anderes
 
 \begin_layout Plain Layout
 Randbedingungen an den Persistenzlayer
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Randbedingungen-an-den"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2358,6 +2442,7 @@ Transaction Script
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2368,7 +2453,7 @@ status open
 <lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2394,7 +2479,7 @@ Anforderung
 \begin_inset Text
 
 \begin_layout Plain Layout
-T-1
+T1
 \end_layout
 
 \end_inset
@@ -2415,7 +2500,7 @@ Das System muss alle Datenbankoperationen durch einen dünnen Datenbankwrapper
 \begin_inset Text
 
 \begin_layout Plain Layout
-T-2
+T2
 \end_layout
 
 \end_inset
@@ -2460,6 +2545,7 @@ Domain Model
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2470,7 +2556,7 @@ status open
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2496,7 +2582,7 @@ Anforderung
 \begin_inset Text
 
 \begin_layout Plain Layout
-D-1
+D1
 \end_layout
 
 \end_inset
@@ -2517,7 +2603,7 @@ Das System muss eine minimale Kopplung des Domain Models an andere Layer
 \begin_inset Text
 
 \begin_layout Plain Layout
-D-2
+D2
 \end_layout
 
 \end_inset
@@ -2538,12 +2624,12 @@ Das System muss die Möglichkeiten einer Spezifikation bieten, mit welcher
 \begin_inset Text
 
 \begin_layout Plain Layout
-D-3
+D3
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2558,12 +2644,12 @@ Das System muss den Entiäten sowohl Informationen sowie Verhalten zuweisen.
 \begin_inset Text
 
 \begin_layout Plain Layout
-D-4
+D4
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2579,12 +2665,12 @@ Das System soll Design Patterns verwenden um ein reiches Domain Model zu
 \begin_inset Text
 
 \begin_layout Plain Layout
-D-5
+D5
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2624,6 +2710,7 @@ Table Module
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2634,7 +2721,7 @@ status open
 <lyxtabular version="3" rows="4" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2660,7 +2747,7 @@ Anforderung
 \begin_inset Text
 
 \begin_layout Plain Layout
-T-1
+T1
 \end_layout
 
 \end_inset
@@ -2680,7 +2767,7 @@ Das System muss die Objektstruktur analog der Datenbankstruktur abbilden.
 \begin_inset Text
 
 \begin_layout Plain Layout
-T-2
+T2
 \end_layout
 
 \end_inset
@@ -2701,12 +2788,12 @@ Das System muss eine einzelne Instanz zur Verfügung stellen, welche alle
 \begin_inset Text
 
 \begin_layout Plain Layout
-T-3
+T3
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2746,6 +2833,7 @@ Active Record
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2756,7 +2844,7 @@ status open
 <lyxtabular version="3" rows="4" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2782,7 +2870,7 @@ Anforderung
 \begin_inset Text
 
 \begin_layout Plain Layout
-A-1
+A1
 \end_layout
 
 \end_inset
@@ -2802,7 +2890,7 @@ Das System muss die Objektstruktur analog der Datenbankstruktur abbilden.
 \begin_inset Text
 
 \begin_layout Plain Layout
-A-2
+A2
 \end_layout
 
 \end_inset
@@ -2823,12 +2911,12 @@ Das System muss keine Konversion von Objektdatentypen und Datentypen der
 \begin_inset Text
 
 \begin_layout Plain Layout
-A-3
+A3
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15398,44 +15486,8 @@ name "tab:Akzeptantests"
 Fazit
 \end_layout
 
-\begin_layout Standard
-agd
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-nomenclature{hsymboli}{hdescriptioni}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Schlussfolgerungen
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-printnomenclature
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter*
@@ -15625,10 +15677,20 @@ ZHAW Zürcher Hochschule für Angewandte Wissenschaften
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "VergleichVonObjektrelationalenMappern"
-options "plain"
+options "/Users/florian/Downloads/alphadin"
 
 \end_inset
 
