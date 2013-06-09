@@ -6,6 +6,7 @@
 \begin_preamble
 \usepackage{pdflscape}
 \usepackage{footnote}
+\usepackage{listings}
 \makesavenoteenv{tabular}
 \end_preamble
 \use_default_options true
@@ -396,7 +397,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename Grafiken/sw-process.png
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -505,7 +506,7 @@ status open
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0">
 <column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -525,7 +526,7 @@ Kapitelüberschrift
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -560,7 +561,7 @@ reference "chap:Anforderungen"
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -601,7 +602,7 @@ reference "chap:Konzept-und-Architektur"
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -642,7 +643,7 @@ reference "chap:Implementierung"
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -683,7 +684,7 @@ reference "chap:Verifikation"
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1267,7 +1268,7 @@ status open
 <lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -1279,7 +1280,7 @@ Bezeichner
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1308,7 +1309,7 @@ M1
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1337,7 +1338,7 @@ M2
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1366,7 +1367,7 @@ M3
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1395,7 +1396,7 @@ M4
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1424,7 +1425,7 @@ M5
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10915,15 +10916,11 @@ Toolunterstützung
 \end_layout
 
 \begin_layout Itemize
-Persistenzlayerpatternsupport
+Unterstützung Enterprise Pattern
 \end_layout
 
 \begin_layout Itemize
-Modelgenerierung
-\end_layout
-
-\begin_layout Itemize
-Profiling- und Debuggingmöglichkeiten
+Monitoring
 \end_layout
 
 \begin_layout Standard
@@ -12516,7 +12513,47 @@ Performance
 \end_layout
 
 \begin_layout Standard
-Angelehnt an 
+Die Performance der einzelnen OR-Mapper ist ein wichtiges Auswahlkritierum
+ bei der Evaluation von OR-Mappern für den Einsatz in einer Softwareapplikation.
+ Werden während der Entwicklungsphase keine Lasttests auf dem Persistenzlayer
+ oder dem Gesamtsystem durchgeführt, kann es beim produktiven Einsatz des
+ System unangenehme Überraschungen in Bezug auf die Performance des verwendeten
+ OR-Mapper geben.
+\end_layout
+
+\begin_layout Standard
+Das in diesem Kapitel behandelte Kriterium vergleicht die drei OR-Mapper
+ indem drei typische Anwendungsfälle in der Benutzung eines OR-Mappers innerhalb
+ einer Messumgebung ausgeführt werden.
+ Die Testumgebung beeinhaltet eine Integration der drei verglichenen OR-Mapper.
+ Um Messwerte zu erhalten werden jeweils fünf Durchgänge mit 1, 10, 100,
+ 500 oder 1000 Ausführungen desselben Queries ausgeführt und gemittelt.
+ Die mehrfache Ausfühhrung desselben Queries dient dazu Effekte wie die
+ vergleichsweise lange Aufstartzeit beim ersten Ausführen eines Queries
+ der kompletten OR-Mapper
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zur Aufstartzeit am Beispiel von Entity Framework: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://neverindoubtnet.blogspot.pt/2012/03/squash-entity-framework-startup-time.htm
+l
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ zu minimieren und die Messumgebung einer produktiven Umgebung anzugleichen.
+ Die Queries sind angelehnt an 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rocha2011"
@@ -12533,15 +12570,62 @@ key "Kochetov2011"
 .
 \end_layout
 
-\begin_layout Itemize
-Query auf eine Tabelle mit Filter auf Primärschlüssel: 
-\begin_inset listings
-inline false
+\begin_layout Standard
+Als Testrechner wurde ein 2.6 GHz Intel Core i7 mit 16 GB 1600 MHz DDR3 RAM
+ und einer 500 GB grossen SSD-Festplatte verwendet.
+ Als Betriebssystem wurde ein frisch installiertes Windows 7 Professional
+ verwendet.
+ Die Messapplikation wurde im .NET Framework 4.5 geschrieben und wird als
+ optimierter Releasebuild kompiliert und ausgeführt.
+ Das Datenbankmanagementsystem ist ein Microsoft SQL Server 2012 Standard
+ Edition welches auf der selben Maschine installiert ist, auf welcher die
+ Messapplikation ausgeführt wird.
+\end_layout
+
+\begin_layout Standard
+Zur besseren Illustration und Verständlichkeit sind nachfolgend die drei
+ Testqueries in SQL Syntax erklärt.
+ Die Erwartung an den OR-Mapper ist es, die folgenden SQL-Queries in dieser
+ oder einer ähnlichen Form an das Datenbankmanagementsystem abzusetzen.
+\end_layout
+
+\begin_layout Standard
+Das erste Query ist eine Anfrage auf eine Tabelle mit einem Filter auf den
+ Primärschlüssel der Tabelle.
+ Dabei wird jeweils ein einzelner Datensatz aus der Tabelle der Datenbank
+ gelesen, auf ein Domänenobjekt gemappt und der Messapplikation zurückgegeben.
+ Es wird die Zeit zwischen dem Absetzen der Anfrage und dem Erhalten des
+ initialisierten Domänenobjekts gemessen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+begin{lstlisting}[language=SQL]
+\end_layout
+
+\begin_layout Plain Layout
+
 SELECT ArtistId, Name FROM Artist WHERE Artist.ArtistId = @id
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
 \end_layout
 
 \end_inset
@@ -12549,11 +12633,50 @@ SELECT ArtistId, Name FROM Artist WHERE Artist.ArtistId = @id
 
 \end_layout
 
-\begin_layout Itemize
-Query auf mehrer Tabellen mit Joins, Filter auf Spalte einer Tabelle:
-\begin_inset listings
-inline false
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Abfrage auf eine Tabelle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das zweite Query ist eine Anfrage auf mehrere Tabellen, bei welcher eine
+ Anzahl von Datensätzen gelesen wird.
+ Dies wird unter Mithilfe von Verknüpfungen über Fremdschlüssel und einem
+ Filter ermöglicht.
+ Wiederum wird die Zeit gemessen vom Absetzen der Anfrage an den OR-Mapper
+ bis zum Zeitpunkt der Rückgabe der Liste der gemappten und initalisierten
+ Domänenobjekte.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[language=SQL]
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -12595,16 +12718,63 @@ FROM Artist
 WHERE Artist.Name = @name 
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
-Einfügen, Aktualisieren und Löschen einer Instanz:
-\begin_inset listings
-inline false
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Abfrage auf mehrere Tabellen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das dritte Query ist keine Abfrage von bereits persistierten Daten wie die
+ beiden anderen Queries sondern es sind drei verschiedene Queries welche
+ zuerst einen neuen Datensatz in eine Tabelle einfügen, diesen danach verändern
+ und am Schluss wieder aus der Tabelle entfernen.
+ Dadurch wird geprüft wie effizient das Mapping der OR-Mapper im Zusammenhang
+ mit datenverändernden Abfragen ist.
+ Es wird die Zeit gemessen zwischen dem Übergeben des neu zu persistierenden
+ Domänenobjektes und der Bestätigung der Löschung des OR-Mappers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[language=SQL]
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -12619,6 +12789,30 @@ UPDATE Artist SET Name = "Daft Punk" WHERE ArtistId = @id
 \begin_layout Plain Layout
 
 DELETE FROM Artist WHERE ArtistId = @id
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Einfügen, Aktualisieren und Löschen
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12694,7 +12888,7 @@ NHibernate
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf eine Tabelle
+Abfrage auf eine Tabelle
 \end_layout
 
 \end_inset
@@ -12741,7 +12935,7 @@ Ein Query auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf eine Tabelle
+Abfrage auf eine Tabelle
 \end_layout
 
 \end_inset
@@ -12788,7 +12982,7 @@ Ein Query auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf eine Tabelle
+Abfrage auf eine Tabelle
 \end_layout
 
 \end_inset
@@ -12835,7 +13029,7 @@ Ein Query auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf eine Tabelle
+Abfrage auf eine Tabelle
 \end_layout
 
 \end_inset
@@ -12882,7 +13076,7 @@ Ein Query auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf eine Tabelle
+Abfrage auf eine Tabelle
 \end_layout
 
 \end_inset
@@ -12929,7 +13123,7 @@ Ein Query auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf mehrere Tabellen
+Abfrage auf mehrere Tabellen
 \end_layout
 
 \end_inset
@@ -12976,7 +13170,7 @@ Ein Query auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf mehrere Tabellen
+Abfrage auf mehrere Tabellen
 \end_layout
 
 \end_inset
@@ -13023,7 +13217,7 @@ Ein Query auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf mehrere Tabellen
+Abfrage auf mehrere Tabellen
 \end_layout
 
 \end_inset
@@ -13070,7 +13264,7 @@ Ein Query auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf mehrere Tabellen
+Abfrage auf mehrere Tabellen
 \end_layout
 
 \end_inset
@@ -13117,7 +13311,7 @@ Ein Query auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ein Query auf mehrere Tabellen
+Abfrage auf mehrere Tabellen
 \end_layout
 
 \end_inset
@@ -13406,6 +13600,13 @@ Einfügen, Aktualisieren und Löschen
 
 \begin_layout Plain Layout
 Kriterien Performance
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Kriterien-Performance"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13419,13 +13620,21 @@ Kriterien Performance
 \end_layout
 
 \begin_layout Standard
-In diesem Vergleich zeigt sich sehr stark der Unterschied zwischen eine
- kompletten und einem leichtgewichtigen OR-Mapper.
+In diesem Vergleich (siehe Resultate in Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Kriterien-Performance"
+
+\end_inset
+
+) zeigt sich sehr stark der Unterschied zwischen den beiden OR-Mapper Typen,
+ den kompletten und den leichtgewichtigen OR-Mappern.
  Dapper als leichtgewichtiger OR-Mapper hat diesen Vergleich klar gewonnen
  und sämtliche Metriken dominiert.
- Dies liegt insbesondere an der einfachen Schichtung des ORMs.
- Entity Framework als der featurestärkste OR-Mapper hat klar die schlechteste
- aufgewiesene Performance.
+ Dies liegt insbesondere am einfachen internen Aufbau des ORMs und dessen
+ vergleichsweise simplen Mappingalgorithmen.
+ Das Entity Framework als der featurestärkste OR-Mapper der drei verglichenen
+ Produkte hat klar die schlechteste aufgewiesene Performance.
  
 \end_layout
 
@@ -13441,34 +13650,80 @@ name "sub:Toolunterstuetzung"
 \end_layout
 
 \begin_layout Standard
-Das Entity Framework bietet mehrfache Toolunterstützung.
- Wenn ein Model-First oder Database-First Ansatz gewählt wird existiert
- ein Designer welcher es erlaubt Entitäten mit ihren Attributen und Beziehungen
- zu modellieren.
- Ausserdem bietet EF verschiedene Assistenten um ein bestehendes Datenbankschema
- zu importieren.
- Wird Code-First das Domain Model entwickelt so existieren eine benutzerfreundli
-che NuGet Extension welche dem Entwickler viel Unterstützung bietet.
+Das Entity Framework bietet eine vielfältige Toolunterstützung.
+ Wenn ein Forward Mapping Ansatz gewählt wird bietet das Entity Framework
+ einen Designer, welcher es erlaubt Entitäten mit ihren Attributen und Beziehung
+en zu modellieren.
+ Ausserdem werden verschiedene Assistenten mitgeliefert um bestehende Datenbanks
+chemata bei Reverse Mapping Szenarien zu importieren und als Entity Framework
+ Modell zu generieren.
+ Möchte der Entwickler ohne Designer direkt POCOs erstellen, so liefert
+ das Entity Framework eine Erweiterung für den NuGet Packetmanager
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu NuGet unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://nuget.org/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ mit, welcher dem Entwickler Hand bietet zum Beispiel beim Erstellen von
+ Datenmigrationen oder neuen Konfigurationen.
 \end_layout
 
 \begin_layout Standard
 Dapper als leichtgewichtiger OR-Mapper bietet keinerlei Toolunterstützung
  an.
- Sämtliche Konfiguration des ORMs geschieht über in Code geschriebene Mappings
- und muss vom Entwickler selbst erstellt werden.
- Die Entitäten können jedoch auch über den Visual Studio Klassendesigner
+ Sämtliche Konfiguration des ORMs geschieht über direkt in Code geschriebenen
+ Mappings welche vom Entwickler komplett von Hand erstellt werden müssen.
+ Die Entitäten selber können jedoch auch über den Visual Studio Klassendesigner
  erstellt werden.
 \end_layout
 
 \begin_layout Standard
-NHibernate als herunterladbare Library kommt ohne Tools mit.
- Die Konfiguration geschieht mittels XML-Dateien und die Entitäten können
- mit dem Visual Studio Klassendesigner erstellt werden.
- NHibernate liefert jedoch direkt die XSD Schemas für die XML-Dateien, welche
- dann auch direkt mit Intellisense verwendet werden können.
- Es gibt zahlreiche Fremdkomponentenhersteller welche zusätzliche Tools
- für NHibernate entwickeln, so zum Beispiel der NHibernate Designer von
- Mindscape HQ
+NHibernate als herunterladbare Klassenbibliothek kommt ohne zusätzliche
+ Tools mit.
+ Die Konfiguration der Mappings geschieht mittels XML-Dateien und die Entitäten
+ selbst können mit dem Visual Studio Klassendesigner erstellt werden.
+ NHibernate liefert jedoch die XML Schema Definitionen für die XML-Dateien
+ mit, welche dann auch direkt mit Intellisense im Visual Studio verwendet
+ werden können
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe hierzu 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://stackoverflow.com/questions/3565156/how-to-add-nhibernate-xml-schema-to-vi
+sual-studio
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ Es gibt zahlreiche Fremdkomponentenhersteller welche Tools für NHibernate
+ entwickeln, so zum Beispiel der NHibernate Designer von Mindscape HQ
 \begin_inset Foot
 status open
 
@@ -13489,7 +13744,7 @@ http://www.mindscapehq.com/products/nhdesigner
 
 \end_inset
 
- oder Visual NHibenrate von Slyce
+ oder Visual NHibernate von Slyce
 \begin_inset Foot
 status open
 
@@ -13511,19 +13766,20 @@ http://www.slyce.com/VisualNHibernate/
 \end_inset
 
 .
- Diese Tools sind durchaus mächtig und für grössere Projekte anzuraten,
- werden jedoch in dieser Bachelorarbeit nicht betrachtet da sie meist kostenpfli
-chtig sind.
+ Diese Tools sind durchaus mächtig und für grössere Projekte zu empfehlen,
+ werden jedoch in dieser Bachelorarbeit nicht weiter in Betracht gezogen
+ da sie meist kostenpflichtig und nicht Teil des herunterladbaren Packets
+ von NHibernate sind.
 \end_layout
 
 \begin_layout Standard
 Der Gewinner in dieser Kategorie ist das Entity Framework.
  Die mit dem EF mitgelieferten Tools machen es dem Entwickler denkbar einfach
- Mappings zu erstellen und bieten den gewohnen Komfort von Microsoft Produkten
+ Mappings zu erstellen und bieten den gewohnen Komfort von Microsoft-Produkten
  wie dem Visual Studio.
- Würde man die Drittanbietertools für NHibernate betrachten würde die Entscheidu
-ng wohl nicht so klar ausfallen da NHibernate auch sehr populär ist und
- aus diesem Grund viele Tools von Fremdherstellern existieren.
+ Würde man die Drittanbietertools für NHibernate auch betrachten, würde
+ die Entscheidung wohl nicht so klar ausfallen, da für NHibernate auf Grund
+ seiner Popularität viele Tools von Drittanbietern existieren.
 \end_layout
 
 \begin_layout Subsection
@@ -13533,9 +13789,9 @@ Unterstützung Enterprise Pattern
 \begin_layout Standard
 Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
  Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingend
- den Entwickler nicht dazu ein Pattern über das andere zu favorisieren.
- Entity Framwork und NHibernate liefern eine einfach Möglichkeit Unit of
- Work
+ den Entwickler nicht dazu ein bestimmtes Enterprise Pattern zu wählen.
+ Das Entity Framework und NHibernate besitzen eine Möglichkeit, das Pattern
+ Unit of Work
 \begin_inset Foot
 status open
 
@@ -13556,20 +13812,25 @@ http://martinfowler.com/eaaCatalog/unitOfWork.html
 
 \end_inset
 
- zu implementiern, was jedoch nicht Gegenstand dieser Bachelorarbeit ist.
- Dapper hingegen ist als Extension für IDBConnection am flexibelsten für
- jedewedes Enterprise Pattern einzusetzen.
- Im Endeffekt obliegt es dem Entwickler bzw.
- Software Architekten wie der Persistenzlayer einer SOA implementiert werden
- soll und welche Pattenr eingesetzt werden sollen.
- Die Entscheidung ist zu abhängig vom Anwendungsfall des Systems bzw.
- den Anforderungen an dasselbe als dass im Rahmen dieses Vergleichs von
- ORMs eine abschliessende Wertung erstellt werden kann.
+ vereinfacht zu nutzen beziehungsweise zu implementieren, dieses ist jedoch
+ nicht Gegenstand der betrachteten Enterprise Pattern in dieser Bachelorarbeit.
+ Dapper hingegen ist als Erweiterung für IDbConnection am flexibelsten für
+ jegliches Enterprise Pattern einzusetzen da der Zugriff auf die Funktionalitäte
+n des OR-Mappers sehr transparent und einfach ist.
 \end_layout
 
 \begin_layout Standard
-Aus diesem Grund ist diese Kategorie nicht bewertbar und es gibt keine Gewinner
- oder Verlierer.
+Im Endeffekt obliegt es dem Entwickler oder dem Software Architekten wie
+ der Persistenzlayer eines Systems implementiert werden soll und welche
+ Pattern eingesetzt werden sollen.
+ Die Entscheidung ist zu abhängig vom Anwendungszweck des Systems beziehungsweis
+e den Anforderungen an dasselbe als das im Rahmen dieses Vergleichs von
+ ORMs eine abschliessende Wertung erstellt werden könnte.
+\end_layout
+
+\begin_layout Standard
+Aus diesem Grund ist diese Kategorie nicht bewertbar und es wird keines
+ der betrachteten Produkte über die anderen Produkte favorisiert.
 \end_layout
 
 \begin_layout Subsection
@@ -13584,31 +13845,45 @@ name "sub:Monitoring"
 \end_layout
 
 \begin_layout Standard
-Montoring eines Persistenzlayers und des dazugehörigen ORMs wird bei der
- Evaluation von ORMs oft fälschlicherweise ausser acht gelassen.
+Die Möglichkeiten zur Überwachung eines Persistenzlayers und des innerhalb
+ verwendeten OR-Mappers wird bei der Evaluation von ORMs oft ausser Acht
+ gelassen.
  Dies, da das Montoring häufig erst spät in der Entwicklung eines Systems
- bezeiehungsweise erst in der Wartung des Systems eine Rolle spielt wenn
+ beziehungsweise erst in der Wartung des Systems eine Rolle spielt, wenn
  Performanceengpässe spürbar werden.
  Wird dann ein ORM eingesetzt der nur sehr eingeschränkt debug- und überwachbar
- ist wird es schwierig die eigentlichen Bottlenecks zu erkennen und beheben.
+ ist, wird es schwierig, Flaschenhälse zu erkennen und auch zu beheben.
 \end_layout
 
 \begin_layout Standard
-Natürlich lassen sich alle ORMs über einen SQL Profiler monitoren.
- Nur leider ist das meistens schwierig zu sagen woher genau die abgesetzten
- Queries stammen beziehungsweise ist die Nachverfolgbarkeit der einzelnen
- Queries zum Mapping im OR-Mapper schwierig.
+Natürlich lassen sich alle ORMs über einen SQL Profiler auf der Ebene des
+ Datenbankmanagementsystems überwachen.
+ Doch meist ist es bei dieser Art von Überwachung schwierig zu sagen, welches
+ die Ursachne der beobachteten Performanceprobleme sind.
+ Die Rückverfolgung von auf der Datenbank beobachteten Queries zum Mapping
+ eines Domänenobjekts innerhalb des ORMs ist schwierig und oft sogar unmöglich.
 \end_layout
 
 \begin_layout Standard
-Das Entity Framework bietet out-of-the-box nur das Intellitrace debugging
- mit.
- Da jedoch für das Entity Framework die PDB Symbole auf Microsofts Symbol
- Server verfügbar sind ist das debugging ohne grosse Hürden wie selbstkompiliere
-n des Entity Frameworks möglich.
- Da das Entity Framework auf Grund seiner Vielzahl von Funktionalitäten
- sehr komplex ist, ist es für einen Entwickler nicht ganz einfach ein einfaches
- Mapping nach zu vollziehen.
+Das Entity Framework bietet einzig Intellitrace Debugging
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Intellitrace Debugging bietet einen gesamtheitlichen Überblick über den
+ Zustand einer laufenden Applikation im Gegensatz zu traditionellen Debuggern
+ welche einen isolierten Zustand betrachten.
+\end_layout
+
+\end_inset
+
+.
+ Da für das Entity Framework die Debuggingsymbole verfügbar sind ist das
+ Debuggen des in der Applikation integrierten EF ohne weiteres möglich.
+ Die Architektur des Entity Frameworks ist auf Grund seiner Vielzahl von
+ Funktionalitäten sehr komplex.
+ Daher ist es für einen Entwickler nicht ganz einfach Mappings schlüssig
+ nachzuvollziehen.
  Es existieren eine grosse Anzahl an Dritterherstellertools wie der Entity
  Framework Profiler von Hibernating Rhinos
 \begin_inset Foot
@@ -13653,28 +13928,34 @@ http://code.msdn.microsoft.com/EFProviderWrappers
 \end_inset
 
  welche bei Performanceengpässen in produktiven Umgebungen zum Einsatz kommen
- können.
+ können und dem Entwickler teilweise grafisch aufzeigen, welche Operationen
+ innerhalb des Entity Frameworks wieviel Performance kosten.
 \end_layout
 
 \begin_layout Standard
-Da Dapper in Sourcecodeform vorliegt ist das Debugging denkbar einfach gestaltet.
- Der Entwickler kann auch einfach eigene Performancecounters implementieren
- oder zum Beispiel ein Tracing aller SQL-Statements realisieren da der Quellcode
- relativ einfach lesbar ist.
- Der Nachteil ist allerdings, dass dies alles selber entwickelt werden muss.
- Dapper selbst liefert keinerlei Montioringtools oder ähnliches mit.
+Da Dapper in Sourcecodeform vorliegt ist das Debugging für den Entwickler
+ denkbar einfach.
+ Der Entwickler kann auch eigene Performancezähler und Messverfahren implementie
+ren und so zum Beispiel einfach ein Tracing aller SQL-Statements realisieren,
+ da der Quellcode leicht lesbar und verständlich ist.
+ Zusätzlich bietet Dapper die Möglichkeit an bestimmten Stellen Beobachterobjekt
+e einzufügen, welche Operationen von Dapper überwachen können.
+ Der Nachteil ist allerdings, dass sämtliche Überwachungslogik selber entwickelt
+ werden muss.
+ Dapper liefert keinerlei Überwachungsmöglichkeiten mit.
 \end_layout
 
 \begin_layout Standard
 NHibernate ist ein Open-Source Projekt und aus diesem Grund kann dieses
  für Debuggingzwecke selbst kompiliert werden und debugged werden.
- Auf Grund der Natur von NHibernate (1-zu-1 Portierung von Hibernate in
- Java) ist die lesbarkeit und Verständlichkeit für einen .NET Entwickler
- nicht immer geben.
+ Auf Grund des Ursprungs von NHibernate als 1-zu-1 Portierung von Hibernate
+ in Java nach C# ist die Lesbarkeit und Verständlichkeit für einen .NET Entwickle
+r nicht immer gegeben.
  Auch ist das Kompilieren von NHibernate mit erheblichem Konfiguraitonsaufwand
- verbunden nicht ohne weiteres durchführbar.
- Für NHibernate existiert wie auch für das Entity Framework der NHibernate
- Profiler von Hibernating Rhinos
+ verbunden und nicht ohne vertieftes Studium der Dokumentation und einigem
+ Ausprobieren von verschiedenen Konfigurationen durchführbar.
+ Für NHibernate existiert wie auch für das Entity Framework ein Profilingtool
+ von Hibernating Rhinos, der NHibernate Profiler
 \begin_inset Foot
 status open
 
@@ -13695,8 +13976,10 @@ http://www.hibernatingrhinos.com/products/nhprof
 
 \end_inset
 
- welcher auf Grund der Session Statistiken zur Verfügung stellt und auch
- mit dem Sourcecode verknüpft werden kann.
+.
+ Der NHibernate Profiler liefert auf Grund des Datencontainers von NHibernate
+ Statistiken zum Zustand des ORMs und kann auch mit dem Sourcecode der Applikati
+on verknüpft werden.
  NHibernate bietet auch die Möglichkeit eigene Interceptoren
 \begin_inset Foot
 status open
@@ -13718,9 +14001,10 @@ http://bosy.dailydev.org/2007/04/interceptor-design-pattern.html.
 
 \end_inset
 
- zu schreiben.
- So kann zum Beispiel jedes abgesetzte SQL-Statement mit einem Interceptor
- abgefangen werden und in ein Tracefile geschrieben werden.
+ zu schreiben und in NHibernate zu injeziieren.
+ So kann zum Beispiel jedes auf das Datenbankmanagementsystem abgesetzte
+ SQL-Statement mit einem Interceptor abgefangen werden und in ein Tracefile
+ geschrieben werden.
  Auch lässt sich direkt eine log4net
 \begin_inset Foot
 status open
@@ -13728,7 +14012,7 @@ status open
 \begin_layout Plain Layout
 Mehr zu log4net siehe 
 \begin_inset Flex URL
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -13742,8 +14026,8 @@ http://logging.apache.org/log4net/
 
 \end_inset
 
- Konfiguration erstellen, welche erweiterte Tracemeldungen von NHibenrate
- in den gewünschten Kanal persistiert.
+ Konfiguration erstellen, welche erweiterte Tracemeldungen von NHibernate
+ in den gewünschten Ausgabekanal schreibt.
 \end_layout
 
 \begin_layout Standard
@@ -13751,15 +14035,51 @@ Abschliessend lässt es sich sagen dass alle drei betrachteten OR-Mapper
  von Haus aus wenig Montoringmöglichkeiten mitbringen.
  Dies ist wohl auch so gewünscht, bieten insbesondere NHibernate und das
  Entity Framework zahlreiche Möglichkeiten für Entwickler oder Drittanbieter
- Montoringsuiten zu entwickeln und auch verkaufen.
- Dieser Vergleich bezieht sich somit auf die Möglichkeit zu Monitoring und
- auch auf die verfügbaren Monitoringtools von Drittherstelltern.
- Bei dieser Betrachtung ist das Entity Framework der knappe Gewinner vor
- NHibernate dieses Vergleichs.
+ Montoringsuiten zu entwickeln und auf die eigenen Bedürfnisse zuzuschneiden.
+ Dieser Vergleich bezieht sich somit auf die Möglichkeit zur Implementierung
+ von Überwachungsmechanismen und bezieht auch auf die verfügbaren Monitoringtool
+s von Drittherstelltern in das Vergleichsresultat ein.
+ Mit dieser gesamtheitlichen Betrachtung ist das Entity Framework der knappe
+ Gewinner vor NHibernate dieses Vergleichs.
 \end_layout
 
 \begin_layout Subsection
 Vergleichsmatrix
+\end_layout
+
+\begin_layout Standard
+In Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Vergleichsmatrix"
+
+\end_inset
+
+ sind noch einmal alle Vergleichskriterien der oberen Kapitel mit dem jeweils
+ führenden OR-Mapper zusammengefasst.
+ Diese Tabelle liefert einen tieferen Einblick in die Verwendung der OR-Mapper
+ aus Sicht des Entwicklers und bietet die Grundlage für die Evaluierung
+ der OR-Mapper (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Evaluierung-selektierte-OR-Mappe"
+
+\end_inset
+
+) und die Produktempfehlung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Produkteempfehlung"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Wie schon in den vorherigen Kapitel ausgeführt ist diese Vergleichsmatrix
+ teilweise subjektiv beeinflusst und könnte je nach Betrachter unterschiedlich
+ ausfallen.
 \end_layout
 
 \begin_layout Standard
@@ -13789,7 +14109,7 @@ Kriterium
 \begin_inset Text
 
 \begin_layout Plain Layout
-Stärkster OR-Mapper
+Führendes Produkt
 \end_layout
 
 \end_inset
@@ -13927,6 +14247,13 @@ Entity Framework
 
 \begin_layout Plain Layout
 Vergleichsmatrix
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Vergleichsmatrix"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -13940,7 +14267,28 @@ Vergleichsmatrix
 \end_layout
 
 \begin_layout Section
-Architektur SoCRM
+Architektur serviceorientierte CRM-Applikation
+\end_layout
+
+\begin_layout Standard
+Dieses Kapitel enthält das Konzept und die Architektur für die Implementierung
+ des Proof-of-Concepts im Rahmen dieser Bachelorarbeit.
+ Das zu realisierende System wird aus den drei Architektursichten Bausteinsicht,
+ Laufzeitsicht und Verteilungssicht betrachtet und spezifiziert.
+\end_layout
+
+\begin_layout Standard
+Das Ziel ist es auf Grund der dokumentierten Anforderungen ein vollständiges
+ und umfassendes Lösungskonzept zu entwickeln, welches in der Implementierungsph
+ase des Wasserfallmodells von Softwareentwicklern umgesetzt werden kann
+ (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oestereich2006"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
@@ -13997,16 +14345,61 @@ reference "fig:Komponentendiagramm-SoCRM"
 
 \end_inset
 
- stellt das System SoCRM aus der Vogelperspektive dar und ist die höchstabstrahi
-erte Ansicht der Bausteinsicht, die in diesem Projekt verfügbar ist.
+ stellt das System SoCrm
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+SoCRM steht für Service Oriented CRM und ist der Projektname der zu realisierend
+en serviceorientierten CRM-Applikation.
+\end_layout
+
+\end_inset
+
+ aus der Vogelperspektive dar und ist die höchstabstrahierte Ansicht der
+ Bausteinsicht, die in diesem Projekt verfügbar ist.
  
+\end_layout
+
+\begin_layout Standard
+Es wird eine grobe Schichtung erstellt indem zwischen dem Presentation-,
+ dem Orchestration und dem Infrastructurelayer unterschieden wird.
+ Die Schichtung wird erreicht in dem alle drei Layer als eigens ausführ-
+ und verteilbare Komponenten realisiert werden.
+\end_layout
+
+\begin_layout Standard
+Der Infrastructurelayer beeinhaltet nur den Persistenzlayer und wird dreifach
+ implementiert werden (eine Implementierung mit Entity Framework, eine mit
+ Dapper und eine mit NHibernate).
+ Der Infrastructurelayer offeriert über WCF die Schnittstelle IPersistenceServic
+e<TDomainObject>, welche von den Orchestrationservices Security Service,
+ Customer Service, Contact Service und Logging Service konsumiert wird und
+ worauf diese ihre Geschäftslogik aufbauen.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Orchestrationservices beinhalten sämtliche Geschäftslogik des Systems
+ und offerieren wiederum jeweils eine WCF Schnittstelle, auf welcher die
+ Serviceoperationen für den Presentationlayer definiert sind.
+\end_layout
+
+\begin_layout Standard
+Der Presentationlayer besteht aus einer ausführbaren App sowie vier Presentation
+modulen, welche die Präsentationslogik enthalten: Security Presentation,
+ Customer Presentation, Contact Presentation und Logging Presentation.
+ Diese Presentationmodule greifen auf die Schnittstellen des Orchestrationlayers
+ zu und visualisieren die so gelesenen Daten beziehungsweise geben vom Benutzer
+ eingegebene Daten weiter an den Orchestrationlayer zur späteren Persistierung
+ in der Datenbank.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -14023,7 +14416,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Komponentendiagramm SoCRM
+Komponentendiagramm SoCrm
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Komponentendiagramm-SoCRM"
@@ -15695,10 +16088,17 @@ name "sec:Evaluierung-selektierte-OR-Mappe"
 
 \begin_layout Section
 Produkteempfehlung
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Produkteempfehlung"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Service Oriented CRM
+Serviceorientierte CRM-Applikation
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Service-Oriented-CRM"
