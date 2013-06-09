@@ -94,8 +94,8 @@ Eidesstattliche Erklärung
 \end_layout
 
 \begin_layout Standard
-Hiermit bestätigt der Unterzeichnende, dass die Bachelorarbeit mit dem Thema
- 
+Hiermit bestätigt die oder der Unterzeichnende, dass die Bachelorarbeit
+ mit dem Thema 
 \begin_inset Quotes eld
 \end_inset
 
@@ -103,7 +103,7 @@ Vergleich von objektrelationalen Mappern
 \begin_inset Quotes erd
 \end_inset
 
- gemäss freigegebener Aufgabenstellung vom 8.
+ gemäss freigegebener Aufgabenstellung mit Freigabe vom 8.
  Januar 2013 ohne jede fremde Hilfe im Rahmen des gültigen Reglements selbständi
 g ausgeführt wurde.
 \end_layout
@@ -17199,6 +17199,56 @@ key "Cornett2011"
 
  ist eine Code Coverage von 70-80% eine angemessene Abdeckung mit automatisierte
 n Unit Tests.
+ Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resultat-Unit-Tests"
+
+\end_inset
+
+ enthält als Beweis einen Screenshot der ausgeführten Testsuite von SoCrm.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ResultUnitTests.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultat Unit Tests
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultat-Unit-Tests"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18111,9 +18161,58 @@ reference "tab:Akzeptantests"
 
 \end_inset
 
+ und als Screenshot in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resultat-Akzeptanztests"
+
+\end_inset
+
  ersichtlich.
  Alle Anforderungen können im Rahmen dieser Implementierung erfüllt werden
  und die Akzeptanztests werden als bestanden betrachtet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ResultAcceptanceTests.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultat Akzeptanztests
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultat-Akzeptanztests"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18128,12 +18227,12 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="4">
 <features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="5cm">
 <column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18160,7 +18259,7 @@ Testklasse
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18171,7 +18270,7 @@ Testergebnis
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18180,11 +18279,11 @@ UC1
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gespräch beitreten
+Benutzer oder Administrator authentifizieren
 \end_layout
 
 \end_inset
@@ -18193,14 +18292,12 @@ Gespräch beitreten
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC1Tests
+AuthenticationTest
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18211,7 +18308,7 @@ bestanden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18220,11 +18317,11 @@ UC2
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gespräch verlassen
+Kunden anzeigen
 \end_layout
 
 \end_inset
@@ -18233,14 +18330,12 @@ Gespräch verlassen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC2Tests
+SearchCustomersTest
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18251,7 +18346,7 @@ bestanden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18260,11 +18355,11 @@ UC3
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Nachricht senden
+Kunde hinzufügen
 \end_layout
 
 \end_inset
@@ -18273,14 +18368,12 @@ Nachricht senden
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC3Tests
+CreateNewCustomerTest
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18291,7 +18384,7 @@ bestanden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18300,11 +18393,11 @@ UC4
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Nachricht empfangen
+Kunde löschen
 \end_layout
 
 \end_inset
@@ -18313,14 +18406,12 @@ Nachricht empfangen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC4Tests
+DeleteCustomerTest
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18340,11 +18431,11 @@ UC5
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Firmen anzeigen
 \end_layout
 
 \end_inset
@@ -18353,7 +18444,7 @@ UC5
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+SearchCompaniesTest
 \end_layout
 
 \end_inset
@@ -18362,7 +18453,7 @@ UC5
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18378,11 +18469,11 @@ UC6
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Firma hinzufügen
 \end_layout
 
 \end_inset
@@ -18391,7 +18482,7 @@ UC6
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+CreateNewCompanyTest
 \end_layout
 
 \end_inset
@@ -18400,7 +18491,7 @@ UC6
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18416,11 +18507,11 @@ UC7
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Firma löschen
 \end_layout
 
 \end_inset
@@ -18429,7 +18520,7 @@ UC7
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+DeleteCompanyTest
 \end_layout
 
 \end_inset
@@ -18438,7 +18529,7 @@ UC7
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18454,11 +18545,11 @@ UC8
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Kontakte anzeigen
 \end_layout
 
 \end_inset
@@ -18467,7 +18558,7 @@ UC8
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+SearchContactsTest
 \end_layout
 
 \end_inset
@@ -18476,7 +18567,7 @@ UC8
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18492,11 +18583,11 @@ UC9
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Kontakt hinzufügen
 \end_layout
 
 \end_inset
@@ -18505,7 +18596,7 @@ UC9
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+CreateNewContactTest
 \end_layout
 
 \end_inset
@@ -18514,7 +18605,7 @@ UC9
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18530,11 +18621,11 @@ UC10
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Kontakt löschen
 \end_layout
 
 \end_inset
@@ -18543,7 +18634,7 @@ UC10
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+DeleteContactTest
 \end_layout
 
 \end_inset
@@ -18552,7 +18643,7 @@ UC10
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18568,11 +18659,11 @@ UC11
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Benutzer anzeigen
 \end_layout
 
 \end_inset
@@ -18581,7 +18672,7 @@ UC11
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+SearchUsersTest
 \end_layout
 
 \end_inset
@@ -18590,7 +18681,7 @@ UC11
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18606,11 +18697,11 @@ UC12
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Passwort setzen
 \end_layout
 
 \end_inset
@@ -18619,7 +18710,7 @@ UC12
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+SetPasswordTest
 \end_layout
 
 \end_inset
@@ -18628,7 +18719,7 @@ UC12
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18644,11 +18735,11 @@ UC13
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Benutzer hinzufügen
 \end_layout
 
 \end_inset
@@ -18657,7 +18748,7 @@ UC13
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+CreateNewUserTest
 \end_layout
 
 \end_inset
@@ -18666,7 +18757,7 @@ UC13
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18682,11 +18773,11 @@ UC14
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Benutzer löschen
 \end_layout
 
 \end_inset
@@ -18695,7 +18786,7 @@ UC14
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+DeleteUserTest
 \end_layout
 
 \end_inset
@@ -18704,7 +18795,7 @@ UC14
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+bestanden
 \end_layout
 
 \end_inset
@@ -18721,7 +18812,7 @@ UC14
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Akzeptantests
+Akzeptanztests
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Akzeptantests"

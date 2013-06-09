@@ -260,7 +260,7 @@ t und dargelegt werden.
 \end_layout
 
 \begin_layout Section
-Ziel der Arbeit
+Ziele der Arbeit
 \end_layout
 
 \begin_layout Standard
@@ -17199,8 +17199,56 @@ key "Cornett2011"
 
  ist eine Code Coverage von 70-80% eine angemessene Abdeckung mit automatisierte
 n Unit Tests.
- Abbildung XX enthält als Beweis einen Screenshot der ausgeführten Testsuite
- von SoCrm.
+ Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resultat-Unit-Tests"
+
+\end_inset
+
+ enthält als Beweis einen Screenshot der ausgeführten Testsuite von SoCrm.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ResultUnitTests.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultat Unit Tests
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultat-Unit-Tests"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18113,9 +18161,58 @@ reference "tab:Akzeptantests"
 
 \end_inset
 
- und als Screenshot in Abbildung YY ersichtlich.
+ und als Screenshot in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resultat-Akzeptanztests"
+
+\end_inset
+
+ ersichtlich.
  Alle Anforderungen können im Rahmen dieser Implementierung erfüllt werden
  und die Akzeptanztests werden als bestanden betrachtet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ResultAcceptanceTests.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultat Akzeptanztests
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultat-Akzeptanztests"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18715,7 +18812,7 @@ bestanden
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Akzeptantests
+Akzeptanztests
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Akzeptantests"
