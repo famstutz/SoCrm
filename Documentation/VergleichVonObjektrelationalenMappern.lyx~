@@ -10885,19 +10885,67 @@ name "sec:Vergleich-ausgewählter-Produkte"
 \end_layout
 
 \begin_layout Standard
-Der Vergleich der drei in der Umfage (siehe Kapitel 
+Die Marktübersicht dient als Basis für weitergehende Vergleich der OR-Mapper.
+ Da ein Ziel dieser Arbeit die Erstellung einer Produktempfehlung pro Enterprise
+ Pattern ist, werden die drei in der Umfage (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Umfrage"
 
 \end_inset
 
-) ausgewählten Produkte Entity Framework, Dapper und NHibernate basiert
- auf den Kriterien Benutzerfreundlichkeit, Plattformunterstützung, Performance,
- Toolunterstützung, Persistenzlayerpatternsupport, Modelgenerierung, Profiling-
- und Debuggingmöglichkeiten.
- Dabei wird je nach Kriterium auf Grund einer Tabelle der Gewinner erkoren
- oder einfach nur auf textueller Basis.
+) ausgewählten Produkte Entity Framework, Dapper und NHibernate auf Grund
+ der folgenden Kriterien miteinander im Detail verglichen:
+\end_layout
+
+\begin_layout Itemize
+Benutzerfreundlichkeit
+\end_layout
+
+\begin_layout Itemize
+Plattformunterstützung
+\end_layout
+
+\begin_layout Itemize
+Performance
+\end_layout
+
+\begin_layout Itemize
+Toolunterstützung
+\end_layout
+
+\begin_layout Itemize
+Persistenzlayerpatternsupport
+\end_layout
+
+\begin_layout Itemize
+Modelgenerierung
+\end_layout
+
+\begin_layout Itemize
+Profiling- und Debuggingmöglichkeiten
+\end_layout
+
+\begin_layout Standard
+Im Gegensatz zur Marktübersicht setzten alle Vergleiche voraus, dass mit
+ im Umgang mit den betrachteten OR-Mappern Erfahrung gesammelt wurde.
+ Diese Erfahrung wird mittels der Implementierung eines Persistenzlayers
+ innerhalb der serviceorientierten CRM-Applikation gewonnen (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Service-Oriented-CRM"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Da der objektive Vergleich nicht für alle Vergleichskriterien möglich ist
+ wird besonderen Wert auf die Erläuterung der Auswahl des jeweils führenden
+ Produktes gelegt.
  
 \end_layout
 
@@ -10906,16 +10954,57 @@ Benutzerfreundlichkeit
 \end_layout
 
 \begin_layout Standard
-Mit Benutzerfreundlichkeit ist der Ease of Use für einen Entwickler gemeint.
- Die Bewertung der Benutzerfreundlichkeit ist auch stark vom Geschmack des
- einzelnen Entwicklers ab.
- Ich persönlich präferiere zum Beispiel Fluent Interfaces da ich dann bereits
- vom Compiler gewarnt werde, falls ich mich beim Namen einer Eigenschaft
- verschrieben habe.
+Mit Benutzerfreundlichkeit ist der Bedienungskomfort für einen Entwickler
+ gemeint.
+ Dazu gehören die Einfachheit der Installation, die Unterstützung verschiedener
+ Mappingtechniken, der Aufwand zur Erstellung des Mappings sowie das Vorhandense
+in von Designern oder Assistenten.
+\end_layout
+
+\begin_layout Standard
+Die Bewertung der Benutzerfreundlichkeit ist hängt vom Geschmack und der
+ Präferenz jedes einzelnen Entwicklers ab und das Vergleichsresultat in
+ Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Kriterien-Benutzerfreundlichkeit"
+
+\end_inset
+
+ kann für einen anderen Entwickler durchaus andere Werte enthalten.
+ Ich persönlich präferiere zum Beispiel flüssige Schnittstellen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Flüssige Schnittstellen (in englisch Fluent Interfaces) bieten eine lesbarere
+ Implementierung einer API.
+ Mehr dazu unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.hanselman.com/blog/TheWeeklySourceCode14FluentInterfaceEdition.aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ da ich als Entwickler bereits vom Compiler gewarnt werde, falls ich mich
+ zum Beispiel beim Namen einer Eigenschaft eines Domänenobjekts verschrieben
+ habe.
  Andere Entwickler bevorzugen vielleicht XML-basiertes Mapping, da sie die
- baumartige Struktur von XML präferieren.
+ baumartige Struktur von XML bevorzugen.
  Wiederum andere Entwickler werden das Vorhandensein eines Mapping-Designers
- schätzen, da das Mapping abstrahiert wird.
+ schätzen, da das Mapping grafisch abstrahiert wird.
+ Aus diesem Grund sind gewisse Kriterien in dieser Kategorie stark von persönlic
+hen Vorlieben abhängig und die Wertung derselben nicht für jeden Entwickler
+ gleich.
 \end_layout
 
 \begin_layout Standard
@@ -10976,7 +11065,7 @@ NHibernate
 \begin_inset Text
 
 \begin_layout Plain Layout
-Fluent Interfaces
+Flüssige Schnittstellen
 \end_layout
 
 \end_inset
@@ -11103,7 +11192,7 @@ Ja
 \begin_inset Text
 
 \begin_layout Plain Layout
-Migrations
+Migrationen
 \end_layout
 
 \end_inset
@@ -11446,7 +11535,7 @@ Viel
 \begin_inset Text
 
 \begin_layout Plain Layout
-StackOverflow Posts
+StackOverflow Beiträge
 \end_layout
 
 \end_inset
@@ -11491,6 +11580,13 @@ StackOverflow Posts
 
 \begin_layout Plain Layout
 Kriterien Benutzerfreundlichkeit
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Kriterien-Benutzerfreundlichkeit"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11511,9 +11607,7 @@ status open
 
 
 \backslash
-footnotetext{Die Erweiterung Fluent NHibernate (siehe 
-\backslash
-url{http://www.fluentnhibernate.org/}) erlaubt flüssige Interfaces.}
+addtocounter{footnote}{-4}
 \end_layout
 
 \end_inset
@@ -11522,52 +11616,97 @@ url{http://www.fluentnhibernate.org/}) erlaubt flüssige Interfaces.}
 \end_layout
 
 \begin_layout Standard
-Wird später (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Toolunterstützung"
-
-\end_inset
-
-) noch im Detail behandelt
-\end_layout
-
-\begin_layout Standard
-Das kommerzielle Produkte NHibernate Designer (siehe 
-\begin_inset Flex URL
-status collapsed
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
 
-http://www.mindscapehq.com/products/nhdesigner
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{Die Erweiterung Fluent NHibernate (siehe 
+\backslash
+url{http://www.fluentnhibernate.org/}) erlaubt die Verwendung von flüssigen
+ Schnittstellen beim Erstellen der Mappings.}
 \end_layout
 
 \end_inset
 
-) bietet einen Modeldesigner.
+
 \end_layout
 
 \begin_layout Standard
-Ist in einem späteren Vergleich (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Monitoring"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{Wird später (siehe Kapitel 
+\backslash
+vref{sub:Toolunterstuetzung}) noch im Detail behandelt.}
+\end_layout
 
 \end_inset
 
-) eingehender betrachter
+
 \end_layout
 
 \begin_layout Standard
-NHibernate hat den grossen Vorteil das viele der für Hibernate zugeschnittenen
- 3rd-Party-Erweiterungen auch funktionieren und es eine grosse Nutzercommunity
- gibt.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{Das kommerziell verfügbare Produkt NHibernate Designer (siehe
+ 
+\backslash
+url{http://www.mindscapehq.com/products/nhdesigner}) bietet einen Modeldesigner.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{Wird in einem späteren Vergleich (siehe Kapitel 
+\backslash
+vref{sub:Monitoring}) eingehender betrachtet.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+NHibernate hat den grossen Vorteil das viele für Hibernate entwickelte Drittanbi
+etererweiterungen auch funktionieren und es eine grosse Entwicklercommunity
+ in Onlineforen wie StackOverflow gibt.
  Der klare Sieger dieser Kategorie ist jedoch das Entity Framework.
  Einerseits weil es Forward- und Reverse-Mapping beherrscht und einen sehr
- mächtigen, in Visual Studio mitgelieferten, Designer besitzt.
- Auch ist der Hilfestellungscontent auf der Seite von Microsoft bzw.
- der Erfahrungsschatz der Community auf Seiten wie StackOverflow ein gewichtiges
- Argument für die Wahl des Entity Frameworks als OR-Mapper.
+ mächtigen, in Microsofts Visual Studio integrierten, Designer mitliefert.
+ Auch ist die MSDN als erste Anlaufstelle für Dokumentation oder Tutorials
+ oder auch der Erfahrungsschatz der Community auf Seiten wie StackOverflow
+ ein gewichtiges Argument für die Wahl des Entity Frameworks als OR-Mapper.
 \end_layout
 
 \begin_layout Subsection
@@ -11575,9 +11714,12 @@ Plattformunterstützung
 \end_layout
 
 \begin_layout Standard
-Plattformunterstützung beschreibt die Unterstützung von Entwicklungsframeworks
- (.NET Framework, Java, usw.) sowie die Unterstützung von Datenbanken.
- 
+Das Kriterium Plattformunterstützung beschreibt die Unterstützung von Entwicklun
+gsframeworks (.NET Framework, Java, usw.) sowie die Unterstützung von Datenbankman
+agementsytemen der betrachteten OR-Mapper.
+ Die Werte für die einzelnen Kriterien stammen einerseits von den Produktewebsei
+ten der Hersteller und wurden mittels eigens implementierten Proof-of-Concepts
+ verifiziert.
 \end_layout
 
 \begin_layout Standard
@@ -11587,10 +11729,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="4">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="6cm">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -11633,7 +11776,7 @@ NHibernate
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11671,7 +11814,7 @@ Nein
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11709,7 +11852,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11747,7 +11890,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11785,7 +11928,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11823,7 +11966,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11861,7 +12004,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11899,7 +12042,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -11937,11 +12080,11 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Unterstützt JVM
+Unterstützt Java Virtual Machine
 \end_layout
 
 \end_inset
@@ -11969,23 +12112,14 @@ Nein
 
 \begin_layout Plain Layout
 Ja
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-NHibernate ist eine Portierung von Hibernate, einem Java OR-Mapper (siehe
- 
-\begin_inset Flex URL
-status collapsed
 
-\begin_layout Plain Layout
 
-http://www.hibernate.org/
-\end_layout
-
-\end_inset
-
-).
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -11997,7 +12131,7 @@ http://www.hibernate.org/
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12035,7 +12169,7 @@ Nein
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12073,7 +12207,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12111,7 +12245,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12125,11 +12259,14 @@ Unterstützt weitere Datenbankmanagementsysteme
 
 \begin_layout Plain Layout
 Ja
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Unterstützt auch SQLCE und weitere DBMS via Drittkomponentenanbieter
+
+
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -12144,11 +12281,14 @@ Unterstützt auch SQLCE und weitere DBMS via Drittkomponentenanbieter
 
 \begin_layout Plain Layout
 Ja
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Unterstützt auch SQLCE, Firebird und MySQL
+
+
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -12163,11 +12303,14 @@ Unterstützt auch SQLCE, Firebird und MySQL
 
 \begin_layout Plain Layout
 Ja
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Unterstützt auch Microsoft Access, Firebird, DB2, UDB, MySQL und SQLLite
+
+
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -12203,16 +12346,113 @@ Kriterien Plattformunterstützung
 \end_layout
 
 \begin_layout Standard
-Entity Framework und Dapper sind seit dem .NET Framework 3.5 verfügbar bzw.
- benutzen LINQ und Lamda-Expressions die mit dieser Version im .NET Framework
- eingeführt wurden.
- NHibernate ist hingegen schon seit dem .NET Framework 1.1 verfügbar, beim
- betrachten des Sourcecodes
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtocounter{footnote}{-4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{NHibernate ist eine Portierung von Hibernate, einem Java OR-Mapper
+ (siehe 
+\backslash
+url{http://www.hibernate.org/}).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{Unterstützt auch SQLCE und weitere DBMS via Drittkomponentenanbiete
+r.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{Unterstützt auch SQLCE, Firebird und MySQL.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+stepcounter{footnote}
+\backslash
+footnotetext{Unterstützt auch Microsoft Access, Firebird, DB2, UDB, MySQL
+ und SQLLite.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Entity Framework und Dapper benutzen als Basis das .NET Framework 3.5
+ da sie LINQ und Lamda-Expressions verwenden, welche mit dieser Version
+ im .NET Framework eingeführt wurden.
+ NHibernate ist hingegen schon seit dem .NET Framework 1.1 verfügbar da es
+ deutlich weniger moderne C# Sprachelemente verwendet als das Entity Framework
+ oder Dapper.
+ Dies, da es sich bei NHibernate um eine Portierung aus dem in Java geschriebene
+n Hibernate handelt.
+ Beim Betrachten des Sourcecodes
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Siehe 
+Der Sourcecode von NHibernate ist unter 
 \begin_inset Flex URL
 status collapsed
 
@@ -12223,34 +12463,52 @@ https://github.com/nhibernate/nhibernate-core
 
 \end_inset
 
+ zu finden.
+\end_layout
+
+\end_inset
+
+ ist es sehr viel schwieriger sich als Entwickler zurecht zu finden als
+ zum Beispiel innerhalb von Dappers Sourcecode
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://github.com/SamSaffron/dapper-dot-net
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
 \end_inset
 
- fällt jedoch auf dass es deutlich weniger elegant geschrieben wurde als
- zum Beispiel Dapper.
+.
  Auch kann die Kernbibliothek von NHibernate nicht direkt mit LINQ von Microsoft
- umgehen sondern musste einen eigenen LINQ-Provider implementieren.
+ umgehen sondern hat einen eigenen LINQ-Provider implementiert der nicht
+ in allen Belangen zu Microsofts Implementierung kompatibel ist.
 \end_layout
 
 \begin_layout Standard
-Da alle drei OR-Mapper auf Basis der DbProviderFactories die Datenbankverbindung
- aufbauen, sind alle grundsätzlich mit sämtlichen .NET Framework Data Providers
- kompatibel.
+NHibernate hat den grossen Vorteil das es eine Portierung des populären
+ Open-Source Projekts Hibernate ist, welches in Java entwickelt wurde.
+ Dadurch sind sämtliche Mapping- und Konfigurationsdateien, welche in NHibernate
+ erstellt wurden, mit dem Java-basierten Hibernate kompatibel und wiederverwendb
+ar.
+ Ausserdem unterstützt es das .NET Framework seit der Version 1.1, was einen
+ Vorteil im Umgang mit Legacyprojekten darstellt.
 \end_layout
 
 \begin_layout Standard
-NHibernate hat den grossen Vorteil dass es eine Portierung des sehr populären
- Hibernates ist, welches für Java entwickelt wurde.
- Dadurch sind sämtliche Mapping- und Konfigurationsdateien automatisch kompatibe
-l mit dem Java-basierten Hibernate.
-\end_layout
-
-\begin_layout Standard
-Auf Grund der frühen .NET Framework-Kompatibilität und Hibernate als Quelle
- der Portierung ist NHibernate als Gewinner der Plattformunterstützung hervorzuh
-eben.
+Auf Grund der frühen .NET Framework-Kompatibilität und Hibernate als Ausgangspunk
+t ist NHibernate als Gewinner der Kategorie Plattformunterstützung hervorzuheben.
 \end_layout
 
 \begin_layout Subsection
@@ -12377,10 +12635,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="16" columns="4">
+<lyxtabular version="3" rows="16" columns="5">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="6.5cm">
+<column alignment="center" valignment="top" width="2.4cm">
+<column alignment="center" valignment="top" width="2cm">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <row>
@@ -12388,7 +12647,16 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-Kriterium
+Performancemessung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl Ausführungen
 \end_layout
 
 \end_inset
@@ -12422,16 +12690,25 @@ NHibernate
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf eine Tabelle (1 Run)
+Ein Query auf eine Tabelle
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12460,16 +12737,25 @@ Performance eines Queries auf eine Tabelle (1 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf eine Tabelle (10 Run)
+Ein Query auf eine Tabelle
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12498,16 +12784,25 @@ Performance eines Queries auf eine Tabelle (10 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf eine Tabelle (100 Run)
+Ein Query auf eine Tabelle
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12536,16 +12831,25 @@ Performance eines Queries auf eine Tabelle (100 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf eine Tabelle (500 Run)
+Ein Query auf eine Tabelle
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12574,16 +12878,25 @@ Performance eines Queries auf eine Tabelle (500 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf eine Tabelle (1000 Run)
+Ein Query auf eine Tabelle
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12612,16 +12925,25 @@ Performance eines Queries auf eine Tabelle (1000 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf mehrere Tabellen (1 Run)
+Ein Query auf mehrere Tabellen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12650,16 +12972,25 @@ Performance eines Queries auf mehrere Tabellen (1 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf mehrere Tabellen (10 Run)
+Ein Query auf mehrere Tabellen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12688,16 +13019,25 @@ Performance eines Queries auf mehrere Tabellen (10 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf mehrere Tabellen (100 Run)
+Ein Query auf mehrere Tabellen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12726,16 +13066,25 @@ Performance eines Queries auf mehrere Tabellen (100 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf mehrere Tabellen (500 Run)
+Ein Query auf mehrere Tabellen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12764,16 +13113,25 @@ Performance eines Queries auf mehrere Tabellen (500 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance eines Queries auf mehrere Tabellen (1000 Run)
+Ein Query auf mehrere Tabellen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12802,16 +13160,25 @@ Performance eines Queries auf mehrere Tabellen (1000 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance Einfügen, Aktualisieren und Löschen (1 Run)
+Einfügen, Aktualisieren und Löschen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12840,16 +13207,25 @@ Performance Einfügen, Aktualisieren und Löschen (1 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance Einfügen, Aktualisieren und Löschen (10 Run)
+Einfügen, Aktualisieren und Löschen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12878,16 +13254,25 @@ Performance Einfügen, Aktualisieren und Löschen (10 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance Einfügen, Aktualisieren und Löschen (100 Run)
+Einfügen, Aktualisieren und Löschen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12916,16 +13301,25 @@ Performance Einfügen, Aktualisieren und Löschen (100 Run)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance Einfügen, Aktualisieren und Löschen (500 Run)
+Einfügen, Aktualisieren und Löschen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -12954,11 +13348,20 @@ Performance Einfügen, Aktualisieren und Löschen (500 Run)
 </cell>
 </row>
 <row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Einfügen, Aktualisieren und Löschen
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance Einfügen, Aktualisieren und Löschen (1000 Run)
+1000
 \end_layout
 
 \end_inset
@@ -13030,7 +13433,7 @@ In diesem Vergleich zeigt sich sehr stark der Unterschied zwischen eine
 Toolunterstützung
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Toolunterstützung"
+name "sub:Toolunterstuetzung"
 
 \end_inset
 
@@ -13609,7 +14012,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/Komponentendiagramm.png
-	display false
 	scale 50
 
 \end_inset
@@ -13828,7 +14230,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/Domänenmodell.png
-	display false
 	scale 50
 
 \end_inset
@@ -13912,10 +14313,10 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13924,7 +14325,7 @@ Methode
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13935,7 +14336,7 @@ Aufgabe
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13944,7 +14345,7 @@ CreateUser
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13955,7 +14356,7 @@ Erstellt einen neuen Benutzer mit den übergebenen Werten
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13964,7 +14365,7 @@ DeleteUser
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13975,7 +14376,7 @@ Löscht einen Benutzer auf Basis der ObjectId
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13984,7 +14385,7 @@ GetAllRoles
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -13995,7 +14396,7 @@ Gibt alle Rollen zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14004,7 +14405,7 @@ GetAllUsers
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14015,7 +14416,7 @@ Gibt alle Benutzer zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14024,7 +14425,7 @@ GetUserByCredentials
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14035,7 +14436,7 @@ Gibt einen Benutzer auf Grund seiner Benutzerinformationen zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14044,7 +14445,7 @@ GetUserByObjectId
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14055,7 +14456,7 @@ Gibt einen Benutzer auf Grund seiner ObjectId zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14064,7 +14465,7 @@ GetUsersByRole
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14075,7 +14476,7 @@ Gibt Benutzer auf Grund ihrer Rolle zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14084,7 +14485,7 @@ GetUsersByRoleAndUserName
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14095,7 +14496,7 @@ Gibt Benutzer auf Grund ihrer Rolle und Benutzernamen zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14104,7 +14505,7 @@ SetPassword
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14115,7 +14516,7 @@ Setzt das Password für einen bestimmten Benutzer
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14124,7 +14525,7 @@ ValidateCredentials
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14169,7 +14570,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/ISecurityService.png
-	display false
 	scale 50
 
 \end_inset
@@ -14216,10 +14616,10 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="19" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14228,7 +14628,7 @@ Methode
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14239,7 +14639,7 @@ Aufgabe
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14248,7 +14648,7 @@ CreateCompany
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14259,7 +14659,7 @@ Erstellt eine neue Firma mit den übergebenen Werten
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14268,7 +14668,7 @@ CreateEMailAddress
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14279,7 +14679,7 @@ Erstellt eine neue E-Mail-Adresse für einen Kunden
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14288,7 +14688,7 @@ CreatePerson
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14299,7 +14699,7 @@ Erstellt einen neuen Kunden mit den übergebenen Werten
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14308,7 +14708,7 @@ CreatePhoneNumber
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14319,7 +14719,7 @@ Erstellt eine neue Telefonnummer für einen Kunden
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14328,7 +14728,7 @@ DeleteCompany
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14339,7 +14739,7 @@ Löscht eine Firma auf Basis ihrer ObjectId
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14348,7 +14748,7 @@ DeleteEMailAddress
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14359,7 +14759,7 @@ Löscht eine E-Mail-Adresse auf Basis ihrer ObjectId
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14368,7 +14768,7 @@ DeletePerson
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14379,7 +14779,7 @@ Löscht einen Kunden auf Basis seiner ObjectId
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14388,7 +14788,7 @@ DeletePhoneNumber
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14399,7 +14799,7 @@ Löscht eine Telefonnummer auf Basis ihrer ObjectId
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14408,7 +14808,7 @@ GetAllCompanies
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14419,7 +14819,7 @@ Gibt alle Firmen zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14428,7 +14828,7 @@ GetAllCountries
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14439,7 +14839,7 @@ Gibt alle Länder zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14448,7 +14848,7 @@ GetAllEMailAddresses
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14459,7 +14859,7 @@ Gibt alle E-Mail-Adressen eines Kunden zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14468,7 +14868,7 @@ GetAllPersons
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14479,7 +14879,7 @@ Gibt alle Kunden zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14488,7 +14888,7 @@ GetAllPhoneNumbers
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14499,7 +14899,7 @@ Gibt alle Telefonnummern eines Kunden zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14508,7 +14908,7 @@ GetCompaniesByNameAndCountry
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14519,7 +14919,7 @@ Gibt alle Firmen auf Grund ihres Namen und des Landes zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14528,7 +14928,7 @@ GetCompanyByObjectId
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14539,7 +14939,7 @@ Gibt eine Firma auf Grund ihrer ObjectId zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14548,7 +14948,7 @@ GetContactTypes
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14559,7 +14959,7 @@ Gibt alle Kontaktarten zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14568,7 +14968,7 @@ GetPersonByObjectId
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14579,7 +14979,7 @@ Gibt einen Kunden auf Grund seiner ObjectId zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14588,7 +14988,7 @@ GetPersonsByNameAndCompany
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14632,7 +15032,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/ICustomerService.png
-	display false
 	scale 50
 
 \end_inset
@@ -14679,10 +15078,10 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14691,7 +15090,7 @@ Methode
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14702,7 +15101,7 @@ Aufgabe
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14711,7 +15110,7 @@ CreateContact
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14722,7 +15121,7 @@ Erstellt einen Kontakt für einen Kunden mit den übergebenen Werten
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14731,7 +15130,7 @@ DeleteContact
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14742,7 +15141,7 @@ Löscht einen Kontakt auf Grund seiner ObjectId
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14751,7 +15150,7 @@ GetAllContactMediums
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14762,7 +15161,7 @@ Gibt alle Kontaktmedien zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14771,7 +15170,7 @@ GetContactByObjectId
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14782,7 +15181,7 @@ Gibt einen Kontakt auf Grund seiner ObjectId zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14791,7 +15190,7 @@ GetContactsByCompany
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14802,7 +15201,7 @@ Gibt Kontakte auf Grund des Arbeitgebers des Kunden zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14811,7 +15210,7 @@ GetContactsByContactMedium
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14822,7 +15221,7 @@ Gibt Kontakte auf Grund des Kontaktmediums zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14831,7 +15230,7 @@ GetContactsByContactMediumAndPersonName
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14842,7 +15241,7 @@ Gibt Kontakte auf Grund des Kontaktmediums und des Kundennamen zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14851,7 +15250,7 @@ GetContactsByPerson
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14862,7 +15261,7 @@ Gibt Kontakte auf Grund des Kunden zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14871,7 +15270,7 @@ GetContactsByUser
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14915,7 +15314,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/IContactService.png
-	display false
 	scale 50
 
 \end_inset
@@ -14962,10 +15360,10 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14974,7 +15372,7 @@ Methode
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14985,7 +15383,7 @@ Aufgabe
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14994,7 +15392,7 @@ GetAllLogEvents
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15005,7 +15403,7 @@ Gibt alle Logeinträge zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15014,7 +15412,7 @@ GetAllSeverities
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15025,7 +15423,7 @@ Gibt alle Schweregrade zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15034,7 +15432,7 @@ GetLogEventByObjectId
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15045,7 +15443,7 @@ Gibt einen Logeintrag auf Grund seiner ObjectId zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15054,7 +15452,7 @@ GetLogEventsByServerity
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15065,7 +15463,7 @@ Gibt alle Logeinträge auf Grund ihres Schweregrads zurück
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15074,7 +15472,7 @@ LogEvent
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -15118,7 +15516,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/ILoggingService.png
-	display false
 	scale 50
 
 \end_inset
@@ -15250,7 +15647,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename Grafiken/Verteilungsdiagramm.png
-	display false
 	scale 50
 
 \end_inset
@@ -15303,6 +15699,13 @@ Produkteempfehlung
 
 \begin_layout Section
 Service Oriented CRM
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Service-Oriented-CRM"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
