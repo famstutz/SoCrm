@@ -94,8 +94,8 @@ Eidesstattliche Erklärung
 \end_layout
 
 \begin_layout Standard
-Hiermit bestätigt der Unterzeichnende, dass die Bachelorarbeit mit dem Thema
- 
+Hiermit bestätigt die oder der Unterzeichnende, dass die Bachelorarbeit
+ mit dem Thema 
 \begin_inset Quotes eld
 \end_inset
 
@@ -103,7 +103,7 @@ Vergleich von objektrelationalen Mappern
 \begin_inset Quotes erd
 \end_inset
 
- gemäss freigegebener Aufgabenstellung vom 8.
+ gemäss freigegebener Aufgabenstellung mit Freigabe vom 8.
  Januar 2013 ohne jede fremde Hilfe im Rahmen des gültigen Reglements selbständi
 g ausgeführt wurde.
 \end_layout
@@ -3440,7 +3440,7 @@ name "tab:Anforderungen-Active-Record"
 \end_layout
 
 \begin_layout Section
-Anforderungen CRM-Applikation
+Anforderungen serviceorientierte CRM-Applikation
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Anforderungen-CRM-Applikation"
@@ -14461,17 +14461,16 @@ reference "fig:Klassendiagramm-Domänenmodell-So"
 ) umfasst nur die Klassen der Objekte, die über die Serviceschnittstelle
  von WCF zwischen dem Persistenzlayer und dem Orchestrationlayer sowie zwischen
  dem Orchestrationlayer und dem Presentationlayer übertragen werden.
- Die Domänenobjekte die im Domänemodell dargestellt sind, stellen das Domain
- Model des System SoCrm dar.
+ Die Domänenobjekte welche im Domänemodell dargestellt sind, stellen das
+ Domain Model des Systems SoCrm dar.
  
 \end_layout
 
 \begin_layout Standard
-Alle Domänenobjekte (oder Entitäten) implementieren die Schnittstelle IDomainObj
-ect.
- Diese Schnittstelle garantiert, dass jedes Domänenobjekt eine ObjectId
- in Form einer Guid besitzt sowie die beiden Felder CreationTimeStamp und
- LastUpdateTimeStamp.
+Alle Domänenobjekte (auch Entitäten genannt) implementieren die Schnittstelle
+ IDomainObject.
+ Diese Schnittstelle garantiert, dass jedes Domänenobjekt einen eindeutigen
+ Identifikator ObjectId in Form einer Guid besitzt.
  Die Basisklasse aller Domänenobjekte, die Klasse DomainObject, implementiert
  dieses Interface.
 \end_layout
@@ -14479,183 +14478,25 @@ ect.
 \begin_layout Standard
 Die wichtigsten Domänenobjekte werden nachfolgend kurz erklärt.
  Die Klasse Person steht für einen einzelnen Kunden.
- Der Kunde kann einen Arbei
+ Der Kunde kann eine Firma (Klasse Company) als Arbeitgeber besitzen.
+ Jede Person und jede Firma beinhalten eine Adresse (Klasse Address), welche
+ als Komposition modelliert ist.
+ Zusätzlich kann jede Person mehrere E-Mail-Adressen (EMailAddress) und
+ Telefonnummern (PhoneNumber) als Kontaktmöglichkeiten haben.
 \end_layout
 
 \begin_layout Standard
-----
-\end_layout
-
-\begin_layout Standard
-von der Client
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Client"
-description "Ein Client (oder Clientapplikation) ist eine Softwareanwendung die im Gegensatz zu einer Serverapplikation auf dem Rechner des Benutzers ausgeführt wird."
-
-\end_inset
-
-- an die Serverapplikation
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Server"
-description "Ein Server (auch Serverapplikation) ist eine serverseitige Anwendung die auf einem zentralen Computer (Server) ausgeführt wird."
-
-\end_inset
-
- beziehungsweise umgekehrt übertragen werden.
- 
-\end_layout
-
-\begin_layout Standard
-YAEM verwendet ein vergleichsweise simples Domänenmodell.
- Jeder Benutzer wird als 
-\emph on
-User
-\emph default
-objekt im Repository
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Repository"
-description "Ein Repository ist ein Verzeichnis zur Speicherung von digitalen Objekten. In diesem Kontext ist ein Repository eine Datenbank zur Speicherung und zum Wiederfinden von Objektinstanzen."
-
-\end_inset
-
- der Serverapplikation gespeichert.
- Bei erfolgreichem Gesprächsbeitritt erstellt die Serverapplikation ein
- 
-\emph on
-Ticket
-\emph default
-objekt, welches an die Clientapplikation zurückgegeben wird.
- Wird eine Nachricht versendet, so erstellt der Client ein 
-\emph on
-Message
-\emph default
-objekt, welches die Nachricht selbst als Bytearray
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Bytearray"
-description "Ein Bytearray ist eine Datenstruktur die als Container für Byte-Werte (ganzzahlige Werte von 0 bis 255) dient."
-
-\end_inset
-
- in der Eigenschaft 
-\emph on
-Payload
-\emph default
- speichert.
- Will der Benutzer eine verschlüsselte Nachricht versenden, so setzt er
- die Eigenschaft 
-\emph on
-Algorithm
-\emph default
- des 
-\emph on
-Message
-\emph default
-objekts auf einen Wert des Enumerators 
-\emph on
-CryptoAlgorithm
-\emph default
-, der ungleich 
-\emph on
-None
-\emph default
- ist.
- Wenn die Eigenschaft 
-\emph on
-Algorithm
-\emph default
- gesetzt ist, so muss der Benutzer den 
-\emph on
-Payload
-\emph default
- verschlüsselt in der 
-\emph on
-Message
-\emph default
- ablegen.
-\end_layout
-
-\begin_layout Standard
-Sämtliche Domänenobjekte leiten von der Klasse 
-\emph on
-ObjectBase
-\emph default
- ab.
- 
-\emph on
-ObjectBase
-\emph default
- enthält eine Eigenschaft 
-\emph on
-Key
-\emph default
- in Form einer Globally Unique Identifier
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Globally Unique Identifier"
-description "Ein Globally Unique Identifier (auch GUID genannt) ist eine eindeutige, 128 Bit lange Zahl, die zur Identifzierung von Objekten in verteilten Systemen dient."
-
-\end_inset
-
- zur eindeutigen Identifizierung der Objekte in den Repositories.
- Weiterhin implementiert 
-\emph on
-ObjectBase
-\emph default
- das Interface 
-\emph on
-INotifyPropertyChanged
-\emph default
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Die genaue Schnittstellenbeschreibung ist in der MSDN unter 
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged.
-aspx
-\end_layout
-
-\end_inset
-
- zu finden.
-\end_layout
-
-\end_inset
-
-, welches in der Windows Presentation Foundation
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "WPF"
-description "Windows Presentation Foundation (kurz WPF) ist ein Grafik-Framework das zusammen mit dem .NET Framework mitgeliefert wird und zur Darstellung von UI-Elementen dient."
-
-\end_inset
-
- und in Silverlight
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Silverlight"
-description "Silverlight ist eine Erweiterung für Webbrowser, welche die Ausführung von Rich Internet Applications erlaubt. Silverlight ist eine abgespeckte Version von WPF und wird für auch als Framework für Windows Phone 7 verwendet."
-
-\end_inset
-
- dazu dient, UI-Elemente, die an Datenobjekte gebunden sind, über geänderte
- Eigenschaften zu informieren.
+Für eine Person können Kontakte (Klasse Contact) erfasst werden, welche
+ neben der Person auch eine Beziehung zum erfassenden Benutzer (Klasse User)
+ besitzen.
+ Der User dient auch gleichzeitig zur Authentifizierung am System.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -14734,18 +14575,42 @@ name "par:ISecurityService"
 \end_layout
 
 \begin_layout Standard
+Über die Schnittstelle ISecurityService werden Informationen über die Benutzer
+ des Systems SoCrm ausgetauscht.
+ Mit Hilfe der Methode CreateUser können neue Benutzer im System erfasst
+ werden, welche mit der Methode DeleteUser auch wieder gelöscht werden können.
+ Die verschiedenen Get-Methoden ohne Übergabeparameter (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Methoden-von-ISecurityService"
+
+\end_inset
+
+) liefern Rollen oder Benutzer zurück.
+ Es sind auch verschiedene Get-Methoden mit vordefinierten Filtern auf der
+ Schnittstelle definiert, welche vom UI für verschiedene Views benötigt
+ werden.
+ Die Methode SetPassword ermöglicht es, das Passwort für einen bestimmten
+ Benutzer neu zu setzen.
+ Dazu wird jeweils auch das alte Passwort mit übergeben und validiert.
+ Die ValidateCredentials Methode übernimmt die Aufgabe der Validierung von
+ Benutzerdaten und liefert einen boolschen Wert zurück.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="2">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="5cm">
+<column alignment="left" valignment="top" width="9cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -14776,7 +14641,7 @@ CreateUser
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14796,7 +14661,7 @@ DeleteUser
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14816,7 +14681,7 @@ GetAllRoles
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14836,7 +14701,7 @@ GetAllUsers
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14856,11 +14721,11 @@ GetUserByCredentials
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gibt einen Benutzer auf Grund seiner Benutzerinformationen zurück
+Gibt einen Benutzer auf Grund seiner Benutzerinformationen zurü
 \end_layout
 
 \end_inset
@@ -14876,7 +14741,7 @@ GetUserByObjectId
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14896,7 +14761,7 @@ GetUsersByRole
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14916,7 +14781,7 @@ GetUsersByRoleAndUserName
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14936,7 +14801,7 @@ SetPassword
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -14979,6 +14844,13 @@ ValidateCredentials
 
 \begin_layout Plain Layout
 Methoden von ISecurityService
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Methoden-von-ISecurityService"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -14993,9 +14865,10 @@ Methoden von ISecurityService
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -15037,18 +14910,31 @@ name "par:ICustomerService"
 \end_layout
 
 \begin_layout Standard
+Die Schnittstelle ICustomerService wird vom Orchestrationlayer offeriert
+ um Kundendaten zur Verfügung zu stellen.
+ Die vier Create-Methoden erstellen entweder eine neue Firma, eine neue
+ E-Mail-Adresse, einen neuen Kunden oder eine neue Telefonnummer.
+ Es sind auch die dazugehörigen Delete-Methoden auf der Schnittstelle definiert.
+ Die GetAll-Methoden liefern wie der Name schon sagt jeweils alle Entitäten
+ des jeweiligen Typs als IEnumerable<T> zurück.
+ Zusätzlich sind mehrere parameterisierte Get-Methoden definiert, welche
+ dem UI für Spezialfälle gefilterte Listen zurückgeben.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="19" columns="2">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="5cm">
+<column alignment="left" valignment="top" width="9cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -15334,7 +15220,11 @@ Gibt alle Telefonnummern eines Kunden zurück
 \begin_inset Text
 
 \begin_layout Plain Layout
-GetCompaniesByNameAndCountry
+GetCompaniesByName
+\begin_inset Newline newline
+\end_inset
+
+AndCountry
 \end_layout
 
 \end_inset
@@ -15414,7 +15304,11 @@ Gibt einen Kunden auf Grund seiner ObjectId zurück
 \begin_inset Text
 
 \begin_layout Plain Layout
-GetPersonsByNameAndCompany
+GetPersonsByName
+\begin_inset Newline newline
+\end_inset
+
+AndCompany
 \end_layout
 
 \end_inset
@@ -15455,9 +15349,10 @@ Methoden von ICustomerService
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -15499,18 +15394,30 @@ name "par:IContactService"
 \end_layout
 
 \begin_layout Standard
+Die vom Contact Service im Orchestrationlayer offerierte Schnittstelle IContactS
+ervice liefert Informationen zu den Kontakten eines Kunden.
+ Die Methode CreateContact erstellt einen neuen Kontakt.
+ Die Methode DeleteContact ermöglicht es dem UI einen Kontakt zu löschen.
+ Über einen Aufruf an GetAllContactMediums werden alle möglichen Kontaktmedien
+ zurückgegeben.
+ Die Get-Methoden geben gefilterte List von Kontakten zurück auf Basis der
+ übergebenen Parameter.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="2">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="5cm">
+<column alignment="left" valignment="top" width="9cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -15656,7 +15563,11 @@ Gibt Kontakte auf Grund des Kontaktmediums zurück
 \begin_inset Text
 
 \begin_layout Plain Layout
-GetContactsByContactMediumAndPersonName
+GetContactsByContactMedium
+\begin_inset Newline newline
+\end_inset
+
+AndPersonName
 \end_layout
 
 \end_inset
@@ -15737,9 +15648,10 @@ Methoden von IContactService
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -15781,18 +15693,31 @@ name "par:ILoggingService"
 \end_layout
 
 \begin_layout Standard
+Die Schnittstelle ILoggingService wird innerhalb des Orchestrationlayers
+ vom Logging Service implementiert und erlaubt es der Benutzeroberfläche
+ oder anderen Services Logeinträge zu schreiben beziehungsweise diese auszulesen.
+ Die GetAll-Methoden geben jeweils ungefiltert die gesamte Liste von verfügbaren
+ Logeinträgen bzw.
+ den möglichen Schweregraden zurück.
+ Die beiden Get-Methoden liefern gefilterte Listen zurück.
+ Über den Aufruf der Methode LogEvent könen neue Logeinträge dem System
+ hinzugefügt werden.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="5cm">
+<column alignment="left" valignment="top" width="9cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -15939,9 +15864,10 @@ Methoden von ILoggingService
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -15988,11 +15914,8 @@ key "Starke2011"
  Dabei kommen wichtige Aspekte des Systembetriebs ins Spiel, die beispielsweise
  den Systemstart, die Laufzeitkonfiguration oder die Administration des
  Systems betreffen.
-\end_layout
-
-\begin_layout Standard
-Darüber hinaus dokumentiert die Laufzeitsicht, wie Laufzeitkomponenten sich
- aus Instanzen von Implementierungsbausteinen zusammensetzen.
+ Darüber hinaus dokumentiert die Laufzeitsicht, wie Laufzeitkomponenten
+ sich aus Instanzen von Implementierungsbausteinen zusammensetzen.
  
 \end_layout
 
@@ -16038,13 +15961,13 @@ Die Verteilungssicht dieser Projektdokumentation enthält nur ein sehr rudiment�
  ausgearbeitetes Verteilungsdiagramm (siehe Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Verteilungsdiagramm"
+reference "fig:Verteilungsdiagramm-SoCrm"
 
 \end_inset
 
 ).
- Dies, da kein konkretes Verteilungsszenario der Applikation innerhalb des
- Projekts geplant wurde.
+ Dies, da kein konkretes Verteilungsszenario der Applikation innerhalb dieser
+ Arbeit geplant wird.
  Das Projekt beeinhaltet die Erarbeitung des Konzepts sowie die konkrete
  Implementierung der Applikation ohne jedoch auf die Verteilung des Systems
  einzugehen.
@@ -16052,33 +15975,36 @@ reference "fig:Verteilungsdiagramm"
 \end_layout
 
 \begin_layout Standard
-Generell können die einzelnen Clientapplikationen auf jeglicher Hardware
- laufen, benötigen jedoch jeweils das passende Betriebssystem beziehungsweise
- im Fall des Silverlight-Clients einen Browser mit Silverlight-Plugin.
- Zwischen den Clientapplikationen und der Serverapplikation in Form des
- Servicehosts wird eine Netzwerkverbindung vorausgesetzt bei welcher die
- passenden Ports (siehe Binding Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Bindings"
+Generell sind die drei verschiedenen Layer Presentationlayer, Orchestrationlayer
+ und Infrastructurelayer unabhängig voneinander verteilbar.
+ Sie können auf verschiedenen Rechner verteilt werden, auch eine Verteilung
+ über das Internet wäre möglich.
+ Der Orchestrationlayer und der Infrastructurelayer sind als WCF Service
+ Applikationen implementiert und benötigen deshalb einen IIS als Ausführungsumge
+bung.
+ Aus Performancegründen macht es Sinn wenn der Infrastructureserver im gleichen
+ Netzwerk wie der Datenbankserver ist, so dass bei Abfragen an die Datenbank
+ keine allzu grosse Latenz entsteht.
+\end_layout
 
-\end_inset
-
-) geöffnet und zugänglich sind.
- Auch ist eine Verteilung über das WWW denkbar.
+\begin_layout Standard
+Die Clientapplikation App ist eine WPF-Anwendung die auf jedem beliebigen
+ Windows Betriebssystem verteilt werden kann.
+ Das einzig notwendig ist eine Änderung der Konfiguration der Endpunkte
+ der Orchestrationlayerservices.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Grafiken/Verteilungsdiagramm.png
-	scale 50
+	scale 45
 
 \end_inset
 
@@ -16089,7 +16015,14 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Verteilungsdiagramm SoCRM
+Verteilungsdiagramm SoCrm
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Verteilungsdiagramm-SoCrm"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -16111,6 +16044,20 @@ name "chap:Implementierung"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Das Kapitel Implementierung beschäftigt sich mit der abschliessenden Evaluierung
+ der selektierten OR-Mapper aus den vorgehenden Kapiteln und erstellt eine
+ Produktempfehlung auf Basis der Vergleiche sowie der erhobenen Anforderungen
+ an den Persistenzlayer sowie die Enterprise Pattern.
+\end_layout
+
+\begin_layout Standard
+Anschleissend wird die Implementierung des Proof-of-Concepts SoCrm im Detail
+ vorgestellt.
+ Es werden die einzelnen Visual Studio Projekte als Teilkomponenten im Detail
+ beleuchtet und die festgelegten Implementierungsprinzipien vorgestellt.
 \end_layout
 
 \begin_layout Section
@@ -16146,25 +16093,63 @@ name "sec:Service-Oriented-CRM"
 
 \end_layout
 
+\begin_layout Standard
+In diesem Kapitel wird die Implementierung der serviceorientierten CRM-Applikati
+on beschrieben.
+ Es werden zunächst die Vorgaben an die Entwicklung festgehalten.
+ Dazu gehören Richtlinien wie zum Beispiel der Aufbau der Visual Studio
+ Solution oder auch die Wahl des UI-Patterns.
+ In einem zweiten Unterkapitel werden die einzelnen Projekte der Visual
+ Studio Solution im Detail beschrieben und als Klassendiagramme dargestellt.
+\end_layout
+
+\begin_layout Standard
+Das Ziel dieses Kapitels ist es einerseits dem Leser einen Überblick über
+ die Implementierung des Proof-of-Concepts zu geben und andererseits die
+ getroffenen Entscheidungen während der Entwicklung explizit zu machen.
+\end_layout
+
 \begin_layout Subsection
-Designprinzipien
+Implementierungsprinzipien
+\end_layout
+
+\begin_layout Standard
+Unter Implementierungsprinzipien werden Richtlinien verstanden, die während
+ der Implementierung eines Projekts von den Softwareentwicklern beachtet
+ werden soll.
+ Häufig sind diese Implementierungs- oder Designprinzipien durch den Software
+ Architekten oder Lead Developer vorgegeben und werden von diesen auch Überwacht.
+\end_layout
+
+\begin_layout Standard
+Die nachfolgende Liste beschreibt die in der Implementierung der serviceorientie
+rten CRM-Applikation SoCrm beachteten Implementierungsprinzipien:
+\end_layout
+
+\begin_layout Itemize
+Die Namen der Assemblies und der darin enthaltenen Namespaces müssen zwigend
+ übereinstimmen.
+ Stimmen diese nicht überein müssen in der Dokumentation jeweils neben dem
+ Namen des Assemblies auch noch der vollqualifizierte Namen eines Typs angegeben
+ werden um eine eindeutige Zuweisung zu ermöglichen.
 \end_layout
 
 \begin_layout Itemize
 Sämtliche Interfaces und Entitäten sind in eigenen Klassenbibliotheken abgelegt.
- Dies um die Wiederverwendbarkeit zu erhöhen und die Assemblygrösse zu verkleine
-rn.
- Die Service Referenzen zwischen den Projekten und den Web Services verwenden
- immer diese Assemblies anstatt die Entitäten aus dem WSDL des Services
- zu erzeugen.
+ Dies, um die Wiederverwendbarkeit zu erhöhen und die Grösse der verteilten
+ und mehrfach verwendeten Assemblies zu minimieren.
+ Service Referenzen in Projekten, welche Web Services verwenden, benutzen
+ immer die Typen dieser Assemblies anstatt die Entitäten aus dem WSDL der
+ Service Referenz zu erzeugen.
 \end_layout
 
 \begin_layout Itemize
 Die Persistence-Services (in SoCrm.Infrastructure.Persistence) besitzen keinerlei
  Geschäftslogik sondern dienen rein dazu Objekte aus dem jeweils verwendeten
- ORM aus der Datenbank zu lesen, zu aktualisieren, hinzuzufügen bzw.
+ OR-Mapper aus der Datenbank zu lesen, zu aktualisieren, zu erstellen oder
  zu löschen.
- Sämtliche Geschäftslogik ist in den Services (in SoCrm.Services) implementiert.
+ Sämtliche Geschäftslogik ist in den Services des Orchestrationlayers (in
+ SoCrm.Services) implementiert.
 \end_layout
 
 \begin_layout Itemize
@@ -16176,24 +16161,45 @@ key "Skimp2012"
 \end_inset
 
 ).
- MVVM+C stellt eine Weiterentwicklung von MVVM dar und verschiebt die Erzeugung
- der View und des ViewModels in den Controller.
+ MVVM+C stellt eine Weiterentwicklung von MVVM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zum MVVM Entwurfsmuster im MSDN Magazine: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/magazine/dd419663.aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ dar und verschiebt die Erzeugung der View und des ViewModels in den Controller.
  Auch wird die Beziehung zwischen der View und dem ViewModel im Controller
  erzeugt und nicht mehr über das Binding gelöst.
 \end_layout
 
 \begin_layout Itemize
 Um dynamisch Views innerhalb einer Shell laden zu können sind alle Views
- als UserControls implementiert, welche in den ControlContainer der ShellView
- eingefügt werden können.
+ als UserControls implementiert, welche vom Controller in den ControlContainer
+ der ShellView zur Laufzeit eingefügt werden.
 \end_layout
 
 \begin_layout Itemize
 Die Serviceimplementierungen (.svc Code-Behind-Dateien) sollen möglichst
- schlank und entkoppelt sein.
+ schlank und lesbar sein da sie den ersten Anhaltspunkt für Entwickler darstelle
+n.
  Deswegen wird möglichst viel Logik in Basisklassen bzw.
- andere Orte ausgelagert insbesondere im Zusammenhang mit dem Zugriff auf
- ORMs.
+ weitere Objekte ausgelagert insbesondere im Zusammenhang mit dem Zugriff
+ auf die ORMs.
  Dadurch wird die Les- und Testbarkeit der Serviceimplementeirungen erhöht.
 \end_layout
 
@@ -16205,8 +16211,8 @@ Komponenten im Detail
 Dieses Kapitel beschreibt im Detail die Implementierung der einzelnen Komponente
 n.
  Dabei wird auf Besonderheiten in der Architektur der Komponenten hingewiesen
- und es wird ein gesamter technischer Überblick über die Umsetzung des Konzepts
- gegeben.
+ und es wird ein gesamtheitlicher technischer Überblick über die Umsetzung
+ des Konzepts gegeben.
 \end_layout
 
 \begin_layout Standard
@@ -16217,7 +16223,7 @@ reference "fig:Visual-Studio-Solution"
 
 \end_inset
 
- verwiesen, welche die Struktur Visual Studio-Solution darstellt.
+ verwiesen, welche die Struktur der verwendeten Visual Studio Solution darstellt.
  
 \end_layout
 
@@ -16377,8 +16383,8 @@ Für jeden Entitätstyp existiert ein Persistenzservice, wessen Interface
  in dieser Assembly abgelegt ist.
  Dabei erbt jedes Inteface von einem generischen Interface IPersistenceService<T
 >.
- Da WCF jedoch nicht ohne weiteres generische Interfaces unterstützt wurde
- für jeden Entitätstyp ein eigenes Persistence-Service Inteface erstellt.
+ Da WCF jedoch keine generischen Schnittstellen unterstützt wurde für jeden
+ Entitätstyp ein eigenes Persistence-Service Inteface erstellt.
 \end_layout
 
 \begin_layout Standard
@@ -16423,7 +16429,7 @@ SoCrm.Infrastructure.Persistence.Dapper
 Die Persistenzlayerimplementierung von Dapper in der WCF Service Application
  SoCrm.Infrastructure.Persistence.Dapper besteht aus einer Basisklasse PersistenceS
 erviceBase<T>, welche als Parameter den Entitätstypen akzeptiert, und den
- acht *PersistenceServices, welche jeweils einen eigenen WCF Service darstellen.
+ acht PersistenceServices, welche jeweils einen eigenen WCF Service darstellen.
  Jeder PersistenceService implementiert das entsprechende PersistenceService
  Interface aus SoCrm.Infrastructure.Persistence.Contracts und leitet von der
  PersistenceServiceBase ab.
@@ -16431,9 +16437,10 @@ erviceBase<T>, welche als Parameter den Entitätstypen akzeptiert, und den
 
 \begin_layout Standard
 Die PersistenceServiceBase beeinhaltet sämtliche Zugriffslogik auf Dapper
- um einzelne Entitäten zu Lesen und zu löschen, das Speichern und das Lesen
- von Objektgraphen ist im jeweiligen *PersistenceService implementiert da
- ein manuelles Mapping innerhalb von Dapper dafür notwendig ist.
+ um einzelne Entitäten zu lesen oder zu löschen.
+ Das Speichern und Lesen von Objektgraphen ist im jeweiligen PersistenceService
+ implementiert, da ein manuelles Mapping innerhalb von Dapper dafür notwendig
+ ist.
 \end_layout
 
 \begin_layout Subsubsection
@@ -16441,36 +16448,37 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 \end_layout
 
 \begin_layout Standard
-Die Persistenzlayerimplementierung von EntityFramework als WCF Service Applikati
-on in SoCrm.Infrastructure.Persistence.EntityFramework besitzt wiederum acht
- *PersistenceServices welche die entsprechendne Service-Inferfaces aus SoCrm.Infr
-astructure.Persistence.Contracts implementieren.
+Die Persistenzlayerimplementierung des Entity Frameworks als WCF Service
+ Applikation in SoCrm.Infrastructure.Persistence.EntityFramework besitzt wiederum
+ acht PersistenceServices welche die entsprechenden Service Contracts aus
+ SoCrm.Infrastructure.Persistence.Contracts implementieren.
  Sämtliche Logik ist dabei in der generischen Basisklasse PersistenceServiceBase
- abgelegt, die einzelnen *PersistenceServices sind leer und dienen lediglich
+ abgelegt, die einzelnen PersistenceServices sind leer und dienen lediglich
  als Endpoints für die WCF Services.
 \end_layout
 
 \begin_layout Standard
-Die PeristenceServiceBase kümmert sich um das vorbereiten der Entitäten
- (Validierung, setzen von Änderungsdatum und -Benutzer, usw.) und holt sich
- aus der DataServiceFactory den pro Entität spezfischen DataService.
- Der DataService interagiert mit dem jeweiligen ObjectContext des Entity
- Frameworks.
+Die PersistenceServiceBase kümmert sich um das Vorbereiten der Entitäten
+ (Validierung von Benutzerdaten, Setzen von Änderungsdatum und -Benutzer,
+ usw.) und holt sich aus der DataServiceFactory den pro Entität implementierten
+ DataService.
+ Der DataService kümmert sich dabei um die Interaktion des jeweiligen ObjectCont
+ext des Entity Frameworks.
 \end_layout
 
 \begin_layout Standard
-Aus Gründen der Übersichtlichkeit und ERweiterbarkeit wurden vier ObjectContexte
- eingeführt, einer für jede Funktionalität des Systems: SecurityContext,
- LoggingContext, CustomerContext und ContactContext.
+Aus Gründen der Übersichtlichkeit und Erweiterbarkeit wurden vier ObjectContexte
+ erstellt, einer für jede Funktionalität des Systems (SecurityContext, LoggingCo
+ntext, CustomerContext und ContactContext).
 \end_layout
 
 \begin_layout Standard
-Da das EntityFramework 5.0 verwendet wird, wurden die Entitäten Code-First
- entwickelt.
- Das EntityFramework bietet für den diesen Anwdungsfalls Migrationen an,
- welche von der PowerShell-Extension über die NuGet-Konsole erzeugt werden.
- Diese Migraitonen sind auch in dieser Assembly gespeichert im Namespace
- SoCrm.Infrastructure.Persistence.EntityFramework.Migrations.
+Da das Entity Framework in der Version 5.0 verwendet wird, wurden die Entitäten
+ Code-First entwickelt.
+ Das Entity Framework bietet für den dieses Szenario Migrationen an, welche
+ von der PowerShell-Extension über die NuGet-Konsole erzeugt werden.
+ Diese Migrationen sind im Namespace SoCrm.Infrastructure.Persistence.EntityFramewo
+rk.Migrations abgelegt.
 \end_layout
 
 \begin_layout Subsubsection
@@ -16480,17 +16488,17 @@ SoCrm.Infrastructure.Persistence.NHibernate
 \begin_layout Standard
 Die WCF Service Application SoCrm.Infrastructure.Persistence.NHibernate enthält
  die Persistenzlayerimplementeriung des ORMs NHibernate.
- Alle acht *PersistenceServices benutzen die PersistenceServiceBase<T> Klasse
+ Alle acht PersistenceServices benutzen die PersistenceServiceBase<T> Klasse
  als Basisklasse welche den Session-Container von NHibernate wrappt und
- diesen über den NHibernateHelper SessionFactory erzeugt.
+ diesen über die im NHibernateHelper gekapseltee SessionFactory erzeugt.
  Der NHibernateHelper erstellt die Mapping-Konfiguration von NHibernate
  und lädt alle Mappings der Entitäten.
 \end_layout
 
 \begin_layout Standard
-Die Mappings für alle Entitäten sind im Namespace SoCrm.Infrastructure.Persistence.
-NHibernate.Mappings abgelegt.
- Dabei werden FluentNHibernate
+Die Mappings aller Entitäten sind im Namespace SoCrm.Infrastructure.Persistence.NHi
+bernate.Mappings abgelegt.
+ Dabei wird FluentNHibernate
 \begin_inset Foot
 status open
 
@@ -16511,8 +16519,8 @@ http://www.fluentnhibernate.org/
 
 \end_inset
 
- verwendet um die XML-Konfiguration zu vereinfachen und den aufwand zu verkleine
-rn.
+ verwendet um die XML-Konfiguration zu vereinfachen und den Aufwand diese
+ zu Erstellen zu verkleinern.
  
 \end_layout
 
@@ -16538,6 +16546,7 @@ on-Assemblies registriert, welche wiederum die Controller und ViewModels
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16587,6 +16596,7 @@ iew und das CreateContactViewModel (enthält die Funktionalität zum Erstellen
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16595,7 +16605,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename Grafiken/SoCrm.Presentation.Contacts.png
-	scale 50
+	scale 45
 
 \end_inset
 
@@ -16625,12 +16635,16 @@ SoCrm.Presentation.Core
 
 \begin_layout Standard
 Diese Assembly enthält die gesamte Infrastruktur für die WPF Anwendung.
- Dazu gehören die Basisklassen für ViewModel und Controller als auch der
+ Dazu gehören die Basisklassen für ViewModels und Controller als auch der
  StatusBarService, welcher Nachrichten in der Statusbar der ShellView darstellt.
- Das RegionModel dient zum Darstellen der aktuellen View im ContentControl
- der ShellView.
- Die ViewModelBase implementiert das Interface INotifyPropertyChanged (siehe
- MSDN 
+ Das RegionModel dient zum Darstellen der aktuellen View (jeweils implementiert
+ als UserControl) im ContentControl der ShellView.
+ Die ViewModelBase implementiert das Interface INotifyPropertyChanged
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu INotifyPropertyChanged in der MSDN unter 
 \begin_inset Flex URL
 status collapsed
 
@@ -16642,11 +16656,17 @@ aspx
 
 \end_inset
 
-) welches das Binding bei geänderten Objektendaten im Modell benachrichtigt.
+.
+\end_layout
+
+\end_inset
+
+ welches das Binding bei geänderten Objektdaten im Modell benachrichtigt.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16684,14 +16704,29 @@ SoCrm.Presentation.Customers
 \end_layout
 
 \begin_layout Standard
-Die Assembly SoCrm.Infrastructure.Presentation.Customers enthält sämtlich Funktiona
-litäten für das Anzeigen Hinzufügen und Löschen von Kunden als auch Firmen.
- Alle Views und ViewModels werden über den CustomerController instanziiert
- und angezeigt.
+Die Assembly SoCrm.Infrastructure.Presentation.Customers enthält sämtliche
+ Funktionalität für das Anzeigen, Hinzufügen und Löschen von Kunden wie
+ auch für Firmen.
+ Alle Views und ViewModels werden über den CustomerController instanziert
+ und dem Benutzer der Applikation angezeigt.
+ Die komplexeste Funktionalität in diesem Presentationmodul ist das Hinzufügen
+ von neuen Kunden (CreatePersonView und CreatePersonViewModel).
+ Beim Erstellen eines neuen Kunden können dem Kunden über Subviews auch
+ Arbeitgeber (CreateCompanyView und CreateCompanyViewModel), E-Mail-Adressen
+ (CreateEMailAddressView und CreateEMailAddressViewModel) und Telefonnummern
+ (CreatePhoneNumberView und CreatePhoneNumberViewModel) hinzugefügt werden.
+\end_layout
+
+\begin_layout Standard
+Die Views CustomerListView und CompanyListView (sowie die dazugehörigen
+ ViewModels CustomerListViewModel und CompanyListViewModel) erlauben es
+ dem Benutzer Listen von Kunden bzw.
+ Firmen anzuzeigen und diese zu filtern.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16699,7 +16734,8 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Grafiken/SoCrm.Presentation.Customers.png
-	scale 50
+	scale 35
+	rotateAngle 90
 
 \end_inset
 
@@ -16736,11 +16772,20 @@ SoCrm.Infrastructure.Presentation.Security enthält die Views und ViewModels
  Das AuthenticationViewModel besitzt eine Referenz auf den AuthenticationService
  welcher als Singelton im Unity-Container registriert ist und den jeweils
  angemeldeten Benutzer verwaltet.
- Der SecurityController verwaltet die Instanziierung der Views und ViewModels.
+ Der SecurityController verwaltet wie in allen anderen Presentationmodulen
+ auch hier die Instanzierung der Views und ViewModels.
+\end_layout
+
+\begin_layout Standard
+Der Administrator kann über die CreateUserView und das CreateUserViewModel
+ neue Benutzer dem System hinzufügen.
+ Die UserListView und das UserListView dienen zum Anzeigen aller im System
+ vorhandenen Benutzern.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16749,7 +16794,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename Grafiken/SoCrm.Presentation.Security.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -16786,8 +16831,8 @@ reference "sub:SoCrm.Core.Contracts"
 
 \end_inset
 
-) erbt und das bereits im oberen Kapitel beschriebene Service-Interface
- IContactService (siehe Kapitel 
+) erbt und das bereits in einem vorherigen Kapitel beschriebene Service-Interfac
+e IContactService (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "par:IContactService"
@@ -16799,6 +16844,7 @@ reference "par:IContactService"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16837,7 +16883,8 @@ SoCrm.Services.Contacts.Provider
 
 \begin_layout Standard
 Die WCF Service Applikation SoCrm.Services.Contacts.Provider liefert die Implementi
-erung zum Service-Interface IContactService in SoCrm.Services.Contacts.Contracts.
+erung zum Service-Interface IContactService, das im Namespace SoCrm.Services.Conta
+cts.Contracts definiert ist.
  Der ContactService besitzt dabei seine eigene ContactServiceHostFactory
  die von ServiceHostFactory ableitet und den UnityServiceHost (siehe Kapitel
  
@@ -16847,11 +16894,11 @@ reference "sub:SoCrm.Core.Services"
 
 \end_inset
 
-) instaziiert und einen neuen Unity-Container erstellt.
- Der ContactService implementiert sämtliche Geschäftslogik betreffend Kontaktdat
-en und ruft den Persistenzservice für Kontakte (implementiert in einem der
- SoCrm.Infrastructure.Persistence.* Projekte) auf um die Entitäten aus dem
- Persistenzlayer zu lesen.
+) instaziert und einen neuen Unity-Container erstellt.
+ Der ContactService implementiert sämtliche Geschäftslogik betreffend der
+ Kontakte und ruft den Persistenzservice für Kontakte (implementiert in
+ einem der SoCrm.Infrastructure.Persistence-Projekte) auf, um die Entitäten
+ aus dem Persistenzlayer zu lesen.
  
 \end_layout
 
@@ -16860,9 +16907,9 @@ SoCrm.Services.Customers.Contracts
 \end_layout
 
 \begin_layout Standard
-Die Klassenbibliothek SoCrm.Services.Customers.Contracts beeinhaltet alle Entitäten
+Die Klassenbibliothek SoCrm.Services.Customers.Contracts enthält alle Entitäten
  den Kunden sowie Firmen betreffend.
- Ausserdem ist das Interface ICustomerService in diesere Assembly definiert
+ Ausserdem ist das Interface ICustomerService in dieser Assembly definiert
  (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -16876,6 +16923,7 @@ reference "par:ICustomerService"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16884,7 +16932,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename Grafiken/SoCrm.Services.Customers.Contracts.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -16915,9 +16963,10 @@ SoCrm.Services.Customers.Provider
 \begin_layout Standard
 SoCrm.Services.Customers.Provider ist eine WCF Service Applikation welche das
  Interface ICustomerService implementiert und auf die Persistenceservices
- IAddresPersistenceService, ICompanyPersistenceService, IEMailAddressPersistence
-Service, IPersonPersistenceService und IPhoneNumberPersistenceService zugreift.
- Es beeinhaltet alle Geschäftslogik um mit Personen und Firmen zu interagieren.
+ IAddressPersistenceService, ICompanyPersistenceService, IEMailAddressPersistenc
+eService, IPersonPersistenceService und IPhoneNumberPersistenceService zugreift.
+ Die Assembly beeinhaltet alle Geschäftslogik um mit Personen und Firmen
+ zu interagieren, diese zu Erstellen und zu Löschen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -16925,7 +16974,7 @@ SoCrm.Services.Logging.Contracts
 \end_layout
 
 \begin_layout Standard
-In der Assembly SoCrm.Services.Logging.Contracts enthält die Entität LogEvent
+Die Assembly SoCrm.Services.Logging.Contracts enthält die Entität LogEvent
  und das Service-Interface ILoggingService (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -16938,6 +16987,7 @@ reference "par:ILoggingService"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -16977,10 +17027,10 @@ SoCrm.Services.Logging.Provider
 \begin_layout Standard
 Die WCF Service Application SoCrm.Services.Logging.Provider beeinhaltet den
  LoggingService welcher das Service-Interface ILoggingService aus dem Namespace
- SoCrm.Services.Logging.Contracts.
+ SoCrm.Services.Logging.Contracts implementiert.
  Die Service Application nutzt dafür den Persistence-Service ILogEventPersistenc
-eService aus dem Persistenzlayer und implementiert die Geschäftslogik für
- den Umgang mit Logeinträgen.
+eService aus dem Infrastructurelayer und implementiert die Geschäftslogik
+ für den Umgang mit Logeinträgen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -16988,7 +17038,7 @@ SoCrm.Services.Security.Contracts
 \end_layout
 
 \begin_layout Standard
-Die Assembly SoCrm.Services.Security.Contracts definiert aus dem Service-Interface
+Die Assembly SoCrm.Services.Security.Contracts definiert das Service-Interface
  ISecurityService (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -16996,11 +17046,13 @@ reference "par:ISecurityService"
 
 \end_inset
 
-) auch die Entität User.
+) und auch sämtliche Entitäten, welche mit der Benutzerverwaltung verbunden
+ sind.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -17041,10 +17093,11 @@ SoCrm.Services.Security.Provider
 SoCrm.Services.Security.Provider ist eine WCF Service Application, welche den
  Service SecurityService enthält.
  Der SecurityService implementiert das Interface ISecurityService aus dem
- Namespace SoCrm.Services.Security.Contracts und enhält die Geschäftslogik
- für den Umgang mit Benutzern des Systems SoCRM.
+ Namespace SoCrm.Services.Security.Contracts und enthält die Geschäftslogik
+ für den Umgang mit Benutzern des Systems SoCrm.
  Der SecurityService seinerseits erhält seine Objekte aus dem Persistence-Servic
-e IUserPersistenceService.
+e IUserPersistenceService, welcher im Infrastructurelayer implementiert
+ ist.
 \end_layout
 
 \begin_layout Chapter
@@ -17094,23 +17147,6 @@ Unit-Tests (auch Komponententests genannt) überprüfen, ob die von Entwicklern
  Das lässt sich nur erreichen, wenn die Tests vollständig automatisiert
  vorliegen, sie also selbst ein Programm sind, dessen Ausführung nicht mehr
  Aufwand als einen Knopfdruck erfordert.
- Insbesondere in der testgetriebenen Entwicklung (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Testgetriebene-Entwicklung"
-
-\end_inset
-
-) werden Unit-Tests auch als Regressionstests nach Refactoring verwendet.
- 
-\end_layout
-
-\begin_layout Standard
-Durch die testgetriebene Entwicklung von YAEM werden alle implementierten
- Komponenten schon vorgängig mit Unit-Tests abgedeckt.
- Die Unit-Tests sind dabei in einem eigenen Visual Studio-Projekt innerhalb
- der Solution untergebracht und werden nicht zusammen mit dem produktiven
- Code verteilt.
 \end_layout
 
 \begin_layout Subsection
@@ -17132,17 +17168,16 @@ eise ungenügend getestet) sind.
 Die Persistenzlayerimplementierungen SoCrm.Infrastructure.Persistence.Dapper,
  SoCrm.Infrastructure.Persistence.EntityFramework und SoCrm.Infrastructure.Persistenc
 e.NHibernate wurden aus Zeitgründen nicht automatisiert über Unit Tests getestet.
- Dies da insbesondere in NHibernate und EntityFramwork es sehr aufwendig
- ist die Session bzw.
- den ObjectContext zu mocken und der Persistenzlayer implizit in den Akzeptanzte
-st (siehe Kapitel 
+ Dies es die OR-Mapper NHibernate und Entity Framework einen eigenen Datencontai
+ner zur Verfügung ist, der sehr aufwendig zu mocken ist und der Persistenzlayer
+ implizit in den Akzeptanztest (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Akzeptanztests"
 
 \end_inset
 
-) getestet wird.
+) mitgetestet wird.
 \end_layout
 
 \begin_layout Standard
@@ -17153,12 +17188,24 @@ reference "tab:Testabdeckung"
 
 \end_inset
 
- ersichtlich ist, beträgt die totale Testabdeckung (ohne den Persistenzlayer)
- 85%.
+ ersichtlich ist, beträgt die totale Testabdeckung des Systems (ohne den
+ Persistenzlayer) 85%.
+ Laut 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cornett2011"
+
+\end_inset
+
+ ist eine Code Coverage von 70-80% eine angemessene Abdeckung mit automatisierte
+n Unit Tests.
+ Abbildung XX enthält als Beweis einen Screenshot der ausgeführten Testsuite
+ von SoCrm.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -17169,9 +17216,9 @@ status open
 <lyxtabular version="3" rows="20" columns="4">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="1.9cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -17182,7 +17229,7 @@ Namespace
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17191,7 +17238,7 @@ Codeblöcke
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17200,7 +17247,7 @@ Getestet (Blöcke)
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17220,7 +17267,7 @@ SoCrm.Core.Contracts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17229,7 +17276,7 @@ SoCrm.Core.Contracts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17238,7 +17285,7 @@ SoCrm.Core.Contracts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17258,7 +17305,7 @@ SoCrm.Core.Services
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17267,7 +17314,7 @@ SoCrm.Core.Services
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17276,7 +17323,7 @@ SoCrm.Core.Services
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17296,7 +17343,7 @@ SoCrm.Infrastructure.Persistence.Contracts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17305,7 +17352,7 @@ SoCrm.Infrastructure.Persistence.Contracts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17314,7 +17361,7 @@ SoCrm.Infrastructure.Persistence.Contracts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17334,7 +17381,7 @@ SoCrm.Infrastructure.Persistence.Dapper
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17343,7 +17390,7 @@ SoCrm.Infrastructure.Persistence.Dapper
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17352,7 +17399,7 @@ SoCrm.Infrastructure.Persistence.Dapper
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17372,7 +17419,7 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17381,7 +17428,7 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17390,7 +17437,7 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17410,7 +17457,7 @@ SoCrm.Infrastructure.Persistence.NHibernate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17419,7 +17466,7 @@ SoCrm.Infrastructure.Persistence.NHibernate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17428,7 +17475,7 @@ SoCrm.Infrastructure.Persistence.NHibernate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17448,7 +17495,7 @@ SoCrm.Presentation.App
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17457,7 +17504,7 @@ SoCrm.Presentation.App
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17466,7 +17513,7 @@ SoCrm.Presentation.App
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17486,7 +17533,7 @@ SoCrm.Presentation.Contacts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17495,7 +17542,7 @@ SoCrm.Presentation.Contacts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17504,7 +17551,7 @@ SoCrm.Presentation.Contacts
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17533,7 +17580,7 @@ SoCrm.Presentation.Core
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17571,7 +17618,7 @@ SoCrm.Presentation.Customers
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17609,7 +17656,7 @@ SoCrm.Presentation.Security
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17647,7 +17694,7 @@ SoCrm.Services.Contacts.Contracts
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17685,7 +17732,7 @@ SoCrm.Services.Contacts.Provider
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17723,7 +17770,7 @@ SoCrm.Services.Customers.Contracts
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17761,7 +17808,7 @@ SoCrm.Services.Customers.Provider
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17799,7 +17846,7 @@ SoCrm.Services.Logging.Contracts
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17837,7 +17884,7 @@ SoCrm.Services.Logging.Provider
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17875,7 +17922,7 @@ SoCrm.Services.Security.Contracts
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -17999,7 +18046,7 @@ description "Ein Black-Box-Test bezeichnet einen Test ohne Kenntnisse über die 
  
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "sec:Use-Case-Spezifikationen"
+reference "sec:Anforderungen-CRM-Applikation"
 
 \end_inset
 
@@ -18047,19 +18094,15 @@ Senden
 \end_layout
 
 \begin_layout Standard
-Die Anforderungen in den Use-Cases UC1 bis UC4 aus den Use-Case-Spezifikationen
- werden als Coded UI-Tests ausformuliert und im Visual Studio-Projekt 
-\emph on
-YAEM.AcceptanceTests
-\emph default
- abgelegt.
- Beim Ausführen einer der Coded UI-Tests wird automatisch die Serverapplikation
- sowie die Clientapplikation gestartet und der jeweilige Testfall wird als
- Skript abgearbeitet.
+Die Anforderungen in den Use-Cases UC1 bis UC14 aus den Use-Case-Spezifikationen
+ werden als Coded UI-Tests ausformuliert und im Visual Studio-Projekt SoCrm.Tests.
+AcceptanceTests abgelegt.
+ Beim Ausführen eines der Coded UI-Tests wird automatisch das System gestartet
+ und der jeweilige Testfall wird als Skript abgearbeitet.
  Je nach Use-Case sind unterschiedliche Eingaben sowie Erwartungen definiert.
  Werden diese nicht erfüllt (z.B.
- wird nach dem Senden einer Nachricht beim Empfänger keine neue Nachricht
- angezeigt) so wird schlägt der Test fehl.
+ kann der eben erstellte Kontakt nicht gefunden werden) so wird schlägt
+ der Test fehl.
 \end_layout
 
 \begin_layout Standard
@@ -18070,13 +18113,14 @@ reference "tab:Akzeptantests"
 
 \end_inset
 
- ersichtlich.
- Alle Anforderungen können erfüllt werden und die Akzeptanztests werden
- als bestanden betrachtet.
+ und als Screenshot in Abbildung YY ersichtlich.
+ Alle Anforderungen können im Rahmen dieser Implementierung erfüllt werden
+ und die Akzeptanztests werden als bestanden betrachtet.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -18084,14 +18128,14 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="4">
+<lyxtabular version="3" rows="15" columns="4">
 <features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="5cm">
 <column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18118,7 +18162,7 @@ Testklasse
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18129,7 +18173,7 @@ Testergebnis
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18138,11 +18182,11 @@ UC1
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gespräch beitreten
+Benutzer oder Administrator authentifizieren
 \end_layout
 
 \end_inset
@@ -18151,14 +18195,12 @@ Gespräch beitreten
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC1Tests
+AuthenticationTest
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18169,7 +18211,7 @@ bestanden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18178,11 +18220,11 @@ UC2
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gespräch verlassen
+Kunden anzeigen
 \end_layout
 
 \end_inset
@@ -18191,14 +18233,12 @@ Gespräch verlassen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC2Tests
+SearchCustomersTest
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18209,7 +18249,7 @@ bestanden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18218,11 +18258,11 @@ UC3
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Nachricht senden
+Kunde hinzufügen
 \end_layout
 
 \end_inset
@@ -18231,14 +18271,12 @@ Nachricht senden
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC3Tests
+CreateNewCustomerTest
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18249,7 +18287,7 @@ bestanden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18262,7 +18300,36 @@ UC4
 \begin_inset Text
 
 \begin_layout Plain Layout
-Nachricht empfangen
+Kunde löschen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteCustomerTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC5
 \end_layout
 
 \end_inset
@@ -18271,14 +18338,363 @@ Nachricht empfangen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-UC4Tests
+Firmen anzeigen
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SearchCompaniesTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firma hinzufügen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreateNewCompanyTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Firma löschen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteCompanyTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kontakte anzeigen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SearchContactsTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kontakt hinzufügen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreateNewContactTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kontakt löschen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteContactTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Benutzer anzeigen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SearchUsersTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Passwort setzen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SetPasswordTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Benutzer hinzufügen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CreateNewUserTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bestanden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Benutzer löschen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeleteUserTest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -18321,6 +18737,10 @@ name "tab:Akzeptantests"
 
 \begin_layout Chapter
 Fazit
+\end_layout
+
+\begin_layout Section
+Abweichungen von der Aufgabenstellung
 \end_layout
 
 \begin_layout Section
