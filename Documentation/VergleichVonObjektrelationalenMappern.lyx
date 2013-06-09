@@ -818,9 +818,9 @@ status open
 <lyxtabular version="3" rows="10" columns="4">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="5.5cm">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -831,7 +831,7 @@ Phase
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -869,7 +869,7 @@ Themenevaluation
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -983,7 +983,7 @@ Erstellen der Marktübersicht
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1266,11 +1266,11 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
-<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1288,7 +1288,7 @@ Meilenstein
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1299,7 +1299,7 @@ Datum
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1317,7 +1317,7 @@ Freigabe der Arbeit
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1357,7 +1357,7 @@ Kick-Off
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1375,7 +1375,7 @@ Design-Review
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5624,8 +5624,11 @@ name "sub:Firma-hinzufügen"
 \end_layout
 
 \begin_layout Standard
-Der Benutzer möchte eine neue Firma dem System hinzufügen.
- Kontakte können nur auf Mitarbeitern von Firmen erfasst werden.
+Der Benutzer fügt dem System eine neue Firma hinzu.
+ Die Firma hat einen Firmennamen, eine Webseite sowie eine Firmenadresse.
+ Nach dem Hinzufügen der Firma können der Firma Angestellte (Kunden) hinzugefügt
+ werden.
+ Für diese Kunden können danach Kontakte generiert werden.
 \end_layout
 
 \begin_layout Standard
@@ -5633,7 +5636,7 @@ Der Benutzer möchte eine neue Firma dem System hinzufügen.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -5668,7 +5671,7 @@ Use-Case Firma hinzufügen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -5944,7 +5947,7 @@ Alternativszenarien
 1a.
  Die Firma existiert bereits.
  Der Benutzer wird aufgefordert zu überprüfen ob die Daten fehlerhaft eingetrage
-n wurden oder ob diese Firma dies ein Duplikat darstellt.
+n wurden oder ob diese Firma ein Duplikat darstellt.
 \end_layout
 
 \end_inset
@@ -6001,10 +6004,12 @@ Firma löschen
 \begin_layout Standard
 Wenn der Benutzer eine Firma löschen möchte, wird dieser Anwendungsfall
  ausgeführt.
- Besitzt diese Firma Angestellte so werden diese mit der Firma zusammen
+ Besitzt diese Firma Angestellte, so werden diese mit der Firma zusammen
  gelöscht.
- Besitzen dei Angestellte Kontakte so werden die Kontakte mit dem Angestellten
- zusammen gelöscht.
+ Besitzen die Angestellten der Firma Kontakte, so werden auch die Kontakte
+ aus dem System gelöscht.
+ Gelöschte Firmen, Kunden oder Kontakte sind endgültig gelöscht und unwiderbring
+lich verloren.
 \end_layout
 
 \begin_layout Standard
@@ -6012,7 +6017,7 @@ Wenn der Benutzer eine Firma löschen möchte, wird dieser Anwendungsfall
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6047,7 +6052,7 @@ Use-Case Firma löschen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6255,7 +6260,7 @@ Nachbedingung
 
 \begin_layout Plain Layout
 Der Benutzer kann der gelöschten Firma keine Mitarbeiter mehr hinzufügen
- und findet diese auch nicht mehr (siehe Kapitel 
+ und findet diese auch nicht mehr im System (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Firmen-anzeigen"
@@ -6329,13 +6334,13 @@ Alternativszenarien
 
 \begin_layout Plain Layout
 1a.
- Falls die Firma Angestellte besitzt (Kunden) wird der Benutzer darauf hingewies
-en dass auch die zur Firma gehörigen Angestellten gelöscht werden.
+ Falls die Firma Angestellte (Kunden) besitzt wird der Benutzer darauf hingewies
+en, dass auch die zur Firma gehörigen Angestellten gelöscht werden.
 \end_layout
 
 \begin_layout Plain Layout
 1b.
- Falls der Angestellte Kontakte besitzt wird der Benutzer darauf hingewiesen
+ Falls die Angestellten Kontakte besitzten wird der Benutzer darauf hingewiesen,
  dass auch die zum Angestellten gehörigen Kontakte gelöscht werden.
 \end_layout
 
@@ -6398,11 +6403,20 @@ name "sub:Kontakte-anzeigen"
 \end_layout
 
 \begin_layout Standard
+Der Benutzer möchte Kontakte anzeigen, welche im System erfasst sind.
+ Dazu sucht er entweder nach einem Kunden oder nach dem Medium, über welches
+ der Kontakt zustandegekommen ist (mögliche Suchkriterien: Vor- oder Nachname
+ des Kunden, Kontaktmedium).
+ Die gefunden Kontakte kann der Benutzer entweder im Detail anzeigen lassen
+ oder diese aus dem System löschen.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6437,7 +6451,7 @@ Use-Case Kontakte anzeigen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6774,11 +6788,35 @@ Kontakt hinzufügen
 \end_layout
 
 \begin_layout Standard
+Der Anwendungsfall 
+\begin_inset Quotes eld
+\end_inset
+
+Kontakt hinzufügen
+\begin_inset Quotes erd
+\end_inset
+
+ wird ausgeführt wenn der Benutzer einem Kunden einen neuen Kontakt hinzufügen
+ möchte.
+ Der Kontakt umfasst den Kontaktzeitpunkt, das Kontaktmedium
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mögliche Kontaktmedien umfassen: Messe, Telefon oder E-Mail.
+\end_layout
+
+\end_inset
+
+ sowie die textuelle Beschreibung des Kontakt.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6813,7 +6851,7 @@ Use-Case Kontakt hinzufügen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -7142,11 +7180,18 @@ Kontakt löschen
 \end_layout
 
 \begin_layout Standard
+Der Benutzer möchte den Kontakt eines Kunden löschen.
+ Dazu führt er diesen Anwendungsfall aus.
+ Nach erfolgreichem Löschen des Kontakts ist dieser nicht mehr wiederherzustelle
+n.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -7181,7 +7226,7 @@ Use-Case Kontakt löschen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -7523,11 +7568,19 @@ name "sub:Benutzer-anzeigen"
 \end_layout
 
 \begin_layout Standard
+Der Administrator möchte die im System gespeicherten Benutzer anzeigen.
+ Er kann entweder alle Benutzer anzeigen oder er sucht nach dem Namen eines
+ spezifischen Benutzers oder dessen Rolle (Benutzer oder Administrator).
+ Den oder die gefundenen Benutzer kann er entweder im Detail betrachten,
+ löschen oder ihr Passwort zurücksetzen.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -7562,7 +7615,7 @@ Use-Case Benutzer anzeigen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -7898,11 +7951,20 @@ Passwort setzen
 \end_layout
 
 \begin_layout Standard
+Der Administrator kann die Passwörter aller Benutzer neu setzen, der Benutzer
+ jeweils nur sein eigenes Passwort.
+ Dazu wird verlangt dass das alte Passwort eingegeben wird und danach das
+ neue Passwort angegeben wird.
+ Nach dem Setzen des eigenen Passworts wird der Benutzer ausgeloggt und
+ muss sich neu einloggen mit seinem eben gesetzten Passwort.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -7937,7 +7999,7 @@ Use-Case Passwort setzen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -8276,11 +8338,19 @@ Benutzer hinzufügen
 \end_layout
 
 \begin_layout Standard
+Um einen neuen Benutzer dem System hinzuzufügen führt der Administrator
+ diesen Anwendungsfall aus.
+ Der neue Benutzer erhält einen Benutzernamen, ein Passwort sowie eine Rolle.
+ Nach dem Hinzufügen des Benutzers durch den Administrators kann sich dieser
+ beim System mit den Benutzerdaten anmelden.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -8315,7 +8385,7 @@ Use-Case Benutzer hinzufügen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -8648,11 +8718,33 @@ Benutzer löschen
 \end_layout
 
 \begin_layout Standard
+Der Administrator kann Benutzer aus dem System entfernen.
+ Dazu führt er den Anwendungsfall 
+\begin_inset Quotes eld
+\end_inset
+
+Benutzer löschen
+\begin_inset Quotes erd
+\end_inset
+
+ aus.
+ Falls der Benutzer zum Zeitpunkt der Löschung beim System angemeldet ist,
+ kann der Administrator entscheiden, ob dessen aktuelle Authentifzierung
+ für ungültig erklärt werden soll bevor er vom System gelöscht wird.
+\end_layout
+
+\begin_layout Standard
+Ist der Benutzer aus dem System gelöscht, kann sich dieser nicht mehr beim
+ System anmelden und er wird in der Liste der im System verfügbaren Benutzer
+ nicht mehr angezeigt.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -8687,7 +8779,7 @@ Use-Case Benutzer löschen
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -9061,12 +9153,18 @@ key "Oestereich2006"
 \end_inset
 
 ).
- Als Grundlage für das Konzept wird in einem ersten Schritt die Toolchain
- erfasst, welche weitere (technisch) Rahmenbedingungen für das Konzept und
- die Archtektur des Systems vorgibt.
- Danach wird das System aus der Bausteinperspektive betrachtet, es wird
- von der Komponentenebene bis zur Klassenebene das System modelliert und
- die Systemarchitektur festgelegt.
+ Das Konzept dieser Bachelorarbeit umfasst das Erarbeiten der Marktübersicht
+ aller frei verügbaren oder Open-Source OR-Mapper im .NET-Umfeld, das Auswählen
+ von drei Produkten aus der Marktübersicht für weitergehende Vergleiche
+ und das Erarbeiten dieser Vergleichsergebnisse.
+\end_layout
+
+\begin_layout Standard
+Zusätzlich wird die Architektur des Proof-of-Concepts der CRM-Applikation
+ erarbeitet.
+ Das System aus der Bausteinperspektive betrachtet, es wird von der Komponentene
+bene bis zur Klassenebene das System modelliert und die Systemarchitektur
+ festgelegt.
  Als weitere Sicht wird die Laufzeitsicht und die Verteilungssicht des Systems
  beleuchtet und spezifiziert.
 \end_layout
@@ -9083,14 +9181,1191 @@ name "sec:Marktübersicht"
 \end_layout
 
 \begin_layout Standard
-Die Marktübersicht ist an 
+Die folgende Marktübersicht enthält eine Auswahl von frei verfügbaren oder
+ Open-Source OR-Mapper im .NET-Umfeld.
+ Jeder OR-Mapper wurde auf Basis einer Vielzahl von Kriterien untersucht
+ und miteinander verglichen.
+ Die Marktübersicht ist kein wertender Vergleich der Produkte sondern eine
+ reine Erhebung von Tatsachen zum heutigen Zeitpunkt.
+ Es ist wichtig anzumerken, dass diese Marktübersicht schnell veraltet sein
+ wird, da viele der Produkte einen kurzen Releasezyklus haben in welchem
+ sie zusätzliche Funktionalitäten zur Verfügung stellen.
+\end_layout
+
+\begin_layout Standard
+In diesem Kapitel werden auch die einzelnen Vergleichskriterien erklärt
+ und beschrieben warum diese wichtig sind im Zusammenhang mit OR-Mappern.
+ Das Ausfüllen der Marktübersicht erfolgt einerseits durch Konsultation
+ der Dokumentation bzw.
+ der Anbieterwebseite andererseits durch die Erfahrung in der Benutzung
+ des OR-Mappers und unter Analyse des verfügbaren Quellcodes (wo Open-Source).
+ Innerhalb der Marktübersicht wird nicht dokumentiert welche Information
+ aus welcher stammt, da dies den Rahmen der Marktübersicht sprengen würde.
+\end_layout
+
+\begin_layout Subsection
+Vergleichskriterien
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Vergleichskriterien"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Untenstehend finden sich alle Vergleichskriterien, welche auf die betrachteten
+ OR-Mapper angewendet werden.
+ Die Kriterien werden einzeln im Detail beschrieben und sollen eine Hilfestellun
+g beim Betrachten der Vergleichsmatrix (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Vergleichsmatrix"
+
+\end_inset
+
+) bieten.
+\end_layout
+
+\begin_layout Standard
+Die Vergleichskriterien, die in der Marktübersicht verwendet wurden, sind
+ auf 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schwichtenberg2008"
 
 \end_inset
 
- angelehnt.
+ aufgebaut.
+ Alle weiteren Kriterien stammen aus eigener Erfahrung beziehungsweise aus
+ Literatur wie 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kochetov2011"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chou2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Name Der Name des OR-Mappers.
+\end_layout
+
+\begin_layout Description
+Anbieter Der Anbieter des OR-Mappers falls ein Unternehmen oder eine Gruppierung
+ hinter dem Produkt steht.
+ Bei Open-Source-Produkten wurde 
+\begin_inset Quotes eld
+\end_inset
+
+Open-Source
+\begin_inset Quotes erd
+\end_inset
+
+ verwendet.
+\end_layout
+
+\begin_layout Description
+Website Die Webseite des OR-Mappers.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Zeitpunkt der ersten Version
+\end_layout
+
+\end_inset
+
+ Der Zeitpunkt der ersten verfügbaren Version.
+ Hier wurden auch Betaversionen berücksichtigt, welche im produktiven Umfeld
+ eingesetzt wurden (nach Dokumentation).
+ Bei Open-Source Produkten wurde der erste Zeitpunkt eines Releases mit
+ Dokumentation berücksichtigt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Aktuelle und untersuchte Version
+\end_layout
+
+\end_inset
+
+ Die im Rahmen dieser Marktübersicht untersuchte Version.
+ Dies ist in jedem Fall die aktuellste verfügbare Version.
+\end_layout
+
+\begin_layout Description
+Lizenz Die Lizenz, unter welchem der OR-Mapper nutzbar ist.
+ Es wurden nur OR-Mapper berücksichtigt, welche ohne Lizenzabgaben kommerziell
+ nutzbar sind.
+\end_layout
+
+\begin_layout Description
+Typ Der Typ des OR-Mappers.
+ Es gibt zwei unterschiedliche Typen von OR-Mapper: Leichgewichtige und
+ komplette OR-Mapper.
+ Ein leichtgewichtiger OR-Mapper bietet meist ausser der Implementierung
+ eines Data Mappers keine weitere Funktionalität wie Monitoringtools, Assistente
+n oder grafische Designer.
+ Ein kompletter OR-Mapper kommt hingegen oft mit einer ganzen Armada an
+ zusätzlichen Funktionalitäten, welche den Entwickler beim Integrieren des
+ OR-Mappers und der Verwendung desselben unterstützen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Unterstützte Datenbankmanagementsysteme
+\end_layout
+
+\end_inset
+
+ Eine Liste der laut Produktbeschreibung unterstützten Datenbanksysteme.
+ Fast alle OR-Mapper basieren auf der Schnittstelle System.Data.IDbConnection
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+IDbConnection repräsentiert eine beliebige Datenquelle zu relationalen Datenbank
+en, siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/system.data.idbconnection.aspx.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ des .NET Frameworks.
+ Daher sind sie theoretisch datenbankunabhängig solange der DBMS-Hersteller
+ einen .NET Datenprovider anbietet.
+ Es hat sich jedoch herausgestellt, dass diese Datenbankunabhängigkeit auf
+ Grund der unterschiedlichen Qualität der Datenprovider schwierig ist.
+ Deshalb sind in dieser Zeile nur Datenbankmanagementsysteme aufgelistet
+ die auch so vom Hersteller des OR-Mappers getestet und freigegeben wurden.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Minimale .NET-Version
+\end_layout
+
+\end_inset
+
+ Die minimal notwendige .NET Framework-Version um den OR-Mapper zu benutzen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Unterstützt Mono
+\end_layout
+
+\end_inset
+
+ Beschreibt ob der OR-Mapper die Softwareplattform Mono
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu Mono unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.mono-project.com/Main_Page
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ unterstützt.
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Projektvorlagen für Visual Studio
+\end_layout
+
+\end_inset
+
+ Dieses Kriterium sagt aus ob der OR-Mapper Projektvorlagen für Microsofts
+ Visual Studio mitliefert.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Elementvorlagen für Visual Studio
+\end_layout
+
+\end_inset
+
+ Dieses Kriterium sagt aus ob der OR-Mapper Elementvorlagen für Microsofts
+ Visual Studio mitliefert.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Extension für Visual Studio
+\end_layout
+
+\end_inset
+
+ Beschreibt ob der OR-Mapper eine Erweiterung für Microsofts Visual Studio
+ mitliefert.
+\end_layout
+
+\begin_layout Description
+Designer Sagt aus ob der OR-Mapper einen grafischen Designer mitliefert
+ womit vereinfacht Mappings erstellt werden können.
+\end_layout
+
+\begin_layout Description
+Assistenten Sagt aus ob der OR-Mapper Assistenten mitliefert, welche den
+ Entwickler beim Erstellen der Mappings unterstützen.
+\end_layout
+
+\begin_layout Description
+Kommandozeilentools Falls der OR-Mapper noch zusätzliche kommandozeilenbasierte
+ Tools mitliefert sind diese in dieser Zeile aufgelistet.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Benutzte interne Datenzugriffs-API
+\end_layout
+
+\end_inset
+
+ Beschreibt die innerhalb des OR-Mappers verwendete API-Datenzugriffsschnittstel
+le mit welcher auf das Datenbankmanagementsystem zugegriffen wird.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Verwendete Techniken
+\end_layout
+
+\end_inset
+
+ Unter diesem Kriterium sind die vom OR-Mapper verwendeten Techniken beschrieben
+, welche das Mapping von der relationalen Datenbank zu Domänenobjekten ermöglich
+t.
+ Dies kann zum Beispiel Codegenerierung auf Grund eines Designers sein oder
+ Techniken wie Reflection.
+ Dieses Kriterium ist meist ein Anhaltspunkt um die mögliche Performance
+ des OR-Mappers abzuschätzen.
+ Wird nur Code zur Laufzeit erzeugt und stark Techniken wie Reflection verwendet
+, so wird sich dies mit Sicherheit auf die Laufzeitperformance des Produktes
+ auswirken.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Forward Mapping (Model-First)
+\end_layout
+
+\end_inset
+
+ Beschreibt ob der OR-Mapper Forward Mapping unterstützt.
+ Forward Mapping bedeutet, dass zuerst das Domänenmodell in Code modelliert
+ wird und danach die Datenbank vom OR-Mapper auf Basis dieses Domänenmodells
+ aufgebaut wird.
+ Dies setzt voraus, dass der OR-Mapper SQL DDL
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+DDL steht für Data Definition Language und ist die Syntax um Datenbankschemas
+ und Datenstrukturen zu erstellen.
+\end_layout
+
+\end_inset
+
+ generieren kann.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Reverse Mapping (Schema-First)
+\end_layout
+
+\end_inset
+
+ Beschreibt ob der OR-Mapper Revese Mapping unterstützt.
+ Reverse Mapping ist eine Mappingtechnik, welche auf Grund einer bestehenden
+ Datenbank ein Domänenmodell erzeugt.
+ Dies setzt voraus dass der OR-Mapper Code generieren kann.
+\end_layout
+
+\begin_layout Description
+Datenmigrationen Unterstützt ein OR-Mapper Datenmigrationen so ist dies
+ in dieser Zeile festgehalten.
+ Eine Datenmigration ist das Unterstützen von versionierten Domänennodellen
+ bzw.
+ Datenbankschemas und den darin enthaltenen Daten.
+ Wird eine Datenmigration ausgeführt, so wird das Datenschema inklusive
+ den darin enthaltenen Daten automatisiert auf den Zielstand der Datenmigration
+ gebracht.
+ Im Rahmen dieser Marktübersicht gelten Datenmigrationen nur als unterstützt,
+ wenn diese auch rückgängig gemacht werden können.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+POCO Support
+\end_layout
+
+\end_inset
+
+ POCOs sind Plain Old CLR Objects.
+ Das heisst ein POCO ist ein simples Objekt welches ohne die Verwendung
+ eines zusätzlichen Frameworks wie eine bestimmter Basisklasse, implementierten
+ Interfaces oder Annotationen.
+ Unterstützt ein OR-Mapper direkt POCOs bei der Verwendung von Forward Mapping,
+ so wird dies unter diesem Kriterium festgehalten.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Erfordern spezifische Basisklasse
+\end_layout
+
+\end_inset
+
+ Verlangt ein OR-Mapper, dass jedes Domänenobjekt von einer spezifischen
+ Basisklasse ableitet, so ist dies in der Matrix unter dieser Zeile festgehalten.
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Erfordern Annotation
+\end_layout
+
+\end_inset
+
+ Unter diesem Kriterium wird beschrieben ob ein OR-Mapper bestimmte Annotationen
+ auf Klassen, Feldern, Eigenschaften oder Methoden voraussetzt, um mit diesen
+ Domänenobjekten umgehen zu können.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Erfordern parameterlosen Konstruktor
+\end_layout
+
+\end_inset
+
+ Falls der OR-Mapper verlangt, dass alle Domänenobjekte einen parameterlosen
+ Konstruktor aufweisen, wird dies unter diesem Kriterium beschrieben.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Müssen abstrakt sein
+\end_layout
+
+\end_inset
+
+ Einige, insbesonders ältere OR-Mapper, verlangen dass alle Domänenobjekte
+ als abstrakt definiert sind, so dass zur Laufzeit eine Subklasse generiert
+ werden kann.
+ Falls dem so ist, wird dies in dieser Zeile festgehalten.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Erzeugte Business Objects unterstützen Datenbindung
+\end_layout
+
+\end_inset
+
+ Falls die generierten Domänenobjekte bei Verwendung von Reverse Mapping
+ Datenbindungen für WPF, Silverlight und ASP.NET unterstützten, sind in dieser
+ Zeile der Vergleichsmatrix die implementierten und unterstützten Interfaces
+ aufgelistet.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Erzeugte Business Objects sind als [Serializable] gekennzeichnet
+\end_layout
+
+\end_inset
+
+ Sind die generierten Domänenobjekte von Haus aus bereits mit dem SerializableAt
+tribute
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+Mehr zum SerializableAttribute in der MSDN unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/system.serializableattribute.aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\lang german-ch
+ gekennzeichnet, so wird dies unter diesem Kriterium festgehalten.
+ Das SerializableAttribute beschreibt, dass Klassen von einem .NET Serialisierer
+ (z.B.
+ beim Übertragen über WCF-Schnittstellen) serialisiert werden können.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Erzeugte Business Objects unterstützen WCF Contracts
+\end_layout
+
+\end_inset
+
+ Unter diesem Kriterium wird beschrieben ob die vom betrachteten OR-Mapper
+ generierten Domänenobjekte bei Verwendung von Reverse Mapping mit den von
+ WCF vorausgesetzten Attributen annotiert sind oder nicht.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zu den Data Contract Attributes in der MSDN unter
+ 
+\lang german-ch
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/ms733127.aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Erzeuge Business Objects sind partielle Klassen
+\end_layout
+
+\end_inset
+
+ Sind die vom OR-Mapper erzeugten Domänenobjekte als partielle Klassen deklarier
+t, wird dies in dieser Zeile eingetragen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Persistiert Felder
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das Persistieren von Feldern wird dies in dieser
+ Zeile eingetragen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Persistiert Eigenschaften
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das Persistieren von Eigenschaften
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Eigenschaften in englisch sind Properties.
+\end_layout
+
+\end_inset
+
+ wird dies in dieser Zeile eingetragen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Unterstützung für nullbasierte Werte
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das Persistieren von nullbasierten Werten
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Nullbasierte Werte sind vom Typ Nullable<T>, siehe MSDN 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ wird dies in dieser Zeile eingetragen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+1 Klasse -> 1 Tabelle
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das Mappen einer Klasse auf eine Tabelle wird
+ dies in dieser Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+1 Klasse -> n Tabellen
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mappen das Mappen einer Klasse auf mehrere Tabellen
+ wird dies in dieser Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+n Klassen -> 1 Tabelle
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das Mappen mehrerer Klassen auf eine Tabelle
+ wird dies in dieser Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+n Klassen -> m Tabellen
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das Mappen mehrerer Klassen auf mehrere Tabellen
+ wird dies in dieser Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Unterstützung für Collection-Typen
+\end_layout
+
+\end_inset
+
+ Dieses Kriterium beschreibt die vom OR-Mapper unterstützten Collection-Typen
+ auf den Domänenobjekten (bei 1-zu-n-Beziehungen).
+ Die Namen der unterstützten Collection-Typen werden in dieser Zeile in
+ der Vergleichsmatrix eingetragen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Codebasiertes Mapping über Annotationen
+\end_layout
+
+\end_inset
+
+ Geschieht das Mapping der Domänenobjekte beziehungsweise deren Felder oder
+ Eigenschaften auf die Datenbanktabelle und deren Spalten mittels Annotationen
+ innerhalb der Klassendefinition, wird dies in dieser Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+XML-basiertes Mapping/Mapping-Datei
+\end_layout
+
+\end_inset
+
+ Benutzt der OR-Mapper für das Mapping der Domänenobjekte auf das Datenbankschem
+a ein XML- oder dateibasiertes Mapping wird dies in dieser Zeile festgehalten.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Mapping zur Kompilierzeit
+\end_layout
+
+\end_inset
+
+ Diese Zeile enthält ein 
+\begin_inset Quotes eld
+\end_inset
+
+Ja
+\begin_inset Quotes erd
+\end_inset
+
+, wenn das Mapping der Domänenobjekte auf das Datenbankschema zur Kompilierzeit
+ erstellt wird.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Zusammengesetzte Schlüssel
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper zusammengesetzte Schlüssel
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Zusammengesetzte Schlüssel werden in T-SQL mit dem DDL Statement PRIMARY
+ KEY (column1, column2) erzeugt.
+ Siehe MSDN 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/ms181043(v=sql.105).aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ und bildet diese Schlüssel auch korrekt auf den Domänenobjekten ab, so
+ wird dies in dieser Zeile der Marktübersichtsmatrix vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Referenz über den Schlüssel
+\end_layout
+
+\end_inset
+
+ Kann der OR-Mapper korrekt Fremdschlüssel aus Datenbanktabellen
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In T-SQL mittels dem DDL Statement FOREIGN KEY (columnFK) REFERENCES table
+ (columnID) erzeugte Spalten, siehe MSDN 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://msdn.microsoft.com/en-us/library/ms177463(v=sql.105).aspx
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ in den Domänenobjekten als Objektreferenzen darstellen, wird dies in dieser
+ Zeile eingetragen.
+\end_layout
+
+\begin_layout Description
+Containername Alle OR-Mapper besitzen einen zentralen Datencontainer über
+ welchen die Domänenobjekte ausgelesen oder gespeichert werden können.
+ Diese Zeile enthält den Namen des Containers, welcher vom jeweiligen OR-Mapper
+ zur Verfügung gestellt wird.
+\end_layout
+
+\begin_layout Description
+Abfragesprache Diese Zeile enthält die vom jeweilig betrachteten OR-Mapper
+ unterstützte Abfragesprachen.
+ Zu diesen Abfragensprachen gehören einerseits proprietäre Abfragesprachen
+ wie HQL oder eSQL aber auch standardisierte Zugriffsmöglichkeiten wie LINQ
+ oder SQL.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Parameterisierung der erzeugten SQL-Abfragen
+\end_layout
+
+\end_inset
+
+ Falls der OR-Mapper Abfragen via SQL erlaubt, enthält diese Zeile eine
+ Information darüber ob der OR-Mapper die Parameterisierung dieser Abfragen
+ unterstützt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Kompilierte Abfragen
+\end_layout
+
+\end_inset
+
+ Um Abfragen über den OR-Mapper zu beschleunigen, können (vor-) kompilierte
+ Abfragen verwendet werden, welche bereits zur Kompilierzeit optimiert werden.
+ Unterstützt der OR-Mapper kompilierte Abfragen, wird dies unter diesem
+ Kriterium festgehalten.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Lazy Loading
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das Lazy Loading von Eigenschaften, Feldern,
+ Listen oder referenzierten Objekten eines Domänenobjekts wird dies in dieser
+ Zeile notiert.
+ Lazy Loading ist ein Entwurfsmuster welches das Initialisieren von Objekten,
+ Feldern oder Eigenschaften eines Objekts so lange aufschiebt, bis auf die
+ Information zugegriffen wird.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Eager Loading
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper das explizite Eager Loading von Eigenschaften,
+ Feldern, Listen oder referenzierten Objekten eines Domänenobjekts wird
+ dies in dieser Zeile festgehalten.
+ Eager Loading ist das Gegenteil von Lazy Loading.
+ Bei explizitem Eager Loading von Informationen werden Performanceeinbussen
+ beim initialen Lesen von Domänenobjekten bewusst in Kauf genommen um die
+ Laufzeitperformance des Persistenzlayers zu erhöhen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Speichern von geänderten Daten
+\end_layout
+
+\end_inset
+
+ Kann der OR-Mapper geänderte Daten eines Domänenobjekts wieder in die Datenbank
+ persistieren, wird dies in dieser Zeile vermerkt.
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Änderungen bei einzelnen Objekten verfolgen
+\end_layout
+
+\end_inset
+
+ Besitzt der OR-Mapper eine Möglichkeit Änderungen an einzelnen Domänenobjekten
+ nachzuvollziehen, rückgängig zu machen oder vor dem Persistieren noch einmal
+ zu überprüfen, so wird dies unter diesem Vergleichskriterium notiert.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Änderungen bei Collections verfolgen
+\end_layout
+
+\end_inset
+
+ Kann der OR-Mapper zusätzlich zu den Änderungen an einzelnen Domänenobjekten
+ auch ganze Collections überwachen wird dies in dieser Zeile festgehalten.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Unterstützung von Stored Procedures
+\end_layout
+
+\end_inset
+
+ Insbesondere bei Reverse Mapping Szenarien ist es wichtig, dass der OR-Mapper
+ Daten nicht nur über generierte SQL-Statements lesen kann sondern auch
+ über (bereits bestehende) Stored Procedures.
+ Unterstützt dies der betrachtete OR-Mapper wird dies in dieser Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Unterstützung von Transaktionen
+\end_layout
+
+\end_inset
+
+ Sind sämtliche Datenbankoperationen (ausser SELECT-Abfragen) über Transaktionen
+ gesichert, wird dies in dieser Zeile festgehalten.
+ Transaktionsbehandlung ist wichtig bei konkurrierrenden Systemen mit mehreren
+ gleichzeitigen Benutzern.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Pessimistisches Sperren (bei Transaktionen)
+\end_layout
+
+\end_inset
+
+ Falls der OR-Mapper bei der Verwendung von Transaktionen auch pestimistische
+ Sperren auf einzelnen Datensätzen oder Tabellen erlaubt wird dies hier
+ vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Optimistisches Sperren
+\end_layout
+
+\end_inset
+
+ Optimistisches Sperren nimmt an, dass mehrere Transaktionen gleichzeitig
+ ausgeführt werden können ohne dass sie sich gegenseitig behindern und aus
+ diesem Grund keine Sperren notwendig sind.
+ Vor dem Abschliessen der Transaktion wird geprüft ob keine andere Transaktion
+ die Daten verändert hat.
+ Unterstützt der OR-Mapper diese Funktionalität wird dies unter diesem Vergleich
+skriterium festgehalten.
+\end_layout
+
+\begin_layout Description
+Konflikterkennung Kann der OR-Mapper Konflikte in Domänenobjekten erkennen
+ (zum Beispiel wenn ein anderer Benutzer zur selben Zeit dasselbe Objekt
+ in der Datenbank verändert) wird dies in der Marktübersichtsmatrix unter
+ dieser Zeile notiert.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Änderungen bei unverbunden Objekten verfolgen
+\end_layout
+
+\end_inset
+
+ Werden Domänenobjekte serialisiert und zum Beispiel über WCF übertragen,
+ verliert der Datencontainer des OR-Mappers den Bezug zu diesem Domänenobjekt.
+ Wird das Objekt verändert und wieder zurück über WCF an den Persistenzlayer
+ übertragen und der OR-Mapper kann trotz verlorenem Bezug trotzdem die Änderunge
+n am Domänenobjekt erkennen und wieder persistieren, so wird dies in dieser
+ Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+First Level Cache (Session Level)
+\end_layout
+
+\end_inset
+
+ Besitzt der OR-Mapper eine Art von First Level Cache auf Basis des Datencontain
+ers wird dies in dieser Zeile festgehalten.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Second Level Cache (Arbeitsspeicher/DB/...)
+\end_layout
+
+\end_inset
+
+ Existiert ein Second Level Cache auf Basis des Arbeitsspeichers, der Datenbank
+ oder des Festplatte so wird dies in dieser Zeile festgehalten.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Verteiltes Caching
+\end_layout
+
+\end_inset
+
+ Unterstützt der OR-Mapper bei einem Multi-Server-Betrieb eine Möglichkeit
+ seinen Cache mit anderen Instanzen des OR-Mappers (bzw.
+ des Persistenzlayers) zu teilen, wird dies verteiltes Caching genannt.
+ Falls der betrachtete OR-Mapper dieses Szenario unterstützt wird dies in
+ dieser Zeile vermerkt.
+\end_layout
+
+\begin_layout Description
+Logging/Tracing Besitzt der OR-Mapper Möglichkeiten zum Tracing oder Logging
+ von Operationen wie dem Ausführen von SQL-Statements oder dem Mapping von
+ Werten aus der Datenbank auf Eigenschaften und Felder von Domänenobjekten,
+ wird dies in dieser Zeile festgehalten.
+ Falls der OR-Mapper Interceptions erlaubt, welche das Implementieren eigener
+ Tracer ermöglichen, gilt dies auch als Möglichkeit zum Logging/Tracing.
+\end_layout
+
+\begin_layout Description
+Windows-Leistungsindikatoren Benutzt der OR-Mapper die Windows-Leistungsindikato
+ren um Informationen zu seinem Status zu publizieren, so wird dies in dieser
+ Zeile vermerkt.
+\end_layout
+
+\begin_layout Subsection
+Vergleichsmatrix
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Vergleichsmatrix"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Vergleichsmatrix vergleicht die OR-Mapper Entity Framework, NHibernate,
+ LINQ-to-SQL, OpenAccess ORM, mybatis.NET, Business Logic Toolkit, SubSonic,
+ Dapper, nHydrate und Signum Framework auf Basis der im vorgehenden Kapitel
+ erfassten Vergleichskriterien miteinander auf den folgenden Seiten.
 \end_layout
 
 \begin_layout Standard
@@ -9113,10 +10388,18 @@ Produkteauswahl
 
 \begin_layout Standard
 Das Ziel der Produkteauswahl ist es, aus der Marktübersicht drei OR-Mapper
- zu identifizieren, die genauer betrachtet werden sollen.
- Dazu wurde eine nicht repräsentative Umfrage unter 30 erfahrenen .NET-Entwickler
-n durchgeführt, welche Verbreitung, Erfahrungswerte und Beliebtheit bei
- Entwicklern messen sollte.
+ zu identifizieren welche genauer betrachtet und verglichen werden sollen.
+ Dazu wird eine nicht repräsentative Umfrage unter 30 erfahrenen .NET-Entwicklern
+ durchgeführt, welche Verbreitung, Erfahrungswerte in der Benutzung und
+ die Beliebtheit der in der Marktübersicht vorhandenen OR-Mapper bei Entwicklern
+ messen soll.
+\end_layout
+
+\begin_layout Standard
+Die drei auf Grund dieser Umfrage selektierten OR-Mapper werden in den nächsten
+ Kapiteln im Detail miteinander verglichen, so dass eine Empfehlung erstellt
+ werden kann, für welches Enterprise Pattern welcher OR-Mapper ausgewählt
+ werden soll.
 \end_layout
 
 \begin_layout Subsection
@@ -9131,27 +10414,14 @@ name "sub:Umfrage"
 \end_layout
 
 \begin_layout Standard
-Die folgenden Fragen wurden in der Umfrage gestellt:
-\end_layout
-
-\begin_layout Enumerate
-Welche der folgenden .NET OR-Mapper kennst du?
-\end_layout
-
-\begin_layout Enumerate
-Welche davon hast du schon in einem Projekt eingesetzt? 
-\end_layout
-
-\begin_layout Enumerate
-Mit welchem Produkt hast du die besten Erfahrungen gemacht? 
-\end_layout
-
-\begin_layout Enumerate
-Welches Produkt schätzt du am verbreitesten ein? 
-\end_layout
-
-\begin_layout Enumerate
-Für ein privates Projekt, welchen ORM würdest du einsetzen?
+Das Ziel der Umfrage besteht darin drei OR-Mapper für weitergehende Vergleiche
+ auszuwählen.
+ Um dieses Ziel zu erreichen werden verschiedene Fragen betreffend der Bekannthe
+it, dem Ruf des Produkts und der Nutzung von OR-Mappern im .NET-Umfeld gestellt.
+ Die 25 erhaltenen Antworten werden in den folgenden Unterkapiteln grafisch
+ dargestellt und interpretiert.
+ Am Ende der Umfrage wird auf Grund der Umfragergebnisse die Auswahl von
+ drei OR-Mappern begründet.
 \end_layout
 
 \begin_layout Standard
@@ -9203,12 +10473,37 @@ Signum Framework
 \end_layout
 
 \begin_layout Subsubsection
-Rücklauf
+Fragebogen
 \end_layout
 
 \begin_layout Standard
-Von den 30 angeschriebenen Entwicklern haben 25 geantwortet.
- 
+Der Fragebogen, der den Entwicklern ausgeteilt wurde umfasst die folgenden
+ Fragen:
+\end_layout
+
+\begin_layout Enumerate
+Welche der folgenden .NET OR-Mapper kennst du?
+\end_layout
+
+\begin_layout Enumerate
+Welche davon hast du schon in einem Projekt eingesetzt? 
+\end_layout
+
+\begin_layout Enumerate
+Mit welchem Produkt hast du die besten Erfahrungen gemacht? 
+\end_layout
+
+\begin_layout Enumerate
+Welches Produkt schätzt du am verbreitesten ein? 
+\end_layout
+
+\begin_layout Enumerate
+Für ein privates Projekt, welchen ORM würdest du einsetzen?
+\end_layout
+
+\begin_layout Standard
+Die Fragen 1 und 2 erlauben die Nennung mehrere Produkte.
+ Die Fragen 3, 4 und 5 erlauben es nur ein einziges Produkt zu nennen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -9217,15 +10512,15 @@ Welche der folgenden .NET OR-Mapper kennst du?
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Grafiken/U1-WelcheDerFolgendenORMapperKennstDu.png
-	display false
 	scale 80
 
 \end_inset
@@ -9250,21 +10545,47 @@ Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du?
 
 \end_layout
 
+\begin_layout Standard
+Das Umfrageergebnis für die Frage 
+\begin_inset Quotes eld
+\end_inset
+
+Welche der folgenden .NET OR-Mapper kennst du?
+\begin_inset Quotes erd
+\end_inset
+
+ ist wenig überraschend.
+ Das Entity Framework ist klar der bekannteste OR-Mapper auf Grund des Marketing
+s, welches Microsoft betreibt.
+ Das Entity Framework wird sehr stark von Microsoft als der Standard im
+ OR-Mapping dargestellt und Frameworks wie ASP.NET MVC, welche das Entity
+ Framework bereits integrieren, tun ihr übriges zum Resultat dieser Frage.
+\end_layout
+
+\begin_layout Standard
+Die beiden weit verbreiteten OR-Mapper NHibernate und Linq-2-SQL sind auch
+ entsprechend bekannt.
+ Überraschend ist, dass Dapper als relativ junges Projekt (erstes Releasedatum
+ März 2011) schon solch eine Bekanntheit unter Entwicklern besitzt.
+ Ich vermute das dies an den vielen Beiträgen auf Entwicklerplattformen
+ wie StackOverflow oder CodeProject liegt.
+\end_layout
+
 \begin_layout Subsubsection
 Welche davon hast du schon in einem Projekt eingesetzt? 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Grafiken/U2-WelcheDavonHastDuSchonInEinemProjektEingesetzt.png
-	display false
 	scale 80
 
 \end_inset
@@ -9289,21 +10610,41 @@ Umfrageresultate Welche davon hast du schon in einem Projekt eingesetzt?
 
 \end_layout
 
+\begin_layout Standard
+Auch das Ergebnis auf die Frage 
+\begin_inset Quotes eld
+\end_inset
+
+Welche davon hast du schon in einem Projekt eingesetzt?
+\begin_inset Quotes erd
+\end_inset
+
+ ist wenig überraschend.
+ Das Entity Framework und dessen Quasivorgänger Linq-2-SQL nehmen zwei Drittel
+ der Umfragergebnisse ein.
+ Vor dem Release des Entity Framework 4.0 mit seinen Möglichkeiten zum Reverse
+ Mapping war NHibernate der wohl populärste OR-Mapper, was sich auch in
+ dieser Frage widerspiegelt.
+ Es gibt heute noch viele Legacy-Projekte welchen NHibernate zu Grunde liegt
+ und welche auf Grund der Opportunitätskosten wohl auch keinen Wechsel des
+ OR-Mappers planen.
+\end_layout
+
 \begin_layout Subsubsection
 Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Grafiken/U3-MitWelchemProduktHastDuDieBestenErfahrungenGemacht.png
-	display false
 	scale 80
 
 \end_inset
@@ -9328,21 +10669,70 @@ Umfrageresultate Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 
 \end_layout
 
+\begin_layout Standard
+Die sehr subjektive Frage 
+\begin_inset Quotes eld
+\end_inset
+
+Mit welchem Produkt hast du die besten Erfahrungen gemacht?
+\begin_inset Quotes erd
+\end_inset
+
+ zielt darauf ab die teilweise langjährige Erfahrung der Umfrageteilnehmer
+ zu ergründen.
+ Das Entity Framework ist hier mit über zwei Dritteln der Stimmen wiederum
+ klar in Führung.
+ Ich vermute das dies primär an der sehr guten Dokumentaiton von Microsoft
+ liegt und daran dass das Entity Framework das wohl entwicklerfreundlichste
+ Proudkt der hier vertretenen kompletten OR-Mappern ist.
+ 
+\end_layout
+
+\begin_layout Standard
+Erstaunlich ist das gute Abschneiden von Dapper.
+ Dapper ist sehr flexibel und transparent im Erstellen der Mappings und
+ da es als Source-Code ausgeliefert wird sehr einfach zu debuggen und zu
+ erweitern.
+ Dies kann insbesondere für erfahrene Entwickler ein grosser Vorteil sein,
+ da das Not-Invented-Here-Syndrom
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Mehr zum Not-Invented-Here-Syndrom bei Joel on Software: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.joelonsoftware.com/articles/fog0000000007.html
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ unter Softwareentwicklern doch weit verbreitet ist.
+\end_layout
+
 \begin_layout Subsubsection
 Welches Produkt schätzt du am verbreitesten ein? 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Grafiken/U4-WelchesProduktSchätztDuAmVerbreitestenEin.png
-	display false
 	scale 80
 
 \end_inset
@@ -9367,21 +10757,35 @@ Umfrageresultate Welches Produkt schätzt du am verbreitesten ein?
 
 \end_layout
 
+\begin_layout Standard
+Auf die Frage 
+\begin_inset Quotes eld
+\end_inset
+
+Welches Produkt schätzt du am verbreitesten ein?
+\begin_inset Quotes erd
+\end_inset
+
+ wurden nur die drei Produkte Entity Framework, NHibernate und Dapper genannt.
+ Das Entity Framework ist laut den Umfrageteilnehmern ganz klar das am weitesten
+ verbreitete aller Produkte.
+\end_layout
+
 \begin_layout Subsubsection
 Für ein privates Projekt, welchen ORM würdest du einsetzen?
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Grafiken/U5-FürEinPrivatesProjektWelchenORMWürdestDuEinsetzen.png
-	display false
 	scale 80
 
 \end_inset
@@ -9406,16 +10810,49 @@ Umfrageresultate Für ein privates Projekt, welchen ORM würdest du einsetzen?
 
 \end_layout
 
+\begin_layout Standard
+Das Umfrageergebnis für die Frage 
+\begin_inset Quotes eld
+\end_inset
+
+Für ein privates Projekt, welchen ORM würdest du einsetzen?
+\begin_inset Quotes erd
+\end_inset
+
+ zeigt, dass sich die in der Frage 
+\begin_inset Quotes eld
+\end_inset
+
+Mit welchem Produkt hast du die besten Erfahrungen gemacht?
+\begin_inset Quotes erd
+\end_inset
+
+ erhaltenen Umfrageergebnisse fast eins zu eins auf diese Frage abbilden
+ lassen.
+ Für private Projekte steht oft der Entwicklerkomfort im Vordergrund bei
+ der Auswahl eines OR-Mappers.
+ Es bestehen meist auch keine Altlasten in Form eines Datenbankschemas oder
+ veralteten DBMS dem man sich anzupassen hat.
+ 
+\end_layout
+
+\begin_layout Standard
+Das Entity Framework ist wiederum der klare Gewinner dieser Umfrage vor
+ Dapper, welcher als leichtgewichtiger OR-Mapper einfach benutzbar ist und
+ auf Grund seiner Architektur bei Entwicklern beliebt ist.
+\end_layout
+
 \begin_layout Subsubsection
 Resultat
 \end_layout
 
 \begin_layout Standard
 Das Resultat der Umfrage war wenig überraschend.
- Die weite Verbreitung und den guten Ruf des Entity Frameworks war anzunehmen
- aufgrund des Marketings von Microsoft.
- Für die weiteren Schritte werden nun somit folgende drei Produkte genauer
- betrachtet:
+ Die weite Verbreitung und der guten Ruf des Entity Frameworks war aufgrund
+ des Marketings und der guten Dokumentation von Microsoft vorauszusehen.
+ Aus den Umfragergebnissen wurden die drei meistgenannten Produkte identifiziert
+, welche für die weiteren Schritte nun genauer betrachtet werden.
+ Namentlich sind dies:
 \end_layout
 
 \begin_layout Itemize
@@ -9428,6 +10865,12 @@ Dapper
 
 \begin_layout Itemize
 NHibernate
+\end_layout
+
+\begin_layout Standard
+Diese drei Produkte aus der Marktübersicht werden in den nächsten Kapitel
+ genauer betrachtet und sie stehen für die Empfehlung des OR-Mappers pro
+ Enterprise Pattern zur Auswahl.
 \end_layout
 
 \begin_layout Section
@@ -9477,6 +10920,7 @@ Mit Benutzerfreundlichkeit ist der Ease of Use für einen Entwickler gemeint.
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -9486,7 +10930,7 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="4">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="7cm">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -9529,7 +10973,7 @@ NHibernate
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9561,23 +11005,14 @@ Ja
 
 \begin_layout Plain Layout
 Nein
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Die Erweiterung Fluent NHibernate (siehe 
-\begin_inset Flex URL
-status collapsed
 
-\begin_layout Plain Layout
 
-http://www.fluentnhibernate.org/
-\end_layout
-
-\end_inset
-
-) erlaubt flüssige Interfaces.
- 
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -9589,7 +11024,7 @@ http://www.fluentnhibernate.org/
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9627,7 +11062,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9665,7 +11100,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9703,23 +11138,19 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Modeldesigner
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Wird später (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Toolunterstützung"
 
-\end_inset
 
-) noch im Detail behandelt
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -9752,22 +11183,14 @@ Nein
 
 \begin_layout Plain Layout
 Nein
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Das kommerzielle Produkte NHibernate Designer (siehe 
-\begin_inset Flex URL
-status collapsed
 
-\begin_layout Plain Layout
 
-http://www.mindscapehq.com/products/nhdesigner
-\end_layout
-
-\end_inset
-
-) bietet einen Modeldesigner.
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -9779,7 +11202,7 @@ http://www.mindscapehq.com/products/nhdesigner
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9817,7 +11240,7 @@ Nein
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9855,7 +11278,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9893,23 +11316,19 @@ Nein
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Monitoring
-\begin_inset Foot
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Ist in einem späteren Vergleich (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Monitoring"
 
-\end_inset
 
-) eingehender betrachter
+\backslash
+footnotemark
 \end_layout
 
 \end_inset
@@ -9948,7 +11367,7 @@ Ja
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9986,11 +11405,11 @@ Mittel
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Inhalt Community-Webseiten (Blogs, Codeproject.com, ...)
+Inhalt Community-Webseiten (Blogs, CodeProject.com, ...)
 \end_layout
 
 \end_inset
@@ -10024,7 +11443,7 @@ Viel
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10078,6 +11497,78 @@ Kriterien Benutzerfreundlichkeit
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotetext{Die Erweiterung Fluent NHibernate (siehe 
+\backslash
+url{http://www.fluentnhibernate.org/}) erlaubt flüssige Interfaces.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotetext{Wird später (siehe Kapitel 
+\backslash
+vref{sub:Toolunterstuetzung}) noch im Detail behandelt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotetext{Das kommerzielle Produkte NHibernate Designer (siehe 
+\backslash
+url{http://www.mindscapehq.com/products/nhdesigner}) bietet einen Modeldesigner.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotetext{Ist in einem späteren Vergleich (siehe Kapitel 
+\backslash
+vref{sub:Monitoring}) eingehender betrachter}
 \end_layout
 
 \end_inset
@@ -11557,7 +13048,7 @@ In diesem Vergleich zeigt sich sehr stark der Unterschied zwischen eine
 Toolunterstützung
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Toolunterstützung"
+name "sub:Toolunterstuetzung"
 
 \end_inset
 
