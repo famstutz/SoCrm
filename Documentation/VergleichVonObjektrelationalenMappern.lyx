@@ -15937,8 +15937,8 @@ reference "sub:Kontakt-hinzufügen"
 
 ) modelliert als Sequenzdiagramm.
  Es wird nur dieser Use-Case aus der Laufzeitsicht betrachtet da alle anderen
- Use-Cases praktisch identisch ablaufen und dieses Sequenzdiagramm exemplarisch
- für alle anderen Use-Cases steht.
+ Use-Cases praktisch identisch ausgeführt werden.
+ Dieses Sequenzdiagramm steht exemplarisch für alle anderen Use-Cases.
 \end_layout
 
 \begin_layout Subsubsection
@@ -15948,18 +15948,81 @@ Kontakt hinzufügen
 \begin_layout Standard
 Der Benutzer ist bereits beim System authentifiziert und besitzt einen gültigen
  Sessiontoken.
- Möchte ein Benutzer einem Kunden einen neuen Kontakt hinzufügen, so 
+ Möchte ein Benutzer einem Kunden einen neuen Kontakt hinzufügen, so navigiert
+ er zuerst auf die CustomerListView, welche alle Kunden anzeigt.
+ Die CustomerListView erhält ihre Daten aus dem CustomerService welcher
+ wiederum den PersistenceService<Customer> aufruft, der die Kundendaten
+ aus der Datenbank liest und mittels ORM auf Domänenobjekte vom Typ Customer
+ mappt.
 \end_layout
 
 \begin_layout Standard
-Um das Sequenzdiagramm im Abbildung XX lesbarer zu gestalten wurden auf
- einzelne Elemente im Ablauf des Use-Cases verzichtet beziehungsweise vereinfach
-t.
- So ist wurden zum Beispiel die Controller und ViewModels komplett weggelassen
- und die Persistenzservices zu einem einzigen Service zusammengefasst.
+In der CustomerListView wählt der Benutzer den Kunden aus, für welchen er
+ einen neuen Kontakt erstellen möchte.
+ Bei der Auswahl des Kunden navigiert das System zur CreateContactView welche
+ die notwendigen Felder für das Erstellen des Kontaktes bereitstellt.
+ Die CreateContactView enthält auch eine Auswahl der möglichen Kontaktmedien,
+ welche vom ContactService zurückgegeben werden.
+ Die vollständigen Kontaktinformationen werden an den ContactService übergeben,
+ welcher diese über den PersistenceService<Contact> in die Datenbank speichert.
+ Das Resultat der Datenbankoperation wird dem Benutzer als Bestätigung angezeigt.
 \end_layout
 
 \begin_layout Standard
+Um das Sequenzdiagramm im Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Verteilungsdiagramm-SoCrm"
+
+\end_inset
+
+ lesbarer zu gestalten wurde auf einzelne Elemente im Ablauf des Use-Cases
+ verzichtet beziehungsweise diese wurden vereinfacht.
+ So fehlen zum Beispiel die Controller und ViewModels und die Persistenzservices
+ sind zu einem einzigen generischen Service zusammengefasst.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SequenzDiagrammKontaktHinzufügen.png
+	scale 50
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sequenzdiagramm Kontakt hinzufügen
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sequenzdiagramm-Kontakt-hinzufüg"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

@@ -6786,6 +6786,13 @@ Use-Case-Spezifikation Kontakte anzeigen
 
 \begin_layout Subsubsection
 Kontakt hinzufügen
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kontakt-hinzufügen"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9693,12 +9700,10 @@ Erzeugte Business Objects sind als [Serializable] gekennzeichnet
 
  Sind die generierten Domänenobjekte von Haus aus bereits mit dem SerializableAt
 tribute
-
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-
 Mehr zum SerializableAttribute in der MSDN unter 
 \begin_inset Flex URL
 status collapsed
@@ -9715,8 +9720,6 @@ http://msdn.microsoft.com/en-us/library/system.serializableattribute.aspx
 
 \end_inset
 
-
-\lang german-ch
  gekennzeichnet, so wird dies unter diesem Kriterium festgehalten.
  Das SerializableAttribute beschreibt, dass Klassen von einem .NET Serialisierer
  (z.B.
@@ -9741,10 +9744,7 @@ Erzeugte Business Objects unterstützen WCF Contracts
 status open
 
 \begin_layout Plain Layout
-Mehr zu den Data Contract Attributes in der MSDN unter
- 
-\lang german-ch
-
+Mehr zu den Data Contract Attributes in der MSDN unter 
 \begin_inset Flex URL
 status collapsed
 
@@ -15917,6 +15917,112 @@ key "Starke2011"
  Darüber hinaus dokumentiert die Laufzeitsicht, wie Laufzeitkomponenten
  sich aus Instanzen von Implementierungsbausteinen zusammensetzen.
  
+\end_layout
+
+\begin_layout Standard
+Dieses Kapitel enthält stellvertretend für alle Use-Cases den Use-Case 
+\begin_inset Quotes eld
+\end_inset
+
+Kontakt hinzufügen
+\begin_inset Quotes erd
+\end_inset
+
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Kontakt-hinzufügen"
+
+\end_inset
+
+) modelliert als Sequenzdiagramm.
+ Es wird nur dieser Use-Case aus der Laufzeitsicht betrachtet da alle anderen
+ Use-Cases praktisch identisch ausgeführt werden.
+ Dieses Sequenzdiagramm steht exemplarisch für alle anderen Use-Cases.
+\end_layout
+
+\begin_layout Subsubsection
+Kontakt hinzufügen
+\end_layout
+
+\begin_layout Standard
+Der Benutzer ist bereits beim System authentifiziert und besitzt einen gültigen
+ Sessiontoken.
+ Möchte ein Benutzer einem Kunden einen neuen Kontakt hinzufügen, so navigiert
+ er zuerst auf die CustomerListView, welche alle Kunden anzeigt.
+ Die CustomerListView erhält ihre Daten aus dem CustomerService welcher
+ wiederum den PersistenceService<Customer> aufruft, der die Kundendaten
+ aus der Datenbank liest und mittels ORM auf Domänenobjekte vom Typ Customer
+ mappt.
+\end_layout
+
+\begin_layout Standard
+In der CustomerListView wählt der Benutzer den Kunden aus, für welchen er
+ einen neuen Kontakt erstellen möchte.
+ Bei der Auswahl des Kunden navigiert das System zur CreateContactView welche
+ die notwendigen Felder für das Erstellen des Kontaktes bereitstellt.
+ Die CreateContactView enthält auch eine Auswahl der möglichen Kontaktmedien,
+ welche vom ContactService zurückgegeben werden.
+ Die vollständigen Kontaktinformationen werden an den ContactService übergeben,
+ welcher diese über den PersistenceService<Contact> in die Datenbank speichert.
+ Das Resultat der Datenbankoperation wird dem Benutzer als Bestätigung angezeigt.
+\end_layout
+
+\begin_layout Standard
+Um das Sequenzdiagramm im Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Verteilungsdiagramm-SoCrm"
+
+\end_inset
+
+ lesbarer zu gestalten wurde auf einzelne Elemente im Ablauf des Use-Cases
+ verzichtet beziehungsweise diese wurden vereinfacht.
+ So fehlen zum Beispiel die Controller und ViewModels und die Persistenzservices
+ sind zu einem einzigen generischen Service zusammengefasst.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/SequenzDiagrammKontaktHinzufügen.png
+	scale 50
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sequenzdiagramm Kontakt hinzufügen
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sequenzdiagramm-Kontakt-hinzufüg"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
