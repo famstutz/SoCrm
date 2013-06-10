@@ -1654,6 +1654,13 @@ hkeiten, das heisst den Lösungsraum im Entwicklungsprozess ein.
 
 \begin_layout Section
 Anforderungen Persistenzlayer
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Anforderungen-Persistenzlayer"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2488,7 +2495,7 @@ Neben den konkreten Anforderungen werden die einzelnen Enterprise Pattern
  Anforderungen abzuleiten.
  Aus diesem Grund sind die Anforderungen in diesem Kapitel nur rudimentär
  beschrieben.
- Die spätere Evaluierung der OR-Mapper auf Basis dieser Anforderungen (siehe
+ Die spätere Evaluation der OR-Mapper auf Basis dieser Anforderungen (siehe
  Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -3382,7 +3389,7 @@ A2
 
 \begin_layout Plain Layout
 Das System muss keine Konversion von Objektdatentypen und Datentypen der
- Datenbanktablle verwenden.
+ Datenbanktabelle verwenden.
 \end_layout
 
 \end_inset
@@ -12520,6 +12527,13 @@ t ist NHibernate als Gewinner der Kategorie Plattformunterstützung hervorzuhebe
 
 \begin_layout Subsection
 Performance
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Performance"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13794,6 +13808,13 @@ Der Gewinner in dieser Kategorie ist das Entity Framework.
 
 \begin_layout Subsection
 Unterstützung Enterprise Pattern
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Unterstützung-Enterprise-Pattern"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14068,8 +14089,8 @@ reference "tab:Vergleichsmatrix"
  sind noch einmal alle Vergleichskriterien der oberen Kapitel mit dem jeweils
  führenden OR-Mapper zusammengefasst.
  Diese Tabelle liefert einen tieferen Einblick in die Verwendung der OR-Mapper
- aus Sicht des Entwicklers und bietet die Grundlage für die Evaluierung
- der OR-Mapper (siehe Kapitel 
+ aus Sicht des Entwicklers und bietet die Grundlage für die Evaluation der
+ OR-Mapper (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Evaluierung-selektierte-OR-Mappe"
@@ -15984,9 +16005,10 @@ reference "fig:Verteilungsdiagramm-SoCrm"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -16153,21 +16175,21 @@ name "chap:Implementierung"
 \end_layout
 
 \begin_layout Standard
-Das Kapitel Implementierung beschäftigt sich mit der abschliessenden Evaluierung
+Das Kapitel Implementierung beschäftigt sich mit der abschliessenden Evaluation
  der selektierten OR-Mapper aus den vorgehenden Kapiteln und erstellt eine
  Produktempfehlung auf Basis der Vergleiche sowie der erhobenen Anforderungen
- an den Persistenzlayer sowie die Enterprise Pattern.
+ an den Persistenzlayer und Fowlers Enterprise Pattern.
 \end_layout
 
 \begin_layout Standard
-Anschleissend wird die Implementierung des Proof-of-Concepts SoCrm im Detail
+Anschliessend wird die Implementierung des Proof-of-Concepts SoCrm im Detail
  vorgestellt.
  Es werden die einzelnen Visual Studio Projekte als Teilkomponenten im Detail
  beleuchtet und die festgelegten Implementierungsprinzipien vorgestellt.
 \end_layout
 
 \begin_layout Section
-Evaluierung selektierte OR-Mapper
+Evaluation selektierte OR-Mapper
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Evaluierung-selektierte-OR-Mappe"
@@ -16175,6 +16197,246 @@ name "sec:Evaluierung-selektierte-OR-Mappe"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Dieses Kapitel enthält die finale Evaluation der drei in den vorherigen
+ Kapiteln behandelten OR-Mapper Entity Framework, Dapper und NHibernate.
+ Dazu werden die drei Produkte rückblickend betrachtet und die im Rahmen
+ der Evaluation und Benutzung gewonnenen Erkentnisse beleuchtet.
+ Die OR-Mapper werden in diesem Kapitel an den erhobenen Anforderungen an
+ den Persistenzlayer einer serviceorientierten Architektur (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Anforderungen-Persistenzlayer"
+
+\end_inset
+
+) und an den Anforderungen der Enterprise Pattern gemessen.
+ Es ist erneut darauf hinzuweisen, dsas die Anforderungen an den Persistenzlayer
+ als Anforderungen an die Implementierung eines Persistenzlayers formuliert
+ sind, nicht nur an den im Layer verwendeten ORM.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Evaluation der drei Produkte dient als Entscheidungsgrundlage für die
+ nachfolgende Produkteempfehlung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Produkteempfehlung"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Entity Framework
+\end_layout
+
+\begin_layout Standard
+Das Entity Framework ist klar der bekannteste ORM der in dieser Arbeit betrachte
+ten OR-Mapper.
+ Dies zeigt die Umfrage unter .NET-Entwicklern (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Umfrage"
+
+\end_inset
+
+) und beweist das Microsoft seit der Einfühung des Produkts im August 2005
+ gute Arbeit bei der Dokumentation geleistet hat.
+ Beim Rückblick auf die Marktübersicht (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Marktübersicht"
+
+\end_inset
+
+) und den erweiterten Vergleichen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Vergleich-ausgewählter-Produkte"
+
+\end_inset
+
+) zeigt sich, dass nicht nur das umfangreiche Marketing von Microsoft fruchtet,
+ sondern auch der Funktionsumfang des Entity Frameworks seinesgleichen sucht.
+ Es bietet neben vielfältigen Assistenten und Designern auch die vollständige
+ Unterstützung der beiden Mappingtechniken Forward Mapping und Reverse Mapping.
+\end_layout
+
+\begin_layout Standard
+Dieser Funktionsumfang hat jedoch auch Nachteile was sich bei den Performancemes
+sungen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Performance"
+
+\end_inset
+
+) gut zeigt.
+ Als kompletter OR-Mapper war vorauszusehen dass gegenüber eines leichtgewichtig
+en OR-Mappers grosse Unterschiede in den Leistungsdaten sichtbar werden.
+\end_layout
+
+\begin_layout Standard
+Betrachtet man die Anforderungen an den Persistenzlayer eines serviceorientierte
+n Architektur so sind bis auf die Anforderungen PF9 (Das System muss dem
+ Administrator die Möglichkeit bieten den Ablauf sämtlicher Operationen
+ nachzuverfolgen) und PQ3 (Das System muss dem Entwickler die Möglichkeit
+ bieten die externe Schnittstelle des Systems automatisiert zu testen) alle
+ Anforderungen als erfüllt zu betrachten.
+ PF9 ist über Drittanbierterwerkzeugen oder zusätzlichem Implementierungsaufwand
+ verbunden erfüllbar.
+ Die Anforderung PQ3 bedeutet in diesem konkreten Fall, dass der ObjectContext
+ des Entity Frameworks für Unittests abstrahiert (z.B.
+ mit einem Mockingframework) werden sollte.
+ Dies stellt sich in der Praxis als sehr aufwändig dar wenn nicht gar unmöglich
+ dar.
+ Zu stark ist die Kopplung des ObjectContextes an Komponenten welche die
+ Domänenobjekte des ORMs konsumieren als dass dieser einfach abstrahiert
+ werden könnte.
+\end_layout
+
+\begin_layout Standard
+Beim Betrachten der Anforderungen der Enterprise Pattern werden bis auf
+ D2 (Das System muss die Möglichkeiten einer Spezifikation bieten, mit welcher
+ der Teil eines zu ladenden Objektgraphen beschrieben wird) alle Anforderungen
+ erfüllt.
+ Das Entity Framework bietet von Haus aus keine Möglichkeit zu spezifizieren
+ welcher Teil eines Objektgraphen geladen werden soll.
+ Die Anforderung D2 kann jedoch mit der Verwendung von Lazy Loading und
+ virtuellen Eigenschaften in den Domänenobjekten teilweise erfüllt werden.
+ Wird eine vollständige Spezifikation des Objektgraphen gefordert (inklusive
+ der Definition welcher Teil des Objektgraphen nun geladen werden soll und
+ welcher nicht) so muss dies im Persistenzlayer selber implementiert werden.
+\end_layout
+
+\begin_layout Subsection
+Dapper 
+\end_layout
+
+\begin_layout Standard
+Dapper hat innerhalb dieser Vergleiche für einige Überraschungen gesorgt.
+ Der leichtgewichtige OR-Mapper, der in Form einer einzigen C#-Datei mit
+ gerade einmal 3500 Zeilen ausgeliefert wird bietet viele FUnktionlitäten
+ die meist in deutlich grösseren ORMs verfügbar ist.
+ Insbesondere die einfache Konfiguration der Mappings und die Tatsache dass
+ Dapper gerade einmal drei Methodne zur Verfügung stellt sind für einen
+ erfahrenen Entwickler attraktiv.
+ Die Performance von Dapper ist dem Entity Framework und NHibernate deutlich
+ überlegen und wird insbesondere bei grossen Systemen oder grossen WEbapplikatio
+nen eine wichtiges Auswahlkriterium sein.
+ Dapper wurde gebaut mit dem Ziel simples und elegantes OR-Mapping zu erlauben
+ und die Mischung zwicshen Minimalismus und Funktionsumfang ist meinre Meinung
+ nach durchaus gelungen.
+\end_layout
+
+\begin_layout Standard
+Dieser Minimalimus hat natürlich auch einige Nachteile.
+ So muss der Entwickler zwingend das Datnebankschema hinter seinem Domänenomdell
+ kennen da teilweise SQL-Statementts als Parameter an Dapper übergeben werden.
+ Auch ist Dapper nur wirklich in Forward Mapping Szenarien einzusetzen,
+ welche auf einem jungfräulichen Datenmodell basieren, welches dem Domänenmodell
+ sehr ähnlich ist.
+\end_layout
+
+\begin_layout Standard
+Beim Vergleich von Dapper mit den funktionalen Anforderungen an den Persistezlay
+ers zeigt sich der geringe Funktionumfang: PF8 (Das System muss mehrere
+ Instanzen gleichzeitig löschen können.) und PF9 (Das System muss dem Administrat
+or die Möglichkeit bieten den Ablauf sämtlicher Operationen nachzuverfolgen.)
+ sind nicht erfüllt.
+ Zwar lässt sich PF9 vom Entwickler nachträglich implementieren aber die
+ Möglichkeiten zur Überwachung sind gering (siehe auch Kapitel ).
+ Die Qualitätsanforderungen und Randbedingungen sind ähnlich abgedeckt.
+ Zwar wurde Dapper mit dem Hintergrund entwickelt die Datenbank zu abstrahieren
+ für automatische Tests aber PR2 (Das System muss dem Entwickler die Möglichkeit
+ bieten ohne Wissen über die Datenbank oder datenbanknahe Technologie auf
+ die Operationen zuzugreifen.) und PR3 (Das System muss dem Entwickler für
+ sämtliche Operationen ein Resultat entweder in Form der Entität oder den
+ Entitäten oder in Form eines Operationsresultats zurückliefern.) sind nicht
+ erfüllt.
+\end_layout
+
+\begin_layout Standard
+Werden die Anforderungen der Enterprise Pattern an Dapper näher betrachtet
+ so gelten bis auf D1 (Das System muss eine minimale Kopplung des Domain
+ Models an andere Layer ermöglichen.), D2 (Das System muss die Möglichkeiten
+ einer Spezifikation bieten, mit welcher der Teil eines zu ladenden Objektgraphe
+n beschrieben wird.) und D5 (Das System muss das Domain Model von der Datenbank
+ vollständig entkoppeln.) als erfüllt.
+ Hier zeigt sich auch die Schwierigkeit des Einsatzes von Dapper in einem
+ Domain Model.
+ Theoretisch könnte diese fehlende Funktionalität vom Entwickler selber
+ nachgebaut werden aber andere ORMs wie EF oder NHibernate bieten diese
+ schon von Haus aus an.
+\end_layout
+
+\begin_layout Subsection
+NHibernate
+\end_layout
+
+\begin_layout Standard
+NHibernate erfreut sich immer noch ausserordentlicher Beliebtheit in der
+ Entwicklercommunity.
+ Dies liegt insbesondere daran dass NHibernate lange der einzig wirklich
+ komplette OR-Mapper im .NET-Umfeld war und dass es dadurch viele erfolgreich
+ umgesetzte Projekte mit NHibernate gibt.
+ Viele Entwickler haben NHibernate schon irgendwann einmal eingesetzt oder
+ in einem Projekt mitgearbeitet wo NHibernate eingesetzt wurde.
+ Da NHibernate immer noch eine Poriterung des Javabasierten Hibernate ist,
+ ist die Entwicklung in den letzten Jahr eingeschlafen und NHibernate kann
+ heute nicht mehr ganz mit anderen kompletten ORMs wie dem Entity Framework
+ oder OpenAccess ORM mithalten.
+ Viele der Funktionalitäten die NHiberante fehlen wurden von der Open-Source
+ Community oder Drittkompontennherstellern entwickelt und zur Verfügung
+ gestellt.
+ So lassen sich heute die Mappings nicht nur über XML-Dateien erstellen
+ sondern auch über grafische Designer oder flüssige SChnittstellen.
+ 
+\end_layout
+
+\begin_layout Standard
+NHibernate besitzt eine relativ steile Lernkurve ist dafür jedoch sehr flexibel
+ konfigurierbar.
+ Durch diese flexible Konfigurierbarkeit ist jedoch Disziplin von den Entwickler
+n gefordert.
+ Es gibt mehrere Wege Mappings zu erstellen die von NHibernate akzeptiert
+ werden und in einem grösserne Projekt mit mehreren Entwicklern kann dies
+ zu degradiertem Code oder Konfigurationsdateien führen.
+ 
+\end_layout
+
+\begin_layout Standard
+Wird NHibernate mit den Anforderungen an den Persistnezalyers einer serviceorien
+tierten Architektur verglichen so werden bis auf PF9 (Das System muss dem
+ Administrator die Möglichkeit bieten den Ablauf sämtlicher Operationen
+ nachzuverfolgen.) und PQ3 (Das System muss dem Entwickler die Möglichkeit
+ bieten die externe Schnittstelle des Systems automatisiert zu testen.) sämtliche
+ Anforderungen erfüllt.
+ Dies sind dieselben Anforderungen dei auch das Entity Framework nciht erfüllen
+ konnte und auch NHibernate leidet und denselben Schwierigkeiten was die
+ Überwachugn zur Laufzeit sowie das automatisierte Testen angeht.
+ Zwar können eigene Überwachungsmechanismen auch in die Kernfunktionalität
+ von NHibernate eingebaut werden (da Open-Source), dies ist jedoch nur bedingt
+ anzuraten.
+ NHibernate stammt noch aus einer Zeit wo weniger Wert auf das automatisierte
+ Testen von einzelnen Programmelementen wie Klassen oder Komponenten gelegt
+ wurde.
+ Dadurch ist es auch schwierig den Datencontiner von NHibernate zu mocken.
+\end_layout
+
+\begin_layout Standard
+Die Anforderungen der Enterprise Pattern werden bis auf A2 (Das System muss
+ keine Konversion von Objektdatentypen und Datentypen der Datenbanktablle
+ verwenden.) vollständig erfüllt.
+ Da NHibernate über JDBC auf das Datenbankmanagementsystem zugreift ist
+ immer eine (wenn auch vom Entwickler unsichtbare) Konvertierung aller Datenwert
+e nötig.
 \end_layout
 
 \begin_layout Section
@@ -16186,6 +16448,64 @@ name "sec:Produkteempfehlung"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In diesem Kapitel wird pro Enterprise Pattern Transaction Script, Domain
+ Model, Table Module und Active Record eine Empfehlung abgegeben, welcher
+ der drei OR-Mapper Entity Framework, Dapper oder NHibernate eingesetzt
+ werden soll.
+ Es wird dabei auf Grund der Evaluation in den vorherigen Kapiteln eine
+ Empfehlung ausgesprochen für welches Enterprise Pattern welcher OR-Mapper
+ eingesetzt werden soll.
+\end_layout
+
+\begin_layout Standard
+Wie schon unter dem Vergleichskriterium Unterstützung Enterprise Pattern
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Unterstützung-Enterprise-Pattern"
+
+\end_inset
+
+) festgehalten sind eingetlich alle OR-Mapper für alle betrachteten Enterprise
+ Pattern geeignet.
+ In den folgenden Kapiteln wird trotzdem versucht eine differenziertere
+ Betrachtungsposition anzunehmen und pro Enterprise Pattern eine konkrete
+ Empfehlung abzugeben.
+\end_layout
+
+\begin_layout Subsection
+Transaction Script
+\end_layout
+
+\begin_layout Standard
+Entity Framework, Dapper, NHibernate
+\end_layout
+
+\begin_layout Subsection
+Domain Model
+\end_layout
+
+\begin_layout Standard
+Entity Framework
+\end_layout
+
+\begin_layout Subsection
+Table Module
+\end_layout
+
+\begin_layout Standard
+Dapper
+\end_layout
+
+\begin_layout Subsection
+Active Record
+\end_layout
+
+\begin_layout Standard
+Dapper
 \end_layout
 
 \begin_layout Section
