@@ -6786,6 +6786,13 @@ Use-Case-Spezifikation Kontakte anzeigen
 
 \begin_layout Subsubsection
 Kontakt hinzufügen
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kontakt-hinzufügen"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9693,12 +9700,10 @@ Erzeugte Business Objects sind als [Serializable] gekennzeichnet
 
  Sind die generierten Domänenobjekte von Haus aus bereits mit dem SerializableAt
 tribute
-
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-
 Mehr zum SerializableAttribute in der MSDN unter 
 \begin_inset Flex URL
 status collapsed
@@ -9715,8 +9720,6 @@ http://msdn.microsoft.com/en-us/library/system.serializableattribute.aspx
 
 \end_inset
 
-
-\lang german-ch
  gekennzeichnet, so wird dies unter diesem Kriterium festgehalten.
  Das SerializableAttribute beschreibt, dass Klassen von einem .NET Serialisierer
  (z.B.
@@ -9741,10 +9744,7 @@ Erzeugte Business Objects unterstützen WCF Contracts
 status open
 
 \begin_layout Plain Layout
-Mehr zu den Data Contract Attributes in der MSDN unter
- 
-\lang german-ch
-
+Mehr zu den Data Contract Attributes in der MSDN unter 
 \begin_inset Flex URL
 status collapsed
 
@@ -15917,6 +15917,50 @@ key "Starke2011"
  Darüber hinaus dokumentiert die Laufzeitsicht, wie Laufzeitkomponenten
  sich aus Instanzen von Implementierungsbausteinen zusammensetzen.
  
+\end_layout
+
+\begin_layout Standard
+Dieses Kapitel enthält stellvertretend für alle Use-Cases den Use-Case 
+\begin_inset Quotes eld
+\end_inset
+
+Kontakt hinzufügen
+\begin_inset Quotes erd
+\end_inset
+
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Kontakt-hinzufügen"
+
+\end_inset
+
+) modelliert als Sequenzdiagramm.
+ Es wird nur dieser Use-Case aus der Laufzeitsicht betrachtet da alle anderen
+ Use-Cases praktisch identisch ablaufen und dieses Sequenzdiagramm exemplarisch
+ für alle anderen Use-Cases steht.
+\end_layout
+
+\begin_layout Subsubsection
+Kontakt hinzufügen
+\end_layout
+
+\begin_layout Standard
+Der Benutzer ist bereits beim System authentifiziert und besitzt einen gültigen
+ Sessiontoken.
+ Möchte ein Benutzer einem Kunden einen neuen Kontakt hinzufügen, so 
+\end_layout
+
+\begin_layout Standard
+Um das Sequenzdiagramm im Abbildung XX lesbarer zu gestalten wurden auf
+ einzelne Elemente im Ablauf des Use-Cases verzichtet beziehungsweise vereinfach
+t.
+ So ist wurden zum Beispiel die Controller und ViewModels komplett weggelassen
+ und die Persistenzservices zu einem einzigen Service zusammengefasst.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection
