@@ -16596,6 +16596,14 @@ Active Record
 Dapper
 \end_layout
 
+\begin_layout Subsection
+Abschliessende Bemerkung
+\end_layout
+
+\begin_layout Standard
+Fullblown vs lightweight ORMs!
+\end_layout
+
 \begin_layout Section
 Serviceorientierte CRM-Applikation
 \begin_inset CommandInset label
@@ -19355,12 +19363,7 @@ Schlussfolgerungen
 \end_layout
 
 \begin_layout Standard
-Im Rückblick auf die Anzahl der Vergleich der OR-Mapper und der obigen Produktem
-pfehlung fällt eigentlich 
-\end_layout
-
-\begin_layout Standard
-Fullblown vs lightweight ORMs!
+Erneut: Abschliessende Bemerkung: Fullblown vs lightweight ORMs!
 \end_layout
 
 \begin_layout Section
