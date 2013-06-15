@@ -16230,7 +16230,7 @@ Die Verteilungssicht ist von grosser Beduetung für die Betreiber des Systems,
 ng (gemäss 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Hruschka2012"
+key "Hruschka2013"
 
 \end_inset
 
@@ -16265,22 +16265,22 @@ Generell sind die drei verschiedenen Layer Presentationlayer, Orchestrationlayer
  Sie können auf verschiedenen Rechner verteilt werden, auch eine Verteilung
  über das Internet wäre möglich.
  Der Orchestrationlayer und der Infrastructurelayer sind als WCF Service
- Applikationen implementiert und benötigen deshalb einen IIS als Ausführungsumge
-bung.
+ Applikationen implementiert und benötigen deshalb einen Internet Information
+ Server (IIS) als Ausführungsumgebung.
  Aus Performancegründen macht es Sinn wenn der Infrastructureserver im gleichen
  Netzwerk wie der Datenbankserver ist, so dass bei Abfragen an die Datenbank
- keine allzu grosse Latenz entsteht.
+ keine grosse Latenz entsteht.
 \end_layout
 
 \begin_layout Standard
 Die Clientapplikation App ist eine WPF-Anwendung die auf jedem beliebigen
  Windows Betriebssystem verteilt werden kann.
- Das einzig notwendig ist eine Änderung der Konfiguration der Endpunkte
- der Orchestrationlayerservices.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
