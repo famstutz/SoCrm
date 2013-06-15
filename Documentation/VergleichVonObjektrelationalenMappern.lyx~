@@ -8,6 +8,7 @@
 \usepackage{footnote}
 \usepackage{listings}
 \makesavenoteenv{tabular}
+\setcounter{tocdepth}{2}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -104,8 +105,8 @@ Vergleich von objektrelationalen Mappern
 \end_inset
 
  gemäss freigegebener Aufgabenstellung mit Freigabe vom 8.
- Januar 2013 ohne jede fremde Hilfe im Rahmen des gültigen Reglements selbständi
-g ausgeführt wurde.
+ Januar 2013 ohne jede fremde Hilfe im Rahmen des gültigen Reglements selbststän
+dig ausgeführt wurde.
 \end_layout
 
 \begin_layout Standard
@@ -170,7 +171,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Chapter
-Einführung
+Einleitung
 \end_layout
 
 \begin_layout Standard
@@ -189,17 +190,9 @@ Management Summary
 
 \begin_layout Standard
 Objektorientierte Programmiersprachen kapseln Daten und Verhalten in Objekten,
- relationale Datenbank verwenden hingegen Tabellen.
+ relationale Datenbanken verwenden hingegen Tabellen.
  Um zwischen diesen grundverschiedenen Paradigmen übersetzen zu können werden
- objektrelationale Mapper (OR-Mapper
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "OR-Mapper"
-description "Ein OR-Mapper (objektrelationaler Mapper) stellt eine Schicht zwischen Anwendung und Datenbank dar. Der OR-Mapper kümmert sich dabei um das Mapping zwischen Objekten und Zeilen einer Tabelle in der Datenbank."
-
-\end_inset
-
-) verwendet.
+ objektrelationale Mapper (kurz OR-Mapper) verwendet.
  
 \end_layout
 
@@ -233,11 +226,39 @@ key "Liebhart2007"
 \end_layout
 
 \begin_layout Standard
-Diese Bachelorarbeit zeigt auf welche OR-Mapper im Markt vorhanden sind
- und erstellt eine Produktempfehlung für jedes Enterprise Pattern Es werden
- zwei Typen von OR-Mappern identifiziert: Leichtgewichtige und Komplette
- OR-Mapper welche sich in der Benutzung und dem Funktionsumfang grundlegend
- unterscheiden.
+Diese Bachelorarbeit erhebt und dokumentierte die Anforderungen an den Persisten
+zlayer einer serviceorientierten Architektur und ausgewählten Enterprise
+ Pattern (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+).
+ Es wird eine Marktübersicht aller frei verfügbaren oder Open Source OR-Mapper
+ im .NET-Umfeld erstellt und ausgewählte Produkte werden auf Grund einer
+ Auswahl von Kriterien miteinander verglichen.
+ Die gewählten OR-Mapper werden gegen die erhobenen Anforderungen geprüft
+ und es wird eine Produktempfehlung für jedes Enterprise Pattern erstellt.
+ Benutzt ein Persistenzlayer ein Domain Model, so wird die Verwendung von
+ Entity Framework empfohlen.
+ Für Table Module und Active Record wird der Einsatz von Dapper empfohlen.
+ Wenn die Geschäftslogik eines Persistenzlayers als Transaction Script implement
+iert ist, wird entweder Entity Framework, NHibernate oder Dapper empfohlen.
+ Diese Produktempfehlungen und die für die Empfehlung verantwortlichen Vergleich
+sdaten werden anhand eines Proof of Concepts gewonnen.
+ Eine serviceorientierte CRM-Applikation wird exemplarisch implementiert,
+ indem Anforderungen erhoben werden, ein Konzept erstellt wird und nach
+ der Implementierung eine Verifikation der implementierten Anforderungen
+ durchgeführt wird.
+\end_layout
+
+\begin_layout Standard
+Als Fazit erkennt die Arbeit zwei Typen von OR-Mappern: Leichtgewichtige
+ und komplette OR-Mapper.
+ Diese beiden Typen von ORM unterscheiden sich im Funktionsumfang und werden
+ in unterschiedlichen Softwaresystemen eingesetzt.
 \end_layout
 
 \begin_layout Section
@@ -264,7 +285,7 @@ Die Bachelorarbeit besteht aus einer konzeptionellen Arbeit und deren Umsetzung.
  und methodischen Grundlagen einer Entwicklung oder eines Konzeptes ausgearbeite
 t und dargelegt werden.
  Im Umsetzungsteil erfolgt anschliessend die Beschreibung der Implementierung
- beziehungsweise der Anwendung.
+ beziehungsweise der Anwendung des Konzepts.
 \end_layout
 
 \begin_layout Section
@@ -282,18 +303,17 @@ key "Fowler2002"
 
 \end_inset
 
-) erarbeitet, welche heutzutage in jedem grösseren (Software-) System eine
- entscheidene Rolle spielen.
- Es wird pro Enterprise Pattern eine Empfehlung abgegeben werden, welcher
- frei verfügbare und Open-Source OR-Mapper im .NET-Umfeld eingesetzt werden
- soll.
+) gelegt, welche heutzutage in jedem grösseren (Software-) System eine entscheid
+ene Rolle spielen.
+ Es wird pro Enterprise Pattern eine Empfehlung abgegeben, welcher frei
+ verfügbare oder Open Source OR-Mapper im .NET-Umfeld eingesetzt werden soll.
 \end_layout
 
 \begin_layout Standard
-Zusätzlich zu diesen Vergleichen und den Empfehlungen wird eine serviceorientier
-te CRM-Applikation als Proof-of-Concept erstellt.
+Zusätzlich zu Empfehlungen wird eine serviceorientierte CRM-Applikation
+ als Proof of Concept erstellt.
  Für diese CRM-Applikation werden Anforderungen erhoben, es wird ein Konzept
- erstellt und die Umsetzung wird verifiziert.
+ erstellt, dieses umgesetzt und die Umsetzung wird verifiziert.
 \end_layout
 
 \begin_layout Section
@@ -303,31 +323,8 @@ Vorgehensweise
 \begin_layout Standard
 Software lässt sich nach einer Vielzahl von Prozessen und Modellen entwickeln.
  Von iterativen Vorgehen wie Scrum über komplexe und vergleichsweise starre
- Modelle wie RUP
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "RUP"
-description "Der Rational Unified Process ist ein kommerzielles Vorgehensmodell zur Softwareentwicklung von IBM. "
-
-\end_inset
-
- bis hin zu klassischen, linearen Vorgehen wie dem Wasserfallmodell
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Wasserfallmodell"
-description "Das Wasserfallmodell ist ein lineares (nicht iteratives) Vorgehensmodell, das in Phasen organisiert wird. Dabei gehen die Phasenergebnisse wie bei einem Wasserfall immer als bindende Vorgaben für die nächsttiefere Phase ein. Im Wasserfallmodell hat jede Phase vordefinierte Start- und Endpunkte mit eindeutig definierten Ergebnissen. "
-
-\end_inset
-
- oder dem V-Modell
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "V-Modell"
-description "Das V-Modell ist ein Vorgehensmodell in der Softwareentwicklung, bei dem der Softwareentwicklungsprozess in Phasen organisiert wird. Neben diesen Entwicklungsphasen definiert das V-Modell auch das Vorgehen zur Qualitätssicherung (Testen) phasenweise."
-
-\end_inset
-
-.
+ Modelle wie RUP bis hin zu klassischen, linearen Vorgehen wie dem Wasserfallmod
+ell oder dem V-Modell.
  Nach 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -341,19 +338,13 @@ key "Starke2011"
  Entwicklungsmodelle, die mehr oder weniger gut zur Organisation der Unternehmun
 g und dem jeweiligen Projekt passen.
  Ein ungünstig gewählter oder nicht vollständig eingeführter und gelebter
- Entwicklungsprozess ist nach 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Starke2011"
-
-\end_inset
-
- einer der Hauptgründe wieso Softwareprojekte mit Qualitätsmängeln, Budgetübersc
-hreitungen oder zeitlichen Verzögerungen zu kämpfen haben.
+ Entwicklungsprozess ist einer der Hauptgründe wieso Softwareprojekte mit
+ Qualitätsmängeln, Budgetüberschreitungen oder zeitlichen Verzögerungen
+ zu kämpfen haben.
 \end_layout
 
 \begin_layout Standard
-Für dieses Projekt wurde das Wasserfallmodell als Entwicklungsprozess ausgewählt.
+Für dieses Projekt wird das Wasserfallmodell als Entwicklungsprozess ausgewählt.
  Das Wasserfallmodell teilt die Softwareentwicklung meist in fünf verschiedene
  Phasen ein (siehe Abbildung 
 \begin_inset CommandInset ref
@@ -366,18 +357,12 @@ reference "fig:Wasserfallprozess-nach"
  Dabei kann jeweils erst mit der nächsten Phase begonnen werden wenn die
  Lieferergebnisse und die Ergebnisdokumentation der vorhergehenden Phase
  fertiggestellt und abgenommen worden sind.
- Das Wasserfallmodell wurde ausgewählt, da dieses Projekt gut linear abgearbeite
-t werden kann und da der Betreuer als einziger externer Stakeholder
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Stakeholder"
-description "Als Stakeholder (engl.) wird eine Person oder Gruppe bezeichnet, die ein berechtigtes Interesse am Verlauf oder Ergebnis eines Prozesses oder Projektes hat."
-
-\end_inset
-
- des Projekts zu festdefinierten Zeitpunkten (namtlich dem Kick-Off und
- dem Design-Review) Einfluss auf das Projekt ausüben kann und danach keine
- andere Möglichkeit besitzt, im Projektverlauf zu intervenieren.
+ Das Wasserfallmodell wurde ausgewählt, da die Bachelorarbeit als Projekt
+ gut linear abgearbeitet werden kann und der Betreuer und die Studiengangsleitun
+g als einzige externe Stakeholder des Projekts zu festdefinierten Zeitpunkten
+ (namtlich dem Kick-Off und dem Design-Review) Einfluss auf das Projekt
+ ausüben kann und danach keine andere Möglichkeit besitzt, im Projektverlauf
+ zu intervenieren.
  Die grössten Nachteile des Wasserfallmodells sind nach 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -389,14 +374,15 @@ key "Elmer2005"
  des Abschlusses einzelner Phasen da diese nur mit viel (in anderen Entwicklungs
 modellen unnötigem) Aufwand isoliert von anderen Phasen abgeschlossen werden
  können.
- Dadurch dass der Betreuer nur in der Anforderungs- und Konzeptphase Einfluss
- auf das Projekt nehmen kann und der Student alleinig den Abschluss der
- Phasen steuert und verifiziert sowie den Ablauf der Phasen innerhalb des
- Projekts steuert, können diese Nachteile entschärft werden.
+ Dadurch dass der Betreuer und die Studiengangsleitung nur in der Anforderungs-
+ und Konzeptphase Einfluss auf das Projekt nehmen kann und der Student alleinig
+ den Abschluss der Phasen steuert und verifiziert sowie den Ablauf der Phasen
+ innerhalb des Projekts koordiniert, können diese Nachteile entschärft werden.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -448,18 +434,18 @@ Zu Beginn des Wasserfallmodells steht das Sammeln und Dokumentieren der
  Anforderungen (Requirements) im Vordergrund.
  Wenn die Anforderungen umfänglich und in hohem Detaillierungsgrad niedergeschri
 eben sind, werden diese vom Auftraggeber abgenommen und das Projekt geht
- in die Phase Design über.
- Die zu entwickelnde Software wird auf verschiedenen Ebenen von Softwarearchitek
-ten entwickelt und eine Blaupause wird erstellt, nach welcher sich die Softwaree
-ntwickler in der Implementationsphase zu halten haben.
+ in die Konzeptphase (Design) über.
+ Das zu entwickelnde System wird auf verschiedenen Ebenen von Softwarearchitekte
+n entwickelt und eine Blaupause wird erstellt, nach welcher sich die Softwareent
+wickler in der Implementationsphase zu halten haben.
  Das Design sollte einen Plan beinhalten, welcher die Implementierung der
  Anforderungen aufzeigt.
  
 \end_layout
 
 \begin_layout Standard
-Wenn das Design fertiggestellt worden ist, wird dieses von den Entwicklern
- in Programmcode umgesetzt.
+Wenn das Design fertiggestellt ist, wird dieses von den Entwicklern in Programmc
+ode umgesetzt.
  Gegen Ende der Implementierungsphase werden die Softwarekomponenten verschieden
 er Teams integriert und als Gesamtsystem zum Einsatz gebracht.
  Nachdem die Implementierungs- und Integrationsphase abgeschlossen ist,
@@ -467,15 +453,7 @@ er Teams integriert und als Gesamtsystem zum Einsatz gebracht.
  werden zu diesem Zeitpunkt behoben.
  Danach wird das Softwareprodukt installiert und später in der Wartungsphase
  (Maintenance) um weitere Funktionalitäten erweitert beziehungsweise werden
- neu entdeckte Bugs
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Bug"
-description "Ein Programm- oder Softwarefehler wird als Bug bezeichnet und beschreibt im Allgemeinen ein fehlerhaftes Verhalten von Computerprogrammen."
-
-\end_inset
-
- behoben.
+ neu entdeckte Bugs behoben.
 \end_layout
 
 \begin_layout Standard
@@ -498,14 +476,15 @@ reference "tab:Zuweisungstablle-der-Phasen"
  Die Phase Maintenance wird dabei ausgelassen, da sich die innerhalb des
  Projekts entwickelte Applikation nach Abschluss der Verifizierungsphase
  noch im Protoypenstadium befinden wird und nicht dem Reifegrad einer Applikatio
-n entspricht, die in die Wartung übergehen kann.
+n entspricht, welche in die Wartung übergehen kann.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -538,7 +517,7 @@ Kapitelüberschrift
 \begin_inset Text
 
 \begin_layout Plain Layout
-Siehe Seite
+Ab Seite
 \end_layout
 
 \end_inset
@@ -783,7 +762,7 @@ Nach dem Wasserfallmodell wird das Projekt in einzelne Phasen eingeteilt,
  die zu einem bestimmten Zeitpunkt mit vordefinierten Endergebnissen enden.
  Bei Erreichen des Endzeitpunkts und bei Lieferung aller Endergebnisse geht
  das Projekt in die nächste Phase über.
- Die Phasen dieser Bachelorarbeit wurden so modelliert, dass ihr Endzeitpunkt
+ Die Phasen dieser Bachelorarbeit werden so modelliert, dass ihr Endzeitpunkt
  möglichst mit dem Erreichen eines Meilensteins zusammenfällt (siehe Tabelle
  
 \begin_inset CommandInset ref
@@ -800,26 +779,27 @@ reference "tab:Phasenplan"
 \begin_layout Standard
 Vor dem eigentlichen Projektstart werden geeigeneten Themen für die Bachelorarbe
 it evaluiert, ein Betreuer gesucht sowie ein Projektantrag in EBS erfasst.
- Diese Phase endet mit dem Kick-Off-Meeting zwischen Betreuer, Student und
- Studiengangsleitung sowie der formalen Freigabe der Semesterarbeit durch
- die Studiengangsleitung.
+ Diese Phase endet mit dem Kick-Off-Meeting zwischen Betreuer, Studiengangsleitu
+ng und Student sowie der formalen Freigabe der Bachelorarbeit durch die
+ Studiengangsleitung.
  Das Erheben und Dokumentieren der Anforderungen ist die erste Phase der
- eigentlichen Bachelorarbeit und mündet in der Konzepterarbeitung auf Basis
- der Anforderungen.
+ eigentlichen Bachelorarbeit und mündet in der Erarbeitung eines Konzepts
+ auf Basis dieser Anforderungen.
  Ist das Konzept vollständig abgeschlossen, findet das Design-Review statt,
- bei welchem der Betreuer das Konzept begutachtet und allfällige Anpassungen
- daran vorschlägt.
- Nach Fertigstellung des Konzepts folgt die Implementierungsphase und Testphase,
- nach denen die Arbeit abgegeben werden muss.
+ bei welchem der Betreuer und die Studiengangsleitung das Konzept begutachtet
+ und allfällige Anpassungen daran vorschlägt.
+ Nach Fertigstellung des Konzepts folgt die Implementierungsphase und Testphase
+ nach denen die Arbeit abgegeben wird.
  In der letzten Phase des Projekts wird die Präsentation erarbeitet, die
  an der Schlusspräsentation (Meilenstein M5) vorgetragen wird.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1025,7 +1005,7 @@ Erstellen der Marktübersicht
 \begin_inset Text
 
 \begin_layout Plain Layout
-Auswahl und Vergleich ausgewählter OR-Mapper
+Auswahl und Vergleich dreier OR-Mapper
 \end_layout
 
 \end_inset
@@ -1063,7 +1043,7 @@ Auswahl und Vergleich ausgewählter OR-Mapper
 \begin_inset Text
 
 \begin_layout Plain Layout
-Implementierung Proof of Concept
+Implementierung Proof-of-Concept
 \end_layout
 
 \end_inset
@@ -1266,9 +1246,10 @@ reference "tab:Meilensteine"
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1507,19 +1488,11 @@ reference "sub:Phasenplanung"
  Dazu wird zu Beginn dieses Kapitels der Begriff Anforderung definiert und
  es wird auf verschiedene Arten von Anforderungen näher eingegangen.
  Anschliessend werden die Anforderungen an den Persistenzlayer einer serviceorie
-ntierten Architektur festgehalten sowie die Anforderungen der betrachteten
- Enterprise Pattern erhoben.
- In einem letzten Schritt wird der Systemkontext der CRM-Applikation beschrieben
+ntierten Architektur festgehalten sowie die Anforderungen von Fowlers Enterprise
+ Pattern erhoben.
+ In einem letzten Teil wird der Systemkontext der CRM-Applikation beschrieben
  und eingegrenzt sowie die konkreten Anforderungen an die CRM-Applikation
- als Use-Cases
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Use-Case"
-description "Ein Use-Case (dt. Anwendungsfall) bündelt alle möglichen Szenarien, die eintreten können, wenn ein Akteur versucht, mit Hilfe des betrachteten Systems ein bestimmtes fachliches Ziel zu erreichen. Er beschreibt, was inhaltlich beim Versuch der Zielerreichung passieren kann, und abstrahiert von konkreten technischen Lösungen. Das Ergebnis des Anwendungsfalls kann ein Erfolg oder Fehlschlag/Abbruch sein."
-
-\end_inset
-
- modelliert und spezifiziert.
+ als Use-Cases modelliert und spezifiziert.
 \end_layout
 
 \begin_layout Section
@@ -1674,7 +1647,7 @@ name "sec:Anforderungen-Persistenzlayer"
 \begin_layout Standard
 Dieses Kapitel enthält die Anforderungen an den Persistenzlayer einer serviceori
 entierten Architektur.
- Diese sind auch gleichzeitig auch Teil der Anforderungen der CRM-Applikation
+ Diese sind gleichzeitig auch Teil der Anforderungen der CRM-Applikation
  (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1690,7 +1663,7 @@ reference "sec:Anforderungen-CRM-Applikation"
 Anforderungen werden üblicherweise aus Aktorensicht definiert und sind nicht
  auf einen Layer einer Softwarearchitektur spezifiziert.
  Damit jedoch später eine Vergleichsmöglichkeit verschiedener OR-Mapper
- gegeben werden kann müssen, diese im Rahmen dieser Bachelorarbeit jedoch
+ gegeben werden kann, müssen die Anforderungen im Rahmen dieser Bachelorarbeit
  auf den Persistenzlayer einer serviceorientierten Softwarearchitektur spezifizi
 ert sein.
  Anstelle einer modellbasierten Beschreibung der Anforderungen werden diese
@@ -1754,21 +1727,9 @@ das System
 \begin_inset Quotes erd
 \end_inset
 
- steht dabei für den Persistenzlayer als eigenständiges System auf welches
- über einen Webservice
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Webservice"
-description "Ein Webservice ist eine Softwareanwendung die in beliebigen Anwednungen benutzbar ist. Der Zugriff geschieht dabei über das Simple Object Access Protocol (SOAP) gesteuert, das auf Basis von XML den Remote Procedure Call (RPC) realisiert."
-
-\end_inset
-
- zugegriffen werden kann.
+ steht dabei für den Persistenzlayer als eigenständiges System, auf welches
+ über einen Webservice zugegriffen werden kann.
  
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
@@ -1776,7 +1737,7 @@ description "Ein Webservice ist eine Softwareanwendung die in beliebigen Anwednu
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1882,8 +1843,8 @@ PF4
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss eine oder mehrer Instanzen einer Entität auf Basis von Suchkrite
-rien zurückgeben können.
+Das System muss eine oder mehrere Instanzen einer Entität auf Basis von
+ Suchkriterien zurückgeben können.
 \end_layout
 
 \end_inset
@@ -2027,7 +1988,7 @@ Qualitätsanforderungen
 
 \begin_layout Standard
 Die Qualitätsanforderungen an den Persistenzlayer einer serviceorientierten
- Architektur beschreiben Anforderungen an die Umstände, unter denen die
+ Architektur beschreiben Anforderungen an die Umstände, unter welchen die
  geforderte Funktionalität zu erbringen ist.
  Sie sind in Tabelle 
 \begin_inset CommandInset ref
@@ -2045,23 +2006,22 @@ Die Abgrenzung zwischen funktionalen und nicht-funktionalen Anforderungen
 status open
 
 \begin_layout Plain Layout
-Wie Qualitätsanforderungen auch noch genannt werden
+Wie Qualitätsanforderungen auch nicht-funktionale Anforderungen genannt.
 \end_layout
 
 \end_inset
 
  ist unscharf.
- Sie beschreiben die Art und Weise wie der Persistenzlayer zu implementieren
- ist und geben Bedingungen an die Implementierung vor.
+ Qualitätsanforderungen beschreiben die Art und Weise wie der Persistenzlayer
+ zu implementieren ist und geben Bedingungen an die Implementierung vor.
 \end_layout
 
 \begin_layout Standard
-\align center
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2104,15 +2064,7 @@ PQ1
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss fähig sein bei sämtlichen Operationen ACID
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "ACID"
-description "ACID steht für Atomicity, Consisistency, Isolation und Durability und beschreibt erwünschte Eigenschaften von Verarbeitungsschritten in Datenbankmanagementssystemen."
-
-\end_inset
-
- zu garantieren.
+Das System muss fähig sein für sämtliche Operationen ACID zu garantieren.
 \end_layout
 
 \end_inset
@@ -2132,7 +2084,7 @@ PQ2
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss die Datenbankmanagementssysteme Microsoft SQL Server und
+Das System muss die Datenbankmanagementsysteme Microsoft SQL Server und
  Oracle Database unterstützen.
 \end_layout
 
@@ -2194,7 +2146,7 @@ PQ5
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss bestimmte Performancewerte erfüllen
+Das System muss bestimmte Performancekennzahlen erfüllen
 \begin_inset ERT
 status open
 
@@ -2253,7 +2205,7 @@ status open
 
 \backslash
 footnotetext{Im Rahmen dieser Arbeit werden die Performanceanforderungen
- nicht genauer definiert, da insbesondere das Überprüfen deren den Rahmen
+ nicht genauer definiert, da insbesondere das Überprüfen dieser den Rahmen
  dieser Bachelorarbeit sprengen würde.}
 \end_layout
 
@@ -2276,15 +2228,15 @@ reference "tab:Randbedingungen-an-den"
 \end_inset
 
  genauer spezifiziert sind.
- Die Randbedingungen sind Umstände, die zwingend erfüllt werden müssen.
+ Diese Randbedingungen sind Umstände, die zwingend erfüllt werden müssen.
  Wiederum ist die Abgrenzung von den Qualitätsanforderungen schwierig, da
- der Übergang zwischen den zwei Anforderungstypen fliessend ist.
+ der Übergang zwischen den zwei Anforderungsarten fliessend ist.
  
 \end_layout
 
 \begin_layout Standard
-Die Randbedingungen sind Implementierungsvorgaben welche massgeblich dafür
- verantwortlich sind, während der Erarbeitung und Umsetzung des Konzepts
+Diese Randbedingungen sind Implementierungsvorgaben welche massgeblich dafür
+ verantwortlich sind, während der Erarbeitung und der Umsetzung des Konzepts
  einen austauschbaren Persistenzlayer zu erhalten, wie dies in der Aufgabenstell
 ung der Bachelorarbeit (siehe 
 \begin_inset CommandInset citation
@@ -2297,12 +2249,11 @@ key "Amstutz2013"
 \end_layout
 
 \begin_layout Standard
-\align center
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2366,7 +2317,7 @@ PR2
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler die Möglichkeit bieten ohne Wissen über die
- Datenbank oder datenbanknahe Technologie auf die Operationen zuzugreifen.
+ Datenbank oder datenbanknahe Technologien auf die Operationen zuzugreifen.
 \end_layout
 
 \end_inset
@@ -2409,7 +2360,7 @@ PR4
 
 \begin_layout Plain Layout
 Das System muss dem Entwickler die Möglichkeit bieten durch ein anderes
- System (einen anderen Persistenzlayer) austauschbar sein.
+ System (einen anderen Persistenzlayer) austauschbar zu sein.
 \end_layout
 
 \end_inset
@@ -2491,7 +2442,7 @@ reference "sub:Arten-von-Anforderungen"
 \end_inset
 
 ) beschrieben, werden die Anforderungen an Enterprise Pattern rein auf funktiona
-ler Ebene beschrieben.
+ler Ebene erhoben.
  
 \end_layout
 
@@ -2511,8 +2462,8 @@ reference "sec:Evaluierung-selektierte-OR-Mappe"
 
 \end_inset
 
-) berücksichtigt auch die Beschreibung der einzelnen Enterprise Pattern
- in den folgenden Unterkapiteln.
+) berücksichtigt auch die textuelle Beschreibung der einzelnen Enterprise
+ Pattern in den folgenden Unterkapiteln.
 \end_layout
 
 \begin_layout Subsection
@@ -2549,19 +2500,19 @@ key "Fowler2002"
 
 \begin_layout Standard
 Ein Vorteil des Transaction Scripts besteht darin, dass alle Transaktionen
- absolut atomar ausgeführt werden.
+ atomar ausgeführt werden.
  Der Entwickler muss sich nicht um konkurrierende Transaktionen kümmern,
  da diese jeweils im Kontext eines anderen Transaction Scripts ausgeführt
  werden.
- Je kompliziert die Geschäftslogik jedoch wird, je schwieriger wird es diese
- in einem funktionalen und lesbaren Zustand zu bewahren.
+ Je komplizierter die Geschäftslogik eines Systems jedoch wird, je schwieriger
+ wird es diese in einem funktionalen und verständlichen Zustand zu bewahren.
  Das grösste Problem besteht dabei in der Vermeidung von Codeduplizierung
  zwischen Transaktionen.
  Da das Ziel des Transaction Script Patterns es ist, allen Code einer Transaktio
-n an einer einzelnen Stelle zusammenzufassen, bedeutet es das all gemeinsamer
- Code potentiell dupliziert wird, wenn während der Entwicklung nicht besonderes
- Augenmerk auf diese Tatsache gelegt wird.
- In grösseren Projekten mit vielen Entwicklern stellt sich dies jedoch bald
+n an einer einzelnen Stelle zusammenzufassen, bedeutet es, dass sämtlicher
+ gemeinsamer Code potentiell dupliziert wird, wenn während der Entwicklung
+ nicht besonderes Augenmerk auf diese Tatsache gelegt wird.
+ In grösseren Projekten mit vielen Entwicklern stellt sich dies in der Praxis
  als nahezu unmöglich dar.
 \end_layout
 
@@ -2582,7 +2533,7 @@ http://www.codeproject.com/Articles/15207/Design-Patterns-Command-Pattern
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -2596,8 +2547,8 @@ http://www.codeproject.com/Articles/15207/Design-Patterns-Command-Pattern
 \end_layout
 
 \begin_layout Standard
-Für simple Geschäftslogik ist das Transaction Script die erste und offensichtlic
-he Wahl.
+Für einfache Geschäftslogik ist das Transaction Script die erste und offensichtl
+iche Wahl.
  Wenn allrdings komplexere Geschäftsdomänen im System abgebildet werden,
  so macht es Sinn das Transaction Script in ein Domain Model umzubauen (siehe
  
@@ -2629,7 +2580,7 @@ reference "tab:Anforderungen-Transaction-Script"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2752,7 +2703,7 @@ key "Fowler2002"
 
 ).
  Die Geschäftslogik kann in einem grossen System sehr komplex sein.
- Ein Domain Model erstellt ein Netzwerk von miteinander verbunden Objekten,
+ Ein Domain Model erstellt ein Netzwerk von miteinander verbundenen Objekten,
  wobei jedes Objekt für sich selbst eine sinnvolle Einheit ist, egal ob
  das Objekt eine ganze Bestellung repräsentiert oder nur eine Zeile in einem
  Bestellformular.
@@ -2761,7 +2712,7 @@ key "Fowler2002"
 \begin_layout Standard
 Wird ein Domain Model in eine Applikation integriert, so fügt man einen
  komplett neuen Layer von Objekten ein, welche das Geschäftsfeld abbilden,
- in welchem man sich bewegt.
+ in welchem das System sich bewegt.
  Die Objekte in einem Domain Model imitieren Daten im Unternehmen und beeinhalte
 n die Regeln, nach welchen dieses Unternehmen beziehungsweise seine Prozesse
  funktionieren.
@@ -2769,11 +2720,11 @@ n die Regeln, nach welchen dieses Unternehmen beziehungsweise seine Prozesse
 \end_layout
 
 \begin_layout Standard
-Ein objektorientiertes Domain Model ist häufig dem Datenbankmodell sehr
- ähnlich, wenn es auch einige Unterschiede geben wird.
+Ein objektorientiertes Domain Model ist häufig dem Datenbankmodell ähnlich,
+ wenn es auch einige Unterschiede geben wird.
  Das Domain Model vermischt Daten und Prozesse, hat mehrwertige Attribute
  und ein komplexes Netzwerk von Assoziationen.
- Es benutzt auch sehr viele Mechanismen aus der objektorientierten Entwicklung
+ Es benutzt auch viele Mechanismen aus der objektorientierten Entwicklung
  wie zum Beispiel die Vererbung.
  
 \end_layout
@@ -2787,7 +2738,7 @@ key "Fowler2002"
 \end_inset
 
  gibt es zwei Stile von Domain Models die sich etabliert haben.
- Das simple Domain Model hat sehr grosse Ähnlichkeiten mit dem Datenbankmodell,
+ Das simple Domain Model hat grosse Ähnlichkeiten mit dem Datenbankmodell,
  wobei meist ein Domänenobjekt für eine Datenbanktabelle existiert.
  Das reiche Domain Model kann stark vom Datenbankmodell abweichen.
  Es benutzt eine Vielzahl von Design Patterns (siehe 
@@ -2799,9 +2750,8 @@ key "Gamma1994"
 
 ) und besitzt komplexe Netzwerke von kleinen, miteinander verbundenen Objekten.
  Ein reiches Domain Model ist besser geeignet komplexe Geschäftslogik abzubilden
- aber es ist dafür schwieriger auf die Datenbank zu projeziieren.
- Es benötigt in den meisten Fällen einen mehr oder minder aufwändigen Data
- Mapper
+ aber es ist dafür schwieriger auf die Datenbank zu projizieren.
+ Es benötigt in den meisten Fällen einen Data Mapper
 \begin_inset Foot
 status open
 
@@ -2823,7 +2773,7 @@ http://martinfowler.com/eaaCatalog/dataMapper.html
 
 \end_inset
 
-, der meist in einem OR-Mapper implementiert ist.
+, der oft in einem OR-Mapper implementiert ist.
 \end_layout
 
 \begin_layout Standard
@@ -2832,10 +2782,10 @@ Das Domain Model ist stark verbreitet, da heute viele Entwickler lieber
  zu manipulieren.
  Es ist sicher nicht der einfachste Weg Domänenobjekte zu modellieren und
  braucht viel Erfahrung aber die vereinfachte Testbarkeit und Benutzerbarkeit
- macht meist den Nachteil des Modellierens wett.
- Gewöhnt man sich einmal an die Vorteile eines Domain Models so ist es sehr
- schwierig wieder zurück zu einfacheren Datenbankzugriffsmechanismen zu
- wechseln, wie zum Beispiel dem Transaction Script.
+ macht den Nachteil des Modellierens wett.
+ Gewöhnt man sich einmal an die Vorteile eines Domain Models so ist es schwierig
+ wieder zurück zu einfacheren Datenbankzugriffsmechanismen zu wechseln,
+ wie zum Beispiel dem Transaction Script.
 \end_layout
 
 \begin_layout Standard
@@ -2846,8 +2796,8 @@ reference "tab:Anforderungen-Domain-Model"
 
 \end_inset
 
- sind die Anforderungen an der Persistenzlayer einer serviceorientierten
- Architektur bei Verwendung eines Domain Models enthalten.
+ sind die Anforderungen an den Persistenzlayer einer serviceorientierten
+ Architektur bei Verwendung eines Domain Models aufgeführt.
 \end_layout
 
 \begin_layout Standard
@@ -2855,7 +2805,7 @@ reference "tab:Anforderungen-Domain-Model"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2920,7 +2870,7 @@ D2
 
 \begin_layout Plain Layout
 Das System muss die Möglichkeiten einer Spezifikation bieten, mit welcher
- der Teil eines zu ladenden Objektgraphen beschrieben wird.
+ der Teil eines zu ladenden Objektgraphen beschrieben werden kann.
 \end_layout
 
 \end_inset
@@ -3042,29 +2992,29 @@ key "Fowler2002"
 \end_layout
 
 \begin_layout Standard
-Eine der zentralen Aspekte der objektorientierten Programmierung ist es,
- Daten mit dem dazugehörigen Verhalten zusammenzufassen.
- Der traditionalle objektorientierte Ansatz basiert auf Objekten mit einer
+Eine der zentralen Aspekte der objektorientierten Programmierung ist es
+ Daten mit dem zu den Daten gehörigen Verhalten zusammenzufassen.
+ Der traditionelle objektorientierte Ansatz basiert auf Objekten mit einer
  eindeutigen Identität.
  Das heisst jede Instanz einer Klasse entspricht einer Zeile einer Datenbank.
  Eines der Probleme des Domain Models ist die Schnittstelle zu relationalen
  Datenbanken.
  Ein Table Module organisiert Geschäftslogik in einer Klasse pro Tabelle
- einer Datenbank und eine einzige Instanz dieser Klasse enthält die verschiedene
-n Prozeduren um mit den Daten dieser Tabelle zu interagieren.
+ einer Datenbank und eine einzige Instanz dieser Klasse enthält alle Prozeduren
+ um mit den Daten dieser Tabelle zu interagieren.
 \end_layout
 
 \begin_layout Standard
 Eine Stärke des Table Modules ist die Möglichkeit des Zusammenfassens von
  Daten und Verhalten zur selben Zeit um vereinfacht mit einer relationalen
  Datenbank zu interagieren.
- Das Table Module verhält sich wie ein ganz normales Objekte, der grosse
- liegt darin Unterschied, dass das Objekt keine Ahnung von der Identität
- der Objekte hat, mit welchen es interagiiert.
+ Das Table Module verhält sich wie ein ganz normales Objekt, der grosse
+ Unterschied liegt darin, dass das Objekt keine Ahnung von der Identität
+ der Objekte hat, mit welchen es interagiert.
  Das heisst, wenn zum Beispiel ein einzelner Kunde gelesen werden soll,
- muss ein Aufruf ähnlich wie CustomerModule.GetCustomer(int customerId) aufgerufe
-n werden.
- Jedes Mal wenn mit diesem Kunden mit der ID customerId interagiert werden
+ muss ein Aufruf ähnlich wie CustomerModule.GetCustomer(int customerId) ausgeführ
+t werden.
+ Jedes Mal wenn mit dem Kunden mit der ID customerId interagiert werden
  soll, muss eine Art von Identitätsreferenz ans Table Module übergeben werden
  (hier in Form des Integers customerId).
 \end_layout
@@ -3077,8 +3027,8 @@ Die offensichtliche Verwendung des Table Module Patterns besteht darin ein
  Das Table Module kann bei jeder Verwendung als neue Instanz erstellt werden
  oder es kann auch als eine Sammlung von statischen Methoden implementiert
  werden.
- Der Vorteil einer Instanz wäre zum Beispiel, dass das Table Module bereits
- mit einem Record Set
+ Der Vorteil einer Instanz ist es, dass das Table Module bereits mit einem
+ Record Set
 \begin_inset Foot
 status open
 
@@ -3126,7 +3076,7 @@ reference "tab:Anforderungen-Table-Module"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3189,8 +3139,8 @@ T2
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss eine einzelne Instanz zur Verfügung stellen, welche alle
- Geschäftslogik aller Zeilen einer Datenbanktabelle beinhaltet.
+Das System muss eine einzelne Instanz zur Verfügung stellen, welche die
+ gesamte Geschäftslogik aller Zeilen einer Datenbanktabelle beinhaltet.
 \end_layout
 
 \end_inset
@@ -3267,8 +3217,8 @@ key "Fowler2002"
 \end_inset
 
  kapselt eine Implementierung des Active Record Patterns eine Zeile einer
- Datenbanktabelle oder -view, den Datenbankzugriff und enhält die Geschäftslogik
- im Zusammenhang mit dieser Zeile.
+ Datenbanktabelle oder -view, den Datenbankzugriff darauf und enthält die
+ Geschäftslogik im Zusammenhang mit dieser Zeile.
  Ein Objekt enthält Daten und Verhalten.
  Der Grossteil dieser Daten ist persistent und wird in einer Datenbank gespeiche
 rt.
@@ -3285,8 +3235,8 @@ Die Essenz von Active Record ist ein simples Domain Model in welchem die
  diesen Objekten verbunden ist.
  Dies kann zum Beispiel sämtliche Domänenlogik der Applikation sein oder
  es kann auch die zwischen Active Records gemeinsame Domänenlogik in Transaction
- Scripts implementiert sein und datenorientierter Code im jeweiligen Active
- Record.
+ Scripts implementiert werden und datenorientierter Code im jeweiligen Active
+ Record abgelegt sein.
 \end_layout
 
 \begin_layout Standard
@@ -3303,13 +3253,13 @@ Konstruieren einer neue Instanz des Active Records mit dem bestehenden Resultat
 \end_layout
 
 \begin_layout Itemize
-Konstruieren einer neue Instanz des Active Records welche später in die
+Konstruieren einer neuen Instanz des Active Records welche später in die
  Datenbanktabelle gespeichert wird
 \end_layout
 
 \begin_layout Itemize
-Statisch Suchmethode welche oft genutzte SQL Queries kapselt und als Active
- Records Objekte zurückgibt
+Statische Suchmethode welche oft genutzte SQL Queries kapselt und als Active
+ Record Objekte zurückgibt
 \end_layout
 
 \begin_layout Itemize
@@ -3325,20 +3275,21 @@ Implementieren von Teilen der Geschäftslogik
 \end_layout
 
 \begin_layout Standard
-Active Record ist eine gute Option für relativ simple Geschäftslogik.
- Validierungen auf Basis eines einzelnen Datensatzes funktioniert gut mit
+Active Record ist eine gute Option für Systeme mit vergleichsweise simpler
+ Geschäftslogik.
+ Validierungen auf Basis eines einzelnen Datensatzes funktionieren gut mit
  dieser Stuktur.
  Wird ein Domain Model verwendet so besteht zu Beginn der Konzeptphase die
  Entscheidung zwischen der Verwendung von Active Records oder eines Data
  Mappers.
  Das Active Record hat den Vorteil der Einfachheit, wird das Domain Model
- komplex und es werden zusätzliche Beziehungen, Felder, Vererbung oder Listen
- hinzugefügt wird das Active Record schnell unübersichtlich und ein Data
- Mapper ist einfacher zu verwenden.
+ komplex und es werden zusätzliche Beziehungen, Felder, Vererbungen oder
+ Listen hinzugefügt, so wird das Active Record unübersichtlich und ein Data
+ Mapper ist dann einfacher zu verwenden.
 \end_layout
 
 \begin_layout Standard
-Die Anforderungen an den Persistzenlayer einer serviceorientierten Architektur
+Die Anforderungen an den Persistenzlayer einer serviceorientierten Architektur
  in Bezug auf das Active Record Pattern sind in Tabelle 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3354,7 +3305,7 @@ reference "tab:Anforderungen-Active-Record"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3418,7 +3369,7 @@ A2
 
 \begin_layout Plain Layout
 Das System muss keine Konversion von Objektdatentypen und Datentypen der
- Datenbanktabelle verwenden.
+ Datenbanktabelle durchführen.
 \end_layout
 
 \end_inset
@@ -3487,19 +3438,20 @@ name "sec:Anforderungen-CRM-Applikation"
 \end_layout
 
 \begin_layout Standard
-Ein Teil dieser Bachelorarbeit besteht darin ein Proof-of-Concept einer
- serviceorientierten Architektur zu erstellen.
+Ein Ziel dieser Bachelorarbeit besteht darin ein Proof of Concept einer
+ serviceorientierten Architektur unter dem Einsatz von Enterprise Pattern
+ zu erstellen.
  Dies einerseits um die Anforderungen aus den vorhergehenden Kapiteln zu
  überprüfen aber auch um Erfahrung mit den verschiedenen OR-Mappern zu sammeln,
  welche im Rahmen dieser Arbeit miteinander verglichen werden.
 \end_layout
 
 \begin_layout Standard
-Da das Proof-of-Concept einen grossen Teil der aufgewendeten Stunden für
+Da das Proof of Concept einen grossen Teil der aufgewendeten Stunden für
  diese Bachelorarbeit ausmacht, wird Wert darauf gelegt, dass die Applikation
- methodisch entwickelt wird.
- Die folgenden Kapitel beschreiben daher ausführlich die Anforderungen an
- die CRM-Applikation als Proof-of-Concept.
+ methodisch korrekt entwickelt wird.
+ Die folgenden Kapitel beschreiben daher in einem ersten Schritt ausführlich
+ die Anforderungen an die CRM-Applikation als Proof of Concept.
 \end_layout
 
 \begin_layout Subsection
@@ -4061,6 +4013,13 @@ Use-Case-Spezifikation Benutzer oder Administrator authentifizieren
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Kunden anzeigen
 \begin_inset CommandInset label
@@ -4076,7 +4035,7 @@ name "sub:Kunden-anzeigen"
 Der Benutzer ist beim System authentifiziert und zeigt eine Liste aller
  im System gespeicherten Kunden an.
  Der Benutzer kann die Liste über verschiedene Suchkriterien (Name des Kunden
- und Arbeitgeber) einschränken und mit den gefundenen Kunden interagieren.
+ und dessen Arbeitgeber) einschränken und mit den gefundenen Kunden interagieren.
  So kann er zum Beispiel neue Kontakte für die gefundenen Kunden hinzufügen
  oder den Kunden aus dem System löschen.
 \end_layout
@@ -4380,7 +4339,7 @@ Hauptszenario
 
 \begin_layout Plain Layout
 3.
- Das System zeigt dem Benutzer die passenden Kunden an.
+ Das System zeigt dem Benutzer die gefundenen Kunden an.
 \end_layout
 
 \end_inset
@@ -4456,6 +4415,13 @@ Use-Case-Spezifikation Kunden anzeigen
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Kunde hinzufügen
 \end_layout
@@ -4464,7 +4430,7 @@ Kunde hinzufügen
 Der Benutzer fügt dem System einen neuen Kunden hinzu.
  Jeder Kunde hat neben Vor- und Nachnamen eine Adresse und einen Arbeitgeber.
  Ist der Arbeitgeber noch nicht als Firma im System eingetragen, so kann
- sie beim Erstellen des Kunden hinzugefügt werden.
+ sie beim Erstellen des Kunden dem System hinzugefügt werden.
  Zusätzlich kann jedem Kunden eine oder mehrere E-Mail-Adressen sowie eine
  oder mehrere Telefonnummern hinzugefügt werden.
 \end_layout
@@ -4858,6 +4824,13 @@ Use-Case-Spezifikation Kunde hinzufügen
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Kunde löschen
 \end_layout
@@ -5223,7 +5196,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -5253,6 +5226,13 @@ Use-Case-Spezifikation Kunde löschen
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Firmen anzeigen
 \begin_inset CommandInset label
@@ -5267,7 +5247,7 @@ name "sub:Firmen-anzeigen"
 \begin_layout Standard
 Der Benutzer ist beim System authentifiziert und zeigt eine Liste aller
  im System gespeicherten Firmen an.
- Jeder Firma können Kunden hinzugefügt werdne, mit welchen wiederum Kontakte
+ Jeder Firma können Kunden hinzugefügt werden, für welche wiederum Kontakte
  generiert werden können.
  Der Benutzer kann die Liste aller Firmen nach verschiedenen Suchkriterien
  (Firmenname und Land) filtern und mit den gefundenen Firmen interagieren.
@@ -5520,8 +5500,8 @@ Nachbedingung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Benutzer kann für eine angezeigte Firma einen Kunden hinzufügen oder
- die Firma löschen.
+Der Benutzer kann für eine angezeigte Firma einen Angestellten (Kunden)
+ hinzufügen oder die Firma löschen.
 \end_layout
 
 \end_inset
@@ -5573,7 +5553,7 @@ Hauptszenario
 
 \begin_layout Plain Layout
 3.
- Das System zeigt dem Benutzer die passenden Firmen an.
+ Das System zeigt dem Benutzer die gefundenen Firmen an.
 \end_layout
 
 \end_inset
@@ -5594,7 +5574,7 @@ Alternativszenarien
 
 \begin_layout Plain Layout
 1a.
- Der Benutzer gibt keinen Namen ein.
+ Der Benutzer gibt keinen Firmennamen ein.
 \end_layout
 
 \begin_layout Plain Layout
@@ -5619,7 +5599,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -5644,6 +5624,13 @@ Use-Case-Spezifikation Firmen anzeigen
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -6034,6 +6021,13 @@ Use-Case-Spezifikation Firma hinzufügen
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Firma löschen
 \end_layout
@@ -6398,7 +6392,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -6423,6 +6417,13 @@ Use-Case-Spezifikation Firma löschen
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -6790,7 +6791,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -6815,6 +6816,13 @@ Use-Case-Spezifikation Kontakte anzeigen
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -6852,7 +6860,7 @@ Mögliche Kontaktmedien umfassen: Messe, Telefon oder E-Mail.
 
 \end_inset
 
- sowie die textuelle Beschreibung des Kontakt.
+ sowie die textuelle Beschreibung des Kontakts.
 \end_layout
 
 \begin_layout Standard
@@ -7143,8 +7151,8 @@ Hauptszenario
 
 \begin_layout Plain Layout
 1.
- Der Benutzer wählt den Kontaktzeitpunkt, das Kontaktmedium und den Inhalt
- des Kontakts aus.
+ Der Benutzer wählt den Kontaktzeitpunkt und das Kontaktmedium aus und gibt
+ den Inhalt des Kontakts ein.
 \end_layout
 
 \begin_layout Plain Layout
@@ -7169,7 +7177,7 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -7189,7 +7197,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -7214,6 +7222,13 @@ Use-Case-Spezifikation Kontakt hinzufügen.
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -7550,7 +7565,7 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -7570,7 +7585,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -7595,6 +7610,13 @@ Use-Case-Spezifikation Kontakt löschen
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -7914,7 +7936,8 @@ Hauptszenario
 
 \begin_layout Plain Layout
 2.
- Der Administrator wählt die Rolle aus, die die zu suchenden Benutzer innehaben.
+ Der Administrator wählt die Rolle aus, welche die zu suchenden Benutzer
+ innehaben.
 \end_layout
 
 \end_inset
@@ -7960,7 +7983,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -7990,6 +8013,13 @@ Use-Case-Spezifikation Benutzer anzeigen
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Passwort setzen
 \end_layout
@@ -7998,9 +8028,9 @@ Passwort setzen
 Der Administrator kann die Passwörter aller Benutzer neu setzen, der Benutzer
  jeweils nur sein eigenes Passwort.
  Dazu wird verlangt dass das alte Passwort eingegeben wird und danach das
- neue Passwort angegeben wird.
+ neue Passwort eingegeben wird.
  Nach dem Setzen des eigenen Passworts wird der Benutzer ausgeloggt und
- muss sich neu einloggen mit seinem eben gesetzten Passwort.
+ muss sich mit seinem eben gesetzten Passwort neu einloggen.
 \end_layout
 
 \begin_layout Standard
@@ -8253,8 +8283,7 @@ Nachbedingung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Benutzer oder Administrator kann sich mit seinem neuen Passwort beim
- System authentifizieren.
+Der Benutzer kann sich mit seinem neuen Passwort beim System authentifizieren.
 \end_layout
 
 \end_inset
@@ -8347,7 +8376,7 @@ Ausnahmeszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -8377,6 +8406,13 @@ Use-Case-Spezifikation Passwort setzen
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Benutzer hinzufügen
 \end_layout
@@ -8386,7 +8422,7 @@ Um einen neuen Benutzer dem System hinzuzufügen führt der Administrator
  diesen Anwendungsfall aus.
  Der neue Benutzer erhält einen Benutzernamen, ein Passwort sowie eine Rolle.
  Nach dem Hinzufügen des Benutzers durch den Administrators kann sich dieser
- beim System mit den Benutzerdaten anmelden.
+ beim System mit den vom Administrator eingegebenen Benutzerdaten anmelden.
 \end_layout
 
 \begin_layout Standard
@@ -8679,7 +8715,7 @@ Hauptszenario
 \begin_layout Plain Layout
 1.
  Der Administrator gibt den Benutzernamen und das Passwort das neuen Benutzers
- ein und wählt dess Rolle.
+ ein und wählt dessen Rolle.
 \end_layout
 
 \begin_layout Plain Layout
@@ -8704,7 +8740,7 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -8752,6 +8788,13 @@ Use-Case-Spezifikation Benutzer hinzufügen.
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -9112,7 +9155,7 @@ Alternativszenarien
 \begin_inset Text
 
 \begin_layout Plain Layout
-Keine.
+Keine
 \end_layout
 
 \end_inset
@@ -9134,7 +9177,7 @@ Ausnahmeszenarien
 \begin_layout Plain Layout
 2a.
  Der Benutzer ist gegenwärtig auf dem System eingeloggt.
- Der Administrator wird gefragt, ob das System die Authentifizierung löschen
+ Der Administrator wird gefragt, ob das System die Authentifizierung widerrufen
  soll.
 \end_layout
 
@@ -9197,15 +9240,15 @@ key "Oestereich2006"
 \end_inset
 
 ).
- Das Konzept dieser Bachelorarbeit umfasst das Erarbeiten der Marktübersicht
- aller frei verügbaren oder Open-Source OR-Mapper im .NET-Umfeld, das Auswählen
+ Das Konzept dieser Bachelorarbeit umfasst das Erarbeiten einer Marktübersicht
+ aller frei verfügbaren oder Open Source OR-Mapper im .NET-Umfeld, das Auswählen
  von drei Produkten aus der Marktübersicht für weitergehende Vergleiche
- und das Erarbeiten dieser Vergleichsergebnisse.
+ und das Erarbeiten dieser Vergleichsresultate.
 \end_layout
 
 \begin_layout Standard
-Zusätzlich wird die Architektur des Proof-of-Concepts der CRM-Applikation
- erarbeitet.
+Zusätzlich wird die Architektur des Proof of Concepts in Form der CRM-Applikatio
+n erarbeitet.
  Das System aus der Bausteinperspektive betrachtet, es wird von der Komponentene
 bene bis zur Klassenebene das System modelliert und die Systemarchitektur
  festgelegt.
@@ -9225,26 +9268,29 @@ name "sec:Marktübersicht"
 \end_layout
 
 \begin_layout Standard
-Die folgende Marktübersicht enthält eine Auswahl von frei verfügbaren oder
- Open-Source OR-Mapper im .NET-Umfeld.
- Jeder OR-Mapper wurde auf Basis einer Vielzahl von Kriterien untersucht
+Die folgende Marktübersicht enthält die aktuell frei verfügbaren oder Open-Sourc
+e OR-Mapper im .NET-Umfeld.
+ Jeder OR-Mapper wird auf Basis einer Vielzahl von Kriterien untersucht
  und miteinander verglichen.
  Die Marktübersicht ist kein wertender Vergleich der Produkte sondern eine
  reine Erhebung von Tatsachen zum heutigen Zeitpunkt.
  Es ist wichtig anzumerken, dass diese Marktübersicht schnell veraltet sein
  wird, da viele der Produkte einen kurzen Releasezyklus haben in welchem
- sie zusätzliche Funktionalitäten zur Verfügung stellen.
+ sie zusätzliche Funktionalitäten zur Verfügung erhalten.
 \end_layout
 
 \begin_layout Standard
 In diesem Kapitel werden auch die einzelnen Vergleichskriterien erklärt
- und beschrieben warum diese wichtig sind im Zusammenhang mit OR-Mappern.
+ und beschrieben warum diese wichtig sind im Zusammenhang mit der Untersuchung
+ eines OR-Mappers.
  Das Ausfüllen der Marktübersicht erfolgt einerseits durch Konsultation
  der Dokumentation bzw.
- der Anbieterwebseite andererseits durch die Erfahrung in der Benutzung
- des OR-Mappers und unter Analyse des verfügbaren Quellcodes (wo Open-Source).
+ der Anbieterwebseite andererseits durch das Sammeln von Erfahrung in der
+ Benutzung des OR-Mappers und durch die Analyse des verfügbaren Quellcodes
+ (wo Open Source).
  Innerhalb der Marktübersicht wird nicht dokumentiert welche Information
- aus welcher stammt, da dies den Rahmen der Marktübersicht sprengen würde.
+ aus welcher Quelle stammt, da dies den Rahmen der Marktübersicht sprengen
+ würde.
 \end_layout
 
 \begin_layout Subsection
@@ -9273,7 +9319,7 @@ reference "sub:Vergleichsmatrix"
 \end_layout
 
 \begin_layout Standard
-Die Vergleichskriterien, die in der Marktübersicht verwendet wurden, sind
+Die Vergleichskriterien, die in der Marktübersicht verwendet werden, sind
  auf 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -9300,6 +9346,10 @@ key "Chou2010"
 .
 \end_layout
 
+\begin_layout Subsubsection
+Produkt
+\end_layout
+
 \begin_layout Description
 Name Der Name des OR-Mappers.
 \end_layout
@@ -9307,11 +9357,11 @@ Name Der Name des OR-Mappers.
 \begin_layout Description
 Anbieter Der Anbieter des OR-Mappers falls ein Unternehmen oder eine Gruppierung
  hinter dem Produkt steht.
- Bei Open-Source-Produkten wurde 
+ Bei Open Source Produkten wird 
 \begin_inset Quotes eld
 \end_inset
 
-Open-Source
+Open Source
 \begin_inset Quotes erd
 \end_inset
 
@@ -9334,10 +9384,10 @@ Zeitpunkt der ersten Version
 \end_inset
 
  Der Zeitpunkt der ersten verfügbaren Version.
- Hier wurden auch Betaversionen berücksichtigt, welche im produktiven Umfeld
+ Hier werden auch Betaversionen berücksichtigt, welche im produktiven Umfeld
  eingesetzt wurden (nach Dokumentation).
- Bei Open-Source Produkten wurde der erste Zeitpunkt eines Releases mit
- Dokumentation berücksichtigt.
+ Bei Open Source Produkten wird der erste Zeitpunkt eines Releases mit Dokumenta
+tion berücksichtigt.
 \end_layout
 
 \begin_layout Description
@@ -9352,25 +9402,28 @@ Aktuelle und untersuchte Version
 \end_inset
 
  Die im Rahmen dieser Marktübersicht untersuchte Version.
- Dies ist in jedem Fall die aktuellste verfügbare Version.
 \end_layout
 
 \begin_layout Description
 Lizenz Die Lizenz, unter welchem der OR-Mapper nutzbar ist.
- Es wurden nur OR-Mapper berücksichtigt, welche ohne Lizenzabgaben kommerziell
+ Es werden nur OR-Mapper berücksichtigt, welche ohne Lizenzabgaben kommerziell
  nutzbar sind.
 \end_layout
 
 \begin_layout Description
 Typ Der Typ des OR-Mappers.
- Es gibt zwei unterschiedliche Typen von OR-Mapper: Leichgewichtige und
+ Es gibt zwei unterschiedliche Typen von OR-Mappern: Leichgewichtige und
  komplette OR-Mapper.
  Ein leichtgewichtiger OR-Mapper bietet meist ausser der Implementierung
- eines Data Mappers keine weitere Funktionalität wie Monitoringtools, Assistente
-n oder grafische Designer.
+ eines Data Mappers keine weiteren Funktionalitäten wie Monitoringtools,
+ Assistenten oder grafische Designer.
  Ein kompletter OR-Mapper kommt hingegen oft mit einer ganzen Armada an
  zusätzlichen Funktionalitäten, welche den Entwickler beim Integrieren des
  OR-Mappers und der Verwendung desselben unterstützen.
+\end_layout
+
+\begin_layout Subsubsection
+Anforderungen
 \end_layout
 
 \begin_layout Description
@@ -9411,7 +9464,8 @@ http://msdn.microsoft.com/en-us/library/system.data.idbconnection.aspx.
  Daher sind sie theoretisch datenbankunabhängig solange der DBMS-Hersteller
  einen .NET Datenprovider anbietet.
  Es hat sich jedoch herausgestellt, dass diese Datenbankunabhängigkeit auf
- Grund der unterschiedlichen Qualität der Datenprovider schwierig ist.
+ Grund der unterschiedlichen Qualität der Datenprovider schwierig zu realisieren
+ ist.
  Deshalb sind in dieser Zeile nur Datenbankmanagementsysteme aufgelistet
  die auch so vom Hersteller des OR-Mappers getestet und freigegeben wurden.
 \end_layout
@@ -9427,7 +9481,8 @@ Minimale .NET-Version
 
 \end_inset
 
- Die minimal notwendige .NET Framework-Version um den OR-Mapper zu benutzen.
+ Die minimal notwendige Version des .NET Frameworks um den OR-Mapper integrieren
+ zu können.
 \end_layout
 
 \begin_layout Description
@@ -9464,6 +9519,10 @@ http://www.mono-project.com/Main_Page
 
  unterstützt.
  
+\end_layout
+
+\begin_layout Subsubsection
+Tooling
 \end_layout
 
 \begin_layout Description
@@ -9522,8 +9581,12 @@ Assistenten Sagt aus ob der OR-Mapper Assistenten mitliefert, welche den
 \end_layout
 
 \begin_layout Description
-Kommandozeilentools Falls der OR-Mapper noch zusätzliche kommandozeilenbasierte
+Kommandozeilentools Falls der OR-Mapper zusätzliche kommandozeilenbasierte
  Tools mitliefert sind diese in dieser Zeile aufgelistet.
+\end_layout
+
+\begin_layout Subsubsection
+Mapping-Techniken
 \end_layout
 
 \begin_layout Description
@@ -9553,12 +9616,12 @@ Verwendete Techniken
 \end_inset
 
  Unter diesem Kriterium sind die vom OR-Mapper verwendeten Techniken beschrieben
-, welche das Mapping von der relationalen Datenbank zu Domänenobjekten ermöglich
-t.
+, welche das Mapping von Zeilen in der Tabelle einer relationalen Datenbank
+ zu Domänenobjekten realisiert.
  Dies kann zum Beispiel Codegenerierung auf Grund eines Designers sein oder
  Techniken wie Reflection.
- Dieses Kriterium ist meist ein Anhaltspunkt um die mögliche Performance
- des OR-Mappers abzuschätzen.
+ Dieses Kriterium ist ein möglicher Anhaltspunkt um die Performance des
+ OR-Mappers abzuschätzen.
  Wird nur Code zur Laufzeit erzeugt und stark Techniken wie Reflection verwendet
 , so wird sich dies mit Sicherheit auf die Laufzeitperformance des Produktes
  auswirken.
@@ -9578,7 +9641,7 @@ Forward Mapping (Model-First)
  Beschreibt ob der OR-Mapper Forward Mapping unterstützt.
  Forward Mapping bedeutet, dass zuerst das Domänenmodell in Code modelliert
  wird und danach die Datenbank vom OR-Mapper auf Basis dieses Domänenmodells
- aufgebaut wird.
+ generiert wird.
  Dies setzt voraus, dass der OR-Mapper SQL DDL
 \begin_inset Foot
 status open
@@ -9604,23 +9667,27 @@ Reverse Mapping (Schema-First)
 
 \end_inset
 
- Beschreibt ob der OR-Mapper Revese Mapping unterstützt.
+ Beschreibt ob der OR-Mapper Reverse Mapping unterstützt.
  Reverse Mapping ist eine Mappingtechnik, welche auf Grund einer bestehenden
  Datenbank ein Domänenmodell erzeugt.
- Dies setzt voraus dass der OR-Mapper Code generieren kann.
+ Dies setzt voraus, dass der OR-Mapper C# oder VB.NET Code generieren kann.
 \end_layout
 
 \begin_layout Description
 Datenmigrationen Unterstützt ein OR-Mapper Datenmigrationen so ist dies
  in dieser Zeile festgehalten.
- Eine Datenmigration ist das Unterstützen von versionierten Domänennodellen
+ Eine Datenmigration ist das Unterstützen von versionierten Domänenmodellen
  bzw.
  Datenbankschemas und den darin enthaltenen Daten.
- Wird eine Datenmigration ausgeführt, so wird das Datenschema inklusive
- den darin enthaltenen Daten automatisiert auf den Zielstand der Datenmigration
- gebracht.
+ Wird eine Datenmigration durchgeführt, so wird das Datenschema inklusive
+ den darin gespeicherten Daten automatisiert auf den Zielstand der Datenmigratio
+n gebracht.
  Im Rahmen dieser Marktübersicht gelten Datenmigrationen nur als unterstützt,
  wenn diese auch rückgängig gemacht werden können.
+\end_layout
+
+\begin_layout Subsubsection
+Business Objects
 \end_layout
 
 \begin_layout Description
@@ -9636,8 +9703,8 @@ POCO Support
 
  POCOs sind Plain Old CLR Objects.
  Das heisst ein POCO ist ein simples Objekt welches ohne die Verwendung
- eines zusätzlichen Frameworks wie eine bestimmter Basisklasse, implementierten
- Interfaces oder Annotationen.
+ eines zusätzlichen Frameworks wie einer bestimmter Basisklasse, implementierten
+ Interfaces oder Annotationen auskommt.
  Unterstützt ein OR-Mapper direkt POCOs bei der Verwendung von Forward Mapping,
  so wird dies unter diesem Kriterium festgehalten.
 \end_layout
@@ -9654,7 +9721,7 @@ Erfordern spezifische Basisklasse
 \end_inset
 
  Verlangt ein OR-Mapper, dass jedes Domänenobjekt von einer spezifischen
- Basisklasse ableitet, so ist dies in der Matrix unter dieser Zeile festgehalten.
+ Basisklasse erbt, so ist dies in der Matrix unter dieser Zeile festgehalten.
  
 \end_layout
 
@@ -9718,7 +9785,7 @@ Erzeugte Business Objects unterstützen Datenbindung
 \end_inset
 
  Falls die generierten Domänenobjekte bei Verwendung von Reverse Mapping
- Datenbindungen für WPF, Silverlight und ASP.NET unterstützten, sind in dieser
+ Datenbindungen für WPF, Silverlight und ASP.NET unterstützen, sind in dieser
  Zeile der Vergleichsmatrix die implementierten und unterstützten Interfaces
  aufgelistet.
 \end_layout
@@ -9756,7 +9823,8 @@ http://msdn.microsoft.com/en-us/library/system.serializableattribute.aspx
 
 \end_inset
 
- gekennzeichnet, so wird dies unter diesem Kriterium festgehalten.
+ gekennzeichnet, so wird dies unter diesem Kriterium in der Marktübersicht
+ festgehalten.
  Das SerializableAttribute beschreibt, dass Klassen von einem .NET Serialisierer
  (z.B.
  beim Übertragen über WCF-Schnittstellen) serialisiert werden können.
@@ -9814,6 +9882,10 @@ Erzeuge Business Objects sind partielle Klassen
 t, wird dies in dieser Zeile eingetragen.
 \end_layout
 
+\begin_layout Subsubsection
+Mapping-Arten
+\end_layout
+
 \begin_layout Description
 \begin_inset ERT
 status open
@@ -9845,7 +9917,7 @@ Persistiert Eigenschaften
 status open
 
 \begin_layout Plain Layout
-Eigenschaften in englisch sind Properties.
+Eigenschaften in Englisch sind Properties.
 \end_layout
 
 \end_inset
@@ -10094,6 +10166,10 @@ http://msdn.microsoft.com/en-us/library/ms177463(v=sql.105).aspx
  Zeile eingetragen.
 \end_layout
 
+\begin_layout Subsubsection
+Abfragen
+\end_layout
+
 \begin_layout Description
 Containername Alle OR-Mapper besitzen einen zentralen Datencontainer über
  welchen die Domänenobjekte ausgelesen oder gespeichert werden können.
@@ -10181,6 +10257,10 @@ Eager Loading
  Laufzeitperformance des Persistenzlayers zu erhöhen.
 \end_layout
 
+\begin_layout Subsubsection
+Datenaktualisierung
+\end_layout
+
 \begin_layout Description
 \begin_inset ERT
 status open
@@ -10257,7 +10337,7 @@ Unterstützung von Transaktionen
 \end_inset
 
  Sind sämtliche Datenbankoperationen (ausser SELECT-Abfragen) über Transaktionen
- gesichert, wird dies in dieser Zeile festgehalten.
+ realisiert, wird dies in dieser Zeile festgehalten.
  Transaktionsbehandlung ist wichtig bei konkurrierrenden Systemen mit mehreren
  gleichzeitigen Benutzern.
 \end_layout
@@ -10293,7 +10373,7 @@ Optimistisches Sperren
  ausgeführt werden können ohne dass sie sich gegenseitig behindern und aus
  diesem Grund keine Sperren notwendig sind.
  Vor dem Abschliessen der Transaktion wird geprüft ob keine andere Transaktion
- die Daten verändert hat.
+ die in der Transaktion gelesenen oder modifizierten Daten verändert hat.
  Unterstützt der OR-Mapper diese Funktionalität wird dies unter diesem Vergleich
 skriterium festgehalten.
 \end_layout
@@ -10319,9 +10399,13 @@ status open
  Werden Domänenobjekte serialisiert und zum Beispiel über WCF übertragen,
  verliert der Datencontainer des OR-Mappers den Bezug zu diesem Domänenobjekt.
  Wird das Objekt verändert und wieder zurück über WCF an den Persistenzlayer
- übertragen und der OR-Mapper kann trotz verlorenem Bezug trotzdem die Änderunge
-n am Domänenobjekt erkennen und wieder persistieren, so wird dies in dieser
+ übertragen und der OR-Mapper kann trotz verlorenem Bezug die Änderungen
+ am Domänenobjekt erkennen und wieder persistieren, so wird dies in dieser
  Zeile vermerkt.
+\end_layout
+
+\begin_layout Subsubsection
+Cache
 \end_layout
 
 \begin_layout Description
@@ -10330,13 +10414,13 @@ status open
 
 \begin_layout Plain Layout
 
-First Level Cache (Session Level)
+First Level Cache
 \end_layout
 
 \end_inset
 
  Besitzt der OR-Mapper eine Art von First Level Cache auf Basis des Datencontain
-ers wird dies in dieser Zeile festgehalten.
+ers des ORMs wird dies in dieser Zeile festgehalten.
 \end_layout
 
 \begin_layout Description
@@ -10345,13 +10429,13 @@ status open
 
 \begin_layout Plain Layout
 
-Second Level Cache (Arbeitsspeicher/DB/...)
+Second Level Cache
 \end_layout
 
 \end_inset
 
- Existiert ein Second Level Cache auf Basis des Arbeitsspeichers, der Datenbank
- oder des Festplatte so wird dies in dieser Zeile festgehalten.
+ Existiert ein Second Level Cache unter Benutzung des Arbeitsspeichers,
+ der Datenbank oder der Festplatte so wird dies in dieser Zeile festgehalten.
 \end_layout
 
 \begin_layout Description
@@ -10365,7 +10449,7 @@ Verteiltes Caching
 
 \end_inset
 
- Unterstützt der OR-Mapper bei einem Multi-Server-Betrieb eine Möglichkeit
+ Unterstützt der OR-Mapper bei einem Multiserverbetrieb eine Möglichkeit
  seinen Cache mit anderen Instanzen des OR-Mappers (bzw.
  des Persistenzlayers) zu teilen, wird dies verteiltes Caching genannt.
  Falls der betrachtete OR-Mapper dieses Szenario unterstützt wird dies in
@@ -10382,9 +10466,9 @@ Logging/Tracing Besitzt der OR-Mapper Möglichkeiten zum Tracing oder Logging
 \end_layout
 
 \begin_layout Description
-Windows-Leistungsindikatoren Benutzt der OR-Mapper die Windows-Leistungsindikato
-ren um Informationen zu seinem Status zu publizieren, so wird dies in dieser
- Zeile vermerkt.
+Windows-Leistungsindikatoren Benutzt der OR-Mapper die Leistungsindikatoren
+ von Windows um Informationen zu seinem Status zu publizieren, so wird dies
+ in dieser Zeile vermerkt.
 \end_layout
 
 \begin_layout Subsection
@@ -10494,7 +10578,7 @@ MyBatis.NET
 \end_layout
 
 \begin_layout Itemize
-Linq-2-SQL
+LINQ-to-SQL
 \end_layout
 
 \begin_layout Itemize
@@ -10514,7 +10598,7 @@ Fragebogen
 \end_layout
 
 \begin_layout Standard
-Der Fragebogen, der den Entwicklern ausgeteilt wurde umfasst die folgenden
+Der Fragebogen, der den Entwicklern ausgeteilt wird, umfasst die folgenden
  Fragen:
 \end_layout
 
@@ -10550,10 +10634,10 @@ Interpretation des Umfrageergebnis
 \begin_layout Standard
 Die nachfolgenden Kapitel zeigen das Umfrageergebnis für jede Frage grafisch
  auf und liefern den Versuch einer Interpretation dieser Grafiken und den
- darunterliegenden Umfragewerte.
+ dazugehörigen Umfragewerten.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Welche der folgenden .NET OR-Mapper kennst du? 
 \end_layout
 
@@ -10575,12 +10659,12 @@ s, welches Microsoft betreibt.
 \end_layout
 
 \begin_layout Standard
-Die beiden weit verbreiteten OR-Mapper NHibernate und Linq-2-SQL sind auch
+Die beiden weit verbreiteten OR-Mapper NHibernate und LINQ-to-SQL sind auch
  entsprechend bekannt.
- Überraschend ist, dass Dapper als relativ junges Projekt (erstes Releasedatum
- März 2011) schon solch eine Bekanntheit unter Entwicklern besitzt.
- Ich vermute das dies an den vielen Beiträgen auf Entwicklerplattformen
- wie StackOverflow oder CodeProject liegt.
+ Überraschend ist dass Dapper als relativ junges Projekt (erstes Releasedatum
+ März 2011) schon eine grosse Bekanntheit unter Entwicklern besitzt.
+ Ich vermute dies liegt an den vielen Beiträgen auf Entwicklerplattformen
+ wie StackOverflow oder CodeProject zum Thema Dapper.
 \end_layout
 
 \begin_layout Standard
@@ -10618,7 +10702,7 @@ Umfrageresultate Welche der folgenden .NET OR-Mapper kennst du?
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Welche davon hast du schon in einem Projekt eingesetzt? 
 \end_layout
 
@@ -10632,14 +10716,14 @@ Welche davon hast du schon in einem Projekt eingesetzt?
 \end_inset
 
  ist wenig überraschend.
- Das Entity Framework und dessen Quasivorgänger Linq-2-SQL nehmen zwei Drittel
- der Umfragergebnisse ein.
- Vor dem Release des Entity Framework 4.0 mit seinen Möglichkeiten zum Reverse
- Mapping war NHibernate der wohl populärste OR-Mapper, was sich auch in
- dieser Frage widerspiegelt.
+ Das Entity Framework und dessen Quasivorgänger LINQ-to-SQL nehmen zwei
+ Drittel der Umfragergebnisse ein.
+ Vor dem Release des Entity Framework in der Version 4.0 mit seinen Möglichkeiten
+ zum Reverse Mapping war NHibernate der wohl populärste OR-Mapper, was sich
+ auch in dieser Frage widerspiegelt.
  Es gibt heute noch viele Legacy-Projekte welchen NHibernate zu Grunde liegt
- und welche auf Grund der Opportunitätskosten wohl auch keinen Wechsel des
- OR-Mappers planen.
+ und welche auf Grund der Wechselkosten wohl auch keinen Wechsel des OR-Mappers
+ planen.
 \end_layout
 
 \begin_layout Standard
@@ -10677,7 +10761,7 @@ Umfrageresultate Welche davon hast du schon in einem Projekt eingesetzt?
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 \end_layout
 
@@ -10694,16 +10778,16 @@ Mit welchem Produkt hast du die besten Erfahrungen gemacht?
  zu ergründen.
  Das Entity Framework ist hier mit über zwei Dritteln der Stimmen wiederum
  klar in Führung.
- Ich vermute das dies primär an der sehr guten Dokumentaiton von Microsoft
+ Ich vermute das dies primär an der sehr guten Dokumentation von Microsoft
  liegt und daran dass das Entity Framework das wohl entwicklerfreundlichste
- Proudkt der hier vertretenen kompletten OR-Mappern ist.
+ Produkt der hier vertretenen kompletten OR-Mappern ist.
  
 \end_layout
 
 \begin_layout Standard
 Erstaunlich ist das gute Abschneiden von Dapper.
  Dapper ist sehr flexibel und transparent im Erstellen der Mappings und
- da es als Source-Code ausgeliefert wird sehr einfach zu debuggen und zu
+ da es in Quellcodeform ausgeliefert wird sehr einfach zu debuggen und zu
  erweitern.
  Dies kann insbesondere für erfahrene Entwickler ein grosser Vorteil sein,
  da das Not-Invented-Here-Syndrom
@@ -10765,7 +10849,7 @@ Umfrageresultate Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Welches Produkt schätzt du am verbreitesten ein? 
 \end_layout
 
@@ -10818,7 +10902,7 @@ Umfrageresultate Welches Produkt schätzt du am verbreitesten ein?
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Für ein privates Projekt, welchen ORM würdest du einsetzen?
 \end_layout
 
@@ -11054,7 +11138,7 @@ hen Vorlieben abhängig und die Wertung derselben nicht für jeden Entwickler
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -11769,7 +11853,7 @@ ten der Hersteller und wurden mittels eigens implementierten Proof-of-Concepts
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -12656,7 +12740,7 @@ Das erste Query ist eine Anfrage auf eine Tabelle mit einem Filter auf den
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -12718,7 +12802,7 @@ Das zweite Query ist eine Anfrage auf mehrere Tabellen, bei welcher eine
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -12816,7 +12900,7 @@ Das dritte Query ist keine Abfrage von bereits persistierten Daten wie die
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -14146,7 +14230,7 @@ Wie schon in den vorherigen Kapitel ausgeführt ist diese Vergleichsmatrix
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -17835,7 +17919,7 @@ name "fig:Resultat-Unit-Tests"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -18661,16 +18745,8 @@ auch Abnahmetests oder User Acceptance Tests (UAT)
 
  wird geprüft, ob die Software die funktionalen Erwartungen und Anforderungen
  im Gebrauch erfüllt.
- Dabei werden Akzeptanztests als Black-Box-Tests
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Black-Box-Test"
-description "Ein Black-Box-Test bezeichnet einen Test ohne Kenntnisse über die innere Funktionsweise des zu testenden Systems. Er beschränkt sich auf funktionsorientiertes Testen, das heisst für die Ermittlung der Testfälle werden nur die Anforderungen, aber nicht die Implementierung des Testobjekts herangezogen. Die genaue Beschaffenheit des Programms wird nicht betrachtet, sondern vielmehr als Black Box behandelt. Nur nach aussen sichtbares Verhalten fliesst in den Test ein."
-
-\end_inset
-
- gegen die einzelnen Use-Cases der funktionalen Anforderungen (siehe Kapitel
- 
+ Dabei werden Akzeptanztests als Black-Box-Tests gegen die einzelnen Use-Cases
+ der funktionalen Anforderungen (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Anforderungen-CRM-Applikation"
@@ -18799,7 +18875,7 @@ name "fig:Resultat-Akzeptanztests"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -19415,21 +19491,190 @@ name "tab:Akzeptantests"
 Fazit
 \end_layout
 
+\begin_layout Standard
+Die Bearbeitung dieser Bachelorarbeit war eine ausserordentlich spannende
+ und lehrreiche Aufgabe für welche in diesem Kapitel ein Fazit erarbeitet
+ wird.
+ Das Kapitel enthält die Schlussfolgerungen welche auf Basis der Arbeitsergebnis
+se getroffen werden.
+ Ausserdem werden die Abweichungen von der initialen Aufgabenstellung dargelegt
+ und erläutert.
+\end_layout
+
 \begin_layout Section
 Schlussfolgerungen
 \end_layout
 
 \begin_layout Standard
-Im Rückblick auf die Anzahl der Vergleich der OR-Mapper und der obigen Produktem
-pfehlung fällt eigentlich 
+In Anbetracht der in den vorherigen Kapiteln gewonnenen Erkentnissen im
+ detaillierten Vergleich von objekrelationalen Mappern und den erstellten
+ Produktempfehlungen werden in diesem Kapitel Schlussfolgerungen im Vergleich
+ und der Verwendung der vorgestellten OR-Mapper gezogen.
 \end_layout
 
 \begin_layout Standard
-Fullblown vs lightweight ORMs!
+Wie schon im Vergleich der OR-Mapper (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Vergleich-ausgewählter-Produkte"
+
+\end_inset
+
+) und der Produktempfehlung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Produkteempfehlung"
+
+\end_inset
+
+) erkennbar sind sich die heute verfügbaren und in dieser Arbeit betrachteten
+ OR-Mapper funktions- und leistungsmässig sehr ähnlich.
+ Es fällt schwer konkrete Differnzierungsmerkmale der einzelnen Produkte
+ herauszuheben welche sich dann auch bewerten lassen.
+ Es wurde erkannt, dass weniger die betrachteten Produkte ein Auswahlkriterium
+ bei der Verwendung von bestimmten Enteprise Pattern sind, sondern viel
+ mehr der Typ des ORMs.
+ Wie beschrieben existieren zwei Arten von ORMs: komplette und leichtgewichtige
+ OR-Mapper.
+ Alle in der Marktübersicht (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Marktübersicht"
+
+\end_inset
+
+) analysierten OR-Mapper lassen sich zu einem der zwei Typen zuteilen und
+ der Typ ist innerhalb der Produktempfehlung der ausschlaggebende Punkt
+ für die Empfehlung des Produkts.
+ Für alle Enterprise Pattern ausser dem Domain Model lässt sich sagen, dass
+ leichtgewichtige OR-Mapper besser geeignet sind als komplette.
+ Wird allerdings ein Domain Model verwendet, so macht die Verwendung eines
+ kompletten OR-Mappers Sinn.
+ Die meisten serviceorientierten Systeme setzten heute ein Domain Model
+ ein und somit lässt sich auch in den meisten dieser Systeme (im .NET-Umfeld)
+ einer der in der Marktübersicht betrachtetetn kompletten OR-Mapper finden.
+\end_layout
+
+\begin_layout Standard
+In der nahen Zukunft werden in Enterpriseapplikationen verstärkt Domain
+ Models verwendet werden da Entwickler es heutzutage gewohnt sind mit Objekten
+ zu arbeiten als mit Tabellen.
+ Auch der Trend in Richtung Objekt-relationale Datenbankmanagementsysteme
+ wird die Verwendung von komplexen Domänenmodellen förderen und eventuell
+ sogar OR-Mapper überflüssig machen.
+ Aus diesen Gründen sehe ich besonders bei bedienerfreundlichen OR-Mappern
+ wie dem Entity Framework grosses Potential auch in naher Zukunft.
+\end_layout
+
+\begin_layout Standard
+Auch leichtgewichtige OR-Mapper wie Dapper werden in performancekritischen
+ Systemen und in Systemen mit einer einfacheren Domänenlogik eine Daseinsbereich
+tigung haben und in Zukunft noch an Bedeutung gewinnen.
+ Wird sich Dapper in den Möglichkeiten des Monitorings und im Bedienerkomfort
+ näher an die kompletteren OR-Mapper wie NHibernate oder Entity Framework
+ angleichen bin ich durchaus zuversichtlich dass in dieser Nische ein Markt
+ für Dapper vorhanden ist.
 \end_layout
 
 \begin_layout Section
 Abweichungen von der Aufgabenstellung
+\end_layout
+
+\begin_layout Standard
+Wie in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AmstutzDR2013"
+
+\end_inset
+
+ erwähnt, wurde die initiale Aufgabenstellung in mehreren Punkten geändert
+ was sich auch in der Dokumentation der Bachelorarbeit sowie dem Resultat
+ wiederspiegelt.
+ Alle Änderungen sind in der folgenden Liste noch einmal erwähnt und beschrieben
+:
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Empfehlung nach Architekturstil
+\end_layout
+
+\end_inset
+
+ Die ursprüngliche Aufgabenstellung sah einen Vergleich von OR-Mappern auf
+ Basis von Architekturstilen (siehe 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shaw1996"
+
+\end_inset
+
+) vor.
+ Da das Buch schwer auffindbar war und die Architekturstile darin auf nur
+ wenigen Seiten abgehandelt wurden, wurde die Aufgabenstellung geändert
+ und nun eine Evaluation auf Basis von Fowlers Enterprise Pattern durchgeführt.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Verbreitung ORM
+\end_layout
+
+\end_inset
+
+ Die ursprüngliche Aufgabenstellung sah vor, die Auswahl der näher zu betrachend
+en ORMs nach derem Verbreitung zu treffen.
+ Es wurde allerdings keine Studie zu diesem Thema gefunden und darum wurde
+ in der finalen Version eine Umfrage unter Entwicklern durchgeführt um die
+ Selektion der zu betrachteten OR-Mapper zu treffen.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Zu breiter Scope
+\end_layout
+
+\end_inset
+
+ In der ersten Version der Aufgabenstellung sollten alle frei verfügbaren
+ und kommerziellen OR-Mapper im Java- und .NET-Umfeld miteinander verglichen
+ werden.
+ Da dies zu viele Produkte umfasst hätte wurden in der aktuellen Version
+ nur noch frei verfügbare und Open-Source .NET-ORMs verglichen.
+ Des weiteren sollte die serviceorientierte CRM-Applikation auch eine Reporting-
+Funktionalität umfassen welche nun nicht mehr Teil der Aufgabenstellung
+ ist.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Fokus Bachelorarbeit
+\end_layout
+
+\end_inset
+
+ Der Fokus der ursprünglichen Aufgabenstellung sah vor dass die Empfehlung
+ eines OR-Mappers für ein Enterprise Pattern im Vordergrund steht.
+ Auf Grund der erkannten Schwierigkeit des Erreichen dieses Zieles zum Zeitpunkt
+ des Design Reviews wurde beschlossen mehr Fokus auf die serviceorientierte
+ CRM-Applikation als Proof-of-Concept zu legen.
 \end_layout
 
 \begin_layout Chapter*
@@ -19439,7 +19684,7 @@ Akronyme
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-AES Advanced Encryption Standard
+ACID Atomicity, Consistency, Isolation, Durability
 \end_layout
 
 \begin_layout Labeling
@@ -19449,17 +19694,52 @@ API Application Programming Interface
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-CAPI Cryptography API
+ASP Active Server Pages
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-DCOM Distributed Component Object Model
+AT Acceptance Test
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-DES Data Encryption Standard
+CRM Customer Relationship Management
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+CRUD Create, Read, Update and Delete
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DB Datenbank
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DBMS Database Management System
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+DDL Data Definition Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EBS Einschreibe- und Bewertungssystem
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+EF Entity Framework
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+eSQL Entity SQL
 \end_layout
 
 \begin_layout Labeling
@@ -19469,7 +19749,22 @@ GUI Graphical User Interface
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
+HQL Hibernate Query Language
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 HTTP Hypertext Transfer Protocol
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ID Identifier
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+IEEE Institute of Electrical and Electronics Engineers
 \end_layout
 
 \begin_layout Labeling
@@ -19479,12 +19774,17 @@ IIS Internet Information Server
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-IV Initialisierungsvektor
+JDBC Java Database Connectivity
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-MEF Managed Extensibility Framework
+JVM Java Virtual Machine
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+LINQ Language Integrated Query
 \end_layout
 
 \begin_layout Labeling
@@ -19494,17 +19794,42 @@ MSDN Microsoft Developer Network
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-MSMQ Microsoft Message Queuing
+MSSQL Microsoft SQL Server
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-MVVM Model View View-Model
+MVC Model, View, Controller
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-NIST National Institute of Standards and Technology
+MVVM Model, View, ViewModel
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+MVVM+C Model, View, ViewModel plus Controller
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+OR Objektrelational
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ORM Objektrelationaler Mapper
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+POCO Plain Old CLR Object
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+RAM Random Access Memory
 \end_layout
 
 \begin_layout Labeling
@@ -19524,17 +19849,37 @@ SOA Service Oriented Architecture
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-SOAP Simple Object Access Protocol
+SoCRM Service Oriented CRM
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-TDD Test Driven Development
+SQL Structured Query Language
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-UC Use Case
+SQLCE SQL Server Compact
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SSD Solid State Disk
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+SVC Service
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UAT User Acceptance Test
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+UC Use-Case
 \end_layout
 
 \begin_layout Labeling
@@ -19544,17 +19889,22 @@ UI User Interface
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-URI Uniform Resource Identifier
+UML Unified Modelling Language
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-UX User Experience
+UoW Unit of Work
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-W3C World Wide Web Consortium
+UT Unit Test
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+VB Visual Basic
 \end_layout
 
 \begin_layout Labeling
@@ -19564,12 +19914,12 @@ WCF Windows Communication Foundation
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-WSDL Web Services Description Language
+WPF Windows Presentation Foundation
 \end_layout
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-WPF Windows Presentation Foundation
+WSDL Web Services Description Language
 \end_layout
 
 \begin_layout Labeling
@@ -19590,11 +19940,6 @@ XML Extensible Markup Language
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 XP Extreme Programming
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-YAEM Yet Another Encrypted Messenger
 \end_layout
 
 \begin_layout Labeling
