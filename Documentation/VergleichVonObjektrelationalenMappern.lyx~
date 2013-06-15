@@ -10927,8 +10927,8 @@ Mit welchem Produkt hast du die besten Erfahrungen gemacht?
  lassen.
  Für private Projekte steht oft der Entwicklerkomfort im Vordergrund bei
  der Auswahl eines OR-Mappers.
- Es bestehen meist auch keine Altlasten in Form eines Datenbankschemas oder
- veralteten DBMS dem man sich anzupassen hat.
+ Es bestehen meist auch keine Altlasten in Form eines bestehenden Datenbankschem
+as oder eines veralteten DBMS dem man sich anzupassen hat.
  
 \end_layout
 
@@ -10979,10 +10979,11 @@ Resultat
 
 \begin_layout Standard
 Das Resultat der Umfrage war wenig überraschend.
- Die weite Verbreitung und der guten Ruf des Entity Frameworks war aufgrund
- des Marketings und der guten Dokumentation von Microsoft vorauszusehen.
- Aus den Umfragergebnissen wurden die drei meistgenannten Produkte identifiziert
-, welche für die weiteren Schritte nun genauer betrachtet werden.
+ Die weite Verbreitung und der gute Ruf des Entity Frameworks war aufgrund
+ des Marketings und der ausführlichen und qualitativ hochwertigen Dokumentation
+ von Microsoft vorauszusehen.
+ Aus den Umfrageergebnissen wurden die drei meistgenannten Produkte identifizier
+t, welche für die weiteren Schritte nun genauer betrachtet werden.
  Namentlich sind dies:
 \end_layout
 
@@ -11026,7 +11027,7 @@ reference "sub:Umfrage"
 \end_inset
 
 ) ausgewählten Produkte Entity Framework, Dapper und NHibernate auf Grund
- der folgenden Kriterien miteinander im Detail verglichen:
+ der folgenden Kriterien miteinander verglichen:
 \end_layout
 
 \begin_layout Itemize
@@ -11089,9 +11090,8 @@ in von Designern oder Assistenten.
 \end_layout
 
 \begin_layout Standard
-Die Bewertung der Benutzerfreundlichkeit ist hängt vom Geschmack und der
- Präferenz jedes einzelnen Entwicklers ab und das Vergleichsresultat in
- Tabelle 
+Die Bewertung der Benutzerfreundlichkeit hängt vom Geschmack und der Präferenz
+ jedes einzelnen Entwicklers ab und das Vergleichsresultat in Tabelle 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Kriterien-Benutzerfreundlichkeit"
@@ -11099,7 +11099,7 @@ reference "tab:Kriterien-Benutzerfreundlichkeit"
 \end_inset
 
  kann für einen anderen Entwickler durchaus andere Werte enthalten.
- Ich persönlich präferiere zum Beispiel flüssige Schnittstellen
+ Der Autor präferiert zum Beispiel flüssige Schnittstellen
 \begin_inset Foot
 status open
 
@@ -11122,9 +11122,9 @@ http://www.hanselman.com/blog/TheWeeklySourceCode14FluentInterfaceEdition.aspx
 
 \end_inset
 
- da ich als Entwickler bereits vom Compiler gewarnt werde, falls ich mich
+ da man als Entwickler bereits vom Compiler gewarnt werde, falls man sich
  zum Beispiel beim Namen einer Eigenschaft eines Domänenobjekts verschrieben
- habe.
+ hat.
  Andere Entwickler bevorzugen vielleicht XML-basiertes Mapping, da sie die
  baumartige Struktur von XML bevorzugen.
  Wiederum andere Entwickler werden das Vorhandensein eines Mapping-Designers
@@ -11135,7 +11135,15 @@ hen Vorlieben abhängig und die Wertung derselben nicht für jeden Entwickler
 \end_layout
 
 \begin_layout Standard
+NHibernate hat den grossen Vorteil dass viele für Hibernate entwickelte
+ Drittanbietererweiterungen auch mit NHibernate funktionieren und es eine
+ grosse Entwicklercommunity in Onlineforen wie StackOverflow gibt.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -11671,7 +11679,7 @@ StackOverflow Beiträge
 \begin_inset Text
 
 \begin_layout Plain Layout
-25000
+~25000
 \end_layout
 
 \end_inset
@@ -11680,7 +11688,7 @@ StackOverflow Beiträge
 \begin_inset Text
 
 \begin_layout Plain Layout
-400
+~400
 \end_layout
 
 \end_inset
@@ -11689,7 +11697,7 @@ StackOverflow Beiträge
 \begin_inset Text
 
 \begin_layout Plain Layout
-18000
+~18000
 \end_layout
 
 \end_inset
@@ -11754,7 +11762,7 @@ stepcounter{footnote}
 \backslash
 footnotetext{Die Erweiterung Fluent NHibernate (siehe 
 \backslash
-url{http://www.fluentnhibernate.org/}) erlaubt die Verwendung von flüssigen
+url{http://www.fluentnhibernate.org}) erlaubt die Verwendung von flüssigen
  Schnittstellen beim Erstellen der Mappings.}
 \end_layout
 
@@ -11775,7 +11783,7 @@ stepcounter{footnote}
 \backslash
 footnotetext{Wird später (siehe Kapitel 
 \backslash
-vref{sub:Toolunterstuetzung}) noch im Detail behandelt.}
+vref{sub:Toolunterstuetzung}) noch im Detail betrachtet.}
 \end_layout
 
 \end_inset
@@ -11793,8 +11801,7 @@ status open
 \backslash
 stepcounter{footnote}
 \backslash
-footnotetext{Das kommerziell verfügbare Produkt NHibernate Designer (siehe
- 
+footnotetext{Das kommerzielle Produkt NHibernate Designer (siehe 
 \backslash
 url{http://www.mindscapehq.com/products/nhdesigner}) bietet einen Modeldesigner.}
 \end_layout
@@ -11825,12 +11832,9 @@ vref{sub:Monitoring}) eingehender betrachtet.}
 \end_layout
 
 \begin_layout Standard
-NHibernate hat den grossen Vorteil das viele für Hibernate entwickelte Drittanbi
-etererweiterungen auch funktionieren und es eine grosse Entwicklercommunity
- in Onlineforen wie StackOverflow gibt.
- Der klare Sieger dieser Kategorie ist jedoch das Entity Framework.
+Der klare Sieger dieser Kategorie ist jedoch das Entity Framework.
  Einerseits weil es Forward- und Reverse-Mapping beherrscht und einen sehr
- mächtigen, in Microsofts Visual Studio integrierten, Designer mitliefert.
+ mächtigen, in Microsofts Visual Studio integrierten Designer mitliefert.
  Auch ist die MSDN als erste Anlaufstelle für Dokumentation oder Tutorials
  oder auch der Erfahrungsschatz der Community auf Seiten wie StackOverflow
  ein gewichtiges Argument für die Wahl des Entity Frameworks als OR-Mapper.
@@ -11844,9 +11848,83 @@ Plattformunterstützung
 Das Kriterium Plattformunterstützung beschreibt die Unterstützung von Entwicklun
 gsframeworks (.NET Framework, Java, usw.) sowie die Unterstützung von Datenbankman
 agementsytemen der betrachteten OR-Mapper.
- Die Werte für die einzelnen Kriterien stammen einerseits von den Produktewebsei
-ten der Hersteller und wurden mittels eigens implementierten Proof-of-Concepts
- verifiziert.
+ Die Werte für die einzelnen Kriterien (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Kriterien-Plattformunterstützung"
+
+\end_inset
+
+) stammen einerseits von den Produktewebseiten der Hersteller und wurden
+ mittels eigens implementierten Proof of Concepts verifiziert.
+\end_layout
+
+\begin_layout Standard
+Das Entity Framework und Dapper benutzen als Basis das .NET Framework 3.5
+ da sie LINQ und Lamda-Expressions verwenden, welche mit dieser Version
+ des .NET Frameworks eingeführt wurden.
+ NHibernate ist hingegen schon seit dem .NET Framework 1.1 verfügbar da es
+ deutlich weniger moderne C# Sprachelemente verwendet als das Entity Framework
+ oder Dapper.
+ Dies, da es sich bei NHibernate um eine Portierung aus dem in Java geschriebene
+n Hibernate handelt.
+ Beim Betrachten des Sourcecodes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Der Sourcecode von NHibernate ist unter 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://github.com/nhibernate/nhibernate-core
+\end_layout
+
+\end_inset
+
+ zu finden.
+\end_layout
+
+\end_inset
+
+ ist es sehr viel schwieriger sich als Entwickler zurecht zu finden als
+ zum Beispiel innerhalb von Dappers Sourcecode
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Siehe 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://github.com/SamSaffron/dapper-dot-net
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ Auch kann die Kernbibliothek von NHibernate nicht direkt mit LINQ von Microsoft
+ umgehen sondern hat einen eigenen LINQ-Provider implementiert der nicht
+ in allen Belangen zu Microsofts Implementierung kompatibel ist.
+\end_layout
+
+\begin_layout Standard
+NHibernate hat den grossen Vorteil dass es eine Portierung des populären
+ Open Source Projekts Hibernate ist, welches in Java implementiert wurde.
+ Dadurch sind sämtliche Mapping- und Konfigurationsdateien, welche in NHibernate
+ erstellt werden, mit dem Java-basierten Hibernate kompatibel und wiederverwendb
+ar.
+ Ausserdem unterstützt es das .NET Framework seit der Version 1.1, was einen
+ Vorteil im Umgang mit Legacy-Projekten darstellt.
 \end_layout
 
 \begin_layout Standard
@@ -12460,6 +12538,13 @@ footnotemark
 
 \begin_layout Plain Layout
 Kriterien Plattformunterstützung
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Kriterien-Plattformunterstützung"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12566,74 +12651,6 @@ footnotetext{Unterstützt auch Microsoft Access, Firebird, DB2, UDB, MySQL
 \end_layout
 
 \begin_layout Standard
-Das Entity Framework und Dapper benutzen als Basis das .NET Framework 3.5
- da sie LINQ und Lamda-Expressions verwenden, welche mit dieser Version
- im .NET Framework eingeführt wurden.
- NHibernate ist hingegen schon seit dem .NET Framework 1.1 verfügbar da es
- deutlich weniger moderne C# Sprachelemente verwendet als das Entity Framework
- oder Dapper.
- Dies, da es sich bei NHibernate um eine Portierung aus dem in Java geschriebene
-n Hibernate handelt.
- Beim Betrachten des Sourcecodes
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Der Sourcecode von NHibernate ist unter 
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-https://github.com/nhibernate/nhibernate-core
-\end_layout
-
-\end_inset
-
- zu finden.
-\end_layout
-
-\end_inset
-
- ist es sehr viel schwieriger sich als Entwickler zurecht zu finden als
- zum Beispiel innerhalb von Dappers Sourcecode
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Siehe 
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-https://github.com/SamSaffron/dapper-dot-net
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-.
- Auch kann die Kernbibliothek von NHibernate nicht direkt mit LINQ von Microsoft
- umgehen sondern hat einen eigenen LINQ-Provider implementiert der nicht
- in allen Belangen zu Microsofts Implementierung kompatibel ist.
-\end_layout
-
-\begin_layout Standard
-NHibernate hat den grossen Vorteil das es eine Portierung des populären
- Open-Source Projekts Hibernate ist, welches in Java entwickelt wurde.
- Dadurch sind sämtliche Mapping- und Konfigurationsdateien, welche in NHibernate
- erstellt wurden, mit dem Java-basierten Hibernate kompatibel und wiederverwendb
-ar.
- Ausserdem unterstützt es das .NET Framework seit der Version 1.1, was einen
- Vorteil im Umgang mit Legacyprojekten darstellt.
-\end_layout
-
-\begin_layout Standard
 Auf Grund der frühen .NET Framework-Kompatibilität und Hibernate als Ausgangspunk
 t ist NHibernate als Gewinner der Kategorie Plattformunterstützung hervorzuheben.
 \end_layout
@@ -12653,9 +12670,9 @@ name "sub:Performance"
 Die Performance der einzelnen OR-Mapper ist ein wichtiges Auswahlkritierum
  bei der Evaluation von OR-Mappern für den Einsatz in einer Softwareapplikation.
  Werden während der Entwicklungsphase keine Lasttests auf dem Persistenzlayer
- oder dem Gesamtsystem durchgeführt, kann es beim produktiven Einsatz des
+ oder dem Gesamtsystem durchgeführt, können beim produktiven Einsatz des
  System unangenehme Überraschungen in Bezug auf die Performance des verwendeten
- OR-Mapper geben.
+ OR-Mapper auftreten.
 \end_layout
 
 \begin_layout Standard
@@ -12665,9 +12682,9 @@ Das in diesem Kapitel behandelte Kriterium vergleicht die drei OR-Mapper
  Die Testumgebung beeinhaltet eine Integration der drei verglichenen OR-Mapper.
  Um Messwerte zu erhalten werden jeweils fünf Durchgänge mit 1, 10, 100,
  500 oder 1000 Ausführungen desselben Queries ausgeführt und gemittelt.
- Die mehrfache Ausfühhrung desselben Queries dient dazu Effekte wie die
- vergleichsweise lange Aufstartzeit beim ersten Ausführen eines Queries
- der kompletten OR-Mapper
+ Die mehrfache Ausführung desselben Queries dient dazu Effekte wie die vergleich
+sweise lange Aufstartzeit beim ersten Ausführen eines Queries der kompletten
+ OR-Mapper
 \begin_inset Foot
 status open
 
@@ -12708,8 +12725,8 @@ key "Kochetov2011"
 \end_layout
 
 \begin_layout Standard
-Als Testrechner wurde ein 2.6 GHz Intel Core i7 mit 16 GB 1600 MHz DDR3 RAM
- und einer 500 GB grossen SSD-Festplatte verwendet.
+Als Testrechner wurde ein 2.6 GHz Intel Core i7 mit 16 GB DDR3 RAM und einer
+ 500 GB grossen SSD-Festplatte verwendet.
  Als Betriebssystem wurde ein frisch installiertes Windows 7 Professional
  verwendet.
  Die Messapplikation wurde im .NET Framework 4.5 geschrieben und wird als
@@ -12755,7 +12772,7 @@ begin{lstlisting}[language=SQL]
 
 \begin_layout Plain Layout
 
-SELECT ArtistId, Name FROM Artist WHERE Artist.ArtistId = @id
+SELECT ArtistId, Name FROM Artist WHERE ArtistId = @id
 \end_layout
 
 \begin_layout Plain Layout
@@ -12958,10 +12975,10 @@ Einfügen, Aktualisieren und Löschen
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+\begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -13043,7 +13060,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.2ms
+2.2 ms
 \end_layout
 
 \end_inset
@@ -13052,7 +13069,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.1ms
+0.1 ms
 \end_layout
 
 \end_inset
@@ -13061,7 +13078,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.8ms
+0.8 ms
 \end_layout
 
 \end_inset
@@ -13090,7 +13107,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-22.5ms
+22.5 ms
 \end_layout
 
 \end_inset
@@ -13099,7 +13116,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.5ms
+2.5 ms
 \end_layout
 
 \end_inset
@@ -13108,7 +13125,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-4.4ms
+4.4 ms
 \end_layout
 
 \end_inset
@@ -13137,7 +13154,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-207.2ms
+207.2 ms
 \end_layout
 
 \end_inset
@@ -13146,7 +13163,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-28.0ms
+28.0 ms
 \end_layout
 
 \end_inset
@@ -13155,7 +13172,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-48.1ms
+48.1 ms
 \end_layout
 
 \end_inset
@@ -13184,7 +13201,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-1041.0ms
+1041.0 ms
 \end_layout
 
 \end_inset
@@ -13193,7 +13210,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-141.5ms
+141.5 ms
 \end_layout
 
 \end_inset
@@ -13202,7 +13219,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-253.6ms
+253.6 ms
 \end_layout
 
 \end_inset
@@ -13231,7 +13248,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-2099.8ms
+2099.8 ms
 \end_layout
 
 \end_inset
@@ -13240,7 +13257,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-285.6ms
+285.6 ms
 \end_layout
 
 \end_inset
@@ -13249,7 +13266,7 @@ Abfrage auf eine Tabelle
 \begin_inset Text
 
 \begin_layout Plain Layout
-509.5ms
+509.5 ms
 \end_layout
 
 \end_inset
@@ -13287,7 +13304,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.4ms
+0.4 ms
 \end_layout
 
 \end_inset
@@ -13296,7 +13313,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.4ms
+3.4 ms
 \end_layout
 
 \end_inset
@@ -13325,7 +13342,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.9ms
+9.9 ms
 \end_layout
 
 \end_inset
@@ -13334,7 +13351,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-6.4ms
+6.4 ms
 \end_layout
 
 \end_inset
@@ -13343,7 +13360,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-35.6ms
+35.6 ms
 \end_layout
 
 \end_inset
@@ -13372,7 +13389,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-103.3ms
+103.3 ms
 \end_layout
 
 \end_inset
@@ -13381,7 +13398,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-68.0ms
+68.0 ms
 \end_layout
 
 \end_inset
@@ -13390,7 +13407,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-359.5ms
+359.5 ms
 \end_layout
 
 \end_inset
@@ -13419,7 +13436,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-525.6ms
+525.6 ms
 \end_layout
 
 \end_inset
@@ -13428,7 +13445,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-346.1ms
+346.1 ms
 \end_layout
 
 \end_inset
@@ -13437,7 +13454,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-1806.2ms
+1806.2 ms
 \end_layout
 
 \end_inset
@@ -13466,7 +13483,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-1071.0ms
+1071.0 ms
 \end_layout
 
 \end_inset
@@ -13475,7 +13492,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-685.5ms
+685.5 ms
 \end_layout
 
 \end_inset
@@ -13484,7 +13501,7 @@ Abfrage auf mehrere Tabellen
 \begin_inset Text
 
 \begin_layout Plain Layout
-3647.1ms
+3647.1 ms
 \end_layout
 
 \end_inset
@@ -13513,7 +13530,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-12.8ms
+12.8 ms
 \end_layout
 
 \end_inset
@@ -13522,7 +13539,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-8.6ms
+8.6 ms
 \end_layout
 
 \end_inset
@@ -13531,7 +13548,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-10.1ms
+10.1 ms
 \end_layout
 
 \end_inset
@@ -13560,7 +13577,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-92.1ms
+92.1 ms
 \end_layout
 
 \end_inset
@@ -13569,7 +13586,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-48.0ms
+48.0 ms
 \end_layout
 
 \end_inset
@@ -13578,7 +13595,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-63.7ms
+63.7 ms
 \end_layout
 
 \end_inset
@@ -13607,7 +13624,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-813.3ms
+813.3 ms
 \end_layout
 
 \end_inset
@@ -13616,7 +13633,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-432.2ms
+432.2 ms
 \end_layout
 
 \end_inset
@@ -13625,7 +13642,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-599.1ms
+599.1 ms
 \end_layout
 
 \end_inset
@@ -13654,7 +13671,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-3765.1ms
+3765.1 ms
 \end_layout
 
 \end_inset
@@ -13663,7 +13680,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-2013.8ms
+2013.8 ms
 \end_layout
 
 \end_inset
@@ -13672,7 +13689,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-2710.5ms
+2710.5 ms
 \end_layout
 
 \end_inset
@@ -13701,7 +13718,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-6521.0ms
+6521.0 ms
 \end_layout
 
 \end_inset
@@ -13710,7 +13727,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-3721.4ms
+3721.4 ms
 \end_layout
 
 \end_inset
@@ -13719,7 +13736,7 @@ Einfügen, Aktualisieren und Löschen
 \begin_inset Text
 
 \begin_layout Plain Layout
-4987.2ms
+4987.2 ms
 \end_layout
 
 \end_inset
@@ -13739,7 +13756,7 @@ Einfügen, Aktualisieren und Löschen
 Kriterien Performance
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Kriterien-Performance"
+name "tab:Kriterien-Performance"
 
 \end_inset
 
@@ -13760,7 +13777,7 @@ name "fig:Kriterien-Performance"
 In diesem Vergleich (siehe Resultate in Tabelle 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Kriterien-Performance"
+reference "tab:Kriterien-Performance"
 
 \end_inset
 
@@ -13790,7 +13807,7 @@ name "sub:Toolunterstuetzung"
 Das Entity Framework bietet eine vielfältige Toolunterstützung.
  Wenn ein Forward Mapping Ansatz gewählt wird bietet das Entity Framework
  einen Designer, welcher es erlaubt Entitäten mit ihren Attributen und Beziehung
-en zu modellieren.
+en grafisch zu modellieren.
  Ausserdem werden verschiedene Assistenten mitgeliefert um bestehende Datenbanks
 chemata bei Reverse Mapping Szenarien zu importieren und als Entity Framework
  Modell zu generieren.
@@ -13806,7 +13823,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-http://nuget.org/
+http://nuget.org
 \end_layout
 
 \end_inset
@@ -13823,8 +13840,8 @@ http://nuget.org/
 \begin_layout Standard
 Dapper als leichtgewichtiger OR-Mapper bietet keinerlei Toolunterstützung
  an.
- Sämtliche Konfiguration des ORMs geschieht über direkt in Code geschriebenen
- Mappings welche vom Entwickler komplett von Hand erstellt werden müssen.
+ Sämtliche Konfiguration des ORMs geschieht über direkt in Code geschriebene
+ Mappings welche vom Entwickler vollständig von Hand erstellt werden müssen.
  Die Entitäten selber können jedoch auch über den Visual Studio Klassendesigner
  erstellt werden.
 \end_layout
@@ -13834,14 +13851,13 @@ NHibernate als herunterladbare Klassenbibliothek kommt ohne zusätzliche
  Tools mit.
  Die Konfiguration der Mappings geschieht mittels XML-Dateien und die Entitäten
  selbst können mit dem Visual Studio Klassendesigner erstellt werden.
- NHibernate liefert jedoch die XML Schema Definitionen für die XML-Dateien
- mit, welche dann auch direkt mit Intellisense im Visual Studio verwendet
- werden können
+ NHibernate liefert die XML Schema Definitionen für die XML-Dateien mit,
+ welche dann auch mit Intellisense im Visual Studio verwendet werden können
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Siehe hierzu 
+Siehe 
 \begin_inset Flex URL
 status collapsed
 
@@ -13892,7 +13908,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-http://www.slyce.com/VisualNHibernate/
+http://www.slyce.com/VisualNHibernate
 \end_layout
 
 \end_inset
@@ -13912,11 +13928,10 @@ http://www.slyce.com/VisualNHibernate/
 \begin_layout Standard
 Der Gewinner in dieser Kategorie ist das Entity Framework.
  Die mit dem EF mitgelieferten Tools machen es dem Entwickler denkbar einfach
- Mappings zu erstellen und bieten den gewohnen Komfort von Microsoft-Produkten
+ Mappings zu erstellen und bieten den gewohnten Komfort von Microsoft-Produkten
  wie dem Visual Studio.
- Würde man die Drittanbietertools für NHibernate auch betrachten, würde
- die Entscheidung wohl nicht so klar ausfallen, da für NHibernate auf Grund
- seiner Popularität viele Tools von Drittanbietern existieren.
+ Würde man die erwähnten Drittanbietertools für NHibernate auch betrachten,
+ würde die Entscheidung wohl nicht so klar ausfallen.
 \end_layout
 
 \begin_layout Subsection
@@ -13931,7 +13946,7 @@ name "sub:Unterstützung-Enterprise-Pattern"
 \end_layout
 
 \begin_layout Standard
-Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
+Martin Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
  Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingend
  den Entwickler nicht dazu ein bestimmtes Enterprise Pattern zu wählen.
  Das Entity Framework und NHibernate besitzen eine Möglichkeit, das Pattern
@@ -13940,7 +13955,7 @@ Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
 status open
 
 \begin_layout Plain Layout
-Mehr zum Pattern 
+Mehr zum Pattern siehe 
 \begin_inset Flex URL
 status collapsed
 
@@ -13968,7 +13983,7 @@ Im Endeffekt obliegt es dem Entwickler oder dem Software Architekten wie
  der Persistenzlayer eines Systems implementiert werden soll und welche
  Pattern eingesetzt werden sollen.
  Die Entscheidung ist zu abhängig vom Anwendungszweck des Systems beziehungsweis
-e den Anforderungen an dasselbe als das im Rahmen dieses Vergleichs von
+e den Anforderungen an dasselbe als dass im Rahmen dieses Vergleichs von
  ORMs eine abschliessende Wertung erstellt werden könnte.
 \end_layout
 
@@ -13993,8 +14008,8 @@ Die Möglichkeiten zur Überwachung eines Persistenzlayers und des innerhalb
  verwendeten OR-Mappers wird bei der Evaluation von ORMs oft ausser Acht
  gelassen.
  Dies, da das Montoring häufig erst spät in der Entwicklung eines Systems
- beziehungsweise erst in der Wartung des Systems eine Rolle spielt, wenn
- Performanceengpässe spürbar werden.
+ beziehungsweise erst im Betrieb und der Wartung des Systems eine Rolle
+ spielt, wenn Performanceengpässe spürbar werden.
  Wird dann ein ORM eingesetzt der nur sehr eingeschränkt debug- und überwachbar
  ist, wird es schwierig, Flaschenhälse zu erkennen und auch zu beheben.
 \end_layout
@@ -14003,7 +14018,7 @@ Die Möglichkeiten zur Überwachung eines Persistenzlayers und des innerhalb
 Natürlich lassen sich alle ORMs über einen SQL Profiler auf der Ebene des
  Datenbankmanagementsystems überwachen.
  Doch meist ist es bei dieser Art von Überwachung schwierig zu sagen, welches
- die Ursachne der beobachteten Performanceprobleme sind.
+ die Ursachen der beobachteten Performanceprobleme sind.
  Die Rückverfolgung von auf der Datenbank beobachteten Queries zum Mapping
  eines Domänenobjekts innerhalb des ORMs ist schwierig und oft sogar unmöglich.
 \end_layout
@@ -14022,7 +14037,7 @@ Intellitrace Debugging bietet einen gesamtheitlichen Überblick über den
 \end_inset
 
 .
- Da für das Entity Framework die Debuggingsymbole verfügbar sind ist das
+ Da für das Entity Framework die Debuggingsymbole verfügbar sind, ist das
  Debuggen des in der Applikation integrierten EF ohne weiteres möglich.
  Die Architektur des Entity Frameworks ist auf Grund seiner Vielzahl von
  Funktionalitäten sehr komplex.
@@ -14078,24 +14093,23 @@ http://code.msdn.microsoft.com/EFProviderWrappers
 
 \begin_layout Standard
 Da Dapper in Sourcecodeform vorliegt ist das Debugging für den Entwickler
- denkbar einfach.
+ denkbar einfach gestaltet.
  Der Entwickler kann auch eigene Performancezähler und Messverfahren implementie
-ren und so zum Beispiel einfach ein Tracing aller SQL-Statements realisieren,
- da der Quellcode leicht lesbar und verständlich ist.
+ren und so zum Beispiel selber ein Tracing aller SQL-Statements realisieren.
  Zusätzlich bietet Dapper die Möglichkeit an bestimmten Stellen Beobachterobjekt
 e einzufügen, welche Operationen von Dapper überwachen können.
- Der Nachteil ist allerdings, dass sämtliche Überwachungslogik selber entwickelt
+ Der Nachteil ist allerdings, dass sämtliche Überwachungslogik selbst entwickelt
  werden muss.
- Dapper liefert keinerlei Überwachungsmöglichkeiten mit.
+ Dapper liefert keinerlei vorgefertigte Überwachungsmöglichkeiten mit.
 \end_layout
 
 \begin_layout Standard
-NHibernate ist ein Open-Source Projekt und aus diesem Grund kann dieses
- für Debuggingzwecke selbst kompiliert werden und debugged werden.
+NHibernate ist ein Open Source Projekt und aus diesem Grund kann dieses
+ für Debuggingzwecke selbst kompiliert und gedebuggt werden.
  Auf Grund des Ursprungs von NHibernate als 1-zu-1 Portierung von Hibernate
  in Java nach C# ist die Lesbarkeit und Verständlichkeit für einen .NET Entwickle
 r nicht immer gegeben.
- Auch ist das Kompilieren von NHibernate mit erheblichem Konfiguraitonsaufwand
+ Auch ist das Kompilieren von NHibernate mit erheblichem Konfigurationsaufwand
  verbunden und nicht ohne vertieftes Studium der Dokumentation und einigem
  Ausprobieren von verschiedenen Konfigurationen durchführbar.
  Für NHibernate existiert wie auch für das Entity Framework ein Profilingtool
@@ -14145,11 +14159,11 @@ http://bosy.dailydev.org/2007/04/interceptor-design-pattern.html.
 
 \end_inset
 
- zu schreiben und in NHibernate zu injeziieren.
+ zu schreiben und in NHibernate zu injizieren.
  So kann zum Beispiel jedes auf das Datenbankmanagementsystem abgesetzte
- SQL-Statement mit einem Interceptor abgefangen werden und in ein Tracefile
- geschrieben werden.
- Auch lässt sich direkt eine log4net
+ SQL-Statement mit einem Interceptor abgefangen und in ein Tracefile geschrieben
+ werden.
+ Auch lässt sich eine log4net
 \begin_inset Foot
 status open
 
@@ -14178,13 +14192,13 @@ http://logging.apache.org/log4net/
 Abschliessend lässt es sich sagen dass alle drei betrachteten OR-Mapper
  von Haus aus wenig Montoringmöglichkeiten mitbringen.
  Dies ist wohl auch so gewünscht, bieten insbesondere NHibernate und das
- Entity Framework zahlreiche Möglichkeiten für Entwickler oder Drittanbieter
+ Entity Framework zahlreiche Möglichkeiten für Entwickler und Drittanbieter
  Montoringsuiten zu entwickeln und auf die eigenen Bedürfnisse zuzuschneiden.
- Dieser Vergleich bezieht sich somit auf die Möglichkeit zur Implementierung
+ Dieser Vergleich bezieht sich deswegen auf die Möglichkeit zur Implementierung
  von Überwachungsmechanismen und bezieht auch auf die verfügbaren Monitoringtool
 s von Drittherstelltern in das Vergleichsresultat ein.
- Mit dieser gesamtheitlichen Betrachtung ist das Entity Framework der knappe
- Gewinner vor NHibernate dieses Vergleichs.
+ Mit dieser gesamtheitlichen Betrachtungsweise ist das Entity Framework
+ der knappe Gewinner vor NHibernate dieses Vergleichs.
 \end_layout
 
 \begin_layout Subsection
@@ -14202,8 +14216,8 @@ reference "tab:Vergleichsmatrix"
  sind noch einmal alle Vergleichskriterien der oberen Kapitel mit dem jeweils
  führenden OR-Mapper zusammengefasst.
  Diese Tabelle liefert einen tieferen Einblick in die Verwendung der OR-Mapper
- aus Sicht des Entwicklers und bietet die Grundlage für die Evaluation der
- OR-Mapper (siehe Kapitel 
+ aus Sicht des Entwicklers und stellt die Grundlagen für die Evaluation
+ der OR-Mapper (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Evaluierung-selektierte-OR-Mappe"
@@ -14217,7 +14231,7 @@ reference "sec:Produkteempfehlung"
 
 \end_inset
 
-).
+) zur Verfügung.
 \end_layout
 
 \begin_layout Standard
@@ -14228,6 +14242,7 @@ Wie schon in den vorherigen Kapitel ausgeführt ist diese Vergleichsmatrix
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -14253,7 +14268,7 @@ Kriterium
 \begin_inset Text
 
 \begin_layout Plain Layout
-Führendes Produkt
+Gewinner
 \end_layout
 
 \end_inset
@@ -14416,16 +14431,23 @@ Architektur serviceorientierte CRM-Applikation
 
 \begin_layout Standard
 Dieses Kapitel enthält das Konzept und die Architektur für die Implementierung
- des Proof-of-Concepts im Rahmen dieser Bachelorarbeit.
+ des Proof of Concepts im Rahmen dieser Bachelorarbeit.
  Das zu realisierende System wird aus den drei Architektursichten Bausteinsicht,
  Laufzeitsicht und Verteilungssicht betrachtet und spezifiziert.
 \end_layout
 
 \begin_layout Standard
-Das Ziel ist es auf Grund der dokumentierten Anforderungen ein vollständiges
- und umfassendes Lösungskonzept zu entwickeln, welches in der Implementierungsph
-ase des Wasserfallmodells von Softwareentwicklern umgesetzt werden kann
- (nach 
+Das Ziel ist es auf Grund der dokumentierten Anforderungen (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Anforderungen-CRM-Applikation"
+
+\end_inset
+
+) ein vollständiges und umfassendes Lösungskonzept zu entwickeln, welches
+ in der Implementierungsphase des Wasserfallmodells von Softwareentwicklern
+ umgesetzt werden kann (nach 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Oestereich2006"

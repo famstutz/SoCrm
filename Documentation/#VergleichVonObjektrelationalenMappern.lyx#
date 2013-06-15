@@ -14501,6 +14501,13 @@ Die Bausteinsicht bildet die Aufgaben des System auf Software-Bausteine
 
 \begin_layout Subsubsection
 Komponentendiagramm
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Komponentendiagramm"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14516,7 +14523,7 @@ reference "fig:Komponentendiagramm-SoCRM"
 status open
 
 \begin_layout Plain Layout
-SoCRM steht für Service Oriented CRM und ist der Projektname der zu realisierend
+SoCrm steht für Service Oriented CRM und ist der Projektname der zu realisierend
 en serviceorientierten CRM-Applikation.
 \end_layout
 
@@ -14530,14 +14537,14 @@ en serviceorientierten CRM-Applikation.
 \begin_layout Standard
 Es wird eine grobe Schichtung erstellt indem zwischen dem Presentation-,
  dem Orchestration und dem Infrastructurelayer unterschieden wird.
- Die Schichtung wird erreicht in dem alle drei Layer als eigens ausführ-
+ Die Schichtung wird erreicht indem alle drei Layer als eigens ausführ-
  und verteilbare Komponenten realisiert werden.
 \end_layout
 
 \begin_layout Standard
 Der Infrastructurelayer beeinhaltet nur den Persistenzlayer und wird dreifach
- implementiert werden (eine Implementierung mit Entity Framework, eine mit
- Dapper und eine mit NHibernate).
+ implementiert (eine Implementierung mit Entity Framework, eine mit Dapper
+ und eine mit NHibernate).
  Der Infrastructurelayer offeriert über WCF die Schnittstelle IPersistenceServic
 e<TDomainObject>, welche von den Orchestrationservices Security Service,
  Customer Service, Contact Service und Logging Service konsumiert wird und
@@ -14563,6 +14570,7 @@ modulen, welche die Präsentationslogik enthalten: Security Presentation,
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -14617,7 +14625,7 @@ reference "fig:Klassendiagramm-Domänenmodell-So"
 ) umfasst nur die Klassen der Objekte, die über die Serviceschnittstelle
  von WCF zwischen dem Persistenzlayer und dem Orchestrationlayer sowie zwischen
  dem Orchestrationlayer und dem Presentationlayer übertragen werden.
- Die Domänenobjekte welche im Domänemodell dargestellt sind, stellen das
+ Die Domänenobjekte welche im Domänenmodell dargestellt sind, stellen das
  Domain Model des Systems SoCrm dar.
  
 \end_layout
@@ -14632,24 +14640,25 @@ Alle Domänenobjekte (auch Entitäten genannt) implementieren die Schnittstelle
 \end_layout
 
 \begin_layout Standard
-Die wichtigsten Domänenobjekte werden nachfolgend kurz erklärt.
- Die Klasse Person steht für einen einzelnen Kunden.
+Die wichtigsten Domänenobjekte werden nachfolgend kurz erklärt: Die Klasse
+ Person steht für einen einzelnen Kunden.
  Der Kunde kann eine Firma (Klasse Company) als Arbeitgeber besitzen.
  Jede Person und jede Firma beinhalten eine Adresse (Klasse Address), welche
  als Komposition modelliert ist.
- Zusätzlich kann jede Person mehrere E-Mail-Adressen (EMailAddress) und
- Telefonnummern (PhoneNumber) als Kontaktmöglichkeiten haben.
+ Zusätzlich kann jede Person mehrere E-Mail-Adressen (Klasse EMailAddress)
+ und Telefonnummern (Klasse PhoneNumber) als Kontaktmöglichkeiten haben.
 \end_layout
 
 \begin_layout Standard
 Für eine Person können Kontakte (Klasse Contact) erfasst werden, welche
  neben der Person auch eine Beziehung zum erfassenden Benutzer (Klasse User)
  besitzen.
- Der User dient auch gleichzeitig zur Authentifizierung am System.
+ Der User dient gleichzeitig auch zur Authentifizierung am System.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -14719,6 +14728,20 @@ erte als XML-Fragmente an die konsumierende Applikation zurückgegeben werden.
  und es werden auch keine Sitzungsinformationen ausgetauscht.
 \end_layout
 
+\begin_layout Standard
+Nachfolgend werden die Service Contracts des Systems SoCrm beschrieben und
+ deren Operationen vorgestellt.
+ Die Service Contracts umfassen die Schnittstellen des Orchestrationlayers
+ des Systems (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Komponentendiagramm"
+
+\end_inset
+
+).
+\end_layout
+
 \begin_layout Paragraph
 ISecurityService
 \begin_inset CommandInset label
@@ -14746,11 +14769,46 @@ reference "tab:Methoden-von-ISecurityService"
  Es sind auch verschiedene Get-Methoden mit vordefinierten Filtern auf der
  Schnittstelle definiert, welche vom UI für verschiedene Views benötigt
  werden.
- Die Methode SetPassword ermöglicht es, das Passwort für einen bestimmten
+ Die Methode SetPassword ermöglicht es das Passwort für einen bestimmten
  Benutzer neu zu setzen.
  Dazu wird jeweils auch das alte Passwort mit übergeben und validiert.
  Die ValidateCredentials Methode übernimmt die Aufgabe der Validierung von
  Benutzerdaten und liefert einen boolschen Wert zurück.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ISecurityService.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm ISecurityService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14881,7 +14939,7 @@ GetUserByCredentials
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gibt einen Benutzer auf Grund seiner Benutzerinformationen zurü
+Gibt einen Benutzer auf Grund seiner Benutzerinformationen zurück
 \end_layout
 
 \end_inset
@@ -15019,41 +15077,6 @@ name "tab:Methoden-von-ISecurityService"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Grafiken/ISecurityService.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Klassendiagramm ISecurityService
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Paragraph
 ICustomerService
 \begin_inset CommandInset label
@@ -15075,6 +15098,41 @@ Die Schnittstelle ICustomerService wird vom Orchestrationlayer offeriert
  des jeweiligen Typs als IEnumerable<T> zurück.
  Zusätzlich sind mehrere parameterisierte Get-Methoden definiert, welche
  dem UI für Spezialfälle gefilterte Listen zurückgeben.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ICustomerService.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm ICustomerService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15503,41 +15561,6 @@ Methoden von ICustomerService
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Grafiken/ICustomerService.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Klassendiagramm ICustomerService
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Paragraph
 IContactService
 \begin_inset CommandInset label
@@ -15553,11 +15576,46 @@ name "par:IContactService"
 Die vom Contact Service im Orchestrationlayer offerierte Schnittstelle IContactS
 ervice liefert Informationen zu den Kontakten eines Kunden.
  Die Methode CreateContact erstellt einen neuen Kontakt.
- Die Methode DeleteContact ermöglicht es dem UI einen Kontakt zu löschen.
+ Die Methode DeleteContact ermöglicht es einen Kontakt zu löschen.
  Über einen Aufruf an GetAllContactMediums werden alle möglichen Kontaktmedien
  zurückgegeben.
- Die Get-Methoden geben gefilterte List von Kontakten zurück auf Basis der
- übergebenen Parameter.
+ Die Get-Methoden geben gefilterte Listen von Kontakten zurück auf Basis
+ der übergebenen Parameter.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/IContactService.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm IContactService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15802,41 +15860,6 @@ Methoden von IContactService
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Grafiken/IContactService.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Klassendiagramm IContactService
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Paragraph
 ILoggingService
 \begin_inset CommandInset label
@@ -15851,13 +15874,49 @@ name "par:ILoggingService"
 \begin_layout Standard
 Die Schnittstelle ILoggingService wird innerhalb des Orchestrationlayers
  vom Logging Service implementiert und erlaubt es der Benutzeroberfläche
- oder anderen Services Logeinträge zu schreiben beziehungsweise diese auszulesen.
- Die GetAll-Methoden geben jeweils ungefiltert die gesamte Liste von verfügbaren
+ oder anderen Services Logeinträge zu persistieren beziehungsweise diese
+ auszulesen.
+ Die GetAll-Methoden geben jeweils ungefiltert die gesamte Liste von vorhandenen
  Logeinträgen bzw.
  den möglichen Schweregraden zurück.
  Die beiden Get-Methoden liefern gefilterte Listen zurück.
- Über den Aufruf der Methode LogEvent könen neue Logeinträge dem System
+ Über den Aufruf der Methode LogEvent können neue Logeinträge dem System
  hinzugefügt werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Grafiken/ILoggingService.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Klassendiagramm ILoggingService
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15959,7 +16018,7 @@ Gibt einen Logeintrag auf Grund seiner ObjectId zurück
 \begin_inset Text
 
 \begin_layout Plain Layout
-GetLogEventsByServerity
+GetLogEventsBySeverity
 \end_layout
 
 \end_inset
@@ -15968,7 +16027,7 @@ GetLogEventsByServerity
 \begin_inset Text
 
 \begin_layout Plain Layout
-Gibt alle Logeinträge auf Grund ihres Schweregrads zurück
+Gibt Logeinträge auf Grund ihres Schweregrads zurück
 \end_layout
 
 \end_inset
@@ -16018,41 +16077,6 @@ Methoden von ILoggingService
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Grafiken/ILoggingService.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Klassendiagramm ILoggingService
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Laufzeitsicht
 \end_layout
@@ -16067,11 +16091,11 @@ key "Starke2011"
 \end_inset
 
 ).
- Dabei kommen wichtige Aspekte des Systembetriebs ins Spiel, die beispielsweise
- den Systemstart, die Laufzeitkonfiguration oder die Administration des
+ Dabei kommen wichtige Aspekte des Systembetriebs ins Spiel, welche beispielswei
+se den Systemstart, die Laufzeitkonfiguration oder die Administration des
  Systems betreffen.
- Darüber hinaus dokumentiert die Laufzeitsicht, wie Laufzeitkomponenten
- sich aus Instanzen von Implementierungsbausteinen zusammensetzen.
+ Darüber hinaus dokumentiert die Laufzeitsicht wie Laufzeitkomponenten sich
+ aus Instanzen von Implementierungsbausteinen zusammensetzen.
  
 \end_layout
 
@@ -16092,9 +16116,8 @@ reference "sub:Kontakt-hinzufügen"
 \end_inset
 
 ) modelliert als Sequenzdiagramm.
- Es wird nur dieser Use-Case aus der Laufzeitsicht betrachtet da alle anderen
- Use-Cases praktisch identisch ausgeführt werden.
- Dieses Sequenzdiagramm steht exemplarisch für alle anderen Use-Cases.
+ Es wird nur dieser Use-Case aus der Laufzeitsicht betrachtet und steht
+ exemplarisch für alle anderen Use-Cases.
 \end_layout
 
 \begin_layout Subsubsection
@@ -16102,14 +16125,13 @@ Kontakt hinzufügen
 \end_layout
 
 \begin_layout Standard
-Der Benutzer ist bereits beim System authentifiziert und besitzt einen gültigen
- Sessiontoken.
+Der Benutzer ist bereits beim System authentifiziert und besitzt eine gültige
+ Authentifizierung.
  Möchte ein Benutzer einem Kunden einen neuen Kontakt hinzufügen, so navigiert
  er zuerst auf die CustomerListView, welche alle Kunden anzeigt.
  Die CustomerListView erhält ihre Daten aus dem CustomerService welcher
- wiederum den PersistenceService<Customer> aufruft, der die Kundendaten
- aus der Datenbank liest und mittels ORM auf Domänenobjekte vom Typ Customer
- mappt.
+ wiederum den PersistenceService<Person> aufruft, der die Kundendaten aus
+ der Datenbank liest und mittels ORM auf Domänenobjekte vom Typ Person mappt.
 \end_layout
 
 \begin_layout Standard
@@ -16132,8 +16154,8 @@ reference "fig:Verteilungsdiagramm-SoCrm"
 
 \end_inset
 
- lesbarer zu gestalten wurde auf einzelne Elemente im Ablauf des Use-Cases
- verzichtet beziehungsweise diese wurden vereinfacht.
+ lesbarer zu gestalten wird auf einzelne Elemente im Ablauf des Use-Cases
+ verzichtet beziehungsweise diese werden vereinfacht dargestellt.
  So fehlen zum Beispiel die Controller und ViewModels und die Persistenzservices
  sind zu einem einzigen generischen Service zusammengefasst.
 \end_layout
@@ -19767,6 +19789,11 @@ eSQL Entity SQL
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
 GUI Graphical User Interface
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Guid Globally Unique Identifier
 \end_layout
 
 \begin_layout Labeling
