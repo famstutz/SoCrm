@@ -9283,7 +9283,7 @@ e OR-Mapper im .NET-Umfeld.
  Die Marktübersicht ist kein wertender Vergleich der Produkte sondern eine
  reine Erhebung von Tatsachen zum heutigen Zeitpunkt.
  Es ist wichtig anzumerken, dass diese Marktübersicht schnell veraltet sein
- wird, da viele der Produkte einen kurzen Releasezyklus haben in welchem
+ wird, da viele der Produkte einen kurzen Releasezyklus besitzen in welchem
  sie zusätzliche Funktionalitäten zur Verfügung erhalten.
 \end_layout
 
@@ -10527,7 +10527,7 @@ Das Ziel der Produktauswahl ist es, aus der Marktübersicht drei OR-Mapper
 \begin_layout Standard
 Die drei auf Grund dieser Umfrage selektierten OR-Mapper werden in den nächsten
  Kapiteln im Detail miteinander verglichen, so dass eine Empfehlung erstellt
- werden kann, für welches Enterprise Pattern welcher OR-Mapper ausgewählt
+ werden kann, für welches Enterprise Pattern welcher OR-Mapper eingesetzt
  werden soll.
 \end_layout
 
@@ -10549,8 +10549,8 @@ Das Ziel der Umfrage besteht darin drei OR-Mapper für weitergehende Vergleiche
 it, dem Ruf des Produkts und der Nutzung von OR-Mappern im .NET-Umfeld gestellt.
  Die 25 erhaltenen Antworten werden in den folgenden Unterkapiteln grafisch
  dargestellt und interpretiert.
- Am Ende der Umfrage wird auf Grund der Umfrageergebnisse die Auswahl von
- drei OR-Mappern begründet.
+ Am Ende der Umfrage werden auf Grund der Umfrageergebnisse drei OR-Mapper
+ ausgewählt und die Auswahl begründet.
 \end_layout
 
 \begin_layout Standard
@@ -10562,7 +10562,7 @@ reference "sec:Marktübersicht"
 
 \end_inset
 
-) betrachteten, Produkte zur Auswahl zugelassen:
+) betrachteten Produkte zur Auswahl zugelassen:
 \end_layout
 
 \begin_layout Itemize
@@ -10631,7 +10631,7 @@ Für ein privates Projekt, welchen ORM würdest du einsetzen?
 \end_layout
 
 \begin_layout Standard
-Die Fragen 1 und 2 erlauben die Nennung mehrere Produkte.
+Die Fragen 1 und 2 erlauben die Nennung mehrerer Produkte.
  Die Fragen 3, 4 und 5 erlauben es nur ein einziges Produkt zu nennen.
 \end_layout
 
@@ -10730,8 +10730,8 @@ Welche davon hast du schon in einem Projekt eingesetzt?
  zum Reverse Mapping war NHibernate der wohl populärste OR-Mapper, was sich
  auch in dieser Frage widerspiegelt.
  Es gibt heute noch viele Legacy-Projekte welchen NHibernate zu Grunde liegt
- und welche auf Grund der Wechselkosten wohl auch keinen Wechsel des OR-Mappers
- planen.
+ und welche auf Grund der Wechselkosten wohl auch keinen Austausch des OR-Mapper
+s planen.
 \end_layout
 
 \begin_layout Standard
@@ -10786,17 +10786,17 @@ Mit welchem Produkt hast du die besten Erfahrungen gemacht?
  zu ergründen.
  Das Entity Framework ist hier mit über zwei Dritteln der Stimmen wiederum
  klar in Führung.
- Ich vermute das dies primär an der sehr guten Dokumentation von Microsoft
- liegt und daran dass das Entity Framework das wohl entwicklerfreundlichste
- Produkt der hier vertretenen kompletten OR-Mappern ist.
+ Ich vermute das dies primär an der guten Dokumentation von Microsoft liegt
+ und daran dass das Entity Framework das wohl entwicklerfreundlichste Produkt
+ der hier vertretenen kompletten OR-Mappern ist.
  
 \end_layout
 
 \begin_layout Standard
 Erstaunlich ist das gute Abschneiden von Dapper.
  Dapper ist sehr flexibel und transparent im Erstellen der Mappings und
- da es in Quellcodeform ausgeliefert wird sehr einfach zu debuggen und zu
- erweitern.
+ da es in Quellcodeform ausgeliefert wird, sehr einfach zu debuggen und
+ zu erweitern.
  Dies kann insbesondere für erfahrene Entwickler ein grosser Vorteil sein,
  da das Not-Invented-Here-Syndrom
 \begin_inset Foot
@@ -11063,8 +11063,8 @@ Monitoring
 \end_layout
 
 \begin_layout Standard
-Im Gegensatz zur Marktübersicht setzten alle Vergleiche voraus, dass mit
- im Umgang mit den betrachteten OR-Mappern Erfahrung gesammelt wurde.
+Im Gegensatz zur Marktübersicht setzten alle Vergleiche voraus, dass im
+ Umgang mit den betrachteten OR-Mappern Erfahrung gesammelt wurde.
  Diese Erfahrung wird mittels der Implementierung eines Persistenzlayers
  innerhalb der serviceorientierten CRM-Applikation gewonnen (siehe Kapitel
  
@@ -11106,7 +11106,7 @@ reference "tab:Kriterien-Benutzerfreundlichkeit"
 
 \end_inset
 
- kann für einen anderen Entwickler durchaus andere Werte enthalten.
+ kann für einen anderen Entwickler durchaus unterschiedliche Werte enthalten.
  Der Autor präferiert zum Beispiel flüssige Schnittstellen
 \begin_inset Foot
 status open
@@ -11130,23 +11130,16 @@ http://www.hanselman.com/blog/TheWeeklySourceCode14FluentInterfaceEdition.aspx
 
 \end_inset
 
- da man als Entwickler bereits vom Compiler gewarnt werde, falls man sich
+ da man als Entwickler bereits vom Compiler gewarnt wird, falls man sich
  zum Beispiel beim Namen einer Eigenschaft eines Domänenobjekts verschrieben
  hat.
- Andere Entwickler bevorzugen vielleicht XML-basiertes Mapping, da sie die
+ Andere Entwickler bevorzugen vielleicht XML-basierte Mappings, da sie die
  baumartige Struktur von XML bevorzugen.
  Wiederum andere Entwickler werden das Vorhandensein eines Mapping-Designers
- schätzen, da das Mapping grafisch abstrahiert wird.
+ schätzen, da das Mapping grafisch entwickelt werden kann.
  Aus diesem Grund sind gewisse Kriterien in dieser Kategorie stark von persönlic
 hen Vorlieben abhängig und die Wertung derselben nicht für jeden Entwickler
  gleich.
-\end_layout
-
-\begin_layout Standard
-NHibernate hat den grossen Vorteil dass viele für Hibernate entwickelte
- Drittanbietererweiterungen auch mit NHibernate funktionieren und es eine
- grosse Entwicklercommunity in Onlineforen wie StackOverflow gibt.
- 
 \end_layout
 
 \begin_layout Standard
@@ -11840,10 +11833,18 @@ vref{sub:Monitoring}) eingehender betrachtet.}
 \end_layout
 
 \begin_layout Standard
+NHibernate hat den grossen Vorteil dass viele für Hibernate entwickelte
+ Drittanbietererweiterungen auch mit NHibernate funktionieren und es eine
+ grosse Entwicklercommunity in Onlineforen wie StackOverflow gibt.
+ 
+\end_layout
+
+\begin_layout Standard
 Der klare Sieger dieser Kategorie ist jedoch das Entity Framework.
- Einerseits weil es Forward- und Reverse-Mapping beherrscht und einen sehr
- mächtigen, in Microsofts Visual Studio integrierten Designer mitliefert.
- Auch ist die MSDN als erste Anlaufstelle für Dokumentation oder Tutorials
+ Einerseits weil es Forward- und Reverse-Mapping beherrscht und andererseits
+ weil es einen mächtigen, in Microsofts Visual Studio integrierten Designer
+ mitliefert.
+ Auch ist die MSDN als erste Anlaufstelle für Dokumentation und Tutorials
  oder auch der Erfahrungsschatz der Community auf Seiten wie StackOverflow
  ein gewichtiges Argument für die Wahl des Entity Frameworks als OR-Mapper.
 \end_layout
@@ -11937,6 +11938,7 @@ ar.
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -12594,7 +12596,7 @@ stepcounter{footnote}
 footnotetext{NHibernate ist eine Portierung von Hibernate, einem Java OR-Mapper
  (siehe 
 \backslash
-url{http://www.hibernate.org/}).}
+url{http://www.hibernate.org}).}
 \end_layout
 
 \end_inset
@@ -12680,7 +12682,7 @@ Die Performance der einzelnen OR-Mapper ist ein wichtiges Auswahlkriterium
  Werden während der Entwicklungsphase keine Lasttests auf dem Persistenzlayer
  oder dem Gesamtsystem durchgeführt, können beim produktiven Einsatz des
  System unangenehme Überraschungen in Bezug auf die Performance des verwendeten
- OR-Mapper auftreten.
+ OR-Mappers auftreten.
 \end_layout
 
 \begin_layout Standard
@@ -12747,8 +12749,9 @@ Als Testrechner wurde ein 2.6 GHz Intel Core i7 mit 16 GB DDR3 RAM und einer
 \begin_layout Standard
 Zur besseren Illustration und Verständlichkeit sind nachfolgend die drei
  Testqueries in SQL Syntax erklärt.
- Die Erwartung an den OR-Mapper ist es, die folgenden SQL-Queries in dieser
- oder einer ähnlichen Form an das Datenbankmanagementsystem abzusetzen.
+ Die Erwartung an den OR-Mapper ist es, die folgenden SQL-Queries in der
+ abgebildeten oder einer ähnlichen Form an das Datenbankmanagementsystem
+ abzusetzen.
 \end_layout
 
 \begin_layout Standard
@@ -12984,6 +12987,7 @@ Einfügen, Aktualisieren und Löschen
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -13955,7 +13959,7 @@ name "sub:Unterstützung-Enterprise-Pattern"
 
 \begin_layout Standard
 Martin Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
- Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingend
+ Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingen
  den Entwickler nicht dazu ein bestimmtes Enterprise Pattern zu wählen.
  Das Entity Framework und NHibernate besitzen eine Möglichkeit, das Pattern
  Unit of Work
@@ -13987,7 +13991,7 @@ n des OR-Mappers sehr transparent und einfach ist.
 \end_layout
 
 \begin_layout Standard
-Im Endeffekt obliegt es dem Entwickler oder dem Software Architekten wie
+Im Endeffekt obliegt es dem Entwickler oder dem Softwarearchitekten wie
  der Persistenzlayer eines Systems implementiert werden soll und welche
  Pattern eingesetzt werden sollen.
  Die Entscheidung ist zu abhängig vom Anwendungszweck des Systems beziehungsweis
@@ -16388,7 +16392,7 @@ reference "sec:Anforderungen-Enterprise-Pattern"
 \end_inset
 
 ) gemessen.
- Es wird erneut darauf hinzuweisen, dass die Anforderungen an den Persistenzlaye
+ Es wird erneut darauf hingewiesen, dass die Anforderungen an den Persistenzlaye
 r als Anforderungen an die Implementierung eines Persistenzlayers formuliert
  sind, nicht nur an den im Layer verwendeten ORM.
  
@@ -16452,7 +16456,7 @@ reference "sub:Performance"
 
 \end_inset
 
-) gut zeigt.
+) zeigt.
  Als kompletter OR-Mapper war vorauszusehen dass gegenüber eines leichtgewichtig
 en OR-Mappers Unterschiede in den Leistungsdaten sichtbar werden.
 \end_layout
@@ -16481,13 +16485,13 @@ Beim Betrachten der Anforderungen der Enterprise Pattern werden bis auf
  D2 (Das System muss die Möglichkeiten einer Spezifikation bieten, mit welcher
  der Teil eines zu ladenden Objektgraphen beschrieben werden kann) alle
  Anforderungen erfüllt.
- Das Entity Framework bietet von Haus aus keine spezifizierbare Möglichkeit
+ Das Entity Framework bietet von Haus aus keine Möglichkeit der Spezifikation
  an, welcher Teil eines Objektgraphen geladen werden soll.
  Die Anforderung D2 kann jedoch mit der Verwendung von Lazy Loading und
  virtuellen Eigenschaften in den Domänenobjekten teilweise erfüllt werden.
  Wird eine vollständige Spezifikation des Objektgraphen gefordert (inklusive
- der Definition welcher Teil des Objektgraphen nun geladen werden soll und
- welcher nicht), so muss dies im Persistenzlayer selbst implementiert werden.
+ der Definition welcher Teil des Objektgraphen geladen werden soll und welcher
+ nicht), so muss dies im Persistenzlayer selbst implementiert werden.
 \end_layout
 
 \begin_layout Subsection
@@ -16516,8 +16520,8 @@ Der minimalistische Ansatz von Dapper hat auch einige Nachteile.
  kennen, da teilweise SQL-Statements als Parameter an Dapper übergeben werden.
  Auch ist Dapper nur effizient in Forward Mapping Szenarien einzusetzen,
  welche auf einem ohne Altlasten berücksichtigenden Domänenmodell basieren.
- Weicht das Domänenmodell vom Datenbankschema ab, ist vielfach aufwändiges
- Mapping nötig, welches schnell unübersichtlich wird.
+ Weicht das Domänenmodell vom Datenbankschema ab, ist ein aufwändiges Mapping
+ nötig, welches schnell unübersichtlich wird.
 \end_layout
 
 \begin_layout Standard
@@ -16539,12 +16543,12 @@ reference "sub:Monitoring"
  Die Qualitätsanforderungen und Randbedingungen sind ähnlich abgedeckt wie
  die funktionalen Anforderungen.
  Zwar wurde Dapper mit der Intention entwickelt die Datenbank einfach für
- automatische Tests abstrahieren zu können trotzdem ist PR2 (Das System
+ automatische Tests abstrahieren zu können, trotzdem ist PR2 (Das System
  muss dem Entwickler die Möglichkeit bieten ohne Wissen über die Datenbank
  oder datenbanknahe Technologien auf die Operationen zuzugreifen) und PR3
  (Das System muss dem Entwickler für sämtliche Operationen ein Resultat
  entweder in Form der Entität oder den Entitäten oder in Form eines Operationsre
-sultats zurückliefern) nicht aus den vorher genannten Gründen erfüllt.
+sultats zurückliefern) aus den vorher genannten Gründen nicht erfüllt.
 \end_layout
 
 \begin_layout Standard
@@ -16571,7 +16575,7 @@ NHibernate erfreut sich immer noch ausserordentlicher Beliebtheit in der
  Entwicklercommunity.
  Dies liegt daran, dass NHibernate lange der einzige ausgereifte komplette
  OR-Mapper im .NET-Umfeld war und dadurch viele erfolgreich abgeschlossene
- Projekte unter Verwendung von NHibernate realisiert wurden.
+ Projekte unter Verwendung von NHibernate realisiert werden konnten.
  Viele .NET-Entwickler haben NHibernate schon einmal integriert oder in einem
  Projekt mitgearbeitet in welchem NHibernate für das objektrelationale Mapping
  eingesetzt wurde.
@@ -19735,8 +19739,8 @@ Zu breiter Scope
  Da diese Marktübersicht zu viele Produkte umfasst hätte, wurden in der
  aktuellen Version der Aufgabenstellung nur noch frei verfügbare und Open
  Source .NET-ORMs verglichen.
- Des weiteren sollte die serviceorientierte CRM-Applikation auch eine Reporting-
-Funktionalität umfassen welche nachträglich aus der Aufgabenstellung entfernt
+ Desweiteren sollte die serviceorientierte CRM-Applikation auch eine Reporting-F
+unktionalität umfassen welche nachträglich aus der Aufgabenstellung entfernt
  worden ist.
 \end_layout
 

@@ -1,0 +1,215 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\date{ }
+\title{ }
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language german-ch
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 0cm
+\rightmargin 2cm
+\bottommargin 0cm
+\headheight 0cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\paragraph_spacing other 0
+Vergleich von objektrelationalen Mappern
+\end_layout
+
+\begin_layout Author
+\paragraph_spacing other 0
+
+\size large
+Florian Amstutz
+\end_layout
+
+\begin_layout Date
+\paragraph_spacing other 0
+
+\size small
+Zürcher Hochschule für Angewandte Wissenschaften (17.
+ Juni 2013)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\end_inset
+
+Objektorientierte Programmiersprachen kapseln Daten und Verhalten in Objekten,
+ relationale Datenbanken verwenden hingegen Tabellen.
+ Um zwischen diesen grundverschiedenen Paradigmen übersetzen zu können werden
+ objektrelationale Mapper (kurz OR-Mapper) verwendet.
+ 
+\end_layout
+
+\begin_layout Standard
+Heutige serviceorientierte Architekturen verwenden fast in jedem Fall einen
+ Persistenzlayer welcher Objekte in eine Datenbank speichert und sie von
+ dort liest.
+ Diese Aufgabe wird meist nicht von der Applikation selber übernommen sondern
+ durch einen OR-Mapper ausgeführt.
+ Es gibt eine Reihe von Einflussfaktoren und Entscheidungskriterien die
+ beim Entwurf und der Implementierung von Persistenzkomponenten beachtet
+ werden müssen.
+ Die Auswahl des passenden OR-Mappers für die jeweilige Architektur ist
+ eine der zentralen Fragen, die zu Beginn des Implementierungszyklus einer
+ Applikation beantwortet werden muss (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Starke2011"
+
+\end_inset
+
+), denn oft ist der Persistenzlayer das Nadelöhr einer Enterprise Applikation
+ (gemäss 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Liebhart2007"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Diese Bachelorarbeit erhebt und dokumentiert die Anforderungen an den Persistenz
+layer einer serviceorientierten Architektur und ausgewählten Enterprise
+ Pattern (nach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+).
+ Es wird eine Marktübersicht aller frei verfügbaren oder Open Source OR-Mapper
+ im .NET-Umfeld erstellt und ausgewählte Produkte werden auf Grund einer
+ Auswahl von Kriterien miteinander verglichen.
+ Die gewählten OR-Mapper werden gegen die erhobenen Anforderungen geprüft
+ und es wird eine Produktempfehlung für jedes Enterprise Pattern erstellt.
+ Benutzt ein Persistenzlayer ein Domain Model, so wird die Verwendung von
+ Entity Framework empfohlen.
+ Für Table Module und Active Record wird der Einsatz von Dapper empfohlen.
+ Wenn die Geschäftslogik eines Persistenzlayers als Transaction Script implement
+iert ist, wird entweder Entity Framework, NHibernate oder Dapper empfohlen.
+ Diese Produktempfehlungen und die für die Empfehlung verantwortlichen Vergleich
+sdaten werden anhand eines Proof of Concepts gewonnen.
+ Eine serviceorientierte CRM-Applikation wird exemplarisch implementiert,
+ indem Anforderungen erhoben werden, ein Konzept erstellt wird und nach
+ der Implementierung eine Verifikation der implementierten Anforderungen
+ durchgeführt wird.
+\end_layout
+
+\begin_layout Standard
+Als Fazit erkennt die Arbeit zwei Typen von OR-Mappern: Leichtgewichtige
+ und komplette OR-Mapper.
+ Diese beiden Typen von ORM unterscheiden sich im Funktionsumfang und werden
+ in unterschiedlichen Softwaresystemen eingesetzt.
+ In naher Zukunft werden in Enterpriseapplikationen verstärkt Domain Models
+ verwendet werden, da Entwickler es heutzutage gewohnter sind mit Objekten
+ zu arbeiten als mit tabellarischen Daten.
+ Auch der Trend in Richtung objektrelationaler Datenbankmanagementsysteme
+ wird die Verwendung von komplexen Domänenmodellen fördern und eventuell
+ sogar OR-Mapper überflüssig machen.
+ Trotzdem sieht der Autor dieser Bachelorarbeit besonders bei bedienerfreundlich
+en OR-Mappern wie dem Entity Framework grosses Potential in naher Zukunft.
+ Auch leichtgewichtige OR-Mapper wie Dapper werden in performancekritischen
+ Systemen und in Systemen mit einer einfacheren Domänenlogik eine Daseinsberecht
+igung haben und wohl noch an Bedeutung gewinnen.
+ Wird sich Dapper in den Möglichkeiten des Monitorings und im Bedienungskomfort
+ näher an die kompletten OR-Mapper wie NHibernate oder dem Entity Framework
+ angleichen, ist der Autor durchaus zuversichtlich, dass in dieser Nische
+ ein Potential für Dapper vorhanden ist.
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "VergleichVonObjektrelationalenMappern"
+options "alphadin"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
