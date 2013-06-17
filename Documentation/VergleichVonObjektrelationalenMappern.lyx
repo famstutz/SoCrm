@@ -226,8 +226,8 @@ key "Liebhart2007"
 \end_layout
 
 \begin_layout Standard
-Diese Bachelorarbeit erhebt und dokumentierte die Anforderungen an den Persisten
-zlayer einer serviceorientierten Architektur und ausgewählten Enterprise
+Diese Bachelorarbeit erhebt und dokumentiert die Anforderungen an den Persistenz
+layer einer serviceorientierten Architektur und ausgewählten Enterprise
  Pattern (nach 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -304,13 +304,13 @@ key "Fowler2002"
 \end_inset
 
 ) gelegt, welche heutzutage in jedem grösseren (Software-) System eine entscheid
-ene Rolle spielen.
+ende Rolle spielen.
  Es wird pro Enterprise Pattern eine Empfehlung abgegeben, welcher frei
  verfügbare oder Open Source OR-Mapper im .NET-Umfeld eingesetzt werden soll.
 \end_layout
 
 \begin_layout Standard
-Zusätzlich zu Empfehlungen wird eine serviceorientierte CRM-Applikation
+Zusätzlich zu den Empfehlungen wird eine serviceorientierte CRM-Applikation
  als Proof of Concept erstellt.
  Für diese CRM-Applikation werden Anforderungen erhoben, es wird ein Konzept
  erstellt, dieses umgesetzt und die Umsetzung wird verifiziert.
@@ -356,11 +356,11 @@ reference "fig:Wasserfallprozess-nach"
 ).
  Dabei kann jeweils erst mit der nächsten Phase begonnen werden wenn die
  Lieferergebnisse und die Ergebnisdokumentation der vorhergehenden Phase
- fertiggestellt und abgenommen worden sind.
+ fertiggestellt und abgenommen worden ist.
  Das Wasserfallmodell wurde ausgewählt, da die Bachelorarbeit als Projekt
  gut linear abgearbeitet werden kann und der Betreuer und die Studiengangsleitun
 g als einzige externe Stakeholder des Projekts zu festdefinierten Zeitpunkten
- (namtlich dem Kick-Off und dem Design-Review) Einfluss auf das Projekt
+ (namentlich dem Kick-Off und dem Design-Review) Einfluss auf das Projekt
  ausüben kann und danach keine andere Möglichkeit besitzt, im Projektverlauf
  zu intervenieren.
  Die grössten Nachteile des Wasserfallmodells sind nach 
@@ -370,14 +370,15 @@ key "Elmer2005"
 
 \end_inset
 
- Abgrenzugsprobleme zwischen den einzelnen Phasen sowie die Schwierigkeit
+ Abgrenzungsprobleme zwischen den einzelnen Phasen sowie die Schwierigkeit
  des Abschlusses einzelner Phasen da diese nur mit viel (in anderen Entwicklungs
 modellen unnötigem) Aufwand isoliert von anderen Phasen abgeschlossen werden
  können.
  Dadurch dass der Betreuer und die Studiengangsleitung nur in der Anforderungs-
- und Konzeptphase Einfluss auf das Projekt nehmen kann und der Student alleinig
- den Abschluss der Phasen steuert und verifiziert sowie den Ablauf der Phasen
- innerhalb des Projekts koordiniert, können diese Nachteile entschärft werden.
+ und Konzeptphase Einfluss auf das Projekt nehmen können und der Student
+ alleinig den Abschluss der Phasen steuert und verifiziert sowie den Ablauf
+ der Phasen innerhalb des Projekts koordiniert, können diese Nachteile entschärf
+t werden.
 \end_layout
 
 \begin_layout Standard
@@ -435,9 +436,9 @@ Zu Beginn des Wasserfallmodells steht das Sammeln und Dokumentieren der
  Wenn die Anforderungen umfänglich und in hohem Detaillierungsgrad niedergeschri
 eben sind, werden diese vom Auftraggeber abgenommen und das Projekt geht
  in die Konzeptphase (Design) über.
- Das zu entwickelnde System wird auf verschiedenen Ebenen von Softwarearchitekte
-n entwickelt und eine Blaupause wird erstellt, nach welcher sich die Softwareent
-wickler in der Implementationsphase zu halten haben.
+ Das zu realisierende System wird auf verschiedenen Ebenen von Softwarearchitekt
+en entwickelt und eine Blaupause wird erstellt, nach welcher sich die Softwareen
+twickler in der Implementationsphase zu halten haben.
  Das Design sollte einen Plan beinhalten, welcher die Implementierung der
  Anforderungen aufzeigt.
  
@@ -740,8 +741,8 @@ key "Stern2012"
 Ziel dieser Phasenplanung ist es, möglichst frühzeitig im Verlauf der Bachelorar
 beit Teile der erwarteten Resultate sowie der Dokumentation fertiggestellt
  zu haben, so dass das Risiko von Qualitätseinbussen der Abgaberesultate
- durch überhastigtes Fertigstellen, gering ist.
- Ausserdem sinkt das Wahrscheinlichkeit, dass nicht alle erwarteten Resultate
+ durch überhastetes Fertigstellen, gering ist.
+ Ausserdem sinkt die Wahrscheinlichkeit, dass nicht alle erwarteten Resultate
  der Arbeit geliefert werden können, da die Lieferergebnisse bei jeweiligem
  Phasenende schon in abgabefertiger Qualität vorliegen.
 \end_layout
@@ -777,8 +778,8 @@ reference "tab:Phasenplan"
 \end_layout
 
 \begin_layout Standard
-Vor dem eigentlichen Projektstart werden geeigeneten Themen für die Bachelorarbe
-it evaluiert, ein Betreuer gesucht sowie ein Projektantrag in EBS erfasst.
+Vor dem eigentlichen Projektstart werden geeigneten Themen für die Bachelorarbei
+t evaluiert, ein Betreuer gesucht sowie ein Projektantrag in EBS erfasst.
  Diese Phase endet mit dem Kick-Off-Meeting zwischen Betreuer, Studiengangsleitu
 ng und Student sowie der formalen Freigabe der Bachelorarbeit durch die
  Studiengangsleitung.
@@ -788,7 +789,7 @@ ng und Student sowie der formalen Freigabe der Bachelorarbeit durch die
  Ist das Konzept vollständig abgeschlossen, findet das Design-Review statt,
  bei welchem der Betreuer und die Studiengangsleitung das Konzept begutachtet
  und allfällige Anpassungen daran vorschlägt.
- Nach Fertigstellung des Konzepts folgt die Implementierungsphase und Testphase
+ Nach Fertigstellung des Konzepts folgt die Implementierungs- und Testphase
  nach denen die Arbeit abgegeben wird.
  In der letzten Phase des Projekts wird die Präsentation erarbeitet, die
  an der Schlusspräsentation (Meilenstein M5) vorgetragen wird.
@@ -1043,7 +1044,7 @@ Auswahl und Vergleich dreier OR-Mapper
 \begin_inset Text
 
 \begin_layout Plain Layout
-Implementierung Proof-of-Concept
+Implementierung Proof of Concept
 \end_layout
 
 \end_inset
@@ -1602,7 +1603,7 @@ Randbedingungen
 status open
 
 \begin_layout Plain Layout
-auch Rahmenbedingungen genannt
+Auch Rahmenbedingungen genannt.
 \end_layout
 
 \end_inset
@@ -1647,8 +1648,8 @@ name "sec:Anforderungen-Persistenzlayer"
 \begin_layout Standard
 Dieses Kapitel enthält die Anforderungen an den Persistenzlayer einer serviceori
 entierten Architektur.
- Diese sind gleichzeitig auch Teil der Anforderungen der CRM-Applikation
- (siehe Kapitel 
+ Diese Anforderungen sind gleichzeitig auch Teil der Anforderungen der CRM-Appli
+kation (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Anforderungen-CRM-Applikation"
@@ -1962,7 +1963,7 @@ Das System muss dem Administrator die Möglichkeit bieten den Ablauf sämtlicher
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Funktionale Anforderungen an einen Persistenzlayer
+Funktionale Anforderungen an den Persistenzlayer
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Funktionale-Anforderungen-an"
@@ -2001,7 +2002,7 @@ reference "tab:Qualitätsanforderungen-an-den"
 \end_layout
 
 \begin_layout Standard
-Die Abgrenzung zwischen funktionalen und nicht-funktionalen Anforderungen
+Die Grenze zwischen funktionalen und nicht-funktionalen Anforderungen
 \begin_inset Foot
 status open
 
@@ -2399,10 +2400,17 @@ name "tab:Randbedingungen-an-den"
 
 \begin_layout Section
 Anforderungen Enterprise Pattern
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Anforderungen-Enterprise-Pattern"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Dieses Kapitel beeinhaltet die Anforderungen an Martin Fowlers Enterprise
+Dieses Kapitel beinhaltet die Anforderungen an Martin Fowlers Enterprise
  Pattern Transaction Script, Domain Model, Table Module und Active Record.
  Die Anforderungen stammen sowohl aus 
 \begin_inset CommandInset citation
@@ -2448,7 +2456,7 @@ ler Ebene erhoben.
 
 \begin_layout Standard
 Neben den konkreten Anforderungen werden die einzelnen Enterprise Pattern
- auch noch im Detail beschrieben und deren Anwendung im Persistenzlayer
+ auch noch in Prosaform beschrieben und deren Anwendung im Persistenzlayer
  einer serviceorientierten Architektur erläutert.
  Es hat sich als schwierig herausgestellt aus einem Enterprise Pattern konkrete
  Anforderungen abzuleiten.
@@ -2462,7 +2470,7 @@ reference "sec:Evaluierung-selektierte-OR-Mappe"
 
 \end_inset
 
-) berücksichtigt auch die textuelle Beschreibung der einzelnen Enterprise
+) berücksichtigt daher auch die textuelle Beschreibung der einzelnen Enterprise
  Pattern in den folgenden Unterkapiteln.
 \end_layout
 
@@ -2486,14 +2494,14 @@ key "Fowler2002"
 \end_inset
 
  organisiert das Transaction Script Pattern die Geschäftslogik nach Prozeduren,
- wobei jede Prozedure einen einzelnen Aufruf der Benutzeroberfläche behandelt.
+ wobei jede Prozedur einen einzelnen Aufruf der Benutzeroberfläche behandelt.
  Die meisten Geschäftsapplikationen können als eine Reihe von Transaktionen
  betrachtet werden.
  Eine Transaktion kann das Betrachten von Information repräsentieren, eine
  andere Transaktion bearbeitet diese Information.
  Das Transaction Script organisiert die Domänenlogik primär nach Transaktionen
  die der Benutzer auf dem System vornimmt.
- Jede vom Benutzer intiierte Transaktion besitzt ihr eigenes Transaction
+ Jede vom Benutzer initiierte Transaktion besitzt ihr eigenes Transaction
  Script, auch wenn dieses in einzelne Subprozeduren aufgebrochen werden
  kann.
 \end_layout
@@ -2539,8 +2547,8 @@ http://www.codeproject.com/Articles/15207/Design-Patterns-Command-Pattern
 \end_inset
 
 .
- Im Comand Pattern kapselt das Command-Objekt einen Befehl, um es zu ermöglichen
-, Operationen z.B.
+ Im Command Pattern kapselt das Command-Objekt einen Befehl, um es zu ermögliche
+n, Operationen z.B.
  in eine Warteschlange zu stellen, Logeinträge zu führen oder auch Operationen
  rückgängig zu machen.
  
@@ -2549,7 +2557,7 @@ http://www.codeproject.com/Articles/15207/Design-Patterns-Command-Pattern
 \begin_layout Standard
 Für einfache Geschäftslogik ist das Transaction Script die erste und offensichtl
 iche Wahl.
- Wenn allrdings komplexere Geschäftsdomänen im System abgebildet werden,
+ Wenn allerdings komplexere Geschäftsdomänen im System abgebildet werden,
  so macht es Sinn das Transaction Script in ein Domain Model umzubauen (siehe
  
 \begin_inset CommandInset ref
@@ -2694,7 +2702,7 @@ name "sub:Domain-Model"
 
 \begin_layout Standard
 Das Domain Model ist ein Objektmodell einer Domäne, welches Verhalten und
- Information beeinhaltet (nach 
+ Information beinhaltet (nach 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fowler2002"
@@ -2713,8 +2721,8 @@ key "Fowler2002"
 Wird ein Domain Model in eine Applikation integriert, so fügt man einen
  komplett neuen Layer von Objekten ein, welche das Geschäftsfeld abbilden,
  in welchem das System sich bewegt.
- Die Objekte in einem Domain Model imitieren Daten im Unternehmen und beeinhalte
-n die Regeln, nach welchen dieses Unternehmen beziehungsweise seine Prozesse
+ Die Objekte in einem Domain Model imitieren Daten im Unternehmen und beinhalten
+ die Regeln, nach welchen dieses Unternehmen beziehungsweise seine Prozesse
  funktionieren.
  
 \end_layout
@@ -2781,7 +2789,7 @@ Das Domain Model ist stark verbreitet, da heute viele Entwickler lieber
  mit Domänenobjekten arbeiten als mit SQL Daten direkt in der Datenbank
  zu manipulieren.
  Es ist sicher nicht der einfachste Weg Domänenobjekte zu modellieren und
- braucht viel Erfahrung aber die vereinfachte Testbarkeit und Benutzerbarkeit
+ braucht viel Erfahrung aber die vereinfachte Testbarkeit und Benutzbarkeit
  macht den Nachteil des Modellierens wett.
  Gewöhnt man sich einmal an die Vorteile eines Domain Models so ist es schwierig
  wieder zurück zu einfacheren Datenbankzugriffsmechanismen zu wechseln,
@@ -2890,7 +2898,7 @@ D3
 \begin_inset Text
 
 \begin_layout Plain Layout
-Das System muss den Entiäten sowohl Informationen wie auch Verhalten zuweisen.
+Das System muss den Entitäten sowohl Informationen wie auch Verhalten zuweisen.
 \end_layout
 
 \end_inset
@@ -3049,7 +3057,7 @@ http://martinfowler.com/eaaCatalog/recordSet.html
 
 \end_inset
 
- oder einem bestehenden Resultat eines Queries intialisiert werden könnte.
+ oder einem bestehenden Resultat eines Queries initialisiert werden könnte.
  Dieses Resultat könnte dann mit der Instanz des Table Modules manipuliert
  werden.
 \end_layout
@@ -3278,7 +3286,7 @@ Implementieren von Teilen der Geschäftslogik
 Active Record ist eine gute Option für Systeme mit vergleichsweise simpler
  Geschäftslogik.
  Validierungen auf Basis eines einzelnen Datensatzes funktionieren gut mit
- dieser Stuktur.
+ dieser Struktur.
  Wird ein Domain Model verwendet so besteht zu Beginn der Konzeptphase die
  Entscheidung zwischen der Verwendung von Active Records oder eines Data
  Mappers.
@@ -3608,7 +3616,7 @@ key "Pohl2011"
  des Systems.
  Zusätzlich zu den Use-Cases und den dazugehörigen Use-Case-Spezifikationen
  wird vorgängig in Prosatext der Anwendungsfall beschrieben.
- Aus Gründen der Übersichtlichkeit und der limitierten Gesamtfunktionaliät
+ Aus Gründen der Übersichtlichkeit und der limitierten Gesamtfunktionalität
  des Systems stellen diese Use-Cases die primären Anforderungen an das zu
  entwickelnde Softwaresystem dar.
  
@@ -3629,7 +3637,7 @@ name "sub:Benutzer-oder-Administrator"
 Ein Benutzer oder Administrator möchte mit dem System interagieren und authentif
 iziert sich dazu mit seinem Benutzernamen und Passwort beim System.
  Das System prüft den eingegebenen Benutzernamen und das Passwort und der
- Benutzer oder Administrator wird authentifziert falls diese dem System
+ Benutzer oder Administrator wird authentifiziert falls diese dem System
  bekannt sind.
  Er kann nun weitere Aktionen mit dem System tätigen.
 \end_layout
@@ -3881,7 +3889,7 @@ Nachbedingung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der Benutzer oder Administrator ist authentifziert und kann mit dem System
+Der Benutzer oder Administrator ist authentifiziert und kann mit dem System
  interagieren.
 \end_layout
 
@@ -4847,7 +4855,7 @@ Kunde löschen
  wird ausgeführt wenn ein Benutzer einen im System erfassten Kunden löschen
  möchte.
  Besitzt dieser Kunde Kontakte so werden diese mit dem Kunden zusammen gelöscht.
- Gelöschte Kunden und ihre dazugehörigen Kontakte sind unwiderbringlich
+ Gelöschte Kunden und ihre dazugehörigen Kontakte sind unwiederbringlich
  verloren und können nicht wiederhergestellt werden.
 \end_layout
 
@@ -6039,8 +6047,8 @@ Wenn der Benutzer eine Firma löschen möchte, wird dieser Anwendungsfall
  gelöscht.
  Besitzen die Angestellten der Firma Kontakte, so werden auch die Kontakte
  aus dem System gelöscht.
- Gelöschte Firmen, Kunden oder Kontakte sind endgültig gelöscht und unwiderbring
-lich verloren.
+ Gelöschte Firmen, Kunden oder Kontakte sind endgültig gelöscht und unwiederbrin
+glich verloren.
 \end_layout
 
 \begin_layout Standard
@@ -6371,7 +6379,7 @@ en, dass auch die zur Firma gehörigen Angestellten gelöscht werden.
 
 \begin_layout Plain Layout
 1b.
- Falls die Angestellten Kontakte besitzten wird der Benutzer darauf hingewiesen,
+ Falls die Angestellten Kontakte besitzen wird der Benutzer darauf hingewiesen,
  dass auch die zum Angestellten gehörigen Kontakte gelöscht werden.
 \end_layout
 
@@ -8201,7 +8209,7 @@ Beschreibung
 
 \begin_layout Plain Layout
 Der Benutzer setzt sein eigenes Passwort.
- Der Administrator setzt sein eigenes oder dasjenigen jedes anderen Benutzers.
+ Der Administrator setzt sein eigenes oder dasjenige jedes anderen Benutzers.
 \end_layout
 
 \end_inset
@@ -8222,7 +8230,7 @@ Auslösendes Ereignis
 
 \begin_layout Plain Layout
 Der Benutzer möchte sein eigenes Passwort setzen.
- Der Administrator möchten sein eigenes oder dasjenigen jedes anderen Benutzers
+ Der Administrator möchten sein eigenes oder dasjenige jedes anderen Benutzers
  setzen.
 \end_layout
 
@@ -8816,7 +8824,7 @@ Benutzer löschen
 
  aus.
  Falls der Benutzer zum Zeitpunkt der Löschung beim System angemeldet ist,
- kann der Administrator entscheiden, ob dessen aktuelle Authentifzierung
+ kann der Administrator entscheiden, ob dessen aktuelle Authentifizierung
  für ungültig erklärt werden soll bevor er vom System gelöscht wird.
 \end_layout
 
@@ -9275,7 +9283,7 @@ e OR-Mapper im .NET-Umfeld.
  Die Marktübersicht ist kein wertender Vergleich der Produkte sondern eine
  reine Erhebung von Tatsachen zum heutigen Zeitpunkt.
  Es ist wichtig anzumerken, dass diese Marktübersicht schnell veraltet sein
- wird, da viele der Produkte einen kurzen Releasezyklus haben in welchem
+ wird, da viele der Produkte einen kurzen Releasezyklus besitzen in welchem
  sie zusätzliche Funktionalitäten zur Verfügung erhalten.
 \end_layout
 
@@ -9412,7 +9420,7 @@ Lizenz Die Lizenz, unter welchem der OR-Mapper nutzbar ist.
 
 \begin_layout Description
 Typ Der Typ des OR-Mappers.
- Es gibt zwei unterschiedliche Typen von OR-Mappern: Leichgewichtige und
+ Es gibt zwei unterschiedliche Typen von OR-Mappern: Leichtgewichtige und
  komplette OR-Mapper.
  Ein leichtgewichtiger OR-Mapper bietet meist ausser der Implementierung
  eines Data Mappers keine weiteren Funktionalitäten wie Monitoringtools,
@@ -9767,7 +9775,7 @@ Müssen abstrakt sein
 
 \end_inset
 
- Einige, insbesonders ältere OR-Mapper, verlangen dass alle Domänenobjekte
+ Einige, insbesondere ältere OR-Mapper, verlangen dass alle Domänenobjekte
  als abstrakt definiert sind, so dass zur Laufzeit eine Subklasse generiert
  werden kann.
  Falls dem so ist, wird dies in dieser Zeile festgehalten.
@@ -10338,7 +10346,7 @@ Unterstützung von Transaktionen
 
  Sind sämtliche Datenbankoperationen (ausser SELECT-Abfragen) über Transaktionen
  realisiert, wird dies in dieser Zeile festgehalten.
- Transaktionsbehandlung ist wichtig bei konkurrierrenden Systemen mit mehreren
+ Transaktionsbehandlung ist wichtig bei konkurrierenden Systemen mit mehreren
  gleichzeitigen Benutzern.
 \end_layout
 
@@ -10353,7 +10361,7 @@ Pessimistisches Sperren (bei Transaktionen)
 
 \end_inset
 
- Falls der OR-Mapper bei der Verwendung von Transaktionen auch pestimistische
+ Falls der OR-Mapper bei der Verwendung von Transaktionen auch pessimistische
  Sperren auf einzelnen Datensätzen oder Tabellen erlaubt wird dies hier
  vermerkt.
 \end_layout
@@ -10504,11 +10512,11 @@ Die Vergleichsmatrix vergleicht die OR-Mapper Entity Framework, NHibernate,
 \end_layout
 
 \begin_layout Section
-Produkteauswahl
+Produktauswahl
 \end_layout
 
 \begin_layout Standard
-Das Ziel der Produkteauswahl ist es, aus der Marktübersicht drei OR-Mapper
+Das Ziel der Produktauswahl ist es, aus der Marktübersicht drei OR-Mapper
  zu identifizieren welche genauer betrachtet und verglichen werden sollen.
  Dazu wird eine nicht repräsentative Umfrage unter 30 erfahrenen .NET-Entwicklern
  durchgeführt, welche Verbreitung, Erfahrungswerte in der Benutzung und
@@ -10519,7 +10527,7 @@ Das Ziel der Produkteauswahl ist es, aus der Marktübersicht drei OR-Mapper
 \begin_layout Standard
 Die drei auf Grund dieser Umfrage selektierten OR-Mapper werden in den nächsten
  Kapiteln im Detail miteinander verglichen, so dass eine Empfehlung erstellt
- werden kann, für welches Enterprise Pattern welcher OR-Mapper ausgewählt
+ werden kann, für welches Enterprise Pattern welcher OR-Mapper eingesetzt
  werden soll.
 \end_layout
 
@@ -10541,8 +10549,8 @@ Das Ziel der Umfrage besteht darin drei OR-Mapper für weitergehende Vergleiche
 it, dem Ruf des Produkts und der Nutzung von OR-Mappern im .NET-Umfeld gestellt.
  Die 25 erhaltenen Antworten werden in den folgenden Unterkapiteln grafisch
  dargestellt und interpretiert.
- Am Ende der Umfrage wird auf Grund der Umfragergebnisse die Auswahl von
- drei OR-Mappern begründet.
+ Am Ende der Umfrage werden auf Grund der Umfrageergebnisse drei OR-Mapper
+ ausgewählt und die Auswahl begründet.
 \end_layout
 
 \begin_layout Standard
@@ -10554,7 +10562,7 @@ reference "sec:Marktübersicht"
 
 \end_inset
 
-) betrachteten, Produkte zur Auswahl zugelassen:
+) betrachteten Produkte zur Auswahl zugelassen:
 \end_layout
 
 \begin_layout Itemize
@@ -10615,7 +10623,7 @@ Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 \end_layout
 
 \begin_layout Enumerate
-Welches Produkt schätzt du am verbreitesten ein? 
+Welches Produkt schätzt du am verbreitetsten ein? 
 \end_layout
 
 \begin_layout Enumerate
@@ -10623,16 +10631,16 @@ Für ein privates Projekt, welchen ORM würdest du einsetzen?
 \end_layout
 
 \begin_layout Standard
-Die Fragen 1 und 2 erlauben die Nennung mehrere Produkte.
+Die Fragen 1 und 2 erlauben die Nennung mehrerer Produkte.
  Die Fragen 3, 4 und 5 erlauben es nur ein einziges Produkt zu nennen.
 \end_layout
 
 \begin_layout Subsection
-Interpretation des Umfrageergebnis
+Interpretation der Umfrageergebnisse
 \end_layout
 
 \begin_layout Standard
-Die nachfolgenden Kapitel zeigen das Umfrageergebnis für jede Frage grafisch
+Die nachfolgenden Kapitel zeigen die Umfrageergebnisse für jede Frage grafisch
  auf und liefern den Versuch einer Interpretation dieser Grafiken und den
  dazugehörigen Umfragewerten.
 \end_layout
@@ -10717,13 +10725,13 @@ Welche davon hast du schon in einem Projekt eingesetzt?
 
  ist wenig überraschend.
  Das Entity Framework und dessen Quasivorgänger LINQ-to-SQL nehmen zwei
- Drittel der Umfragergebnisse ein.
+ Drittel der Umfrageergebnisse ein.
  Vor dem Release des Entity Framework in der Version 4.0 mit seinen Möglichkeiten
  zum Reverse Mapping war NHibernate der wohl populärste OR-Mapper, was sich
  auch in dieser Frage widerspiegelt.
  Es gibt heute noch viele Legacy-Projekte welchen NHibernate zu Grunde liegt
- und welche auf Grund der Wechselkosten wohl auch keinen Wechsel des OR-Mappers
- planen.
+ und welche auf Grund der Wechselkosten wohl auch keinen Austausch des OR-Mapper
+s planen.
 \end_layout
 
 \begin_layout Standard
@@ -10778,17 +10786,17 @@ Mit welchem Produkt hast du die besten Erfahrungen gemacht?
  zu ergründen.
  Das Entity Framework ist hier mit über zwei Dritteln der Stimmen wiederum
  klar in Führung.
- Ich vermute das dies primär an der sehr guten Dokumentation von Microsoft
- liegt und daran dass das Entity Framework das wohl entwicklerfreundlichste
- Produkt der hier vertretenen kompletten OR-Mappern ist.
+ Ich vermute das dies primär an der guten Dokumentation von Microsoft liegt
+ und daran dass das Entity Framework das wohl entwicklerfreundlichste Produkt
+ der hier vertretenen kompletten OR-Mappern ist.
  
 \end_layout
 
 \begin_layout Standard
 Erstaunlich ist das gute Abschneiden von Dapper.
  Dapper ist sehr flexibel und transparent im Erstellen der Mappings und
- da es in Quellcodeform ausgeliefert wird sehr einfach zu debuggen und zu
- erweitern.
+ da es in Quellcodeform ausgeliefert wird, sehr einfach zu debuggen und
+ zu erweitern.
  Dies kann insbesondere für erfahrene Entwickler ein grosser Vorteil sein,
  da das Not-Invented-Here-Syndrom
 \begin_inset Foot
@@ -10850,7 +10858,7 @@ Umfrageresultate Mit welchem Produkt hast du die besten Erfahrungen gemacht?
 \end_layout
 
 \begin_layout Subsubsection
-Welches Produkt schätzt du am verbreitesten ein? 
+Welches Produkt schätzt du am verbreitetsten ein? 
 \end_layout
 
 \begin_layout Standard
@@ -10858,7 +10866,7 @@ Auf die Frage
 \begin_inset Quotes eld
 \end_inset
 
-Welches Produkt schätzt du am verbreitesten ein?
+Welches Produkt schätzt du am verbreitetsten ein?
 \begin_inset Quotes erd
 \end_inset
 
@@ -10889,7 +10897,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Umfrageresultate Welches Produkt schätzt du am verbreitesten ein?
+Umfrageresultate Welches Produkt schätzt du am verbreitetsten ein?
 \end_layout
 
 \end_inset
@@ -11019,7 +11027,7 @@ name "sec:Vergleich-ausgewählter-Produkte"
 \begin_layout Standard
 Die Marktübersicht dient als Basis für weitergehende Vergleich der OR-Mapper.
  Da ein Ziel dieser Arbeit die Erstellung einer Produktempfehlung pro Enterprise
- Pattern ist, werden die drei in der Umfage (siehe Kapitel 
+ Pattern ist, werden die drei in der Umfange (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Umfrage"
@@ -11055,8 +11063,8 @@ Monitoring
 \end_layout
 
 \begin_layout Standard
-Im Gegensatz zur Marktübersicht setzten alle Vergleiche voraus, dass mit
- im Umgang mit den betrachteten OR-Mappern Erfahrung gesammelt wurde.
+Im Gegensatz zur Marktübersicht setzten alle Vergleiche voraus, dass im
+ Umgang mit den betrachteten OR-Mappern Erfahrung gesammelt wurde.
  Diese Erfahrung wird mittels der Implementierung eines Persistenzlayers
  innerhalb der serviceorientierten CRM-Applikation gewonnen (siehe Kapitel
  
@@ -11098,7 +11106,7 @@ reference "tab:Kriterien-Benutzerfreundlichkeit"
 
 \end_inset
 
- kann für einen anderen Entwickler durchaus andere Werte enthalten.
+ kann für einen anderen Entwickler durchaus unterschiedliche Werte enthalten.
  Der Autor präferiert zum Beispiel flüssige Schnittstellen
 \begin_inset Foot
 status open
@@ -11122,23 +11130,16 @@ http://www.hanselman.com/blog/TheWeeklySourceCode14FluentInterfaceEdition.aspx
 
 \end_inset
 
- da man als Entwickler bereits vom Compiler gewarnt werde, falls man sich
+ da man als Entwickler bereits vom Compiler gewarnt wird, falls man sich
  zum Beispiel beim Namen einer Eigenschaft eines Domänenobjekts verschrieben
  hat.
- Andere Entwickler bevorzugen vielleicht XML-basiertes Mapping, da sie die
+ Andere Entwickler bevorzugen vielleicht XML-basierte Mappings, da sie die
  baumartige Struktur von XML bevorzugen.
  Wiederum andere Entwickler werden das Vorhandensein eines Mapping-Designers
- schätzen, da das Mapping grafisch abstrahiert wird.
+ schätzen, da das Mapping grafisch entwickelt werden kann.
  Aus diesem Grund sind gewisse Kriterien in dieser Kategorie stark von persönlic
 hen Vorlieben abhängig und die Wertung derselben nicht für jeden Entwickler
  gleich.
-\end_layout
-
-\begin_layout Standard
-NHibernate hat den grossen Vorteil dass viele für Hibernate entwickelte
- Drittanbietererweiterungen auch mit NHibernate funktionieren und es eine
- grosse Entwicklercommunity in Onlineforen wie StackOverflow gibt.
- 
 \end_layout
 
 \begin_layout Standard
@@ -11467,7 +11468,7 @@ Nein
 \begin_inset Text
 
 \begin_layout Plain Layout
-XML-basiertes Mappping/Mapping-Datei
+XML-basiertes Mapping/Mapping-Datei
 \end_layout
 
 \end_inset
@@ -11832,10 +11833,18 @@ vref{sub:Monitoring}) eingehender betrachtet.}
 \end_layout
 
 \begin_layout Standard
+NHibernate hat den grossen Vorteil dass viele für Hibernate entwickelte
+ Drittanbietererweiterungen auch mit NHibernate funktionieren und es eine
+ grosse Entwicklercommunity in Onlineforen wie StackOverflow gibt.
+ 
+\end_layout
+
+\begin_layout Standard
 Der klare Sieger dieser Kategorie ist jedoch das Entity Framework.
- Einerseits weil es Forward- und Reverse-Mapping beherrscht und einen sehr
- mächtigen, in Microsofts Visual Studio integrierten Designer mitliefert.
- Auch ist die MSDN als erste Anlaufstelle für Dokumentation oder Tutorials
+ Einerseits weil es Forward- und Reverse-Mapping beherrscht und andererseits
+ weil es einen mächtigen, in Microsofts Visual Studio integrierten Designer
+ mitliefert.
+ Auch ist die MSDN als erste Anlaufstelle für Dokumentation und Tutorials
  oder auch der Erfahrungsschatz der Community auf Seiten wie StackOverflow
  ein gewichtiges Argument für die Wahl des Entity Frameworks als OR-Mapper.
 \end_layout
@@ -11847,7 +11856,7 @@ Plattformunterstützung
 \begin_layout Standard
 Das Kriterium Plattformunterstützung beschreibt die Unterstützung von Entwicklun
 gsframeworks (.NET Framework, Java, usw.) sowie die Unterstützung von Datenbankman
-agementsytemen der betrachteten OR-Mapper.
+agementsystemen der betrachteten OR-Mapper.
  Die Werte für die einzelnen Kriterien (siehe Tabelle 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -11929,6 +11938,7 @@ ar.
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -12586,7 +12596,7 @@ stepcounter{footnote}
 footnotetext{NHibernate ist eine Portierung von Hibernate, einem Java OR-Mapper
  (siehe 
 \backslash
-url{http://www.hibernate.org/}).}
+url{http://www.hibernate.org}).}
 \end_layout
 
 \end_inset
@@ -12667,19 +12677,19 @@ name "sub:Performance"
 \end_layout
 
 \begin_layout Standard
-Die Performance der einzelnen OR-Mapper ist ein wichtiges Auswahlkritierum
+Die Performance der einzelnen OR-Mapper ist ein wichtiges Auswahlkriterium
  bei der Evaluation von OR-Mappern für den Einsatz in einer Softwareapplikation.
  Werden während der Entwicklungsphase keine Lasttests auf dem Persistenzlayer
  oder dem Gesamtsystem durchgeführt, können beim produktiven Einsatz des
  System unangenehme Überraschungen in Bezug auf die Performance des verwendeten
- OR-Mapper auftreten.
+ OR-Mappers auftreten.
 \end_layout
 
 \begin_layout Standard
 Das in diesem Kapitel behandelte Kriterium vergleicht die drei OR-Mapper
  indem drei typische Anwendungsfälle in der Benutzung eines OR-Mappers innerhalb
  einer Messumgebung ausgeführt werden.
- Die Testumgebung beeinhaltet eine Integration der drei verglichenen OR-Mapper.
+ Die Testumgebung beinhaltet eine Integration der drei verglichenen OR-Mapper.
  Um Messwerte zu erhalten werden jeweils fünf Durchgänge mit 1, 10, 100,
  500 oder 1000 Ausführungen desselben Queries ausgeführt und gemittelt.
  Die mehrfache Ausführung desselben Queries dient dazu Effekte wie die vergleich
@@ -12739,8 +12749,9 @@ Als Testrechner wurde ein 2.6 GHz Intel Core i7 mit 16 GB DDR3 RAM und einer
 \begin_layout Standard
 Zur besseren Illustration und Verständlichkeit sind nachfolgend die drei
  Testqueries in SQL Syntax erklärt.
- Die Erwartung an den OR-Mapper ist es, die folgenden SQL-Queries in dieser
- oder einer ähnlichen Form an das Datenbankmanagementsystem abzusetzen.
+ Die Erwartung an den OR-Mapper ist es, die folgenden SQL-Queries in der
+ abgebildeten oder einer ähnlichen Form an das Datenbankmanagementsystem
+ abzusetzen.
 \end_layout
 
 \begin_layout Standard
@@ -12810,7 +12821,7 @@ Das zweite Query ist eine Anfrage auf mehrere Tabellen, bei welcher eine
  Dies wird unter Mithilfe von Verknüpfungen über Fremdschlüssel und einem
  Filter ermöglicht.
  Wiederum wird die Zeit gemessen vom Absetzen der Anfrage an den OR-Mapper
- bis zum Zeitpunkt der Rückgabe der Liste der gemappten und initalisierten
+ bis zum Zeitpunkt der Rückgabe der Liste der gemappten und initialisierten
  Domänenobjekte.
 \end_layout
 
@@ -12909,7 +12920,7 @@ Das dritte Query ist keine Abfrage von bereits persistierten Daten wie die
  Dadurch wird geprüft wie effizient das Mapping der OR-Mapper im Zusammenhang
  mit datenverändernden Abfragen ist.
  Es wird die Zeit gemessen zwischen dem Übergeben des neu zu persistierenden
- Domänenobjektes und der Bestätigung der Löschung des OR-Mappers.
+ Domänenobjekts und der Bestätigung der Löschung des OR-Mappers.
 \end_layout
 
 \begin_layout Standard
@@ -12976,6 +12987,7 @@ Einfügen, Aktualisieren und Löschen
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -13812,7 +13824,7 @@ en grafisch zu modellieren.
 chemata bei Reverse Mapping Szenarien zu importieren und als Entity Framework
  Modell zu generieren.
  Möchte der Entwickler ohne Designer direkt POCOs erstellen, so liefert
- das Entity Framework eine Erweiterung für den NuGet Packetmanager
+ das Entity Framework eine Erweiterung für den NuGet Paketmanager
 \begin_inset Foot
 status open
 
@@ -13921,7 +13933,7 @@ http://www.slyce.com/VisualNHibernate
 .
  Diese Tools sind durchaus mächtig und für grössere Projekte zu empfehlen,
  werden jedoch in dieser Bachelorarbeit nicht weiter in Betracht gezogen
- da sie meist kostenpflichtig und nicht Teil des herunterladbaren Packets
+ da sie meist kostenpflichtig und nicht Teil des herunterladbaren Pakets
  von NHibernate sind.
 \end_layout
 
@@ -13947,7 +13959,7 @@ name "sub:Unterstützung-Enterprise-Pattern"
 
 \begin_layout Standard
 Martin Fowlers Enterprise Pattern lassen sich mit jedem OR-Mapper implementieren.
- Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingend
+ Die aktuellen Versionen von Entity Framework, NHibernate und Dapper zwingen
  den Entwickler nicht dazu ein bestimmtes Enterprise Pattern zu wählen.
  Das Entity Framework und NHibernate besitzen eine Möglichkeit, das Pattern
  Unit of Work
@@ -13979,7 +13991,7 @@ n des OR-Mappers sehr transparent und einfach ist.
 \end_layout
 
 \begin_layout Standard
-Im Endeffekt obliegt es dem Entwickler oder dem Software Architekten wie
+Im Endeffekt obliegt es dem Entwickler oder dem Softwarearchitekten wie
  der Persistenzlayer eines Systems implementiert werden soll und welche
  Pattern eingesetzt werden sollen.
  Die Entscheidung ist zu abhängig vom Anwendungszweck des Systems beziehungsweis
@@ -14007,7 +14019,7 @@ name "sub:Monitoring"
 Die Möglichkeiten zur Überwachung eines Persistenzlayers und des innerhalb
  verwendeten OR-Mappers wird bei der Evaluation von ORMs oft ausser Acht
  gelassen.
- Dies, da das Montoring häufig erst spät in der Entwicklung eines Systems
+ Dies, da das Monitoring häufig erst spät in der Entwicklung eines Systems
  beziehungsweise erst im Betrieb und der Wartung des Systems eine Rolle
  spielt, wenn Performanceengpässe spürbar werden.
  Wird dann ein ORM eingesetzt der nur sehr eingeschränkt debug- und überwachbar
@@ -14043,7 +14055,7 @@ Intellitrace Debugging bietet einen gesamtheitlichen Überblick über den
  Funktionalitäten sehr komplex.
  Daher ist es für einen Entwickler nicht ganz einfach Mappings schlüssig
  nachzuvollziehen.
- Es existieren eine grosse Anzahl an Dritterherstellertools wie der Entity
+ Es existieren eine grosse Anzahl an Drittherstellertools wie der Entity
  Framework Profiler von Hibernating Rhinos
 \begin_inset Foot
 status open
@@ -14088,7 +14100,7 @@ http://code.msdn.microsoft.com/EFProviderWrappers
 
  welche bei Performanceengpässen in produktiven Umgebungen zum Einsatz kommen
  können und dem Entwickler teilweise grafisch aufzeigen, welche Operationen
- innerhalb des Entity Frameworks wieviel Performance kosten.
+ innerhalb des Entity Frameworks wie viel Performance kosten.
 \end_layout
 
 \begin_layout Standard
@@ -14196,7 +14208,7 @@ Abschliessend lässt es sich sagen dass alle drei betrachteten OR-Mapper
  Montoringsuiten zu entwickeln und auf die eigenen Bedürfnisse zuzuschneiden.
  Dieser Vergleich bezieht sich deswegen auf die Möglichkeit zur Implementierung
  von Überwachungsmechanismen und bezieht auch auf die verfügbaren Monitoringtool
-s von Drittherstelltern in das Vergleichsresultat ein.
+s von Drittherstellern in das Vergleichsresultat ein.
  Mit dieser gesamtheitlichen Betrachtungsweise ist das Entity Framework
  der knappe Gewinner vor NHibernate dieses Vergleichs.
 \end_layout
@@ -14348,7 +14360,7 @@ Toolunterstützung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Enitity Framework
+Entity Framework
 \end_layout
 
 \end_inset
@@ -14495,7 +14507,7 @@ Die Bausteinsicht bildet die Aufgaben des System auf Software-Bausteine
  oder -Komponenten ab.
  Diese Sicht macht Struktur und Zusammenhänge zwischen den Bausteinen der
  Architektur explizit.
- Bausteinsichten zeigen die statischen Aspekte des Systemes und entsprechen
+ Bausteinsichten zeigen die statischen Aspekte des Systems und entsprechen
  in dieser Hinsicht den konventionellen Implementierungsmodellen.
 \end_layout
 
@@ -14511,7 +14523,7 @@ name "sub:Komponentendiagramm"
 \end_layout
 
 \begin_layout Standard
-Das Komponentendigramm in Abbildung 
+Das Komponentendiagramm in Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Komponentendiagramm-SoCRM"
@@ -14536,13 +14548,13 @@ en serviceorientierten CRM-Applikation.
 
 \begin_layout Standard
 Es wird eine grobe Schichtung erstellt indem zwischen dem Presentation-,
- dem Orchestration und dem Infrastructurelayer unterschieden wird.
+ dem Orchestration- und dem Infrastructurelayer unterschieden wird.
  Die Schichtung wird erreicht indem alle drei Layer als eigens ausführ-
  und verteilbare Komponenten realisiert werden.
 \end_layout
 
 \begin_layout Standard
-Der Infrastructurelayer beeinhaltet nur den Persistenzlayer und wird dreifach
+Der Infrastructurelayer beinhaltet nur den Persistenzlayer und wird dreifach
  implementiert (eine Implementierung mit Entity Framework, eine mit Dapper
  und eine mit NHibernate).
  Der Infrastructurelayer offeriert über WCF die Schnittstelle IPersistenceServic
@@ -14724,7 +14736,7 @@ erte als XML-Fragmente an die konsumierende Applikation zurückgegeben werden.
  Ausserdem ist ein Service Contract per Definition grundsätzlich zustandslos,
  er behandelt mehrere Anfragen (auch desselben Auftraggebers) immer als
  unabhängige Transaktionen.
- Anfragen werden ohne Bezug zu früheren, vorhergegeganen Anfragen behandelt
+ Anfragen werden ohne Bezug zu früheren, vorhergegangenen Anfragen behandelt
  und es werden auch keine Sitzungsinformationen ausgetauscht.
 \end_layout
 
@@ -16225,7 +16237,7 @@ en Elemente dargestellt werden.
 \end_layout
 
 \begin_layout Standard
-Die Verteilungssicht ist von grosser Beduetung für die Betreiber des Systems,
+Die Verteilungssicht ist von grosser Bedeutung für die Betreiber des Systems,
  die Hardwarearchitekten, das Entwicklungsteam sowie Management und Projektleitu
 ng (gemäss 
 \begin_inset CommandInset citation
@@ -16253,7 +16265,7 @@ reference "fig:Verteilungsdiagramm-SoCrm"
 ).
  Dies, da kein konkretes Verteilungsszenario der Applikation innerhalb dieser
  Arbeit geplant wird.
- Das Projekt beeinhaltet die Erarbeitung des Konzepts sowie die konkrete
+ Das Projekt beinhaltet die Erarbeitung des Konzepts sowie die konkrete
  Implementierung der Applikation ohne jedoch auf die Verteilung des Systems
  einzugehen.
  
@@ -16339,10 +16351,11 @@ Das Kapitel Implementierung beschäftigt sich mit der abschliessenden Evaluation
 \end_layout
 
 \begin_layout Standard
-Anschliessend wird die Implementierung des Proof-of-Concepts SoCrm im Detail
+Anschliessend wird die Implementierung des Proof of Concepts SoCrm im Detail
  vorgestellt.
  Es werden die einzelnen Visual Studio Projekte als Teilkomponenten im Detail
- beleuchtet und die festgelegten Implementierungsprinzipien vorgestellt.
+ beleuchtet und die vorgängig festgelegten Implementierungsprinzipien vorgestell
+t.
 \end_layout
 
 \begin_layout Section
@@ -16359,8 +16372,9 @@ name "sec:Evaluierung-selektierte-OR-Mappe"
 \begin_layout Standard
 Dieses Kapitel enthält die finale Evaluation der drei in den vorherigen
  Kapiteln behandelten OR-Mapper Entity Framework, Dapper und NHibernate.
- Dazu werden die drei Produkte rückblickend betrachtet und die im Rahmen
- der Evaluation und Benutzung gewonnenen Erkentnisse beleuchtet.
+ Dazu werden die drei Produkte rückblickend betrachtet, die im Rahmen der
+ Evaluation gewonnenen Erkenntnisse und Erfahrung in der Benutzung Revue
+ passiert.
  Die OR-Mapper werden in diesem Kapitel an den erhobenen Anforderungen an
  den Persistenzlayer einer serviceorientierten Architektur (siehe Kapitel
  
@@ -16370,16 +16384,23 @@ reference "sec:Anforderungen-Persistenzlayer"
 
 \end_inset
 
-) und an den Anforderungen der Enterprise Pattern gemessen.
- Es ist erneut darauf hinzuweisen, dsas die Anforderungen an den Persistenzlayer
- als Anforderungen an die Implementierung eines Persistenzlayers formuliert
+) und an den Anforderungen der Enterprise Pattern (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Anforderungen-Enterprise-Pattern"
+
+\end_inset
+
+) gemessen.
+ Es wird erneut darauf hingewiesen, dass die Anforderungen an den Persistenzlaye
+r als Anforderungen an die Implementierung eines Persistenzlayers formuliert
  sind, nicht nur an den im Layer verwendeten ORM.
  
 \end_layout
 
 \begin_layout Standard
 Die Evaluation der drei Produkte dient als Entscheidungsgrundlage für die
- nachfolgende Produkteempfehlung (siehe Kapitel 
+ nachfolgenden Produktempfehlungen (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Produkteempfehlung"
@@ -16403,8 +16424,9 @@ reference "sub:Umfrage"
 
 \end_inset
 
-) und beweist das Microsoft seit der Einfühung des Produkts im August 2005
- gute Arbeit bei der Dokumentation geleistet hat.
+) und beweist, dass Microsoft seit der Einführung des Produkts im August
+ 2005 gute Arbeit bei der Produktqualität, den mitgelieferten Tools und
+ der Dokumentation geleistet hat.
  Beim Rückblick auf die Marktübersicht (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -16419,7 +16441,7 @@ reference "sec:Vergleich-ausgewählter-Produkte"
 
 \end_inset
 
-) zeigt sich, dass nicht nur das umfangreiche Marketing von Microsoft fruchtet,
+) zeigt sich, dass nicht nur die Marketingstrategie von Microsoft fruchtet,
  sondern auch der Funktionsumfang des Entity Frameworks seinesgleichen sucht.
  Es bietet neben vielfältigen Assistenten und Designern auch die vollständige
  Unterstützung der beiden Mappingtechniken Forward Mapping und Reverse Mapping.
@@ -16434,9 +16456,9 @@ reference "sub:Performance"
 
 \end_inset
 
-) gut zeigt.
+) zeigt.
  Als kompletter OR-Mapper war vorauszusehen dass gegenüber eines leichtgewichtig
-en OR-Mappers grosse Unterschiede in den Leistungsdaten sichtbar werden.
+en OR-Mappers Unterschiede in den Leistungsdaten sichtbar werden.
 \end_layout
 
 \begin_layout Standard
@@ -16446,30 +16468,30 @@ n Architektur so sind bis auf die Anforderungen PF9 (Das System muss dem
  nachzuverfolgen) und PQ3 (Das System muss dem Entwickler die Möglichkeit
  bieten die externe Schnittstelle des Systems automatisiert zu testen) alle
  Anforderungen als erfüllt zu betrachten.
- PF9 ist über Drittanbierterwerkzeugen oder zusätzlichem Implementierungsaufwand
- verbunden erfüllbar.
+ PF9 ist über Drittanbieterwerkzeuge oder mittels zusätzlichem Implementierungsa
+ufwand erfüllbar.
  Die Anforderung PQ3 bedeutet in diesem konkreten Fall, dass der ObjectContext
- des Entity Frameworks für Unittests abstrahiert (z.B.
+ des Entity Frameworks für Unit-Tests abstrahiert (z.B.
  mit einem Mockingframework) werden sollte.
- Dies stellt sich in der Praxis als sehr aufwändig dar wenn nicht gar unmöglich
+ Dies stellt sich in der Praxis als sehr schwierig, wenn nicht gar unmöglich
  dar.
  Zu stark ist die Kopplung des ObjectContextes an Komponenten welche die
- Domänenobjekte des ORMs konsumieren als dass dieser einfach abstrahiert
+ Domänenobjekte des ORMs konsumieren, als dass dieser einfach abstrahiert
  werden könnte.
 \end_layout
 
 \begin_layout Standard
 Beim Betrachten der Anforderungen der Enterprise Pattern werden bis auf
  D2 (Das System muss die Möglichkeiten einer Spezifikation bieten, mit welcher
- der Teil eines zu ladenden Objektgraphen beschrieben wird) alle Anforderungen
- erfüllt.
- Das Entity Framework bietet von Haus aus keine Möglichkeit zu spezifizieren
- welcher Teil eines Objektgraphen geladen werden soll.
+ der Teil eines zu ladenden Objektgraphen beschrieben werden kann) alle
+ Anforderungen erfüllt.
+ Das Entity Framework bietet von Haus aus keine Möglichkeit der Spezifikation
+ an, welcher Teil eines Objektgraphen geladen werden soll.
  Die Anforderung D2 kann jedoch mit der Verwendung von Lazy Loading und
  virtuellen Eigenschaften in den Domänenobjekten teilweise erfüllt werden.
  Wird eine vollständige Spezifikation des Objektgraphen gefordert (inklusive
- der Definition welcher Teil des Objektgraphen nun geladen werden soll und
- welcher nicht) so muss dies im Persistenzlayer selber implementiert werden.
+ der Definition welcher Teil des Objektgraphen geladen werden soll und welcher
+ nicht), so muss dies im Persistenzlayer selbst implementiert werden.
 \end_layout
 
 \begin_layout Subsection
@@ -16479,7 +16501,7 @@ Dapper
 \begin_layout Standard
 Dapper hat innerhalb dieser Vergleiche für einige Überraschungen gesorgt.
  Der leichtgewichtige OR-Mapper, der in Form einer einzigen C#-Datei mit
- gerade einmal 3500 Zeilen ausgeliefert wird bietet viele Funktionlitäten
+ gerade einmal 3500 Zeilen ausgeliefert wird, bietet viele Funktionalitäten
  (wie zum Beispiel Cachingmechanismen oder Lazy Loading) die sonst nur in
  deutlich umfangreicheren ORMs anzutreffen sind.
  Insbesondere die einfache Konfiguration der Mappings über Lamdba Expressions
@@ -16488,25 +16510,24 @@ Dapper hat innerhalb dieser Vergleiche für einige Überraschungen gesorgt.
  Die Performance von Dapper ist den kompletten OR-Mappern Entity Framework
  oder NHibernate deutlich überlegen.
  Dies kann insbesondere bei leistungskritischen Systemen oder Webapplikationen
- mit vielen gleichzeitigen Zugriffen ein gewichtiges Auswahlkriterium sein.
+ mit vielen gleichzeitigen Zugriffen ein gewichtiges Auswahlkriterium darstellen.
  
 \end_layout
 
 \begin_layout Standard
 Der minimalistische Ansatz von Dapper hat auch einige Nachteile.
  So muss der Entwickler zwingend das Datenbankschema hinter dem Domänenmodell
- genau kennen, da teilweise SQL-Statements als Parameter an Dapper übergeben
- werden.
+ kennen, da teilweise SQL-Statements als Parameter an Dapper übergeben werden.
  Auch ist Dapper nur effizient in Forward Mapping Szenarien einzusetzen,
- welche auf einem neu entwickelten Domänenmodell basieren.
- Weicht das Domänemodell vom Datenbankschema ab ist vielfach aufwändiges
- Mapping nötig, das schnell unübersichtlich wird.
+ welche auf einem ohne Altlasten berücksichtigenden Domänenmodell basieren.
+ Weicht das Domänenmodell vom Datenbankschema ab, ist ein aufwändiges Mapping
+ nötig, welches schnell unübersichtlich wird.
 \end_layout
 
 \begin_layout Standard
 Beim Vergleich von Dapper mit den funktionalen Anforderungen an den Persistenzla
-yer zeigt sich der geringere Funktionumfang gegenüber der kompletten OR-Mapper:
- PF8 (Das System muss mehrere Instanzen gleichzeitig löschen können) und
+yer zeigt sich der geringere Funktionsumfang gegenüber den kompletten OR-Mappern
+: PF8 (Das System muss mehrere Instanzen gleichzeitig löschen können) und
  PF9 (Das System muss dem Administrator die Möglichkeit bieten den Ablauf
  sämtlicher Operationen nachzuverfolgen) sind nicht erfüllt.
  Zwar lässt sich PF9 vom Entwickler nachträglich implementieren, aber die
@@ -16522,12 +16543,12 @@ reference "sub:Monitoring"
  Die Qualitätsanforderungen und Randbedingungen sind ähnlich abgedeckt wie
  die funktionalen Anforderungen.
  Zwar wurde Dapper mit der Intention entwickelt die Datenbank einfach für
- automatische Tests abstrahieren zu können trotzdem ist PR2 (Das System
+ automatische Tests abstrahieren zu können, trotzdem ist PR2 (Das System
  muss dem Entwickler die Möglichkeit bieten ohne Wissen über die Datenbank
- oder datenbanknahe Technologie auf die Operationen zuzugreifen) und PR3
+ oder datenbanknahe Technologien auf die Operationen zuzugreifen) und PR3
  (Das System muss dem Entwickler für sämtliche Operationen ein Resultat
  entweder in Form der Entität oder den Entitäten oder in Form eines Operationsre
-sultats zurückliefern) nicht aus den vorher genannten Gründen erfüllt.
+sultats zurückliefern) aus den vorher genannten Gründen nicht erfüllt.
 \end_layout
 
 \begin_layout Standard
@@ -16535,8 +16556,8 @@ Werden die Anforderungen der Enterprise Pattern in Bezug auf Dapper als
  der verwendete OR-Mapper näher betrachtet, so gelten bis auf D1 (Das System
  muss eine minimale Kopplung des Domain Models an andere Layer ermöglichen),
  D2 (Das System muss die Möglichkeiten einer Spezifikation bieten, mit welcher
- der Teil eines zu ladenden Objektgraphen beschrieben wird) und D5 (Das
- System muss das Domain Model von der Datenbank vollständig entkoppeln)
+ der Teil eines zu ladenden Objektgraphen beschrieben werden kann) und D5
+ (Das System muss das Domain Model von der Datenbank vollständig entkoppeln)
  als erfüllt.
  Bei diesen drei nicht erfüllten Anforderungen zeigt sich auch die Schwierigkeit
  des Einsatzes von Dapper in einem Persistenzlayer mit einem Domain Model.
@@ -16552,21 +16573,21 @@ NHibernate
 \begin_layout Standard
 NHibernate erfreut sich immer noch ausserordentlicher Beliebtheit in der
  Entwicklercommunity.
- Dies liegt daran das NHibernate lange der einzige ausgereifte komplette
- OR-Mapper im .NET-Umfeld war und dass dadurch viele Erfolgsgeschichten von
- Projekte unter Verwendung von NHibernate geschrieben wurden.
+ Dies liegt daran, dass NHibernate lange der einzige ausgereifte komplette
+ OR-Mapper im .NET-Umfeld war und dadurch viele erfolgreich abgeschlossene
+ Projekte unter Verwendung von NHibernate realisiert werden konnten.
  Viele .NET-Entwickler haben NHibernate schon einmal integriert oder in einem
- Projekt mitgearbeitet in welchem NHibernate für das objekrelationale Mapping
+ Projekt mitgearbeitet in welchem NHibernate für das objektrelationale Mapping
  eingesetzt wurde.
  Da NHibernate eine Portierung des auf Java basierten Hibernate ist, ist
  die Entwicklung in den letzten Jahren etwas eingeschlafen und NHibernate
  kann heute nicht mehr mit anderen kompletten ORMs wie dem Entity Framework
- oder dem OpenAccess ORM mithalten.
+ oder dem OpenAccess ORM von Telerik mithalten.
  Viele der Funktionalitäten die NHiberante im Vergleich zu den Konkurrenzprodukt
-en fehlen wurden von der Open-Source Community oder Drittkompontenherstellern
+en fehlen, wurden von der OpenSource Community oder Drittkomponentenherstellern
  entwickelt und zur Verfügung gestellt.
  So lassen sich heute die Mappings der Domänenobjekte auf Datenbanktabellen
- nicht nur über XML-Dateien erstellen sondern auch über grafische Designer
+ nicht nur über XML-Dateien erstellen, sondern auch über grafische Designer
  oder unter Verwendung von flüssigen Schnittstellen.
  
 \end_layout
@@ -16578,43 +16599,44 @@ NHibernate besitzt eine relativ steile Lernkurve ist dafür jedoch sehr flexibel
  gefordert.
  So existieren beispielsweise mehrere Wege um Mappings zu erstellen und
  in grösseren Projekten mit mehreren Entwicklern kann dies zu verwaistem
- (da unleserlich) Code oder einem Wildwuchs von Konfigurationsdateien führen.
+ (da nicht verständlichem) Code oder einem Wildwuchs von Konfigurationsdateien
+ führen.
  
 \end_layout
 
 \begin_layout Standard
 Wird NHibernate mit den Anforderungen an den Persistenzlayers einer serviceorien
-tierten Architektur konfrontiert so werden bis auf PF9 (Das System muss
+tierten Architektur konfrontiert, so werden bis auf PF9 (Das System muss
  dem Administrator die Möglichkeit bieten den Ablauf sämtlicher Operationen
  nachzuverfolgen) und PQ3 (Das System muss dem Entwickler die Möglichkeit
  bieten die externe Schnittstelle des Systems automatisiert zu testen) sämtliche
  Anforderungen erfüllt.
  PF9 und PQ3 sind dieselben Anforderungen die auch das Entity Framework
  nicht erfüllen konnte.
- Auch NHibernate leidet unter den selben Schwierigkeiten was die Überwachung
- des ORMs zur Laufzeit sowie das automatisierte Testen desselben angeht.
+ Auch NHibernate leidet unter Defiziten was die Überwachung des ORMs zur
+ Laufzeit sowie das automatisierte Testen des Datencontainers angeht.
  Zwar können Überwachungsmechanismen selbst in die Kernfunktionalität von
- NHibernate eingebaut werden (da Open-Source), dies ist jedoch nur bedingt
- anzuraten und setzt vertiefte Kentnisse des Innenlebens von NHibernate
+ NHibernate eingebaut werden (da Open Source), dies ist jedoch nur bedingt
+ anzuraten und setzt vertiefte Kenntnisse des Innenlebens von NHibernate
  voraus.
  NHibernate stammt noch aus einer Zeit wo weniger Wert auf das automatisierte
  Testen von einzelnen Programmelementen wie Klassen oder Komponenten gelegt
  wurde.
- Dadurch ist es auch schwierig den Datencontiner von NHibernate für Testzwecke
+ Dadurch ist es auch schwierig den Datencontainer von NHibernate für Testzwecke
  zu abstrahieren.
 \end_layout
 
 \begin_layout Standard
 Die Anforderungen der Enterprise Pattern werden bis auf A2 (Das System muss
- keine Konversion von Objektdatentypen und Datentypen der Datenbanktablle
+ keine Konversion von Objektdatentypen und Datentypen der Datenbanktabelle
  verwenden) vollständig erfüllt.
- Da NHibernate über JDBC auf das Datenbankmanagementsystem zugreift ist
+ Da NHibernate über JDBC auf das Datenbankmanagementsystem zugreift, ist
  immer eine (wenn auch für den Entwickler transparente) Konvertierung aller
  Datenwerte nötig.
 \end_layout
 
 \begin_layout Section
-Produkteempfehlung
+Produktempfehlungen
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Produkteempfehlung"
@@ -16625,13 +16647,11 @@ name "sec:Produkteempfehlung"
 \end_layout
 
 \begin_layout Standard
-In diesem Kapitel wird pro Enterprise Pattern Transaction Script, Domain
- Model, Table Module und Active Record eine Empfehlung abgegeben, welcher
- der drei OR-Mapper Entity Framework, Dapper oder NHibernate eingesetzt
+In diesem Kapitel wird für jedes der Enterprise Pattern Transaction Script,
+ Domain Model, Table Module und Active Record eine Empfehlung abgegeben,
+ welcher der drei OR-Mapper Entity Framework, Dapper oder NHibernate eingesetzt
  werden soll.
- Es wird dabei auf Grund der Evaluation in den vorherigen Kapiteln eine
- Empfehlung ausgesprochen für welches Enterprise Pattern welcher OR-Mapper
- eingesetzt werden soll.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -16643,11 +16663,11 @@ reference "sub:Unterstützung-Enterprise-Pattern"
 
 \end_inset
 
-) festgehalten sind eingetlich alle OR-Mapper für alle betrachteten Enterprise
- Pattern geeignet.
- In den folgenden Kapiteln wird trotzdem versucht eine differenziertere
- Betrachtungsposition anzunehmen und pro Enterprise Pattern eine konkrete
- Empfehlung abzugeben.
+) festgehalten, sind grundsätzlich alle OR-Mapper für alle betrachteten
+ Enterprise Pattern geeignet.
+ In den folgenden Kapiteln wird trotzdem versucht eine differenzierte Betrachtun
+gsposition anzunehmen und pro Enterprise Pattern eine konkrete Empfehlung
+ abzugeben.
 \end_layout
 
 \begin_layout Subsection
@@ -16655,8 +16675,8 @@ Transaction Script
 \end_layout
 
 \begin_layout Standard
-Das Transaction Script ist das am einfachsten zu implementierende und simpelstes
- Enterprise Pattern (siehe Kapitel 
+Das Transaction Script ist das am einfachsten zu implementierende und simpelste
+ der betrachteten Enterprise Pattern (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Transaction-Script"
@@ -16666,17 +16686,17 @@ reference "sub:Transaction-Script"
 ).
  Im minimalsten Fall ist ein Transaction Script eine Klasse mit einer statischen
  Methode.
- Diese statische Methode kann einen oder mehrere Parameter haben, welche
- den Input für die Transaktion liefern.
- Die Methode führt dann die Transaktionsbefehle aus und liefert einen Rückgaberw
-ert an die aufrufende Funktion.
+ Diese statische Methode kann einen oder mehrere Parameter besitzen, welche
+ die Eingaben für die Transaktion liefern.
+ Die Methode führt dann die Transaktionsbefehle aus und liefert einen Rückgabewe
+rt an die aufrufende Funktion.
 \end_layout
 
 \begin_layout Standard
-Dadurch dass dieses Enterprise Pattern so einfach zu implementiern sind
- alle drei betrachteten OR-Mapper gleich dafür geeignet.
+Dadurch dass dieses Enterprise Pattern so einfach zu implementieren ist,
+ sind alle drei betrachteten OR-Mapper gleich gut dafür geeignet.
  Somit werden bei Verwendung von Transaction Scripts in einem Persistenzlayer
- die OR-Mapper Entity Framework, Dapper, NHibernate gleichermassen zu empfehlen.
+ die OR-Mapper Entity Framework, Dapper, NHibernate gleichermassen empfohlen.
 \end_layout
 
 \begin_layout Subsection
@@ -16688,10 +16708,10 @@ Wird das Domain Model als Enterprise Pattern innerhalb eines Persistenzlayers
  verwendet sind die betrachteten kompletten OR-Mapper Entity Framework und
  NHibernate klar im Vorteil.
  Bei einem Domain Model unterscheidet sich das Domänenmodell in grossen
- Teilen vom Datenbankschema im Datenbankmanagementsystem und somit kann
- Dapper nur mit viel Mappingcode werden.
- Das Erstellen der Mappings wird in Dapper über manuelle SQL-Statements
- gelöst und insbesondere ein reiches Domain Model mit objektorientierte
+ Teilen vom Datenbankschema und somit kann Dapper nur mit viel Mappingcode
+ verwendet werden.
+ Das Erstellen der Mappings wird in Dapper unter anderem über SQL-Statements
+ gelöst und insbesondere ein reiches Domain Model mit objektorientierten
  Funktionalitäten ist schwierig mit Dapper abzubilden (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -16703,15 +16723,15 @@ reference "sub:Domain-Model"
 \end_layout
 
 \begin_layout Standard
-Das Entity Framwork erhält die Empfehlung als der zu verwendender OR-Mapper
- in einem Persistezlayer mit einem Domain Model.
+Das Entity Framework erhält die Empfehlung als der zu verwendende OR-Mapper
+ in einem Persistenzlayer mit einem Domain Model.
  Dies liegt einerseits am im Visual Studio integrierten Model Designer andererse
-its an der Flexibilität von EF was die Mappingtechinken angehen.
- Wird das Domain Model zuerst in Code definiert ist es mit dem Entity Framework
- ohne weiteres Möglich eine Abbildung auf eine Datenbank zu erstellen.
- Auch NHibernate kann gut mit Domain Models umgehen aber das Mapping ist
- für den Entwickler weniger komfortable zu erstellen da umfangreiche XML-Mapping
-dateien angelegt werden müssen.
+its an der Flexibilität von EF was die Mappingtechniken angeht.
+ Wird das Domain Model zuerst in Code definiert, ist es mit dem Entity Framework
+ ohne weiteres möglich eine Abbildung auf eine Datenbank zu erstellen.
+ Auch NHibernate kann gut mit Domain Models umgehen.
+ Das Mapping ist für den Entwickler jedoch weniger komfortabel zu erstellen,
+ da umfangreiche XML-Mappingdateien angelegt werden müssen.
  Diese XML-Mappingdateien sind fehleranfälliger (da Fehler erst zur Laufzeit
  entdeckt werden) als der Model Designer des Entity Frameworks oder die
  Mappings in Code (da bei dieser Mappingtechnik Fehler schon zur Kompilierzeit
@@ -16729,10 +16749,10 @@ r.
  Für diese Empfehlung gibt es zwei ausschlaggebende Argumente: Das erste
  Argument ist die Möglichkeit von Dapper mit einem generischen Record Set
  direkt Mappings auf Domänenobjekten zu erzeugen.
- Da ein Table Module häufig mit einem Record Set als Konstruktorparameter
- initialisiert wird ist dies ein grosser Vorteil.
+ Da ein Table Module oft mit einem Record Set als Konstruktorparameter initialis
+iert wird, ist dies ein grosser Vorteil.
  Das an einer anderen Stelle erzeugte Record Set kann dem Table Module übergeben
- werden und Dapper kann damit ohne weitere Abfragen der internen Mapping-Engine
+ werden und Dapper kann damit ohne weiteres Abfragen der internen Mapping-Engine
  oder dem Datenbankschema das Mapping auf Domänenobjekte beziehungsweise
  Datenbanktabellen durchführen.
  Der zweite Grund ist die Anforderung T1 (Das System muss die Objektstruktur
@@ -16745,19 +16765,19 @@ reference "sub:Table-Module"
 \end_inset
 
 ).
- Wie in den detaillierten Vergleichen ausgeführt ist Dapper gut geeignet
+ Wie in den detaillierten Vergleichen ausgeführt, ist Dapper gut geeignet
  beim Verwenden von tabellarischen Daten und dem Erzeugen der dazugehörigen
  Mappings.
 \end_layout
 
 \begin_layout Standard
 Würde man NHibernate oder das Entity Framework für ein Table Module verwenden
- so würde bei der Intialisierung des Table Modules durch die Nutzung der
+ so würde bei der Initialisierung des Table Modules durch die Nutzung der
  Datencontainer immer zuerst ein Abgleich mit den im Record Set enthaltenen
  Objekten und den im Datencontainer bereits vorhandenen Daten notwendig
  sein.
  Auch verkompliziert die Nutzung der beiden kompletten OR-Mapper potentiell
- das ansonsten sehr einfach verständliche Enterprise Pattern.
+ das ansonsten leicht verständliche Enterprise Pattern.
 \end_layout
 
 \begin_layout Subsection
@@ -16779,7 +16799,7 @@ reference "sub:Active-Record"
 
 ).
  NHibernate führt auf Grund seiner Architektur in jedem Fall eine Typenkonvertie
-rung durch und somit ist es für Active Record wenig geeignet.
+rung durch und ist somit es für Active Record wenig geeignet.
  In Anbetracht des Funktionsumfangs sind das Entity Framework (und auch
  NHibernate, würde es keine Konvertierung benötigen) für dieses Pattern
  des Guten zu viel.
@@ -16812,7 +16832,7 @@ on beschrieben.
 
 \begin_layout Standard
 Das Ziel dieses Kapitels ist es einerseits dem Leser einen Überblick über
- die Implementierung des Proof-of-Concepts zu geben und andererseits die
+ die Implementierung des Proof of Concepts zu geben und andererseits die
  getroffenen Entscheidungen während der Entwicklung explizit zu machen.
 \end_layout
 
@@ -16823,9 +16843,9 @@ Implementierungsprinzipien
 \begin_layout Standard
 Unter Implementierungsprinzipien werden Richtlinien verstanden, die während
  der Implementierung eines Projekts von den Softwareentwicklern beachtet
- werden soll.
- Häufig sind diese Implementierungs- oder Designprinzipien durch den Software
- Architekten oder Lead Developer vorgegeben und werden von diesen auch Überwacht.
+ werden sollen.
+ Häufig sind diese Implementierungs- oder Designprinzipien durch den Softwarearc
+hitekten oder Lead Developer vorgegeben und werden von diesen auch überwacht.
 \end_layout
 
 \begin_layout Standard
@@ -16834,25 +16854,25 @@ rten CRM-Applikation SoCrm beachteten Implementierungsprinzipien:
 \end_layout
 
 \begin_layout Itemize
-Die Namen der Assemblies und der darin enthaltenen Namespaces müssen zwigend
+Die Namen der Assemblies und der darin enthaltenen Namespaces müssen zwingend
  übereinstimmen.
- Stimmen diese nicht überein müssen in der Dokumentation jeweils neben dem
- Namen des Assemblies auch noch der vollqualifizierte Namen eines Typs angegeben
- werden um eine eindeutige Zuweisung zu ermöglichen.
+ Würden diese nicht übereinstimmen, müsste in der Dokumentation jeweils
+ neben dem Namen des Assemblies auch noch der vollqualifizierte Namen jedes
+ Typen angegeben werden um eine eindeutige Zuweisung zu ermöglichen.
 \end_layout
 
 \begin_layout Itemize
 Sämtliche Interfaces und Entitäten sind in eigenen Klassenbibliotheken abgelegt.
  Dies, um die Wiederverwendbarkeit zu erhöhen und die Grösse der verteilten
  und mehrfach verwendeten Assemblies zu minimieren.
- Service Referenzen in Projekten, welche Web Services verwenden, benutzen
+ Servicereferenzen in Projekten, welche Web Services verwenden, benutzen
  immer die Typen dieser Assemblies anstatt die Entitäten aus dem WSDL der
- Service Referenz zu erzeugen.
+ Servicereferenz zu erzeugen.
 \end_layout
 
 \begin_layout Itemize
-Die Persistence-Services (in SoCrm.Infrastructure.Persistence) besitzen keinerlei
- Geschäftslogik sondern dienen rein dazu Objekte aus dem jeweils verwendeten
+Die Persistenzservices (in SoCrm.Infrastructure.Persistence) besitzen keinerlei
+ Geschäftslogik sondern dienen nur dazu Objekte aus dem jeweils verwendeten
  OR-Mapper aus der Datenbank zu lesen, zu aktualisieren, zu erstellen oder
  zu löschen.
  Sämtliche Geschäftslogik ist in den Services des Orchestrationlayers (in
@@ -16891,23 +16911,23 @@ http://msdn.microsoft.com/en-us/magazine/dd419663.aspx
 
  dar und verschiebt die Erzeugung der View und des ViewModels in den Controller.
  Auch wird die Beziehung zwischen der View und dem ViewModel im Controller
- erzeugt und nicht mehr über das Binding gelöst.
+ erzeugt und nicht über das Binding gelöst.
 \end_layout
 
 \begin_layout Itemize
-Um dynamisch Views innerhalb einer Shell laden zu können sind alle Views
+Um dynamisch Views innerhalb einer Shell laden zu können, sind alle Views
  als UserControls implementiert, welche vom Controller in den ControlContainer
  der ShellView zur Laufzeit eingefügt werden.
 \end_layout
 
 \begin_layout Itemize
 Die Serviceimplementierungen (.svc Code-Behind-Dateien) sollen möglichst
- schlank und lesbar sein da sie den ersten Anhaltspunkt für Entwickler darstelle
-n.
+ schlank und lesbar sein, da sie den ersten Anlaufspunkt für Entwickler
+ darstellen.
  Deswegen wird möglichst viel Logik in Basisklassen bzw.
  weitere Objekte ausgelagert insbesondere im Zusammenhang mit dem Zugriff
  auf die ORMs.
- Dadurch wird die Les- und Testbarkeit der Serviceimplementeirungen erhöht.
+ Dadurch wird die Les- und Testbarkeit der Serviceimplementierungen erhöht.
 \end_layout
 
 \begin_layout Subsection
@@ -16923,7 +16943,7 @@ n.
 \end_layout
 
 \begin_layout Standard
-Zur besseren Orientierung innerhalb des Systems wird auf Abbildung 
+Zur besseren Orientierung innerhalb dieses Kapitels wird auf Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Visual-Studio-Solution"
@@ -16938,14 +16958,16 @@ reference "fig:Visual-Studio-Solution"
 Die Namensgebung der Unterkapitel hält sich dabei an die Namespaces der
  Projekte.
  Die verwendeten Grafiken zeigen nur die beschriebenen Klassen und Interfaces
- an, die Projekte enthalten noch weitere Codedateien die jedoch nicht erwähnensw
-ert sind und deswegen in den Klassendiagrammen auch nicht gezeichnet sind.
- Auch wurden nur in denjenigen Unterkapiteln Klassendiagramme eingefügt
+ an, die Projekte enthalten noch weitere Codedateien die jedoch für das
+ Ziel dieses Kapitels nicht weiter relevant sind und deswegen in den Klassendiag
+rammen auch nicht gezeichnet sind.
+ Auch werden nur in denjenigen Unterkapiteln Klassendiagramme eingefügt,
  wo es für den Leser von Interesse sein könnte.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -17000,11 +17022,12 @@ name "sub:SoCrm.Core.Contracts"
 Diese Klassenbibliothek enthält die Basisklasse aller Entitäten, das DomainObjec
 t.
  Sie implementiert das Interface IDomainObject welches unter anderem den
- Identifier, die ObjectId, deklariert.
+ Identifier aller Domänenobjekte, die ObjectId, deklariert.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -17061,7 +17084,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-http://unity.codeplex.com/
+http://unity.codeplex.com
 \end_layout
 
 \end_inset
@@ -17072,13 +17095,13 @@ http://unity.codeplex.com/
 \end_inset
 
  betreiben zu können.
- Damit die WCF Services mit Unit Tests versehen werden können wurden die
+ Damit die WCF Services mit Unit Tests versehen werden können, wurden die
  externen Abhängigkeiten mit Dependency Injection entkoppelt.
  Für das Starten der Services wird jedoch ein spezieller Service-Host, der
  UnityServiceHost, benötigt, welcher beim Aufstarten ein Behavior mit dem
- Unity-Container erzeugt und dem Service injected.
- Der spezifische Service-Host, das Service-Behavior und das Instance-Behavior
- sind in diesem Projekt zu finden.
+ Unity-Container erzeugt und in den Service injiziert.
+ Dieser Service-Host, das Service-Behavior und das Instance-Behavior sind
+ in diesem Projekt zu finden.
 \end_layout
 
 \begin_layout Subsubsection
@@ -17088,14 +17111,23 @@ SoCrm.Infrastructure.Persistence.Contracts
 \begin_layout Standard
 Für jeden Entitätstyp existiert ein Persistenzservice, wessen Interface
  in dieser Assembly abgelegt ist.
- Dabei erbt jedes Inteface von einem generischen Interface IPersistenceService<T
->.
+ Dabei erbt jedes Interface von einem generischen Interface IPersistenceService<
+T>.
  Da WCF jedoch keine generischen Schnittstellen unterstützt wurde für jeden
- Entitätstyp ein eigenes Persistence-Service Inteface erstellt.
+ Entitätstyp ein eigenes Persistenceservice Interface erstellt (siehe Abbildung
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Klassendiagramm-SoCrm.Infrastruc"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -17116,6 +17148,13 @@ status collapsed
 
 \begin_layout Plain Layout
 Klassendiagramm SoCrm.Infrastructure.Persistence.Contracts
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Klassendiagramm-SoCrm.Infrastruc"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -17136,16 +17175,16 @@ SoCrm.Infrastructure.Persistence.Dapper
 Die Persistenzlayerimplementierung von Dapper in der WCF Service Application
  SoCrm.Infrastructure.Persistence.Dapper besteht aus einer Basisklasse PersistenceS
 erviceBase<T>, welche als Parameter den Entitätstypen akzeptiert, und den
- acht PersistenceServices, welche jeweils einen eigenen WCF Service darstellen.
- Jeder PersistenceService implementiert das entsprechende PersistenceService
+ acht Persistenzservices, welche jeweils einen eigenen WCF Service realisieren.
+ Jeder Persistenzservice implementiert das entsprechende PersistenceService
  Interface aus SoCrm.Infrastructure.Persistence.Contracts und leitet von der
  PersistenceServiceBase ab.
 \end_layout
 
 \begin_layout Standard
-Die PersistenceServiceBase beeinhaltet sämtliche Zugriffslogik auf Dapper
+Die PersistenceServiceBase beinhaltet sämtliche Zugriffslogik auf Dapper
  um einzelne Entitäten zu lesen oder zu löschen.
- Das Speichern und Lesen von Objektgraphen ist im jeweiligen PersistenceService
+ Das Speichern und Lesen von Objektgraphen ist im jeweiligen Persistenzservice
  implementiert, da ein manuelles Mapping innerhalb von Dapper dafür notwendig
  ist.
 \end_layout
@@ -17157,10 +17196,10 @@ SoCrm.Infrastructure.Persistence.EntityFramework
 \begin_layout Standard
 Die Persistenzlayerimplementierung des Entity Frameworks als WCF Service
  Applikation in SoCrm.Infrastructure.Persistence.EntityFramework besitzt wiederum
- acht PersistenceServices welche die entsprechenden Service Contracts aus
+ acht Persistenzservices welche die entsprechenden Service Contracts aus
  SoCrm.Infrastructure.Persistence.Contracts implementieren.
  Sämtliche Logik ist dabei in der generischen Basisklasse PersistenceServiceBase
- abgelegt, die einzelnen PersistenceServices sind leer und dienen lediglich
+<T> abgelegt, die einzelnen PersistenceServices sind leer und dienen lediglich
  als Endpoints für die WCF Services.
 \end_layout
 
@@ -17169,8 +17208,8 @@ Die PersistenceServiceBase kümmert sich um das Vorbereiten der Entitäten
  (Validierung von Benutzerdaten, Setzen von Änderungsdatum und -Benutzer,
  usw.) und holt sich aus der DataServiceFactory den pro Entität implementierten
  DataService.
- Der DataService kümmert sich dabei um die Interaktion des jeweiligen ObjectCont
-ext des Entity Frameworks.
+ Der DataService kümmert sich um den Zugriff auf den jeweiligen ObjectContext
+ des Entity Frameworks.
 \end_layout
 
 \begin_layout Standard
@@ -17193,13 +17232,15 @@ SoCrm.Infrastructure.Persistence.NHibernate
 \end_layout
 
 \begin_layout Standard
-Die WCF Service Application SoCrm.Infrastructure.Persistence.NHibernate enthält
- die Persistenzlayerimplementeriung des ORMs NHibernate.
- Alle acht PersistenceServices benutzen die PersistenceServiceBase<T> Klasse
- als Basisklasse welche den Session-Container von NHibernate wrappt und
- diesen über die im NHibernateHelper gekapseltee SessionFactory erzeugt.
+Die WCF Service Applikation SoCrm.Infrastructure.Persistence.NHibernate enthält
+ die Persistenzlayerimplementierung des ORMs NHibernate.
+ Alle acht Persistenzservices benutzen die PersistenceServiceBase<T> Klasse
+ als Basisklasse.
+ Diese Basisklasse kapselt den Session-Container von NHibernate und welcher
+ über die im NHibernateHelper versteckte SessionFactory erzeugt wird.
  Der NHibernateHelper erstellt die Mapping-Konfiguration von NHibernate
- und lädt alle Mappings der Entitäten.
+ und lädt alle Mappings der Entitäten beim Aufstarten der WCF Service Applikatio
+n.
 \end_layout
 
 \begin_layout Standard
@@ -17216,7 +17257,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
-http://www.fluentnhibernate.org/
+http://www.fluentnhibernate.org
 \end_layout
 
 \end_inset
@@ -17226,8 +17267,8 @@ http://www.fluentnhibernate.org/
 
 \end_inset
 
- verwendet um die XML-Konfiguration zu vereinfachen und den Aufwand diese
- zu Erstellen zu verkleinern.
+ verwendet, um die XML-Konfiguration zu vereinfachen und den Aufwand diese
+ zu Erstellen gering zu halten.
  
 \end_layout
 
@@ -17237,18 +17278,18 @@ SoCrm.Presentation.App
 
 \begin_layout Standard
 Dieses Projekt liefert eine ausführbare Assembly als Build-Output.
- Die ShellView beeinhaltet ein Dockpanel, welches ein Menu, eine Toolbar,
+ Die ShellView beinhaltet ein Dockpanel, welches ein Menu, eine Toolbar,
  ein zentrales ContentControl sowie eine StatusBar enthält.
  Das ShellViewModel besitzt eine Referenz auf den AppController welcher
- aus dem UnityContainer die Controller der SoCrm.Infrastructure.Presentation.Contac
-ts, SoCrm.Infrastructure.Presentation.Customers oder SoCrm.Infrastructure.Presentatio
-n.Security Assembly bezieht und dort auf die gewünschten Seiten navigiert.
+ aus dem Unity-Container die Controller der Assemblies SoCrm.Infrastructure.Presen
+tation.Contacts, SoCrm.Infrastructure.Presentation.Customers oder SoCrm.Infrastructur
+e.Presentation.Security bezieht und dort auf die gewünschten Seiten navigiert.
 \end_layout
 
 \begin_layout Standard
 Beim Aufstarten der Applikation werden im Bootstrapper die Module der Presentati
 on-Assemblies registriert, welche wiederum die Controller und ViewModels
- im Unity-Container registrieren.
+ ihres Presentationmoduls im Unity-Container registrieren.
 \end_layout
 
 \begin_layout Standard
@@ -17295,7 +17336,7 @@ In der Assembly SoCrm.Infrastructure.Presentation.Contacts sind die Views und
  ViewModels der Kontaktfunktionalität untergebracht.
  Wie bei allen Presentation-Assemblies ist der Controller (hier der ContactContr
 oller) Dreh- und Angelpunkt.
- Er instanziiert bei Bedarf die ConstactListView und das ContactListViewModel
+ Er instanziert bei Bedarf die ConstactListView und das ContactListViewModel
  (für das Anzeigen bestehender Kontakte verantwortlich) sowie die CreateContactV
 iew und das CreateContactViewModel (enthält die Funktionalität zum Erstellen
  von neuen Kontakten für einen Kunden).
@@ -17473,7 +17514,7 @@ SoCrm.Presentation.Security
 
 \begin_layout Standard
 SoCrm.Infrastructure.Presentation.Security enthält die Views und ViewModels
- für die Benutzerverwaltung sowie das Authentifizieren beim System.
+ für die Benutzerverwaltung sowie der Authentifizierung beim System.
  Auch ist die SetPasswordView und das SetPasswordViewModel ein Teil dieser
  Assembly.
  Das AuthenticationViewModel besitzt eine Referenz auf den AuthenticationService
@@ -17530,7 +17571,7 @@ SoCrm.Services.Contacts.Contracts
 \end_layout
 
 \begin_layout Standard
-In diesere Assembly befindet sich die Entität Contact, welche von DomainObject
+In dieser Assembly befindet sich die Entität Contact, welche von DomainObject
  (in SoCrm.Core.Contracts, siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -17601,11 +17642,11 @@ reference "sub:SoCrm.Core.Services"
 
 \end_inset
 
-) instaziert und einen neuen Unity-Container erstellt.
+) instanziert und einen neuen Unity-Container erstellt.
  Der ContactService implementiert sämtliche Geschäftslogik betreffend der
- Kontakte und ruft den Persistenzservice für Kontakte (implementiert in
- einem der SoCrm.Infrastructure.Persistence-Projekte) auf, um die Entitäten
- aus dem Persistenzlayer zu lesen.
+ Kontaktverwaltung und ruft den Persistenzservice für Kontakte (implementiert
+ in einem der SoCrm.Infrastructure.Persistence-Projekte) auf, um die Entitäten
+ aus dem Persistenzlayer zu lesen und mit diesen zu interagieren.
  
 \end_layout
 
@@ -17672,7 +17713,7 @@ SoCrm.Services.Customers.Provider ist eine WCF Service Applikation welche das
  Interface ICustomerService implementiert und auf die Persistenceservices
  IAddressPersistenceService, ICompanyPersistenceService, IEMailAddressPersistenc
 eService, IPersonPersistenceService und IPhoneNumberPersistenceService zugreift.
- Die Assembly beeinhaltet alle Geschäftslogik um mit Personen und Firmen
+ Die Assembly beinhaltet alle Geschäftslogik um mit Personen und Firmen
  zu interagieren, diese zu Erstellen und zu Löschen.
 \end_layout
 
@@ -17732,11 +17773,11 @@ SoCrm.Services.Logging.Provider
 \end_layout
 
 \begin_layout Standard
-Die WCF Service Application SoCrm.Services.Logging.Provider beeinhaltet den
+Die WCF Service Application SoCrm.Services.Logging.Provider beinhaltet den
  LoggingService welcher das Service-Interface ILoggingService aus dem Namespace
  SoCrm.Services.Logging.Contracts implementiert.
- Die Service Application nutzt dafür den Persistence-Service ILogEventPersistenc
-eService aus dem Infrastructurelayer und implementiert die Geschäftslogik
+ Die Service Application nutzt dafür den Persistenzservice ILogEventPersistenceS
+ervice aus dem Infrastructurelayer und implementiert die Geschäftslogik
  für den Umgang mit Logeinträgen.
 \end_layout
 
@@ -17802,9 +17843,8 @@ SoCrm.Services.Security.Provider ist eine WCF Service Application, welche den
  Der SecurityService implementiert das Interface ISecurityService aus dem
  Namespace SoCrm.Services.Security.Contracts und enthält die Geschäftslogik
  für den Umgang mit Benutzern des Systems SoCrm.
- Der SecurityService seinerseits erhält seine Objekte aus dem Persistence-Servic
-e IUserPersistenceService, welcher im Infrastructurelayer implementiert
- ist.
+ Der SecurityService erhält seine Objekte aus dem Persistenzservice IUserPersist
+enceService, welcher im Infrastructurelayer implementiert ist.
 \end_layout
 
 \begin_layout Chapter
@@ -17866,7 +17906,7 @@ Eine Kenngrösse zur Qualitätssicherung und zur Steigerung der Softwarequalitä
  Die Testabdeckung bezeichnet die prozentuale Menge des produktiven Quellcodes,
  der über automatisierte Unit-Tests abgedeckt ist, im Vergleich zur Gesamtmenge
  des Codebasis.
- Insbesondere hift die Testabdeckung bei der Identifizierung von einzelnen
+ Insbesondere hilft die Testabdeckung bei der Identifizierung von einzelnen
  Bereichen im Quellcode die potentiell fehleranfällig (da ungetestet beziehungsw
 eise ungenügend getestet) sind.
 \end_layout
@@ -18782,7 +18822,7 @@ Mithilfe von Akzeptanztest
 status open
 
 \begin_layout Plain Layout
-auch Abnahmetests oder User Acceptance Tests (UAT)
+auch Abnahmetests oder User Acceptance Tests (UAT) genannt
 \end_layout
 
 \end_inset
@@ -18797,14 +18837,12 @@ reference "sec:Anforderungen-CRM-Applikation"
 
 \end_inset
 
-) geprüft, das heisst der Test hat keine Kentnisse über die innere Funktionsweis
-e des Systems und imitiert den Benutzer der Applikation.
+) geprüft, das heisst der Test hat keine Kenntnisse über die innere Funktionswei
+se des Systems und imitiert den Benutzer der Applikation.
 \end_layout
 
 \begin_layout Standard
 In diesem Projekt werden zur Entwicklung der Akzeptanztests Coded UI-Tests
- verwendet.
- Coded UI-Tests
 \begin_inset Foot
 status open
 
@@ -18825,8 +18863,9 @@ http://msdn.microsoft.com/en-us/library/dd286681.aspx
 
 \end_inset
 
- sind automatisierte Tests die auf der Benutzerfläche festgelegte Aktionen
- als Skript ausführen lassen.
+ verwendet.
+ Coded UI-Tests sind automatisierte Tests die auf der Benutzerfläche festgelegte
+ Aktionen als Skript ausführen lassen.
  Ein Coded UI-Test kann ausserdem auf einzelnen UI-Elementen Erwartungen
  definieren (z.B.
  nach Klick auf den 
@@ -18842,14 +18881,14 @@ Senden
 
 \begin_layout Standard
 Die Anforderungen in den Use-Cases UC1 bis UC14 aus den Use-Case-Spezifikationen
- werden als Coded UI-Tests ausformuliert und im Visual Studio-Projekt SoCrm.Tests.
+ werden als Coded UI-Tests ausformuliert und im Visual Studio Projekt SoCrm.Tests.
 AcceptanceTests abgelegt.
  Beim Ausführen eines der Coded UI-Tests wird automatisch das System gestartet
  und der jeweilige Testfall wird als Skript abgearbeitet.
  Je nach Use-Case sind unterschiedliche Eingaben sowie Erwartungen definiert.
  Werden diese nicht erfüllt (z.B.
- kann der eben erstellte Kontakt nicht gefunden werden) so wird schlägt
- der Test fehl.
+ kann der eben erstellte Kontakt nicht gefunden werden) so schlägt der Test
+ fehl.
 \end_layout
 
 \begin_layout Standard
@@ -18868,8 +18907,8 @@ reference "fig:Resultat-Akzeptanztests"
 \end_inset
 
  ersichtlich.
- Alle Anforderungen können im Rahmen dieser Implementierung erfüllt werden
- und die Akzeptanztests werden als bestanden betrachtet.
+ Alle Anforderungen können im Rahmen der Implementierung des Proof of Concepts
+ erfüllt werden und die Akzeptanztests werden somit als bestanden betrachtet.
 \end_layout
 
 \begin_layout Standard
@@ -19537,10 +19576,10 @@ Fazit
 
 \begin_layout Standard
 Die Bearbeitung dieser Bachelorarbeit war eine ausserordentlich spannende
- und lehrreiche Aufgabe für welche in diesem Kapitel ein Fazit erarbeitet
+ und lehrreiche Aufgabe für welche in diesem Kapitel ein Fazit erstellt
  wird.
- Das Kapitel enthält die Schlussfolgerungen welche auf Basis der Arbeitsergebnis
-se getroffen werden.
+ Das Kapitel enthält die Schlussfolgerungen welche aus den erarbeiteten
+ Arbeitsergebnissen gezogen werden.
  Ausserdem werden die Abweichungen von der initialen Aufgabenstellung dargelegt
  und erläutert.
 \end_layout
@@ -19550,8 +19589,8 @@ Schlussfolgerungen
 \end_layout
 
 \begin_layout Standard
-In Anbetracht der in den vorherigen Kapiteln gewonnenen Erkentnissen im
- detaillierten Vergleich von objekrelationalen Mappern und den erstellten
+In Anbetracht der in den vorherigen Kapiteln gewonnenen Erkenntnissen im
+ detaillierten Vergleich von objektrelationalen Mappern und den erstellten
  Produktempfehlungen werden in diesem Kapitel Schlussfolgerungen im Vergleich
  und der Verwendung der vorgestellten OR-Mapper gezogen.
 \end_layout
@@ -19564,21 +19603,21 @@ reference "sec:Vergleich-ausgewählter-Produkte"
 
 \end_inset
 
-) und der Produktempfehlung (siehe Kapitel 
+) und den Produktempfehlungen (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Produkteempfehlung"
 
 \end_inset
 
-) erkennbar sind sich die heute verfügbaren und in dieser Arbeit betrachteten
+) erkennbar, sind sich die heute verfügbaren und in dieser Arbeit betrachteten
  OR-Mapper funktions- und leistungsmässig sehr ähnlich.
- Es fällt schwer konkrete Differnzierungsmerkmale der einzelnen Produkte
- herauszuheben welche sich dann auch bewerten lassen.
+ Es fällt schwer, konkrete Differenzierungsmerkmale der einzelnen Produkte
+ herauszuheben, welche sich dann auch bewerten lassen.
  Es wurde erkannt, dass weniger die betrachteten Produkte ein Auswahlkriterium
- bei der Verwendung von bestimmten Enteprise Pattern sind, sondern viel
+ bei der Verwendung von bestimmten Enterprise Pattern sind, sondern viel
  mehr der Typ des ORMs.
- Wie beschrieben existieren zwei Arten von ORMs: komplette und leichtgewichtige
+ Wie beschrieben, existieren zwei Arten von ORMs: Komplette und leichtgewichtige
  OR-Mapper.
  Alle in der Marktübersicht (siehe Kapitel 
 \begin_inset CommandInset ref
@@ -19587,37 +19626,37 @@ reference "sec:Marktübersicht"
 
 \end_inset
 
-) analysierten OR-Mapper lassen sich zu einem der zwei Typen zuteilen und
- der Typ ist innerhalb der Produktempfehlung der ausschlaggebende Punkt
- für die Empfehlung des Produkts.
+) analysierten OR-Mapper lassen sich einem der zwei Typen zuteilen und der
+ Typ ist innerhalb der Produktempfehlung der ausschlaggebende Faktor für
+ die Empfehlung des Produkts.
  Für alle Enterprise Pattern ausser dem Domain Model lässt sich sagen, dass
  leichtgewichtige OR-Mapper besser geeignet sind als komplette.
  Wird allerdings ein Domain Model verwendet, so macht die Verwendung eines
  kompletten OR-Mappers Sinn.
  Die meisten serviceorientierten Systeme setzten heute ein Domain Model
  ein und somit lässt sich auch in den meisten dieser Systeme (im .NET-Umfeld)
- einer der in der Marktübersicht betrachtetetn kompletten OR-Mapper finden.
+ einer der in der Marktübersicht betrachteten, kompletten OR-Mapper finden.
 \end_layout
 
 \begin_layout Standard
 In der nahen Zukunft werden in Enterpriseapplikationen verstärkt Domain
- Models verwendet werden da Entwickler es heutzutage gewohnt sind mit Objekten
- zu arbeiten als mit Tabellen.
- Auch der Trend in Richtung Objekt-relationale Datenbankmanagementsysteme
- wird die Verwendung von komplexen Domänenmodellen förderen und eventuell
+ Models verwendet werden, da Entwickler es heutzutage gewohnter sind mit
+ Objekten zu arbeiten als mit tabellarischen Daten.
+ Auch der Trend in Richtung objektrelationaler Datenbankmanagementsysteme
+ wird die Verwendung von komplexen Domänenmodellen fördern und eventuell
  sogar OR-Mapper überflüssig machen.
- Aus diesen Gründen sehe ich besonders bei bedienerfreundlichen OR-Mappern
- wie dem Entity Framework grosses Potential auch in naher Zukunft.
+ Trotzdem sieht der Autor dieser Bachelorarbeit besonders bei bedienerfreundlich
+en OR-Mappern wie dem Entity Framework grosses Potential in naher Zukunft.
 \end_layout
 
 \begin_layout Standard
 Auch leichtgewichtige OR-Mapper wie Dapper werden in performancekritischen
- Systemen und in Systemen mit einer einfacheren Domänenlogik eine Daseinsbereich
-tigung haben und in Zukunft noch an Bedeutung gewinnen.
- Wird sich Dapper in den Möglichkeiten des Monitorings und im Bedienerkomfort
- näher an die kompletteren OR-Mapper wie NHibernate oder Entity Framework
- angleichen bin ich durchaus zuversichtlich dass in dieser Nische ein Markt
- für Dapper vorhanden ist.
+ Systemen und in Systemen mit einer einfacheren Domänenlogik eine Daseinsberecht
+igung haben und wohl noch an Bedeutung gewinnen.
+ Wird sich Dapper in den Möglichkeiten des Monitorings und im Bedienungskomfort
+ näher an die kompletten OR-Mapper wie NHibernate oder dem Entity Framework
+ angleichen, ist der Autor durchaus zuversichtlich, dass in dieser Nische
+ ein Potential für Dapper vorhanden ist.
 \end_layout
 
 \begin_layout Section
@@ -19633,8 +19672,8 @@ key "AmstutzDR2013"
 \end_inset
 
  erwähnt, wurde die initiale Aufgabenstellung in mehreren Punkten geändert
- was sich auch in der Dokumentation der Bachelorarbeit sowie dem Resultat
- wiederspiegelt.
+ was sich auch in der Dokumentation der Bachelorarbeit sowie den gewonnenen
+ Resultaten widerspiegelt.
  Alle Änderungen sind in der folgenden Liste noch einmal erwähnt und beschrieben
 :
 \end_layout
@@ -19661,7 +19700,8 @@ key "Shaw1996"
 ) vor.
  Da das Buch schwer auffindbar war und die Architekturstile darin auf nur
  wenigen Seiten abgehandelt wurden, wurde die Aufgabenstellung geändert
- und nun eine Evaluation auf Basis von Fowlers Enterprise Pattern durchgeführt.
+ und es wurde eine Evaluation auf Basis von Martin Fowlers Enterprise Pattern
+ durchgeführt.
 \end_layout
 
 \begin_layout Description
@@ -19675,11 +19715,11 @@ Verbreitung ORM
 
 \end_inset
 
- Die ursprüngliche Aufgabenstellung sah vor, die Auswahl der näher zu betrachend
-en ORMs nach derem Verbreitung zu treffen.
+ Die ursprüngliche Aufgabenstellung sah vor, die Auswahl der näher zu betrachten
+den ORMs nach deren Verbreitung zu treffen.
  Es wurde allerdings keine Studie zu diesem Thema gefunden und darum wurde
  in der finalen Version eine Umfrage unter Entwicklern durchgeführt um die
- Selektion der zu betrachteten OR-Mapper zu treffen.
+ Selektion der genauer zu betrachtenden OR-Mapper zu treffen.
 \end_layout
 
 \begin_layout Description
@@ -19696,11 +19736,12 @@ Zu breiter Scope
  In der ersten Version der Aufgabenstellung sollten alle frei verfügbaren
  und kommerziellen OR-Mapper im Java- und .NET-Umfeld miteinander verglichen
  werden.
- Da dies zu viele Produkte umfasst hätte wurden in der aktuellen Version
- nur noch frei verfügbare und Open-Source .NET-ORMs verglichen.
- Des weiteren sollte die serviceorientierte CRM-Applikation auch eine Reporting-
-Funktionalität umfassen welche nun nicht mehr Teil der Aufgabenstellung
- ist.
+ Da diese Marktübersicht zu viele Produkte umfasst hätte, wurden in der
+ aktuellen Version der Aufgabenstellung nur noch frei verfügbare und Open
+ Source .NET-ORMs verglichen.
+ Desweiteren sollte die serviceorientierte CRM-Applikation auch eine Reporting-F
+unktionalität umfassen welche nachträglich aus der Aufgabenstellung entfernt
+ worden ist.
 \end_layout
 
 \begin_layout Description
@@ -19714,11 +19755,11 @@ Fokus Bachelorarbeit
 
 \end_inset
 
- Der Fokus der ursprünglichen Aufgabenstellung sah vor dass die Empfehlung
- eines OR-Mappers für ein Enterprise Pattern im Vordergrund steht.
+ Der Fokus der ursprünglichen Aufgabenstellung sah vor, dass die Empfehlung
+ der OR-Mappers für Enterprise Pattern im Vordergrund steht.
  Auf Grund der erkannten Schwierigkeit des Erreichen dieses Zieles zum Zeitpunkt
  des Design Reviews wurde beschlossen mehr Fokus auf die serviceorientierte
- CRM-Applikation als Proof-of-Concept zu legen.
+ CRM-Applikation als Proof of Concept zu legen.
 \end_layout
 
 \begin_layout Chapter*
