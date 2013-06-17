@@ -10502,7 +10502,7 @@ Die Vergleichsmatrix vergleicht die OR-Mapper Entity Framework, NHibernate,
 \size tiny
 \begin_inset External
 	template PDFPages
-	filename Grafiken/Vergleich.pdf
+	filename Quellen/Vergleich.pdf
 	extra LaTeX "pages=-"
 	rotateAngle 90
 
